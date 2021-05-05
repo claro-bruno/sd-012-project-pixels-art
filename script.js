@@ -63,10 +63,10 @@ const capturePixel = document.querySelectorAll('.pixel');
 for (let index = 0; index < capturePixel.length; index += 1) {
   capturePixel[index].addEventListener('click', (event) => {
     let captureSelectedColor = document.querySelector('.color.selected').style.backgroundColor;
-    if (event.target.style.backgroundColor === '') {
-      event.target.style.backgroundColor = captureSelectedColor;
+    if (event.target.style.backgroundColor === captureSelectedColor) {
+      event.target.style.backgroundColor = 'white'
     } else {
-      event.target.style.backgroundColor = '';
+      event.target.style.backgroundColor = captureSelectedColor;
     }
   })
 }
