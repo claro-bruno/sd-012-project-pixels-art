@@ -1,11 +1,15 @@
 body {
     background-color: rgb(224, 224, 224);
 }
+h1 {
+    text-align: center;
+}
 #color-palette {
-    display: table;
     border-spacing: 1px;
     background-color: black;
-    border: 5px solid black;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 10px;
 }
 .color {
     display: table-cell;
@@ -13,12 +17,14 @@ body {
     width: 40px;
     height: 40px;
     border: 1px solid black;
+    margin: 5px;
 }
 #pixel-board {
     display: table;
     border-spacing: 1px;
     background-color: black;
-    border: 5px solid black;
+    border: 1px solid black;
+    margin-left: 10px;
     
 }
 .pixel {
