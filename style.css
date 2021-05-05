@@ -11,6 +11,14 @@ body {
   margin: auto;
 }
 
+#pixel-board {
+  width: 200px;
+  height: 200px;
+  /* border: 0.5px solid black; */
+  margin: 30px auto;
+  color: #ffffff;
+}
+
 .color{
   display: inline-block;
   border: 1px solid black;
@@ -19,3 +27,14 @@ body {
   margin-left: 4px;
 }
 
+.pixel-line {
+  width: 210px;
+  height: 40px;
+}
+
+.pixel {
+  display: inline-block;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+}
