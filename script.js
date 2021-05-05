@@ -52,3 +52,11 @@ document.body.addEventListener('click', function (event) {
     }
 })
 
+//Requisito 09
+document.querySelector('#clear-board').addEventListener('click', function () {
+    let pixelBoard = document.querySelectorAll('.pixel');
+    for (let box = 0; box < pixelBoard.length; box += 1) {
+        pixelBoard[box].style.backgroundColor = 'white';
+    }
+})
+
