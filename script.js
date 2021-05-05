@@ -6,7 +6,6 @@ const clearBoardBtn = document.getElementById('clear-board');
 const inputNBtn = document.querySelector('#generate-board');
 const palletsize = 4;
 const pixelB = 'pixel-board';
-const pixMatrixChg = document.getElementById(pixelB);
 
 // Gera um random de 0 - 255 para o RGB (cor) da paleta.
 function randomRgb() {
@@ -62,6 +61,7 @@ function changeColor(event) {
   const selection = event.target;
   selection.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
 }
+const pixMatrixChg = document.getElementById(pixelB);
 pixMatrixChg.addEventListener('click', changeColor);
 
 // Limpar (colocar branco) no quadro de "pixels".
