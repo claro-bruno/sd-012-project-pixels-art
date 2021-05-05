@@ -24,7 +24,21 @@ function selectColor() {
   }
 }
 
+function paintPixels() {
+  const pixels = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', () => {
+      const selectedColor = document.querySelector('.selected');
+      const cssObj = window.getComputedStyle(selectedColor);
+      pixels[index].style.backgroundColor = cssObj.getPropertyValue('background-color');
+      console.log(selectedColor);
+    });
+  }
+}
+
 window.onload = () => {
   selectedColorPrimary();
   selectColor();
+  paintPixels();
 };
