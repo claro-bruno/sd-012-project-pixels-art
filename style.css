@@ -45,3 +45,7 @@
   margin-top: 1px;
   background-color: white;
 }
+
+.selected {
+  box-shadow: 2px 2px 2px green;
+}

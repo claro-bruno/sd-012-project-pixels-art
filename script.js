@@ -1,19 +1,30 @@
-const shadows = '2px 2px 2px green';
-
 function selectedColorPrimary() {
-  const onloadBlackColor = document.querySelector('div', '.color', '.selected');
+  const onloadBlackColor = document.querySelector('div', '.color');
   const pixels = document.querySelectorAll('.pixel');
-  const primary = document.getElementsByClassName('color')[0];
-  console.log(primary.style.color);
 
   for (let index = 0; index < pixels.length; index += 1) {
+    onloadBlackColor.classList.add('selected');
     pixels[index].addEventListener('click', () => {
-      pixels[index].style.background = 'black';
+      pixels[index].style.backgroundColor = 'black';
     });
   }
-  onloadBlackColor.style.boxShadow = shadows;
+}
+
+// Trecho de código retirado de: https://jsfiddle.net/ntxuc69a/9/
+function selectColor() {
+  const colors = document.getElementsByClassName('color');
+  for (let index = 0; index < colors.length; index += 1) {
+    colors[index].addEventListener('click', () => {
+      const selectedColor = document.querySelector('.selected');
+      if (selectedColor) {
+        selectedColor.classList.remove('selected');
+      }
+      colors[index].classList.add('selected');
+    }, false);
+  }
 }
 
 window.onload = () => {
   selectedColorPrimary();
+  selectColor();
 };
