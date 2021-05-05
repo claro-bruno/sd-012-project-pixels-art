@@ -34,7 +34,6 @@ function createBoard () {
     if (size > 50) { size = 50; }
   } 
   resetBoard();
-  const pixelBoard = document.getElementById('pixel-board');
   pixelBoard.style.width = (size * 42) + 'px';
   for (let row = 1; row <= size*size; row += 1) {
     let div = document.createElement('div');
@@ -52,7 +51,7 @@ function resetBoard() {
 function selectColor (event) {
   for (let index = 0; index < pallete.length; index += 1) {
     if (pallete[index].classList.contains('selected')) {
-      pallete[index].classList.remove('selected')
+      pallete[index].classList.remove('selected');
     }
   }
   event.target.classList.add('selected');
@@ -80,5 +79,4 @@ window.onload = function pageLoad () {
   createBoard();
   boardSize.value = null;
   btnGenerate.addEventListener('click', createBoard);
-  
 };
