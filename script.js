@@ -11,4 +11,6 @@ for (let indexUl = 1; indexUl <= 5; indexUl += 1) {
   }
 }
 
-
+const corInicial = document.querySelector('#black');
+document.createElement.className = 'selected';
+corInicial.classList.add('selected');

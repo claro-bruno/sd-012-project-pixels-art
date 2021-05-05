@@ -31,3 +31,7 @@
 #green {
   background-color: green;
 }
+
+.selected {
+  background-color: black;
+}
