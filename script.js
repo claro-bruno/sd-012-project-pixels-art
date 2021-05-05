@@ -50,3 +50,15 @@ window.onload = function() {
   let black = document.querySelector('.color');
   black.classList.add('selected');
 }
+
+function selectedColor() {
+  let colorSelected = document.querySelectorAll('.color');
+  for (let i = 0; i < colorSelected.length; i++) {
+    colorSelected[i].addEventListener('click', function(event) {
+      let corSelecionada = document.querySelector('.selected')
+      corSelecionada.classList.remove('selected');
+      event.target.classList.add('selected');
+    });
+  }
+}
+selectedColor();
