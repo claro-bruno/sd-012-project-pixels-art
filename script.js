@@ -19,8 +19,8 @@ function comparePixelBackgroundColor(pixel1,pixel2){
 
 
 
-function makePixel(classes){
-    let pixel = document.createElement('li'); 
+function makePixel(element,classes){
+    let pixel = document.createElement(element); 
     pixel.className = classes;
     return pixel;
 }
@@ -44,8 +44,7 @@ function createBoard(number) {
     for (let index = 0; index < number; index += 1) {
         let row = document.createElement('tr');
         for (let index2 = 0; index2 < number; index2 += 1) {
-            let line = document.createElement('td');
-            line.className = 'pixel';
+            let line = makePixel('td','pixel');
             row.appendChild(line);
         }
         tableBody.appendChild(row);
@@ -55,5 +54,27 @@ function createBoard(number) {
 
 }
 
+function addEvents(){
+    let pallet = document.querySelector('#color-palette');
+    let pixels = pallet.children; 
+
+    for (const pixel of pixels) {
+        pixel.addEventListener( 'click', function (){
+            for (let index = 0; index < 4; index += 1) {
+                if(pixels[index].classList.contains('selected')){
+                    pixels[index].classList.remove('selected');
+                } 
+            }
+
+            for (let index = 0; index < 4; index += 1) {
+                if(pixels[index].id === pixel.id){
+                     pixels[index].classList.add('selected');
+                } 
+            }
+        });
+    }
+}
+
 createPalette();
 createBoard(5);
+addEvents();
