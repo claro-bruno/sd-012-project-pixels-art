@@ -45,4 +45,11 @@ window.onload = function() {
         }
         event.target.style.backgroundColor = cor;
     }
+    let clear = document.getElementById("clear-board");
+    clear.addEventListener("click", clearBoard);
+    function clearBoard() {
+        for (let i = 0; i < pixels.length; i++) {
+            pixels[i].style.backgroundColor = "white";
+        }
+    }
 }
