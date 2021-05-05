@@ -1,0 +1,6 @@
+.color {
+    border-radius: 1px;
+    border-color: black;
+    display: inline-block;
+    vertical-align: top;
+}
