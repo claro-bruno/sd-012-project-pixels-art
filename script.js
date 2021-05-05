@@ -52,4 +52,25 @@ criaQuadro(5)
 // Exercício 6: (O 5 foi feito via css)
 
 let selectBlack = document.querySelector('.color');
-selectBlack.className += ' selected';
+selectBlack.classList.add('selected');
+
+//===========================================================
+
+// Exercício 7:
+function captureColor (){
+    let getColor = document.getElementsByClassName('color');
+    let selectColor = document.querySelector('.selected');
+
+    for(let index = 0; index < getColor.length; index += 1) {
+        selectColor.classList.remove('selected');
+        getColor[index].addEventListener('click', function (event) {
+            for(let index = 0; index < getColor.length; index += 1) {
+                getColor[index].classList.remove('selected')
+            }
+            event.target.classList.add('selected')
+        })
+    }
+    getColor[0].classList.add('selected')
+}
+
+captureColor()
