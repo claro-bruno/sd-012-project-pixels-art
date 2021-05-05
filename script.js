@@ -69,17 +69,22 @@ window.onload = function () {
       let input = document.querySelector('#board-size');
       input.type = 'number';
       input.min = '1';
-      if (input.value >= 5 && input.value <= 50) {
-        boardSize = parseInt(input.value);
-        input.value = '';
-        killBoard();
-        generateBoard(boardSize);
-        listOfPixels = document.querySelectorAll('.pixel');
-        changePixelsColor();
-        clearBoard();
-      } else if (input.value === '') {
+      if (input.value === '') {
         alert('Board inválido!');
+      } else if (input.value > 50) {
+        boardSize = 50;
+      } else if (input.value < 5) {
+        boardSize = 5;
+      } else {
+        boardSize = parseInt(input.value);
       };
+
+      input.value = '';
+      killBoard();
+      generateBoard(boardSize);
+      listOfPixels = document.querySelectorAll('.pixel');
+      changePixelsColor();
+      clearBoard();
     });
   };
 
