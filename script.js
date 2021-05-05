@@ -42,20 +42,18 @@ window.onload = function () {
   }
   selectColorInitial();
 
-//   function setBlackPixelInitial() {
-//     let blackPixelInitial = document.querySelectorAll('.pixel')
-//     //seleciona pixel e pinta de preto
-//     for (let index = 0; index < blackPixelInitial.length; index += 1) {
-//       blackPixelInitial[index].addEventListener('click', function() {
-//         console.log('woooooww');
-//         let blackPixel = blackPixelInitial[index]
-//         blackPixel.style.backgroundColor = 'black';
-//       });
-//     }
-//     setBlackPixelInitial();
+  function setBlackPixelInitial() {
+    let selectedPixel = document.querySelectorAll('.pixel')
+      for (let index = 0; index < selectedPixel.length; index += 1) {
+      selectedPixel[index].addEventListener('click', function() {
+      let blackPixel = selectedPixel[index]
+      blackPixel.style.backgroundColor = 'black';
+      });
+    }
+  }
+  setBlackPixelInitial();
 
-
-  function setBlackColor() {
+  function setBlackPixel() {
     let selectedBlackColor = document.querySelector('.black');
     selectedBlackColor.addEventListener('click', function(){
       let selectedPixel = document.querySelectorAll('.pixel')
@@ -67,9 +65,9 @@ window.onload = function () {
       }
     });
   }
-  setBlackColor();
+  setBlackPixel();
 
-  function setRedColor() {
+  function setRedPixel() {
     let selectedRedColor = document.querySelector('.red');
     selectedRedColor.addEventListener('click', function(){
       let selectedPixel = document.querySelectorAll('.pixel')
@@ -81,9 +79,9 @@ window.onload = function () {
       }
     });
   }
-  setRedColor();
+  setRedPixel();
 
-  function setBlueColor() {
+  function setBluePixel() {
     let selectedBlueColor = document.querySelector('.blue');
     selectedBlueColor.addEventListener('click', function(){
       let selectedPixel = document.querySelectorAll('.pixel')
@@ -95,9 +93,9 @@ window.onload = function () {
       }
     });
   }
-  setBlueColor();
+  setBluePixel();
 
-  function setGreenColor() {
+  function setGreenPixel() {
     let selectedGreenColor = document.querySelector('.green');
     selectedGreenColor.addEventListener('click', function(){
       let selectedPixel = document.querySelectorAll('.pixel')
@@ -109,7 +107,7 @@ window.onload = function () {
       }
     });
   }
-  setGreenColor();
+  setGreenPixel();
 };
 
 
