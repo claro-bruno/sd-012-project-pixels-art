@@ -1,0 +1,33 @@
+#title {
+    text-align: center;
+    font-family: monospace;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#color-palette {
+    text-align: center;
+}
+
+.color {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    border: solid 1px black;
+}
+
+#black {
+    background-color: black;
+}
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#purple {
+    background-color: purple;
+}
