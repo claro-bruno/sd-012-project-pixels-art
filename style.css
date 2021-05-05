@@ -1,0 +1,29 @@
+#black {
+    background-color: black;
+}
+
+#red {
+    background-color: red;
+    color: red;
+    
+}
+
+#yellow {
+    background-color: yellow;
+    color: yellow;
+}
+
+#pink {
+    background-color: pink;
+    color: pink;
+}
+
+.color {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    display: inline-block;
+    width: 45px;
+
+    
+}
