@@ -1,4 +1,7 @@
-#color-palette li{
+#color-palette li, #pixel-board li{
     display: inline-block;
+}
+
+#color-palette li {
     margin-right: 30px;
 }
