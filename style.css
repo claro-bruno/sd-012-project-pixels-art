@@ -11,18 +11,7 @@
     position: relative;
     display: inline-block;
 }
-.color:nth-child(1) {
-    background-color: black;
-}
-.color:nth-child(2) {
-    background-color: blue;
-}
-.color:nth-child(3) {
-    background-color: red;
-}
-.color:nth-child(4) {
-    background-color: yellow;
-}
+
 #pixel-board {
     width: 210px;
     height: 210px;

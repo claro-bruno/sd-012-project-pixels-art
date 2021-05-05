@@ -1,4 +1,8 @@
 let pixelBoard = document.querySelector('#pixel-board');
+document.querySelectorAll('.color')[0].style.backgroundColor = 'black';
+document.querySelectorAll('.color')[1].style.backgroundColor = 'blue';
+document.querySelectorAll('.color')[2].style.backgroundColor = 'red';
+document.querySelectorAll('.color')[3].style.backgroundColor = 'yellow';
 
 for (let index = 1; index <= 5; index +=1) {
     for (let index2 = 1; index2 <= 5; index2 +=1) {
@@ -23,3 +27,8 @@ function selecionaCor (event) {
     document.querySelector('.selected').classList.remove('selected');
     event.target.classList.add('selected');
 } document.querySelector('#color-palette').addEventListener('click', selecionaCor);
+
+function preencheCor (event) {
+    let corSelecionada = document.querySelector('.selected').style.backgroundColor;
+    event.target.style.backgroundColor = corSelecionada;
+} document.querySelector('#pixel-board').addEventListener('click', preencheCor);
