@@ -54,5 +54,12 @@ document.body.addEventListener('click', (event) => {
   }
 });
 
+document.querySelector('#clear-board').addEventListener('click', function () {
+  let pixelBoard = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixelBoard.length; index += 1) {
+    pixelBoard[index].style.backgroundColor = 'white';
+  }
+})
+
 colorPallete();
 addEventOnClick();
