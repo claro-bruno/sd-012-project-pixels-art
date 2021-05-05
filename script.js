@@ -1,12 +1,18 @@
 
 
 
-function randomcolor () {
-    return "#" + parseInt((Math.random() * 0xFFFFFF)).toString(16).padStart(6, "0");
-}
+function selectedColor (event){
+    let atualSelected = document.querySelector(".selected");
+    atualSelected.classList.remove("selected");
 
+    event.target.className = "color selected";
+};
 
+let colorsList = document.querySelectorAll(".color");
 
+for (let index = 0; index < colorsList.length; index += 1) {
+    colorsList[index].addEventListener("click", selectedColor);
+};
 
 function pintando (event) {
     let colorSelected = document.querySelector(".selected").style.backgroundColor;
@@ -19,5 +25,4 @@ for(let index = 0; index < pixelsList.length; index += 1) {
     pixelsList[index].style.backgroundColor = "white";
     pixelsList[index].addEventListener("click", pintando);
 };
-
 

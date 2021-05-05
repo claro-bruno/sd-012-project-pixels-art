@@ -18,6 +18,22 @@ body {
     display: flex;
     justify-content: center;
   }
+
+ #black {
+    background-color: black;
+}
+
+#blue{
+    background-color: blue;
+}
+
+#green {
+    background-color: green;
+}
+
+#yellow {
+    background-color: yellow;
+}
   
   div.color {
     width: 70px;
