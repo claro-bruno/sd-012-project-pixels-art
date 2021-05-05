@@ -53,6 +53,7 @@ window.onload = function () {
   }
 
   getGenerateButton.addEventListener('click', function () {
+   if (getBoardSize.value !== ''){
     removeTable();
     let boardSize;
     if (getBoardSize.value < 5) {
@@ -70,6 +71,8 @@ window.onload = function () {
         column.className = 'pixel';
         line.appendChild(column);
       }
+    }} else{
+     alert('Board inválido!')
     }
   });
 };
