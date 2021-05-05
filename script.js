@@ -10,14 +10,14 @@ function createPalleteColors(number) {
 }
 createPalleteColors(numberOfColors);
 // Adiciona Cores dinamicamente a paleta de cores:
-const paletteColors = ['black', 'lime', 'aqua', 'deeppink']; // Array com cores para serem adicionadas.
+const colorsForPalette = ['black', 'lime', 'aqua', 'deeppink']; // Array com cores para serem adicionadas.
 function addColors(arrColors) {
   const colorPallete = document.getElementsByClassName('color');
   for (let index = 0; index < colorPallete.length; index += 1) {
     colorPallete[index].style.backgroundColor = arrColors[index];
   }
 }
-addColors(paletteColors);
+addColors(colorsForPalette);
 // Cria função que adiciona pixel
 function createPixelFrame() {
   const board = document.getElementById('pixel-board');
@@ -36,7 +36,17 @@ for (let lineIndex = 0; lineIndex < pixelBoardLine; lineIndex += 1) {
   document.getElementById('pixel-board').appendChild(lineBreak);// adiciona quebra de linha
 }
 // Seleciona primeira cor ao carregar pagina
-window.onload = function () {
+window.onload = function selectFirstColor() {
   const firstColor = document.querySelector('.color');
   firstColor.classList.add('selected');
 };
+// Seleciona cor ao clicar e desmarca cor anterior
+const paletteColor = document.getElementsByClassName('color');
+for (let index = 0; index < paletteColor.length; index += 1) {
+  const selectedColor = paletteColor[index];
+  selectedColor.addEventListener('click', () => {
+    const lstSelected = document.querySelector('.selected');
+    lstSelected.classList.remove('selected');
+    selectedColor.classList.add('selected');
+  });
+}
