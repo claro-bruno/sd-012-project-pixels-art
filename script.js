@@ -1,21 +1,17 @@
-window.onload = () => {
-  const createPalette = (color) => {
-    const palette = document.getElementById('color-palette');
-    const colorSquare = document.createElement('span');
-    colorSquare.style.backgroundColor = color;
-    colorSquare.classList.add('color');
-    colorSquare.id = color;
-    palette.appendChild(colorSquare);
+const shadows = '2px 2px 2px grey';
 
-    if (color === 'black') {
-      colorSquare.classList.add('selected');
-      colorSquare.style.boxShadow = '2px 2px 2px grey';
-    }
-  };
-  createPalette('black');
-  createPalette('red');
-  createPalette('green');
-  createPalette('blue');
+const createPalette = (color) => {
+  const palette = document.getElementById('color-palette');
+  const colorSquare = document.createElement('span');
+  colorSquare.style.backgroundColor = color;
+  colorSquare.classList.add('color');
+  colorSquare.id = color;
+  palette.appendChild(colorSquare);
+
+  if (color === 'black') {
+    colorSquare.classList.add('selected');
+    colorSquare.style.boxShadow = shadows;
+  }
 };
 
 const createPixels = (n) => {
@@ -29,3 +25,30 @@ const createPixels = (n) => {
   }
 };
 createPixels(25);
+
+const selectColor = () => {
+  const paletteItems = document.getElementsByClassName('color');
+
+  for (let i = 0; i < paletteItems.length; i += 1) {
+    paletteItems[i].addEventListener('click', () => {
+      let selected = document.querySelector('.selected');
+      selected.style.boxShadow = '';
+      if (paletteItems[i].classList.contains('selected') === false) {
+        paletteItems[i].classList.add('selected');
+        selected.classList.remove('selected');
+        selected = paletteItems[i];
+        selected.style.boxShadow = shadows;
+      } else {
+        selected.style.boxShadow = shadows;
+      }
+    });
+  }
+};
+
+window.onload = () => {
+  createPalette('black');
+  createPalette('red');
+  createPalette('green');
+  createPalette('blue');
+  selectColor();
+};
