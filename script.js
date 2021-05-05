@@ -34,7 +34,11 @@ function preencheCor (event) {
 } document.querySelector('#pixel-board').addEventListener('click', preencheCor);
 
 document.querySelector('#clear-board').addEventListener('click', function limpaCores () {
+    let pixelALimpar = pixelBoard.firstChild;
     for (let index in pixelBoard.children) {
-        pixelBoard.children[index].style.backgroundColor = 'white';
+        pixelALimpar.style.backgroundColor = 'white';
+        if (pixelALimpar !== pixelBoard.lastChild) {
+            pixelALimpar = pixelALimpar.nextSibling;
+        }
     }
 });
