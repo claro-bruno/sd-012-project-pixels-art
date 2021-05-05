@@ -61,6 +61,8 @@ inputNBtn.addEventListener('click',newMatrixN);
 function newMatrixN () {
   let inputN = document.querySelector('#board-size').value;
   if (inputN == '') { alert('Board inválido!'); return; }
+  if (inputN < 5) { inputN = 5; }
+  if (inputN > 50) { inputN = 50; }
   document.getElementById('pixel-board').remove();
   createMatrix(inputN);
 }
