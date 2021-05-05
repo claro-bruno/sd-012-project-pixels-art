@@ -1,6 +1,7 @@
 .color {
-    border-radius: 1px;
-    border-color: black;
+    border: 1px solid black;
     display: inline-block;
     vertical-align: top;
+    height: 100px;
+    width: 100px;
 }
