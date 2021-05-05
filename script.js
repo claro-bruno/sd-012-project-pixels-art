@@ -10,8 +10,9 @@ function colorSelector() {
         const color = colors[index];
         eachColor.innerText = color;
         colorPalete.appendChild(eachColor);
+        colorPalete.firstChild.className = 'color selected';
     };
-    colorPalete.firstChild.className = 'color selected';
+    
 }
 colorSelector();    
 
@@ -29,12 +30,22 @@ drawingBoarder();
 
 const colorDraw = document.querySelectorAll('.pixel');
 
+function initColor() {
+    colorDraw.forEach((pixel, idx) => {
+        pixel.addEventListener('click', () => {
+            pixel.style.backgroundColor = 'black';
+        })
+    })
+}
+initColor()
+
 document.body.addEventListener('click', function (event) {
     if (event.target.className === 'color' ){
         document.querySelector('.selected').className = 'color';
         event.target.className = 'color selected';
-        const painting = event.target.innerHTML
-        colorDraw.forEach((pixel) => {
+        const painting = event.target.innerHTML;
+        
+        colorDraw.forEach((pixel, idx) => {
             pixel.addEventListener('click', () => {
                 pixel.style.backgroundColor = painting;
             })
