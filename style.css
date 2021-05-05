@@ -17,6 +17,7 @@ body {
     border-color: black;
     height: 60px;
     width: 60px;
+    margin: 10px;
 }
 
 #bloco1 {
@@ -47,8 +48,7 @@ body {
     border-color: black;
     height: 40px;
     width: 40px;
-    line-height: 100px;
-    margin-bottom: -3px;
+    margin-bottom: -5px;
     background-color: white;
 }
 

@@ -1,22 +1,3 @@
-window.onload = resetColors();
-
-function resetColors() {
-    const pixels = document.getElementsByClassName('pixel');
-
-    for (let index = 0; index < pixels.length; index += 1) {
-        if (pixels[index].style.backgroundColor !== 'white') {
-            pixels[index].style.backgroundColor = 'white';
-        }
-    }
-
-}
-
-function initialColor() {
-
-}
-
-resetColors();
-
 function makeBoard(tamanho) {
     let destiny = document.querySelector('#pixel-board');
 
@@ -33,5 +14,22 @@ function makeBoard(tamanho) {
         }
     }
 }
-
 makeBoard(5);
+
+function makePallete(tamanho) {
+    let destiny = document.querySelector('#color-palette');
+    
+    for (let index = 1; index <= tamanho; index += 1) {
+        let cores = document.createElement('div');
+        cores.className = 'color';
+        cores.id = 'bloco' + index;
+        destiny.appendChild(cores);
+    }
+}
+makePallete(4);
+
+function title(string) {
+    let mainTitle = document.querySelector('h1');
+    mainTitle.innerHTML = string;
+}
+title('Paleta de Cores');
