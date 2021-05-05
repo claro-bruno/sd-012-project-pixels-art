@@ -1,38 +1,38 @@
-body{
-    font-family: 'Roboto Mono', monospace;
-    font-size: 40px;
+body {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 40px;
 }
 
-.title-container{
-    text-align: center;
-    margin-top: 60px;
-    font-size: 1.5em;
+.title-container {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 1.5em;
 }
 
 
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
 
-.color{
-    display: inline-block;
-    border:  1px solid black ;
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
+.color {
+  display: inline-block;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
 }
-.pixel{
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    display: table-cell;
+
+.pixel {
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  display: table-cell;
 }
 
 .pixelRow {
-    border: solid black 1px;
-    width: 40px;
-    height: 40px;
-    display: table-row;
-  }
-  
+  border: solid black 1px;
+  width: 40px;
+  height: 40px;
+  display: table-row;
+}
