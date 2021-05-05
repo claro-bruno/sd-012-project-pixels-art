@@ -1,6 +1,6 @@
 function cores(){
 let cores = document.querySelectorAll('.color');
-let arraycolor = ['#000','#faf0ca','#f4d35e','#ee964b','#f95738'];
+let arraycolor = ['#000','#faf0ca','#f4d35e','#ee964b'];
 for(let index =0; index < cores.length;index +=1){
 cores[index].style.backgroundColor = arraycolor[index];
 };

@@ -1,6 +1,6 @@
 .color{
   display: inline-block;
-  border: 1px solid black;
+  border: 1px rgb(0, 0, 0) solid ;
   width: 40px;
   height: 40px;
 }
@@ -8,10 +8,11 @@
 .pixel{
   width: 40px;
   height:40px;
-  border: 1px solid black;
+  border: 1px solid rgb(0,0,0);
   display: inline-block;
-
+  background-color: rgb(255, 255, 255);
 }
+
 #pixel-board{
   width: 250px;
 
