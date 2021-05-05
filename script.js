@@ -6,12 +6,14 @@ window.onload = function () {
     'pink'
   ];
   let pixelsColor = document.querySelectorAll('.color');
-  let listOfPixels = document.querySelectorAll('.pixel');
-
+  let boardSize = 0;
+  let listOfPixels = document.querySelectorAll('.pixel');;
+  clickInputButton();
   setInitialColors();
   changeSelectedColor();
   changePixelsColor();
   clearBoard();
+
 
   function setInitialColors() {
     for (index = 0; index < pixelsColor.length; index += 1) {
@@ -27,7 +29,7 @@ window.onload = function () {
       let currentDiv = pixelsColor[index];
       currentDiv.addEventListener('click', nowSelected);
     };
-  }
+  };
 
   function nowSelected(e) {
     for (index = 0; index < pixelsColor.length; index += 1) {
@@ -39,6 +41,7 @@ window.onload = function () {
   };
 
   function changePixelsColor() {
+
     for (let index = 0; index < listOfPixels.length; index += 1) {
       let currentPixel = listOfPixels[index];
 
@@ -49,6 +52,7 @@ window.onload = function () {
   };
 
   function clearBoard() {
+
     let btn = document.querySelector('#clear-board');
 
     btn.addEventListener('click', function () {
@@ -58,5 +62,45 @@ window.onload = function () {
       };
     });
   };
-  
+
+  function clickInputButton() {
+    let btn = document.querySelector('#generate-board');
+    btn.addEventListener('click', function () {
+      let input = document.querySelector('#board-size');
+      input.type = 'number';
+      input.min = '1';
+      if (input.value >= 5 && input.value <= 50) {
+        boardSize = parseInt(input.value);
+        input.value = '';
+        killBoard();
+        generateBoard(boardSize);
+        listOfPixels = document.querySelectorAll('.pixel');
+        changePixelsColor();
+        clearBoard();
+      } else if (input.value === '') {
+        alert('Board inválido!');
+      };
+    });
+  };
+
+  function generateBoard(boardSize) {
+    let table = document.createElement('table');
+
+    for (let index = 0; index < boardSize; index += 1) {
+      let tr = document.createElement('tr');
+
+      for (let index = 0; index < boardSize; index += 1) {
+        let td = document.createElement('td');
+        td.className = 'pixel';
+        tr.appendChild(td);
+      }
+      table.appendChild(tr);
+    };
+    document.querySelector('#pixel-board').appendChild(table);
+  };
+};
+
+function killBoard() {
+  let pixelBoard = document.querySelector('#pixel-board');
+  pixelBoard.removeChild(pixelBoard.firstElementChild);
 };
