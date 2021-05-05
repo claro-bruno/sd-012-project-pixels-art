@@ -32,7 +32,6 @@ function paintPixels() {
       const selectedColor = document.querySelector('.selected');
       const cssObj = window.getComputedStyle(selectedColor);
       pixels[index].style.backgroundColor = cssObj.getPropertyValue('background-color');
-      console.log(selectedColor);
     });
   }
 }
