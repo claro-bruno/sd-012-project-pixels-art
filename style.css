@@ -11,5 +11,17 @@ div p {
     border-width: 1px;
     border-style: solid;
     border-color: black;
+}
 
+section ol ul{
+    margin-left: 0px;
+    margin-right: 1px;
+    margin-top: 1px;
+    padding: 0px;
+    height: 70px;
+    width: 70px;
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
 }

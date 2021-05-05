@@ -9,5 +9,4 @@ function paletaArco(){
            list[index].style.background = cores[index];
         }
 }
-
 paletaArco();
