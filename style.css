@@ -1,25 +1,34 @@
 #color-palette {
-    border-color: black;
-    border-width: "1px";
-    position : inline-block;
-}
-
-#orange {
-    background-color: orange;
-}
-
-#red {
-    background-color: red;
+    display: inline-block;
 }
 
 #black {
     background-color: black;
+    border: 1px solid black;
+    padding: 30px;
+    position: absolute;
+}
+
+#orange {
+    background-color: orange;
+    border: 1px solid black;
+    padding: 30px;
+    position: absolute;
+    margin-left: 75px;
+}
+
+#red {
+    background-color: red;
+    border: 1px solid black;
+    padding: 30px;
+    position: absolute;
+    margin-left: 150px;
 }
 
 #yellow {
     background-color: yellow;
-}
-
-#silver {
-    background-color: silver;
+    border: 1px solid black;
+    padding: 30px;
+    position: absolute;
+    margin-left: 225px;
 }
