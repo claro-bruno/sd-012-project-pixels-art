@@ -1,81 +1,85 @@
+// Definição de constantes verificadas para a atividade
 const palColor = document.getElementById('color-palette');
 const palleteColor = document.querySelectorAll('.color');
 const matrixPlace = document.getElementById('section4');
 const clearBoardBtn = document.getElementById('clear-board');
 const inputNBtn = document.querySelector('#generate-board');
 const palletsize = 4;
+const pixelB = 'pixel-board';
+const pixMatrixChg = document.getElementById(pixelB);
 
+// Gera um random de 0 - 255 para o RGB (cor) da paleta.
 function randomRgb() {
-  return (Math.floor(Math.random()*256));
+  return (Math.floor(Math.random() * 256));
 }
 
+// Coloca as cores para dentro dos elementos da paleta de cor.
 function fillPalletColors(arrayColor) {
-  palleteColor[0].classList.add('selected')
-  for (let index = 0; index < palleteColor.length; index +=1) {
-      palleteColor[index].style.backgroundColor = arrayColor[index];
+  palleteColor[0].classList.add('selected');
+  for (let index = 0; index < palleteColor.length; index += 1) {
+    palleteColor[index].style.backgroundColor = arrayColor[index];
   }
 }
 
-window.onload = function () {
-  let arrayColor =['rgb(0,0,0'];
-  for (let index = 1 ; index < palletsize; index += 1) {
-    let randomColor = `rgb(${randomRgb()},${randomRgb()},${randomRgb()})`;
+// "Inicio" da construção da página.
+function pageStart() {
+  const arrayColor = ['rgb(0,0,0'];
+  for (let index = 1; index < palletsize; index += 1) {
+    const randomColor = `rgb(${randomRgb()},${randomRgb()},${randomRgb()})`;
     console.log(randomColor);
     arrayColor.push(randomColor);
   }
   fillPalletColors(arrayColor);
 }
+window.onload = pageStart;
 
-palColor.addEventListener('click',selectColor);
-
-function selectColor (event) {
-  let selection = event.target;
-  console.log(event.target.style.backgroundColor);
-  for (let index = 0; index < palleteColor.length; index +=1) {
-    if (palleteColor[index]===selection) { palleteColor[index].classList.add('selected'); }
-    if (palleteColor[index]!==selection) { palleteColor[index].classList.remove('selected'); }
+// Código para seleção de cor de preenchimento para o quadro de "pixels".
+function selectColor(event) {
+  const selection = event.target;
+  for (let index = 0; index < palleteColor.length; index += 1) {
+    if (palleteColor[index] === selection) { palleteColor[index].classList.add('selected'); }
+    if (palleteColor[index] !== selection) { palleteColor[index].classList.remove('selected'); }
   }
 }
+palColor.addEventListener('click', selectColor);
 
-function createMatrix (N) {
-  let pixelsMatrix = document.createElement('table');
-  pixelsMatrix.id='pixel-board'
-  for (let indexL = 0; indexL < N ; indexL += 1) {
+// Criar quadro de "pixels" 5x5 - pode ser implementado no windows.onload
+function createMatrix(N) {
+  const pixelsMatrix = document.createElement('table');
+  pixelsMatrix.id = pixelB;
+  for (let indexL = 0; indexL < N; indexL += 1) {
     pixelsMatrix.insertRow(indexL);
-    for (let indexW = 0; indexW < N ; indexW += 1) {
-      pixelsMatrix.firstChild.children[indexL].insertCell(indexW).className='pixel';
+    for (let indexW = 0; indexW < N; indexW += 1) {
+      pixelsMatrix.firstChild.children[indexL].insertCell(indexW).className = 'pixel';
     }
   }
   matrixPlace.appendChild(pixelsMatrix);
 }
 createMatrix(5);
 
-let pixMatrixChg = document.getElementById('pixel-board');
-pixMatrixChg.addEventListener('click',changeColor);
-
-function changeColor (event) {
-  event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+// Mudar cor do "pixel" conforme cor do pallet selecionada.
+function changeColor(event) {
+  const selection = event.target;
+  selection.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
 }
+pixMatrixChg.addEventListener('click', changeColor);
 
-clearBoardBtn.addEventListener('click',clearBoard);
-
-function clearBoard () {
-  for ( let index = 0; index < document.querySelectorAll('.pixel').length ; index += 1) {
+// Limpar (colocar branco) no quadro de "pixels".
+function clearBoard() {
+  for (let index = 0; index < document.querySelectorAll('.pixel').length; index += 1) {
     document.querySelectorAll('.pixel')[index].style.backgroundColor = 'rgb(255,255,255)';
     console.log(document.querySelectorAll('.pixel')[index]);
   }
 }
+clearBoardBtn.addEventListener('click', clearBoard);
 
-
-//
-
-inputNBtn.addEventListener('click',newMatrixN);
-
-function newMatrixN () {
+// Alterar tamanho do quadro de "pixels".
+function newMatrixN() {
   let inputN = document.querySelector('#board-size').value;
-  if (inputN == '') { alert('Board inválido!'); return; }
+  if (inputN === '') { alert('Board inválido!'); return; }
   if (inputN < 5) { inputN = 5; }
   if (inputN > 50) { inputN = 50; }
-  document.getElementById('pixel-board').remove();
+  document.getElementById(pixelB).remove();
   createMatrix(inputN);
 }
+inputNBtn.addEventListener('click', newMatrixN);
