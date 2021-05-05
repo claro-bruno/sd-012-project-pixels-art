@@ -1,7 +1,6 @@
 window.onload = function () {
 
-selecionar();
-gerarBoard(5);
+  gerarBoard(5);
 }
 
 function gerarBoard(numero) {
@@ -19,7 +18,19 @@ function gerarBoard(numero) {
   } 
 }
 
-function selecionar() {
-  let corSelecionada = document.getElementById('color1');
-  corSelecionada.classList.add('selected');  
+let cor1 = document.getElementById('color1');
+let cor2 = document.getElementById('color2');
+let cor3 = document.getElementById('color3');
+let cor4 = document.getElementById('color4');
+
+function selecionar(event) {
+  const element = document.querySelector('.selected');
+  element.classList.remove('selected');
+  event.target.classList.add('selected');
 }
+
+cor1.addEventListener('click', selecionar);
+cor2.addEventListener('click', selecionar);
+cor3.addEventListener('click', selecionar);
+cor4.addEventListener('click', selecionar);
+
