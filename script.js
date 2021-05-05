@@ -12,7 +12,7 @@ window.onload = function () {
     color4.style.backgroundColor = 'green';
 //Cria dinamicamente os pixels do pixel-board
     function createPixels () {
-        pixelBoard.style.maxWidth = '500px';
+        pixelBoard.style.maxWidth = '210px';
         for (let index = 0; index < boardersNumberOfPixels; index += 1) {
             let pixelCreate = document.createElement('div');
             pixelCreate.className = 'pixel';
