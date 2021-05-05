@@ -41,3 +41,18 @@ div.color {
 #color5 {
   background-color: blue;
 }
+
+/* Quadro de Pixels */
+
+#pixel-board {
+  justify-content: center;
+  display: flex;
+  margin-top: 50px;
+}
+
+.pixel {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
