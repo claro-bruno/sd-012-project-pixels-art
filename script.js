@@ -10,7 +10,7 @@ let black = document.getElementsByClassName("color")[0];
 let violet = document.getElementsByClassName("color")[1];
 let salmon = document.getElementsByClassName("color")[2];
 let yellow = document.getElementsByClassName("color")[3];
-
+let button = document.getElementsByClassName("color")[4];
 
 function changeSelected(event) {
 
@@ -27,13 +27,27 @@ salmon.addEventListener("click", changeSelected);
 yellow.addEventListener("click", changeSelected);
 
 
+
 let pixels = document.getElementById("pixel-board");
 
 pixels.addEventListener("click", function(event){ 
 
 event.target.style.backgroundColor = document.querySelector(".selected").style.backgroundColor;
 
+});
+
+
+let botao = document.getElementById("clear-board");
+
+botao.addEventListener("click", function() {
+
+for(i=0; i < 25; i +=1) {    
+
+document.querySelectorAll(".pixel")[i].style.backgroundColor = "white";
+
+}
 })
+
 
 
 
