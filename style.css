@@ -2,6 +2,17 @@
     border: 1px solid black;
     display: inline-block;
     vertical-align: top;
-    height: 100px;
-    width: 100px;
+    height: 98px;
+    width: 98px;
+    margin-bottom: 20px;
+}
+
+.pixel {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+    height: 98px;
+    width: 98px;
+    margin: 0;
+    background-color: white;
 }
