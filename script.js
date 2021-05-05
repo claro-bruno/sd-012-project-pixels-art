@@ -70,3 +70,12 @@ for (let index = 0; index < capturePixel.length; index += 1) {
     }
   })
 }
+
+// Adiciona o botão de limpar o board
+const captureClearButton = document.querySelector('#clear-board');
+
+captureClearButton.addEventListener('click', () =>{
+  for (let index = 0; index < capturePixel.length; index += 1) {
+    capturePixel[index].style.backgroundColor = 'white';
+  }
+});
