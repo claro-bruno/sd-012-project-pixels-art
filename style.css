@@ -1,0 +1,25 @@
+#color-palette {
+    display: inline-flex;
+}
+
+.color {
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+}
+
+#first-div {
+    background-color: black;
+}
+
+#second-div {
+    background-color: grey;
+}
+
+#third-div {
+    background-color: goldenrod;
+}
+
+#fourth-div {
+    background-color:antiquewhite;
+}
