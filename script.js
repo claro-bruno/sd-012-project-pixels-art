@@ -31,24 +31,22 @@ window.onload = function() {
     }
 
     createBoard(5);
+    let p = document.querySelectorAll(".pixel");
+    for(let i = 0; i < p.length; i++) {
+        p[i].addEventListener("click", paintPixel);
+    }
 
     function setBoardSize() {
         if(board_size.value == 0 || board_size.value < 0) {
             alert("Board inválido!");
         }
         else{
-            if(control_board === 0) {
-                createBoard(board_size.value);
-                control_board++;
+            let div = document.getElementById("pixel-board");
+            let size = div.childElementCount;
+            for(let i = 0; i < size; i++) {
+                div.removeChild(div.firstChild);
             }
-            else{
-                let div = document.getElementById("pixel-board");
-                let size = div.childElementCount;
-                for(let i = 0; i < size; i++) {
-                    div.removeChild(div.firstChild);
-                }
-                createBoard(board_size.value);
-            }
+            createBoard(board_size.value);
             let pixels = document.querySelectorAll(".pixel");
             for(let i = 0; i < pixels.length; i++) {
                 pixels[i].addEventListener("click", paintPixel);
