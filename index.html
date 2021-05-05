@@ -7,7 +7,7 @@
     <title>Pixel Art</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="randomColorPalette()">
+<body onload="gerarPaletaDeCorAleatoria(), gerarTelaDePintura(5)">
     <header>
         <h1 id="title">Paleta de Cores</h1>
     </header>
@@ -20,6 +20,11 @@
                 <div class="color"></div>
             </div>
         </section>
+        <section id="pixel-board">
+            <input id="tamanhoTelaDePintura" type="number" placeholder="5">
+            <button id="criarTelaDePintura" onclick="mudarTamanhoTelaDePintura()">Criar</button>
+        </section>
+        <section id="telaDePintura"></section>
     </main>
 </body>
 <script src="./script.js"></script>
