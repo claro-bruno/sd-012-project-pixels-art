@@ -32,3 +32,13 @@
 #color4 {
   background-color: green;
 }
+
+#pixel-board {
+  text-align: center;
+}
+
+.box {
+  padding: 20px;
+  border: 1px solid black;
+  display: inline-block;
+}
