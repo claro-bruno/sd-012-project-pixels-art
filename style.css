@@ -29,9 +29,11 @@ border: black solid 1px;
     height: 40px;
     border: solid black 1px;
     float: right;
+    background-color: white;
 }
 
 #pixel-board {
     width: 250px;
     height: 250px;
+    
 }
