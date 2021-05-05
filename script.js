@@ -51,15 +51,16 @@ function coloringPixel (event) {
 let pixelsList = document.querySelectorAll(".pixel");
 
 for(let index = 0; index < pixelsList.length; index += 1) {
-    pixelsList[index].style.backgroundColor = "white";
     pixelsList[index].addEventListener("click", coloringPixel);
 };
 
 // Limpar quadro de pixels
 
 function clearBoard () {
-    for(let index = 0; index < pixelsList.length; index += 1) {
-        pixelsList[index].style.backgroundColor = "white";
+    let pixelsListToClear = document.querySelectorAll(".pixel");
+
+    for(let index = 0; index < pixelsListToClear.length; index += 1) {
+        pixelsListToClear[index].style.backgroundColor = "white";
     };
 };
 
@@ -94,6 +95,8 @@ function reSizeBoardPixel () {
             for (let index2 = 0; index2 < parseInt(numOfLines); index2 += 1){
                 let pixelPoint = document.createElement("td");
                 pixelPoint.className = "pixel";
+                pixelPoint.style.backgroundColor = "white";
+                pixelPoint.addEventListener("click", coloringPixel);
                 List[index].appendChild(pixelPoint);
             };
         };
@@ -103,3 +106,7 @@ function reSizeBoardPixel () {
 let reSizeButton = document.querySelector("#generate-board");
 
 reSizeButton.addEventListener("click", reSizeBoardPixel);
+
+// Adicionando Eventos aos Pixels
+
+
