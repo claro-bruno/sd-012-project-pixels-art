@@ -31,11 +31,34 @@ for (let index = 0; index < 5; index += 1) {
   }
 
 
-  //6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels.
-  //PRIMEIRO CRIEI UMA VARIAVEL PARA ADICIONAR A CLASSE SELECTED A MINHA COR BLACK
+//6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels.
+//CRIEI UMA VARIAVEL PARA ADICIONAR A CLASSE SELECTED A PRIMEIRA COR QUE É A PRETA:
 
 
 const addNewClass = document.querySelectorAll('.color')[0].classList.add('selected');
+
+//7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+//PRIMEIRO RESGATEI O ELEMENTO COM O ID COLOR-PALLETE
+
+//RESGATO OS ELEMENTOS COM A CLASSE COLOR;
+//ATRIBUIR UM EVENTO DE CLICK PARA TODOS OS ELEMENTOS COM A CLASSE COLOR CRIANDO A FUNÇÃO DENTRO JA DO LISTENER;
+//SELECIONO OS ELEMENTOS QUE TEM A CLASSE SELECTED;
+//REMOVER A CLASSE SELECTED;
+//ATRIBUIR A CLASSE SELECTED PARA O ELEMENTO CLICADO (EVENT DO CLICK);
+
+const paletteColors = document.querySelector('#color-palette');
+
+function selectColor() {
+  paletteColors.addEventListener('click', (event) => {
+    const color = document.querySelector('.selected');
+    if (event.target.id !== 'color-palette') {
+      color.classList.remove('selected');
+      event.target.classList.add('selected');
+    }
+  });
+}
+
+
 
 
 
