@@ -15,12 +15,9 @@ function paletteGenerator() {
 paletteGenerator();
 
 function tableGenerator(size) {
-  let canvasSize = size;
+  const canvasSize = size;
   const tableTag = document.querySelector('table');
-  tableTag.innerHTML = '';
-  //essa forma de limpar todos os filhos da table foi lida no:
-  // https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
-
+  tableTag.innerHTML = '';  // essa forma de limpar todos os filhos da table foi lida no: https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
   for (let index = 0; index < canvasSize; index += 1) {
     const tableRow = document.createElement('tr');
     tableTag.appendChild(tableRow);
@@ -76,8 +73,11 @@ function canvasSize() {
   const inputBox = document.getElementById('board-size');
 
   generateButton.addEventListener('click', function () {
-    let inputBoxValue = inputBox.value;
-    if (inputBoxValue > 5 && inputBoxValue <= 50){
+    const inputBoxValue = inputBox.value;
+    if (inputBoxValue === '') {
+      alert('Board inválido!');
+    }
+    if (inputBoxValue > 5 && inputBoxValue <= 50) {
       console.log(inputBoxValue);
       tableGenerator(inputBoxValue);
     }
