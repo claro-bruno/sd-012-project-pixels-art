@@ -30,6 +30,8 @@ window.onload = function() {
         }
     }
 
+    createBoard(5);
+
     function setBoardSize() {
         if(board_size.value == 0 || board_size.value < 0) {
             alert("Board inválido!");
