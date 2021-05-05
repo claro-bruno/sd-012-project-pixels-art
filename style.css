@@ -23,3 +23,15 @@ border: black solid 1px;
 background-color: yellow;
 border: black solid 1px;
 }
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    border: solid black 1px;
+    float: right;
+}
+
+#pixel-board {
+    width: 250px;
+    height: 250px;
+}
