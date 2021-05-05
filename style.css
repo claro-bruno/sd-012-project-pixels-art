@@ -30,3 +30,18 @@
 #fourth-color {
   background-color: blue;
 }
+
+#color-palette {
+  padding: 20px;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 0;
+  padding: 0px;
+  margin-right: -1px;
+  margin-bottom: -5px;
+  border: 1px solid black;
+}
