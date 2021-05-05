@@ -5,6 +5,7 @@ const matrixPlace = document.getElementById('section2');
 
 
 function fillPalletColors() {
+  palleteColor[0].classList.add('selected')
   for (index = 0; index < palleteColor.length; index +=1) {
       palleteColor[index].style.backgroundColor = arrayColor[index];
   }
