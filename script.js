@@ -1,32 +1,43 @@
 window.onload = function colorPaletteGenerator() {
-  let colorPaletteSection = document.getElementsByClassName('color');
-  // The first color must be black
-  colorPaletteSection[0].style.backgroundColor = 'black';
-  // Generating all other colors randomly
-  for (let index = 1; index < colorPaletteSection.length; index += 1) {
-    let redColorParameter = parseInt(Math.random() * 255);
-    let greenColorParameter = parseInt(Math.random() * 255);
-    let blueColorParameter = parseInt(Math.random() * 255);
-    colorPaletteSection[index].style.backgroundColor = `rgb(${redColorParameter}, ${greenColorParameter}, ${blueColorParameter})`;
+  const colorPaletteSection = document.getElementsByClassName('color');
+  for (let index = 0; index < colorPaletteSection.length; index += 1) {
+    const redColorParameter = Math.floor(Math.random() * 255);
+    const greenColorParameter = Math.floor(Math.random() * 255);
+    const blueColorParameter = Math.floor(Math.random() * 255);
+    if (index === 0) {
+      colorPaletteSection[0].style.backgroundColor = 'black';
+    } else {
+      const fullRGBGenerator = `rgb(${redColorParameter}, ${greenColorParameter}, ${blueColorParameter})`;
+      colorPaletteSection[index].style.backgroundColor = fullRGBGenerator;
+    }
+    colorPaletteSection[index].addEventListener('click', () => {
+      // ao invés de capturar a cor, colocar uma classe 'selected' 
+      const colorInput = colorPaletteSection[index].style.backgroundColor;
+    });
   }
 };
 
 function pixelCreation() {
-  let maxRow = 5;
-  let maxLine = 5;
-  let pixelSection = document.querySelector('#pixel-board')
+  const maxRow = 5;
+  const maxLine = 5;
+  const pixelSection = document.querySelector('#pixel-board');
   for (let counter = 0; counter < maxLine; counter += 1) {
-    let eachRowDiv = document.createElement('div');
-    eachRowDiv.className = 'rowDiv'
+    const eachRowDiv = document.createElement('div');
+    eachRowDiv.className = 'rowDiv';
     pixelSection.appendChild(eachRowDiv);
     for (let index = 0; index < maxRow; index += 1) {
-      let pixel = document.createElement('div');
+      const pixel = document.createElement('div');
       pixel.className = 'pixel';
       eachRowDiv.appendChild(pixel);
     }
   }
-
-
-  console.log('foi');
 }
-pixelCreation()
+pixelCreation();
+
+
+
+
+function showintInputColor() {
+  console.log(colorInput);
+}
+showintInputColor()
