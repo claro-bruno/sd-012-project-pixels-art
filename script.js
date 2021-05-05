@@ -13,5 +13,8 @@ function setColor() {
 
     for (index = 0; index < divsColor.length; index += 1) {
         divsColor[index].style.backgroundColor = colorsList[index];
+        if(colorsList[index] === 'black'){
+            divsColor[index].className += ' selected';
+        };
     };
   };
