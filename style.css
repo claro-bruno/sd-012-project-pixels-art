@@ -4,12 +4,11 @@
     width: 100px;
     height: 100px;
 }
-
-#red-color {
-    background-color: red;
-}
 #black-color {
     background-color: black;
+}
+#red-color {
+    background-color: red;
 }
 #blue-color {
     background-color:blue;
