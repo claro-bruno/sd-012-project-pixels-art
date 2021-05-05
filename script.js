@@ -1,6 +1,7 @@
 function coresPaleta(array) {
   const paletas = document.getElementsByClassName('color');
   paletas[0].style.backgroundColor = 'black';
+  paletas[0].classList.add('selected');
   for (let index = 1; index < paletas.length; index += 1) {
     paletas[index].style.backgroundColor = array[index - 1];
   }
