@@ -11,8 +11,23 @@ for (let color = 0; color < colors.length; color += 1) {
     document.querySelector('#color-palette').appendChild(box);
 }
 
-// let board = 5;
+let board = 5;
 
-// for () {
+for (let size = 0; size < board; size += 1) {
+    let line = document.createElement('div');
+    line.className = 'line';
+    document.querySelector('.pixels').appendChild(line);
+}
 
-// }
+for (let pixel = 0; pixel < board; pixel += 1) {
+    for (let pixel = 0; pixel < board; pixel += 1) {
+        let box = document.createElement('div');
+        box.className = 'pixel';
+        box.style.width = '40px';
+        box.style.height = '40px';
+        box.style.border = '1px solid black';
+        box.style.display = 'inline-block'
+        box.style.backgroundColor = 'white';
+        document.querySelectorAll('.line')[pixel].appendChild(box);
+    }
+}
