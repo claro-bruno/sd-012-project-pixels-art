@@ -41,7 +41,19 @@ window.onload = function () {
     }
   });
 
+  function removeTable() {
+    const getTablelines = document.querySelectorAll('tr');
+    const getTableColumns = document.querySelectorAll('td');
+    for (let linIndex = 0; linIndex < getTablelines.length; linIndex += 1) {
+      getTablelines[linIndex].remove();
+      for (let colIndex = 0; colIndex < getTableColumns.length; colIndex += 1) {
+        getTableColumns[colIndex].remove();
+      }
+    }
+  }
+
   getGenerateButton.addEventListener('click', function () {
+    removeTable();
     let boardSize;
     if (getBoardSize.value < 5) {
       boardSize = 5;
