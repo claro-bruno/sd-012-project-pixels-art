@@ -72,11 +72,7 @@ function reSizeBoardPixel () {
     let inputValue = document.querySelector("#board-size").value;
 
     if (inputValue === "") {
-        alert("Board inválido!")
-    } else if (inputValue <= 4){
-        alert("Insira um valor maior que 5!")
-    } else if (inputValue => 51){ 
-        alert("Insira um valor menor que 50!")
+        alert("Board inválido!");
     } else {
         // Reseta PixelBoard
         let lineList = document.querySelectorAll("tr");
@@ -87,6 +83,12 @@ function reSizeBoardPixel () {
 
         // Redefine PixelBoard
         let numOfLines = document.querySelector("#board-size").value;
+
+        if (inputValue < 5){
+            numOfLines = 5;
+        } else if (inputValue > 50){ 
+            numOfLines = 50;
+        };
 
         for (let index = 0; index < parseInt(numOfLines); index += 1){
             let tableLine = document.createElement("tr");
