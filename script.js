@@ -45,6 +45,17 @@ for (let line = 0; line < captureBoardSize.value; line += 1) {
 let captureInitialColor = document.querySelector('.color');
 captureInitialColor.classList.add('selected');
 
+// Seleciona a cor desejada
+let captureColor = document.querySelectorAll('.color');
+
+for (let index = 0; index < captureColor.length; index += 1) {
+  captureColor[index].addEventListener('click', (event) => {
+    for (let secondIndex = 0; secondIndex < captureColor.length; secondIndex += 1){
+      captureColor[secondIndex].classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+  })
+}
 
 
 
