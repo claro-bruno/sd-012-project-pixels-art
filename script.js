@@ -1,6 +1,7 @@
 //variáveis
 let linhas = 5;
 let colunas = 5;
+let cores = document.getElementsByClassName("color");
 let QuadroDePixels = document.getElementById("pixel-board");
 
 //funções para formar quadro de pixels
@@ -27,3 +28,13 @@ function formaPixelsLinha (colunas){
 formaPixelsLinha(colunas);
 
 //função de selecionar cor
+function selecionaCor(event){
+    let corAntes = document.querySelector(".selected");
+    corAntes.classList.remove("selected");
+    event.target.classList.add("selected");
+};
+
+//adiciona eventListener
+for (let cor of cores){
+    cor.addEventListener("click", selecionaCor);
+};
