@@ -26,22 +26,27 @@ header {
 
 #main-container {
   width: 80%;
-  height: 400px;
+  height: 600px;
   margin: auto;
   margin-top: 20px;
   border: 1px solid black;
   position: relative;
 }
 
-#color-palette {
-  width: 740px;
-  height: 40px;
+#palette-container {
+  width: 780px;
+  height: 60px;
+  margin: 20px 150px 0;
   border: 2px solid black;
   position: absolute;
-  left: 0;
-  top: 0;
-  margin: 20px 174px 0;
-  padding-left: 2px;
+}
+
+#selected-container {
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  float: left;
+  margin: 8px 0 8px 20px;
 }
 
 #color-selected {
@@ -50,11 +55,35 @@ header {
   height: 30px;
   border: 3px solid rgb(18, 223, 127);
   border-radius: 50%;
-  margin: 2px 80px 2px 30px;
+  margin: 2px;
   background-color: black;
 }
 
+#color-palette {
+  width: 170px;
+  height: 40px;
+  border: 2px solid black;
+  float: left;
+  margin: 8px 0 8px 90px;
+}
+
 .color {
+  float: left;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  margin: 4px 2px;
+}
+
+#extended-palette {
+  width: 425px;
+  height: 40px;
+  border: 2px solid black;
+  float: left;
+  margin: 8px 20px 8px 0;
+}
+
+.color-extended {
   float: left;
   width: 30px;
   height: 30px;
