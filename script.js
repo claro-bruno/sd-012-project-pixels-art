@@ -1,31 +1,35 @@
-window.onload = paletaDeCores();
-
+paletaDeCores();
 quadroBranco();
 
 function paletaDeCores (){
-
 const paletaCores = document.getElementsByClassName('color');
 
 paletaCores[0].style.backgroundColor = 'black';
 paletaCores[1].style.backgroundColor = 'yellow';
 paletaCores[2].style.backgroundColor = '#ff9933';
 paletaCores[3].style.backgroundColor = '#009933';
-
-// Função para gerar os pixels do quadro branco //
+}
 
 function quadroBranco (){
-    let alturaQuadro = 5;
-    let larguraQuadro = 5;
-    const quadroBranco = document.getElementById('pixel-board');
-    const criarPixel = document.createElement('div');
+   
+    let colunas = 5;
+    let linhas = 5;
 
+    for (let index = 0; index < linhas; index += 1){
+        const divQuadroBranco = document.getElementById('pixel-board');
+        const criarDiv = document.createElement('div');
 
-    for (let index = 0; index < alturaQuadro; index += 1) {
-    for (let indice = 0; indice < larguraQuadro; indice += 1) {
-        criarPixel.className('pixel')
-        quadroBranco.appendChild(criarPixel);
+        criarDiv.className = ('pixel-line');
+        divQuadroBranco.appendChild(criarDiv);
+        
+        for (let indice = 0; indice < colunas; indice += 1){
+            const divPixelLine = document. querySelector('#pixel-board').lastElementChild;
+
+            const criarDivPixel = document.createElement('div');
+
+            criarDivPixel.className = ('pixel');
+            divPixelLine.appendChild(criarDivPixel);
+        }
     }
-}
-
-}
+    
 }

@@ -4,6 +4,10 @@
     padding: 25px 25px
 }
 
+.pixel-line{
+    margin: 0;
+}
+
 .pixel{
     display: inline-block;
     margin: 0;
