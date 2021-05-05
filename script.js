@@ -9,6 +9,7 @@ window.onload = function () {
 
     setInitialColors();
     changeSelectedColor();
+    changePixelsColor();
 
     function setInitialColors() {    
         for (index = 0; index < pixelsColor.length; index += 1) {
@@ -35,5 +36,17 @@ window.onload = function () {
           e.target.className = 'color selected';
       };
     
+      function changePixelsColor(){
+        let listOfPixels = document.querySelectorAll('.pixel');
+
+        for(let index = 0; index<listOfPixels.length; index +=1){
+            let currentPixel = listOfPixels[index];
+
+            currentPixel.addEventListener('click', function(e){
+                e.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+            });
+        };
+      };
+
 };
 
