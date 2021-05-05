@@ -48,3 +48,15 @@ function colorSelected(){
 
 }
 colorSelected();
+
+function paintPixel (){
+  let canvas = document.getElementById('pixel-board');
+
+  canvas.addEventListener('click', function(event){
+    let selectedColor = document.getElementsByClassName('color selected')[0].style.backgroundColor;
+    event.target.style.backgroundColor = selectedColor;
+  })
+
+}
+
+paintPixel();
