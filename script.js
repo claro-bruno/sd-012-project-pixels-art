@@ -31,6 +31,8 @@ function criaPaletaCores(cores, tamanho) {
   }
 }
 
+let corInicial = document.querySelector('.color').className = 'color selected';
+
 function criaQuadro(height, width, tamanho, color) {
   for (let index = 0; index < width; index += 1) {
         let novaLinha = document.createElement('tr');
