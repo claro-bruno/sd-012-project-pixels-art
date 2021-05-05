@@ -1,5 +1,6 @@
 const colorPalette = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
+const pallete = document.getElementsByClassName('color');
 
 function createPalette() {
   let div = document.createElement('div');
@@ -34,7 +35,25 @@ function createBoard (size) {
   }
 }
 
+function selectColor (event) {
+  for (let index = 0; index < pallete.length; index += 1) {
+    if (pallete[index].classList.contains('selected')) {
+      pallete[index].classList.remove('selected')
+    }
+  }
+  event.target.classList.add('selected');
+}
+
+function changeColor(event) {
+  const color = document.querySelector('.selected').style.backgroundColor;
+  event.target.style.backgroundColor = color;
+}
+
 window.onload = function pageLoad () {
   createPalette();
   createBoard(5);
+  pixelBoard.addEventListener('click', changeColor);
+  for (let index = 0; index < pallete.length; index += 1) {
+    pallete[index].addEventListener ('click', selectColor);
+  }
 };
