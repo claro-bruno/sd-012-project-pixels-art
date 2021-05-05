@@ -54,8 +54,13 @@ generateBoardButton.addEventListener('click', function () {
   colorPixel();
 });
 
-function generateRandomColors() {
-  Math.ceil(Math.random * 255)
+let colors = [];
+function generateRandomColor() {
+  let r = toString(Math.ceil(Math.random * 255));
+  let g = toString(Math.ceil(Math.random * 255));
+  let b = toString(Math.ceil(Math.random * 255));
+  let color = `rgb(${r} ,${g} ,${b})`;
+
 }
 
 function createLine(numberOfPixels) {
