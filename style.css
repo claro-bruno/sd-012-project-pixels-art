@@ -1,13 +1,28 @@
 
 .color{
-    border: solid black;
+    border: solid black ;
+    border-width: 1px;  
     width: 5em;
     height: 5em;
     display: inline-block;
     margin-top: 25px;
     margin-left: 5px;
+    
 }
 #preto{
-  
    background-color: black;
+
+}
+
+#vermelho {
+    background-color: red;
+
+}
+
+#laranja {
+    background-color: orange;
+}
+
+#azul {
+    background-color: blue;
 }
