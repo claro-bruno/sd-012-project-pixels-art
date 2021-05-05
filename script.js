@@ -14,9 +14,12 @@ function paletteGenerator() {
 }
 paletteGenerator();
 
-function tableGenerator() {
-  const canvasSize = 5;
+function tableGenerator(size) {
+  let canvasSize = size;
   const tableTag = document.querySelector('table');
+  tableTag.innerHTML = '';
+  //essa forma de limpar todos os filhos da table foi lida no:
+  // https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
 
   for (let index = 0; index < canvasSize; index += 1) {
     const tableRow = document.createElement('tr');
@@ -33,7 +36,7 @@ function tableGenerator() {
     }
   }
 }
-tableGenerator();
+tableGenerator(5);
 
 function colorSelected() {
   const selectedColor = document.getElementsByClassName('color selected');
@@ -67,3 +70,17 @@ function clearCanvas() {
   });
 }
 clearCanvas();
+
+function canvasSize() {
+  const generateButton = document.getElementById('generate-board');
+  const inputBox = document.getElementById('board-size');
+
+  generateButton.addEventListener('click', function () {
+    let inputBoxValue = inputBox.value;
+    if (inputBoxValue > 5 && inputBoxValue <= 50){
+      console.log(inputBoxValue);
+      tableGenerator(inputBoxValue);
+    }
+  });
+}
+canvasSize();
