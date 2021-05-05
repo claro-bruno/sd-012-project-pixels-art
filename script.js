@@ -21,6 +21,7 @@ function criaPixel() {
   let linha = 5;
   let coluna = 5;
   let divLinha = [];
+  let idPixel = 1;
   let lugar = document.getElementById("pixel-board");
   for (let indexColuna = 0; indexColuna < coluna; indexColuna += 1) {
     let criaLinha = document.createElement("div");
@@ -31,6 +32,8 @@ function criaPixel() {
         let pixel = document.createElement("div");
         pixel.setAttribute("class", "pixel");
         divLinha[indexColuna].appendChild(pixel);
+        pixel.setAttribute("id", "pixel" + idPixel);
+        idPixel += 1;
     }
   }
   
