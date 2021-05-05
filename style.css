@@ -3,3 +3,35 @@
     color: darkslateblue;
     text-align: center;
 }
+
+.color {
+    display: inline-block;
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+#preto {
+    background-color: black;
+}
+
+#amarelo {
+    background-color: yellow;
+}
+
+#azul {
+    background-color: blue;
+}
+
+#verde {
+    background-color: green;
+}
+
+#vermelho {
+    background-color: red;
+}
+
+#laranja {
+    background-color: orange;
+}
