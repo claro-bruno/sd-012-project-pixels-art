@@ -2,6 +2,7 @@ main {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  font-family: 'Fira Sans';
 }
 
 .color {
@@ -22,8 +23,6 @@ main {
 
 #pixel-board {
   line-height: 0;
-  /* width: 210px;
-  height: 210px; */
   border: 1px solid black;
 }
 
@@ -45,4 +44,13 @@ main {
 
 #button-space {
   margin: 10px;
+}
+
+#board-size {
+  width: 150px;
+  font-style: italic;
+}
+
+#generate-board {
+  padding: 1px;
 }

@@ -1,5 +1,7 @@
 const shadows = '2px 2px 2px grey';
 
+const generateButton = document.getElementById('generate-board')
+
 const createPalette = (color) => {
   const palette = document.getElementById('color-palette');
   const colorSquare = document.createElement('span');
