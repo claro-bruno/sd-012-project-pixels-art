@@ -9,8 +9,8 @@
 }
 
 .color {
-  height: 80px;
-  width: 80px;
+  height: 40px;
+  width: 40px;
   border: 1px solid black;
 }
 
@@ -33,16 +33,15 @@
 #pixel-board {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  max-width: 400px;
+  max-width: 200px;
   width: 100%;
   gap: 1px;
 }
 
 .pixel {
-  height: 80px;
-  width: 80px;
+  height: 40px;
+  width: 40px;
   border: 1px solid black;
   margin-top: 1px;
-  gap: 1px;
   background-color: white;
 }
