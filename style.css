@@ -15,12 +15,25 @@ h1 {
     margin-left: 527px;;
 }
 
+#pixel-board {
+    margin: 75px 0 0 542px;
+}
+
 .color {
     display: inline-block;
     margin: 0 10px 0 10px;
     width: 30px;
     height: 30px;
     border: black solid 1px;
+}
+
+.pixel {
+    display: inline-block;
+    margin: -10px -3.25px -10px -3.25px;
+    width: 40px;
+    height: 40px;
+    border: #000 solid 1px;
+    background-color: #fff;
 }
 
 .color:first-child {
