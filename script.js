@@ -1,8 +1,9 @@
 const palColor = document.getElementById('color-palette');
 const palleteColor = document.querySelectorAll('.color');
 const arrayColor = ['rgb(0,0,0','rgb(255,0,0','rgb(0,255,0','rgb(0,0,255'];
-const matrixPlace = document.getElementById('section2');
+const matrixPlace = document.getElementById('section3');
 const clearBoardBtn = document.getElementById('clear-board');
+const inputNBtn = document.querySelector('#generate-board');
 
 function fillPalletColors() {
   palleteColor[0].classList.add('selected')
@@ -23,18 +24,18 @@ function selectColor (event) {
   }
 }
 
-function createMatrix (cMwidth,CMlenght) {
+function createMatrix (N) {
   let pixelsMatrix = document.createElement('table');
   pixelsMatrix.id='pixel-board'
-  for (indexL = 0; indexL < CMlenght ; indexL += 1) {
+  for (indexL = 0; indexL < N ; indexL += 1) {
     pixelsMatrix.insertRow(indexL);
-    for (indexW = 0; indexW < cMwidth ; indexW += 1) {
+    for (indexW = 0; indexW < N ; indexW += 1) {
       pixelsMatrix.firstChild.children[indexL].insertCell(indexW).className='pixel';
     }
   }
   matrixPlace.appendChild(pixelsMatrix);
 }
-createMatrix(5,5);
+createMatrix(5);
 
 let pixMatrixChg = document.getElementById('pixel-board');
 pixMatrixChg.addEventListener('click',changeColor);
@@ -50,4 +51,16 @@ function clearBoard () {
     document.querySelectorAll('.pixel')[index].style.backgroundColor = 'rgb(255,255,255)';
     console.log(document.querySelectorAll('.pixel')[index]);
   }
+}
+
+
+//
+
+inputNBtn.addEventListener('click',newMatrixN);
+
+function newMatrixN () {
+  let inputN = document.querySelector('#board-size').value;
+  if (inputN == '') { alert('Board inválido!'); return; }
+  document.getElementById('pixel-board').remove();
+  createMatrix(inputN);
 }
