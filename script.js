@@ -23,16 +23,13 @@ function randomRGB() {
 }
 
 function createBoard (size) {
+  pixelBoard.style.width = (size * 42) + 'px';
   for (let row = 1; row <= size; row += 1) {
-    let row = document.createElement('div');
-    row.className = 'row';
-    
     for (let column = 1; column <= size; column += 1) {
       let div = document.createElement('div');
       div.className = 'pixel';
-      row.appendChild(div);
+      pixelBoard.appendChild(div);
     }
-    pixelBoard.appendChild(row);
   }
 }
 

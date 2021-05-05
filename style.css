@@ -1,4 +1,4 @@
-.color, .pixel {
+.color , .pixel {
   width: 40px;
   height: 40px;
   border: 1px solid black;
@@ -14,7 +14,10 @@
 }
 
 .row {
-    display: flex;
+  display: flex;
 }
 
-
+#pixel-board {
+  display: flex;
+  flex-wrap: wrap;
+}
