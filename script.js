@@ -4,7 +4,7 @@ window.onload = function () {
   let square = document.getElementsByClassName('color');
   let pixelFather = document.getElementById('pixel-board');
   
-  cor = {
+  let cor = {
     0: 'black',
     1: 'red',
     2: 'blue',
@@ -14,10 +14,10 @@ window.onload = function () {
   for (let key in cor) {
     square[key].style.backgroundColor = cor[key]
   }
-  
+
+  square[0].className = 'color selected';
+
   lines();
-  let begin = document.getElementsByClassName('pixel');
-  begin.style.backgroundColor = 'white';
 
   function lines() {
     for (let linha = 0; linha < line; linha += 1) {
