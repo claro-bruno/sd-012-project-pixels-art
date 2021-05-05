@@ -57,3 +57,14 @@ for (let i = 0; i < boardPaint.length; i += 1) {
     boardPaint[i].style.backgroundColor = selected.style.backgroundColor;
   });
 }
+
+// Colocar um botão de resetar
+const reset = document.createElement('button');
+reset.id = 'clear-board';
+reset.innerHTML = 'Limpar';
+document.body.insertBefore(reset, document.body.children[2]);
+for (let i = 0; i < boardPaint.length; i += 1) {
+  reset.addEventListener('click', () => {
+    boardPaint[i].style.backgroundColor = 'white';
+  });
+}
