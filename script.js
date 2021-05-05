@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   // gera um número hexadecimal e adiciona à uma string.
   function generateRandomColor() {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -38,4 +38,24 @@ window.onload = function() {
   }
 
   initialColor('color1');
+
+  function changeSelected(element) {
+    let selected = document.querySelector('.selected');
+    selected.className = 'color';
+    element.target.className += ' selected';
+  }
+
+  function changeSelectedClick() {
+    const color1 = document.getElementById('color1');
+    const color2 = document.getElementById('color2');
+    const color3 = document.getElementById('color3');
+    const color4 = document.getElementById('color4');
+
+    color1.addEventListener('click', changeSelected);
+    color2.addEventListener('click', changeSelected);
+    color3.addEventListener('click', changeSelected);
+    color4.addEventListener('click', changeSelected);
+  }
+
+  changeSelectedClick();
 };
