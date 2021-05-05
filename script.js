@@ -13,26 +13,30 @@ for (let color = 0; color < colors.length; color += 1) {
 }
 
 //Requisitos 04 e 05
-let board = 5;
+function createBoard(board) {
 
-for (let size = 0; size < board; size += 1) {
-    let line = document.createElement('div');
-    line.className = 'line';
-    document.querySelector('#pixel-board').appendChild(line);
-}
+    for (let size = 0; size < board; size += 1) {
+        let line = document.createElement('div');
+        line.className = 'line';
+        line.style.lineHeight = 0;
+        document.querySelector('#pixel-board').appendChild(line);
+    }
 
-for (let pixel = 0; pixel < board; pixel += 1) {
     for (let pixel = 0; pixel < board; pixel += 1) {
-        let box = document.createElement('div');
-        box.className = 'pixel';
-        box.style.width = '40px';
-        box.style.height = '40px';
-        box.style.border = '1px solid black';
-        box.style.display = 'inline-block';
-        box.style.backgroundColor = 'white';
-        document.querySelectorAll('.line')[pixel].appendChild(box);
+        for (let pixel = 0; pixel < board; pixel += 1) {
+            let box = document.createElement('div');
+            box.className = 'pixel';
+            box.style.width = '40px';
+            box.style.height = '40px';
+            box.style.border = '1px solid black';
+            box.style.display = 'inline-block';
+            box.style.backgroundColor = 'white';
+            document.querySelectorAll('.line')[pixel].appendChild(box);
+        }
     }
 }
+
+createBoard (5);
 
 //Requisito 06
 document.querySelector('#color-palette').firstElementChild.className = 'color selected';
@@ -60,3 +64,17 @@ document.querySelector('#clear-board').addEventListener('click', function () {
     }
 })
 
+//Requisito 10
+document.querySelector('#generate-board').addEventListener('click', function () {
+    let newBoard = document.querySelector('#board-size').value;
+    let oldBoard = document.querySelectorAll('.line');
+    let board = document.querySelector('#pixel-board');
+    if (newBoard === '') {
+        alert('Board inválido!');
+    } else {
+        for (let index = 0; index < oldBoard.length; index +=1) {
+            board.removeChild(board.lastElementChild);
+        }
+        createBoard(newBoard);
+    } 
+})
