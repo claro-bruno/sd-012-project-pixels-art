@@ -1,0 +1,30 @@
+h1 {
+  text-align: center;
+}
+
+#color-palette {
+  list-style: none;
+  text-align: center;
+}
+
+.color {
+  display: inline-block;
+  padding: 30px;
+  border: solid black 1px;
+}
+
+#color1 {
+  background-color: #38FFE0;
+} 
+
+#color2 {
+  background-color: #FFCD1F;
+}
+
+#color3 {
+  background-color: #B38D04;
+}
+
+#color4 {
+  background-color: #FE05FF;
+}
