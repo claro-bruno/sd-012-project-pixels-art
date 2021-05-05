@@ -44,6 +44,13 @@ for (let index = 0; index < pixel.length; index += 1) {
   });
 }
 
+let botaoApaga = document.querySelector('#clear-board');
+botaoApaga.addEventListener('click', function (){
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+})
+
 function criaPaletaCores(cores, tamanho) {
   for (let index = 0; index < cores.length; index += 1) {
     let novaCor = document.createElement('li');
@@ -81,5 +88,4 @@ function criaBotaoApagar() {
   let criaBotao = document.createElement('button');
   criaBotao.innerHTML = 'Limpar';
   botao.appendChild(criaBotao);
-
 }

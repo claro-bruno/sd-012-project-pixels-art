@@ -15,5 +15,5 @@ body {
 }
 
 #pixel-board {
-    display: inline;
+    display: inline-block;
 }
