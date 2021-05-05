@@ -3,13 +3,14 @@ const pixelBoard = document.getElementById('pixel-board');
 const pallete = document.getElementsByClassName('color');
 const btnClear = document.getElementById('clear-board');
 const btnGenerate = document.getElementById('generate-board');
+const boardContainer = document.getElementById('board-container');
 const boardSize = document.getElementById('board-size');
 
 function randomRGB() {
-  const r, g, b;
-  r = parseInt((Math.random() * 255), 10);
-  g = parseInt((Math.random() * 255), 10);
-  b = parseInt((Math.random() * 255), 10);
+  let r, g, b;
+  r = parseInt(Math.random() * 255);
+  g = parseInt(Math.random() * 255);
+  b = parseInt(Math.random() * 255);
   return `rgb(${r}, ${g}, ${b})`;
 }
 
@@ -20,7 +21,7 @@ function createPalette() {
   div.style.backgroundColor = 'black';
   colorPalette.appendChild(div);
   for (let index = 0; index < 3; index += 1) {
-    div = document.createElement('div');
+    let div = document.createElement('div');
     div.className = 'color';
     div.style.backgroundColor = randomRGB();
     colorPalette.appendChild(div); 
@@ -31,8 +32,8 @@ function createBoard () {
   let size = boardSize.value;
   if (size < 5 || size > 50 || size == null) {
     window.alert('Board inválido!')
-    if (size < 5 || size == null) { size = 5; }
-    if (size > 50) { size = 50; }
+    if (size < 5 || size == null) {size = 5; }
+    if (size > 50) {size = 50; }
   } 
   resetBoard();
   const pixelBoard = document.getElementById('pixel-board');
@@ -75,10 +76,11 @@ window.onload = function pageLoad () {
   createPalette();
   pixelBoard.addEventListener('click', changeColor);
   for (let index = 0; index < pallete.length; index += 1) {
-    pallete[index].addEventListener ('click', selectColor);
+   pallete[index].addEventListener ('click', selectColor);
   }
   btnClear.addEventListener('click', clearBoard);
   createBoard();
   boardSize.value = null;
   btnGenerate.addEventListener('click', createBoard);
+  
 };
