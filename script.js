@@ -1,3 +1,4 @@
+//Requisitos 02 e 03
 let colors = ['black', 'green', 'blue', 'red'];
 
 for (let color = 0; color < colors.length; color += 1) {
@@ -11,6 +12,7 @@ for (let color = 0; color < colors.length; color += 1) {
     document.querySelector('#color-palette').appendChild(box);
 }
 
+//Requisitos 04 e 05
 let board = 5;
 
 for (let size = 0; size < board; size += 1) {
@@ -32,4 +34,13 @@ for (let pixel = 0; pixel < board; pixel += 1) {
     }
 }
 
+//Requisito 06
 document.querySelector('#color-palette').firstElementChild.className = 'color selected'
+
+//Requisito 07
+document.body.addEventListener('click', function (event) {
+    if (event.target.className === 'color' ){
+        document.querySelector('.selected').className = 'color'
+        event.target.className = 'color selected'
+    }
+})
