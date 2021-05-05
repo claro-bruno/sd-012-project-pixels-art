@@ -1,9 +1,9 @@
 #color1 {
-  background-color: aquamarine;
+  background-color: black;
 }
 
 #color2 {
-  background-color:cyan;
+  background-color: cyan;
 }
 
 #color3 {
@@ -14,10 +14,10 @@
   background-color: deeppink;
 }
 
-.color{
+.color {
   width: 50px;
   height: 50px;
   border-color: black;
   border: 1px solid;  
-  display:inline-block
+  display: inline-block;
 }
