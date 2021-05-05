@@ -37,4 +37,15 @@ window.onload = function () {
   }
   selectedColors();
 
+  function paintPixels() {
+    let pixelsArray = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixelsArray.length; index += 1) {
+        pixelsArray[index].addEventListener('click', function(event) {
+            let colorSelected = document.querySelector('.selected');
+            let color = getComputedStyle(colorSelected).backgroundColor;
+            event.target.style.backgroundColor = color;
+        })
+    }
+  }
+  paintPixels();
 };
