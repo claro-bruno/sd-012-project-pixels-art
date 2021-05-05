@@ -1,9 +1,8 @@
 #color-palette {
-  border: solid black;
   border-width: 1px;
 }
 
-.color-black {
+#color-black {
   border: solid black;
   border-width: 1px;
   background-color: black;
@@ -12,7 +11,7 @@
   display: inline-block;
 }
 
-.color-burlywood {
+#color-burlywood {
   border: solid black;
   border-width: 1px;
   background-color: burlywood;
@@ -21,7 +20,7 @@
   display: inline-block;
 }
 
-.color-teal {
+#color-teal {
   border: solid black;
   border-width: 1px;
   background-color: teal;
@@ -30,7 +29,7 @@
   display: inline-block;
 }
 
-.color-goldenrod {
+#color-goldenrod {
   border: solid black;
   border-width: 1px;
   background-color: goldenrod;
@@ -38,3 +37,12 @@
   height: 100px;
   display: inline-block;
 }
+
+#table{ 
+  display: table; 
+}
+.tr{ 
+  display: table-row; 
+}
+.td{ 
+  display: table-cell; }
