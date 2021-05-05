@@ -36,14 +36,21 @@ pixels.addEventListener("click", function (event) {
 
 });
 
+let botaoApagar = document.querySelector("#botton")
+let botao = document.createElement("button");
 
-let botao = document.getElementById("clear-board");
+botaoApagar.appendChild(botao);
 
-botao.addEventListener("click", function () {
+botao.id="clear-board"
+botao.innerText="Limpar"
 
-  for (i = 0; i < 25; i += 1) {
 
-    document.querySelectorAll(".pixel")[i].style.backgroundColor = "white";
+botao.addEventListener("click", function(){
 
-  }
-});
+    for(let i = 0; i<25; i+=1){
+
+    document.querySelectorAll(".pixel")[i].style.backgroundColor="white"
+}
+})
+
+
