@@ -5,11 +5,6 @@
 
 ul {
     list-style: none;
-    
-}
-
-.list-color {
-    font-family: 'Times New Roman', Times, serif;
 }
 
 .medidas {
@@ -18,35 +13,9 @@ ul {
     display: inline;
 }
 
-.color-1 {
-    background-color: orange;
+.color {
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
-    color: white;
+    color: black;
     border: 1px solid;
 }
-
-.color-2 {
-    background-color: blue;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    color: white;
-    border: 1px solid;
-}
-
-.color-3 {
-    background-color: black;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    color: white;
-    border: 1px solid;
-}
-
-.color-4 {
-    background-color: yellow;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    color: white;
-    border: 1px solid;
-}
-
