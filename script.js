@@ -1,11 +1,11 @@
-window.onload = function projetoExec () {
-  //gera um número hexadecimal e adiciona à uma string.
-  function generateRandomColor () {
+window.onload = function() {
+  // gera um número hexadecimal e adiciona à uma string.
+  function generateRandomColor() {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
     return `#${randomColor}`;
   }
 
-  //cria elementos da paletta.
+  // cria elementos da paletta.
   function createPaletteElement(ID, color) {
     const colorPalette = document.getElementById('color-palette');
     const createDiv = document.createElement('div');
@@ -20,7 +20,7 @@ window.onload = function projetoExec () {
   createPaletteElement('color3', generateRandomColor());
   createPaletteElement('color4', generateRandomColor());
 
-  //cria elemento da pixel board.
+  // cria elemento da pixel board.
   function createPixelBaordElement() {
     const pixelBoard = document.getElementById('pixel-board');
     for (let index = 0; index < 25; index += 1) {
