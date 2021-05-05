@@ -108,7 +108,29 @@ window.onload = function () {
     });
   }
   setGreenPixel();
+
+  function clearBoard(){
+    let buttonClear = document.querySelector('#clear-board');
+    buttonClear.addEventListener('click', function(){
+        
+        let allPixels = document.querySelectorAll('.pixel')
+        console.log('woooooo')
+        allPixels.style.backgroundColor = 'white';
+
+    //   let allPixels = document.querySelectorAll('.pixel')
+    //   for (let index = 0; index < allPixels.length; index += 1) {
+    //     console.log('woooooo')
+    //     allPixels.style.backgroundColor = 'white';
+    //   }
+
+      
+    });
+  }
+  clearBoard();
+
+
 };
+
 
 
 
