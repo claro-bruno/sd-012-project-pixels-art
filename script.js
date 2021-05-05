@@ -23,7 +23,6 @@ const createPixels = (n) => {
     board.appendChild(pixel);
   }
 };
-createPixels(25);
 
 const selectColor = () => {
   const paletteItems = document.getElementsByClassName('color');
@@ -61,5 +60,6 @@ window.onload = () => {
   createPalette('green');
   createPalette('blue');
   selectColor();
+  createPixels(25);
   paintPixels();
 };
