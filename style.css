@@ -1,6 +1,7 @@
 body {
     background-color:  rgb(231, 255, 254);
     font-family: monospace, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
 }
 
 #color-palette {
@@ -48,5 +49,6 @@ body {
     width: 40px;
     line-height: 100px;
     margin-bottom: -3px;
+    background-color: white;
 }
 

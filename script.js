@@ -11,6 +11,9 @@ function resetColors() {
 
 }
 
-resetColors();
+function initialColor() {
 
+}
+
+resetColors();
 
