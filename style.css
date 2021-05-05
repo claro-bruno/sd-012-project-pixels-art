@@ -21,10 +21,26 @@
     background-color: green;
 }
 
+.table {
+    display: table;
+    border: 2px solid black;
+}
+
+.tr {
+    display: table-row;
+}
+
+.td {
+    display: table-cell;
+}
+
+#pixel-board {
+    margin: 0;
+}
+
 .pixel {
     height: 40px;
     width: 40px;
-    border: 1px solid black;
+    border: 1px black solid;
     background-color: white;
-    display: inline-block;
 }
