@@ -1,0 +1,25 @@
+#color-pallete {
+  display: inline-block;
+}
+
+.color {
+  border : 1px solid black;
+  height : 50px;
+  width: 50px;
+}
+
+.colorP1 {
+  background-color: black;
+}
+
+.colorP2 {
+  background-color: red;
+}
+
+.colorP3 {
+  background-color: green;
+}
+
+.colorP4 {
+  background-color: blue;
+}
