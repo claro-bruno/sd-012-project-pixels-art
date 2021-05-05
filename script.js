@@ -6,8 +6,11 @@ const pixelSize = 40;
 const paletteSize = 4;
 let selected = 'black';
 
-// Adiciona o event listener de click e toma a ação dependendo do elemento clicado
-document.addEventListener('click', function (eventObject) {
+// Adiciona o event listener de click
+document.addEventListener('click', clicker);
+
+// Toma a ação dependendo do elemento clicado
+function clicker(eventObject) {
   const target = eventObject.target;
   if (target.classList.contains('pixel')) {
     target.style.backgroundColor = selected;
@@ -17,27 +20,11 @@ document.addEventListener('click', function (eventObject) {
     target.className = ('color selected');
     selected = window.getComputedStyle(target).backgroundColor;
   }
-});
-
-// Cria novo board com tamanho definido pelo usuário
-function newSize() {
-  boardSize = sizeQuery.value;
-  if (sizeQuery.value === '') {
-    alert('Board inválido!');
-  }
-  if (sizeQuery.value > 50) {
-    boardSize = 50;
-  }
-  if (sizeQuery.value < 5) {
-    boardSize = 5;
-  }
-  resetBoard();
-  resizeGrid();
 }
 
 // Cria uma string de argumento para o estilo grid-template-columns
-function resizeGrid (){
-  let grid = `repeat(${boardSize}, ${pixelSize}px)`;
+function resizeGrid() {
+  const grid = `repeat(${boardSize}, ${pixelSize}px)`;
   board.style.gridTemplateColumns = grid;
 }
 
@@ -64,10 +51,26 @@ function resetPalette() {
     } else {
       div.className = ('color');
       const randomColor = Math.floor(Math.random() * 16777215).toString(16); // Fonte: https://css-tricks.com/snippets/javascript/random-hex-color/
-      div.style.backgroundColor = '#' + randomColor;
+      div.style.backgroundColor = `#${randomColor}`;
     }
     palette.appendChild(div);
   }
+}
+
+// Cria novo board com tamanho definido pelo usuário
+function newSize() {
+  boardSize = sizeQuery.value;
+  if (sizeQuery.value === '') {
+    alert('Board inválido!');
+  }
+  if (sizeQuery.value > 50) {
+    boardSize = 50;
+  }
+  if (sizeQuery.value < 5) {
+    boardSize = 5;
+  }
+  resetBoard();
+  resizeGrid();
 }
 
 // Criação inicial do setup
