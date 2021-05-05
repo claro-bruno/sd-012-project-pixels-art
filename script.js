@@ -1,1 +1,1 @@
-let getContainer = document.querySelectorAll('#color-palete');
+
