@@ -8,22 +8,5 @@ div p {
     height: 70px;
     width: 70px;
     display: inline-block;
-    
 
-}
-.color-preto{
-    background-color: black;
-    color: white;
-}
-.color-roxo{
-    background-color: purple;
-    color: white;
-}
-.color-vermelho{
-    background-color: red;
-    color: white;
-}
-.color-azul{
-    background-color: blue;
-    color: white;
 }
