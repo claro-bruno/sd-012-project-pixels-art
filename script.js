@@ -9,7 +9,6 @@ function palleteCreate () {
 
     colorPallete.appendChild(firstElement);
 
-
     for (let index = 0; index < 3; index += 1){
         let element = document.createElement("div");
         element.className = "color";
@@ -65,3 +64,35 @@ function clearBoard () {
 };
 
 document.querySelector("#clear-board").addEventListener("click", clearBoard);
+
+// Redefinir tamanho do Pixel Board
+
+function reSizeBoardPixel () {
+    let inputValue = document.querySelector("#board-size").value;
+
+    if (inputValue === "") {
+        alert("Board inválido!")
+    } else {
+        // Reseta PixelBoard
+        document.querySelector("tbody").remove();
+
+        // Redefine PixelBoard
+        let numOfLines = document.querySelector("#board-size").value;
+
+        for (let index = 0; index < parseInt(numOfLines); index += 1){
+            let tableLine = document.createElement("tr");
+            
+            for (let index2 = 0; index < parseInt(numOfLines); index2 += 1) {
+                let pixelPoint = document.createElement("td");
+                pixelPoint.className = "pixel";
+                tableLine.innerHTML += pixelPoint;
+            };
+
+            document.querySelector("table").appendChild(tableLine);
+        };
+    };
+};
+
+let reSizeButton = document.querySelector("#generate-board");
+
+reSizeButton.addEventListener("click", reSizeBoardPixel);
