@@ -1,51 +1,35 @@
 #color-palette {
   border-width: 1px;
 }
+.color {
+padding: 40px;
+border: solid 1px black;
+display: inline-block;
+}
 
 #color-black {
-  border: solid black;
-  border-width: 1px;
   background-color: black;
-  width: 45px;
-  height: 45px;
-  display: inline-block;
 }
 
 #color-burlywood {
-  border: solid black;
-  border-width: 1px;
   background-color: burlywood;
-  width: 45px;
-  height: 45px;
-  display: inline-block;
 }
 
 #color-teal {
-  border: solid black;
-  border-width: 1px;
   background-color: teal;
-  width: 45px;
-  height: 45px;
-  display: inline-block;
 }
 
 #color-goldenrod {
-  border: solid black;
-  border-width: 1px;
   background-color: goldenrod;
-  width: 45px;
-  height: 45px;
-  display: inline-block;
 }
 
-.pixel-lines {
-  display: table-row;
-  padding: 5px;
+.pixel-board {
+  width: 300px;
+  height: 300px;
 }
 .pixel {
   background-color: white;
-  height: 40px;
-  width: 40px;
+  padding: 40px;
   border: 1px black solid;
   margin: -3px;
   display: inline-block;
