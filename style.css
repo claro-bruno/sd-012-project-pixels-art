@@ -3,28 +3,27 @@
     border-color: black;
     width: 50px;
     height: 50px;
+    display: inline-block;
+    margin: 10px;
     
 }
 
-#darkslategray {
-    background-color: darkslategray;
+#black {
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    background: darkslategray;
-}
+    background-color: black;
+   }
 
-#mintcream {
-    background-color:mintcream;
+#mint {
+    background-color:rgb(124, 189, 162);
     display: inline-block;
 }
 
-#darkblue {
-    background-color: darkblue;
+#blue {
+    background-color: rgb(10, 20, 65);
     display: inline-block;
 }
 
-#salmon {
-    background-color: salmon;
+#golden {
+    background-color: rgb(241, 124, 13);
     display: inline-block;
 }
