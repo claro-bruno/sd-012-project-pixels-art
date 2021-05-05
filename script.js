@@ -16,4 +16,16 @@ window.onload = () => {
   createPalette('red');
   createPalette('green');
   createPalette('blue');
-}
+};
+
+const createPixels = (n) => {
+  const board = document.getElementById('pixel-board');
+
+  for (let i = 1; i <= n; i += 1) {
+    const pixel = document.createElement('span');
+    pixel.style.border = '1px solid black';
+    pixel.classList.add('pixel');
+    board.appendChild(pixel);
+  }
+};
+createPixels(25);
