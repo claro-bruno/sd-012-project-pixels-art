@@ -4,6 +4,7 @@ const pixelBoard = document.getElementById('pixel-board');
 function createPalette() {
   let div = document.createElement('div');
   div.className = 'color';
+  div.classList.add('selected');
   div.style.backgroundColor = 'black';
   colorPalette.appendChild(div);
   for (let index = 0; index < 3; index += 1) {
