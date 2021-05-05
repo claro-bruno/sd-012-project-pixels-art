@@ -43,8 +43,8 @@ function criaQuadro (largura, comprimento) {
         let criaPixel = document.createElement('div');
         criaPixel.className = 'pixel';
         criaPixel.style.backgroundColor = 'white';
-        criaPixel.style.width = '30px';
-        criaPixel.style.height = '30px';
+        criaPixel.style.width = '40px';
+        criaPixel.style.height = '40px';
         criaPixel.style.display = 'inline-block';
         getBoard.appendChild(criaPixel);
     } 
