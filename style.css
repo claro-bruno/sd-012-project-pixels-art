@@ -1,0 +1,36 @@
+#title {
+    text-align: center;
+}
+
+#color-palette {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+}
+
+.btn1 {
+    background: green;
+}
+
+.btn2 {
+    background: yellow;
+}
+
+.btn3 {
+    background: blue;
+}
+
+.btn4 {
+    background: red;
+}
+
+.color {
+    padding: 40px;
+    margin-left: 20px;
+    border: solid black 1px;
+    cursor: pointer;
+}
