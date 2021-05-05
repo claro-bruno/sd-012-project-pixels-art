@@ -1,5 +1,5 @@
 let colorblack = document.getElementByClassName('.color');
-colorblack.classlist.add(‘selected’);
+colorblack.classlist.add("selected");
 
 window.onload = function BlackColor() {
   let colorblack = document.querySelectorAll(".color")[0];
