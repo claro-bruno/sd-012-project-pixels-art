@@ -5,6 +5,8 @@ body {
 
 #color-palette div {
   display: inline-block;
+  width: 25px;
+  height: 25px;
 }
 
 #black {
@@ -25,4 +27,19 @@ body {
 #green {
   border: 1px solid black;
   background-color: green;
+}
+
+#pixel-board {
+  display: inline-block;
+  margin: 0;
+  width: 250px;
+  height: 250px;
+}
+
+.pixel {
+  border: 1px solid black;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  float: left;
 }
