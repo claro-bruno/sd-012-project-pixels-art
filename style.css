@@ -1,13 +1,13 @@
+#color-palette {
+    margin: 23px;
+}
 .color {
     border: 1px solid;
     border-color: black;
     width: 40px;
     height: 40px;
     display: inline-block;
-    margin: 10px;
-    margin-bottom: 30px;
-    
-    
+    margin: 5px;
 }
 
 #black {
@@ -30,9 +30,14 @@
     display: inline-block;
 }
 
+.pixel-board {
+    width: 250px;
+    height: 250px;
+}
 .linha {
     margin: 0;
 }
+
 .pixel{
     border: 1px solid;
     border-color: black;
