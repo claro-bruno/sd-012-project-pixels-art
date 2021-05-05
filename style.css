@@ -1,5 +1,19 @@
-#color-pallete{
-    
+body {
+    text-align: center;
+}
+
+
+#title {
+    top: 0px;
+
+}
+
+#color-palette{
+    display: block;
+    background-color: black;
+    padding: 5px;
+    margin-left: 301px;
+    margin-right: 301px;
 }
 
 .color {
