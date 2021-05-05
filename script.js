@@ -11,3 +11,8 @@ let greenSquare = document.querySelector('#color4');
 greenSquare.style.backgroundColor = 'green'
 
 
+document.onload = () => {
+    let firstSquare = document.querySelector('.color')[0];
+    firstSquare.className('selected')
+    firstSquare.style.backgroundColor= 'black'
+}
