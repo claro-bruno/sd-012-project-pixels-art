@@ -6,7 +6,11 @@ window.onload = function () {
     for (let i = 0; i < cores.length; i += 1) {
       const div = document.createElement('div');
       div.style.backgroundColor = cores[i];
-      div.className = 'color';
+      if (i === 0) {
+        div.className = 'color selected';
+      } else {
+        div.className = 'color';
+      }
       pegarPaleta.appendChild(div);
     }
   }
