@@ -1,14 +1,8 @@
-function delimitaCor (){
-let cores = document.getElementsByClassName("color")
-    for(index = 0; index < cores.length; index +=1){
-        if(cores[index] === "Azul") {
-            cores.style.backgroundColor = "blue"
-        } else if(cores[index === "Vermelho"]){
-            cores.style.backgroundColor = "red"
-        } else if(cores[index] === "Amarelo"){
-            cores.style.backgroundColor = "yellow"
-        } else if(cores[index] === "Roxo"){
-            cores.style.backgroundColor = "purple"
-        }
-    }
-}
+document.getElementsByClassName("color")[0].style.backgroundColor = "black"
+document.getElementsByClassName("color")[0].innerHTML = "Black"
+document.getElementsByClassName("color")[1].style.backgroundColor = "red"
+document.getElementsByClassName("color")[1].innerHTML = "Red"
+document.getElementsByClassName("color")[2].style.backgroundColor = "blue"
+document.getElementsByClassName("color")[2].innerHTML = "Blue"
+document.getElementsByClassName("color")[3].style.backgroundColor = "orange"
+document.getElementsByClassName("color")[3].innerHTML = "Orange"
