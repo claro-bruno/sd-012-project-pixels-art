@@ -5,3 +5,26 @@
     border-width: 1px;
     padding: 10px;
 }
+
+#pixel-board {
+    padding: 10px;
+}
+
+.pixel {
+    height: 40px;
+    width: 40px;
+    display: table-cell;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.pixelLine {
+    display: table-row;
+    height: 40px;
+    width: 40px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
