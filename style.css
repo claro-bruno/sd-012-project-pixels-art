@@ -10,7 +10,6 @@ body {
 }
 
 #color-palette {
-    /* background-color: gray; */
     justify-content: center;
     width: 50vw;
     height: 150px;
@@ -45,4 +44,19 @@ body {
 .color:nth-child(4) {
     background-color: red; 
     border: 1px solid black;
+}
+
+#pixel-board {
+    max-width: 150px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.pixel {
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    flex-wrap: wrap;
 }
