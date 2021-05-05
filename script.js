@@ -9,6 +9,9 @@ window.onload = function() {
             pixel.className = "pixel";
             pixel.style.backgroundColor = "white";
             pixel.style.display = "inline-block";
+            pixel.style.width = "40px";
+            pixel.style.height = "40px";
+            pixel.style.border = "1px solid black";
             linha_pixel.appendChild(pixel);
         }
     }
