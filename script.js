@@ -42,8 +42,8 @@ for (let line = 0; line < captureBoardSize.value; line += 1) {
 }
 
 // Seleciona a cor preta como cor inicial
-let captureInitialColor = document.querySelector('.color').style.backgroundColor;
-
+let captureInitialColor = document.querySelector('.color');
+captureInitialColor.classList.add('selected');
 
 
 
