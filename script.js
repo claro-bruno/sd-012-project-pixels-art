@@ -27,4 +27,28 @@ window.onload = function () {
   }
 
   criarPixelBoard(5);
+
+  function selecionarCores() {
+    const coresPaleta = document.querySelectorAll('.color');
+    let indexSelecionado = 0;
+    for (let i = 0; i < coresPaleta.length; i += 1) {
+      let cor = coresPaleta[i];
+      cor.addEventListener('click', function (event) {
+
+        if (event.target.className === 'color') {
+          resetSelect();
+          event.target.className = 'color selected';
+        } 
+      })
+    }
+  }
+
+  function resetSelect() {
+    const cores = document.querySelectorAll('.color');
+    for (let i = 0; i < cores.length; i += 1) {
+      cores[i].className = 'color';
+    }
+  }
+
+  selecionarCores();
 }
