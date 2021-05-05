@@ -1,16 +1,22 @@
-let listaCores = document.getElementById('color-palette');
+const listaCores = document.getElementById('color-palette');
+const colorList = document.getElementsByClassName('color');
+
+
+function createColorPalette (){
 for (index = 0 ; index < 4; index +=1 ){
    let colorSquare = document.createElement('li');
    colorSquare.className = 'color';
    listaCores.appendChild(colorSquare);
 }
-
-
-let colorList = document.getElementsByClassName('color');
+}
+createColorPalette()
+function createColorList (){
 let colorArray = [ 'black' ,'red', 'purple', 'yellow'];
 for(index = 0 ; index < colorList.length ; index +=1){
    colorList[index].style.backgroundColor = colorArray[index]
 }
+}
+createColorList();
 document.getElementsByClassName('color')[0].classList.add('selected') ;
 
 function createPixelBoard (number){
@@ -33,4 +39,15 @@ function createPixelBoard (number){
       }
     }
 }
-createPixelBoard(5);
+createPixelBoard(6);
+const paletaCores = document.querySelector('#color-palette');
+function selectedColor() {
+  paletaCores.addEventListener('click', (event) => {
+    const color = document.querySelector('.selected');
+    if (event.target.id !== 'color-palette') {
+      color.classList.remove('selected');
+      event.target.classList.add('selected');
+    }
+  });
+}
+selectedColor();
