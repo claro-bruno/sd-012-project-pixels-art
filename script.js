@@ -40,6 +40,12 @@ generateBoardButton.addEventListener('click', function () {
   if (!input.value) {
     alert("Board inválido!");
   }
+  if (input.value < 5) {
+    input.value = 5;
+  }
+  if (input.value > 50) {
+    input.value = 50;
+  }
   removeOldBoard();
   for (let index = 0; index < input.value; index += 1) {
     let row = createLine(input.value);
@@ -47,6 +53,10 @@ generateBoardButton.addEventListener('click', function () {
   };
   colorPixel();
 });
+
+function generateRandomColors() {
+  Math.ceil(Math.random * 255)
+}
 
 function createLine(numberOfPixels) {
   let row = document.createElement('tr');
