@@ -73,8 +73,6 @@ window.onload = function() {
 
 
     for (let arrayCores = 0; arrayCores < getColor.length; arrayCores += 1) {
-        console.log(getColor[arrayCores]);
-
     getColor[arrayCores].addEventListener('click', function(event) {
         for (let i = 0; i < getColor.length; i += 1) {
             if (getColor[i].className === 'color selected') {
@@ -89,3 +87,24 @@ window.onload = function() {
 }
 
 capturaCores();
+
+
+// ex 8
+
+function mudaCor () {
+    let getPixel = document.querySelectorAll('.pixel');
+    let corSelecionada = document.getElementsByClassName('selected');
+
+     for(let allPixel = 0; allPixel < getPixel.length; allPixel += 1){
+        getPixel[allPixel].addEventListener('click', function(evento) {
+            for (let select = 0; select < corSelecionada.length; select += 1){
+                if (evento.target.style.backgroundColor !== corSelecionada[select].innerHTML) {
+                    evento.target.style.backgroundColor = corSelecionada[select].style.backgroundColor;
+                }
+            }
+            
+        })
+    } 
+}
+
+mudaCor();
