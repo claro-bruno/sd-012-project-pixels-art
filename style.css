@@ -2,4 +2,5 @@
     width: 100px;
     height: 100px;
     display: table-cell;
+    border: black solid 1px;
 }
