@@ -1,5 +1,5 @@
 createPallete(4);
-setPalleteColors();
+createPixelBoard(25);
 
 function createPallete(numberOfColors) {
     let colorPallete = document.getElementById('color-palette');
@@ -9,6 +9,8 @@ function createPallete(numberOfColors) {
         color.className = 'color';
         colorPallete.appendChild(color);
     }
+
+    setPalleteColors();
 }
 
 function setPalleteColors() {
@@ -16,7 +18,20 @@ function setPalleteColors() {
     let colors = ['black', 'red', 'yellow', 'green'];
     
     for (let index = 0; index < palleteColors.length; index += 1) {
-        palleteColors[index].style.backgroundColor = colors[index];
-        console.log(palleteColors[index]);
+        palleteColors[index].style.backgroundColor = colors[index];        
+    }
+}
+
+function createPixelBoard(numberOfPixels) {
+    let pixelBoard = document.getElementById('pixel-board');
+
+    for (let index = 0; index < Math.sqrt(numberOfPixels); index += 1) { 
+        let row = document.createElement('tr');
+        pixelBoard.appendChild(row);
+        for (let index = 0; index < Math.sqrt(numberOfPixels); index += 1) {
+            let pixel = document.createElement('td');
+            pixel.className = 'pixel';
+            row.appendChild(pixel);
+        }        
     }
 }
