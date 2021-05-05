@@ -43,7 +43,10 @@
 
   .pixel {
     display: inline-block;
+    padding: 40px;
+  }
+
+  .pixel {
     border: 1px solid black;
     margin: 2px;
-    padding: 40px;
   }
