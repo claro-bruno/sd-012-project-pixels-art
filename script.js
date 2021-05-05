@@ -117,16 +117,7 @@ window.onload = function () {
         console.log('woooooo')
         allPixels[index].style.backgroundColor = 'white';
       }
-
-      
     });
   }
   clearBoard();
-
-
 };
-
-
-
-
-
