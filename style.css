@@ -29,3 +29,7 @@
   border: 1px solid black;
   background-color: white;
 }
+
+ #generate-board {
+   display: inline-block;
+ }
