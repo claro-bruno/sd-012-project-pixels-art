@@ -4,6 +4,8 @@
 
 .color {
   border: 1px solid black;
+  width: 40px;
+  height: 40px;
 }
 
 #black {
@@ -20,4 +22,10 @@
 
 #yellow {
   background-color: yellow;
+}
+
+.divLine {
+  border: 1px solid red;
+  width: 500px;
+  height: 40px;
 }
