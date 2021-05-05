@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 #color-palette {
   display: flex;
   width: 100%;
@@ -7,7 +11,7 @@
 .color {
   height: 80px;
   width: 80px;
-  border: 1px solid black
+  border: 1px solid black;
 }
 
 .color:nth-child(1) {
@@ -24,4 +28,21 @@
 
 .color:nth-child(4) {
   background-color: cornflowerblue;
+}
+
+#pixel-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 400px;
+  width: 100%;
+  gap: 1px;
+}
+
+.pixel {
+  height: 80px;
+  width: 80px;
+  border: 1px solid black;
+  margin-top: 1px;
+  gap: 1px;
+  background-color: white;
 }
