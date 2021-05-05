@@ -54,6 +54,14 @@ const paintPixels = () => {
   }
 };
 
+const createButton = () => {
+  const buttonSpace = document.querySelector('#button-space');
+  const button = document.createElement('button');
+  button.innerHTML = 'Limpar';
+  button.id = 'clear-board';
+  buttonSpace.appendChild(button);
+};
+
 window.onload = () => {
   createPalette('black');
   createPalette('red');
@@ -62,4 +70,5 @@ window.onload = () => {
   selectColor();
   createPixels(25);
   paintPixels();
+  createButton();
 };
