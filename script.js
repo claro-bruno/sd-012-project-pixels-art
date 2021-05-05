@@ -1,5 +1,16 @@
+/* eslint-disable func-names */
+/* eslint-disable prefer-arrow-callback */
 /* eslint-disable sonarjs/cognitive-complexity */
 /* eslint-disable max-lines-per-function */
+
+const colors = document.getElementsByClassName('color');
+for (let index = 0; index < colors.length; index += 1) {
+  colors[0].style.backgroundColor = 'black';
+  colors[1].style.backgroundColor = 'red';
+  colors[2].style.backgroundColor = 'blue';
+  colors[3].style.backgroundColor = 'darkgreen';
+}
+
 function selectColor() {
   const getColors = document.getElementsByClassName('color');
 
@@ -31,3 +42,17 @@ function selectColor() {
 }
 
 selectColor();
+
+// function changePixelColor() {
+//   const pixels = document.getElementsByClassName('pixel');
+//   const selectedColor = document.querySelector('.selected');
+
+//   for (let index = 0; index < pixels.length; index += 1) {
+//     pixels[index].addEventListener('click', function () {
+//       pixels[index].style.backgroundColor = selectedColor.style.backgroundColor;
+//     });
+//   }
+//   console.log(selectedColor);
+// }
+
+// changePixelColor();
