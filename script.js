@@ -11,7 +11,11 @@ function createBlock(bgColor, className, parentClassName) {
 function createPaletteBlocks(colors) {
   const paletteColors = colors;
   for (let index = 0; index < paletteColors.length; index += 1) {
-    createBlock(paletteColors[index], 'color', 'color-palette');
+    if (index === 0) {
+      createBlock(paletteColors[index], 'color selected', 'color-palette');
+    } else {
+      createBlock(paletteColors[index], 'color', 'color-palette');
+    }
   }
 }
 
