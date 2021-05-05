@@ -1,5 +1,17 @@
 //Requisitos 02 e 03
-let colors = ['black', 'green', 'blue', 'red'];
+function randomColor () {
+    let hexadecimal = '0123456789ABCDEF';
+    let color = '#'
+    for (let index = 0; index < 6; index +=1) {
+        color = color + hexadecimal[Math.floor(Math.random()*16)]
+    }
+    return color;
+}
+
+let colors = ['black'];
+for (let quantity = 0; quantity < 3; quantity += 1) {
+    colors.push(randomColor());
+}
 
 for (let color = 0; color < colors.length; color += 1) {
     let box = document.createElement('div');
@@ -84,3 +96,6 @@ document.querySelector('#generate-board').addEventListener('click', function () 
         } 
     } 
 })
+
+
+
