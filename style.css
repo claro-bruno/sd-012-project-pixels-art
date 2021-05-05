@@ -25,6 +25,10 @@
   margin: 10px;
 }
 
+#input-container {
+	margin: 10px;
+}
+
 .table {
   display: table;
   border: 2px solid black;
@@ -48,3 +52,4 @@
   border: 1px black solid;
   background-color: white;
 }
+

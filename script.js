@@ -1,7 +1,5 @@
 const pixelBoard = document.querySelector('#pixel-board');
 
-const medidas = 5;
-
 function creatingPixelDivsCollumns(row, colunas) {
   for (let column = 1; column <= colunas; column += 1) {
     const divColumn = document.createElement('div');
@@ -20,7 +18,7 @@ function creatingPixelDivs(linhas) {
   }
 }
 
-creatingPixelDivs(medidas);
+creatingPixelDivs(5);
 
 const paletteColors = document.querySelectorAll('.color');
 
@@ -61,6 +59,25 @@ function clearingTheBoard(elements) {
 }
 
 clearingTheBoard(pixels);
+
+const inputButton = document.querySelector('#generate-board');
+const input = document.querySelector('#board-size');
+
+function boardSize() {
+  inputButton.addEventListener('click', () => {
+    if (input.value === '')  return alert("Board inválido!");
+    const divsRowsPixels = pixelBoard.querySelectorAll('.tr');
+    for (let index = 0; index < divsRowsPixels.length; index += 1) {  
+      pixelBoard.removeChild(divsRowsPixels[index]);
+    }
+    
+    creatingPixelDivs(input.value);
+  });
+}
+
+boardSize();
+
+
 
 window.onload = () => {
   const blackColor = document.querySelector('#first-color');
