@@ -8,8 +8,8 @@ ul {
 }
 
 .medidas {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
 }
 
@@ -37,8 +37,8 @@ ul {
 }
 
 .pixel {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     background-color: white;
     border: 1px solid black;
     display: grid;
