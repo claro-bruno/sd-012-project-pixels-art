@@ -24,8 +24,8 @@
     background-color: yellow;
 }
 #pixel-board {
-    width: 25px;
-    height: 25px;
+    width: 210px;
+    height: 210px;
     background-color: white;
     display: inline-block;
     line-height: 0px;

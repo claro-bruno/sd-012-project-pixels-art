@@ -5,10 +5,11 @@ for (let index = 1; index <= 5; index +=1) {
         let pixel = document.createElement('div');
         pixel.className = 'pixel';
         pixel.style.backgroundColor = 'white';
-        pixel.style.width = '5px';
-        pixel.style.height = '5px';
+        pixel.style.width = '40px';
+        pixel.style.height = '40px';
         pixel.style.padding = '0px';
         pixel.style.margin = '0px';
+        pixel.style.border = '1px solid black';
         pixel.style.position = 'relative';
         pixel.style.display = 'inline-block';
         pixel.style.verticalAlign = 'top';
