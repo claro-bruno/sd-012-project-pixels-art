@@ -16,7 +16,7 @@ let board = 5;
 for (let size = 0; size < board; size += 1) {
     let line = document.createElement('div');
     line.className = 'line';
-    document.querySelector('.pixels').appendChild(line);
+    document.querySelector('#pixel-board').appendChild(line);
 }
 
 for (let pixel = 0; pixel < board; pixel += 1) {
@@ -31,3 +31,5 @@ for (let pixel = 0; pixel < board; pixel += 1) {
         document.querySelectorAll('.line')[pixel].appendChild(box);
     }
 }
+
+document.querySelector('#color-palette').firstElementChild.className = 'selected'
