@@ -55,13 +55,23 @@ generateBoardButton.addEventListener('click', function () {
 });
 
 let colors = [];
-function generateRandomColor() {
-  let r = toString(Math.ceil(Math.random * 255));
-  let g = toString(Math.ceil(Math.random * 255));
-  let b = toString(Math.ceil(Math.random * 255));
-  let color = `rgb(${r} ,${g} ,${b})`;
+function generateColorsArray(numberOfColors) {
+  for (let index = 0; index < numberOfColors; index += 1) {
+    let color = generateRandomColor();
+    colors.push(color);
+  };
+};
 
-}
+function generateRandomColor() {
+  let r = Math.floor(Math.random() * 255);
+  let g = Math.floor(Math.random() * 255);
+  let b = Math.floor(Math.random() * 255);
+  console.log(r, g, b);
+  let color = `rgb(${r} ,${g} ,${b})`;
+  return color;
+};
+
+generateColorsArray(3);
 
 function createLine(numberOfPixels) {
   let row = document.createElement('tr');
