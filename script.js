@@ -2,7 +2,8 @@ window.onload = function() {
     let pixel_board = document.getElementById("pixel-board");
     for (let i = 0; i < 5; i++) {
         let linha_pixel = document.createElement("div");
-        pixel_board.style.display = "block";
+        linha_pixel.style.display = "block";
+        linha_pixel.style.height = "40px";
         pixel_board.appendChild(linha_pixel);
         for (let i = 0; i < 5; i++) {
             let pixel = document.createElement("div");
