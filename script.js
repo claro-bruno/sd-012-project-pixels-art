@@ -6,16 +6,14 @@ let body = document.querySelector('body');
 
 let pixels = '40px';
 
-let coresPaleta = ['black', 'yellow', 'blue', 'green'];
-
 let tamanhoQuadro = 5;
 
 let corInicialQuadro = 'white';
 
-criaPaletaCores(coresPaleta, pixels);
 criaBotaoApagar();
 criaInputTamanho();
 criaBotaoTamanho();
+geraCores();
 
 criaQuadro(tamanhoQuadro, pixels, corInicialQuadro);
 
@@ -125,14 +123,26 @@ botaoTamanho.addEventListener('click', function () {
     tamanhoQuadro = 5;
     alert('Board inválido!');
     novoQuadro();
-    
   } else if (parseInt(inputTamanho.value) > 50) {
     tamanhoQuadro = 50;
     alert('Board inválido!');
     novoQuadro();
-    
   } else {
     tamanhoQuadro = parseInt(inputTamanho.value);
     novoQuadro();
   }
 });
+
+function geraCores() {
+  let coresPaleta = ['#000'];
+  for (let index = 0; index < 3; index += 1) {
+    let novaCor =
+    '#' +
+    parseInt(Math.random() * 0xffffff)
+      .toString(16)
+      .padStart(6, '0');
+
+    coresPaleta.push(novaCor);
+  }
+  criaPaletaCores(coresPaleta, pixels);
+}
