@@ -6,8 +6,8 @@
   border: solid black;
   border-width: 1px;
   background-color: black;
-  width: 100px;
-  height: 100px;
+  width: 45px;
+  height: 45px;
   display: inline-block;
 }
 
@@ -15,8 +15,8 @@
   border: solid black;
   border-width: 1px;
   background-color: burlywood;
-  width: 100px;
-  height: 100px;
+  width: 45px;
+  height: 45px;
   display: inline-block;
 }
 
@@ -24,8 +24,8 @@
   border: solid black;
   border-width: 1px;
   background-color: teal;
-  width: 100px;
-  height: 100px;
+  width: 45px;
+  height: 45px;
   display: inline-block;
 }
 
@@ -33,15 +33,11 @@
   border: solid black;
   border-width: 1px;
   background-color: goldenrod;
-  width: 100px;
-  height: 100px;
+  width: 45px;
+  height: 45px;
   display: inline-block;
 }
 
-#pixels{ 
-  display: table;
-  padding: 5px;
-}
 .pixel-lines{ 
   display: table-row;
   padding: 5px;
