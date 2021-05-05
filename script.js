@@ -15,7 +15,12 @@ fillPalletColors();
 palColor.addEventListener('click',selectColor);
 
 function selectColor (event) {
+  let selection = event.target;
   console.log(event.target.style.backgroundColor);
+  for (index = 0; index < palleteColor.length; index +=1) {
+    if (palleteColor[index]===selection) { palleteColor[index].classList.add('selected'); }
+    if (palleteColor[index]!==selection) { palleteColor[index].classList.remove('selected'); }
+  }
 }
 
 function createMatrix (cMwidth,CMlenght) {
