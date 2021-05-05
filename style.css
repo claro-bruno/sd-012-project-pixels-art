@@ -1,0 +1,11 @@
+#color-palette{
+    display: table;
+}
+.color{
+    display: table-cell;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: red;
+    justify-content
+}
