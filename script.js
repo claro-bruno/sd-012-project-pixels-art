@@ -1,13 +1,15 @@
 const color = document.querySelectorAll('.color');
-// const palette = document.querySelector('#color-palette');
+const palette = document.querySelector('#color-palette');
 const board = document.querySelector('#pixel-board');
 const sizeQuery = document.getElementById('board-size');
 let boardSize = 5;
 let pixelSize = 40;
+let paletteSize = 4;
 let selected = 'black';
 
 resetBoard();
 resizeGrid();
+resetPalette();
 
 document.addEventListener('click', function(eventObject){
   let target = eventObject.target
@@ -15,7 +17,7 @@ document.addEventListener('click', function(eventObject){
     target.style.backgroundColor = selected;
   }
   if ( target.classList.contains('color')){
-    resetPaletteClasses();
+    document.querySelector('.selected').className = ('color');
     target.className = ("color selected");
     selected = window.getComputedStyle(target).backgroundColor
   }
@@ -37,12 +39,7 @@ function newSize(){
   boardSize = sizeQuery.value;
   resetBoard();
   resizeGrid();
-}
-
-function resetPaletteClasses(){
-  for(let index = 0; index < color.length; index += 1){
-    color[index].className = ('color');
-  }
+  resetPalette();
 }
 
 
@@ -60,5 +57,21 @@ function resetBoard() {
     div.className = ('pixel');
     div.style.backgroundColor = 'white';
     board.appendChild(div);
+  }
+}
+
+function resetPalette(){
+  palette.innerHTML = '';
+  for (let index = 0; index < paletteSize; index += 1){
+    let div = document.createElement("div");
+    if(index === 0) {
+      div.style.backgroundColor = 'black';
+      div.className = ('color selected');
+    } else{
+      div.className = ('color');
+      let randomColor = Math.floor(Math.random()*16777215).toString(16); //https://css-tricks.com/snippets/javascript/random-hex-color/
+      div.style.backgroundColor = '#' + randomColor;
+    }
+    palette.appendChild(div);
   }
 }
