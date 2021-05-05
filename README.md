@@ -222,6 +222,32 @@ O não cumprimento de um requisito, total ou parcialmente, impactará em sua ava
 
 ---
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Requisitos Obrigatórios:
 
 * Neste projeto, você implementará um editor de arte com pixels.
