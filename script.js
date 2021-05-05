@@ -28,3 +28,8 @@ function preencherLinha (colunas){
     };
 };
 preencherLinha(5);
+
+// atribui uma nova classe a paleta preta.
+let paletePreto = document.getElementsByClassName("color")[0];
+paletePreto.classList.add("selected");
+
