@@ -1,0 +1,13 @@
+
+.color{
+    border: solid black;
+    width: 5em;
+    height: 5em;
+    display: inline-block;
+    margin-top: 25px;
+    margin-left: 5px;
+}
+#preto{
+  
+   background-color: black;
+}
