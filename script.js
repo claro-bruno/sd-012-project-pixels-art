@@ -47,9 +47,27 @@ function setSelectedClass(event) {
   const paleta = document.querySelector('.selected');
   paleta.classList.remove('selected');
   event.target.classList.add('selected');
+  setPixelColor();
+}
+const paletas = document.getElementsByClassName('color');
+for (let index = 0; index < paletas.length; index += 1) {
+paletas[index].addEventListener('click', setSelectedClass);
 }
 
-divUm.addEventListener('click', setSelectedClass);
-divDois.addEventListener('click', setSelectedClass);
-divTres.addEventListener('click', setSelectedClass);
-divQuatro.addEventListener('click', setSelectedClass);
+function setPixelColor() {
+  let selectedPaleta = document.querySelector('.selected');
+  console.log(selectedPaleta);
+  let paletaColor = selectedPaleta.style.backgroundColor;
+  console.log(paletaColor);
+  let pixels = document.getElementsByClassName('pixel');
+   
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].addEventListener('click', function(event) {
+      let eventTargetColor = event.target.style.backgroundColor;
+      if (eventTargetColor !== paletaColor) {
+        event.target.style.backgroundColor = paletaColor;
+      }
+    })
+  }
+}
+setPixelColor();
