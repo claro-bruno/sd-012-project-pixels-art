@@ -5,6 +5,10 @@
   width: 40px;
 }
 
+.color:hover {
+  cursor: pointer;
+}
+
 #first-color {
   background-color: black;
 }
@@ -37,3 +41,6 @@
   background-color: white;
 }
 
+.pixel:hover {
+  cursor: pointer;
+}
