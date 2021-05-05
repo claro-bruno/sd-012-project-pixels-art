@@ -1,0 +1,14 @@
+.color {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+#title {
+    text-align: center;
+}
+
+#color-palette {
+    display: flex;
+    justify-content: space-evenly;
+}
