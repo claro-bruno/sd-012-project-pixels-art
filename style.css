@@ -7,12 +7,6 @@ h1 {
   text-align: center;
 }
 
-.color {
-  display: inline-block;
-  padding: 30px;
-  border: solid black 1px;
-}
-
 #color1 {
   background-color: black;
 }
@@ -27,4 +21,20 @@ h1 {
 
 #color4 {
   background-color: #fe05ff;
+}
+
+.pixel {
+  padding: 40px;
+  border: solid black 1px;
+  background-color: white;
+}
+
+.color {
+  display: inline-block;
+  padding: 30px;
+  border: solid black 1px;
+}
+
+table {
+  margin-left: 34%;
 }
