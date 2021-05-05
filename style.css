@@ -1,0 +1,36 @@
+#red-palette {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    background: red;
+    border: solid 1px;
+    left: 10px;
+}
+#black-palette {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    background: black;
+    border: solid 1px;
+    left: 120px;
+}
+#blue-palette {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color:blue;
+    background: blue;
+    border: solid 1px;
+    left: 230px;
+}
+#green-palette {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    background: green;
+    border: solid 1px;
+    left: 340px;
+}
