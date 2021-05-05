@@ -5,10 +5,31 @@ coresPaleta[1].style.backgroundColor = 'red';
 coresPaleta[2].style.backgroundColor = 'blue';
 coresPaleta[3].style.backgroundColor = 'green';
 
-const quantidadePixels = 5;
+
+// const pixelBoard = document.querySelector('#pixel-board');
+// function criaPixels (valor) {
+//   for (let index = 0; index < valor; index += 1) {
+//     const pixel = document.createElement('div');
+//     pixel.className = 'pixel';
+//     pixelBoard.appendChild(pixel);
+//   }
+// }
+
+// criaPixels (5);
+
+
 const pixelBoard = document.querySelector('#pixel-board');
-for (let index = 0; index < quantidadePixels * quantidadePixels; index += 1) {
-  const pixel = document.createElement('div');
-  pixel.className = 'pixel';
-  pixelBoard.appendChild(pixel);
+function criaPixels (valor) {
+  for (let index = 0; index < valor; index += 1) {
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixelBoard.appendChild(pixel);
+    for (let index = 1; index < valor; index += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      pixelBoard.appendChild(pixel);
+    }
+  }
 }
+
+criaPixels (5);
