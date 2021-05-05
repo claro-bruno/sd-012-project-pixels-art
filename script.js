@@ -20,3 +20,14 @@ function boxPaint(event) {
   paint.style.backgroundColor = pickedColor;
 }
 boxLocation.addEventListener('click', boxPaint);
+
+let clearButton = document.getElementById('clear-board');
+function clearTable(event) {
+  let boxesToClear = document.querySelectorAll('.pixel');
+  for (let index = 0; index < boxesToClear.length; index += 1) {
+    if (boxesToClear[index].style.backgroundColor !== 'white') {
+      boxesToClear[index].style.backgroundColor = 'white';
+    }
+  }
+}
+clearButton.addEventListener('click', clearTable);
