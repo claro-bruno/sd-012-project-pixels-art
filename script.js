@@ -1,16 +1,13 @@
 const color = document.querySelectorAll('.color');
-const palette = document.querySelector('#color-palette');
+// const palette = document.querySelector('#color-palette');
 const board = document.querySelector('#pixel-board');
-let paletteSize = 4;
+const sizeQuery = document.getElementById('board-size');
 let boardSize = 5;
-let numberOfPixels = boardSize * boardSize;
+let pixelSize = 40;
 let selected = 'black';
 
-let paletteWidth = (paletteSize * 45);
-let boardWidth = (boardSize * 42);
-
-// palette.style.width = paletteWidth + 'px';
-// board.style.width = boardWidth + 'px';
+resetBoard();
+resizeGrid();
 
 document.addEventListener('click', function(eventObject){
   let target = eventObject.target
@@ -24,27 +21,44 @@ document.addEventListener('click', function(eventObject){
   }
 });
 
-function resetPaletteClasses (){
+function newSize(){
+  if (sizeQuery.value === ''){
+    alert('Board inválido!')
+    return;
+  }
+  if (sizeQuery.value > 50) {
+    boardSize = 50;
+    return;
+  }
+  if (sizeQuery.value < 5) {
+    boardSize = 5;
+    return;
+  }
+  boardSize = sizeQuery.value;
+  resetBoard();
+  resizeGrid();
+}
+
+function resetPaletteClasses(){
   for(let index = 0; index < color.length; index += 1){
     color[index].className = ('color');
   }
 }
 
-createBoard();
 
-// const pixel = document.querySelectorAll('.pixel');
+function resizeGrid(){
+  grid = `repeat(${boardSize}, ${pixelSize}px)`
+  board.style.gridTemplateColumns = grid;
+}
 
 // Cria ou reseta a board com numero de elementos definidos e com pixels em branco
-
-
-
-
-function createBoard() {
+function resetBoard() {
   board.innerHTML = '';
+  let numberOfPixels = boardSize * boardSize;
   for (let index = 0; index < numberOfPixels; index += 1){
-  let div = document.createElement("div");
-  div.className = ('pixel');
-  div.style.backgroundColor = 'white';
-  board.appendChild(div);
+    let div = document.createElement("div");
+    div.className = ('pixel');
+    div.style.backgroundColor = 'white';
+    board.appendChild(div);
   }
 }
