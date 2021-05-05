@@ -5,13 +5,13 @@ for (index = 0 ; index < 4; index +=1 ){
    listaCores.appendChild(colorSquare);
 }
 
+
 let colorList = document.getElementsByClassName('color');
 let colorArray = [ 'black' ,'red', 'purple', 'yellow'];
 for(index = 0 ; index < colorList.length ; index +=1){
-    colorList[index].style.backgroundColor = colorArray[index]
-
-
+   colorList[index].style.backgroundColor = colorArray[index]
 }
+document.getElementsByClassName('color')[0].classList.add('selected') ;
 
 function createPixelBoard (number){
     const pixelBoard = document.getElementById('pixel-board');
