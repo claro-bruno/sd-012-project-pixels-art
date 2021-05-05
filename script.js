@@ -16,4 +16,10 @@ for (let index = 1; index <= 5; index +=1) {
         pixelBoard.appendChild(pixel);
     }
 }
+
 document.querySelector('.color').classList.add('selected');
+
+function selecionaCor (event) {
+    document.querySelector('.selected').classList.remove('selected');
+    event.target.classList.add('selected');
+} document.querySelector('#color-palette').addEventListener('click', selecionaCor);
