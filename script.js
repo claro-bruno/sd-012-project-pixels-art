@@ -1,10 +1,4 @@
 window.onload = function () {
-  let colorsList = [
-    'black',
-    'blue',
-    'yellow',
-    'pink'
-  ];
   let pixelsColor = document.querySelectorAll('.color');
   let boardSize = 0;
   let listOfPixels = document.querySelectorAll('.pixel');;
@@ -16,11 +10,33 @@ window.onload = function () {
 
 
   function setInitialColors() {
+    let colorsList = [
+        'yellow',
+        'blue',
+        'navy',
+        'beige',
+        'gray',
+        'gold',
+        'orange',
+        'brown',
+        'silver',
+        'pink',
+        'purple',
+        'green',
+        'red',
+        'violet'
+      ];
+      
     for (index = 0; index < pixelsColor.length; index += 1) {
-      pixelsColor[index].style.backgroundColor = colorsList[index];
-      if (colorsList[index] === 'black') {
-        pixelsColor[index].className += ' selected';
-      };
+        if (index === 0) {
+            pixelsColor[index].style.backgroundColor = 'black';
+            pixelsColor[index].className += ' selected';
+          }else{
+              let randomNum = Math.floor((Math.random()*10));
+            pixelsColor[index].style.backgroundColor = colorsList[randomNum];
+            colorsList.splice(randomNum,1);
+            console.log(colorsList);
+          };
     };
   };
 
