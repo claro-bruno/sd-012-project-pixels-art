@@ -3,7 +3,7 @@
 }
 
 .color {
-  padding: 40px;
+  padding: 25px;
   border: solid 1px black;
   display: inline-block;
 }
@@ -25,13 +25,12 @@
 }
 
 #pixel-board {
-  width: 300px;
-  height: 300px;
 }
 
 .pixel {
   background-color: white;
-  padding: 40px;
+  width: 40px;
+  height: 40px;
   border: 1px black solid;
   margin: -3px;
   display: inline-block;
