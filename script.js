@@ -80,7 +80,6 @@ function clearBoardClick() {
 }
 
 function userBoarder() {
-  const pixelBoard = document.getElementById('pixel-board');
   const userInput = document.getElementById('board-size');
   const numberOfInput = parseInt(userInput.value);
   let numberOfPixels = {};
@@ -99,8 +98,8 @@ function sizeBoarder() {
   for (let index = 5; index <= 50; index += 1) {
     numberOfPixels[index] = index * index;
   }
-  pixelBoard.style.width = `${(numberOfInput + (2 * numberOfInput)) * 40}px`;
-  pixelBoard.style.height = `${(numberOfInput + (2 * numberOfInput)) * 40}px`;
+  pixelBoard.style.width = `${(numberOfInput * 40) + (2 * numberOfInput)}px`;
+  pixelBoard.style.height = `${(numberOfInput * 40) + (2 * numberOfInput)}px`;
 }
 
 function finalBoarderElements() {
