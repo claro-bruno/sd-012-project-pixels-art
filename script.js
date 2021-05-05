@@ -20,6 +20,10 @@ window.onload = function() {
     for(let i = 0; i < colors.length; i++) {
         colors[i].addEventListener("click", selectColor);
     }
+    colors[0].style.backgroundColor = "black";
+    colors[1].style.backgroundColor = "red";
+    colors[2].style.backgroundColor = "green";
+    colors[3].style.backgroundColor = "blue";
     function selectColor(event) {
         for(let j = 0; j < colors.length; j++) {
             if(colors[j].className == "color selected") {
@@ -27,9 +31,18 @@ window.onload = function() {
             }
         }
         event.target.className = "color selected";
-        console.log("black: " + colors[0].className);
-        console.log("red: " + colors[1].className);
-        console.log("green: " + colors[2].className);
-        console.log("blue: " + colors[3].className);
+    }
+    let pixels = document.querySelectorAll(".pixel");
+    for(let i = 0; i < pixels.length; i++) {
+        pixels[i].addEventListener("click", paintPixel);
+    }
+    function paintPixel(event) {
+        let cor;
+        for(let i = 0; i < colors.length; i++) {
+            if(colors[i].className == "color selected") {
+                cor = colors[i].style.backgroundColor;
+            }
+        }
+        event.target.style.backgroundColor = cor;
     }
 }
