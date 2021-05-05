@@ -1,7 +1,31 @@
+header {
+  background-color: rgb(59, 59, 59);
+  margin: 0;
+  color: white;
+}
+#title {
+  display: inline-block;
+}
+#logo {
+  height: 60px;
+}
+body {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section {
+  background-image: url(images/bg-paint2.jpg);
+  background-size: cover;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-height: 600px;
+}
+
 .color {
   border: solid 1px black;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   display: inline-block;
 }
 
@@ -9,9 +33,16 @@
   margin: 5px;
 }
 
-/* #pixel-board{
- border-collapse: collapse;
-} */
+#board-config {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#pixel-board {
+  /* border-collapse: collapse; */
+  align-content: center;
+  margin: auto;
+  background-color: black;
+}
 
 .pixel {
   border: solid 1px black;
