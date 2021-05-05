@@ -27,27 +27,17 @@ function drawingBoarder() {
 }    
 drawingBoarder();
 
-const mainColors = document.querySelectorAll('.color');
-const colorDraw = document.querySelectorAll('.pixel')
+const colorDraw = document.querySelectorAll('.pixel');
 
-mainColors.forEach((color) => {
-    color.addEventListener('click', (event) => {
-        if(color.className === 'color') {
-            color.className = 'color selected';
-        }else {
-            color.className = 'color';
-        }
-        
-        if(color.className === 'color selected') {
-            const painting = event.target.innerHTML
-            
-        }
-    });
-})
-
-
-// if(mainColors[index].className === 'color') {
-    //     mainColors[index].className = 'color selected';
-    // } else {
-    //     mainColors[index].className = 'color';
-    // }
+document.body.addEventListener('click', function (event) {
+    if (event.target.className === 'color' ){
+        document.querySelector('.selected').className = 'color';
+        event.target.className = 'color selected';
+        const painting = event.target.innerHTML
+        colorDraw.forEach((pixel) => {
+            pixel.addEventListener('click', () => {
+                pixel.style.backgroundColor = painting;
+            })
+        })
+    }
+})    
