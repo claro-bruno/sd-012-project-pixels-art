@@ -1,7 +1,7 @@
 let paletaCores = document.querySelector('#color-palette');
 let quadro = document.querySelector('#pixel-board');
 
-let tamanhoDoQuadrado = '30px';
+let tamanhoDoQuadrado = '40px';
 
 let coresPaleta = ['black', 'yellow', 'blue', 'green'];
 
