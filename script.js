@@ -40,24 +40,24 @@ const addNewClass = document.querySelectorAll('.color')[0].classList.add('select
 //7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
 //PRIMEIRO RESGATEI O ELEMENTO COM O ID COLOR-PALLETE
 
-//RESGATO OS ELEMENTOS COM A CLASSE COLOR;
-//ATRIBUIR UM EVENTO DE CLICK PARA TODOS OS ELEMENTOS COM A CLASSE COLOR CRIANDO A FUNÇÃO DENTRO JA DO LISTENER;
-//SELECIONO OS ELEMENTOS QUE TEM A CLASSE SELECTED;
-//REMOVER A CLASSE SELECTED;
-//ATRIBUIR A CLASSE SELECTED PARA O ELEMENTO CLICADO (EVENT DO CLICK);
+//CRIEI A VARIAVEL PARA RESGATAR O ELEMENTO DIV COM A ID COLOR-PALLETE QUE É PAI DOS ELEMENTOS DIV QUE TEM A CLASSE COLOR;
+//
 
-const paletteColors = document.querySelector('#color-palette');
+const colorPaletDiv = document.querySelector('#color-pallete');
 
 function selectColor() {
-  paletteColors.addEventListener('click', (event) => {
-    const color = document.querySelector('.selected');
-    if (event.target.id !== 'color-palette') {
-      color.classList.remove('selected');
-      event.target.classList.add('selected');
-    }
-  });
-}
-selectColor();
+    colorPaleteDiv.addEventListener('click', (event) => {
+      const colorDiv = document.querySelector('.selected');
+      if (event.target.id !== 'color-palette') {
+        colorDiv.classList.remove('selected');
+        event.target.classList.add('selected');
+      }
+    });
+  }
+  
+  selectColor();
+
+
 
 
 
