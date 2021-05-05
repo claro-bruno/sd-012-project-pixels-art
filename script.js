@@ -2,14 +2,9 @@ const palette = document.querySelector('#color-palette');
 const board = document.querySelector('#pixel-board');
 const sizeQuery = document.getElementById('board-size');
 let boardSize = 5;
-let pixelSize = 40;
-let paletteSize = 4;
+const pixelSize = 40;
+const paletteSize = 4;
 let selected = 'black';
-
-// Criação inicial do setup
-resetBoard();
-resizeGrid();
-resetPalette();
 
 // Adiciona o event listener de click e toma a ação dependendo do elemento clicado
 document.addEventListener('click', function(eventObject){
@@ -74,3 +69,8 @@ function resetPalette(){
     palette.appendChild(div);
   }
 }
+
+// Criação inicial do setup
+resetBoard();
+resizeGrid();
+resetPalette();
