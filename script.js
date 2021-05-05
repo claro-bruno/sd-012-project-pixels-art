@@ -1,5 +1,5 @@
 window.onload = function() {
-    
+    document.getElementById('black').classList.add('selected')
 }
 
 function selectAColor(event) {
