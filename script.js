@@ -58,10 +58,11 @@ window.onload = function() {
     for(let i = 0; i < colors.length; i++) {
         colors[i].addEventListener("click", selectColor);
     }
+    
     colors[0].style.backgroundColor = "black";
-    colors[1].style.backgroundColor = "red";
-    colors[2].style.backgroundColor = "green";
-    colors[3].style.backgroundColor = "blue";
+    colors[1].style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+    colors[2].style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+    colors[3].style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
 
     function selectColor(event) {
         for(let j = 0; j < colors.length; j++) {
