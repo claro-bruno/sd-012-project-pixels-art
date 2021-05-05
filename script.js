@@ -1,38 +1,10 @@
 window.onload = function () {
-  const getColorPalette = document.getElementById('color-palette');
   const getColors = document.getElementsByClassName('color');
   const getPixelBoard = document.getElementById('pixel-board');
   const getClearButton = document.querySelector('#clear-board');
-  const getPixels = document.querySelectorAll('.pixel');
+  const getBoardSize = document.querySelector('#board-size');
+  const getGenerateButton = document.querySelector('#generate-board');
 
-  colorPaletteGeneration();
-
-  //7
-  function changeColorSelected(event) {
-    const colorSelected = document.querySelector('.selected');
-    colorSelected.classList.remove('selected');
-    event.target.classList.add('selected');
-  }
-  for (let color of getColors) {
-    color.addEventListener('click', changeColorSelected);
-  }
-
-  //8
-  function fillPixel(event) {
-    const refreshColorSelected = document.querySelector('.selected');
-    const style = getComputedStyle(refreshColorSelected);
-    event.target.style.backgroundColor = style.backgroundColor;
-  }
-  getPixelBoard.addEventListener('click', fillPixel);
-
-  //9
-  getClearButton.addEventListener('click', function () {
-    for (let pixel of getPixels) {
-      pixel.style.backgroundColor = 'white';
-    }
-  });
-
-  //12
   function colorPaletteGeneration() {
     getColors[0].style.backgroundColor = 'rgb(0,0,0)';
     for (let index = 1; index < getColors.length; index += 1) {
@@ -43,4 +15,49 @@ window.onload = function () {
   function randomRgb() {
     return Math.random() * 255;
   }
+
+  colorPaletteGeneration();
+
+  function changeColorSelected(event) {
+    const colorSelected = document.querySelector('.selected');
+    colorSelected.classList.remove('selected');
+    event.target.classList.add('selected');
+  }
+  for (let color of getColors) {
+    color.addEventListener('click', changeColorSelected);
+  }
+
+  function fillPixel(event) {
+    const refreshColorSelected = document.querySelector('.selected');
+    const style = getComputedStyle(refreshColorSelected);
+    event.target.style.backgroundColor = style.backgroundColor;
+  }
+  getPixelBoard.addEventListener('click', fillPixel);
+
+  getClearButton.addEventListener('click', function () {
+    const getPixels = document.querySelectorAll('.pixel');
+    for (let pixel of getPixels) {
+      pixel.style.backgroundColor = 'white';
+    }
+  });
+
+  getGenerateButton.addEventListener('click', function () {
+    let boardSize;
+    if (getBoardSize.value < 5) {
+      boardSize = 5;
+    } else if (getBoardSize.value > 50) {
+      boardSize = 50;
+    } else {
+      boardSize = getBoardSize.value;
+    }
+    for (let linIndex = 0; linIndex < boardSize; linIndex += 1) {
+      let line = document.createElement('tr');
+      getPixelBoard.appendChild(line);
+      for (let colIndex = 0; colIndex < boardSize; colIndex += 1) {
+        let column = document.createElement('td');
+        column.className = 'pixel';
+        line.appendChild(column);
+      }
+    }
+  });
 };
