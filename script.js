@@ -15,8 +15,9 @@ const createPalette = (color) => {
 
 const createPixels = (n) => {
   const board = document.getElementById('pixel-board');
-
-  for (let i = 1; i <= n; i += 1) {
+  board.style.width = `${n * 42}px`;
+  board.style.height = `${n * 42}px`;
+  for (let i = 1; i <= n ** 2; i += 1) {
     const pixel = document.createElement('span');
     pixel.style.border = '1px solid black';
     pixel.classList.add('pixel');
@@ -79,7 +80,7 @@ window.onload = () => {
   createPalette('green');
   createPalette('blue');
   selectColor();
-  createPixels(25);
+  createPixels(5);
   paintPixels();
   clearBoard();
 };

@@ -1,4 +1,4 @@
-body {
+main {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -22,8 +22,9 @@ body {
 
 #pixel-board {
   line-height: 0;
-  width: 210px;
-  height: 210px;
+  /* width: 210px;
+  height: 210px; */
+  border: 1px solid black;
 }
 
 #black {
