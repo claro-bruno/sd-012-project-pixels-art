@@ -8,13 +8,13 @@ let selected = 'black';
 
 // Toma a ação dependendo do elemento clicado
 function clicker(eventObject) {
-  const target = eventObject.target;
-  if (target.classList.contains('pixel')) {
-    target.style.backgroundColor = selected;
-  } else if (target.classList.contains('color')) {
+  const targetElement = eventObject.target;
+  if (targetElement.classList.contains('pixel')) {
+    targetElement.style.backgroundColor = selected;
+  } else if (targetElement.classList.contains('color')) {
     document.querySelector('.selected').className = ('color');
-    target.className = ('color selected');
-    selected = window.getComputedStyle(target).backgroundColor;
+    targetElement.className = ('color selected');
+    selected = window.getComputedStyle(targetElement).backgroundColor;
   }
 }
 
@@ -73,7 +73,7 @@ function newSize() {
 }
 
 // Pro linter não incomodar
-if(boardSize < 0) {
+if (boardSize < 0) {
   newSize();
 }
 // Criação inicial do setup
