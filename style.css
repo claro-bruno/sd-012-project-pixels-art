@@ -8,10 +8,8 @@
 }
 
 .ulDivPixel {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  height: 41px;
+  width: 210px;
 }
 .pixel {
   background-color: white;
