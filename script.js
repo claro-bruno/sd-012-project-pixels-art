@@ -5,8 +5,8 @@ window.onload = function () {
 function setColor() {
     let divsColor = document.querySelectorAll('.color');
     let colorsList = [
-      'blue',
       'black',
+      'blue',
       'yellow',
       'pink'
     ];
