@@ -1,10 +1,17 @@
+h1{
+    text-align: center;
+}
 table {
     width: 30px;
     border-collapse: collapse;
+    margin-left: 40%;
 }
 table, th, td {
     border: 1px solid black;
 }
 th, td {
     padding: 30px;
+}
+.color {
+    background-color:
 }
