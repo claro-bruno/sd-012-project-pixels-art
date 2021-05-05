@@ -26,17 +26,16 @@ document.addEventListener('click', function(eventObject){
 function newSize(){
   if (sizeQuery.value === ''){
     alert('Board inválido!')
-    return;
   }
   if (sizeQuery.value > 50) {
     boardSize = 50;
-    return;
   }
   if (sizeQuery.value < 5) {
     boardSize = 5;
-    return;
   }
-  boardSize = sizeQuery.value;
+  else {
+    boardSize = sizeQuery.value;
+  }
   resetBoard();
   resizeGrid();
   resetPalette();
