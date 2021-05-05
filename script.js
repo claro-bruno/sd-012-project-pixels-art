@@ -13,8 +13,8 @@ function createColorPalette() {
 createColorPalette()
 
 function createColorList() {
-  let colorArray = ['black', 'red', 'purple', 'yellow'];
-  for (index = 0; index < colorList.length; index += 1) {
+  const colorArray = ['black', 'red', 'purple', 'yellow'];
+  for (let index = 0; index < colorList.length; index += 1) {
     colorList[index].style.backgroundColor = colorArray[index]
   }
 }
