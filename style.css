@@ -9,18 +9,6 @@
   background-color: black;
 }
 
-#second-color {
-  background-color: blue;
-}
-
-#third-color {
-  background-color: red;
-}
-
-#fourth-color {
-  background-color: green;
-}
-
 #clear-board {
   margin: 10px;
 }
@@ -40,10 +28,6 @@
 
 .td {
   display: table-cell;
-}
-
-#pixel-board {
-  margin: 0;
 }
 
 .pixel {

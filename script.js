@@ -37,28 +37,28 @@ addingEventListenersToPalette(paletteColors);
 
 const pixels = document.querySelectorAll('.pixel');
 
-function addingEventListenersToPixels(elements) {
-  for (let index = 0; index < elements.length; index += 1) {
-    elements[index].addEventListener('click', (event) => {
+function addingEventListenersToPixels() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', () => {
       const selColor = document.querySelector('.selected');
       const BackCol = window.getComputedStyle(selColor, null).getPropertyValue('background-color');
-      event.target.style.backgroundColor = BackCol;
+      pixels[index].style.backgroundColor = BackCol;
     });
   }
 }
 
-addingEventListenersToPixels(pixels);
+addingEventListenersToPixels();
 
-function clearingTheBoard(elements) {
+function clearingTheBoard() {
   const button = document.querySelector('#clear-board');
   button.addEventListener('click', () => {
-    for (let index = 0; index < elements.length; index += 1) {
-      elements[index].style.backgroundColor = 'white';
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
     }
   });
 }
 
-clearingTheBoard(pixels);
+clearingTheBoard();
 
 const inputButton = document.querySelector('#generate-board');
 const input = document.querySelector('#board-size');
@@ -82,15 +82,15 @@ window.onload = () => {
   const blackColor = document.querySelector('#first-color');
   blackColor.classList.add('selected');
   // Ideia retirada de https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
-  function randomColors(elemento) {
-    let red = Math.random() * 255;
-    let green = Math.random() * 255;
-    let blue = Math.random() * 255;
+  function randomColors() {
+    const red = Math.random() * 255;
+    const green = Math.random() * 255;
+    const blue = Math.random() * 255;
 
-    elemento.style.backgroundColor = `rgb(${red},${green},${blue})`;
+    return `rgb(${red},${green},${blue})`;
   }
 
   for (let color = 1; color < paletteColors.length; color += 1) {
-    randomColors(paletteColors[color]);
+    paletteColors[color].style.backgroundColor = randomColors();
   }
 };
