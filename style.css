@@ -25,3 +25,9 @@
 #red {
     background-color: red;
 }
+
+/* quadro de pixels */
+.pixel {
+    background-color: white;
+    display: inline-block;
+}
