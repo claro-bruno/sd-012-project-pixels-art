@@ -12,13 +12,22 @@ function paint(e) {
   currentPixel.style.backgroundColor = currentColor;
 }
 
+function clear() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+
 const color = document.getElementsByClassName('color');
-const pixel = document.getElementsByClassName('pixel');
+const pixels = document.getElementsByClassName('pixel');
+const button = document.getElementById('clear-board');
 
 for (let index = 0; index < color.length; index += 1) {
   color[index].addEventListener('click', select);
 }
 
-for (let index = 0; index < pixel.length; index += 1) {
-  pixel[index].addEventListener('click', paint);
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', paint);
 }
+
+button.addEventListener('click', clear);
