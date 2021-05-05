@@ -1,0 +1,43 @@
+body {
+  background-color: #f3f3f3;
+}
+
+/* Header */
+
+header {
+  text-align: center;
+}
+
+/* Paleta de cores */
+
+#color-palette {
+  display: flex;
+  justify-content: center;
+}
+
+div.color {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  margin: 3px 6px;
+}
+
+#color1 {
+  background-color: black;
+}
+
+#color2 {
+  background-color: green;
+}
+
+#color3 {
+  background-color: yellow;
+}
+
+#color4 {
+  background-color: red;
+}
+
+#color5 {
+  background-color: blue;
+}
