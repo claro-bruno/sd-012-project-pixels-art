@@ -2,8 +2,7 @@ window.onload = function () {
   let boardSide = 5;
   let getBoard = document.getElementById('pixel-board');  
   let firstColor = document.querySelector('.color1');
-  let colorSelected = document.querySelector('.selected');
-  
+    
   //Inserir um escutador de eventos em cada elemento do documento
   document.addEventListener('click', function (event) {
     //Clicar em uma das cores da paleta faz com que ela seja selecionada
@@ -11,6 +10,11 @@ window.onload = function () {
       setSelected(event);
     };
         
+    //Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada
+    if (event.target.classList.contains('pixel')) {
+      setPixelBackgroundColor(event);
+    };
+
   });
   
   //Define a cor preta como cor inicial
@@ -47,5 +51,17 @@ window.onload = function () {
     event.target.classList.add('selected');
   };
 
+  //Cria uma função que modifica o backgroundColor do pixel clicado de acordo com a cor da paleta selecionada
+  function setPixelBackgroundColor(event) {
+    const selectedElement = document.querySelector('.selected');
+    const selectedBackgroundColor = window.getComputedStyle(selectedElement).getPropertyValue('background-color');
+    const initialColor = 'white';
+    if (event.target.style.backgroundColor === selectedBackgroundColor) {
+      event.target.style.backgroundColor = initialColor;
+    } else {
+      event.target.style.backgroundColor = selectedBackgroundColor;
+    };
+  };
+   
 };
 
