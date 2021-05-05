@@ -64,7 +64,7 @@ document.querySelector('#clear-board').addEventListener('click', function () {
     }
 })
 
-//Requisito 10
+//Requisitos 10 e 11
 document.querySelector('#generate-board').addEventListener('click', function () {
     let newBoard = document.querySelector('#board-size').value;
     let oldBoard = document.querySelectorAll('.line');
@@ -75,6 +75,12 @@ document.querySelector('#generate-board').addEventListener('click', function () 
         for (let index = 0; index < oldBoard.length; index +=1) {
             board.removeChild(board.lastElementChild);
         }
-        createBoard(newBoard);
+        if (newBoard <= 5) {
+            createBoard(5);
+        } else if (newBoard >= 50) {
+            createBoard(50);
+        } else {
+            createBoard(newBoard); 
+        } 
     } 
 })
