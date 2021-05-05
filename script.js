@@ -11,7 +11,7 @@ window.onload = function () {
       color_palette.appendChild(color);
     };
   }
-  makeColor(4);
+  makeColor(4); // quantidades de cores geradas
 
   function defineColors (index, color) {
     if (index !== 0) {
@@ -21,9 +21,6 @@ window.onload = function () {
       color.style.backgroundColor = 'black';
     };
   }
-
-  let colors = document.querySelectorAll('.color');
-  colors[0].className = 'color selected';
   
   function colorGeneration () {
     return '#' + parseInt((Math.random() * 0xFFFFFF))
@@ -69,7 +66,7 @@ window.onload = function () {
       makeLine(size)
       makeColum(size)
   }
-  verifiTam (5)
+  verifiTam (5) // tamanho do board de pixel
 
   function verifiTam (num) {
     if (num < 5) {
@@ -80,5 +77,35 @@ window.onload = function () {
     }
     tamanho(num);
   }
+
+  function selecAux (param1) {
+    let rem = document.querySelector('.selected');
+    rem.classList.remove('selected');
+    param1.target.className = 'color selected';
+  }
+
+  function selec () {
+    for (let index = 0; index < colors.length; index += 1) {
+        colors[index].addEventListener('click', selecAux);
+    }
+  }
+
+  let colors = document.querySelectorAll('.color');
+  colors[0].className = 'color selected';
+  selec()
+
+  function getColor () {
+      let pixels = document.querySelectorAll('.pixel')
+      for (let index = 0; index < pixels.length; index += 1) {
+          pixels[index].addEventListener('click', inputColor);
+      }
+  }
+  getColor()
+
+  function inputColor (param1) {
+    let cor = document.querySelector('.selected').style.backgroundColor;
+    param1.target.style.backgroundColor = cor;
+  }
+
 
 }
