@@ -30,26 +30,20 @@ yellow.addEventListener("click", changeSelected);
 
 let pixels = document.getElementById("pixel-board");
 
-pixels.addEventListener("click", function(event){ 
+pixels.addEventListener("click", function (event) {
 
-event.target.style.backgroundColor = document.querySelector(".selected").style.backgroundColor;
+  event.target.style.backgroundColor = document.querySelector(".selected").style.backgroundColor;
 
 });
 
 
 let botao = document.getElementById("clear-board");
 
-botao.addEventListener("click", function() {
+botao.addEventListener("click", function () {
 
-for(i=0; i < 25; i +=1) {    
+  for (i = 0; i < 25; i += 1) {
 
-document.querySelectorAll(".pixel")[i].style.backgroundColor = "white";
+    document.querySelectorAll(".pixel")[i].style.backgroundColor = "white";
 
-}
-})
-
-
-
-
-
-
+  }
+});
