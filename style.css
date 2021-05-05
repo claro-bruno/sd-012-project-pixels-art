@@ -7,3 +7,15 @@
   height : 50px;
   width: 50px;
 }
+
+#pixel-board {
+  border-spacing: 0;
+  border : 1px solid black;
+}
+
+.pixel {
+  border : 1px solid black;
+  height : 40px;
+  width: 40px;
+  padding: 0;
+}
