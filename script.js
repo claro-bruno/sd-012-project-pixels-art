@@ -20,6 +20,8 @@ function creatingPixelDivs(linhas) {
     }
 }
 
+creatingPixelDivs(medidas);
+
 const paletteColors = document.querySelectorAll('.color'); 
 
 function addingEventListenersToPalette(elements) {
@@ -35,7 +37,21 @@ function addingEventListenersToPalette(elements) {
 
 addingEventListenersToPalette(paletteColors);
 
-creatingPixelDivs(medidas);
+const pixels = document.querySelectorAll('.pixel');
+
+function addingEventListenersToPixels(elements) {
+    for (index = 0; index < elements.length; index += 1) {
+        elements[index].addEventListener('click', function(event) {
+            const selectedColor = document.querySelector('.selected');
+            let selectedBackgroundColor = window.getComputedStyle(selectedColor, null).getPropertyValue("background-color");
+            event.target.style.backgroundColor = selectedBackgroundColor;
+            console.log(selectedColor.style.backgroundColor);
+            event.target.classList.toggle('teste');
+        });
+    } 
+}
+
+addingEventListenersToPixels(pixels);
 
 window.onload = function() {
     const blackColor = document.querySelector('#first-color');
