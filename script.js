@@ -10,7 +10,8 @@ function createPallete(numberOfColors) {
             color.className = 'color selected';
         } else {
             color.className = 'color';
-        }        
+        }
+        color.addEventListener('click', colorSelector);
         colorPallete.appendChild(color);
     }
 
@@ -38,4 +39,14 @@ function createPixelBoard(numberOfPixels) {
             row.appendChild(pixel);            
         }        
     }
+}
+
+function colorSelector(eventSource) {
+    let colors = document.getElementsByClassName('color');
+
+    for (let index = 0; index < colors.length; index += 1) {
+        colors[index].className = 'color';
+    }
+
+    eventSource.target.className = 'color selected';
 }
