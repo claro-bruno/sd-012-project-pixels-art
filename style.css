@@ -3,12 +3,13 @@
     text-decoration: solid;
 }
 
-#color-pallet{
+#color-palette{
     display: inline-block;
     list-style: none;
     text-align: center;
     align-items: center;
-    width: 90%;
+    width: 93%;
+
 }
 .color{
     display: inline-table;
@@ -23,3 +24,4 @@
 #color1 {
     background-color: black;
 }
+
