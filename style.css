@@ -11,6 +11,13 @@ h1 {
     color: #633237;
 }
 
+#clear-board {
+    cursor: pointer;
+    position: absolute;
+    top: 150px;
+    left: 673px;
+}
+
 #color-palette {
     margin-left: 527px;;
 }

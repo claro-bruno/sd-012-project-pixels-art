@@ -4,6 +4,7 @@ window.onload = function () {
     const color3 = document.querySelectorAll('.color')[2];
     const color4 = document.querySelectorAll('.color')[3];
     const pixels = document.querySelector('div');
+    const clear = document.querySelector('span');
 
     color1.classList.add('selected');
 
@@ -48,4 +49,13 @@ window.onload = function () {
     }
 
     pixels.addEventListener('click', fillColor);
+    
+    function clearPixels() {
+        let boxes = document.querySelectorAll('.pixel');
+        for (let box in boxes) {
+            boxes[box].style.backgroundColor = '#fff';
+        }
+    }
+
+    clear.addEventListener('click', clearPixels);
 }
