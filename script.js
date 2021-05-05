@@ -2,13 +2,26 @@ window.onload = function () {
   let boardSide = 5;
   let getBoard = document.getElementById('pixel-board');  
   let firstColor = document.querySelector('.color1');
-
+  let colorSelected = document.querySelector('.selected');
+  
+  //Inserir um escutador de eventos em cada elemento do documento
+  document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('color')) {
+      if (event.target.classList.contains('selected')) {
+        event.target.classList.remove('selected');
+      } else {
+        setSelected(event);
+      } ;
+    };
+    
+  });
+  
   //Define a cor preta como cor inicial
   firstColor.classList.add('selected');
-
+  
   //Chama as funções
   createTable();
-
+  
   //Cria dinamicamente uma linha da tabela com um determinado número de colunas
   function createTableRow(row) {
     let tableRow = document.createElement('tr');
@@ -20,14 +33,26 @@ window.onload = function () {
       tableColumn.className = 'pixel';
       tableColumn.style.backgroundColor = 'white';
       getBoardRow.appendChild(tableColumn);
-    }
-  }
-
+    };
+  };
+  
   //Cria dinamicamente um determinado número de linhas da tabela
   function createTable() {
     for (let row = 0; row < boardSide; row += 1) {
       createTableRow(row);
-    }
-  }
+    };
+  };
 
-}
+  //Cria uma função que adiciona a classe 'selected' ao elemento selecionado, mas pode existir apenas um elemento com essa classe
+  function setSelected(event) {
+    const selectedElement = document.querySelector('.selected');
+    if (selectedElement === null) {
+      event.target.classList.add('selected');
+    } else {
+      selectedElement.classList.remove('selected');
+      event.target.classList.add('selected');
+    };
+  };
+
+};
+
