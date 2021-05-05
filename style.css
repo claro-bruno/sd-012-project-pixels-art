@@ -17,10 +17,11 @@
     background-color: green;
 }
 
-#pixel-board {
+.pixel {
     display: inline-block;
     border: solid 1px black;
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
+    background-color: white;
 }
 
