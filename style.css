@@ -1,6 +1,6 @@
 .color{
-    margin: 20px;
-    border: 1px solid black;
+    margin:20px;
+    border:1px solid black;
     width: 100px;
     height: 100px;
 }
@@ -18,9 +18,21 @@
     background-color: yellow;
 }
 .pixel{
-    margin: 20px;
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
+    border:1px solid black;
+    width:40px;
+    height:40px;
     background-color: white;
+    padding: 0%;
+}
+#pixel-board{
+    margin: auto;
+    padding: 0%;
+}
+#color-palette{
+    margin: auto;
+    padding: 0%;
+
+}
+#title{
+    text-align: center;
 }
