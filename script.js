@@ -87,7 +87,7 @@ function removeBoard() {
 function changeBoard() {
   const changeInput = document.querySelector('#board-size');
   if (changeInput.value === '') {
-    alert('Board inválido');
+    alert('Board inválido!');
   } else if (changeInput.value < 5) {
     removeBoard();
     createBoardBlocks(5);
