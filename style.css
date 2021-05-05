@@ -1,3 +1,43 @@
+body {
+  text-align: center;
+}
+#title {
+  background-color: aqua;
+}
+#color-palette {
+  width: 224px;
+  height: 52px;
+  background-color: blue;
+}
 .color {
-  border: 10px black
+  display: inline-block;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+}
+#cor1{
+  background-color: rgb(0, 0, 0);
+}
+#cor2{
+  background-color: rgb(50, 50, 50);
+}
+#cor3{
+  background-color: rgb(100, 100, 100);
+}
+#cor4{
+  background-color: rgb(150, 150, 150);
+}
+#pixel-board {
+  margin-top: 30px;
+  width: 224px;
+  height: 52px;
+  background-color: blue;
+}
+.pixel {
+  display: inline-block;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  background-color: white;
 }
