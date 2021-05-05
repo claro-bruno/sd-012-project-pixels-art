@@ -1,7 +1,19 @@
-#color-palette li, #pixel-board li{
+body {
+    text-align: center;
+}
+
+#color-palette li {
     display: inline-block;
 }
 
 #color-palette li {
     margin-right: 30px;
+}
+
+#clear-board {
+    margin-bottom: 15px;
+}
+
+#pixel-board {
+    display: inline;
 }

@@ -1,5 +1,6 @@
 let paletaCores = document.querySelector('#color-palette');
 let quadro = document.querySelector('#pixel-board');
+let botao = document.querySelector('#clear-board');
 
 let tamanhoDoQuadrado = '40px';
 
@@ -10,6 +11,7 @@ let numeroDePixelsVertical = 5;
 let corInicialQuadro = 'white';
 
 criaPaletaCores(coresPaleta, tamanhoDoQuadrado);
+criaBotaoApagar();
 criaQuadro(
   numeroDePixelsHorizontal,
   numeroDePixelsVertical,
@@ -18,8 +20,11 @@ criaQuadro(
 );
 
 let cores = document.querySelectorAll('.color');
+
 let corInicial = cores[0];
+
 corInicial.className = 'color selected';
+
 for (index = 0; index < cores.length; index += 1) {
   cores[index].addEventListener('click', function (event) {
     for (let index = 0; index < cores.length; index += 1) {
@@ -28,6 +33,14 @@ for (index = 0; index < cores.length; index += 1) {
       }
       event.target.className = 'color selected';
     }
+  });
+}
+
+let pixel = document.querySelectorAll('.pixel');
+for (let index = 0; index < pixel.length; index += 1) {
+  pixel[index].addEventListener('click', function (event) {
+    let corSelecionada = document.querySelector('.color.selected');
+    event.target.style.backgroundColor = corSelecionada.style.backgroundColor;
   });
 }
 
@@ -45,14 +58,6 @@ function criaPaletaCores(cores, tamanho) {
   }
 }
 
-let pixel = document.querySelectorAll('.pixel');
-for (let index = 0; index < pixel.length; index += 1) {
-  pixel[index].addEventListener('click', function (event) {
-    let corSelecionada = document.querySelector('.color.selected');
-    event.target.style.backgroundColor = corSelecionada.style.backgroundColor;
-  })
-}
-
 function criaQuadro(height, width, tamanho, color) {
   for (let index = 0; index < width; index += 1) {
     let novaLinha = document.createElement('tr');
@@ -68,7 +73,13 @@ function criaQuadro(height, width, tamanho, color) {
       novaColuna.style.height = novaColunaSize;
       novaColuna.style.border = '1px solid black';
       novaLinha.appendChild(novaColuna);
-
     }
   }
+}
+
+function criaBotaoApagar() {
+  let criaBotao = document.createElement('button');
+  criaBotao.innerHTML = 'Limpar';
+  botao.appendChild(criaBotao);
+
 }
