@@ -12,7 +12,8 @@ function select(e) {
 
 function paint(e) {
   const currentPixel = e.target;
-  const currentColor = document.querySelector('.selected').style.backgroundColor;
+  const currentColorEl = document.querySelector('.selected');
+  const currentColor = window.getComputedStyle(currentColorEl).backgroundColor;
   currentPixel.style.backgroundColor = currentColor;
 }
 
