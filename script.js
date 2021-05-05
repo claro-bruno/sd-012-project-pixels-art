@@ -33,10 +33,10 @@ cor2.addEventListener('click', selecionar);
 cor3.addEventListener('click', selecionar);
 cor4.addEventListener('click', selecionar);
 
-const cor = document.getElementsByClassName('selected');
-function pintarPixel() {
-  
-    
+
+function pintarPixel(event) {
+  let cor = window.getComputedStyle(document.querySelector('.selected')).backgroundColor;
+  event.target.style.backgroundColor = cor;   
 }
 
 for (let n = 0; n < (matriz**2); n += 1) {
