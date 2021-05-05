@@ -112,16 +112,11 @@ window.onload = function () {
   function clearBoard(){
     let buttonClear = document.querySelector('#clear-board');
     buttonClear.addEventListener('click', function(){
-        
-        let allPixels = document.querySelectorAll('.pixel')
+      let allPixels = document.querySelectorAll('.pixel')
+      for (let index = 0; index < allPixels.length; index += 1) {
         console.log('woooooo')
-        allPixels.style.backgroundColor = 'white';
-
-    //   let allPixels = document.querySelectorAll('.pixel')
-    //   for (let index = 0; index < allPixels.length; index += 1) {
-    //     console.log('woooooo')
-    //     allPixels.style.backgroundColor = 'white';
-    //   }
+        allPixels[index].style.backgroundColor = 'white';
+      }
 
       
     });
