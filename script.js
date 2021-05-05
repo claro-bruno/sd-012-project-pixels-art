@@ -43,16 +43,17 @@ function selectColor() {
 
 selectColor();
 
-// function changePixelColor() {
-//   const pixels = document.getElementsByClassName('pixel');
-//   const selectedColor = document.querySelector('.selected');
+function changeColor() {
+  const pixels = document.querySelectorAll('.pixel');
+  for (let indexColor = 0; indexColor < colors.length; indexColor += 1) {
+    for (let indexPixels = 0; indexPixels < pixels.length; indexPixels += 1) {
+      pixels[indexPixels].addEventListener('click', function () {
+        if (colors[indexColor].className === 'color selected') {
+          pixels[indexPixels].style.backgroundColor = colors[indexColor].style.backgroundColor;
+        }
+      });
+    }
+  }
+}
 
-//   for (let index = 0; index < pixels.length; index += 1) {
-//     pixels[index].addEventListener('click', function () {
-//       pixels[index].style.backgroundColor = selectedColor.style.backgroundColor;
-//     });
-//   }
-//   console.log(selectedColor);
-// }
-
-// changePixelColor();
+changeColor();
