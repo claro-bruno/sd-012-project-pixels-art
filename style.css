@@ -6,3 +6,11 @@
     border-style: solid;
     display: inline-block;
 }
+
+.pixel {
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0px;
+    margin: 0px;
+}

@@ -31,5 +31,28 @@ for (let i = 1; i < cores.length; i += 1) {
 organizaPreto(cores);
 paletaCores(cores);
 
+//ex 4
+let larguraQuadro = 5;
+let comprimentoQuadro = 5;
+
+function criaQuadro (largura, comprimento) {
+    let getBoard = document.querySelector('#pixel-board');
+
+    for (let iC = 0; iC < comprimento; iC += 1) {
+    for (let iL = 0; iL < largura; iL += 1) {
+        let criaPixel = document.createElement('div');
+        criaPixel.className = 'pixel';
+        criaPixel.style.backgroundColor = 'white';
+        criaPixel.style.width = '30px';
+        criaPixel.style.height = '30px';
+        criaPixel.style.display = 'inline-block';
+        getBoard.appendChild(criaPixel);
+    } 
+    let quebraLinha = document.createElement('br');
+    getBoard.appendChild(quebraLinha)
+    }
+}
+
+criaQuadro(larguraQuadro, comprimentoQuadro);
 
 
