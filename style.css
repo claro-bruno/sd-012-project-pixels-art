@@ -17,7 +17,8 @@ li{
 .color{
     display: inline-block;
     border:  1px solid black ;
-    padding: 50px;
+    width: 40px;
+    height: 40px;
     margin-left: 10px;
 }
 .pixel{
@@ -25,4 +26,12 @@ li{
     width: 40px;
     height: 40px;
     background-color: white;
+    display: table-cell;
 }
+
+.pixelRow {
+    border: solid black 1px;
+    width: 40px;
+    height: 40px;
+    display: table-row;
+  }
