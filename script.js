@@ -37,16 +37,22 @@ function changePixelColor(event) {
 }
 
 function getColor(event) {
-  let selectedColor = document.querySelector('.selected').style.backgroundColor;
+  const selectedColor = document.querySelector('.selected').style.backgroundColor;
   event.target.style.backgroundColor = selectedColor;
 }
 
 function getColorEvent() {
-  let square = document.getElementsByClassName('pixel');
+  const square = document.getElementsByClassName('pixel');
   for (let index = 0; index < square.length; index += 1) {
     square[index].addEventListener('click', getColor);
   }
 }
+
+document.body.addEventListener('click', (event) => {
+  if (event.target.className === 'pixel') {
+    event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+  }
+});
 
 colorPallete();
 addEventOnClick();
