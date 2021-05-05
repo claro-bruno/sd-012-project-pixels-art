@@ -10,14 +10,12 @@ body {
 
 #color-palette{
     display: block;
-    background-color: black;
     padding: 5px;
-    margin-left: 301px;
-    margin-right: 301px;
 }
 
 .color {
-    border: 1px solid;
+    color:blue;
+    border: 1px solid black;
     display: inline-block;
 }
 
