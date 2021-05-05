@@ -87,6 +87,9 @@ function userBoarder() {
     numberOfPixels[index] = index * index;
   }
   let finalNumber = numberOfPixels[numberOfInput];
+  if (userInput.value.length < 1) {
+    return alert('Board inválido!'), createPixelBaordElement(25);
+  }
   return finalNumber;
 }
 
@@ -106,6 +109,7 @@ function finalBoarderElements() {
   const pixelBoard = document.getElementById('pixel-board');
   const vqvButton = document.getElementById('generate-board');
   let defaultSize = createPixelBaordElement(25);
+
   vqvButton.addEventListener('click', function() {
     pixelBoard.innerHTML = '';
     defaultSize = createPixelBaordElement(userBoarder());
