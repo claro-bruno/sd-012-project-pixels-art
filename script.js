@@ -84,6 +84,9 @@ function createBoard(squares) {
   startPainting();
 }
 
+// Criar o board inicial
+createBoard(5);
+
 // Adicionar e remover a classe selected da paleta de cores.
 const color = document.querySelectorAll('.color');
 for (let i = 0; i < color.length; i += 1) {
