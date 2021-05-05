@@ -48,4 +48,15 @@ window.onload = function () {
     }
   }
   paintPixels();
+
+  function buttonClear() {
+    let buttonClear = document.getElementById('btn-clear');
+    let pixelsArray = document.querySelectorAll('.pixel');
+    buttonClear.addEventListener('click', function() {
+        for (let index = 0 ; index < pixelsArray.length; index += 1) {
+            pixelsArray[index].style.backgroundColor = 'white';
+        }
+    })
+  }
+  buttonClear();
 };
