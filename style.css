@@ -1,20 +1,19 @@
-body {
-  text-align: center;
+* {
+  margin: 0;
 }
+
 #title {
   background-color: aqua;
 }
 #color-palette {
-  width: 224px;
-  height: 52px;
   background-color: blue;
 }
 .color {
   display: inline-block;
+  box-sizing: border-box;
   border: 1px solid black;
   width: 40px;
   height: 40px;
-  margin: 5px;
 }
 #cor1{
   background-color: rgb(0, 0, 0);
@@ -29,13 +28,16 @@ body {
   background-color: rgb(150, 150, 150);
 }
 #pixel-board {
+  display: grid;
+  grid-template-columns: 40px 40px 40px 40px 40px;
+  padding: 0;
   margin-top: 30px;
-  width: 224px;
-  height: 52px;
-  background-color: blue;
+  /* background-color: blue; */
+  border: 1px solid black;
 }
 .pixel {
-  display: inline-block;
+  /* display: table-row; */
+  box-sizing: border-box;
   border: 1px solid black;
   width: 40px;
   height: 40px;
