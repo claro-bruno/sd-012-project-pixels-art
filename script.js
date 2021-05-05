@@ -32,5 +32,20 @@ function createBoardBlocks(size) {
   }
 }
 
+function alternateSelection(event) {
+  const paletteColorSelected = document.querySelector('.selected');
+  paletteColorSelected.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+function addEventPalette() {
+  const paletteDivs = document.querySelectorAll('.color');
+
+  for (let index = 0; index < paletteDivs.length; index += 1) {
+    paletteDivs[index].addEventListener('click', alternateSelection);
+  }
+}
+
 createPaletteBlocks(['black', 'blue', 'green', 'yellow']);
 createBoardBlocks(5);
+addEventPalette();
