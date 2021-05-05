@@ -47,7 +47,6 @@ for (let i = 0; i < color.length; i += 1) {
     const selected = document.querySelector('.selected');
     selected.classList.remove('selected');
     color[i].classList.add('selected');
-    console.log(color[i].css('background-color'));
   });
 }
 
