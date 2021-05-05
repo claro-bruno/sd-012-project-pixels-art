@@ -1,7 +1,9 @@
 #color-palette {
     width: 100%;
     height: 50px;
+    padding: 10px;
 }
+
 .color {
     border: 1px solid black;
     width: 50px;
@@ -20,4 +22,11 @@
 }
 .color:nth-child(4) {
     background-color: yellow;
+}
+#pixel-board {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    display: inline-block;
+    line-height: 0px;
 }
