@@ -1,3 +1,5 @@
+body {
+}
 #color-palette li {
   display: inline-block;
 }
@@ -17,5 +19,9 @@
   background-color: green;
 }
 .pixel {
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
   background-color: white;
+  box-sizing: border-box;
 }
