@@ -37,4 +37,23 @@ function createPalette(){
     }
 }
 
+function createBoard(number) {
+    let pixelBoard = document.querySelector('#pixel-board');
+    let tableBody = document.createElement('tbody');
+
+    for (let index = 0; index < number; index += 1) {
+        let row = document.createElement('tr');
+        for (let index2 = 0; index2 < number; index2 += 1) {
+            let line = document.createElement('td');
+            line.className = 'pixel';
+            row.appendChild(line);
+        }
+        tableBody.appendChild(row);
+    }
+    pixelBoard.appendChild(tableBody);
+
+
+}
+
 createPalette();
+createBoard(5);
