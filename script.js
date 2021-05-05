@@ -1,8 +1,3 @@
-const divUm = document.getElementById('divUm');
-const divDois = document.getElementById('divDois');
-const divTres = document.getElementById('divTres');
-const divQuatro = document.getElementById('divQuatro');
-
 function coresPaleta(array) {
   const paletas = document.getElementsByClassName('color');
   paletas[0].style.backgroundColor = 'black';
@@ -11,7 +6,7 @@ function coresPaleta(array) {
     paletas[index].style.backgroundColor = array[index - 1];
   }
 }
-const paletaCores = ['blue', 'green', 'yellow'];
+const paletaCores = ['red', 'white', 'blue'];
 coresPaleta(paletaCores);
 
 let numberOfLines = 5;
@@ -71,3 +66,29 @@ function setPixelColor() {
   }
 }
 setPixelColor();
+
+function createCleanButton(buttonName) {
+  let buttonContainer = document.querySelector('#buttonContainer');
+  let newButton = document.createElement('button');
+  let newButtonID = buttonName;
+
+  newButton.innerHTML = 'Limpar';
+  newButton.id = newButtonID;
+  buttonContainer.appendChild(newButton);
+}
+createCleanButton('clear-board');
+
+function cleanBoard() {
+  let getCleanButton = document.querySelector('#clear-board');
+  let getPixels = document.getElementsByClassName('pixel');
+  let setNewBackground = 'white';
+
+  getCleanButton.addEventListener('click', function() {
+    for (let index = 0; index < getPixels.length; index += 1) {
+      if (getPixels[index].style.backgroundColor !== setNewBackground) {
+        getPixels[index].style.backgroundColor = setNewBackground
+      }
+    }
+  })
+}
+cleanBoard();
