@@ -42,11 +42,11 @@ for (let line = 0; line < captureBoardSize.value; line += 1) {
 }
 
 // Seleciona a cor preta como cor inicial
-let captureInitialColor = document.querySelector('.color');
+const captureInitialColor = document.querySelector('.color');
 captureInitialColor.classList.add('selected');
 
 // Seleciona a cor desejada
-let captureColor = document.querySelectorAll('.color');
+const captureColor = document.querySelectorAll('.color');
 
 for (let index = 0; index < captureColor.length; index += 1) {
   captureColor[index].addEventListener('click', (event) => {
@@ -57,5 +57,16 @@ for (let index = 0; index < captureColor.length; index += 1) {
   })
 }
 
+// Colore os pixels com a cor selecionada
+const capturePixel = document.querySelectorAll('.pixel');
 
-
+for (let index = 0; index < capturePixel.length; index += 1) {
+  capturePixel[index].addEventListener('click', (event) => {
+    let captureSelectedColor = document.querySelector('.color.selected').style.backgroundColor;
+    if (event.target.style.backgroundColor === '') {
+      event.target.style.backgroundColor = captureSelectedColor;
+    } else {
+      event.target.style.backgroundColor = '';
+    }
+  })
+}
