@@ -27,4 +27,6 @@ window.onload = function () {
     let colorsArray = document.querySelectorAll('.color');
     colorsArray[0].className = 'color selected';
   }
+  selectedColors();
+  
 };
