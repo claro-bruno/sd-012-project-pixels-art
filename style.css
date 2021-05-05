@@ -25,6 +25,7 @@ h1 {
     width: 30px;
     height: 30px;
     border: black solid 1px;
+    cursor: pointer;
 }
 
 .pixel {
@@ -34,6 +35,7 @@ h1 {
     height: 40px;
     border: #000 solid 1px;
     background-color: #fff;
+    cursor: pointer;
 }
 
 .color:first-child {
