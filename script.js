@@ -1,12 +1,12 @@
-let coresDaPaleta = [preto, amarelo, azul, verde, vermelho, laranja];
+let nomesDasCores = ['black', 'yellow', 'blue', 'green', 'red']
 
-function divsCoresPaleta() {
-    for (index = 0; index < coresDaPaleta.length; index += 1){
-        let cor = document.createElement('div'); //cria elemento div com cor
-        let divPalette = document.getElementById('color-palette');
-        divPalette.appendChild(cor);
-        cor.className = 'color'
+function idsStyleDivsCores() {
+    let listaCores = document.getElementsByClassName('color'); //captura lista de cores html
+    for (index = 0; index < listaCores.length; index += 1){
+        let cor = listaCores[index]; //captura cor html
+        cor.id = nomesDasCores[index]; //adiciona id de cada cor
+        cor.style.backgroundColor = nomesDasCores[index];
     };
 };
 
-;
+idsStyleDivsCores();
