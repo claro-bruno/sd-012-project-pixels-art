@@ -1,4 +1,6 @@
-window.onload = function(){
-  let colorBlack = document.querySelector('.black');
-  colorBlack.className = ('selected');
-}
+window.onload = function() {
+  let selectedBlackColor = document.querySelector('.black');
+//   if (selectedBlackColor.classList) selectedBlackColor.classList.add('selected');
+//   else selectedBlackColor.className += ('selected');
+  selectedBlackColor.className += ('selected');
+};
