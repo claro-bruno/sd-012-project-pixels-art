@@ -1,7 +1,7 @@
-function paletaCores (cores) {
+function paletaCores () {
     let getContainer = document.querySelector('#color-palette');
-    console.log(getContainer);
-    for(let index = 0; index < 5; index += 1) {
-        getContainer
+    
+    for (let index = 0; index < 6; index += 1) {
+        console.log(getContainer)
     }
 }

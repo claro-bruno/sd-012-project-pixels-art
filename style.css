@@ -6,6 +6,10 @@ border: 1px solid black;
 display: inline-block;
 }
 
+#color-palette #preto {
+    background-color: black;
+}
+
 #color-palette #verde {
     background-color: green;
 }
@@ -16,8 +20,4 @@ display: inline-block;
 
 #color-palette #azul {
     background-color: blue;
-}
-
-#color-palette #preto {
-    background-color: black;
 }
