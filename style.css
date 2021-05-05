@@ -1,0 +1,12 @@
+body {
+    background-image: url("bg.jpg");
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'VT323', monospace;
+}
+
+h1 {
+    text-align: center;
+    margin-left: 20px;
+    font-size: 36px;
+    color: #633237;
+}
