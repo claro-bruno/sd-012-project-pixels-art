@@ -1,3 +1,8 @@
+const divUm = document.getElementById('divUm');
+const divDois = document.getElementById('divDois');
+const divTres = document.getElementById('divTres');
+const divQuatro = document.getElementById('divQuatro');
+
 function coresPaleta(array) {
   const paletas = document.getElementsByClassName('color');
   paletas[0].style.backgroundColor = 'black';
@@ -38,4 +43,13 @@ function fillLines() {
 }
 fillLines();
 
+function setSelectedClass(event) {
+  const paleta = document.querySelector('.selected');
+  paleta.classList.remove('selected');
+  event.target.classList.add('selected');
+}
 
+divUm.addEventListener('click', setSelectedClass);
+divDois.addEventListener('click', setSelectedClass);
+divTres.addEventListener('click', setSelectedClass);
+divQuatro.addEventListener('click', setSelectedClass);
