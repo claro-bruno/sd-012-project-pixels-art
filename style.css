@@ -1,33 +1,51 @@
 #title {
-    text-align: center;
-    font-family: monospace;
-    margin-top: 40px;
-    margin-bottom: 40px;
+  text-align: center;
+  font-family: monospace;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 #color-palette {
-    text-align: center;
+  text-align: center;
 }
 
 .color {
-    height: 50px;
-    width: 50px;
-    display: inline-block;
-    border: solid 1px black;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  border: solid 1px black;
+  margin-bottom: 40px;
 }
 
 #black {
-    background-color: black;
+  background-color: black;
 }
 
 #red {
-    background-color: red;
+  background-color: red;
 }
 
 #blue {
-    background-color: blue;
+  background-color: blue;
 }
 
 #purple {
-    background-color: purple;
+  background-color: purple;
+}
+
+#pixel-board {
+
+}
+
+.pixel {
+  background-color: white;
+  border: solid 1px black;
+  height: 40px;
+  width: 40px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
