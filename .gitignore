@@ -1,3 +1,5 @@
 # VSCode repo settings
 .vscode
 node_modules
+pixels-art.sublime-project
+pixels-art.sublime-workspace
