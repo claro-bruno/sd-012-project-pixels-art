@@ -1,11 +1,14 @@
 * {
-    margin: 0px;
+    margin: 0;
 }
+
 /* paleta de cores */
 .color {
-    border: 1px;
+    border: solid;
     display: inline-block;
+    border-width: 1px;
 }
+
 /* cores */
 #black {
     background-color: black;
