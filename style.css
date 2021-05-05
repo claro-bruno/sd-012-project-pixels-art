@@ -10,8 +10,9 @@
 
 .pixel{
     display: inline-block;
-    margin: 0;
     padding: 25px 25px;
     border: solid black 1px;
     color: white;
+    margin-bottom: -5px;
+    margin-left: -1px;
 }
