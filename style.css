@@ -47,7 +47,7 @@ body {
 }
 
 #pixel-board {
-    max-width: 150px;
+    max-width: 250px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -55,8 +55,10 @@ body {
 }
 
 .pixel {
-    width: 25px;
-    height: 25px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
     border: 1px solid black;
     flex-wrap: wrap;
+    color: #fff;
 }
