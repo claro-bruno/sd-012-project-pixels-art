@@ -34,6 +34,7 @@ window.onload = function () {
   }
   
   function apagar() {
+    let pixel = document.querySelectorAll('.pixel');
     let botaoApaga = document.querySelector('#clear-board');
     botaoApaga.addEventListener('click', function () {
       for (let index = 0; index < pixel.length; index += 1) {
