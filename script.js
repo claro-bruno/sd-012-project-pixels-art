@@ -24,7 +24,7 @@ window.onload = function () {
   function createPixelBaordElement() {
     const pixelBoard = document.getElementById('pixel-board');
     for (let index = 0; index < 25; index += 1) {
-      const createPixel = document.createElement('div');
+      const createPixel = document.createElement('span');
       createPixel.className = 'pixel';
       pixelBoard.appendChild(createPixel);
     }
@@ -34,7 +34,7 @@ window.onload = function () {
 
   function initialColor(ID) {
     const corInicial = document.getElementById(ID);
-    corInicial.className += ' selected'
+    corInicial.className += ' selected';
   }
 
   initialColor('color1');
@@ -58,4 +58,18 @@ window.onload = function () {
   }
 
   changeSelectedClick();
+
+  function changeColor(element) {
+    let selectedColor = document.querySelector('.selected');
+    const compStyle = window.getComputedStyle(selectedColor);
+    element.target.style.backgroundColor = compStyle.getPropertyValue('background-color');
+  }
+
+  function changeColorClick() {
+    const pixels = document.querySelectorAll('.pixel');
+    for (let pixel of pixels) {
+      pixel.addEventListener('click', changeColor);
+    }
+  }
+  changeColorClick();
 };

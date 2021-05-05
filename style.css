@@ -3,6 +3,7 @@
   display: inline-block;
   width: 50px;
   height: 50px;
+  margin-right: 10px;
 }
 
 #pixel-board {
@@ -13,6 +14,6 @@
   border: 1px solid black;
   width: 40px;
   height: 40px;
-  display: inline-block;
   background-color: white;
+  display: inline-block;
 }
