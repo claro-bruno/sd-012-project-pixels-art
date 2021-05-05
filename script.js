@@ -26,11 +26,17 @@ function createPixelFrame() {
   board.appendChild(elementBoard);
 }
 // Cria Quadro de pixels
-const pixelBoardBase = 5;
-for (let lineIndex = 0; lineIndex < pixelBoardBase; lineIndex += 1) {
-  for (let index = 0; index < pixelBoardBase; index += 1) {
-    createPixelFrame();
+const pixelBoardLine = 5;
+const pixelBoardColum = pixelBoardLine;
+for (let lineIndex = 0; lineIndex < pixelBoardLine; lineIndex += 1) {
+  for (let index = 0; index < pixelBoardColum; index += 1) {
+    createPixelFrame();// adiciona linha de pixels
   }
   const lineBreak = document.createElement('br');
-  document.getElementById('pixel-board').appendChild(lineBreak);
+  document.getElementById('pixel-board').appendChild(lineBreak);// adiciona quebra de linha
 }
+// Seleciona primeira cor ao carregar pagina
+window.onload = function () {
+  const firstColor = document.querySelector('.color');
+  firstColor.classList.add('selected');
+};
