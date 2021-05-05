@@ -29,9 +29,9 @@ function createPixelBoard(numberOfPixels) {
         let row = document.createElement('tr');
         pixelBoard.appendChild(row);
         for (let index = 0; index < Math.sqrt(numberOfPixels); index += 1) {
-            let pixel = document.createElement('td');
-            pixel.className = 'pixel';
-            row.appendChild(pixel);
+            let pixel = document.createElement('td');            
+            pixel.className = 'pixel';        
+            row.appendChild(pixel);            
         }        
     }
 }
