@@ -41,10 +41,7 @@ const addNewClass = document.querySelectorAll('.color')[0].classList.add('select
 //PRIMEIRO RESGATEI O ELEMENTO COM O ID COLOR-PALLETE
 
 //CRIEI A VARIAVEL PARA RESGATAR O ELEMENTO DIV COM A ID COLOR-PALLETE QUE É PAI DOS ELEMENTOS DIV QUE TEM A CLASSE COLOR;
-//CRIEI A FUNÇÃO SELECT COLOR;
-//ADICIONEI O EVENTO CLICK E UMA OUTRA FUNCTION;
-//DECLAREI A CONST colorDiv PARA RESGATAR O ELEMENTO COM A CLASSE selected;
-//ADICIONEI A CONDIÇÃO PARA REMOVER E ADICIONAR A CLASSE SELECTED;
+
 
 const colorPaletDiv = document.querySelector('#color-pallete');
 
@@ -59,9 +56,6 @@ function selectColor() {
   }
   
 selectColor();
-
-//8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
-
 
 
 
