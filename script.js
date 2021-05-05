@@ -1,20 +1,20 @@
 // Cria paleta de cores dinamicamente:
 const numberOfColors = 4;
-function createPalleteColors(number) {
+function createPaletteColors(number) {
   for (let index = 0; index < number; index += 1) {
-    const pallete = document.getElementById('color-palette');
-    const elementPallete = document.createElement('div');
-    elementPallete.className = 'color';
-    pallete.appendChild(elementPallete);
+    const palette = document.getElementById('color-palette');
+    const elementPalette = document.createElement('div');
+    elementPalette.className = 'color';
+    palette.appendChild(elementPalette);
   }
 }
-createPalleteColors(numberOfColors);
+createPaletteColors(numberOfColors);
 // Adiciona Cores dinamicamente a paleta de cores:
 const colorsForPalette = ['black', 'lime', 'aqua', 'deeppink']; // Array com cores para serem adicionadas.
 function addColors(arrColors) {
-  const colorPallete = document.getElementsByClassName('color');
-  for (let index = 0; index < colorPallete.length; index += 1) {
-    colorPallete[index].style.backgroundColor = arrColors[index];
+  const colorPalette = document.getElementsByClassName('color');
+  for (let index = 0; index < colorPalette.length; index += 1) {
+    colorPalette[index].style.backgroundColor = arrColors[index];
   }
 }
 addColors(colorsForPalette);
@@ -48,5 +48,15 @@ for (let index = 0; index < paletteColor.length; index += 1) {
     const lstSelected = document.querySelector('.selected');
     lstSelected.classList.remove('selected');
     selectedColor.classList.add('selected');
+  });
+}
+// Pinta pixel com cor selecionada
+const boardPixels = document.getElementsByClassName('pixel');
+for (let index = 0; index < boardPixels.length; index += 1) {
+  boardPixels[index].addEventListener('click', () => {
+    const colorSelected = document.querySelector('.selected');
+    if (boardPixels[index].style.backgroundColor !== colorSelected.style.backgroundColor) {
+      boardPixels[index].style.backgroundColor = colorSelected.style.backgroundColor;
+    }
   });
 }
