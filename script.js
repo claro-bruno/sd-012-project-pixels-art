@@ -53,26 +53,27 @@ window.onload = function () {
   }
 
   getGenerateButton.addEventListener('click', function () {
-   if (getBoardSize.value !== ''){
-    removeTable();
-    let boardSize;
-    if (getBoardSize.value < 5) {
-      boardSize = 5;
-    } else if (getBoardSize.value > 50) {
-      boardSize = 50;
-    } else {
-      boardSize = getBoardSize.value;
-    }
-    for (let linIndex = 0; linIndex < boardSize; linIndex += 1) {
-      let line = document.createElement('tr');
-      getPixelBoard.appendChild(line);
-      for (let colIndex = 0; colIndex < boardSize; colIndex += 1) {
-        let column = document.createElement('td');
-        column.className = 'pixel';
-        line.appendChild(column);
+    if (getBoardSize.value !== '') {
+      removeTable();
+      let boardSize;
+      if (getBoardSize.value < 5) {
+        boardSize = 5;
+      } else if (getBoardSize.value > 50) {
+        boardSize = 50;
+      } else {
+        boardSize = getBoardSize.value;
       }
-    }} else{
-     alert('Board inválido!')
+      for (let linIndex = 0; linIndex < boardSize; linIndex += 1) {
+        let line = document.createElement('tr');
+        getPixelBoard.appendChild(line);
+        for (let colIndex = 0; colIndex < boardSize; colIndex += 1) {
+          let column = document.createElement('td');
+          column.className = 'pixel';
+          line.appendChild(column);
+        }
+      }
+    } else {
+      alert('Board inválido!');
     }
   });
 };
