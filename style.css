@@ -2,18 +2,18 @@
     display: flex;
     flex-direction: row;
     border: 1px solid rgb(0, 0, 0, .5);
-    width: 200px;
+    width: 160px;
 }
 
 .color{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border: 1px solid black;
     cursor: pointer;
 }
 
 #s1{
-    background-color: red;
+    background-color: black;
 }
 
 #s2{
@@ -25,5 +25,5 @@
 }
 
 #s4{
-    background-color: black;
+    background-color: red;
 }
