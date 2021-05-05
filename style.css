@@ -13,11 +13,11 @@
   justify-content: space-evenly;
 }
 
-.row {
-  display: flex;
-}
-
 #pixel-board {
   display: flex;
   flex-wrap: wrap;
+}
+
+.pixel {
+  background-color: white;;
 }
