@@ -1,4 +1,4 @@
-//COLOCANDO AS CORES NA PALETA ATRAVES DAS CLASSES, RESGATANDO AS CLASSES DAS DIVS DE CADA COR DO HTML:
+//2, 3- COLOCANDO AS CORES NA PALETA ATRAVES DAS CLASSES, RESGATANDO AS CLASSES DAS DIVS DE CADA COR DO HTML:
 
 const black = document.querySelectorAll('.color')[0].style.backgroundColor = 'black';
 
@@ -8,7 +8,7 @@ const yellow = document.querySelectorAll('.color')[2].style.backgroundColor = 'y
 
 const blue = document.querySelectorAll('.color')[3].style.backgroundColor = 'blue';
 
-//CRIANDO A TABELA DE PIXELS:
+//4 - CRIANDO A TABELA DE PIXELS:
 
 //CRIA VARIAVEL PARA RESGATAR O ELEMENTO PELO ID:
 const pixelBoard = document.getElementById('pixel-board');
