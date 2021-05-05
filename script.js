@@ -32,3 +32,9 @@ function preencheCor (event) {
     let corSelecionada = document.querySelector('.selected').style.backgroundColor;
     event.target.style.backgroundColor = corSelecionada;
 } document.querySelector('#pixel-board').addEventListener('click', preencheCor);
+
+document.querySelector('#clear-board').addEventListener('click', function limpaCores () {
+    for (let index in pixelBoard.children) {
+        pixelBoard.children[index].style.backgroundColor = 'white';
+    }
+});
