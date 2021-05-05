@@ -13,15 +13,26 @@ body {
   border: solid 1px;
   display: inline-block;
 }
-.red {
+.cor1 {
+  background-color: black;
+}
+.cor2 {
   background-color: red;
 }
-.green {
+.cor3 {
   background-color: green;
 }
-.blue {
+.cor4 {
   background-color: blue;
 }
-.black {
-  background-color: black;
+
+table {
+  border-spacing: 0;
+  margin: auto;
+}
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: solid 1px;
+  display: inline-block;
 }
