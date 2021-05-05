@@ -1,36 +1,19 @@
-#red-palette {
-    position: absolute;
+.color {
+    display: inline-block;
+    border: solid 1px black;
     width: 100px;
     height: 100px;
+}
+
+#red-color {
     background-color: red;
-    background: red;
-    border: solid 1px;
-    left: 10px;
 }
-#black-palette {
-    position: absolute;
-    width: 100px;
-    height: 100px;
+#black-color {
     background-color: black;
-    background: black;
-    border: solid 1px;
-    left: 120px;
 }
-#blue-palette {
-    position: absolute;
-    width: 100px;
-    height: 100px;
+#blue-color {
     background-color:blue;
-    background: blue;
-    border: solid 1px;
-    left: 230px;
 }
-#green-palette {
-    position: absolute;
-    width: 100px;
-    height: 100px;
+#green-color {
     background-color: green;
-    background: green;
-    border: solid 1px;
-    left: 340px;
 }
