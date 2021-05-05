@@ -1,10 +1,12 @@
-window.onload = function () {
+window.onload = function projetoExec () {
+  //gera um número hexadecimal e adiciona à uma string.
   function generateRandomColor () {
-    const randomColor =  Math.floor(Math.random()*16777215).toString(16);
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
     return `#${randomColor}`;
   }
 
-  function createPalette(ID, color) {
+  //cria elementos da paletta.
+  function createPaletteElement(ID, color) {
     const colorPalette = document.getElementById('color-palette');
     const createDiv = document.createElement('div');
     createDiv.className = 'color';
@@ -13,8 +15,21 @@ window.onload = function () {
     colorPalette.appendChild(createDiv);
   }
 
-  createPalette('color1', 'black');
-  createPalette('color2', generateRandomColor());
-  createPalette('color3', generateRandomColor());
-  createPalette('color4', generateRandomColor());
-}
+  createPaletteElement('color1', 'black');
+  createPaletteElement('color2', generateRandomColor());
+  createPaletteElement('color3', generateRandomColor());
+  createPaletteElement('color4', generateRandomColor());
+
+  //cria elemento da pixel board.
+  function createPixelBaordElement() {
+    const pixelBoard = document.getElementById('pixel-board');
+    for (let index = 0; index < 25; index += 1) {
+      const createPixel = document.createElement('div');
+      createPixel.className = 'pixel';
+      pixelBoard.appendChild(createPixel);
+    }
+  }
+
+  createPixelBaordElement();
+
+};
