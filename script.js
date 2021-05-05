@@ -34,5 +34,11 @@ function createMatrix (cMwidth,CMlenght) {
   }
   matrixPlace.appendChild(pixelsMatrix);
 }
-
 createMatrix(5,5);
+
+let pixMatrixChg = document.getElementById('pixel-board');
+pixMatrixChg.addEventListener('click',changeColor);
+
+function changeColor (event) {
+  event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+}
