@@ -35,7 +35,7 @@ for (let index = 0; index < 5; index += 1) {
   //PRIMEIRO CRIEI UMA VARIAVEL PARA ADICIONAR A CLASSE SELECTED A MINHA COR BLACK
 
 
-  const addNewClass = document.querySelectorAll('.color')[0].classList.add('selected');
+const addNewClass = document.querySelectorAll('.color')[0].classList.add('selected');
 
 
 
