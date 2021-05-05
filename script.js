@@ -48,9 +48,23 @@ window.onload = function() {
     for (let index = 0; index < paletaCorPadrao.length; index += 1) {
       paletaCorPadrao[index].classList.remove('selected')
     }
-    paletaCorPadrao[0].classList.add('selected');
-    
+    paletaCorPadrao[0].classList.add('selected'); 
   }
-  corPadrao();
+corPadrao();
   
-}//window.onload braket
+}//window.onload braket =====================================================================================
+
+let paleta = document.getElementsByClassName('color');
+for (let index = 0; index < paleta.length; index += 1) {
+  paleta[index].addEventListener('click', function(event) {
+    let removeSelection = document.querySelector('.selected');
+    removeSelection.classList.remove('selected');
+    event.target.classList.add('selected');
+  })
+}
+  
+  // function paletaSelector(classe) {
+  //   let elementoSelecionado = document.querySelector('.selected');
+  //   elementoSelecionado.classList.remove('selected');
+  //   classe.target.classList.add('selected');
+  // }
