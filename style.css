@@ -34,3 +34,20 @@ h1 {
 
 /* Usei como referência a colega Adriana Biberg para colocar as id's de cada cor */
 
+#pixel-board {
+  position: relative;
+  left: 38%;
+  margin-top: 3%;
+}
+
+.pixel {
+  border: solid black 1px;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  display: inline-block;
+}
+
+.line {
+  display: block;
+}
