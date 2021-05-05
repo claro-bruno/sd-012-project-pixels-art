@@ -1,4 +1,7 @@
 const table = document.querySelector('#pixel-board');
+const colors = document.querySelectorAll('.color');
+const pixels = document.querySelectorAll('.pixel');
+
 
 function createSquares(numberOfLines) {
   for (let index = 0; index < numberOfLines; index += 1) {
@@ -16,3 +19,13 @@ function createSquares(numberOfLines) {
 }
 
 createSquares(5);
+
+function changeSelected(event) {
+  const selected = document.querySelector('.selected');
+  selected.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+for (let index3 = 0; index3 < colors.length; index3 += 1) {
+  colors[index3].addEventListener('click', changeSelected);
+}
