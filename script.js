@@ -22,10 +22,14 @@ window.onload = function() {
     }
     function selectColor(event) {
         for(let j = 0; j < colors.length; j++) {
-            if(colors[i].className == "color selected") {
-                colors[i].className = "color"
+            if(colors[j].className == "color selected") {
+                colors[j].className = "color"
             }
         }
         event.target.className = "color selected";
+        console.log("black: " + colors[0].className);
+        console.log("red: " + colors[1].className);
+        console.log("green: " + colors[2].className);
+        console.log("blue: " + colors[3].className);
     }
 }
