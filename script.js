@@ -6,14 +6,11 @@ window.onload = function () {
   
   //Inserir um escutador de eventos em cada elemento do documento
   document.addEventListener('click', function (event) {
+    //Clicar em uma das cores da paleta faz com que ela seja selecionada
     if (event.target.classList.contains('color')) {
-      if (event.target.classList.contains('selected')) {
-        event.target.classList.remove('selected');
-      } else {
-        setSelected(event);
-      } ;
+      setSelected(event);
     };
-    
+        
   });
   
   //Define a cor preta como cor inicial
@@ -46,12 +43,8 @@ window.onload = function () {
   //Cria uma função que adiciona a classe 'selected' ao elemento selecionado, mas pode existir apenas um elemento com essa classe
   function setSelected(event) {
     const selectedElement = document.querySelector('.selected');
-    if (selectedElement === null) {
-      event.target.classList.add('selected');
-    } else {
-      selectedElement.classList.remove('selected');
-      event.target.classList.add('selected');
-    };
+    selectedElement.classList.remove('selected');
+    event.target.classList.add('selected');
   };
 
 };
