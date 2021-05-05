@@ -1,4 +1,4 @@
-//COLOCANDO AS CORES NA PALETA ATRAVES DAS CLASSES:
+//COLOCANDO AS CORES NA PALETA ATRAVES DAS CLASSES, RESGATANDO AS CLASSES DAS DIVS DE CADA COR DO HTML:
 
 const black = document.querySelectorAll('.color')[0].style.backgroundColor = 'black';
 
