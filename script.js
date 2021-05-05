@@ -17,7 +17,8 @@ let linhasQuadroPixels = document.getElementsByClassName('linha-pixel'); //lista
 
 function quadroPixels() {
     for (index = 0; index < linhasQuadroPixels.length; index += 1){ //percorre cada linha
-        for (index = 0; index <linhasQuadroPixels.length; index += 1){ //cria pixels de cada linha
+        let linhaPixels = linhasQuadroPixels[index];
+        for (index = 0; index < linhasQuadroPixels.length; index += 1){ //cria pixels de cada linha
             let pixel = document.createElement('div');
             linhasQuadroPixels[index].appendChild(pixel);
             pixel.className='pixel';
