@@ -24,11 +24,11 @@ h1 {
 }
 
 .color:first-child {
-    background-color: #633237;
+    background-color: #000;
 }
 
 .color:nth-child(2) {
-    background-color: #816932;
+    background-color: #633237;
 }
 
 .color:nth-child(3) {
