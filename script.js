@@ -6,7 +6,11 @@ function createPallete(numberOfColors) {
 
     for (let index = 0; index < numberOfColors; index += 1) {
         let color = document.createElement('div');
-        color.className = 'color';
+        if (index === 0) {
+            color.className = 'color selected';
+        } else {
+            color.className = 'color';
+        }        
         colorPallete.appendChild(color);
     }
 
