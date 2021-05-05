@@ -1,12 +1,12 @@
 const palColor = document.getElementById('color-palette');
 const palleteColor = document.querySelectorAll('.color');
-const matrixPlace = document.getElementById('section3');
+const matrixPlace = document.getElementById('section4');
 const clearBoardBtn = document.getElementById('clear-board');
 const inputNBtn = document.querySelector('#generate-board');
 const palletsize = 4;
 
 function randomRgb() {
-  return (Math.floor(Math.random()*257));
+  return (Math.floor(Math.random()*256));
 }
 
 function fillPalletColors(arrayColor) {
