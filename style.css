@@ -11,7 +11,7 @@ div.color {
     border-radius: 100%
 }
 div.color:nth-child(1) {
-    background-color: #1b1c33;
+    background-color: black;
 }
 div.color:nth-child(2) {
     background-color: #28c641;
