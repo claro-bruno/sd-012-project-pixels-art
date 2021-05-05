@@ -6,9 +6,9 @@ const colors = ['#000', '#405d27', '#034f84', '#c94c4c'];
 function colorSelector() {
     for(let index = 0; index < colors.length; index+=1) {
         const eachColor = document.createElement('div');
+        eachColor.className = 'color';
         const color = colors[index];
         eachColor.innerText = color;
-        eachColor.className = 'color';
         colorPalete.appendChild(eachColor);
     };
     colorPalete.firstChild.className = 'color selected';
@@ -26,3 +26,28 @@ function drawingBoarder() {
     };
 }    
 drawingBoarder();
+
+const mainColors = document.querySelectorAll('.color');
+const colorDraw = document.querySelectorAll('.pixel')
+
+mainColors.forEach((color) => {
+    color.addEventListener('click', (event) => {
+        if(color.className === 'color') {
+            color.className = 'color selected';
+        }else {
+            color.className = 'color';
+        }
+        
+        if(color.className === 'color selected') {
+            const painting = event.target.innerHTML
+            
+        }
+    });
+})
+
+
+// if(mainColors[index].className === 'color') {
+    //     mainColors[index].className = 'color selected';
+    // } else {
+    //     mainColors[index].className = 'color';
+    // }
