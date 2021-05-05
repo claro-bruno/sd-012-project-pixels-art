@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#color-palette {
+  display: flex;
+  border: black solid 1px;
+  justify-content: space-between;
+}
+
+.color {
+  border: black solid 1px;
+  height: 40px;
+  width: 40px;
+}
+
+.row {
+  display: flex;
+
+}
+
+.pixel {
+  border: black solid 1px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+
+}
