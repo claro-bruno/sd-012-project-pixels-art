@@ -24,6 +24,11 @@ document.body.appendChild(h1)
 // Verifica se a paleta de cores está posicionada abaixo do título 'Paleta de Cores'
 // Verifica se a paleta de cores não contém cores repetidas.
 
+// 3 - Adicione a cor preta como a primeira cor da paleta de cores.
+// O que será verificado:
+// Verifica se a primeira cor da paleta é preta
+// Verifica se as demais cores podem ser escolhidas livremente.
+
 let colorPalette = document.createElement('div')
 document.body.appendChild(colorPalette)
 colorPalette.id = 'color-palette'
@@ -36,5 +41,8 @@ for (color of colorList) {
     colorItem.style.borderStyle = 'solid'
     colorItem.style.borderWidth = '1px'
     colorItem.style.display = 'inline-block'
+    colorItem.style.width = '5px'
+    colorItem.style.height = '5px'
     colorPalette.appendChild(colorItem)
 }
+
