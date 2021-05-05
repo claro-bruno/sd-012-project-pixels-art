@@ -32,21 +32,21 @@ function criaPaletaCores(cores, tamanho) {
 }
 
 function criaQuadro(height, width, tamanho, color) {
-  for (let index = 0; index < height; index += 1) {
-        let novaColuna = document.createElement('div');
-        quadro.appendChild(novaColuna);
+  for (let index = 0; index < width; index += 1) {
+        let novaLinha = document.createElement('tr');
+        quadro.appendChild(novaLinha);
 
 
-    for (let index = 0; index < width; index += 1) {
-        let novaLinha = document.createElement('li');
-        let novaLinhaSize = tamanho;
-        novaLinha.className = 'pixel';
-        novaLinha.style.listStyle = 'none';
-        novaLinha.style.backgroundColor = color;
-        novaLinha.style.width = novaLinhaSize;
-        novaLinha.style.height = novaLinhaSize;
-        novaLinha.style.border = '1px solid black';
-        novaColuna.appendChild(novaLinha);
+    for (let index = 0; index < height; index += 1) {
+        let novaColuna = document.createElement('td');
+        let novaColunaSize = tamanho;
+        novaColuna.className = 'pixel';
+        novaColuna.style.listStyle = 'none';
+        novaColuna.style.backgroundColor = color;
+        novaColuna.style.width = novaColunaSize;
+        novaColuna.style.height = novaColunaSize;
+        novaColuna.style.border = '1px solid black';
+        novaLinha.appendChild(novaColuna);
     }
   }
 }
