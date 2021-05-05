@@ -73,9 +73,9 @@ function reSizeBoardPixel () {
 
     if (inputValue === "") {
         alert("Board inválido!")
-    } else if (inputValue < 5){
+    } else if (inputValue <= 4){
         alert("Insira um valor maior que 5!")
-    } else if (inputValue > 50){ 
+    } else if (inputValue => 51){ 
         alert("Insira um valor menor que 50!")
     } else {
         // Reseta PixelBoard
