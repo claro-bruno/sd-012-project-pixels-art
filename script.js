@@ -34,8 +34,17 @@ function tableGenerator() {
       tableData.style.backgroundColor = 'white';
     }
   }
-
-
-
 }
 tableGenerator();
+
+function colorSelected(){
+  let selectedColor = document.getElementsByClassName('color selected');
+  let colorPalette = document.getElementById('color-palette');
+
+  colorPalette.addEventListener('click', function(event){
+    selectedColor[0].classList.remove('selected');
+    event.target.classList.add('selected');
+  })
+
+}
+colorSelected();
