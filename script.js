@@ -3,14 +3,12 @@ const pixelBoard = document.getElementById('pixel-board');
 const pallete = document.getElementsByClassName('color');
 const btnClear = document.getElementById('clear-board');
 const btnGenerate = document.getElementById('generate-board');
-const boardContainer = document.getElementById('board-container');
 const boardSize = document.getElementById('board-size');
 
 function randomRGB() {
-  let r, g, b;
-  r = parseInt(Math.random() * 255);
-  g = parseInt(Math.random() * 255);
-  b = parseInt(Math.random() * 255);
+  const r = parseInt((Math.random() * 255), 10);
+  const g = parseInt((Math.random() * 255), 10);
+  const b = parseInt((Math.random() * 255), 10);
   return `rgb(${r}, ${g}, ${b})`;
 }
 
@@ -32,8 +30,8 @@ function createBoard () {
   let size = boardSize.value;
   if (size < 5 || size > 50 || size == null) {
     window.alert('Board inválido!')
-    if (size < 5 || size == null) {size = 5; }
-    if (size > 50) {size = 50; }
+    if (size < 5 || size == null) { size = 5; }
+    if (size > 50) { size = 50; }
   } 
   resetBoard();
   const pixelBoard = document.getElementById('pixel-board');
