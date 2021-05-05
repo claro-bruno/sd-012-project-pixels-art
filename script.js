@@ -106,24 +106,33 @@ function criaBotaoTamanho() {
   inputSize.appendChild(criaBotao);
 }
 
+function novoQuadro() {
+  let remove = document.querySelectorAll('tr');
+  for (let index = 0; index < remove.length; index += 1) {
+    quadro.removeChild(remove[index]);
+  }
+
+  criaQuadro(tamanhoQuadro, pixels, corInicialQuadro);
+}
+
 let botaoTamanho = document.querySelector('#generate-board');
 let inputTamanho = document.querySelector('.input-size');
+
 botaoTamanho.addEventListener('click', function () {
-  let remove = document.querySelectorAll('tr');
   if (parseInt(inputTamanho.value) == parseInt(tamanhoQuadro)) {
     alert('O quadro já está no tamanho inserido');
-  } else if (
-    parseInt(inputTamanho.value) < 5 ||
-    parseInt(inputTamanho.value) > 50
-  ) {
+  } else if (parseInt(inputTamanho.value) < 5) {
+    tamanhoQuadro = 5;
     alert('Board inválido!');
+    novoQuadro();
+    
+  } else if (parseInt(inputTamanho.value) > 50) {
+    tamanhoQuadro = 50;
+    alert('Board inválido!');
+    novoQuadro();
+    
   } else {
-    for (let index = 0; index < remove.length; index += 1) {
-      quadro.removeChild(remove[index]);
-    }
-
     tamanhoQuadro = parseInt(inputTamanho.value);
-
-    criaQuadro(tamanhoQuadro, pixels, corInicialQuadro);
+    novoQuadro();
   }
 });
