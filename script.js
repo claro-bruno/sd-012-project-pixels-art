@@ -3,7 +3,6 @@ const shadows = '2px 2px 2px grey';
 const createPalette = (color) => {
   const palette = document.getElementById('color-palette');
   const colorSquare = document.createElement('span');
-  colorSquare.style.backgroundColor = color;
   colorSquare.classList.add('color');
   colorSquare.id = color;
   palette.appendChild(colorSquare);
@@ -45,10 +44,22 @@ const selectColor = () => {
   }
 };
 
+const paintPixels = () => {
+  const pixelCollection = document.getElementsByClassName('pixel');
+  for (let i = 0; i < pixelCollection.length; i += 1) {
+    pixelCollection[i].addEventListener('click', () => {
+      const selected = document.querySelector('.selected');
+      const selectedColor = selected.id;
+      pixelCollection[i].style.backgroundColor = selectedColor;
+    });
+  }
+};
+
 window.onload = () => {
   createPalette('black');
   createPalette('red');
   createPalette('green');
   createPalette('blue');
   selectColor();
+  paintPixels();
 };
