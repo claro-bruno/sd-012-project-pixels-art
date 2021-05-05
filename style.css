@@ -1,4 +1,4 @@
-.color {
+.color, .pixel {
   width: 40px;
   height: 40px;
   border: 1px solid black;
@@ -12,3 +12,9 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.row {
+    display: flex;
+}
+
+

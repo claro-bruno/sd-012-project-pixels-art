@@ -1,4 +1,5 @@
-const colorPalette = document.getElementById('color-palette'); 
+const colorPalette = document.getElementById('color-palette');
+const pixelBoard = document.getElementById('pixel-board');
 
 function createPalette() {
   let div = document.createElement('div');
@@ -21,6 +22,21 @@ function randomRGB() {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
+function createBoard (size) {
+  for (let row = 1; row <= size; row += 1) {
+    let row = document.createElement('div');
+    row.className = 'row';
+    
+    for (let column = 1; column <= size; column += 1) {
+      let div = document.createElement('div');
+      div.className = 'pixel';
+      row.appendChild(div);
+    }
+    pixelBoard.appendChild(row);
+  }
+}
+
 window.onload = function pageLoad () {
   createPalette();
+  createBoard(5);
 };
