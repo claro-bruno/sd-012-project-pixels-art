@@ -1,7 +1,7 @@
 window.onload = function () {
     let pixelBoard = document.getElementById('pixel-board');
     let boardersNumberOfPixels = 25;
-//Seta as cores iniciais da paleta de cores
+    //Seta as cores iniciais da paleta de cores
     const color1 = document.getElementsByClassName('color')[0];
     color1.style.backgroundColor = 'black';
     const color2 = document.getElementsByClassName('color')[1];
@@ -10,7 +10,7 @@ window.onload = function () {
     color3.style.backgroundColor = 'blue';
     const color4 = document.getElementsByClassName('color')[3];
     color4.style.backgroundColor = 'green';
-//Cria dinamicamente os pixels do pixel-board
+    //Cria dinamicamente os pixels do pixel-board
     function createPixels () {
         pixelBoard.style.maxWidth = '210px';
         for (let index = 0; index < boardersNumberOfPixels; index += 1) {
@@ -20,19 +20,36 @@ window.onload = function () {
         }
     }
     createPixels();
-//Adiciona a classe selected ao clicar em uma cor da paleta
-function selectColor () {
-    color1.addEventListener('click', event => {
-        event.target.className = 'color selected';
-    })
-}
-selectColor();
-
-//Defina a cor preta como inicial.
-function setBlackAsDefault () {
-    color1.className = 'color selected';
-}
-setBlackAsDefault();
+    //Defina a cor preta como inicial.
+    function setBlackAsDefault () {
+        color1.className = 'color selected';
+        }
+        setBlackAsDefault();
+    //Adiciona a classe selected ao clicar em uma cor da paleta
+    function selectColor (color) {
+    color.addEventListener('click', event => {
+        if (event.target.className !== 'color selected') {
+            event.target.className = 'color selected';
+            resetClass(color);
+        } else {
+            event.target.className = 'color';
+            }
+        })
+    }
+    selectColor(color1);
+    selectColor(color2);
+    selectColor(color3);
+    selectColor(color4);
+    //Reseta a classe para color
+    function resetClass (color) {
+        let colors = document.getElementsByClassName('color');
+        for (let index = 0; index < colors.length; index += 1) {
+            if (colors[index].className !== 'color' && colors[index] !== color) {
+                colors[index].className = 'color';
+            }
+        }
+    }
+    resetClass(color1);
 
 
 
