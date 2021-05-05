@@ -81,4 +81,16 @@ boardSize();
 window.onload = () => {
   const blackColor = document.querySelector('#first-color');
   blackColor.classList.add('selected');
+  // Ideia retirada de https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+  function randomColors(elemento) {
+    let red = Math.random() * 255;
+    let green = Math.random() * 255;
+    let blue = Math.random() * 255;
+
+    elemento.style.backgroundColor = `rgb(${red},${green},${blue})`;
+  }
+
+  for (let color = 1; color < paletteColors.length; color += 1) {
+    randomColors(paletteColors[color]);
+  }
 };
