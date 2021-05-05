@@ -11,10 +11,11 @@ let tamanhoQuadro = 5;
 let corInicialQuadro = 'white';
 
 geraCores();
-criaQuadro(tamanhoQuadro, pixels, corInicialQuadro);
-criaBotaoApagar();
 criaInputTamanho();
 criaBotaoTamanho();
+criaQuadro(tamanhoQuadro, pixels, corInicialQuadro);
+criaBotaoApagar();
+novoQuadro();
 
 
 let cores = document.querySelectorAll('.color');
@@ -46,6 +47,25 @@ let botaoApaga = document.querySelector('#clear-board');
 botaoApaga.addEventListener('click', function () {
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
+  }
+});
+
+let botaoTamanho = document.querySelector('#generate-board');
+let inputTamanho = document.querySelector('.input-size');
+botaoTamanho.addEventListener('click', function () {
+  if (parseInt(inputTamanho.value) == parseInt(tamanhoQuadro)) {
+    alert('O quadro já está no tamanho inserido');
+  } else if (parseInt(inputTamanho.value) < 5) {
+    tamanhoQuadro = 5;
+    alert('Board inválido!');
+    novoQuadro();
+  } else if (parseInt(inputTamanho.value) > 50) {
+    tamanhoQuadro = 50;
+    alert('Board inválido!');
+    novoQuadro();
+  } else {
+    tamanhoQuadro = parseInt(inputTamanho.value);
+    novoQuadro();
   }
 });
 
@@ -113,37 +133,16 @@ function novoQuadro() {
   criaQuadro(tamanhoQuadro, pixels, corInicialQuadro);
 }
 
-let botaoTamanho = document.querySelector('#generate-board');
-let inputTamanho = document.querySelector('.input-size');
-
-botaoTamanho.addEventListener('click', function () {
-  if (parseInt(inputTamanho.value) == parseInt(tamanhoQuadro)) {
-    alert('O quadro já está no tamanho inserido');
-  } else if (parseInt(inputTamanho.value) < 5) {
-    tamanhoQuadro = 5;
-    alert('Board inválido!');
-    novoQuadro();
-  } else if (parseInt(inputTamanho.value) > 50) {
-    tamanhoQuadro = 50;
-    alert('Board inválido!');
-    novoQuadro();
-  } else {
-    tamanhoQuadro = parseInt(inputTamanho.value);
-    novoQuadro();
-  }
-});
-
 function geraCores() {
-  // let coresPaleta = ['#000'];
-  let coresPaleta = ['red', 'black', 'white', 'blue'];
-  // for (let index = 0; index < 3; index += 1) {
-  //   let novaCor =
-  //   '#' +
-  //   parseInt(Math.random() * 0xffffff)
-  //     .toString(16)
-  //     .padStart(6, '0');
+  let coresPaleta = ['#000'];
+  for (let index = 0; index < 3; index += 1) {
+    let novaCor =
+    '#' +
+    parseInt(Math.random() * 0xffffff)
+      .toString(16)
+      .padStart(6, '0');
 
-  //   coresPaleta.push(novaCor);
-  // }
+    coresPaleta.push(novaCor);
+  }
   criaPaletaCores(coresPaleta, pixels);
 }
