@@ -50,7 +50,7 @@ window.onload = function () {
   paintPixels();
 
   function buttonClear() {
-    let buttonClear = document.getElementById('btn-clear');
+    let buttonClear = document.getElementById('clear-board');
     let pixelsArray = document.querySelectorAll('.pixel');
     buttonClear.addEventListener('click', function() {
         for (let index = 0 ; index < pixelsArray.length; index += 1) {
