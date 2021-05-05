@@ -21,6 +21,10 @@
     background-color: green;
 }
 
+#clear-board {
+    margin: 10px;
+}
+
 .table {
     display: table;
     border: 2px solid black;
