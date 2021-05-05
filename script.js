@@ -60,7 +60,7 @@ function changeColor(elemento) {
 // Muda a cor de um dos pixels da board.
 function changeColorClick() {
   const pixels = document.querySelectorAll('.pixel');
-  for (const pixel of pixels) {
+  for (let pixel of pixels) {
     pixel.addEventListener('click', changeColor);
   }
 }
@@ -68,7 +68,7 @@ function changeColorClick() {
 // Botão que deixa o background de todos os pixels da board como 'white'.
 function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
-  for (const pixel of pixels) {
+  for (let pixel of pixels) {
     pixel.style.backgroundColor = 'white';
   }
 }
@@ -76,19 +76,18 @@ function clearBoard() {
 // Adiciona a funcao 'clearBoard' ao clique do botão 'Limpar'
 function clearBoardClick() {
   const clearButton = document.getElementById('clear-board');
-  clearButton.addEventListener('click', clearBoard)
+  clearButton.addEventListener('click', clearBoard);
 }
 
 function userBoarder() {
   const pixelBoard = document.getElementById('pixel-board');
   const userInput = document.getElementById('board-size');
-  let numberOfInput = parseInt(userInput.value);
+  const numberOfInput = parseInt(userInput.value);
   let numberOfPixels = {};
   for (let index = 5; index <= 50; index += 1) {
     numberOfPixels[index] = index * index;
   }
   let finalNumber = numberOfPixels[numberOfInput];
-  pixelBoard.style.width = (numberOfInput + 1) * 40;
   return finalNumber;
 }
 
@@ -100,7 +99,8 @@ function sizeBoarder() {
   for (let index = 5; index <= 50; index += 1) {
     numberOfPixels[index] = index * index;
   }
-  pixelBoard.style.width = `${(numberOfInput + 1) * 40}px`;
+  pixelBoard.style.width = `${(numberOfInput + (2 * numberOfInput)) * 40}px`;
+  pixelBoard.style.height = `${(numberOfInput + (2 * numberOfInput)) * 40}px`;
 }
 
 function finalBoarderElements() {
