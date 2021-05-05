@@ -1,6 +1,10 @@
 window.onload = function () {
   let boardSide = 5;
   let getBoard = document.getElementById('pixel-board');  
+  let firstColor = document.querySelector('.color1');
+
+  //Define a cor preta como cor inicial
+  firstColor.classList.add('selected');
 
   //Chama as funções
   createTable();
