@@ -38,15 +38,20 @@
   text-align: center;
 }
 
+#pixel-board {
+  display: table;
+  margin: auto;
+}
+
 .linha {
-  margin: -4px;
+  display: table-row;
 }
 
 .pixel {
   height: 40px;
   width: 40px;
   border: 1px solid black;
-  display: inline-block;
+  display: table-cell;
   margin: 0px;
   background-color: white;
 }
