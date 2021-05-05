@@ -46,6 +46,22 @@ function addEventPalette() {
   }
 }
 
+function changePixelColor(event) {
+  const paletteColorSelected = document.querySelector('.selected');
+  const pixelClicked = event.target;
+
+  pixelClicked.style.backgroundColor = paletteColorSelected.style.backgroundColor;
+}
+
+function addEventPixels() {
+  const pixelDivs = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < pixelDivs.length; index += 1) {
+    pixelDivs[index].addEventListener('click', changePixelColor);
+  }
+}
+
 createPaletteBlocks(['black', 'blue', 'green', 'yellow']);
 createBoardBlocks(5);
 addEventPalette();
+addEventPixels();
