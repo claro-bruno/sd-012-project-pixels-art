@@ -1,3 +1,5 @@
+const { createPlugin } = require("stylelint");
+
 // Cria paleta de cores
 const captureColorPalette = document.querySelector('#color-palette');
 
@@ -40,6 +42,10 @@ for (let line = 0; line < captureBoardSize.value; line += 1) {
   }
   captureBoard.appendChild(newLine);
 }
+
+// Permite que o usuário selecione o tamanho do quadro
+const captureGenerateButton = document.querySelector('generate-board');
+captureGenerateButton.addEventListener ('input'; )
 
 // Seleciona a cor preta como cor inicial
 const captureInitialColor = document.querySelector('.color');
