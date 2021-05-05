@@ -1,0 +1,5 @@
+.color {
+    border: solid rgb(0, 0, 0) 1px;
+    display: inline-block;
+    padding: 25px 25px
+}
