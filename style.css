@@ -22,22 +22,6 @@ div.color {
   margin: 3px 6px;
 }
 
-#color1 {
-  background-color: black;
-}
-
-#color2 {
-  background-color: green;
-}
-
-#color3 {
-  background-color: yellow;
-}
-
-#color4 {
-  background-color: red;
-}
-
 /* Quadro de Pixels */
 
 #pixel-board {
