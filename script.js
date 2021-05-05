@@ -11,12 +11,11 @@ function criaPixels (valor) {
     const pixel = document.createElement('div');
     pixel.className = 'pixel';
     pixelBoard.appendChild(pixel);
-    for (let index = 1; index < valor; index += 1) {
+    for (let index2 = 1; index2 < valor; index2 += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       pixelBoard.appendChild(pixel);
     }
   }
 }
-
 criaPixels (5);
