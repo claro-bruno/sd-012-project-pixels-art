@@ -45,6 +45,14 @@ function criaPaletaCores(cores, tamanho) {
   }
 }
 
+let pixel = document.querySelectorAll('.pixel');
+for (let index = 0; index < pixel.length; index += 1) {
+  pixel[index].addEventListener('click', function (event) {
+    let corSelecionada = document.querySelector('.color.selected');
+    event.target.style.backgroundColor = corSelecionada.style.backgroundColor;
+  })
+}
+
 function criaQuadro(height, width, tamanho, color) {
   for (let index = 0; index < width; index += 1) {
     let novaLinha = document.createElement('tr');
@@ -60,6 +68,7 @@ function criaQuadro(height, width, tamanho, color) {
       novaColuna.style.height = novaColunaSize;
       novaColuna.style.border = '1px solid black';
       novaLinha.appendChild(novaColuna);
+
     }
   }
 }
