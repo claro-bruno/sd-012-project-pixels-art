@@ -20,7 +20,19 @@ window.onload = function () {
         }
     }
     createPixels();
+//Adiciona a classe selected ao clicar em uma cor da paleta
+function selectColor () {
+    color1.addEventListener('click', event => {
+        event.target.className = 'color selected';
+    })
+}
+selectColor();
 
+//Defina a cor preta como inicial.
+function setBlackAsDefault () {
+    color1.className = 'color selected';
+}
+setBlackAsDefault();
 
 
 
