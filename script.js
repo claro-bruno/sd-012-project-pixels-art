@@ -16,11 +16,13 @@ idsStyleDivsCores();
 let linhasQuadroPixels = document.getElementsByClassName('linha-pixel'); //lista linhas quadro
 
 function quadroPixels() {
+    
     for (index = 0; index < linhasQuadroPixels.length; index += 1){ //percorre cada linha
         let linhaPixels = linhasQuadroPixels[index];
-        for (index = 0; index < linhasQuadroPixels.length; index += 1){ //cria pixels de cada linha
+        console.log(linhaPixels)
+        for (index2 = 0; index2 < linhasQuadroPixels.length; index2 += 1){ //cria pixels de cada linha
             let pixel = document.createElement('div');
-            linhasQuadroPixels[index].appendChild(pixel);
+            linhaPixels.appendChild(pixel);
             pixel.className='pixel';
             pixel.style.backgroundColor='white';
         };
