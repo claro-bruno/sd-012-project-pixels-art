@@ -19,7 +19,8 @@ function tableGenerator() {
   for (let index = 0; index < canvasSize; index += 1) {
     let tableRow = document.createElement('tr')
     tableTag.appendChild(tableRow);
-    tableRow.className = 'pixel';
+    tableRow.style.backgroundColor = 'white';
+
   }
 
   let tableRows = tableTag.children;
@@ -28,6 +29,7 @@ function tableGenerator() {
       let tableData = document.createElement('td');
       tableRows[indexLine].appendChild(tableData);
       tableData.className = 'pixel';
+      tableData.style.backgroundColor = 'white';
     }
   }
 
