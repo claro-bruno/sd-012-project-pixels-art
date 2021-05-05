@@ -29,9 +29,17 @@ main section {
   margin-top: 20px;
 }
 
-#clear-board {
-  vertical-align: middle;
+#setup {
   margin: 10px;
+}
+
+#clear-board {
+  margin: 10px auto;
+  display: block;
+}
+
+#board-size {
+  width: 40px;
 }
 
 .pixel {

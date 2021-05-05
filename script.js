@@ -70,9 +70,33 @@ function clearBoard() {
 }
 
 function addEventButton() {
-  const button = document.querySelector('#clear-board');
+  const clearButton = document.querySelector('#clear-board');
 
-  button.addEventListener('click', clearBoard);
+  clearButton.addEventListener('click', clearBoard);
+}
+
+function removeBoard() {
+  const board = document.querySelector('#pixel-board');
+  const pixelDivs = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < pixelDivs.length; index += 1) {
+    board.removeChild(pixelDivs[index]);
+  }
+}
+
+function addEventChangeBoard() {
+  const changeButton = document.querySelector('#generate-board');
+  const changeInput = document.querySelector('#board-size');
+
+  changeButton.addEventListener('click', () => {
+    if (changeInput.value === '' || changeInput.value < 5 || changeInput.value > 50) {
+      alert('Board Inválido');
+    } else {
+      removeBoard();
+      createBoardBlocks(changeInput.value);
+      addEventPixels();
+    }
+  });
 }
 
 createPaletteBlocks(['black', 'blue', 'green', 'yellow']);
@@ -80,3 +104,4 @@ createBoardBlocks(5);
 addEventPalette();
 addEventPixels();
 addEventButton();
+addEventChangeBoard();
