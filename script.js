@@ -9,10 +9,17 @@ for(let index = 0; index <= 3; index += 1){
     divs.appendChild(createDivs);
 }
 
+function lineDivs() {
+    let lines = document.getElementById('lines');
+    for(let index = 0; index < 5; index += 1){
+        let createLines = document.createElement('div');
+        createLines.className = 'line'
+        lines.appendChild(createLines);
+    }
+}
 
+lineDivs();
 
-
-
-
-
-
+function columnsDivs() {
+    
+}

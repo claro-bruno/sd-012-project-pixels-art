@@ -1,7 +1,33 @@
+body{
+    text-align: center;
+}
+
 .color {
-    height: 30px;
-    width: 30px;
-    margin: 5px;
-    display: inline;
+    margin-top: 5%;
+    margin-left: 1%;
+    padding: 2%;
+    width: 5px;
+    display: inline-block;
     border: 1px solid black;
   }
+
+#box1 {
+    background-color: black;
+}
+#box2 {
+    background-color: red;
+}
+#box3 {
+    background-color: green;
+}
+#box4 {
+    background-color: blue;
+}
+
+.line {
+    margin-top: 1px;
+    margin-left: 1%;
+    padding: 4%;
+    width: 5px;
+    border: 1px solid black;
+}
