@@ -60,7 +60,7 @@ function changeColor(elemento) {
 // Muda a cor de um dos pixels da board.
 function changeColorClick() {
   const pixels = document.querySelectorAll('.pixel');
-  for (let pixel of pixels) {
+  for (const pixel of pixels) {
     pixel.addEventListener('click', changeColor);
   }
 }
@@ -68,7 +68,7 @@ function changeColorClick() {
 // Botão que deixa o background de todos os pixels da board como 'white'.
 function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
-  for (let pixel of pixels) {
+  for (const pixel of pixels) {
     pixel.style.backgroundColor = 'white';
   }
 }
