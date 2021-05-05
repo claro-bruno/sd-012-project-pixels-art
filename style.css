@@ -5,6 +5,16 @@
     display: inline-block;
 }
 
-#color-palette{
-    height: 600px;
+
+
+#pixel-board{
+    display: inline-block;
+    border: 2px solid black;
+}
+
+.pixel{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    padding: 0;
 }
