@@ -1,6 +1,23 @@
+body {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#title {
+  background-color:  rgb(202, 202, 202);
+  padding: 20px;
+  text-align: center;
+}
+
+.center {
+  background-color:  rgb(202, 202, 202);
+  padding: 30px;
+}
+
 #color-palette {
   width: 200px;
   height: 50px;
+  margin: auto;
 }
 
 .black {
@@ -24,7 +41,7 @@
 }
 
 #pixel-board {
-  /* border-collapse: collapse; */
+    margin: auto;
 }
 
 .pixel {
@@ -35,5 +52,5 @@
 }
 
 #clear-board {
-    margin: 20px 0px;
+  margin: 20px 5px;
 }
