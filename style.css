@@ -5,10 +5,17 @@
   display: inline-block;
   margin: 0 5px;
 }
+
 .pixel {
   width: 40px;
   height: 40px;
   display: inline-block;
   background: white;
   border: 1px solid black;
+}
+
+#pixel-board {
+  line-height: 0;
+  width: 210px;
+  height: 210px;
 }
