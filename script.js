@@ -10,12 +10,12 @@ let tamanhoQuadro = 5;
 
 let corInicialQuadro = 'white';
 
+geraCores();
+criaQuadro(tamanhoQuadro, pixels, corInicialQuadro);
 criaBotaoApagar();
 criaInputTamanho();
 criaBotaoTamanho();
-geraCores();
 
-criaQuadro(tamanhoQuadro, pixels, corInicialQuadro);
 
 let cores = document.querySelectorAll('.color');
 
@@ -134,15 +134,16 @@ botaoTamanho.addEventListener('click', function () {
 });
 
 function geraCores() {
-  let coresPaleta = ['#000'];
-  for (let index = 0; index < 3; index += 1) {
-    let novaCor =
-    '#' +
-    parseInt(Math.random() * 0xffffff)
-      .toString(16)
-      .padStart(6, '0');
+  // let coresPaleta = ['#000'];
+  let coresPaleta = ['red', 'black', 'white', 'blue'];
+  // for (let index = 0; index < 3; index += 1) {
+  //   let novaCor =
+  //   '#' +
+  //   parseInt(Math.random() * 0xffffff)
+  //     .toString(16)
+  //     .padStart(6, '0');
 
-    coresPaleta.push(novaCor);
-  }
+  //   coresPaleta.push(novaCor);
+  // }
   criaPaletaCores(coresPaleta, pixels);
 }
