@@ -43,14 +43,17 @@ createBoard();
 const color = document.querySelectorAll('.color');
 for (let i = 0; i < color.length; i += 1) {
   color[i].addEventListener('click', () => {
-    console.log('aqui');
     const selected = document.querySelector('.selected');
     selected.classList.remove('selected');
     color[i].classList.add('selected');
   });
 }
 
-// const boardPaint = document.querySelectorAll('.pixel');
-// for (let i = 0; i < boardPaint.length; i += 1) {
-// boardPaint[i].addEventListener.
-// }
+// Faz a pintura do quadro com a cor selecionada
+const boardPaint = document.querySelectorAll('.pixel');
+for (let i = 0; i < boardPaint.length; i += 1) {
+  boardPaint[i].addEventListener('click', () => {
+    const selected = document.querySelector('.selected');
+    boardPaint[i].style.backgroundColor = selected.style.backgroundColor;
+  });
+}
