@@ -61,11 +61,11 @@ paintPixel();
 
 function clearCanvas() {
   let clearButton = document.getElementById('clear-board');
+  let canvas = document.getElementsByClassName('pixel');
   clearButton.addEventListener('click', function () {
-    let canvas = document.getElementsByClassName('pixel');
-    for (let index = 0; index < canvas.length; index) {
+    for (let index = 0; index < canvas.length; index += 1) {
       canvas[index].style.backgroundColor = 'white';
     }
   })
 }
-// clearCanvas();
+clearCanvas();
