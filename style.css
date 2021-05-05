@@ -1,0 +1,25 @@
+#color-palette {
+    border-color: black;
+    border-width: "1px";
+    position : inline-block;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#red {
+    background-color: red;
+}
+
+#black {
+    background-color: black;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#silver {
+    background-color: silver;
+}
