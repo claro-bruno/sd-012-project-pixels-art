@@ -1,6 +1,6 @@
 let paletaCores = document.querySelector('#color-palette');
 
-let listaCores = ['red', 'yellow', 'blue', 'green'];
+let listaCores = ['black', 'yellow', 'blue', 'green'];
 
 for (let index = 0; index < listaCores.length; index += 1) {
   let novaCor = document.createElement('li');
