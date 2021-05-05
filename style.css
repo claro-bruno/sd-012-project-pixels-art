@@ -12,6 +12,15 @@ table, th, td {
 th, td {
     padding: 30px;
 }
-.color {
-    background-color:
+#color1 {
+    background-color: black;
+}
+#color2 {
+    background-color: red;
+}
+#color3{
+    background-color: yellow;
+}
+#color4 {
+    background-color: purple;
 }
