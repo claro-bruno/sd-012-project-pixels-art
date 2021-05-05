@@ -1,7 +1,10 @@
 const colorPalette = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
 const pallete = document.getElementsByClassName('color');
-const btn = document.getElementById('clear-board');
+const btnClear = document.getElementById('clear-board');
+const btnGenerate = document.getElementById('generate-board');
+const boardContainer = document.getElementById('board-container');
+const boardSize = document.getElementById('board-size');
 
 function createPalette() {
   let div = document.createElement('div');
@@ -25,16 +28,29 @@ function randomRGB() {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
-function createBoard (size) {
-  pixelBoard.style.width = (size * 42) + 'px';
-  for (let row = 1; row <= size; row += 1) {
-    for (let column = 1; column <= size; column += 1) {
+function createBoard () { 
+  let size = boardSize.value;
+  if (size < 5 || size > 50 || size == null) {
+    window.alert('Board inválido!')
+    if (size < 5 || size == null) {size = 5; }
+    if (size > 50) {size = 50; }
+  } 
+    resetBoard();
+    const pixelBoard = document.getElementById('pixel-board');
+    pixelBoard.style.width = (size * 42) + 'px';
+    for (let row = 1; row <= size*size; row += 1) {
       let div = document.createElement('div');
       div.className = 'pixel';
       pixelBoard.appendChild(div);
     }
   }
-}
+  
+
+  function resetBoard() {
+    while (pixelBoard.firstChild) {
+      pixelBoard.removeChild(pixelBoard.lastChild);
+    }
+  }
 
 function selectColor (event) {
   for (let index = 0; index < pallete.length; index += 1) {
@@ -59,10 +75,13 @@ function clearBoard() {
 
 window.onload = function pageLoad () {
   createPalette();
-  createBoard(5);
   pixelBoard.addEventListener('click', changeColor);
   for (let index = 0; index < pallete.length; index += 1) {
     pallete[index].addEventListener ('click', selectColor);
   }
-  btn.addEventListener('click', clearBoard);
+  btnClear.addEventListener('click', clearBoard);
+  createBoard();
+  boardSize.value = null;
+  btnGenerate.addEventListener('click', createBoard);
+  
 };

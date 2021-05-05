@@ -7,13 +7,21 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="container">
     <h1 id="title">Paleta de Cores</h1>
     <section id="color-palette"></section> 
     <br>
-    <button id="clear-board">Limpar</button>
+    <div id="input-container">
+        <input type="number" id="board-size" min="1" value="5"> <button id="generate-board">VQV</button>
+       
+    </div>
+    <br>
+    <button id="clear-board">Limpar</button> 
     
-    <section id="pixel-board"></section>
+    <div id="board-container">
+        <section id="pixel-board"></section>
+    </div>
+    
    
     <script src="script.js"></script>
 </body>

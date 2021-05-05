@@ -1,7 +1,18 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .color , .pixel {
   width: 40px;
   height: 40px;
   border: 1px solid black;
+}
+
+.color {
+  margin: 10px;
 }
 
 #title {
@@ -10,7 +21,12 @@
 
 #color-palette {
   display: flex;
-  justify-content: space-evenly;
+}
+
+#input-container {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 #pixel-board {
@@ -21,4 +37,8 @@
 
 .pixel {
   background-color: white;
+}
+
+input {
+  margin: 10px;
 }
