@@ -1,3 +1,10 @@
+window.onload = mainColor;
+
+function mainColor() {
+    let setBlack = document.querySelectorAll('.color')[0];
+    setBlack.className = 'color selected';
+}
+
 function makeBoard(tamanho) {
     let destiny = document.querySelector('#pixel-board');
 
