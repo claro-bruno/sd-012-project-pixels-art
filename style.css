@@ -1,6 +1,7 @@
 .cabecalho {
   text-align: center;
-  background-color: aquamarine;
+  border: 3px solid black;
+  margin-bottom: 20px;
 }
 
 #title {
@@ -37,8 +38,13 @@
   text-align: center;
 }
 
-.box {
-  padding: 20px;
+.linha {
+  margin: -4px;
+}
+
+.pixel {
+  padding: 30px;
   border: 1px solid black;
   display: inline-block;
+  margin: 0px;
 }
