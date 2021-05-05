@@ -20,6 +20,6 @@ function createBoard() {
   let takeCol = document.querySelectorAll('#pixel-board tr td');
   for (let indexTd = 0; indexTd < takeCol.length; indexTd += 1) {
     takeCol[indexTd].style.background = 'white';
-  }
+  };
 };
 createBoard();

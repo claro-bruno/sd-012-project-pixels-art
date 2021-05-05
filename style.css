@@ -14,9 +14,9 @@ header {
   margin-bottom: 15px;
 }
 
-.color, .pixel {
-  height: 30px;
-  width: 30px;
+.color,.pixel {
+  height: 40px;
+  width: 40px;
   border: 1px solid black;
 }
 
@@ -35,4 +35,4 @@ header {
 
 #fourth-color {
   background-color: green;
-}
+};
