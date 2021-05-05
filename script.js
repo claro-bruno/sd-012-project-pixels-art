@@ -37,12 +37,14 @@ function createPixelGrind(lines, colums, fatherElement) {
 
 createPixelGrind(5, 5, pixelBoard);
 
+// remove a selected e adiciona no item selecionado
 function switchClass(event) {
   const selected = document.querySelector('.selected');
   selected.classList.remove('selected');
   event.target.classList.add('selected');
 }
 
+// adiciona evento para elementos do array de elementos passado por parametro
 function addEvent(array, callBack, typeEvent) {
   for (let index = 0; index < array.length; index += 1) {
     array[index].addEventListener(typeEvent, callBack);
@@ -50,3 +52,13 @@ function addEvent(array, callBack, typeEvent) {
 }
 
 addEvent(colors, switchClass, 'click');
+
+const pixels = document.getElementsByClassName('pixel');
+
+function switchColor(e) {
+  const selected = document.querySelector('.selected');
+  const color = selected.style.backgroundColor;
+  e.target.style.backgroundColor = color;
+}
+
+addEvent(pixels, switchColor, 'click');
