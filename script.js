@@ -13,7 +13,7 @@ function gerarBoard(numero) {
         pixelBoard.appendChild(primeiraDiv);
         for (let index2 = 0; index2 < numero; index2 += 1){
           let divInterna = document.createElement('div');
-          divInterna.className = 'box';
+          divInterna.className = 'pixel';
           primeiraDiv.appendChild(divInterna);
     }
   }
