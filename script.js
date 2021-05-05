@@ -2,7 +2,7 @@ const palColor = document.getElementById('color-pallete');
 const palleteColor = document.querySelectorAll('.color');
 const arrayColor = ['rgb(0,0,0','rgb(255,0,0','rgb(0,255,0','rgb(0,0,255'];
 const matrixPlace = document.getElementById('section2');
-
+const clearBoardBtn = document.getElementById('clear-board');
 
 function fillPalletColors() {
   palleteColor[0].classList.add('selected')
@@ -41,4 +41,13 @@ pixMatrixChg.addEventListener('click',changeColor);
 
 function changeColor (event) {
   event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+}
+
+clearBoardBtn.addEventListener('click',clearBoard);
+
+function clearBoard () {
+  for ( index = 0; index < document.querySelectorAll('.pixel').length ; index += 1) {
+    document.querySelectorAll('.pixel')[index].style.backgroundColor = 'rgb(255,255,255)';
+    console.log(document.querySelectorAll('.pixel')[index]);
+  }
 }
