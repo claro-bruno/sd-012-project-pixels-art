@@ -1,0 +1,36 @@
+#color-palette {
+  border: solid black;
+  border-width: 1px;
+}
+
+.color-brown {
+  border: solid black;
+  border-width: 1px;
+  background-color: brown;
+  width: 100px;
+  height: 100px;
+}
+
+.color-burlywood {
+  border: solid black;
+  border-width: 1px;
+  background-color: burlywood;
+  width: 100px;
+  height: 100px;
+}
+
+.color-teal {
+  border: solid black;
+  border-width: 1px;
+  background-color: teal;
+  width: 100px;
+  height: 100px;
+}
+
+.color-goldenrod {
+  border: solid black;
+  border-width: 1px;
+  background-color: goldenrod;
+  width: 100px;
+  height: 100px;
+}
