@@ -32,9 +32,10 @@ for (let index = 0; index < 5; index += 1) {
 
 
   //6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels.
+  //PRIMEIRO CRIEI UMA VARIAVEL PARA ADICIONAR A CLASSE SELECTED A MINHA COR BLACK
 
 
-  const firstColorBlack = document.querySelectorAll('.color')[0].classList.add('selected');
+  const addNewClass = document.querySelectorAll('.color')[0].classList.add('selected');
 
 
 
