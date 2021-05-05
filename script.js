@@ -1,7 +1,7 @@
 window.onload = function () {
 
   function criarPalheta() {
-    const cores = ['black', 'pink', 'purple', 'blue'];
+    const cores = ['black', 'pink', 'purple', 'green'];
     const pegarPaleta = document.getElementById('color-palette');
     for (let i = 0; i < cores.length; i += 1) {
       const div = document.createElement('div');
@@ -56,9 +56,21 @@ window.onload = function () {
   function pintalPixel(color) {
     const pixel = document.getElementById('pixel-board');
     pixel.addEventListener('click', function (event) {
-      event.target.style.backgroundColor = color;
+      if (event.target.className === 'pixel') event.target.style.backgroundColor = color;
     })
   }
 
   pintalPixel('black');
+
+  function botaoLimpar() {
+    const botao = document.getElementById('clear-board');
+    botao.addEventListener('click', function () {
+      const pixels = document.querySelectorAll('.pixel');
+      for (let i = 0; i < pixels.length; i += 1) {
+        pixels[i].style.backgroundColor = 'white';
+      }
+    })
+  }
+
+  botaoLimpar();
 }

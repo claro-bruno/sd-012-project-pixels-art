@@ -42,3 +42,13 @@ h1 {
   padding: 20px;
   margin: -3px;
 }
+
+.botao {
+  text-align: center;
+  text-decoration: none;
+  width: 100px;
+  padding: 10px;
+  cursor: pointer;
+  margin: auto;
+  margin-bottom: 25px;
+}
