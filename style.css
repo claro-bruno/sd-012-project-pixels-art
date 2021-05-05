@@ -1,0 +1,29 @@
+body{
+    text-align:left;
+}
+div p {
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 70px;
+    width: 70px;
+    display: inline-block;
+    
+
+}
+.color-preto{
+    background-color: black;
+    color: white;
+}
+.color-roxo{
+    background-color: purple;
+    color: white;
+}
+.color-vermelho{
+    background-color: red;
+    color: white;
+}
+.color-azul{
+    background-color: blue;
+    color: white;
+}
