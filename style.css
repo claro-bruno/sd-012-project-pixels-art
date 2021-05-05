@@ -16,3 +16,11 @@
 #green-color {
     background-color: green;
 }
+
+#pixel-board {
+    display: inline-block;
+    border: solid 1px black;
+    width: 100px;
+    height: 100px;
+}
+
