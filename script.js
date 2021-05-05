@@ -1,6 +1,7 @@
 const shadows = '2px 2px 2px grey';
-
-const generateButton = document.getElementById('generate-board')
+const buttonGen = document.getElementById('generate-board');
+const input = document.getElementById('board-size');
+const board = document.getElementById('pixel-board');
 
 const createPalette = (color) => {
   const palette = document.getElementById('color-palette');
@@ -16,7 +17,6 @@ const createPalette = (color) => {
 };
 
 const createPixels = (n) => {
-  const board = document.getElementById('pixel-board');
   board.style.width = `${n * 42}px`;
   board.style.height = `${n * 42}px`;
   for (let i = 1; i <= n ** 2; i += 1) {
@@ -25,6 +25,22 @@ const createPixels = (n) => {
     pixel.classList.add('pixel');
     board.appendChild(pixel);
   }
+};
+
+const boardGenerator = () => {
+  const pixCollection = document.getElementsByClassName('pixel');
+
+  buttonGen.addEventListener('click', () => {
+    const value = parseInt(input.value, 36);
+    if (value >= 5) {
+      while (pixCollection.length > 0) {
+        board.removeChild(board.lastChild);
+      }
+      createPixels(parseInt(input.value, 36));
+      console.log(pixCollection);
+      input.value = '';
+    }
+  });
 };
 
 const selectColor = () => {
@@ -47,12 +63,12 @@ const selectColor = () => {
 };
 
 const paintPixels = () => {
-  const pixelCollection = document.getElementsByClassName('pixel');
-  for (let i = 0; i < pixelCollection.length; i += 1) {
-    pixelCollection[i].addEventListener('click', () => {
+  const pixCollection = document.getElementsByClassName('pixel');
+  for (let i = 0; i < pixCollection.length; i += 1) {
+    pixCollection[i].addEventListener('click', () => {
       const selected = document.querySelector('.selected');
       const selectedColor = selected.id;
-      pixelCollection[i].style.backgroundColor = selectedColor;
+      pixCollection[i].style.backgroundColor = selectedColor;
     });
   }
 };
@@ -81,8 +97,9 @@ window.onload = () => {
   createPalette('red');
   createPalette('green');
   createPalette('blue');
-  selectColor();
-  createPixels(5);
+  boardGenerator();
   paintPixels();
+  createPixels(5);
+  selectColor();
   clearBoard();
 };
