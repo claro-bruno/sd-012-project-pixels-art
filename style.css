@@ -6,8 +6,9 @@
 }
 
 .pixel {
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   border: solid 1px black;
   background-color: white;
+  padding: 0;
 }
