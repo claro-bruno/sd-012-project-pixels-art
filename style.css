@@ -1,0 +1,23 @@
+.color {
+    border: 1px solid black;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    list-style: none;
+}
+
+.firstColor {
+    background-color: black;
+}
+
+.secondColor {
+    background-color: green;
+}
+
+.thirdColor {
+    background-color: red;
+}
+
+.fourthColor {
+    background-color: blue;
+}
