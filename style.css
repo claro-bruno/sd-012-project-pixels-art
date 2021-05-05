@@ -19,3 +19,15 @@
 #color-palette :last-child {
     background-color: green;
 }
+#pixels-board {
+    display: table;
+    border: solid black 1px;
+}
+.pixels-line {
+    display: table-row;
+}
+.pixel {
+    padding: 40px;
+    border: solid black 1px;
+    display: table-cell;
+}
