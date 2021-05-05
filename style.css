@@ -1,9 +1,10 @@
 .color {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-color: black;
     border-width: 1px;
     border-style: solid;
+    margin-right: 5px;
     display: inline-block;
 }
 
@@ -12,5 +13,6 @@
     border-width: 1px;
     border-style: solid;
     padding: 0px;
-    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }

@@ -65,3 +65,27 @@ window.onload = function() {
     }
 }
 
+//ex 7
+
+    function capturaCores () {
+    let getColor = document.getElementsByClassName('color');
+    let selectedColor = document.getElementsByClassName('selected');
+
+
+    for (let arrayCores = 0; arrayCores < getColor.length; arrayCores += 1) {
+        console.log(getColor[arrayCores]);
+
+    getColor[arrayCores].addEventListener('click', function(event) {
+        for (let i = 0; i < getColor.length; i += 1) {
+            if (getColor[i].className === 'color selected') {
+            getColor[i].className = 'color';
+            }
+        }
+        if (event.target.className !== 'color selected') {
+            event.target.className = 'color selected';
+        }
+    })
+    }
+}
+
+capturaCores();
