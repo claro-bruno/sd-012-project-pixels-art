@@ -74,21 +74,28 @@ function reSizeBoardPixel () {
         alert("Board inválido!")
     } else {
         // Reseta PixelBoard
-        document.querySelector("tbody").remove();
+        let lineList = document.querySelectorAll("tr");
+
+        for (let index = 0; index < lineList.length; index += 1){
+            lineList[index].remove();
+        }
 
         // Redefine PixelBoard
         let numOfLines = document.querySelector("#board-size").value;
 
         for (let index = 0; index < parseInt(numOfLines); index += 1){
             let tableLine = document.createElement("tr");
-            
-            for (let index2 = 0; index < parseInt(numOfLines); index2 += 1) {
+            document.querySelector("table").appendChild(tableLine);
+        };
+
+        let List = document.querySelectorAll("tr");
+
+        for (let index = 0; index < parseInt(numOfLines); index += 1){
+            for (let index2 = 0; index2 < parseInt(numOfLines); index2 += 1){
                 let pixelPoint = document.createElement("td");
                 pixelPoint.className = "pixel";
-                tableLine.innerHTML += pixelPoint;
+                List[index].appendChild(pixelPoint);
             };
-
-            document.querySelector("table").appendChild(tableLine);
         };
     };
 };
