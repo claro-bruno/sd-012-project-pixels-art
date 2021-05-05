@@ -26,7 +26,7 @@ header {
 
 #main-container {
   width: 80%;
-  height: 340px;
+  height: 430px;
   margin: auto;
   margin-top: 20px;
   border: 1px solid black;
@@ -88,6 +88,20 @@ header {
   margin: 4px 2px;
 }
 
+#option-container {
+  width: 500px;
+  height: 70px;
+  position: absolute;
+  margin: 105px 296px 0;
+}
+
+#clear-board {
+  width: 80px;
+  height: 50px;
+  font-size: 20px;
+  margin: 10px 210px;
+}
+
 #pixel-board {
   display: table;
   width: 200px;
@@ -95,7 +109,7 @@ header {
   border: 1px solid black;
   top: 0;
   left: 0;
-  margin: 105px 446px 0;
+  margin: 195px 446px 0;
 }
 
 #pixel-tr {

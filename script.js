@@ -54,3 +54,11 @@ function createEventsPixels() {
   }
 }
 createEventsPixels();
+
+const clearButton = document.querySelector('#clear-board');
+function clearPixels() {
+  for (let index = 1; index <= 25; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+clearButton.addEventListener('click', clearPixels);
