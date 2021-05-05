@@ -32,4 +32,10 @@ window.onload = function() {
 
   createPixelBaordElement();
 
+  function initialColor(ID) {
+    const corInicial = document.getElementById(ID);
+    corInicial.className += ' selected'
+  }
+
+  initialColor('color1');
 };
