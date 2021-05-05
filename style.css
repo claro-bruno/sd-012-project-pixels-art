@@ -23,7 +23,7 @@
 
 .pixel {
   border-color: black solid 5px;
-  /*background-color:white;*/
+  background-color:white;
   margin-top: 200px;
   display: inline;
   padding: 50px;
