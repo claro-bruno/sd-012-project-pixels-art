@@ -8,10 +8,29 @@
   border-style: solid;
   padding: 10px;
 }
+
 .color {
   width: 30px;
   height: 30px;
   border: 1px solid black;
   display: inline-block;
   position: relative;
+}
+
+#pixel-board {
+  margin: auto;
+  margin-top: 2%;
+  width: fit-content;
+}
+.rowDiv {
+  margin: 0;
+  height: 33px;
+}
+
+.pixel {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: inline-block;
+  margin-right: 0.9px;
 }
