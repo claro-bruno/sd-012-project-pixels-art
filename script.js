@@ -1,14 +1,3 @@
-window.onload = function pixelsArt() {
-  createPaletteElement('color1', 'black');
-  createPaletteElement('color2', generateRandomColor());
-  createPaletteElement('color3', generateRandomColor());
-  createPaletteElement('color4', generateRandomColor());
-  createPixelBaordElement();
-  initialColor('color1');
-  changeSelectedClick();
-  changeColorClick();
-  clearBoardClick();
-};
 // Gera um número hexadecimal e adiciona à uma string.
 function generateRandomColor() {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -26,10 +15,10 @@ function createPaletteElement(ID, color) {
 }
 
 // Cria elemento da pixel board.
-function createPixelBaordElement() {
+function createPixelBaordElement(numero) {
   const pixelBoard = document.getElementById('pixel-board');
-  for (let index = 0; index < 25; index += 1) {
-    const createPixel = document.createElement('span');
+  for (let index = 0; index < numero; index += 1) {
+    const createPixel = document.createElement('div');
     createPixel.className = 'pixel';
     pixelBoard.appendChild(createPixel);
   }
@@ -42,10 +31,10 @@ function initialColor(ID) {
 }
 
 // Muda o elemento que recebe a classe selected
-function changeSelected(element) {
+function changeSelected(elemento) {
   const selected = document.querySelector('.selected');
   selected.className = 'color';
-  element.target.className += ' selected';
+  elemento.target.className += ' selected';
 }
 
 // Adiciona a funcao 'changeSelected' ao evento click de Id's específicos
@@ -62,16 +51,16 @@ function changeSelectedClick() {
 }
 
 // Muda a cor de um elemento específico.
-function changeColor(event) {
+function changeColor(elemento) {
   const selectedColor = document.querySelector('.selected');
   const compStyle = window.getComputedStyle(selectedColor);
-  event.target.style.backgroundColor = compStyle.getPropertyValue('background-color');
+  elemento.target.style.backgroundColor = compStyle.getPropertyValue('background-color');
 }
 
 // Muda a cor de um dos pixels da board.
 function changeColorClick() {
   const pixels = document.querySelectorAll('.pixel');
-  for (let pixel of pixels) {
+  for (const pixel of pixels) {
     pixel.addEventListener('click', changeColor);
   }
 }
@@ -79,7 +68,7 @@ function changeColorClick() {
 // Botão que deixa o background de todos os pixels da board como 'white'.
 function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
-  for (let pixel of pixels) {
+  for (const pixel of pixels) {
     pixel.style.backgroundColor = 'white';
   }
 }
@@ -89,3 +78,53 @@ function clearBoardClick() {
   const clearButton = document.getElementById('clear-board');
   clearButton.addEventListener('click', clearBoard)
 }
+
+function userBoarder() {
+  const pixelBoard = document.getElementById('pixel-board');
+  const userInput = document.getElementById('board-size');
+  let numberOfInput = parseInt(userInput.value);
+  let numberOfPixels = {};
+  for (let index = 5; index <= 50; index += 1) {
+    numberOfPixels[index] = index * index;
+  }
+  let finalNumber = numberOfPixels[numberOfInput];
+  pixelBoard.style.width = (numberOfInput + 1) * 40;
+  return finalNumber;
+}
+
+function sizeBoarder() {
+  const pixelBoard = document.getElementById('pixel-board');
+  const userInput = document.getElementById('board-size');
+  const numberOfInput = parseInt(userInput.value);
+  let numberOfPixels = {};
+  for (let index = 5; index <= 50; index += 1) {
+    numberOfPixels[index] = index * index;
+  }
+  pixelBoard.style.width = `${(numberOfInput + 1) * 40}px`;
+}
+
+function finalBoarderElements() {
+  const pixelBoard = document.getElementById('pixel-board');
+  const vqvButton = document.getElementById('generate-board');
+  let defaultSize = createPixelBaordElement(25);
+  vqvButton.addEventListener('click', function() {
+    pixelBoard.innerHTML = '';
+    defaultSize = createPixelBaordElement(userBoarder());
+    sizeBoarder();
+    changeSelectedClick();
+    changeColorClick();
+    clearBoardClick();
+  });
+}
+
+window.onload = function pixelsArt() {
+  finalBoarderElements();
+  createPaletteElement('color1', 'black');
+  createPaletteElement('color2', generateRandomColor());
+  createPaletteElement('color3', generateRandomColor());
+  createPaletteElement('color4', generateRandomColor());
+  initialColor('color1');
+  changeSelectedClick();
+  changeColorClick();
+  clearBoardClick();
+};
