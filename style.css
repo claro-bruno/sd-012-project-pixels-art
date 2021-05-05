@@ -7,3 +7,19 @@
   height: 80px;
   border: 1px solid black;
 }
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.darkgreen {
+  background-color: darkgreen;
+}
