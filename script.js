@@ -8,5 +8,11 @@ for (let color = 0; color < colors.length; color += 1) {
     box.style.border = '1px solid black';
     box.style.display = 'inline-block'
     box.style.backgroundColor = colors[color];
-    document.querySelector('#color-pallete').appendChild(box)
+    document.querySelector('#color-palette').appendChild(box);
 }
+
+// let board = 5;
+
+// for () {
+
+// }
