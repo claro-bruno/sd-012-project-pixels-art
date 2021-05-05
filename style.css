@@ -4,7 +4,7 @@ h1{
 table {
     width: 30px;
     border-collapse: collapse;
-    margin-left: 40%;
+    margin-left: 35%;
 }
 table, th, td {
     border: 1px solid black;
@@ -14,4 +14,7 @@ th, td {
 }
 #color1 {
     background-color: black;
+}
+.pixel {
+    background-color: white;
 }

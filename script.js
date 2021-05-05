@@ -24,16 +24,3 @@ function createBoard (pixeis) {
     }
 }
 createBoard(5);
-
-// function createPixels (){
-//     let pixels = document.getElementsByClassName('canvas')
-//     for (let index = 0; index <= columns; index += 1){
-//         let criarColuna = document.createElement('tr')
-//         pixels.append('tr');
-        
-//     }
-//     for (let index = 0; index <= lines; index += 1){
-//         let criarLinha = document.createElement('td')
-//     }
-// }
-// createPixels();
