@@ -23,17 +23,17 @@ function criaQuadrados(size) {
   const pixelLine = document.getElementsByClassName('pixel-line');
   for (let index = 0; index < pixelLine.length; index += 1) {
   if (index < size) {
-    repetidor(pixelLine)
+    repetidor(pixelLine);
     }
   }
 }
 function createSquare(tamanho) {
-  criaLinhas(tamanho)
-  criaQuadrados(tamanho)
+  criaLinhas(tamanho);
+  criaQuadrados(tamanho);
 }
 createSquare(5);
 
-const cores = ['black', 'blue', 'red', 'green']; // black obrigatoriamente tenque ser a 1cor do array
+const cores = ['black', 'blue', 'red', 'green']; // black obrigatoriamente tenque ser a primeira cor do array
 function alteraCor() {
   let paletaCores = document.getElementsByClassName('color');
   for (let index = 0; index < paletaCores.length; index += 1) {
@@ -42,29 +42,44 @@ function alteraCor() {
 }
 alteraCor();
 
+// const clearButton = document.querySelector('#clear-board>button');
+// const pixels = document.getElementsByClassName('pixel');
+// clearButton.addEventListener('click', function(evento) {
+//   for (let index = 0; index < pixels.length; index =+)
+// })
+
 window.onload = function() {
   function corPadrao() {
     let paletaCorPadrao = document.getElementsByClassName('color');
     for (let index = 0; index < paletaCorPadrao.length; index += 1) {
-      paletaCorPadrao[index].classList.remove('selected')
+      paletaCorPadrao[index].classList.remove('selected');
     }
     paletaCorPadrao[0].classList.add('selected'); 
   }
 corPadrao();
   
 }//window.onload braket =====================================================================================
-
-let paleta = document.getElementsByClassName('color');
-for (let index = 0; index < paleta.length; index += 1) {
-  paleta[index].addEventListener('click', function(event) {
-    let removeSelection = document.querySelector('.selected');
-    removeSelection.classList.remove('selected');
-    event.target.classList.add('selected');
-  })
+function selected(event) {
+  let removeSelection = document.querySelector('.selected');
+  removeSelection.classList.remove('selected');
+  event.target.classList.add('selected');
 }
-  
-  // function paletaSelector(classe) {
-  //   let elementoSelecionado = document.querySelector('.selected');
-  //   elementoSelecionado.classList.remove('selected');
-  //   classe.target.classList.add('selected');
-  // }
+function selectedEvent() {
+  let paleta = document.getElementsByClassName('color');
+  for (let index = 0; index < paleta.length; index += 1) {
+    paleta[index].addEventListener('click', selected);
+  }
+}
+selectedEvent();
+
+function getColor(event) {
+  let selectedColor = document.querySelector('.selected').style.backgroundColor;
+  event.target.style.backgroundColor = selectedColor;
+}
+function getColorEvent() {
+  let square = document.getElementsByClassName('pixel');
+  for (let index = 0; index < square.length; index +=1) {
+    square[index].addEventListener('click', getColor);
+  }
+}
+getColorEvent();
