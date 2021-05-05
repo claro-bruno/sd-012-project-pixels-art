@@ -61,7 +61,22 @@ function addEventPixels() {
   }
 }
 
+function clearBoard() {
+  const pixelDivs = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < pixelDivs.length; index += 1) {
+    pixelDivs[index].style.backgroundColor = 'white';
+  }
+}
+
+function addEventButton() {
+  const button = document.querySelector('#clear-board');
+
+  button.addEventListener('click', clearBoard);
+}
+
 createPaletteBlocks(['black', 'blue', 'green', 'yellow']);
 createBoardBlocks(5);
 addEventPalette();
 addEventPixels();
+addEventButton();

@@ -29,6 +29,11 @@ main section {
   margin-top: 20px;
 }
 
+#clear-board {
+  vertical-align: middle;
+  margin: 10px;
+}
+
 .pixel {
   border: 1px solid black;
   background-color: white;
