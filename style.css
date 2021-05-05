@@ -1,20 +1,20 @@
-.red {
-    background-color: red;
+.color-one {
+  background-color: black;
 }
 
-.yellow {
-    background-color: yellow;
+.color-two {
+  background-color: blue;
 }
 
-.blue {
-    background-color: blue;
+.color-three {
+  background-color: yellow;
 }
 
-.green {
-    background-color: green;
+.color-four {
+  background-color: red;
 }
 
 .color {
-    border: 1px solid black;
-    display: inline-block;
+  border: 1px solid black;
+  display: inline-block;
 }
