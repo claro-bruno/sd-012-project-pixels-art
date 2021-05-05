@@ -65,19 +65,18 @@ const input = document.querySelector('#board-size');
 
 function boardSize() {
   inputButton.addEventListener('click', () => {
-    if (input.value === '')  return alert("Board inválido!");
+    if (input.value === '') return alert('Board inválido!');
     const divsRowsPixels = pixelBoard.querySelectorAll('.tr');
-    for (let index = 0; index < divsRowsPixels.length; index += 1) {  
+    for (let index = 0; index < divsRowsPixels.length; index += 1) {
       pixelBoard.removeChild(divsRowsPixels[index]);
     }
-    
+    if (input.value < 5) input.value = 5;
+    if (input.value > 50) input.value = 50;
     creatingPixelDivs(input.value);
   });
 }
 
 boardSize();
-
-
 
 window.onload = () => {
   const blackColor = document.querySelector('#first-color');
