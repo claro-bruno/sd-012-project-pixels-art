@@ -4,6 +4,8 @@
 // let cor4 = "rgb(0, 255, 0, 1)";
 
 let cor = ["rgb(0, 0, 0, 1)", "rgb(255, 0, 0, 1)", "rgb(0, 100, 255, 1)", "rgb(0, 255, 0, 1)"];
+let espaco = " ";
+let selected = "selected";
 
 function coresPaleta() {
   let paleta = document.getElementsByClassName("color");
@@ -13,6 +15,9 @@ function coresPaleta() {
     if (paleta[index].id === ("cor" + (index+1))) {
       console.log("OLÁ");
       paleta[index].style.backgroundColor = cor[index];
+    }
+    if (index === 0) {
+      paleta[index].className = paleta[index].className + espaco + selected;
     }
   }
 }
