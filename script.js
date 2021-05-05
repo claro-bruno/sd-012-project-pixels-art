@@ -1,25 +1,40 @@
-// let cor1 = "rgb(0, 0, 0, 1)";
-// let cor2 = "rgb(255, 0, 0, 1)";
-// let cor3 = "rgb(180, 180, 180, 1)";
-// let cor4 = "rgb(0, 255, 0, 1)";
+let cor1 = "rgb(0, 0, 0, 1)";
+let cor2 = "rgb(255, 0, 0, 1)";
+let cor3 = "rgb(180, 180, 180, 1)";
+let cor4 = "rgb(0, 255, 0, 1)";
 
-let cor = ["rgb(0, 0, 0, 1)", "rgb(255, 0, 0, 1)", "rgb(0, 100, 255, 1)", "rgb(0, 255, 0, 1)"];
+let cor = [cor1, cor2, cor3, cor4]
+
 let espaco = " ";
 let selected = "selected";
 
+// Cria uma div com a classe "color" para cada elemento no array cor[]
+// e a
 function coresPaleta() {
   let paleta = document.getElementsByClassName("color");
-  console.log(paleta);
   for (let index = 0; index < paleta.length; index += 1) {
     paleta[index].setAttribute("id", "cor" + (index+1));
     if (paleta[index].id === ("cor" + (index+1))) {
-      console.log("OLÁ");
       paleta[index].style.backgroundColor = cor[index];
     }
     if (index === 0) {
       paleta[index].className = paleta[index].className + espaco + selected;
     }
   }
+}
+
+function clickCor() {
+  let corClick = document.getElementsByClassName("color");
+  //console.log(corClick);
+  document.addEventListener("click", function(clicado) {
+    //console.log(event.target.className);
+    if (event.target.className === "color") {
+      let selecao = document.querySelector(".selected");
+      selecao.className = "color";
+      clicado.target.classList += espaco + selected; 
+      
+    }
+  });
 }
 
 function criaPixel() {
@@ -58,4 +73,5 @@ function tamanhoPixel(tamanho) {
 }
 
 coresPaleta();
+clickCor();
 criaPixel();
