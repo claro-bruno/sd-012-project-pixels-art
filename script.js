@@ -55,3 +55,13 @@ for(let index = 0; index < pixelsList.length; index += 1) {
     pixelsList[index].style.backgroundColor = "white";
     pixelsList[index].addEventListener("click", coloringPixel);
 };
+
+// Limpar quadro de pixels
+
+function clearBoard () {
+    for(let index = 0; index < pixelsList.length; index += 1) {
+        pixelsList[index].style.backgroundColor = "white";
+    };
+};
+
+document.querySelector("#clear-board").addEventListener("click", clearBoard);
