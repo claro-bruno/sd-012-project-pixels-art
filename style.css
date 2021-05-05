@@ -1,0 +1,25 @@
+.color {
+    border: 1px solid black;
+    /* background-color: rgb(218, 163, 163); */
+    /* color: red; */
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+
+#firstColor {
+    background-color: red;
+}
+
+#secondColor {
+    background-color: purple;
+}
+
+#thirdColor {
+    background-color: green;
+}
+
+#fourthColor {
+    background-color: yellow;
+}
