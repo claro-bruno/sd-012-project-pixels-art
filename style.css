@@ -10,3 +10,31 @@ h1 {
     font-size: 36px;
     color: #633237;
 }
+
+#color-palette {
+    margin-left: 527px;;
+}
+
+.color {
+    display: inline-block;
+    margin: 0 10px 0 10px;
+    width: 30px;
+    height: 30px;
+    border: black solid 1px;
+}
+
+.color:first-child {
+    background-color: #633237;
+}
+
+.color:nth-child(2) {
+    background-color: #816932;
+}
+
+.color:nth-child(3) {
+    background-color: #645e5a;
+}
+
+.color:nth-child(4) {
+    background-color: #e0b7a8;
+}
