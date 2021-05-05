@@ -28,3 +28,17 @@ body {
     margin-right: 15px;
 }
 
+.color, .pixel {
+    list-style: none;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+}
+
+.input-size {
+    width: 100px;
+}
+
+.pixel {
+    background-color: white;
+}

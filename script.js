@@ -3,27 +3,25 @@ window.onload = function () {
   let quadro = document.querySelector('#pixel-board');
   let botaoApagar = document.querySelector('#clear-board');
   let inputSize = document.querySelector('#board-size');
-  let body = document.querySelector('body');
-
-  let pixels = '40px';
-
   let tamanhoQuadro = 5;
-
-  let corInicialQuadro = 'white';
 
   geraCores();
   criaInputTamanho();
   criaBotaoTamanho();
-  criaQuadro(tamanhoQuadro, pixels, corInicialQuadro);
+  criaQuadro(tamanhoQuadro);
   criaBotaoApagar();
   novoQuadro();
+  pintaPixel();
+  apagar();
 
   let cores = document.querySelectorAll('.color');
 
   let corInicial = cores[0];
 
+  let pixel = document.querySelectorAll('.pixel');
+  
   corInicial.className = 'color selected';
-
+  
   for (index = 0; index < cores.length; index += 1) {
     cores[index].addEventListener('click', function (event) {
       for (let index = 0; index < cores.length; index += 1) {
@@ -34,28 +32,33 @@ window.onload = function () {
       }
     });
   }
-
-  let pixel = document.querySelectorAll('.pixel');
-  for (let index = 0; index < pixel.length; index += 1) {
-    pixel[index].addEventListener('click', function (event) {
-      let corSelecionada = document.querySelector('.color.selected');
-      event.target.style.backgroundColor = corSelecionada.style.backgroundColor;
+  
+  function apagar() {
+    let botaoApaga = document.querySelector('#clear-board');
+    botaoApaga.addEventListener('click', function () {
+      for (let index = 0; index < pixel.length; index += 1) {
+        pixel[index].style.backgroundColor = 'white';
+      }
     });
   }
 
-  let botaoApaga = document.querySelector('#clear-board');
-  botaoApaga.addEventListener('click', function () {
+  function pintaPixel() {
+    let pixel = document.querySelectorAll('.pixel');
     for (let index = 0; index < pixel.length; index += 1) {
-      pixel[index].style.backgroundColor = 'white';
+      pixel[index].addEventListener('click', function (event) {
+        let corSelecionada = document.querySelector('.color.selected');
+        event.target.style.backgroundColor =
+          corSelecionada.style.backgroundColor;
+      });
     }
-  });
+  }
 
   let botaoTamanho = document.querySelector('#generate-board');
   let inputTamanho = document.querySelector('.input-size');
   botaoTamanho.addEventListener('click', function () {
     if (parseInt(inputTamanho.value) == parseInt(tamanhoQuadro)) {
       alert('O quadro já está no tamanho inserido');
-    } else if (parseInt(inputTamanho.value) < 5) {
+    } else if (parseInt(inputTamanho.value) < 5 || inputTamanho.value === '') {
       tamanhoQuadro = 5;
       alert('Board inválido!');
       novoQuadro();
@@ -69,34 +72,23 @@ window.onload = function () {
     }
   });
 
-  function criaPaletaCores(cores, pixels) {
+  function criaPaletaCores(cores) {
     for (let index = 0; index < cores.length; index += 1) {
       let novaCor = document.createElement('li');
-      let novaCorSize = pixels;
       novaCor.className = 'color';
-      novaCor.style.listStyle = 'none';
-      novaCor.style.width = novaCorSize;
-      novaCor.style.height = novaCorSize;
-      novaCor.style.border = '1px solid black';
       novaCor.style.backgroundColor = cores[index];
       paletaCores.appendChild(novaCor);
     }
   }
 
-  function criaQuadro(tamanho, pixels, color) {
+  function criaQuadro(tamanho) {
     for (let index = 0; index < tamanho; index += 1) {
       let novaLinha = document.createElement('tr');
       quadro.appendChild(novaLinha);
 
       for (let index = 0; index < tamanho; index += 1) {
         let novaColuna = document.createElement('td');
-        let novaColunaSize = pixels;
         novaColuna.className = 'pixel';
-        novaColuna.style.listStyle = 'none';
-        novaColuna.style.backgroundColor = color;
-        novaColuna.style.width = novaColunaSize;
-        novaColuna.style.height = novaColunaSize;
-        novaColuna.style.border = '1px solid black';
         novaLinha.appendChild(novaColuna);
       }
     }
@@ -111,9 +103,8 @@ window.onload = function () {
   function criaInputTamanho() {
     let criaInput = document.createElement('input');
     criaInput.className = 'input-size';
-    criaInput.style.width = '100px';
     criaInput.placeholder = 'Tamanho';
-    inputSize.appendChild(criaInput);
+    inputSize.appendChild(criaInput).focus();
   }
 
   function criaBotaoTamanho() {
@@ -129,10 +120,11 @@ window.onload = function () {
     for (let index = 0; index < remove.length; index += 1) {
       quadro.removeChild(remove[index]);
     }
-
-    criaQuadro(tamanhoQuadro, pixels, corInicialQuadro);
+    criaQuadro(tamanhoQuadro);
+    apagar();
+    pintaPixel();
   }
-
+  
   function geraCores() {
     let coresPaleta = ['#000'];
     for (let index = 0; index < 3; index += 1) {
@@ -144,6 +136,6 @@ window.onload = function () {
 
       coresPaleta.push(novaCor);
     }
-    criaPaletaCores(coresPaleta, pixels);
+    criaPaletaCores(coresPaleta);
   }
 };
