@@ -26,7 +26,7 @@ header {
 
 #main-container {
   width: 80%;
-  height: 600px;
+  height: 340px;
   margin: auto;
   margin-top: 20px;
   border: 1px solid black;
@@ -44,7 +44,6 @@ header {
 #selected-container {
   width: 40px;
   height: 40px;
-  border: 2px solid black;
   float: left;
   margin: 8px 0 8px 20px;
 }
@@ -62,7 +61,6 @@ header {
 #color-palette {
   width: 170px;
   height: 40px;
-  border: 2px solid black;
   float: left;
   margin: 8px 0 8px 90px;
 }
@@ -78,7 +76,6 @@ header {
 #extended-palette {
   width: 425px;
   height: 40px;
-  border: 2px solid black;
   float: left;
   margin: 8px 20px 8px 0;
 }
@@ -89,4 +86,28 @@ header {
   height: 30px;
   border: 1px solid black;
   margin: 4px 2px;
+}
+
+#pixel-board {
+  display: table;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  top: 0;
+  left: 0;
+  margin: 105px 446px 0;
+}
+
+#pixel-tr {
+  display: table-row;
+  width: 200px;
+  height: 40px;
+}
+
+.pixel {
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  background-color: white;
 }
