@@ -36,3 +36,17 @@ function createPixelGrind(lines, colums, fatherElement) {
 }
 
 createPixelGrind(5, 5, pixelBoard);
+
+function switchClass(event) {
+  const selected = document.querySelector('.selected');
+  selected.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+function addEvent(array, callBack, typeEvent) {
+  for (let index = 0; index < array.length; index += 1) {
+    array[index].addEventListener(typeEvent, callBack);
+  }
+}
+
+addEvent(colors, switchClass, 'click');
