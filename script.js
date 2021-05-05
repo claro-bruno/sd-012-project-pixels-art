@@ -1,3 +1,7 @@
+const color = document.getElementsByClassName('color');
+const pixels = document.getElementsByClassName('pixel');
+const button = document.getElementById('clear-board');
+
 function select(e) {
   const currentColor = document.querySelector('.selected');
   currentColor.classList.remove('selected');
@@ -17,10 +21,6 @@ function clear() {
     pixels[index].style.backgroundColor = 'white';
   }
 }
-
-const color = document.getElementsByClassName('color');
-const pixels = document.getElementsByClassName('pixel');
-const button = document.getElementById('clear-board');
 
 for (let index = 0; index < color.length; index += 1) {
   color[index].addEventListener('click', select);
