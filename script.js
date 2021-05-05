@@ -1,6 +1,6 @@
 
-let cores = document.getElementsByClassName("color");
-let paleta = document.getElementById("color-palette");
+var cores = document.getElementsByClassName("color");
+var paleta = document.getElementById("color-palette");
 
 paleta.children[0].style.backgroundColor = "black";
 paleta.children[1].style.backgroundColor = "yellow";
