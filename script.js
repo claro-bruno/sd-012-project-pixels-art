@@ -9,10 +9,11 @@ function mudarCorPaleta (array){
 }
 mudarCorPaleta();
 
-let quadroPixel = document.createElement('table');
+
+function createBoard (pixeis) {
+    let quadroPixel = document.createElement('table');
     document.body.appendChild(quadroPixel);
     quadroPixel.id = 'pixel-board'
-function createBoard (pixeis) {
     for(let index = 0; index < pixeis; index += 1) {
         let lineCanvas = document.createElement('tr');
         quadroPixel.appendChild(lineCanvas);

@@ -2,19 +2,26 @@ h1{
     text-align: center;
 }
 table {
-    width: 30px;
     border-collapse: collapse;
-    margin-left: 35%;
-}
-table, th, td {
-    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
 }
 th, td {
-    padding: 40px;
+    height: 41px;
+    width: 41px;
+    border: 1px solid black;
 }
-#color1 {
-    background-color: black;
+.color {
+    height: 41px;
+    width: 41px;
 }
 .pixel {
     background-color: white;
+    height: 41px;
+    width: 41px;
+    border: 1px solid black;
+    display: table-cell;
+}
+#pixel-board{
+    margin-top: 2%;
 }
