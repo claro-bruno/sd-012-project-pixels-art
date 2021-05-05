@@ -84,19 +84,29 @@ function removeBoard() {
   }
 }
 
+function changeBoard() {
+  const changeInput = document.querySelector('#board-size');
+  if (changeInput.value === '') {
+    alert('Board inválido');
+  } else if (changeInput.value < 5) {
+    removeBoard();
+    createBoardBlocks(5);
+    addEventPixels();
+  } else if (changeInput.value > 50) {
+    removeBoard();
+    createBoardBlocks(50);
+    addEventPixels();
+  } else {
+    removeBoard();
+    createBoardBlocks(changeInput.value);
+    addEventPixels();
+  }
+}
+
 function addEventChangeBoard() {
   const changeButton = document.querySelector('#generate-board');
-  const changeInput = document.querySelector('#board-size');
 
-  changeButton.addEventListener('click', () => {
-    if (changeInput.value === '' || changeInput.value < 5 || changeInput.value > 50) {
-      alert('Board Inválido');
-    } else {
-      removeBoard();
-      createBoardBlocks(changeInput.value);
-      addEventPixels();
-    }
-  });
+  changeButton.addEventListener('click', changeBoard);
 }
 
 createPaletteBlocks(['black', 'blue', 'green', 'yellow']);
