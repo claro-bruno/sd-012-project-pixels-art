@@ -16,3 +16,6 @@
     height: 40px;
     width: 40px;
 }
+#pixel-board {
+    white-space: nowrap;
+}
