@@ -14,12 +14,10 @@ body {
 #pixel-board {
   width: 200px;
   height: 200px;
-  /* border: 0.5px solid black; */
-  margin: 30px auto;
-  color: #ffffff;
+  margin: auto;
 }
 
-.color{
+.color {
   display: inline-block;
   border: 1px solid black;
   width: 40px;
@@ -37,4 +35,8 @@ body {
   border: 1px solid black;
   width: 40px;
   height: 40px;
+}
+
+.clear-board {
+margin: 20px 48% ;
 }

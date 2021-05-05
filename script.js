@@ -2,11 +2,11 @@
 const colors = document.getElementsByClassName('color');
 
 // insere as cores passadas como parametros como background no elementos passados como parametro
-function inputColorsPalett(arrayElements, arrayColors) {
-  for (let index = 0; index < arrayElements.length; index += 1) {
-    arrayElements[index].style.backgroundColor = arrayColors[index];
+function inputColorsPalett(arrayColors) {
+  for (let index = 0; index < arrayColors.length; index += 1) {
+    colors[index].style.backgroundColor = arrayColors[index];
     if (arrayColors[index] === '#000000') {
-      arrayElements[index].classList.add('selected');
+      colors[index].classList.add('selected');
     }
   }
 }
@@ -14,7 +14,7 @@ function inputColorsPalett(arrayElements, arrayColors) {
 // array com as cores iniciais do padrão RGB
 const RGBColors = ['#000000', '#800000', '#008000', '#000080'];
 
-inputColorsPalett(colors, RGBColors);
+inputColorsPalett(RGBColors);
 
 // elemetos pai do quadro de pixels
 const pixelBoard = document.getElementById('pixel-board');
@@ -53,8 +53,10 @@ function addEvent(array, callBack, typeEvent) {
 
 addEvent(colors, switchClass, 'click');
 
+// array com todos os elementos com a classe pixels
 const pixels = document.getElementsByClassName('pixel');
 
+// troca cor do elemento pixel pela cor selecionada
 function switchColor(e) {
   const selected = document.querySelector('.selected');
   const color = selected.style.backgroundColor;
@@ -62,3 +64,17 @@ function switchColor(e) {
 }
 
 addEvent(pixels, switchColor, 'click');
+
+function cleanPixels() {
+  for (let index = 0; index < pixels.length; index += 1)
+    [(pixels[index].style.backgroundColor = '#ffffff')];
+}
+
+const cleanBtn = document.createElement('button');
+cleanBtn.id = 'clear-board';
+cleanBtn.innerHTML = 'Limpar';
+
+cleanBtn.addEventListener('click', cleanPixels);
+
+const colorPallet = document.getElementById('color-palette');
+colorPallet.insertAdjacentElement('afterend', cleanBtn);
