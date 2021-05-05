@@ -28,6 +28,12 @@
     background-color: red;
 }
 
+/* botão de limpar */
+#clear-board {
+    width: 60px;
+    height: 30px;
+}
+
 /* quadro de pixels */
 .pixel {
     background-color: white;
@@ -37,3 +43,5 @@
     border: solid black;
     border-width: 1px;  
 }
+
+
