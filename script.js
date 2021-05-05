@@ -1,8 +1,11 @@
 window.onload = function () {
   const getColorPalette = document.getElementById('color-palette');
   const getColors = document.getElementsByClassName('color');
-  const getPixelBoard = document.getElementById('pixel-board')
+  const getPixelBoard = document.getElementById('pixel-board');
+  const getClearButton = document.querySelector('#clear-board');
+  const getPixels = document.querySelectorAll('.pixel');
 
+  //7
   function changeColorSelected(event) {
     const colorSelected = document.querySelector('.selected');
     colorSelected.classList.remove('selected');
@@ -12,12 +15,18 @@ window.onload = function () {
     color.addEventListener('click', changeColorSelected);
   }
 
-  function fillPixel(event){
-   const refreshColorSelected = document.querySelector('.selected');
-   const style = getComputedStyle(refreshColorSelected)
-   event.target.style.backgroundColor = style.backgroundColor;
+  //8
+  function fillPixel(event) {
+    const refreshColorSelected = document.querySelector('.selected');
+    const style = getComputedStyle(refreshColorSelected);
+    event.target.style.backgroundColor = style.backgroundColor;
   }
-  getPixelBoard.addEventListener('click',fillPixel);
+  getPixelBoard.addEventListener('click', fillPixel);
 
-  
+  //9
+  getClearButton.addEventListener('click', function () {
+    for (let pixel of getPixels) {
+      pixel.style.backgroundColor = 'white';
+    }
+  });
 };
