@@ -7,26 +7,34 @@ window.onload = function () {
   }
 
   function fillLine(boardSize) {
-    let pixelsLine = document.createElement('div');
+    let pixelLine = document.createElement('div');
     for (let index = 1; index <= boardSize; index += 1) {
-      pixelsLine.appendChild(generatePixelsLine());
-      pixelsLine.className = 'pixel-line';
+      pixelLine.appendChild(generatePixelsLine());
+      pixelLine.className = 'pixel-line';
     }
-    return pixelsLine;
+    return pixelLine;
   }
   function fillBoard () {
     let boardSize = 5;
-    let pixelsBoard = document.getElementById('pixel-board');
+    let pixelBoard = document.getElementById('pixel-board');
     for (let index = 1; index <= boardSize; index += 1) {
-        pixelsBoard.appendChild(fillLine(boardSize));
+        pixelBoard.appendChild(fillLine(boardSize));
       }
   }
   fillBoard();
 
   function selectedColors() {
     let colorsArray = document.querySelectorAll('.color');
+    let colorPalette = document.querySelector('#color-palette');
     colorsArray[0].className = 'color selected';
+    for (let index = 0; index < colorsArray.length; index += 1) {
+        colorsArray[index].addEventListener('click', function(event) {
+            let selectedColor = document.querySelector('.selected');
+            selectedColor.className = 'color';
+            event.target.className = 'color selected';
+        })
+    }
   }
   selectedColors();
-  
+
 };
