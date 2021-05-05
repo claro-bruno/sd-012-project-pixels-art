@@ -1,20 +1,17 @@
-.color {
+.color, .pixel{
   border-color: black;
   border-style: solid;
   border-width: 1px;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
 }
 
-.pixel {
-  background-color: white;
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  list-style-type: none;
+.ulPixel {
   margin-top: 0;
   margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 #black {
