@@ -58,7 +58,7 @@ function selectColor() {
     });
   }
   
-  selectColor();
+selectColor();
 
 //8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
 
