@@ -5,28 +5,14 @@
   display: inline-block;
 }
 
-#color1 {
-  background-color: black;
+#clear-board {
+  margin: 5px;
 }
 
-#color2 {
-  background-color: red;
-}
-
-#color3 {
-  background-color: yellow;
-}
-
-#color4 {
-  background-color: green;
-}
-
-#clear-board{
- margin: 5px;
-}
-/*#pixel-board{
+/* #pixel-board{
  border-collapse: collapse;
-}*/
+} */
+
 .pixel {
   border: solid 1px black;
   height: 40px;

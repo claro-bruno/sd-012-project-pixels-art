@@ -5,6 +5,8 @@ window.onload = function () {
   const getClearButton = document.querySelector('#clear-board');
   const getPixels = document.querySelectorAll('.pixel');
 
+  colorPaletteGeneration();
+
   //7
   function changeColorSelected(event) {
     const colorSelected = document.querySelector('.selected');
@@ -29,4 +31,16 @@ window.onload = function () {
       pixel.style.backgroundColor = 'white';
     }
   });
+
+  //12
+  function colorPaletteGeneration() {
+    getColors[0].style.backgroundColor = 'rgb(0,0,0)';
+    for (let index = 1; index < getColors.length; index += 1) {
+      getColors[index].style.backgroundColor =
+        'rgb(' + randomRgb() + ', ' + randomRgb() + ', ' + randomRgb() + ')';
+    }
+  }
+  function randomRgb() {
+    return Math.random() * 255;
+  }
 };
