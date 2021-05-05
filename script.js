@@ -8,14 +8,26 @@ function createBlock(bgColor, className, parentClassName) {
   colorPaletteSection.appendChild(colorPaletteDiv);
 }
 
-function createPaletteBlocks() {
+function checkUsedColor(color, usedColors) {
+  for (let index = 0; index < usedColors.length; index += 1) {
+    if (color === usedColors[index]) return 'used';
+  }
+}
+
+function createPaletteBlocks(colors) {
+  const usedColors = [];
+
   for (let index = 0; index < 4; index += 1) {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16); // Dica do Erick Reis -> Source: https://css-tricks.com/snippets/javascript/random-hex-color/
-    console.log(randomColor);
+    const randomIndex = Math.floor(Math.random() * (colors.length - 1));
+    const color = colors[randomIndex];
+
     if (index === 0) {
       createBlock('black', 'color selected', 'color-palette');
+    } else if (checkUsedColor(color, usedColors) === 'used') {
+      index -= 1;
     } else {
-      createBlock(`#${randomColor}`, 'color', 'color-palette');
+      createBlock(color, 'color', 'color-palette');
+      usedColors.push(color);
     }
   }
 }
@@ -125,7 +137,7 @@ function addEventChangeBoard() {
   changeButton.addEventListener('click', changeBoard);
 }
 
-createPaletteBlocks();
+createPaletteBlocks(['blue', 'green', 'red', 'orange', 'yellow', 'purple']);
 createBoardBlocks(5);
 addEventPalette();
 addEventPixels();
