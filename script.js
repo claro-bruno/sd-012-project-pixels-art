@@ -37,6 +37,7 @@ window.onload = function () {
 
         if (event.target.className === 'color') {
           resetSelect();
+          pintalPixel(event.target.style.backgroundColor);
           event.target.className = 'color selected';
         } 
       })
@@ -51,4 +52,13 @@ window.onload = function () {
   }
 
   selecionarCores();
+
+  function pintalPixel(color) {
+    const pixel = document.getElementById('pixel-board');
+    pixel.addEventListener('click', function (event) {
+      event.target.style.backgroundColor = color;
+    })
+  }
+
+  pintalPixel('black');
 }
