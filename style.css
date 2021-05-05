@@ -24,7 +24,9 @@
     text-align: center;
 }
 
-.pixel {
+.pixel{
+    display: inline-block;
+    margin: 0px;
     width: 80px;
     height: 80px;
     border: 1px solid black;
