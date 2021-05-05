@@ -3,7 +3,7 @@ window.onload = function () {
   let colom = 5;
   let square = document.getElementsByClassName('color');
   let pixelFather = document.getElementById('pixel-board');
-
+  
   cor = {
     0: 'black',
     1: 'red',
@@ -22,6 +22,8 @@ window.onload = function () {
       pixelFather.appendChild(pixelChild);
       pixelChild.className = 'line';
       colunas(pixelChild);
+      let begin = document.getElementsByClassName('pixel');
+      begin.style.backgroundColor = 'white';
     }
   }
 
@@ -29,7 +31,7 @@ window.onload = function () {
     for (let coluna = 0; coluna < colom; coluna += 1) {
       let pixelChild = document.createElement('div');
       pixelChild.className = 'pixel';
-      pixelLine.appendChild(pixelChild);
+      pixelLine.appendChild(pixelChild); 
     }
   }
 

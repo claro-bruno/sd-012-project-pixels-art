@@ -7,11 +7,12 @@
 }
 
 .pixel {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border: 1px solid black;
   display: inline-block;
   margin: 0;
+  background-color: white;
 }
 
 .pixel-board {
@@ -19,5 +20,5 @@
 }
 
 .line {
-  height: 50px;
+  height: 40px;
 }
