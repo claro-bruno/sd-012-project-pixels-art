@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
 .color {
   width: 40px;
   height: 40px;
@@ -33,6 +39,6 @@
   background-color: blue;
 }
 
-#clear-button {
+#button-space {
   margin: 10px;
 }
