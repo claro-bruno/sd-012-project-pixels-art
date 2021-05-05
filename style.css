@@ -1,35 +1,49 @@
-body{
+  body{
     margin: 0;
-    background-color: #f5f5f5;
+    background-color:whitesmoke;
     display: block;
-}
+  }
 
-header{
-    margin: 0px 500px;
+  header{
+    margin: 20px 500px;
     text-align: center;
     border: 2px solid black;
-}
+  }
 
-title{
+  title{
     text-align: center;
-}
+  }
 
-main{
+  main{
     display: inline-block;
     width: 100%;
-}
+    text-align: center;
+  }
 
-#color-palette {
+  #color-palette {
     display: inline-block;
     width: 100%;
     margin-top: 20px;
-    text-align: center;
-}
+  }
 
-.color {
+  .color {
     display: inline-block;
     border: 1px solid black;
     margin: 2px;
     padding: 40px;
-}
+  }
 
+  #pixel-board {
+      display: inline-block;
+      width: 35%;
+      margin: 20px;
+      padding: 10px;
+      text-align: center;
+  }
+
+  .pixel {
+    display: inline-block;
+    border: 1px solid black;
+    margin: 2px;
+    padding: 40px;
+  }
