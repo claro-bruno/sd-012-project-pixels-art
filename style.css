@@ -1,32 +1,48 @@
 #title {
-    text-align: center;
-    text-decoration: underline;
-    color: blueviolet;
+  text-align: center;
+  text-decoration: underline;
+  color: blueviolet;
 }
 
 #black {
-    background-color: black;
+  background-color: black;
 }
 
 #orange {
-    background-color: orange;
+  background-color: orange;
 }
 
 #red {
-    background-color: red;
+  background-color: red;
 }
 
 #yellow {
-    background-color: yellow;
+  background-color: yellow;
 }
 
+#color-palette {
+  margin: auto;
+}
+
+#pixel-board {
+    margin: auto;
+}
 
 .color {
-    border: solid black 1px;
-    width: 40px;
-    height: 40px;
+  border: solid black 1px;
+  width: 40px;
+  height: 40px;
+  margin: auto;
 }
 
 .pixel {
   background-color: white;
+  width: 40px;
+  height: 40px;
+  border: solid black 1px;
+  padding: 0%;
+}
+
+footer {
+    font-size: 20px;
 }
