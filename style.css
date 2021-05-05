@@ -4,3 +4,10 @@
   border: solid 1px black;
   display: inline-block;
 }
+
+.pixel {
+  width: 25px;
+  height: 25px;
+  border: solid 1px black;
+  background-color: white;
+}
