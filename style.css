@@ -24,6 +24,7 @@
 .pixel {
   width: 50px;
   height: 50px;
-  border-color: black solid 1px;
-  display: inline-block;
+  border-color: black solid 5px;
+  display: inline;
+  padding: 50px;
 }
