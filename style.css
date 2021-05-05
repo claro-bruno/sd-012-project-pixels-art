@@ -13,6 +13,9 @@
   padding-top: 0;
   padding-bottom: 0;
 }
+.pixel {
+  background-color: white;
+}
 
 #black {
   background-color: black;

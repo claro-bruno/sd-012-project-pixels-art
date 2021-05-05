@@ -10,3 +10,5 @@ for (let indexUl = 1; indexUl <= 5; indexUl += 1) {
     divQuadro.appendChild(liPixelQuadro);
   }
 }
+
+
