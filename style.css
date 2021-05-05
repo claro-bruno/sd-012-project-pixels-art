@@ -1,0 +1,27 @@
+#color-palette {
+  display: flex;
+  width: 100%;
+  gap: 1px;
+}
+
+.color {
+  height: 80px;
+  width: 80px;
+  border: 1px solid black
+}
+
+.color:nth-child(1) {
+  background-color: aqua;
+}
+
+.color:nth-child(2) {
+  background-color: blueviolet;
+}
+
+.color:nth-child(3) {
+  background-color: yellowgreen;
+}
+
+.color:nth-child(4) {
+  background-color: cornflowerblue;
+}
