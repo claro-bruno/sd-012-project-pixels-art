@@ -28,12 +28,12 @@ border: black solid 1px;
     width: 40px;
     height: 40px;
     border: solid black 1px;
-    float: right;
+    float: left;
     background-color: white;
 }
 
 #pixel-board {
     width: 250px;
     height: 250px;
-    
+    position: relative;
 }
