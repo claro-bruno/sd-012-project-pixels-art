@@ -1,15 +1,10 @@
 window.onload = function () {
-  let pixelsColor = document.querySelectorAll('.color');
+  const pixelsColor = document.querySelectorAll('.color');
   let boardSize = 0;
   let listOfPixels = document.querySelectorAll('.pixel');
-  clickInputButton();
-  setInitialColors();
-  changeSelectedColor();
-  changePixelsColor();
-  clearBoard();
 
   function setInitialColors() {
-    let colorsList = [
+    const colorsList = [
       'yellow',
       'blue',
       'navy',
@@ -26,12 +21,12 @@ window.onload = function () {
       'violet',
     ];
 
-    for (index = 0; index < pixelsColor.length; index += 1) {
+    for (let index = 0; index < pixelsColor.length; index += 1) {
       if (index === 0) {
         pixelsColor[index].style.backgroundColor = 'black';
         pixelsColor[index].className += ' selected';
       } else {
-        let randomNum = Math.floor(Math.random() * 10);
+        const randomNum = Math.floor(Math.random() * 10);
         pixelsColor[index].style.backgroundColor = colorsList[randomNum];
         colorsList.splice(randomNum, 1);
         console.log(colorsList);
@@ -40,14 +35,14 @@ window.onload = function () {
   }
 
   function changeSelectedColor() {
-    for (index = 0; index < pixelsColor.length; index += 1) {
-      let currentDiv = pixelsColor[index];
+    for (let index = 0; index < pixelsColor.length; index += 1) {
+      const currentDiv = pixelsColor[index];
       currentDiv.addEventListener('click', nowSelected);
     }
   }
 
   function nowSelected(e) {
-    for (index = 0; index < pixelsColor.length; index += 1) {
+    for (let index = 0; index < pixelsColor.length; index += 1) {
       let currentDiv = pixelsColor[index];
       currentDiv.className = 'color';
     }
@@ -118,9 +113,14 @@ window.onload = function () {
     }
     document.querySelector('#pixel-board').appendChild(table);
   }
-}
+  function killBoard() {
+    let pixelBoard = document.querySelector('#pixel-board');
+    pixelBoard.removeChild(pixelBoard.firstElementChild);
+  }
 
-function killBoard() {
-  let pixelBoard = document.querySelector('#pixel-board');
-  pixelBoard.removeChild(pixelBoard.firstElementChild);
-}
+  clickInputButton();
+  setInitialColors();
+  changeSelectedColor();
+  changePixelsColor();
+  clearBoard();
+};
