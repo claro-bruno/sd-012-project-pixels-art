@@ -56,3 +56,15 @@ function paintPixel(eventSource) {
     let selectedColor = document.querySelector('.selected');
     eventSource.target.style.backgroundColor = selectedColor.style.backgroundColor;
 }
+
+let button = document.getElementById('clear-board');
+
+button.addEventListener('click', clearBoard);
+
+function clearBoard() {
+    let pixels = document.getElementsByClassName('pixel');
+    console.log(pixels);
+    for (let index = 0; index < pixels.length; index += 1) {
+        pixels[index].style.backgroundColor = 'white';
+    }
+}
