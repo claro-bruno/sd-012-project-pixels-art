@@ -14,3 +14,16 @@ for (let index = 0; index < board; index += 1) {
   }
 }
 // Exercício feito com auxílio do colega Rodrigo Facury.
+
+const colors = document.querySelectorAll('.color');
+const pixels = document.querySelectorAll('.pixel');
+
+function selectedColor (event) {
+  const selected = document.querySelector('.selected');
+  selected.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+for (let indexcolor = 0; indexcolor < colors.length; indexcolor += 1) {
+  colors[indexcolor].addEventListener('click', selectedColor);
+}
