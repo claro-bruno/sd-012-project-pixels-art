@@ -9,16 +9,21 @@ window.onload = function () {
     let pixelsLine = document.createElement('div');
     for (let index = 1; index <= boardSize; index += 1) {
       pixelsLine.appendChild(generatePixelsLine());
-      pixelsLine.className = 'pixels-line';
+      pixelsLine.className = 'pixel-line';
     }
     return pixelsLine;
   }
   function fillBoard () {
     let boardSize = 5;
-    let pixelsBoard = document.getElementById('pixels-board');
+    let pixelsBoard = document.getElementById('pixel-board');
     for (let index = 1; index <= boardSize; index += 1) {
         pixelsBoard.appendChild(fillLine(boardSize));
       }
   }
   fillBoard();
+
+  function selectedColors() {
+    let colorsArray = document.querySelectorAll('.color');
+    colorsArray[0].className = 'color selected';
+  }
 };
