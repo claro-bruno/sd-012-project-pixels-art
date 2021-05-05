@@ -7,7 +7,7 @@ for (let color = 0; color < colors.length; color += 1) {
     box.style.width = '40px';
     box.style.height = '40px';
     box.style.border = '1px solid black';
-    box.style.display = 'inline-block'
+    box.style.display = 'inline-block';
     box.style.backgroundColor = colors[color];
     document.querySelector('#color-palette').appendChild(box);
 }
@@ -28,19 +28,27 @@ for (let pixel = 0; pixel < board; pixel += 1) {
         box.style.width = '40px';
         box.style.height = '40px';
         box.style.border = '1px solid black';
-        box.style.display = 'inline-block'
+        box.style.display = 'inline-block';
         box.style.backgroundColor = 'white';
         document.querySelectorAll('.line')[pixel].appendChild(box);
     }
 }
 
 //Requisito 06
-document.querySelector('#color-palette').firstElementChild.className = 'color selected'
+document.querySelector('#color-palette').firstElementChild.className = 'color selected';
 
 //Requisito 07
 document.body.addEventListener('click', function (event) {
     if (event.target.className === 'color' ){
-        document.querySelector('.selected').className = 'color'
-        event.target.className = 'color selected'
+        document.querySelector('.selected').className = 'color';
+        event.target.className = 'color selected';
     }
 })
+
+//Requisito 08
+document.body.addEventListener('click', function (event) {
+    if (event.target.className === 'pixel') {
+        event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+    }
+})
+
