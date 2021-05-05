@@ -32,4 +32,6 @@ for (let pixel = 0; pixel < board; pixel += 1) {
     }
 }
 
-document.querySelector('#color-palette').firstElementChild.className = 'selected'
+window.onload = function () {
+    document.querySelector('#color-palette').firstElementChild.className = 'selected'
+}
