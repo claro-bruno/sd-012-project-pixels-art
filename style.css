@@ -33,4 +33,6 @@
     width: 210px;
     height: 210px;
     flex-wrap: wrap;
+    margin-top: 2rem;
+    border: 1px solid black;
 }

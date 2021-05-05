@@ -1,4 +1,7 @@
 window.onload = function(){
+
+    let corSelecionada = 'black'
+
     gerarPixelBoard();
 }
 
