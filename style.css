@@ -1,7 +1,8 @@
 div{
-    width:50px;
-    height: 50px;
+    width:40px;
+    height: 40px;
     display: inline-block;
+    border: 1px solid black;
 }
 
 #meio{
@@ -11,6 +12,13 @@ div{
     padding:20px;
     text-align: center;
 }
+
+#pixel-board{
+    text-align: center;
+    padding: 80px;
+}
+
+
 
 #title{
     text-align: center;
@@ -30,4 +38,20 @@ div{
 
 #green{
     background-color: green;
+}
+
+#purple{
+    background-color: purple;
+}
+
+#orange{
+    background-color: orange;
+}
+
+#pink{
+    background-color: pink;
+}
+
+#erased{
+    background-color: white;
 }
