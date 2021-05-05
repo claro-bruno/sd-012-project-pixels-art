@@ -55,4 +55,13 @@ function criaQuadro (largura, comprimento) {
 
 criaQuadro(larguraQuadro, comprimentoQuadro);
 
+//ex6
+
+window.onload = function() {
+    let getColor = document.getElementsByClassName('color');
+
+    if (getColor[0].className !== 'color selected') {
+        getColor[0].className = 'color selected';
+    }
+}
 
