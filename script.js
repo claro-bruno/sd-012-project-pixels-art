@@ -15,6 +15,11 @@ window.onload = function () {
       setPixelBackgroundColor(event);
     };
 
+    //Clicar no botão de Limpar preenche todos os pixels do quadro de branco
+    if (event.target.id === 'clear-board') {
+      resetBoard();
+    }
+
   });
   
   //Define a cor preta como cor inicial
@@ -60,6 +65,14 @@ window.onload = function () {
       event.target.style.backgroundColor = initialColor;
     } else {
       event.target.style.backgroundColor = selectedBackgroundColor;
+    };
+  };
+
+  //Cria um função que reseta o backgroundColor de todos os pixels para branco
+  function resetBoard() {
+    const allPixels = document.getElementsByClassName('pixel');
+    for (let pixel of allPixels) {
+      pixel.style.backgroundColor = 'white';
     };
   };
    

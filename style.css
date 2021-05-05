@@ -1,7 +1,11 @@
+h1, section{
+  text-align: center;
+}
+
 #color-palette div {
   display: inline-block;
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   border: 1px solid black;
 }
 
@@ -21,6 +25,10 @@
   background-color: blue;
 }
 
+table {
+  margin: 0 auto;
+}
+
 table, tr, td{
   border-spacing: 0;
   border: 1px solid black;
@@ -30,4 +38,9 @@ table, tr, td{
   width: 40px;
   height: 40px;
   display: inline-block;
+}
+
+button {
+  display: block;
+  margin: 7px auto 10px;
 }
