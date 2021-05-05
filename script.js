@@ -4,3 +4,5 @@ document.querySelectorAll(".color")[2].style.background="salmon";
 document.querySelectorAll(".color")[3].style.background="yellow";
 
 
+
+window.onload = document.querySelector(".selected");
