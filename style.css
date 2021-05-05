@@ -4,18 +4,10 @@
     padding: 25px 25px
 }
 
-/* #color1 {
-    background-color: black;
+.pixel{
+    display: inline-block;
+    margin: 0;
+    padding: 25px 25px;
+    border: solid black 1px;
+    color: white;
 }
-
-#color2 {
-    background-color: rgb(255, 204, 0);
-}
-
-#color3 {
-    background-color: rgb(255, 153, 51);
-}
-
-#color4 {
-    background-color: rgb(0, 153, 51);
-} */
