@@ -1,50 +1,50 @@
 .color {
-    display: inline-block;
-    border: 1px solid black;
-    height: 40px;
-    width: 40px;
+  display: inline-block;
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
 }
 
 #first-color {
-    background-color: black;
+  background-color: black;
 }
 
 #second-color {
-    background-color: blue;
+  background-color: blue;
 }
 
 #third-color {
-    background-color: red;
+  background-color: red;
 }
 
 #fourth-color {
-    background-color: green;
+  background-color: green;
 }
 
 #clear-board {
-    margin: 10px;
+  margin: 10px;
 }
 
 .table {
-    display: table;
-    border: 2px solid black;
+  display: table;
+  border: 2px solid black;
 }
 
 .tr {
-    display: table-row;
+  display: table-row;
 }
 
 .td {
-    display: table-cell;
+  display: table-cell;
 }
 
 #pixel-board {
-    margin: 0;
+  margin: 0;
 }
 
 .pixel {
-    height: 40px;
-    width: 40px;
-    border: 1px black solid;
-    background-color: white;
+  height: 40px;
+  width: 40px;
+  border: 1px black solid;
+  background-color: white;
 }
