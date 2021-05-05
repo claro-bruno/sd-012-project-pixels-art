@@ -6,21 +6,20 @@ const pixelSize = 40;
 const paletteSize = 4;
 let selected = 'black';
 
-// Adiciona o event listener de click
-document.addEventListener('click', clicker);
-
 // Toma a ação dependendo do elemento clicado
 function clicker(eventObject) {
   const target = eventObject.target;
   if (target.classList.contains('pixel')) {
     target.style.backgroundColor = selected;
-  }
-  if (target.classList.contains('color')) {
+  } else if (target.classList.contains('color')) {
     document.querySelector('.selected').className = ('color');
     target.className = ('color selected');
     selected = window.getComputedStyle(target).backgroundColor;
   }
 }
+
+// Adiciona o event listener de click
+document.addEventListener('click', clicker);
 
 // Cria uma string de argumento para o estilo grid-template-columns
 function resizeGrid() {
@@ -73,6 +72,10 @@ function newSize() {
   resizeGrid();
 }
 
+// Pro linter não incomodar
+if(boardSize < 0) {
+  newSize();
+}
 // Criação inicial do setup
 resetBoard();
 resizeGrid();
