@@ -10,7 +10,7 @@
 
 header {
   height: 30vh;
-  background-color: #F25268;
+  background-color: #f25268;
   text-align: center;
 }
 
@@ -39,10 +39,10 @@ header h1 {
   display: inline-block;
   padding: 10px;
   background-color: white;
-  font-family: 'Quicksand', sans-serif;
+  font-family: Quicksand, sans-serif;
   font-size: 20px;
-  font-weight: bold;
-  color: #262C38;
+  font-weight: 700;
+  color: #262c38;
   border-radius: 0.4em;
 }
 
@@ -52,7 +52,7 @@ main {
   justify-content: center;
   align-items: center;
   height: 70vh;
-  background-color: #FFD972;
+  background-color: #ffd972;
 }
 
 .container {
@@ -62,9 +62,9 @@ main {
   align-items: center;
   width: 40%;
   height: 90%;
-  border: 0.4em solid #7E5920;
+  border: 0.4em solid #7e5920;
   border-radius: 1em;
-  background-color: #90C2E7;
+  background-color: #90c2e7;
 }
 
 #pixel-board {
