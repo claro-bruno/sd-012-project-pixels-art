@@ -23,18 +23,24 @@ h1 {
   background-color: #fe05ff;
 }
 
+.color {
+  display: inline-block;
+  padding: 15px;
+  border: solid black 1px;
+}
+
 .pixel {
-  padding: 40px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
   border: solid black 1px;
   background-color: white;
 }
 
-.color {
-  display: inline-block;
-  padding: 30px;
-  border: solid black 1px;
+.line {
+  display: block;
 }
 
 table {
-  margin-left: 34%;
+  margin-left: 38%;
 }
