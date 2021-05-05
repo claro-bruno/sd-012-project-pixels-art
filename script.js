@@ -15,8 +15,5 @@ for (let index = 1; index <= 5; index +=1) {
         pixel.style.verticalAlign = 'top';
         pixelBoard.appendChild(pixel);
     }
-    // if (index !==5) {
-    //     let breakLine = document.createElement('br');
-    //     pixelBoard.appendChild(breakLine);
-    // }
 }
+document.querySelector('.color').classList.add('selected');
