@@ -14,7 +14,10 @@ window.onload = function () {
   for (let key in cor) {
     square[key].style.backgroundColor = cor[key]
   }
-   lines();
+  
+  lines();
+  let begin = document.getElementsByClassName('pixel');
+  begin.style.backgroundColor = 'white';
 
   function lines() {
     for (let linha = 0; linha < line; linha += 1) {
@@ -22,8 +25,6 @@ window.onload = function () {
       pixelFather.appendChild(pixelChild);
       pixelChild.className = 'line';
       colunas(pixelChild);
-      let begin = document.getElementsByClassName('pixel');
-      begin.style.backgroundColor = 'white';
     }
   }
 
@@ -31,7 +32,7 @@ window.onload = function () {
     for (let coluna = 0; coluna < colom; coluna += 1) {
       let pixelChild = document.createElement('div');
       pixelChild.className = 'pixel';
-      pixelLine.appendChild(pixelChild); 
+      pixelLine.appendChild(pixelChild);
     }
   }
 
