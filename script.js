@@ -47,3 +47,9 @@ function criaQuadro (tamanho) {
 
 criaQuadro(5)
 
+//===========================================================
+
+// Exercício 6: (O 5 foi feito via css)
+
+let selectBlack = document.querySelector('.color');
+selectBlack.className += ' selected';
