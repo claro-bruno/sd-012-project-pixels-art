@@ -8,6 +8,7 @@
     padding-top: 0px;
     padding-bottom: 0px;
     padding-right: 0px;
+    margin-bottom: 50px;
 }
 .color {
     width: 40px;
@@ -35,4 +36,18 @@
 #cor4 {
     background-color: royalblue;
     border: solid black 1px;
+}
+.quadro {
+    height: 240px;
+    width: 240px;
+    display: inline-block;
+    text-align: center;
+
+}
+.pixel {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border: solid black 1px;
+    display: inline-block;
 }
