@@ -8,6 +8,10 @@
   border: 1px solid black;
 }
 
+.black {
+  background-color: black;
+}
+
 .red {
   background-color: red;
 }
