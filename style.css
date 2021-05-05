@@ -24,3 +24,9 @@
 #color5 {
     background-color: rgb(235, 210, 190);
 }
+
+.pixel {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+}
