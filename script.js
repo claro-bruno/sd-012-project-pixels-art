@@ -62,6 +62,17 @@ const createButton = () => {
   buttonSpace.appendChild(button);
 };
 
+const clearBoard = () => {
+  const button = document.querySelector('#clear-board');
+  button.addEventListener('click', () => {
+    const pixels = document.getElementsByClassName('pixel');
+    for (let i = 0; i < pixels.length; i += 1) {
+      pixels[i].style.backgroundColor = 'white';
+    }
+  });
+};
+createButton();
+
 window.onload = () => {
   createPalette('black');
   createPalette('red');
@@ -70,5 +81,5 @@ window.onload = () => {
   selectColor();
   createPixels(25);
   paintPixels();
-  createButton();
+  clearBoard();
 };
