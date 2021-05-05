@@ -1,5 +1,21 @@
 .color {
-    border: solid rgb(0, 0, 0) 1px;
+    border: solid black 1px;
     display: inline-block;
     padding: 25px 25px
+}
+
+#color1 {
+    background-color: black;
+}
+
+#color2 {
+    background-color: rgb(255, 204, 0);
+}
+
+#color3 {
+    background-color: rgb(255, 153, 51);
+}
+
+#color4 {
+    background-color: rgb(0, 153, 51);
 }
