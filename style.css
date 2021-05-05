@@ -50,18 +50,20 @@ body {
 }
 
 #pixel-board {
-    max-width: 250px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0;
+    background-color: white;
 }
 
 .pixel {
+    display: inline-block;
     cursor: pointer;
     width: 40px;
     height: 40px;
     border: 1px solid black;
     flex-wrap: wrap;
     color: #fff;
+    background-color: white;
 }
