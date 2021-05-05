@@ -3,54 +3,52 @@ const pixelBoard = document.getElementById('pixel-board');
 const pallete = document.getElementsByClassName('color');
 const btnClear = document.getElementById('clear-board');
 const btnGenerate = document.getElementById('generate-board');
-const boardContainer = document.getElementById('board-container');
 const boardSize = document.getElementById('board-size');
 
+function randomRGB() {
+  const r, g, b;
+  r = parseInt((Math.random() * 255), 10);
+  g = parseInt((Math.random() * 255), 10);
+  b = parseInt((Math.random() * 255), 10);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
 function createPalette() {
-  let div = document.createElement('div');
+  const div = document.createElement('div');
   div.className = 'color';
   div.classList.add('selected');
   div.style.backgroundColor = 'black';
   colorPalette.appendChild(div);
   for (let index = 0; index < 3; index += 1) {
-    let div = document.createElement('div');
+    div = document.createElement('div');
     div.className = 'color';
     div.style.backgroundColor = randomRGB();
     colorPalette.appendChild(div); 
   }
 }
 
-function randomRGB() {
-  let r, g, b;
-  r = parseInt(Math.random() * 255);
-  g = parseInt(Math.random() * 255);
-  b = parseInt(Math.random() * 255);
-  return `rgb(${r}, ${g}, ${b})`;
-}
-
 function createBoard () { 
   let size = boardSize.value;
   if (size < 5 || size > 50 || size == null) {
     window.alert('Board inválido!')
-    if (size < 5 || size == null) {size = 5; }
-    if (size > 50) {size = 50; }
+    if (size < 5 || size == null) { size = 5; }
+    if (size > 50) { size = 50; }
   } 
-    resetBoard();
-    const pixelBoard = document.getElementById('pixel-board');
-    pixelBoard.style.width = (size * 42) + 'px';
-    for (let row = 1; row <= size*size; row += 1) {
-      let div = document.createElement('div');
-      div.className = 'pixel';
-      pixelBoard.appendChild(div);
-    }
+  resetBoard();
+  const pixelBoard = document.getElementById('pixel-board');
+  pixelBoard.style.width = (size * 42) + 'px';
+  for (let row = 1; row <= size*size; row += 1) {
+    let div = document.createElement('div');
+    div.className = 'pixel';
+    pixelBoard.appendChild(div);
   }
+}
   
-
-  function resetBoard() {
-    while (pixelBoard.firstChild) {
-      pixelBoard.removeChild(pixelBoard.lastChild);
-    }
+function resetBoard() {
+  while (pixelBoard.firstChild) {
+    pixelBoard.removeChild(pixelBoard.lastChild);
   }
+}
 
 function selectColor (event) {
   for (let index = 0; index < pallete.length; index += 1) {
@@ -83,5 +81,4 @@ window.onload = function pageLoad () {
   createBoard();
   boardSize.value = null;
   btnGenerate.addEventListener('click', createBoard);
-  
 };
