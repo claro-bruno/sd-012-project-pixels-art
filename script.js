@@ -2,21 +2,6 @@ function randomNumber(range) {
     return Math.floor(Math.random() * range);
 }
 
-function preventEqualRandomNumbers(number, range) {
-    let myNumber = randomNumber(range);
-    while (myNumber === number) {
-        myNumber = randomNumber(range);
-    }
-    return myNumber;
-}
-
-function compareNumbers(number1,number2) {
-    if(number1 === number2)
-        return true;
-    if(number1 !== number2)
-        return false;
-}
-
 function generateRGB() {
     let color = 'rgb(' + randomNumber(256) + ',' + randomNumber(256) + ',' + randomNumber(256) + ')';
     if (color === 'rgb(255,255,255)') {
@@ -40,8 +25,8 @@ function makePixel(classes){
     return pixel;
 }
 
-function createPallet(){
-    let pallet = document.querySelector('#color-pallet');
+function createPalette(){
+    let pallet = document.querySelector('#color-palette');
 
     for (let index = 1; index < 4; index += 1) {
         let pixels = pallet.children;    
@@ -52,4 +37,4 @@ function createPallet(){
     }
 }
 
-createPallet();
+createPalette();
