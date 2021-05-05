@@ -1,0 +1,31 @@
+#black {
+  background-color: black;
+  border: solid 1px black;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+#red {
+  background-color: red;
+  border: solid 1px black;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+#blue {
+  background-color: blue;
+  border: solid 1px black;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+#green {
+  background-color: green;
+  border: solid 1px black;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
