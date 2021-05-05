@@ -3,7 +3,8 @@
 }
 .color {
     border: solid black 1px;
-    padding: 40px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     margin: 5px;
 }
@@ -27,11 +28,11 @@
     display: table-row;
 }
 .pixel {
-    padding: 40px;
+    width: 40px;
+    height: 40px;
     border: solid black 1px;
     display: table-cell;
-    color: white;
 }
 .selected {
-    background-color: black;
+    
 }

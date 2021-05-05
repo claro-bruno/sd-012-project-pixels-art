@@ -2,6 +2,7 @@ window.onload = function () {
   function generatePixelsLine() {
     let divPixel = document.createElement('div');
     divPixel.className = 'pixel';
+    divPixel.style.backgroundColor = 'white';
     return divPixel;
   }
 
