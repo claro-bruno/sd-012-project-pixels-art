@@ -1,4 +1,4 @@
-const palColor = document.getElementById('color-pallete');
+const palColor = document.getElementById('color-palette');
 const palleteColor = document.querySelectorAll('.color');
 const arrayColor = ['rgb(0,0,0','rgb(255,0,0','rgb(0,255,0','rgb(0,0,255'];
 const matrixPlace = document.getElementById('section2');
