@@ -21,6 +21,9 @@
   background-color: green;
 }
 
+#pixel-board{
+ border-collapse: collapse;
+}
 .pixel {
   border: solid 1px black;
   height: 40px;
