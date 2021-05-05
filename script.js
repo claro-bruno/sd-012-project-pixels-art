@@ -1,23 +1,23 @@
 let paletaCores = document.querySelector('#color-palette');
 let quadro = document.querySelector('#pixel-board');
-let botao = document.querySelector('#clear-board');
+let botaoApagar = document.querySelector('#clear-board');
+let inputSize = document.querySelector('#board-size');
+let body = document.querySelector('body');
 
-let tamanhoDoQuadrado = '40px';
+let pixels = '40px';
 
 let coresPaleta = ['black', 'yellow', 'blue', 'green'];
 
-let numeroDePixelsHorizontal = 5;
-let numeroDePixelsVertical = 5;
+let tamanhoQuadro = 5;
+
 let corInicialQuadro = 'white';
 
-criaPaletaCores(coresPaleta, tamanhoDoQuadrado);
+criaPaletaCores(coresPaleta, pixels);
 criaBotaoApagar();
-criaQuadro(
-  numeroDePixelsHorizontal,
-  numeroDePixelsVertical,
-  tamanhoDoQuadrado,
-  corInicialQuadro
-);
+criaInputTamanho();
+criaBotaoTamanho();
+
+criaQuadro(tamanhoQuadro, pixels, corInicialQuadro);
 
 let cores = document.querySelectorAll('.color');
 
@@ -45,16 +45,16 @@ for (let index = 0; index < pixel.length; index += 1) {
 }
 
 let botaoApaga = document.querySelector('#clear-board');
-botaoApaga.addEventListener('click', function (){
+botaoApaga.addEventListener('click', function () {
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
   }
-})
+});
 
-function criaPaletaCores(cores, tamanho) {
+function criaPaletaCores(cores, pixels) {
   for (let index = 0; index < cores.length; index += 1) {
     let novaCor = document.createElement('li');
-    let novaCorSize = tamanho;
+    let novaCorSize = pixels;
     novaCor.className = 'color';
     novaCor.style.listStyle = 'none';
     novaCor.style.width = novaCorSize;
@@ -65,14 +65,14 @@ function criaPaletaCores(cores, tamanho) {
   }
 }
 
-function criaQuadro(height, width, tamanho, color) {
-  for (let index = 0; index < width; index += 1) {
+function criaQuadro(tamanho, pixels, color) {
+  for (let index = 0; index < tamanho; index += 1) {
     let novaLinha = document.createElement('tr');
     quadro.appendChild(novaLinha);
 
-    for (let index = 0; index < height; index += 1) {
+    for (let index = 0; index < tamanho; index += 1) {
       let novaColuna = document.createElement('td');
-      let novaColunaSize = tamanho;
+      let novaColunaSize = pixels;
       novaColuna.className = 'pixel';
       novaColuna.style.listStyle = 'none';
       novaColuna.style.backgroundColor = color;
@@ -87,5 +87,43 @@ function criaQuadro(height, width, tamanho, color) {
 function criaBotaoApagar() {
   let criaBotao = document.createElement('button');
   criaBotao.innerHTML = 'Limpar';
-  botao.appendChild(criaBotao);
+  botaoApagar.appendChild(criaBotao);
 }
+
+function criaInputTamanho() {
+  let criaInput = document.createElement('input');
+  criaInput.className = 'input-size';
+  criaInput.style.width = '100px';
+  criaInput.placeholder = 'Tamanho';
+  inputSize.appendChild(criaInput);
+}
+
+function criaBotaoTamanho() {
+  let criaBotao = document.createElement('button');
+  criaBotao.innerHTML = 'VQV';
+  criaBotao.className = 'botao-tamanho';
+  criaBotao.id = 'generate-board';
+  inputSize.appendChild(criaBotao);
+}
+
+let botaoTamanho = document.querySelector('#generate-board');
+let inputTamanho = document.querySelector('.input-size');
+botaoTamanho.addEventListener('click', function () {
+  let remove = document.querySelectorAll('tr');
+  if (parseInt(inputTamanho.value) == parseInt(tamanhoQuadro)) {
+    alert('O quadro já está no tamanho inserido');
+  } else if (
+    parseInt(inputTamanho.value) < 5 ||
+    parseInt(inputTamanho.value) > 50
+  ) {
+    alert('Board inválido!');
+  } else {
+    for (let index = 0; index < remove.length; index += 1) {
+      quadro.removeChild(remove[index]);
+    }
+
+    tamanhoQuadro = parseInt(inputTamanho.value);
+
+    criaQuadro(tamanhoQuadro, pixels, corInicialQuadro);
+  }
+});

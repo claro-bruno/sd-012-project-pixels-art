@@ -17,3 +17,13 @@ body {
 #pixel-board {
     display: inline-block;
 }
+
+#botoes {
+    display: flex;
+    justify-content: center;
+}
+
+#board-size {
+    margin-right: 15px;
+}
+
