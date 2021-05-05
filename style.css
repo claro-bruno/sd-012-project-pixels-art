@@ -2,9 +2,18 @@ h1 {
   text-align: center;
 }
 
-#pixel {
+.pixel {
   text-align: center;
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+  display: inline-block;
+  background-color: white;
+  margin: 0;
+}
 
+.line {
+  line-height: 0;
 }
 
 #pixel-board {

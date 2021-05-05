@@ -1,22 +1,20 @@
-function createQuadradinhos() {
-    for (let index = 0; index < 5; index += 1) {
-        const getPixelBoard = document.querySelector('#pixel-board');
-        const quadradoItem = document.createElement('div');
-        const paragrafo = document.createElement('p');
-        getPixelBoard.appendChild(paragrafo);
-        for(let indexLinha = 0; indexLinha < 5; indexLinha += 1) {
-            const quadradoItem = document.createElement('div');
-            quadradoItem.className = 'pixel';
-            quadradoItem.style.width = '40px';
-            quadradoItem.style.height = '40px';
-            quadradoItem.style.border = 'solid 1px black';
-            quadradoItem.style.lineHeight = '0';
-            quadradoItem.style.display = 'inline-block';
-            quadradoItem.style.backgroundColor = 'white';
-            quadradoItem.style.margin = '0';
-            paragrafo.appendChild(quadradoItem);
-        }
-    }   
+function fillBoard (lines, columns) {
+
+    for(let index = 0; index < lines; index += 1) {
+        const line_position = document.createElement('div');
+        line_position.className = 'line';
+        document.querySelector('#pixel-board').appendChild(line_position);
+
+        fillLineBoard(line_position,columns);
+    }
 }
 
-createQuadradinhos();
+function fillLineBoard(line,columns) {
+    for(let index = 0 ; index < columns; index += 1) {
+        const column_position = document.createElement('div');
+        column_position.className = 'pixel';
+        line.appendChild(column_position);
+    }
+}
+
+fillBoard (5, 5);
