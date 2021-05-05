@@ -27,3 +27,10 @@
 #s4{
     background-color: red;
 }
+
+#pixel-board{
+    display: flex;
+    width: 210px;
+    height: 210px;
+    flex-wrap: wrap;
+}
