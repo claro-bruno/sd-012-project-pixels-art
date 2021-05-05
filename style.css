@@ -8,5 +8,8 @@ div p {
     height: 70px;
     width: 70px;
     display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
 
 }
