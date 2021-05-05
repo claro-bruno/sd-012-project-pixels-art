@@ -6,6 +6,11 @@
   margin-right: 10px;
 }
 
+#clear-board {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 #pixel-board {
   width: 220px;
 }
