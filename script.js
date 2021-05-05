@@ -1,7 +1,7 @@
 window.onload = function () {
   const pixelsColor = document.querySelectorAll('.color');
-  let boardSize = 0;
   let listOfPixels = document.querySelectorAll('.pixel');
+  let boardSize = 0;
 
   function setInitialColors() {
     const colorsList = [
@@ -34,6 +34,15 @@ window.onload = function () {
     }
   }
 
+  function nowSelected(e) {
+    for (let index = 0; index < pixelsColor.length; index += 1) {
+      const currentDiv = pixelsColor[index];
+      currentDiv.className = 'color';
+    }
+
+    e.target.className = 'color selected';
+  }
+
   function changeSelectedColor() {
     for (let index = 0; index < pixelsColor.length; index += 1) {
       const currentDiv = pixelsColor[index];
@@ -41,20 +50,11 @@ window.onload = function () {
     }
   }
 
-  function nowSelected(e) {
-    for (let index = 0; index < pixelsColor.length; index += 1) {
-      let currentDiv = pixelsColor[index];
-      currentDiv.className = 'color';
-    }
-
-    e.target.className = 'color selected';
-  }
-
   function changePixelsColor() {
     for (let index = 0; index < listOfPixels.length; index += 1) {
-      let currentPixel = listOfPixels[index];
+      const currentPixel = listOfPixels[index];
 
-      currentPixel.addEventListener('click', function (e) {
+      currentPixel.addEventListener('click', (e) => {
         e.target.style.backgroundColor = document.querySelector(
           '.selected'
         ).style.backgroundColor;
@@ -65,7 +65,7 @@ window.onload = function () {
   function clearBoard() {
     let btn = document.querySelector('#clear-board');
 
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', () => {
       for (let index = 0; index < listOfPixels.length; index += 1) {
         let currentPixel = listOfPixels[index];
         currentPixel.style.backgroundColor = 'white';
@@ -73,20 +73,42 @@ window.onload = function () {
     });
   }
 
+  function killBoard() {
+    const pixelBoard = document.querySelector('#pixel-board');
+    pixelBoard.removeChild(pixelBoard.firstElementChild);
+  }
+
+  function generateBoard(boardSize) {
+    const table = document.createElement('table');
+
+    for (let index = 0; index < boardSize; index += 1) {
+      const tr = document.createElement('tr');
+
+      for (let index = 0; index < boardSize; index += 1) {
+        const td = document.createElement('td');
+        td.className = 'pixel';
+        tr.appendChild(td);
+      }
+      table.appendChild(tr);
+    }
+    document.querySelector('#pixel-board').appendChild(table);
+  }
+
   function clickInputButton() {
-    let btn = document.querySelector('#generate-board');
-    btn.addEventListener('click', function () {
-      let input = document.querySelector('#board-size');
+    const btn = document.querySelector('#generate-board');
+    btn.addEventListener('click', () => {
+      const input = document.querySelector('#board-size');
       input.type = 'number';
       input.min = '1';
+
       if (input.value === '') {
         alert('Board inválido!');
       } else if (input.value > 50) {
-        boardSize = 50;
+         boardSize = 50;
       } else if (input.value < 5) {
-        boardSize = 5;
+         boardSize = 5;
       } else {
-        boardSize = parseInt(input.value);
+         boardSize = parseInt(input.value);
       }
 
       input.value = '';
@@ -98,25 +120,6 @@ window.onload = function () {
     });
   }
 
-  function generateBoard(boardSize) {
-    let table = document.createElement('table');
-
-    for (let index = 0; index < boardSize; index += 1) {
-      let tr = document.createElement('tr');
-
-      for (let index = 0; index < boardSize; index += 1) {
-        let td = document.createElement('td');
-        td.className = 'pixel';
-        tr.appendChild(td);
-      }
-      table.appendChild(tr);
-    }
-    document.querySelector('#pixel-board').appendChild(table);
-  }
-  function killBoard() {
-    let pixelBoard = document.querySelector('#pixel-board');
-    pixelBoard.removeChild(pixelBoard.firstElementChild);
-  }
 
   clickInputButton();
   setInitialColors();
