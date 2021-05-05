@@ -73,6 +73,10 @@ function reSizeBoardPixel () {
 
     if (inputValue === "") {
         alert("Board inválido!")
+    } else if (inputValue < 5){
+        alert("Insira um valor maior que 5!")
+    } else if (inputValue > 50){ 
+        alert("Insira um valor menor que 50!")
     } else {
         // Reseta PixelBoard
         let lineList = document.querySelectorAll("tr");
@@ -101,6 +105,8 @@ function reSizeBoardPixel () {
             };
         };
     };
+
+    document.querySelector("#board-size").value = "";
 };
 
 let reSizeButton = document.querySelector("#generate-board");
