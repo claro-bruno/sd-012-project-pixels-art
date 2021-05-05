@@ -16,4 +16,16 @@ window.onload = function() {
             linha_pixel.appendChild(pixel);
         }
     }
+    let colors = document.querySelectorAll(".color");
+    for(let i = 0; i < colors.length; i++) {
+        colors[i].addEventListener("click", selectColor);
+    }
+    function selectColor(event) {
+        for(let j = 0; j < colors.length; j++) {
+            if(colors[i].className == "color selected") {
+                colors[i].className = "color"
+            }
+        }
+        event.target.className = "color selected";
+    }
 }
