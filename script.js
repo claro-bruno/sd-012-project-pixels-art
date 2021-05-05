@@ -43,20 +43,19 @@ const addNewClass = document.querySelectorAll('.color')[0].classList.add('select
 //CRIEI A VARIAVEL PARA RESGATAR O ELEMENTO DIV COM A ID COLOR-PALLETE QUE É PAI DOS ELEMENTOS DIV QUE TEM A CLASSE COLOR;
 
 
-const colorPaletDiv = document.querySelector('#color-pallete');
+const colorPaleteDiv = document.querySelector('#color-palette');
 
 function selectColor() {
-    colorPaleteDiv.addEventListener('click', (event) => {
-      const colorDiv = document.querySelector('.selected');
-      if (event.target.id !== 'color-palette') {
-        colorDiv.classList.remove('selected');
-        event.target.classList.add('selected');
-      }
-    });
-  }
-  
-selectColor();
+  colorPaleteDiv.addEventListener('click', (event) => {
+    const colorDiv = document.querySelector('.selected');
+    if (event.target.id !== 'color-palette') {
+      colorDiv.classList.remove('selected');
+      event.target.classList.add('selected');
+    }
+  });
+}
 
+selectColor();
 
 
 
