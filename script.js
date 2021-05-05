@@ -45,12 +45,6 @@ function createBoardBlocks(size) {
   }
 }
 
-// function alternateSelection(event) {
-//   const paletteColorSelected = document.querySelector('.selected');
-//   paletteColorSelected.classList.remove('selected');
-//   event.target.classList.add('selected');
-// }
-
 function addEventPalette() {
   const paletteDivs = document.querySelectorAll('.color');
 
@@ -62,13 +56,6 @@ function addEventPalette() {
     });
   }
 }
-
-// function changePixelColor(event) {
-//   const paletteColorSelected = document.querySelector('.selected');
-//   const pixelClicked = event.target;
-
-//   pixelClicked.style.backgroundColor = paletteColorSelected.style.backgroundColor;
-// }
 
 function addEventPixels() {
   const pixelDivs = document.querySelectorAll('.pixel');
@@ -82,14 +69,6 @@ function addEventPixels() {
     });
   }
 }
-
-// function clearBoard() {
-//   const pixelDivs = document.querySelectorAll('.pixel');
-
-//   for (let index = 0; index < pixelDivs.length; index += 1) {
-//     pixelDivs[index].style.backgroundColor = 'white';
-//   }
-// }
 
 function addEventButton() {
   const clearButton = document.querySelector('#clear-board');
