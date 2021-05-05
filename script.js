@@ -65,6 +65,7 @@ function auxiliarCreateBoard(squares) {
   for (let j = 0; j < squares; j += 1) {
     const pixel = document.createElement('div');
     pixel.classList.add('pixel');
+    pixel.style.backgroundColor = 'white';
     pixelBoard.appendChild(pixel);
   }
   addNewLine();
