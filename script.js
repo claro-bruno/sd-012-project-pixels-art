@@ -35,7 +35,8 @@ function createPixelBoard(numberOfPixels) {
         pixelBoard.appendChild(row);
         for (let index = 0; index < Math.sqrt(numberOfPixels); index += 1) {
             let pixel = document.createElement('td');            
-            pixel.className = 'pixel';        
+            pixel.className = 'pixel';
+            pixel.addEventListener('click', paintPixel);
             row.appendChild(pixel);            
         }        
     }
@@ -49,4 +50,9 @@ function colorSelector(eventSource) {
     }
 
     eventSource.target.className = 'color selected';
+}
+
+function paintPixel(eventSource) {
+    let selectedColor = document.querySelector('.selected');
+    eventSource.target.style.backgroundColor = selectedColor.style.backgroundColor;
 }
