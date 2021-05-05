@@ -1,0 +1,17 @@
+#title {
+  text-align: center;
+}
+
+#color-palette {
+  background-color: cadetblue;
+  border-color: black;
+  border-style: solid;
+  padding: 10px;
+}
+.color {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  display: inline-block;
+  position: relative;
+}
