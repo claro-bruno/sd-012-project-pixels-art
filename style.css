@@ -5,8 +5,8 @@ div p {
     margin-right: 15px;
     margin-top: 15px;
     margin-bottom: 15px;
-    height: 70px;
-    width: 70px;
+    height: 40px;
+    width: 40px;
     display: inline-block;
     border-width: 1px;
     border-style: solid;
@@ -18,8 +18,8 @@ section ol ul{
     margin-right: 1px;
     margin-top: 1px;
     padding: 0px;
-    height: 70px;
-    width: 70px;
+    height: 40px;
+    width: 40px;
     display: inline-block;
     border-width: 1px;
     border-style: solid;
