@@ -1,38 +1,25 @@
-.color{
-    margin:20px;
-    border:1px solid black;
-    width:100px;
-    height:100px;
+.color {
+  margin: 20px;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
 }
 
-#color1{
-    background-color: black;
+.pixel {
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  padding: 0%;
 }
-#color2{
-    background-color:violet;
+#pixel-board {
+  margin: auto;
+  padding: 0%;
 }
-#color3{
-    background-color: salmon;
+#color-palette {
+  margin: auto;
+  padding: 0%;
 }
-#color4{
-    background-color: yellow;
-}
-.pixel{
-    border:1px solid black;
-    width:40px;
-    height:40px;
-    background-color: white;
-    padding: 0%;
-}
-#pixel-board{
-    margin: auto;
-    padding: 0%;
-}
-#color-palette{
-    margin: auto;
-    padding: 0%;
-
-}
-#title{
-    text-align: center;
+#title {
+  text-align: center;
 }
