@@ -1,5 +1,3 @@
-/* eslint-disable no-shadow */
-/* eslint-disable prefer-const */
 const colorPaletteSection = document.getElementsByClassName('color');
 
 function colorPaletteGenerator() {
@@ -55,3 +53,11 @@ for (let indexx = 0; indexx < pixel.length; indexx += 1) {
     event.target.style.backgroundColor = selectedColor;
   });
 }
+
+const button = document.getElementById('clear-board');
+
+button.addEventListener('click', () => {
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = '';
+  }
+});
