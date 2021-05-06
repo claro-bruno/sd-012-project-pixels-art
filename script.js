@@ -43,3 +43,10 @@ function addpixels() {
   }
 }
 addpixels();
+
+window.onload = function classSelected() {
+  let palette = document.querySelectorAll('.color');
+  if (palette[0].style.backgroundColor == 'rgb(0, 0, 0)') {
+    palette[0].classList.add('selected');
+  }
+};
