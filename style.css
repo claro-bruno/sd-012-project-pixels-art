@@ -1,47 +1,46 @@
 #header {
- margin-top: 0px;
- background-color: green;
+background-color: green;
 }
 
 #title {
-	margin-inline-start: 560px;
+margin-inline-start: 560px;
 }
 
 #color-palette {
-	margin-inline-start: 550px;
+margin-inline-start: 550px;
 }
 
 body {
-  margin: 50px;
+margin: 50px;
 }
 
 .color {
-  border: 1px solid black;
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
+border: 1px solid black;
+display: inline-block;
+width: 50px;
+height: 50px;
+margin-right: 10px;
 }
 
 #clear-board {
-  margin-top: 10px;
-  margin-bottom: 10px;
+margin-top: 10px;
+margin-bottom: 10px;
 }
 
 #generate-board {
-	margin-top: 10px;
+margin-top: 10px;
 }
 
 #pixel-board {
-  width: 210px;
-  height: 210px;
+width: 210px;
+height: 210px;
 }
 
 .pixel {
-  border: 1px solid black;
-  margin-bottom: -4px;
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  display: inline-block;
+border: 1px solid black;
+margin-bottom: -4px;
+width: 40px;
+height: 40px;
+background-color: white;
+display: inline-block;
 }

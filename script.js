@@ -21,3 +21,7 @@ function createPixelBoard(number) {
     pixelBoard.appendChild(createPixel);
   }
 }
+function initialColor(id) {
+  let initialColor = document.getElementById(id);
+  initialColor.className += 'selected';
+}
