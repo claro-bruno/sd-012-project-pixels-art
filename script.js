@@ -5,6 +5,7 @@ createBoard(boardSize);
 selectColor();
 changePixelColor();
 
+
 function setBackgroundColor() {
     document.getElementById('first-div').style.backgroundColor = "black";
     document.getElementById('second-div').style.backgroundColor = "grey";
@@ -52,5 +53,9 @@ function changePixelColor() {
     })
 }    
 
+function resetColors() {
+
+    window.location.reload(false);
+}
 
 
