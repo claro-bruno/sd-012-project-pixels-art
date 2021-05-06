@@ -47,9 +47,25 @@ function clearPixels() {
   }
 }
 
+function createPixels() {
+  const button = document.getElementById('generate-board');
+  const input = document.getElementById('board-size');
+  const pixelBoard = document.getElementById('pixel-board');
+
+  button.addEventListener('click', () => {
+    const createdPixel = document.createElement('div');
+    createdPixel.classList.add('created-pixel');
+    createdPixel.style.width = `${input.value}px`;
+    createdPixel.style.height = `${input.value}px`;
+    pixelBoard.appendChild(createdPixel);
+    console.log(input.value);
+  });
+}
+
 window.onload = () => {
   selectedColorPrimary();
   selectColor();
   paintPixels();
   clearPixels();
+  createPixels();
 };
