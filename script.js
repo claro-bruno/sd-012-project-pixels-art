@@ -55,3 +55,13 @@ function setCleanBoard(event) {
         selectedPixels[index].style.backgroundColor = 'white';
     }
 }
+
+let btnGenerateBoard = document.querySelector('#generate-board');
+btnGenerateBoard.addEventListener('click', setBoard);
+
+function setBoard(event) {
+    let newSize = document.querySelector('#board-size').value;
+    let pixelBoard = document.querySelector('#pixel-board');
+    pixelBoard.innerHTML = '';
+    fillBoard(Number(newSize),Number(newSize));
+}
