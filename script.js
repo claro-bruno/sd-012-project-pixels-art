@@ -34,7 +34,7 @@ const gerarTelaDePintura = (tamanho) => {
 };
 
 const mudarTamanhoTelaDePintura = () => {
-  const inputDoTamanhoDaTela = document.querySelector('#tamanhoTelaDePintura').value;
+  const inputDoTamanhoDaTela = document.querySelector('#board-size').value;
 
   if (inputDoTamanhoDaTela >= 5 && inputDoTamanhoDaTela <= 50) {
     const sessaoPixelBoard = document.getElementById('pixel-board');
@@ -44,7 +44,14 @@ const mudarTamanhoTelaDePintura = () => {
     }
     gerarTelaDePintura(inputDoTamanhoDaTela);
   } else {
-    window.alert('escolha entre 5 e 50');
+    window.alert('Board inválido!');
+  }
+};
+
+const limparTelaDePintura = () => {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
   }
 };
 

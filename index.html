@@ -23,8 +23,9 @@
       </div>
     </section>
     <section id="configTamanhoTelaDePintura">
-      <input id="tamanhoTelaDePintura" type="number" placeholder="5">
-      <button id="criarTelaDePintura" onclick="mudarTamanhoTelaDePintura()">Criar</button>
+      <button id="resetarTelaDePintura" onclick="limparTelaDePintura()">Limpar</button>
+      <input id="board-size" type="number" placeholder="5" min="5" max="50">
+      <button id="generate-board" onclick="mudarTamanhoTelaDePintura()">VQV</button>
     </section>
     <section id="pixel-board"></section>
   </main>

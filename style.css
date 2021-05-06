@@ -12,11 +12,6 @@
     text-align: center;   
 }
 
-#tamanhoTelaDePintura::-webkit-outer-spin-button, #tamanhoTelaDePintura::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-
-
 .alturaDaTelaDePintura{
     width: 100%;
     height: 42px;
