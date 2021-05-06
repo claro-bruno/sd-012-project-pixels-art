@@ -56,23 +56,40 @@ function createBoard(number) {
 
 function addEvents(){
     let pallet = document.querySelector('#color-palette');
-    let pixels = pallet.children; 
+    let colors = pallet.children; 
+    let pixels = document.querySelectorAll('.pixel');
 
-    for (const pixel of pixels) {
-        pixel.addEventListener( 'click', function (){
+    for (const color of colors) {
+        color.addEventListener( 'click', function (){
             for (let index = 0; index < 4; index += 1) {
-                if(pixels[index].classList.contains('selected')){
-                    pixels[index].classList.remove('selected');
+                if(colors[index].classList.contains('selected')){
+                    colors[index].classList.remove('selected');
                 } 
             }
 
             for (let index = 0; index < 4; index += 1) {
-                if(pixels[index].id === pixel.id){
-                     pixels[index].classList.add('selected');
+                if(colors[index].id === color.id){
+                     colors[index].classList.add('selected');
                 } 
             }
         });
     }
+
+    for (const pixel of pixels) {
+        pixel.addEventListener('click', function (){
+
+            for (let index = 0; index < 4; index += 1) {
+                    if(colors[index].classList.contains('selected')){
+                        pixel.style.backgroundColor = colors[index].style.backgroundColor;
+                        console.log(colors[index].style.backgroundColor);
+                    } 
+            }
+                
+            
+
+        });
+    }
+
 }
 
 createPalette();
