@@ -3,7 +3,7 @@ const colorPalette = document.getElementById('color-palette');
 
 /* cores da paleta inicio */
 
-/*function gerarCor() {
+function gerarCor() {
   const r = Math.random() * 255;
   const g = Math.random() * 255;
   const b = Math.random() * 255;
@@ -14,7 +14,7 @@ const colorPalette = document.getElementById('color-palette');
 const zero = gerarCor();
 const one = gerarCor();
 const two = gerarCor();
-const three = gerarCor();*/
+const three = gerarCor();
 
 function gerarBlack() {
   const div = document.createElement('div');
@@ -34,10 +34,22 @@ function gerarPaleta() {
 gerarBlack()
 gerarPaleta()
 
-/*document.getElementsByClassName('color')[0].style.backgroundColor = zero
+document.getElementsByClassName('color')[0].style.backgroundColor = 'black'
 document.getElementsByClassName('color')[1].style.backgroundColor = one
 document.getElementsByClassName('color')[2].style.backgroundColor = two
-document.getElementsByClassName('color')[3].style.backgroundColor = three*/
+document.getElementsByClassName('color')[3].style.backgroundColor = three
+
+
+function select(event) {
+  const selectedElement = document.querySelector('.selected');
+  selectedElement.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+document.getElementsByClassName('color')[0].addEventListener('click', select);
+document.getElementsByClassName('color')[1].addEventListener('click', select);
+document.getElementsByClassName('color')[2].addEventListener('click', select);
+document.getElementsByClassName('color')[3].addEventListener('click', select);
 
 /*cores da paleta fim */
 
@@ -51,17 +63,6 @@ function board() {
 
 board();
 
-function select(event) {
-  const selectedElement = document.querySelector('.selected');
-  selectedElement.classList.remove('selected');
-  event.target.classList.add('selected');
-}
-
-document.getElementsByClassName('color')[0].addEventListener('click', select);
-document.getElementsByClassName('color')[1].addEventListener('click', select);
-document.getElementsByClassName('color')[2].addEventListener('click', select);
-document.getElementsByClassName('color')[3].addEventListener('click', select);
-  
 /*function paint(event) {
   event.target.style.backgroundColor = 'color'
 }
