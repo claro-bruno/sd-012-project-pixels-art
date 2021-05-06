@@ -11,7 +11,7 @@ body {
 }
 
 
-/*nav inicio*/
+/* nav inicio */
 #title {
   text-align: center;
   font-size: 50px;
@@ -24,8 +24,8 @@ body {
   background-color: lightskyblue;
 }
 
-/*nav final*/
-/*paleta inicio*/
+/* nav final */
+/* paleta inicio */
 
 #color-palette {
   display: flex;
@@ -41,23 +41,23 @@ body {
   margin: 10px;
 }
 
-.preta {
+#preta {
   background-color: black;
 }
 
-.azul-claro {
+#azul-claro {
   background-color: lightskyblue;
 }
 
-.azul-escuro {
+#azul-escuro {
   background-color: mediumblue;
 }
 
-.clara {
+#clara {
   background-color: #fefefe;
 }
 
-.rosto {
+#rosto {
   background-color: oldlace;;
 }
 
@@ -76,8 +76,8 @@ body {
 }
 
 .pixel {
-    width: 40px;
-    height: 40px;
-    border: solid black 1px;
-    background-color: white;
+  width: 40px;
+  height: 40px;
+  border: solid black 1px;
+  background-color: white;
 }
