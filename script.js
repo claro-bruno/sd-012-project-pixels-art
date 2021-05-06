@@ -2,6 +2,7 @@ const shadows = '2px 2px 2px grey';
 const board = document.getElementById('pixel-board');
 const input = document.getElementById('board-size');
 const pixCollection = document.getElementsByClassName('pixel');
+const buttonGen = document.getElementById('generate-board');
 
 const createPalette = (color) => {
   const palette = document.getElementById('color-palette');
@@ -61,20 +62,18 @@ const clearBoard = () => {
   });
 };
 
-const boardGenerator = () => {
-  const buttonGen = document.getElementById('generate-board');
-
-  buttonGen.addEventListener('click', () => {
-    const value = parseInt(input.value, 36);
-    while (pixCollection.length > 0) {
-      board.removeChild(board.lastChild);
-    }
-    createPixels(value);
-    console.log(pixCollection);
-    input.value = '';
-  });
+const deleteBoard = () => {
+  while (board.lastElementChild) {
+    board.removeChild(board.lastElementChild);
+  }
 };
-boardGenerator();
+
+buttonGen.addEventListener('click', () => {
+  const value = parseInt(input.value, 36);
+  deleteBoard();
+  createPixels(value);
+  input.value = '';
+});
 
 window.onload = () => {
   createPalette('black');
