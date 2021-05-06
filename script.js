@@ -9,3 +9,6 @@ window.onload = CorInicial
 function CorInicial(){
 document.getElementsByClassName("selected");
 }
+
+//if (clicar=true)
+//document.getElementbyClassName
