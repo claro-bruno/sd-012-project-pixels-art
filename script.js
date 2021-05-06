@@ -26,12 +26,23 @@ quadroPixel();
 function corInicial(){
 //adiciona a nova classe das classes color
 let cor = document.querySelector('.color');
-cor[0].className += ' selected';
+cor.className += ' selected';
 }
 corInicial();
 
 function colorir(){
-// A `classe` `selected` deve ser adicionada à cor selecionada na paleta, ao mesmo tempo em que é removida da cor anteriormente selecionada;
+
+let cor = document.querySelectorAll('.color');
+
+for(let i =0;i < cor.length;i+=1){
+  let color = 'color';
+  let select = 'color selected';
+  cor[i].addEventListener('click', function(){
+    let selecao = document.querySelector('.selected');
+    selecao.className = color;
+    cor[i].className = select;
+  })
+}
 
 
 }
