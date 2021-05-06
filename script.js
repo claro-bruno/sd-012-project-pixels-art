@@ -36,3 +36,17 @@ function quadroDePixels() {
 quadroDePixels(); 
 
 document.getElementsByClassName('color')[0].classList.add('selected');
+
+//Requisito 07
+function selected(event) {
+    let removeSelection = document.querySelector('.selected');
+    removeSelection.classList.remove('selected');
+    event.target.classList.add('selected')
+}
+function selectedEvent() {
+    let paleta = document.getElementsByClassName('color');
+    for (let index = 0; index < paleta.length; index += 1) {
+        paleta[index].addEventListener('click', selected);   
+    }
+}
+selectedEvent();
