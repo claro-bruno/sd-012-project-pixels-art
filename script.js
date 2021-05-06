@@ -1,9 +1,12 @@
+window.onload = function (){
 function mudarCorPaleta (array){
     let arrayCores = ["black","yellow", "red", "green"];
     let paleta = document.getElementsByClassName('color')
     for (index = 0; index < paleta.length; index += 1){
         for (index = 0; index < arrayCores.length; index += 1){
             paleta[index].style.backgroundColor = arrayCores[index];
+        } if (arrayCores[index] === "black"){
+            paleta[index].className = 'selected'
         }
     }
 }
@@ -25,3 +28,21 @@ function createBoard (pixeis) {
     }
 }
 createBoard(5);
+
+let color = document.querySelectorAll('.color')
+function mudarSelecao(event){
+    const selected = document.querySelector('.selected');
+    selected.classList.remove('selected');
+    event.target.classList.add('selected');
+  }
+  for (let index = 0; index < color.length; index += 1) {
+    color[index].addEventListener('click', mudarSelecao);
+}
+
+
+
+
+
+
+
+}
