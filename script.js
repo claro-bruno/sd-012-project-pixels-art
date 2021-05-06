@@ -8,6 +8,7 @@ const createPalette = (color) => {
   const colorSquare = document.createElement('span');
   colorSquare.classList.add('color');
   colorSquare.id = color;
+  colorSquare.style.backgroundColor = color;
   palette.appendChild(colorSquare);
   if (color === 'black') {
     colorSquare.classList.add('selected');
@@ -69,26 +70,39 @@ const deleteBoard = () => {
 };
 
 buttonGen.addEventListener('click', () => {
-  let value = parseInt(input.value, 36);
+  let value = parseInt(input.value, 10);
   if (!value) {
     alert('Board inválido!');
-  } else {
-    if (value < 5) {
-      value = 5;
-    } else if (value > 50) {
-      value = 50;
-    }
-    deleteBoard();
-    createPixels(value);
-    input.value = '';
+  } else if (value < 5) {
+    value = 5;
+  } else if (value > 50) {
+    value = 50;
   }
+  deleteBoard();
+  createPixels(value);
+  input.value = '';
 });
+
+const getRandomColor = (array) => {
+  const white = 'rgb(255, 255, 255)';
+  const black = 'rgb(0, 0, 0)';
+  for (let i = 0; i < 3; i += 1) {
+    array.push(Math.floor(Math.random() * 255));
+  }
+  let mask = 'rgb(x, x, x)';
+  array.forEach((num) => {
+    mask = mask.replace('x', num);
+  });
+  if (mask !== black && mask !== white) {
+    return mask;
+  }
+};
 
 window.onload = () => {
   createPalette('black');
-  createPalette('red');
-  createPalette('green');
-  createPalette('blue');
+  createPalette(getRandomColor([]));
+  createPalette(getRandomColor([]));
+  createPalette(getRandomColor([]));
   createPixels(5);
   selectColor();
   clearBoard();

@@ -26,21 +26,6 @@ main {
   border: 1px solid black;
 }
 
-#black {
-  background-color: black;
-}
-
-#red {
-  background-color: red;
-}
-
-#green {
-  background-color: green;
-}
-
-#blue {
-  background-color: blue;
-}
 
 #board-size {
   width: 100px;
