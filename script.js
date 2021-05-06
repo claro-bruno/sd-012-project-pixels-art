@@ -1,9 +1,11 @@
 window.onload = mainColor;
 
 function mainColor() {
-    let setBlack = document.querySelectorAll('.color')[0];
+    let setBlack = document.querySelector('#bloco1');
     setBlack.className = 'color selected';
 }
+
+mainColor;
 
 function makeBoard(tamanho) {
     let destiny = document.querySelector('#pixel-board');
@@ -40,3 +42,36 @@ function title(string) {
     mainTitle.innerHTML = string;
 }
 title('Paleta de Cores');
+
+function selectColor() {
+    let blackButton = document.querySelector('#bloco1');
+    let redButton = document.querySelector('#bloco2');
+    let greenButton = document.querySelector('#bloco3');
+    let blueButton = document.querySelector('#bloco4');
+
+    blackButton.addEventListener('click', function(){
+        let selected = document.querySelector('.selected');
+        selected.classList.remove('selected');
+        blackButton.className = 'color selected';
+    })
+
+    redButton.addEventListener('click', function(){
+        let selected = document.querySelector('.selected');
+        selected.classList.remove('selected');
+        redButton.className = 'color selected';
+    })
+
+    greenButton.addEventListener('click', function(){
+        let selected = document.querySelector('.selected');
+        selected.classList.remove('selected');
+        greenButton.className = 'color selected';
+    })
+
+    blueButton.addEventListener('click', function(){
+        let selected = document.querySelector('.selected');
+        selected.classList.remove('selected');
+        blueButton.className = 'color selected';
+    })
+}
+selectColor();
+
