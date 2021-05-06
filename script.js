@@ -26,8 +26,19 @@ for(let colunaIndex = 0; colunaIndex < pixelLinhas.length; colunaIndex +=1 ){
     pixelColuna.className = 'pixel';
     pixelLinhas[index].appendChild(pixelColuna);
     }
+
+  
     
 }
+window.onload = corInicial;
+function corInicial(){
+    let buscaColor = document.querySelector('.color');
+    buscaColor.classList.add('selected');
+}
+
+
+
+
 
 
    
