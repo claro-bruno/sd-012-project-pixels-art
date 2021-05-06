@@ -1,5 +1,5 @@
 body {
-  background-image: url(../images/bladerunner.png);
+  background-image: 'url(../images/bladerunner.png)';
   background-size: cover;
 }
 
@@ -11,7 +11,7 @@ main {
   box-shadow: 2px 2px 5px 2px black;
   padding: 10px;
   border-radius: 10px;
-  background-image: url(images/bg.png);
+  background-image: 'url(images/bg.png)';
   margin: auto;
 }
 
