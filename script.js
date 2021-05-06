@@ -33,21 +33,6 @@ const gerarTelaDePintura = (tamanho) => {
   }
 };
 
-const mudarTamanhoTelaDePintura = () => {
-  const inputDoTamanhoDaTela = document.querySelector('#board-size').value;
-
-  if (inputDoTamanhoDaTela >= 5 && inputDoTamanhoDaTela <= 50) {
-    const sessaoPixelBoard = document.getElementById('pixel-board');
-
-    while (sessaoPixelBoard.firstChild) {
-      sessaoPixelBoard.removeChild(sessaoPixelBoard.firstChild);
-    }
-    gerarTelaDePintura(inputDoTamanhoDaTela);
-  } else {
-    window.alert('Board inválido!');
-  }
-};
-
 const limparTelaDePintura = () => {
   const pixel = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixel.length; index += 1) {
@@ -70,4 +55,20 @@ const pintarPixel = () => {
       listaDePixel[index].style.backgroundColor = corSelecionada;
     });
   }
+};
+
+const mudarTamanhoTelaDePintura = () => {
+  const inputDoTamanhoDaTela = document.querySelector('#board-size').value;
+
+  if (inputDoTamanhoDaTela >= 5 && inputDoTamanhoDaTela <= 50) {
+    const sessaoPixelBoard = document.getElementById('pixel-board');
+
+    while (sessaoPixelBoard.firstChild) {
+      sessaoPixelBoard.removeChild(sessaoPixelBoard.firstChild);
+    }
+    gerarTelaDePintura(inputDoTamanhoDaTela);
+  } else {
+    window.alert('Board inválido!');
+  }
+  pintarPixel();
 };
