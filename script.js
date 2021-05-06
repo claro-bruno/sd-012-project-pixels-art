@@ -62,3 +62,20 @@ function clearPixels() {
   }
 }
 clearButton.addEventListener('click', clearPixels);
+
+function getRandomIntInclusive(min, max) {
+  let lowestValue = min;
+  let highestValue = max;
+  lowestValue = Math.ceil(lowestValue);
+  highestValue = Math.floor(highestValue);
+  return Math.floor(Math.random() * (highestValue - lowestValue + 1)) + lowestValue;
+}
+
+function randomColorPalette() {
+  for (let index = 2; index <= 4; index += 1) {
+    let randomColor = `rgb(${getRandomIntInclusive(0, 255)}, ${getRandomIntInclusive(0, 255)}, `;
+    randomColor = `${randomColor + getRandomIntInclusive(0, 255)})`;
+    colorPalette[index].style.backgroundColor = randomColor;
+  }
+}
+randomColorPalette();
