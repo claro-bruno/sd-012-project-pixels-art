@@ -85,7 +85,7 @@ function userBoarder() {
   }
   const finalNumber = numberOfPixels[numberOfInput];
   if (inputNumber.value.length < 1) {
-    return alert('Board inválido!'); // createPixelBoard(25);
+    return alert('Board inválido!'), createPixelBoard(25);
   }
   return finalNumber;
 }
@@ -112,7 +112,7 @@ function sizeBoard() {
 function finalBoarderElements() {
   const pixelBoard = document.getElementById('pixel-board');
   const vqvButton = document.getElementById('generate-board');
-  // let defaultSize = createPixelBoard(25);
+  let defaultSize = createPixelBoard(25);
 
 vqvButton.addEventListener('click', function() {
     pixelBoard.innerHTML = '';
