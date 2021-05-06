@@ -1,25 +1,35 @@
 #color-palette {
-    display: inline-flex;
+        display: inline-flex;
 }
 
 .color {
-    border: 1px solid black;
-    height: 50px;
-    width: 50px;
+        border: 1px solid black;
+        height: 50px;
+        width: 50px;
 }
 
 #first-div {
-    background-color: black;
+        background-color: black;
 }
 
 #second-div {
-    background-color: grey;
+        background-color: grey;
 }
 
 #third-div {
-    background-color: goldenrod;
+        background-color: goldenrod;
 }
 
 #fourth-div {
-    background-color:antiquewhite;
+        background-color: antiquewhite;
+}
+
+
+
+.pixel {
+        display: table-cell;
+        background-color: white;
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
 }
