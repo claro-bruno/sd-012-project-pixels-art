@@ -1,11 +1,13 @@
 window.onload = function(){
     let cores = document.getElementsByClassName('color');
     let pixels = document.getElementsByClassName('pixel');
+    let cleanBtn = document.getElementById('clear-board');
     gerarPixelBoard();
     selecionarCor(cores);
     pintarQuadro(pixels);
-    
-
+    cleanBtn.addEventListener('click', () => {
+        limparQuadro();
+    })
 }
 
 function gerarPixelBoard(){
@@ -40,5 +42,12 @@ function pintarQuadro(array){
             let corSelecionada = document.querySelector('.selected')
             e.target.style.background = window.getComputedStyle(corSelecionada, null).getPropertyValue('background-color')
         })
+    }
+}
+
+function limparQuadro(){
+    let pixels = document.getElementsByClassName('pixel')
+    for(let pixel of pixels){
+        pixel.style.background = "white"
     }
 }

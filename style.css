@@ -36,3 +36,18 @@
     margin-top: 2rem;
     border: 1px solid black;
 }
+
+#clear-board{
+    margin-top: 1rem;
+    font-size: 20px;
+    padding: 0.5rem;
+    background-color: royalblue;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+#clear-board:hover{
+    background-color: rgb(48, 86, 199);
+}
