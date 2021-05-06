@@ -17,6 +17,7 @@ function fillLineBoard(line,columns) {
     for(let index = 0 ; index < columns; index += 1) {
         const column_position = document.createElement('div');
         column_position.className = 'pixel';
+        column_position.addEventListener('click',fillBoxSelected)
         line.appendChild(column_position);
     }
 }
@@ -35,5 +36,13 @@ function fillCheckSelected(event) {
     const removeSelected = document.querySelector('.selected');
     removeSelected.classList.remove('selected');
     event.target.classList.add('selected');
+}
+
+function fillBoxSelected(event) {
+    
+    let boxColorSelected = document.querySelector('.selected');
+    let colorSelected = window.getComputedStyle(boxColorSelected).getPropertyValue('background-color');
+    event.target.style.backgroundColor = colorSelected;
+    //console.log(window.getComputedStyle(event.target).getPropertyValue('background-color'));
 }
 
