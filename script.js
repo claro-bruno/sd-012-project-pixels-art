@@ -9,7 +9,7 @@ function CorInicial() {
 document.querySelector(".color-palette .selected");
 }
 
-//window.onload = CorInicial;
+window.onload = CorInicial;
 
 
 
