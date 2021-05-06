@@ -47,8 +47,6 @@ const selectColor = () => {
         selected.classList.remove('selected');
         selected = paletteItems[i];
         selected.style.boxShadow = shadows;
-      } else {
-        selected.style.boxShadow = shadows;
       }
     });
   }
@@ -71,10 +69,19 @@ const deleteBoard = () => {
 };
 
 buttonGen.addEventListener('click', () => {
-  const value = parseInt(input.value, 36);
-  deleteBoard();
-  createPixels(value);
-  input.value = '';
+  let value = parseInt(input.value, 36);
+  if (!value) {
+    alert('Board inválido!');
+  } else {
+    if (value < 5) {
+      value = 5;
+    } else if (value > 50) {
+      value = 50;
+    }
+    deleteBoard();
+    createPixels(value);
+    input.value = '';
+  }
 });
 
 window.onload = () => {
