@@ -8,8 +8,8 @@
 
 .color {
     border: 1px solid black;
-    width: 55px;
-    height: 55px;
+    width: 40px;
+    height: 40px;
     margin: 1px;
     display: inline-block;   
 }
@@ -33,13 +33,13 @@
 
 .line {
     width: 300px;
-    height: 55px;
+    height: 40px;
 }
 
 .pixel {
     border: 1px solid black;
-    width: 55px;
-    height: 55px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     background-color: white;  
 }
