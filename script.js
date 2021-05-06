@@ -24,6 +24,7 @@ for(let colunaIndex = 0; colunaIndex < pixelLinhas.length; colunaIndex +=1 ){
     for(let index = 0; index < pixelLinhas.length; index += 1){
     let pixelColuna = document.createElement('div');
     pixelColuna.className = 'pixel';
+    pixelColuna.addEventListener('click', alteraCorQuadrado);
     pixelLinhas[index].appendChild(pixelColuna);
     }
 
@@ -44,9 +45,16 @@ function corDiferente(){
     recebeCor.addEventListener('click', function(event) {
     mudaCor[0].className = 'color';
     event.target.className = 'color selected';
-    })
-        
+    })  
+
 }
+
+function alteraCorQuadrado(event){
+    let boxCorSelecionada = document.querySelector('.selected');//seleciona o box da cor
+    let cor = window.getComputedStyle(boxCorSelecionada).getPropertyValue('background-color');
+    event.target.style.backgroundColor = cor;
+}
+
 
 
 
