@@ -38,3 +38,13 @@ for (let index = 0; index < colorsList.length; index += 1) {
 };
 
 
+function coloringPixel (event) {
+    let colorSelected = document.querySelector(".selected").style.backgroundColor;
+    event.target.style.backgroundColor = colorSelected;
+};
+
+let pixelsList = document.querySelectorAll(".pixel");
+
+for(let index = 0; index < pixelsList.length; index += 1) {
+    pixelsList[index].addEventListener("click", coloringPixel);
+};
