@@ -1,49 +1,51 @@
-// Cria paleta de cores dinamicamente:
+const colorPalette = document.getElementById('color-palette');
+const color = document.getElementsByClassName('color');
+const pixelBoard = document.getElementById('pixel-board');
+const pixels = document.getElementsByClassName('pixel');
+const clearBtn = document.getElementById('clear-board');
+const vqvBtn = document.getElementById('generate-board');
+const inputBoardSize = document.getElementById('board-size');
 const numberOfColors = 4;
+const colorsForPalette = ['black', 'lime', 'aqua', 'deeppink']; // Array com cores para serem adicionadas.
+// Cria paleta de cores dinamicamente:
 function createPaletteColors(number) {
   for (let index = 0; index < number; index += 1) {
-    const palette = document.getElementById('color-palette');
     const elementPalette = document.createElement('div');
     elementPalette.className = 'color';
-    palette.appendChild(elementPalette);
+    colorPalette.appendChild(elementPalette);
   }
 }
 createPaletteColors(numberOfColors);
-// Adiciona Cores dinamicamente a paleta de cores:
-const colorsForPalette = ['black', 'lime', 'aqua', 'deeppink']; // Array com cores para serem adicionadas.
+// Adiciona Cores dinamicamente a paleta de cores
 function addColors(arrColors) {
-  const colorPalette = document.getElementsByClassName('color');
-  for (let index = 0; index < colorPalette.length; index += 1) {
-    colorPalette[index].style.backgroundColor = arrColors[index];
+  for (let index = 0; index < color.length; index += 1) {
+    color[index].style.backgroundColor = arrColors[index];
   }
 }
 addColors(colorsForPalette);
 // Cria função que adiciona pixel
 function createPixelFrame() {
-  const board = document.getElementById('pixel-board');
   const elementBoard = document.createElement('div');
   elementBoard.className = 'pixel';
-  board.appendChild(elementBoard);
+  pixelBoard.appendChild(elementBoard);
 }
 // Cria Quadro de pixels
-const pixelBoardLine = 5;
-const pixelBoardColum = pixelBoardLine;
-for (let lineIndex = 0; lineIndex < pixelBoardLine; lineIndex += 1) {
-  for (let index = 0; index < pixelBoardColum; index += 1) {
-    createPixelFrame();// adiciona linha de pixels
+const boardSize = 5;
+function createBoard(frameSize) {
+  for (let lineIndex = 0; lineIndex < frameSize; lineIndex += 1) {
+    for (let index = 0; index < frameSize; index += 1) {
+      createPixelFrame();// adiciona linha de pixels
+    }
+    const lineBreak = document.createElement('br');
+    document.getElementById('pixel-board').appendChild(lineBreak);// adiciona quebra de linha
   }
-  const lineBreak = document.createElement('br');
-  document.getElementById('pixel-board').appendChild(lineBreak);// adiciona quebra de linha
 }
+createBoard(boardSize);
 // Seleciona primeira cor ao carregar pagina
-window.onload = function selectFirstColor() {
-  const firstColor = document.querySelector('.color');
-  firstColor.classList.add('selected');
-};
+color[0].classList.add('selected');
 // Seleciona cor ao clicar e desmarca cor anterior
-const paletteColor = document.getElementsByClassName('color');
-for (let index = 0; index < paletteColor.length; index += 1) {
-  const selectedColor = paletteColor[index];
+for (let index = 0; index < color.length; index += 1) {
+  const selectedColor = color[index];
   selectedColor.addEventListener('click', () => {
     const lstSelected = document.querySelector('.selected');
     lstSelected.classList.remove('selected');
@@ -51,19 +53,26 @@ for (let index = 0; index < paletteColor.length; index += 1) {
   });
 }
 // Pinta pixel com cor selecionada
-const boardPixels = document.getElementsByClassName('pixel');
-for (let index = 0; index < boardPixels.length; index += 1) {
-  boardPixels[index].addEventListener('click', () => {
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', () => {
     const colorSelected = document.querySelector('.selected');
-    if (boardPixels[index].style.backgroundColor !== colorSelected.style.backgroundColor) {
-      boardPixels[index].style.backgroundColor = colorSelected.style.backgroundColor;
+    if (pixels[index].style.backgroundColor !== colorSelected.style.backgroundColor) {
+      pixels[index].style.backgroundColor = colorSelected.style.backgroundColor;
     }
   });
 }
 // Configura botão Limpar
-const clearBtn = document.getElementById('clear-board');
 clearBtn.addEventListener('click', () => {
-  for (let index = 0; index < boardPixels.length; index += 1) {
-    boardPixels[index].style.backgroundColor = 'white';
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});
+// Configura interação do usuário com relação ao tamanho do quadro de pixels
+vqvBtn.addEventListener('click', () => {
+  if (inputBoardSize.value > 4 && inputBoardSize.value < 51) {
+    pixelBoard.innerText = '';
+    createBoard(inputBoardSize.value);
+  } else if (inputBoardSize.value === '') {
+    alert('Board inválido!');
   }
 });

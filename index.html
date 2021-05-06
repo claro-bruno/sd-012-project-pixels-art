@@ -10,7 +10,12 @@
 <body>
     <h1 id="title">Paleta de Cores</h1>
     <div id="color-palette"></div>
-    <button id="clear-board">Limpar</button>
+    <section>
+        Aumente o quadro escolhendo um números de 5 a 50:
+        <input id="board-size" type="number" min="1" required="required" name="numbers" pattern="[1-9]+$"/>
+        <button id="generate-board">VQV</button>
+        <button id="clear-board">Limpar</button>
+    </section>
     <div id="pixel-board"></div>
 </body>
 <script src="script.js"></script>
