@@ -16,15 +16,16 @@
     display: inline-block;
 }
 #pixel-board {
-    top: 150px;
-    height: 175px; 
-    width: 175px;  
+    top: 175px;
+    height: 226px; 
+    width: 226px;
+    background-color: black;  
 }
 .pixel {
-    top: 75px;
+    top: 175px;
     border: 1px solid black;
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     margin:0px;
     background-color: white; 
