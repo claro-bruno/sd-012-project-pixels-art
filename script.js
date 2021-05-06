@@ -4,7 +4,6 @@ createBoard(boardSize);
 
 changeSelected();
 
-
 function createBoard (boardSize) {
 
     for (let index = 0; index < boardSize; index += 1) {
@@ -22,24 +21,14 @@ function createBoard (boardSize) {
     }
 }
 
+let allCollors = document.querySelector('#color-palette');
 
-
-function changeSelected() { 
-    let firstColor = document.querySelector('#first-div');
-    let secondColor = document.querySelector('#second-div');
-    let thirdColor = document.querySelector('#third-div');
-    let fourthColor = document.querySelector('#fourth-div');
-
-
-    firstColor.addEventListener('click', selectedColor());
-    secondColor.addEventListener('click', selectedColor());
-    thirdColor.addEventListener('click', selectedColor());
-    fourthColor.addEventListener('click', selectedColor());
-
-    function selectedColor(event){ //Através da contribuição do colega André Moreno no Slack conheci a propriedade target event.
-        let replaced = document.querySelector('.selected');
-        replaced.classList.remove('.selected');
-        let clicked = event.target;
-        clicked.className = "collor selected";
-    }    
+function selectedColor(event) { //Através da contribuição do colega André Moreno no Slack conheci a propriedade target event.
+    let replaced = document.querySelector('.selected');
+    replaced.classList.remove('.selected');
+    let clicked = event.target;
+    clicked.classList.add('.selected');        
 }
+
+allCollors.addEventListener('click', selectedColor());
+
