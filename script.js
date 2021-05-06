@@ -1,12 +1,12 @@
 function creatBoard(linha) {
   const tamanho = linha * linha;
   for (let index = 0; index < tamanho; index++) {
-  const div = document.createElement('div');
+    const div = document.createElement('div');
     div.className = 'pixel';
-    let pai = document.getElementById('pixel-board');
+    const pai = document.getElementById('pixel-board');
     pai.appendChild(div);
   }
-}  
+}
 creatBoard(5);
 
 const colorBlackSelected = document.getElementsByClassName('color')[0];
