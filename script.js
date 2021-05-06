@@ -14,22 +14,23 @@ function createPalette() {
 
 createPalette();
 
-function lineBoard() {
-    let pixelLine = document.getElementById('pixel-board');
-    for (let index = 0; index < 5; index++) {
-        let line = document.createElement('div');
-        line.className = 'pixel-line';
-        pixelLine.appendChild(line);
+let pixelBoard = document.getElementById('pixel-board');
+let arrayPixelLine = [];
+
+
+function createBoard(size) {
+    for (let index = 0; index < size; index += 1) {
+        let pixelLine = document.createElement('div');
+        pixelLine.className = 'pixel-line';
+        pixelBoard.appendChild(pixelLine);
+    }
+    arrayPixelLine = document.getElementsByClassName('pixel-line');
+    for (let index = 0; index < size; index += 1) {
+        for (let index2 = 0; index2 < size; index2 += 1) {
+            let pixel = document.createElement('div');
+            pixel.className = 'pixel';
+            arrayPixelLine[index].appendChild(pixel);
+        }
     }
 }
-
-lineBoard();
-
-function createBox(size) {
-    let pixelsBox = document.querySelectorAll('.pixel-line');
-    for (let index = 0; index < size; index++) {
-        let box = document.createElement('div');
-        box.className = 'pixel'
-    }
-    
-}
+createBoard(5);
