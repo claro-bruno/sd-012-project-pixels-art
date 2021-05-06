@@ -44,8 +44,22 @@ function putColor(event) {
 }
 
 const clickedPixel = document.querySelectorAll('.pixel');
-for (let i3 = 0; i3 < clickedPixel.length; i3 += 1) {
-  clickedPixel[i3].addEventListener('click', putColor);
+for (let i = 0; i < clickedPixel.length; i += 1) {
+  clickedPixel[i].addEventListener('click', putColor);
 }
 
+//9 
+const clearButton = document.createElement('button');
+clearButton.id = 'clear-board';
+document.body.appendChild(clearButton);
+clearButton.innerText = 'Limpar';
+clearButton.style.margin = '10px';
+clearButton.style.padding = '4px';
+
+function cleanBoard() {
+  for (let i = 0; i < clickedPixel.length; i += 1) {
+    clickedPixel[i].style.backgroundColor = 'white';
+  } 
+}
+clearButton.addEventListener('click', cleanBoard);
 }
