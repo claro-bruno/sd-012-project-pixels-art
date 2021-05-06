@@ -8,3 +8,8 @@
   .color:hover {
     cursor: pointer;
   }
+
+  #first-color {
+    background-color: black;
+  }
+  
