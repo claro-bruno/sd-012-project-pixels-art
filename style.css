@@ -1,36 +1,44 @@
 #title {
-	text-align: center;
-	align-items: center;
+text-align: center;
 }
+
 #color-palette {
-	align-items: center;
-	position: fixed;
+align-items: center;
 }
+
+.color {
+width: 150px;
+height: 150px;
+}
+
 .color-black {
-	width: 150px;
-	height: 150px;
-	border: 1px;
-	border-style: solid;
-	background-color: black;
+width: 150px;
+height: 150px;
+border: 1px;
+border-style: solid;
+background-color: black;
 }
+
 .color-green {
-	width: 150px;
-	height: 150px;
-	border: 1px;
-	border-style: solid;
-	background-color: green;
+width: 150px;
+height: 150px;
+border: 1px;
+border-style: solid;
+background-color: green;
 }
+
 .color-red {
-	width: 150px;
-	height: 150px;
-	border: 1px;
-	border-style: solid;
-	background-color: red;
+width: 150px;
+height: 150px;
+border: 1px;
+border-style: solid;
+background-color: red;
 }
+
 .color-blue {
-	width: 150px;
-	height: 150px;
-	border: 1px;
-	border-style: solid;
-	background-color: blue;
+width: 150px;
+height: 150px;
+border: 1px;
+border-style: solid;
+background-color: blue;
 }
