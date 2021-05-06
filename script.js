@@ -1,4 +1,8 @@
-const cor1 = document.querySelectorAll('.color')[0].style.backgroundColor = 'black';
-const cor2 = document.querySelectorAll('.color')[1].style.backgroundColor = 'red';
-const cor3 = document.querySelectorAll('.color')[2].style.backgroundColor = 'blue';
-const cor4 = document.querySelectorAll('.color')[3].style.backgroundColor = 'orange';
+GeraCores();
+function GeraCores (){
+    const arrayCores =['black', 'red', 'blue', 'orange'];
+    const cores = document.querySelectorAll('.color');
+    for (let index = 0; index < arrayCores.length; index +=1) {
+      cores[index].style.backgroundColor = arrayCores[index];
+    } 
+}
