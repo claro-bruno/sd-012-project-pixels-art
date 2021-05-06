@@ -66,7 +66,7 @@ function handleButton() {
 
 function buttonGerar() {
   botaoGerar.addEventListener('click', () => {
-    let valor = document.getElementById('board-size').value;
+    let valor = parseInt(document.getElementById('board-size').value);
     apagarBoard();
     if (valor >= 5 && valor <= 50){
       matriz = valor;  
