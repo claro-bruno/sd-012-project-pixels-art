@@ -3,7 +3,7 @@ window.onload = function () {
   let colom = 5;
   let square = document.getElementsByClassName('color');
   let pixelFather = document.getElementById('pixel-board');
-
+  let clean =document.getElementById('clear-board');
   let cor = {
     0: 'black',
     1: 'red',
@@ -18,6 +18,9 @@ window.onload = function () {
   square[0].className = 'color selected'; 
 
   lines();
+  
+  clean.addEventListener('click', clear);
+
   let arrayPixel = document.querySelectorAll('.pixel')
 
   let bt1 = square[0];
@@ -37,12 +40,19 @@ window.onload = function () {
     });
   }
 
+  
+
   function getColorSelected() {
     let select = document.getElementsByClassName('selected')[0];
     let bgColor = select.style.backgroundColor;
-    let test = bgColor;
-    console.log(test);
-    return test;
+    return bgColor;
+  }
+
+  function clear() {
+    let board = document.getElementsByClassName('pixel');
+    for (let boardClear = 0; boardClear < board.length; boardClear += 1) {
+      board[boardClear].style.backgroundColor = 'white';
+    }
   }
 
   function paint(event) {
