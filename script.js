@@ -114,14 +114,14 @@ function finalBoarderElements() {
   const vqvButton = document.getElementById('generate-board');
   // let defaultSize = createPixelBoard(25);
 
-function vqvButton.addEventListener('click') {
+vqvButton.addEventListener('click', function() {
     pixelBoard.innerHTML = '';
     defaultSize = createPixelBoard(userBoarder());
     sizeBoard();
     changeSelectedClick();
     changeColorClick();
     clearBoardClick();
-  }
+  })
 }
 
 window.onload = function pixelsArt() {
