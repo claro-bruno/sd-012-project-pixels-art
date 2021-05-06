@@ -16,3 +16,15 @@
 .golden{
   background-color: gold;
 }
+
+#pixel-board{
+  display: table;
+  
+}
+.pixel{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: black 1px solid;
+  background-color:white;
+}
