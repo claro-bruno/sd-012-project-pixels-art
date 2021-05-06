@@ -74,16 +74,13 @@ function captureColor (){
 
 captureColor()
 
-// //===========================================================
+//===========================================================
 
-// // Exercício 8:
-
-
+// Exercício 8:
 
 function paint () {
     let pixelSelect = document.getElementsByClassName('pixel');
     
-
     for(let index = 0; index < pixelSelect.length; index += 1) {
         pixelSelect[index].addEventListener('click', function (event) {   
             let selectedColor = document.querySelector('.selected');
@@ -93,3 +90,24 @@ function paint () {
 }
 
 paint ();
+
+//===========================================================
+
+// Exercício 9:
+let pixelSelect = document.getElementsByClassName('pixel');
+let botao = document.getElementsByTagName('button')[0];
+botao.id = 'clear-board';
+botao.innerHTML = 'Limpar';
+
+function limparPixels() {
+    
+    botao.addEventListener('click', function() {
+        for(let index = 0; index < pixelSelect.length; index += 1) {
+            if(pixelSelect[index].style.backgroundColor !== 'white'){
+                pixelSelect[index].style.backgroundColor = 'white';
+            }
+        }
+    })
+}
+
+limparPixels();
