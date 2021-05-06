@@ -4,7 +4,13 @@ window.onload = function () {
     let selectedColor = "black";
     let boardPixels = document.querySelector('#pixel-board');
     let boardClear = document.querySelector("#clear-board");
+    let colors = document.querySelectorAll('.color');
 
+    colors.forEach(element => {
+        if (element.classList.contains('selected')) {
+            element.id = selectedColor;
+        }
+    })
 
     createBoard();
 
@@ -18,6 +24,18 @@ window.onload = function () {
 
     });
 
+    colorSelection.addEventListener("click", function () {
+        colors.forEach(element => {
+            if (element.classList.contains("selected")) {
+                element.classList.remove("selected");
+            }
+        })
+
+        if (event.target.classList.contains("color")) {
+            event.target.classList.add("selected");
+            event.target.id = selectedColor;
+        }
+    })
 
     boardPixels.addEventListener("click", function () {
         if (event.target.className == "pixel") {
@@ -44,4 +62,3 @@ window.onload = function () {
     };
 
 }
-
