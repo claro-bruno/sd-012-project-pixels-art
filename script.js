@@ -63,14 +63,18 @@ function setBoard(event) {
     let newSize = document.querySelector('#board-size').value;
     if(!Number(newSize)) {
         alert('Board inválido!');
-    } else if (newSize<5 || newSize>50) {
-        alert('Número inválido!');
+    } else if (newSize<5) {
+        document.querySelector('#board-size').value = 5;
+    } else if (newSize>50) {
+        document.querySelector('#board-size').value = 50;
     } else {
         let pixelBoard = document.querySelector('#pixel-board');
         pixelBoard.innerHTML = '';
         fillBoard(Number(newSize),Number(newSize));
     }
-        
+       
 }
+        
+
     
 
