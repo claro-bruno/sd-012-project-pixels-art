@@ -1,17 +1,35 @@
 const pixelBoard = document.querySelector('#pixel-board');
-const colorsToPick = ['black', 'blue', 'yellow', 'red'];
+const colorsToPick = ['black', 'blueviolet', 'aqua', 'red', 'blue', 'orange', 'green',
+  'yellow', 'purple', 'pink',
+];
 const palette = document.querySelector('#color-palette');
 pixelBoard.style.lineHeight = 0;
 
+// Escolhendo uma diferente palheta de cor por f5 sem repetir a cor
+function choosingPaletteColor() {
+  const colorsToUse = [0];
+  do {
+    const random = Math.floor(Math.random() * colorsToPick.length);
+    if (!colorsToUse.includes(random)) {
+      colorsToUse.push(random);
+    }
+    if (colorsToUse.length === 4) {
+      break;
+    }
+  } while (colorsToUse.length < 4);
+  return colorsToUse;
+}
+
 // Criando a paleta de cores
 function createPalette() {
+  const colorsToUse = choosingPaletteColor();
   for (let i = 0; i < 4; i += 1) {
     const paletteDiv = document.createElement('div');
     paletteDiv.classList.add('color');
     if (i === 0) {
       paletteDiv.classList.add('selected');
     }
-    paletteDiv.style.backgroundColor = colorsToPick[i];
+    paletteDiv.style.backgroundColor = colorsToPick[colorsToUse[i]];
     palette.appendChild(paletteDiv);
   }
 }
