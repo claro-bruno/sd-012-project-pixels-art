@@ -6,7 +6,6 @@ function createPalette() {
     let createDivs = document.createElement('div');
     createDivs.className = 'color';
     createDivs.style.backgroundColor = colors[index];
-    createDivs.id = 'choseColor';
     divs.appendChild(createDivs);
     } 
 }
@@ -42,15 +41,22 @@ function selecteBlack() {
 selecteBlack();
 
 
-let  choseColor = document.querySelectorAll('#choseColor');
+let choseColor = document.querySelectorAll('.color');
 
-choseColor.addEventListener('click', selectColor);
+
+choseColor[0].addEventListener("click", selectColor);
+choseColor[1].addEventListener("click", selectColor);
+choseColor[2].addEventListener("click", selectColor);
+choseColor[3].addEventListener("click", selectColor);
 
 function selectColor(event) {
-    if (choseColor.className === 'color selected'){
-        event.target.className = 'color';
-    } else {
-        event.target.className = 'color selected';
-    }
+    let selectedColor = document.getElementsByClassName('selected');
+    selectedColor[0].classList.remove("selected")
+    event.target.className = 'color selected'
 }
-selectColor();
+
+
+
+
+
+
