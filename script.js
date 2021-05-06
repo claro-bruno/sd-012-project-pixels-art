@@ -69,12 +69,16 @@ function buttonGerar() {
     let valor = document.getElementById('board-size').value;
     apagarBoard();
     if (valor >= 5 && valor <= 50){
-      matriz = valor;
-      gerarBoard(matriz);
-      handleBoard();    
+      matriz = valor;  
+    } else if (valor < 5) {
+      matriz = 5;
+    } else if (valor > 50) {
+      matriz = 50;
     } else {
       alert('Board inválido!');
     }
+    gerarBoard(matriz);
+    handleBoard(); 
   });
 }
 
