@@ -3,12 +3,17 @@ function paletteGenerator() {
   const paletteSection = document.getElementById('color-palette');
 
   for (let index = 0; index < colors.length; index += 1) {
-    const createDiv = document.createElement('div');
-    paletteSection.appendChild(createDiv);
-    createDiv.className = 'color';
-    createDiv.style.backgroundColor = colors[index];
     if (index === 0) {
-      createDiv.classList.add('selected');
+      const createDiv = document.createElement('div');
+      paletteSection.appendChild(createDiv);
+      createDiv.className = 'color selected';
+      createDiv.style.backgroundColor = colors[index];
+    } else {
+      const createDiv = document.createElement('div');
+      paletteSection.appendChild(createDiv);
+      createDiv.className = 'color';
+      const randomNumber = parseInt((Math.random() * 3) + 1);
+      createDiv.style.backgroundColor = colors[randomNumber];
     }
   }
 }
