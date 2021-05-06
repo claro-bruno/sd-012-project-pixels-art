@@ -103,6 +103,8 @@ window.onload = function () {
     let criaInput = document.createElement('input');
     criaInput.className = 'input-size';
     criaInput.id = 'board-size';
+    criaInput.type = 'number';
+    criaInput.min = 1;
     criaInput.placeholder = 'Tamanho';
     botoes.appendChild(criaInput).focus();
   }
