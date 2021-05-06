@@ -5,3 +5,19 @@
     border: solid 1px black;
     display: inline-block;
 }
+
+#black {
+    background-color: black;
+}
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#green {
+    background-color: green;
+}
