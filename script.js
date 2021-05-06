@@ -40,7 +40,7 @@ function createBoard() {
     if (size > 50) { size = 50; }
   }
   resetBoard();
-  pixelBoard.style.width = toString(size * 42) + 'px';
+  pixelBoard.style.width = (size * 42) + 'px';
   for (let row = 1; row <= size * size; row += 1) {
     let div = document.createElement('div');
     div.className = 'pixel';
