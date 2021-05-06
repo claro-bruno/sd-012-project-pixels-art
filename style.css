@@ -5,3 +5,19 @@
   border: solid 1px;
   margin-left: 10px;
 }
+
+#pixel-board{
+  margin-top: 20px;
+}
+.linePixel {
+  margin-bottom: 0px;
+  display: flex;
+}
+
+.pixel {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: solid 1px;
+  margin: 0px;
+}
