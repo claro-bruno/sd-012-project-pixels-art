@@ -48,3 +48,27 @@ document.querySelector("#clear-board").addEventListener("click", function(event)
         pixels[i].style.backgroundColor = "white";
     }
 })
+
+document.querySelector("#generate-board").addEventListener("click", function(){
+    let valor = document.querySelector("#board-size").value;
+    let lastBoard = document.querySelectorAll(".linha");
+
+    if(valor === ""){
+        alert("Board inválido!");
+    }
+    else{
+        for(let i = 0; i < lastBoard.length; i++){
+            quadro.removeChild(quadro.lastChild);
+        }
+        if(valor <= 5){
+            board(5);
+        }
+        else if(valor >= 50){
+            board(50);
+        }
+        else{
+            board(valor);
+        }
+        
+    }
+})

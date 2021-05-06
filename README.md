@@ -386,7 +386,7 @@ O não cumprimento de um requisito, total ou parcialmente, impactará em sua ava
 
 - Verifica se o botão está posicionado ao lado do input
 
-- Verifica se nenhum valor for colocado no input ao clicar no botão, um `alert` é exibido com o texto: \'Board inválido!\'
+- Verifica se nenhum valmor for colocado no input ao clicar no botão, um `alert` é exibido co o texto: \'Board inválido!\'
 
 - Verifica se ao clicar no botão com um valor preenchido, o tamanho do board muda.
 
