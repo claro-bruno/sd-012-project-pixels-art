@@ -21,6 +21,10 @@ body {
     display: inline-block;
 }
 
+#clear-board{
+    margin-bottom: 9px;
+}
+
 .linha {
     line-height: 0;
 }

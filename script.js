@@ -41,3 +41,10 @@ document.body.addEventListener("click", function(event){
         event.target.style.backgroundColor = document.querySelector(".selected").style.backgroundColor;
     }
 })
+
+document.querySelector("#clear-board").addEventListener("click", function(event){
+    let pixels = document.querySelectorAll(".pixel");
+    for(let i = 0; i < pixels.length; i++){
+        pixels[i].style.backgroundColor = "white";
+    }
+})
