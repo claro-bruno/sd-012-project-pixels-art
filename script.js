@@ -3,18 +3,18 @@ let elements = 5;
 
 
 function pixelBox (linhas) {
-    for (let line = 1; line <= linhas; line =+1); {
+    for (let file = 1; file <= linhas; file =+1); {
         const boxIndex = document.createElement("box");
-        pixelBoard.appendChild(boxLine);
-        pixelBoxColumns(boxLine, linhas);
+        pixelBoard.appendChild(boxFile);
+        pixelBoxColumns(boxFile, linhas);
     }
 }
 
-function pixelBoxColumns(line, colunas) {
+function pixelBoxColumns(file, colunas) {
     for (let column = 1; column <= colunas; column += 1); {
     const boxColumn = document.createElement("box");
     boxColumn.classList.add("pixel");
-    line.appendChild(boxColumn);
+    file.appendChild(boxColumn);
     }
 }
 pixelBox(elements);
