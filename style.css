@@ -1,3 +1,13 @@
+header{
+  margin: auto;
+  width: fit-content;
+  padding-bottom: 40px;
+}
+#color-palette{
+  margin: auto;
+  width: fit-content;
+  padding-bottom: 70px;
+}
 .color{
   border: black solid 1px;
   width: 80px;
@@ -19,7 +29,11 @@
 
 #pixel-board{
   display: table;
-  
+  width: fit-content;
+  margin:auto
+}
+#board-line{
+  width: fit-content;
 }
 .pixel{
   display: inline-block;
