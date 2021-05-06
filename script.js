@@ -1,3 +1,5 @@
+let colorBlack = document.getElementById('black').style.backgroundColor;
+
 const colors = document.querySelectorAll('.color');
 const colorPalette = document.getElementById('color-palette');
 colorPalette.addEventListener('click', (event) => {
