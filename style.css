@@ -23,3 +23,17 @@
 #fourthColor {
     background-color: yellow;
 }
+
+#pixel-board{
+    border: 1px solid black;
+    height: 210px;
+    width: 210px;
+}
+ .pixel {
+     border: 1px solid black;
+     height: 40px;
+     width: 40px;
+     display: inline-block;
+     background-color: white;
+    
+ }
