@@ -16,28 +16,40 @@ const gerarTelaDePintura = (tamanho) => {
   const areaDaTelaDePintura = document.querySelector('#pixel-board');
 
   for (let altura = 1; altura <= tamanho; altura += 1) {
-    const pixel = document.createElement('div');
-    pixel.className = 'alturaDaTelaDePintura';
-    areaDaTelaDePintura.appendChild(pixel);
+    const linhaDaAreaDaPintura = document.createElement('div');
+    linhaDaAreaDaPintura.className = 'alturaDaTelaDePintura';
+    areaDaTelaDePintura.appendChild(linhaDaAreaDaPintura);
   }
+  const linhaDePixel = document.querySelectorAll('.alturaDaTelaDePintura');
 
-  const linha = document.querySelectorAll('.alturaDaTelaDePintura');
-
-  for (let index = 0; index <= linha.length; index += 1) {
-    for (let largura = 1; largura <= tamanho; largura += 1) {
+  for (let indexDeLinha = 0; indexDeLinha < linhaDePixel.length; indexDeLinha += 1) {
+    let numPixel = 1;
+    while (numPixel <= tamanho) {
+      numPixel += 1;
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
-      linha[index].appendChild(pixel);
+      linhaDePixel[indexDeLinha].appendChild(pixel);
     }
   }
 };
 
 const mudarTamanhoTelaDePintura = () => {
   const inputDoTamanhoDaTela = document.querySelector('#tamanhoTelaDePintura').value;
-  const sessaoPixelBoard = document.querySelector('#pixel-Board');
-  const filhoAlturaDaTelaDePintura = document.querySelectorAll('.alturaDaTelaDePintura');
 
-  sessaoPixelBoard.removeChild(filhoAlturaDaTelaDePintura);
+  if (inputDoTamanhoDaTela >= 5 && inputDoTamanhoDaTela <= 50) {
+    const sessaoPixelBoard = document.getElementById('pixel-board');
 
-  gerarTelaDePintura(inputDoTamanhoDaTela);
+    while (sessaoPixelBoard.firstChild) {
+      sessaoPixelBoard.removeChild(sessaoPixelBoard.firstChild);
+    }
+    gerarTelaDePintura(inputDoTamanhoDaTela);
+  } else {
+    window.alert('escolha entre 5 e 50');
+  }
 };
+
+// const selecionarCor = (elementoClicado) => {
+//   const paletaDeCor = document.querySelectorAll('.selected');
+//   elementoClicado.className += ' selected';
+//   console.log('clicado');
+// };
