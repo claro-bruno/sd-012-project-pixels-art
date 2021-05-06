@@ -39,4 +39,6 @@ body{
     height: 40px;
     display: table-cell;
     border: 1px solid rgb(0,0,0);
+    box-sizing: border-box;
+    margin-bottom: -4px;
 }
