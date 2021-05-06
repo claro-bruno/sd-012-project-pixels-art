@@ -1,3 +1,4 @@
+// Requisito 04 e 05
 function criaQuadradosDiv() {
   const pixel = document.createElement('div');
   pixel.className = 'pixel';
@@ -5,7 +6,7 @@ function criaQuadradosDiv() {
 }
 function criaLinhasDiv() {
   const pixelLine = document.createElement('div');
-  pixelLine.className = 'pixel-line';
+  pixelLine.classList.add ('pixel-line');
   return pixelLine;
 }
 function criaLinhas(size) {
@@ -28,11 +29,14 @@ function criaQuadrados(size) {
   }
 }
 function createSquare(tamanho) {
+  const pixelLineParent = document.getElementById('pixel-board');
+  pixelLineParent.innerHTML = '' // zera todos os valores de dentro
   criaLinhas(tamanho);
   criaQuadrados(tamanho);
 }
-createSquare(5);
+createSquare();
 
+// Requisito 03
 const cores = ['black', 'blue', 'red', 'green']; // black obrigatoriamente tenque ser a primeira cor do array
 function alteraCor() {
   const paletaCores = document.getElementsByClassName('color');
@@ -42,6 +46,7 @@ function alteraCor() {
 }
 alteraCor();
 
+// Requisito 06
 window.onload = function inicializa() {
   function corPadrao() {
     const paletaCorPadrao = document.getElementsByClassName('color');
@@ -51,9 +56,15 @@ window.onload = function inicializa() {
     paletaCorPadrao[0].classList.add('selected');
   }
   corPadrao();
-};
+
+  function boardSizeDefault() {
+    createSquare(5);
+  }
+  boardSizeDefault();
+}
 // window.onload braket;
 
+// Requisito 07
 function selected(event) {
   const removeSelection = document.querySelector('.selected');
   removeSelection.classList.remove('selected');
@@ -67,10 +78,11 @@ function selectedEvent() {
 }
 selectedEvent();
 
+// Requisito 08
 function getColor(event) {
   const alvo = event.target;
   const selectedColor = document.querySelector('.selected').style.backgroundColor;
-  alvo.style.backgroundColor = selectedColor;
+  alvo.style.backgroundColor = selectedColor; 
 }
 function getColorEvent() {
   const square = document.getElementsByClassName('pixel');
@@ -80,6 +92,7 @@ function getColorEvent() {
 }
 getColorEvent();
 
+// Requisito 09
 function clearButton() {
   const pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
@@ -91,3 +104,18 @@ function clearButtonEvent() {
   button.addEventListener('click', clearButton);
 }
 clearButtonEvent();
+
+// Requisito 10
+function customSize() {
+  const inputValue = parseInt(document.getElementById('generate-border').value)
+  if (inputValue < 51 && inputValue > 0) {
+    createSquare(inputValue)
+  } else {
+    alert("Board inválido")
+  }
+}
+function customSizeEvent() {
+  const button = document.querySelector('.button>button');
+  button.addEventListener('click', customSize)
+}
+customSizeEvent();

@@ -16,3 +16,6 @@
   box-sizing: border-box;
   margin-bottom: -4px;
 }
+.button {
+  width: 150px;
+}
