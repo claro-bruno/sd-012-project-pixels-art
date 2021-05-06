@@ -4,22 +4,26 @@ document.querySelectorAll('.color')[1].style.backgroundColor = 'blue';
 document.querySelectorAll('.color')[2].style.backgroundColor = 'red';
 document.querySelectorAll('.color')[3].style.backgroundColor = 'yellow';
 
-for (let index = 1; index <= 5; index +=1) {
-    for (let index2 = 1; index2 <= 5; index2 +=1) {
-        let pixel = document.createElement('div');
-        pixel.className = 'pixel';
-        pixel.style.backgroundColor = 'white';
-        pixel.style.width = '40px';
-        pixel.style.height = '40px';
-        pixel.style.padding = '0px';
-        pixel.style.margin = '0px';
-        pixel.style.border = '1px solid black';
-        pixel.style.position = 'relative';
-        pixel.style.display = 'inline-block';
-        pixel.style.verticalAlign = 'top';
-        pixelBoard.appendChild(pixel);
+function preencherBoard (tamanho) {
+    for (let index = 1; index <= tamanho; index +=1) {
+        for (let index2 = 1; index2 <= tamanho; index2 +=1) {
+            let pixel = document.createElement('div');
+            pixel.className = 'pixel';
+            pixel.style.backgroundColor = 'white';
+            pixel.style.width = '40px';
+            pixel.style.height = '40px';
+            pixel.style.padding = '0px';
+            pixel.style.margin = '0px';
+            pixel.style.border = '1px solid black';
+            pixel.style.position = 'relative';
+            pixel.style.display = 'inline-block';
+            pixel.style.verticalAlign = 'top';
+            pixelBoard.appendChild(pixel);
+        }
+        let quebrar = document.createElement('br');
+        pixelBoard.appendChild(quebrar);
     }
-}
+}; preencherBoard(5);
 
 document.querySelector('.color').classList.add('selected');
 
@@ -28,17 +32,42 @@ function selecionaCor (event) {
     event.target.classList.add('selected');
 } document.querySelector('#color-palette').addEventListener('click', selecionaCor);
 
-function preencheCor (event) {
+document.querySelector('#pixel-board').addEventListener('click', function preencheCor (event) {
     let corSelecionada = document.querySelector('.selected').style.backgroundColor;
     event.target.style.backgroundColor = corSelecionada;
-} document.querySelector('#pixel-board').addEventListener('click', preencheCor);
+});
 
 document.querySelector('#clear-board').addEventListener('click', function limpaCores () {
-    let pixelALimpar = pixelBoard.firstChild;
-    for (let index in pixelBoard.children) {
+    let pixelALimpar = document.querySelector('#pixel-board').firstChild;
+    for (let index in document.querySelector('#pixel-board').children) {
         pixelALimpar.style.backgroundColor = 'white';
-        if (pixelALimpar !== pixelBoard.lastChild) {
+        if (pixelALimpar !== document.querySelector('#pixel-board').lastChild) {
             pixelALimpar = pixelALimpar.nextSibling;
         }
     }
 });
+
+let vqv = document.querySelector('#generate-board');
+
+function removerBoard() {
+    let colors = document.querySelectorAll('.pixel');
+    for (let index = 0; index < colors.length; index +=1) {
+        pixelBoard.removeChild(colors[index]);
+    }
+}
+
+function mudarTamanho () {
+    let inputValue = document.querySelector('#board-size');
+    if (inputValue.value === '') {
+        window.alert('Board inválido!');
+    } else if (inputValue.value > 50) {
+        removerBoard ();
+        preencherBoard(50);
+    } else if (inputValue < 5) {
+        removerBoard ();
+        preencherBoard(5);
+    } else {
+        removerBoard ();
+        preencherBoard(inputValue.value);
+    }
+}; vqv.addEventListener('click', mudarTamanho);

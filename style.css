@@ -13,8 +13,8 @@
 }
 
 #pixel-board {
-    width: 210px;
-    height: 210px;
+    width: auto;
+    height: auto;
     background-color: white;
     display: inline-block;
     line-height: 0px;
