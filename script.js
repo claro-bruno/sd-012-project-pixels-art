@@ -42,3 +42,14 @@ function colorPixel() {
   }
 }
 colorPixel();
+
+const clear = document.getElementById('clear-board');
+
+function clearBoard() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+
+clear.addEventListener('click', clearBoard);
