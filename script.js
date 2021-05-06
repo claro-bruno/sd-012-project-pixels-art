@@ -1,7 +1,6 @@
 const shadows = '2px 2px 2px grey';
 const board = document.getElementById('pixel-board');
 const input = document.getElementById('board-size');
-const pixCollection = document.getElementsByClassName('pixel');
 const buttonGen = document.getElementById('generate-board');
 
 const createPalette = (color) => {
@@ -15,6 +14,15 @@ const createPalette = (color) => {
     colorSquare.style.boxShadow = shadows;
   }
 };
+
+// Solução encontrada no repositório de Matheus "Set" Inácio
+// Source: https://github.com/tryber/sd-011-project-pixels-art/tree/heyset-pixel-art-project
+
+const paintPixels = (evt) => {
+  const selected = document.querySelector('.selected');
+  evt.target.style.backgroundColor = selected.id;
+};
+
 const createPixels = (n) => {
   board.style.width = `${n * 42}px`;
   board.style.height = `${n * 42}px`;
@@ -23,8 +31,10 @@ const createPixels = (n) => {
     pixel.style.border = '1px solid black';
     pixel.classList.add('pixel');
     board.appendChild(pixel);
+    pixel.addEventListener('click', paintPixels);
   }
 };
+
 const selectColor = () => {
   const paletteItems = document.getElementsByClassName('color');
   for (let i = 0; i < paletteItems.length; i += 1) {
@@ -39,15 +49,6 @@ const selectColor = () => {
       } else {
         selected.style.boxShadow = shadows;
       }
-    });
-  }
-};
-const paintPixels = () => {
-  for (let i = 0; i < pixCollection.length; i += 1) {
-    pixCollection[i].addEventListener('click', () => {
-      const selected = document.querySelector('.selected');
-      const selectedColor = selected.id;
-      pixCollection[i].style.backgroundColor = selectedColor;
     });
   }
 };
@@ -80,8 +81,7 @@ window.onload = () => {
   createPalette('red');
   createPalette('green');
   createPalette('blue');
-  selectColor();
   createPixels(5);
-  paintPixels();
+  selectColor();
   clearBoard();
 };
