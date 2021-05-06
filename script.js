@@ -49,6 +49,17 @@ changeColor.addEventListener('click', (event) => {
   });
 
 
+//botao limpa board
+  const botaoClear = document.querySelector('#clear-board');
+botaoClear.addEventListener('click', () =>{
+    const pixels = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixels.length; index += 1){
+        pixels[index].style.backgroundColor = 'white';
+    }
+})
+
+
+
 
 
 
