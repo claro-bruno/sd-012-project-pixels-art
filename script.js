@@ -8,7 +8,6 @@ window.onload = function() {
 
 const colorPalette = document.querySelector('table');
 
-
 for (let index = 0; index <= 3; index += 1){
     const color = document.createElement('td');
     for (let index2 = 0; index2 <= 3; index2 += 1){
@@ -21,8 +20,7 @@ let arrayColorPalette = ['black', 'red', 'blue', 'green'];
 let color = document.getElementsByClassName('color');
 
 function creatColorPalette (array) {
-    for (let index = 0; index < arrayColorPalette.length; index += 1) {
-        
+    for (let index = 0; index < arrayColorPalette.length; index += 1) { 
         color[index].style.backgroundColor = array[index];
     };
 }
