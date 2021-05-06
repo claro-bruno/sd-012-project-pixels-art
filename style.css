@@ -1,29 +1,46 @@
- #color-palette {
-  display: flex;
-
-} 
-
 .color {
   border-style: solid;
   border-color: black;
   border-width: 1px;
-}
-
-#pixel-board{
-  text-align: left;
-  margin-top: 80px;
-}
-
-.linha-pixel{
-  display: block;
-  margin: 0px;
-  line-height: 0%;
-}
-
-.pixel{
   display: inline-block;
-  margin: 0px;
   width: 40px;
   height: 40px;
-  border: 1px solid black;
+  text-align: left;
 }
+
+#color-palette {
+  list-style: none;
+  text-align: left;
+  margin-right: 5%;
+}
+#black {
+  background-color: black;
+}
+
+#pink {
+  background-color: pink;
+}
+
+#orange {
+  background-color: orange;
+}
+
+#blue {
+  background-color: blue;
+}
+.pixel {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: solid black 1px;
+  background-color: white; 
+}
+
+ .line {
+  display: block;
+}
+
+table {
+  margin-left: 10%;
+}
+ 
