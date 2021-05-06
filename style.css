@@ -1,7 +1,7 @@
-div {
+section {
 width: 40px;
 height: 40px;
-display: inline-block;
+flex-direction: row;
 }
 
 #black {
@@ -35,4 +35,8 @@ border: black solid 1px;
 #pixel-board {
     width: 250px;
     height: 250px;
+}
+
+.selected {
+    background-color: black;
 }
