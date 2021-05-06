@@ -11,16 +11,18 @@
     display: inline-block;
 }
 #pixel-board {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     display: table;
 }
 .line {
     display: table-row;
 }
 .pixel {
-    height: 5px;
-    width: 5px;
+    box-sizing: border-box; 
+    height: 40px;
+    width: 40px;
     display: table-cell;
     background-color: white;
+    border: 1px solid black;
 }

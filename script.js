@@ -97,3 +97,19 @@ for (let lineIndex = 0; lineIndex < pixelLines; lineIndex += 1) {
     }
 }
 // window.onload
+
+
+/* 5 - Faça com que cada elemento do quadro de pixels possua 40 pixels de largura, 40 pixels de altura e seja delimitado por uma borda preta de 1 pixel.
+O que será verificado:
+
+Verifica se o quadro de pixels tem altura e comprimento de 5 elementos
+
+Verifica se 40 pixels é o tamanho total do elemento, incluindo seu conteúdo e excluindo a borda preta, que deve ser criada à parte. */
+function verificaTamanho () {
+    let element = document.getElementsByClassName('pixel')[0]
+    let elementHeight = window.getComputedStyle(element, null).getPropertyValue("height");
+    let elementWidth = window.getComputedStyle(element, null).getPropertyValue("width");
+    console.log(` pixel height: ${elementHeight}\n pixel width: ${elementWidth}`)
+}
+verificaTamanho();
+// CSS: .pixel{box-sizing: border-box}
