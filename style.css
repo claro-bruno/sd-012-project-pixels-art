@@ -1,22 +1,22 @@
 .color {
-    border: 1px solid black;
-    display: inline-block;
-    vertical-align: top;
-    height: 40px;
-    width: 40px;
-    margin-bottom: 20px;
+  border: 1px solid black;
+  display: inline-block;
+  vertical-align: top;
+  height: 40px;
+  width: 40px;
+  margin-bottom: 20px;
 }
 
 .pixel {
-    border: 1px solid black;
-    display: inline-block;
-    vertical-align: top;
-    height: 40px;
-    width: 40px;
-    margin: 0;
-    background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  vertical-align: top;
+  height: 40px;
+  width: 40px;
+  margin: 0;
+  background-color: white;
 }
 
 #clear-board {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
