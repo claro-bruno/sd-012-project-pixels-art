@@ -2,7 +2,6 @@ let cores = ["black", "blue", "red", "green"];
 
 var paleta = document.getElementById("color-palette");
 var quadro = document.getElementById("pixel-board");
-//paleta.firstChild.className += "selected";
 
 for(let i = 0; i < cores.length; i++){
     let paint = document.createElement("div");
@@ -28,4 +27,3 @@ function board(size){
 
 board(5);
 
-paleta.firstChild.className += "selected";
