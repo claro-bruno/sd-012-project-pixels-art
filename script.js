@@ -47,12 +47,19 @@ function clearPixels() {
   }
 }
 
+function clearBoard() {
+  const pixelBoard = document.getElementById('pixel-board');
+  while (pixelBoard.lastElementChild) {
+    pixelBoard.removeChild(pixelBoard.lastElementChild);
+  }
+}
+
 // Trecho retirado do repositório de Rorigo Merlone
 // https://github.com/tryber/sd-012-project-pixels-art/pull/3
 function createPixels(n) {
   const pixelBoard = document.getElementById('pixel-board');
   for (let index = 1; index <= n ** 2; index += 1) {
-    const pixel = document.createElement('div');
+    const pixel = document.createElement('span');
     pixel.classList.add('pixel');
     pixelBoard.appendChild(pixel);
   }
@@ -72,6 +79,7 @@ function createBoard() {
       } else if (value > 50) {
         value = 50;
       }
+      clearBoard();
       createPixels(value);
     }
     input.value = '';

@@ -38,8 +38,7 @@
 #pixel-board {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  max-width: 200px;
-  width: 100%;
+  width: 200px;
   gap: 1px;
 }
 
@@ -81,10 +80,4 @@ button:hover {
   width: 80px;
   height: 25px;
   margin-bottom: 10px;
-}
-
-.created-pixel {
-  border: 1px solid black;
-  margin-top: 1px;
-  background-color: #fff;
 }
