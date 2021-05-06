@@ -50,8 +50,6 @@ function quadroPixels() {
 quadroPixels();
 // retirei esse código da aluna Camila Malvess : camila-pereira-pixels-art//
 
-let colorBlack = document.querySelector('.color');
-colorBlack.classList.add = ('selected');
 
 let cores = document.getElementsByClassName('color');
 let pixels = document.getElementsByClassName('pixel');
@@ -61,8 +59,8 @@ function selecionaCor(evento) {
     selected.classList.remove('selected');
     evento.target.classList.add('selected');
 }
-
-
-
-
+for (let indexcolor = 0; indexcolor < colors.length; indexcolor += 1) {
+    colors[indexcolor].addEventListener('click', selectedColor);
+  }
 // pesquisa de como adicionar uma classe ao elemento:https://tableless.com.br/manipulando-o-uso-de-classes-com-classlist-api/
+// consulta realizada no repositáio da Adriana Biberg : adriana-biberg-pixels-art
