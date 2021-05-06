@@ -39,6 +39,7 @@ addColors(colorsForPalette);
 function createPixelFrame() {
   const elementBoard = document.createElement('div');
   elementBoard.className = 'pixel';
+  elementBoard.style.backgroundColor = 'white';
   pixelBoard.appendChild(elementBoard);
 }
 // Cria Quadro de pixels
@@ -54,10 +55,11 @@ function createBoard(frameSize) {
 }
 createBoard(boardSize);
 // Seleciona primeira cor ao carregar pagina
-color[0].classList.add('selected');
+const newColor = document.getElementsByClassName('color');
+newColor[0].classList.add('selected');
 // Seleciona cor ao clicar e desmarca cor anterior
-for (let index = 0; index < color.length; index += 1) {
-  const selectedColor = color[index];
+for (let index = 0; index < newColor.length; index += 1) {
+  const selectedColor = newColor[index];
   selectedColor.addEventListener('click', () => {
     const lstSelected = document.querySelector('.selected');
     lstSelected.classList.remove('selected');
@@ -65,14 +67,18 @@ for (let index = 0; index < color.length; index += 1) {
   });
 }
 // Pinta pixel com cor selecionada
-for (let index = 0; index < pixels.length; index += 1) {
-  pixels[index].addEventListener('click', () => {
-    const colorSelected = document.querySelector('.selected');
-    if (pixels[index].style.backgroundColor !== colorSelected.style.backgroundColor) {
-      pixels[index].style.backgroundColor = colorSelected.style.backgroundColor;
-    }
-  });
+function paintPixel() {
+  const newPixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < newPixel.length; index += 1) {
+    newPixel[index].addEventListener('click', () => {
+      const colorSelected = document.querySelector('.selected');
+      if (newPixel[index].style.backgroundColor !== colorSelected.style.backgroundColor) {
+        newPixel[index].style.backgroundColor = colorSelected.style.backgroundColor;
+      }
+    });
+  }
 }
+paintPixel();
 // Configura botão Limpar
 clearBtn.addEventListener('click', () => {
   for (let index = 0; index < pixels.length; index += 1) {
@@ -99,4 +105,5 @@ vqvBtn.addEventListener('click', () => {
   } else {
     fiveOrFifty();
   }
+  paintPixel();
 });
