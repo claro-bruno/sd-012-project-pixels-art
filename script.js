@@ -57,3 +57,24 @@ window.onload = function classSelected() {
     });
   }
 };
+
+let colorSelected;
+let paletteColors = document.querySelectorAll('.color', '.selected');
+//define a cor selecionada
+for (let index = 0; index < paletteColors.length; index += 1) {
+  paletteColors[index].addEventListener('click', function (event) {
+    colorSelected = event.target.style.backgroundColor;
+  });
+}
+
+let pixels = document.querySelectorAll('.pixel');
+//pinta o pixel com a cor selecionada
+for (let pix = 0; pix < pixels.length; pix += 1) {
+  pixels[pix].addEventListener('click', function (event) {
+    if (colorSelected == null) {
+      event.target.style.backgroundColor = 'rgb(0,0,0)';
+    } else {
+      event.target.style.backgroundColor = colorSelected;
+    }
+  });
+}
