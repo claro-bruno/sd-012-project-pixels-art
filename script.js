@@ -29,3 +29,26 @@ function geraCores() {
 geraCores();
 
 document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
+
+
+let linhasQuadroPixels = document.getElementsByClassName('linha-pixel');
+
+function quadroPixels() {
+
+    for (index = 0; index < linhasQuadroPixels.length; index += 1){ 
+        let linhaPixels = linhasQuadroPixels[index];
+        console.log(linhaPixels)
+        for (index2 = 0; index2 < linhasQuadroPixels.length; index2 += 1){ 
+            let pixel = document.createElement('div');
+            linhaPixels.appendChild(pixel);
+            pixel.className='pixel';
+            pixel.style.backgroundColor='white';
+        };
+    };
+};
+
+quadroPixels();
+
+
+
+

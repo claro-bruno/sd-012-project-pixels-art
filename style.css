@@ -8,3 +8,21 @@
   border-width: 1px;
 }
 
+#pixel-board{
+  text-align: center;
+  margin-top: 80px;
+}
+
+.linha-pixel{
+  display: block;
+  margin: 0px;
+  line-height: 0%;
+}
+
+.pixel{
+  display: inline-block;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
