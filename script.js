@@ -1,3 +1,4 @@
+window.onload = function inicializa() {
 // Requisito 04 e 05
 function criaQuadradosDiv() {
   const pixel = document.createElement('div');
@@ -6,7 +7,7 @@ function criaQuadradosDiv() {
 }
 function criaLinhasDiv() {
   const pixelLine = document.createElement('div');
-  pixelLine.classList.add ('pixel-line');
+  pixelLine.classList.add('pixel-line');
   return pixelLine;
 }
 function criaLinhas(size) {
@@ -30,7 +31,7 @@ function criaQuadrados(size) {
 }
 function createSquare(tamanho) {
   const pixelLineParent = document.getElementById('pixel-board');
-  pixelLineParent.innerHTML = '' // zera todos os valores de dentro
+  pixelLineParent.innerHTML = ''; // zera todos os valores de dentro
   criaLinhas(tamanho);
   criaQuadrados(tamanho);
 }
@@ -47,7 +48,6 @@ function alteraCor() {
 alteraCor();
 
 // Requisito 06
-window.onload = function inicializa() {
   function corPadrao() {
     const paletaCorPadrao = document.getElementsByClassName('color');
     for (let index = 0; index < paletaCorPadrao.length; index += 1) {
@@ -61,61 +61,64 @@ window.onload = function inicializa() {
     createSquare(5);
   }
   boardSizeDefault();
-}
+  getColorEvent();
+  
+  // Requisito 07
+  function selected(event) {
+    const removeSelection = document.querySelector('.selected');
+    removeSelection.classList.remove('selected');
+    event.target.classList.add('selected');
+  }
+  function selectedEvent() {
+    const paleta = document.getElementsByClassName('color');
+    for (let index = 0; index < paleta.length; index += 1) {
+      paleta[index].addEventListener('click', selected);
+    }
+  }
+  selectedEvent();
+  
+  // Requisito 08
+  function getColor(event) {
+    const alvo = event.target;
+    const selectedColor = document.querySelector('.selected').style.backgroundColor;
+    alvo.style.backgroundColor = selectedColor;
+  }
+  function getColorEvent() {
+    const square = document.getElementsByClassName('pixel');
+    for (let index = 0; index < square.length; index += 1) {
+      square[index].addEventListener('click', getColor);
+    }
+  }
+  getColorEvent();
+  
+  // Requisito 09
+  function clearButton() {
+    const pixels = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
+    }
+  }
+  function clearButtonEvent() {
+    const button = document.querySelector('#clear-board');
+    button.addEventListener('click', clearButton);
+  }
+  clearButtonEvent();
+  
+  // Requisito 10
+  function customSize() {
+    const inputValue = parseInt(document.getElementById('generate-border').value);
+    if (inputValue < 51 && inputValue > 0) {
+      createSquare(inputValue);
+    } else {
+      alert('Board inválido');
+    }
+    getColorEvent();
+  }
+  function customSizeEvent() {
+    const button = document.querySelector('.button>button');
+    button.addEventListener('click', customSize);
+  }
+  customSizeEvent();
+  
+};
 // window.onload braket;
-
-// Requisito 07
-function selected(event) {
-  const removeSelection = document.querySelector('.selected');
-  removeSelection.classList.remove('selected');
-  event.target.classList.add('selected');
-}
-function selectedEvent() {
-  const paleta = document.getElementsByClassName('color');
-  for (let index = 0; index < paleta.length; index += 1) {
-    paleta[index].addEventListener('click', selected);
-  }
-}
-selectedEvent();
-
-// Requisito 08
-function getColor(event) {
-  const alvo = event.target;
-  const selectedColor = document.querySelector('.selected').style.backgroundColor;
-  alvo.style.backgroundColor = selectedColor; 
-}
-function getColorEvent() {
-  const square = document.getElementsByClassName('pixel');
-  for (let index = 0; index < square.length; index += 1) {
-    square[index].addEventListener('click', getColor);
-  }
-}
-getColorEvent();
-
-// Requisito 09
-function clearButton() {
-  const pixels = document.getElementsByClassName('pixel');
-  for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].style.backgroundColor = 'white';
-  }
-}
-function clearButtonEvent() {
-  const button = document.querySelector('#clear-board');
-  button.addEventListener('click', clearButton);
-}
-clearButtonEvent();
-
-// Requisito 10
-function customSize() {
-  const inputValue = parseInt(document.getElementById('generate-border').value)
-  if (inputValue < 51 && inputValue > 0) {
-    createSquare(inputValue)
-  } else {
-    alert("Board inválido")
-  }
-}
-function customSizeEvent() {
-  const button = document.querySelector('.button>button');
-  button.addEventListener('click', customSize)
-}
-customSizeEvent();
