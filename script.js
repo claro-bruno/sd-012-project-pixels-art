@@ -35,15 +35,31 @@ paletePreto.classList.add("selected");
 
 function imprimiCor (event){
     if (!event.target.classList.contains("selected")){
-        let selectedColor = document.getElementsByClassName("selected");
-        selectedColor[0].classList.remove("selected");
-      event.target.classList.add("selected");
+        let selectedColor = document.querySelector(".selected");
+        selectedColor.classList.remove("selected");
+        event.target.classList.add("selected");
     }
 };
     
     let regularColor = document.getElementsByClassName("color");
-    console.log(regularColor);
-    regularColor[0].addEventListener('click', imprimiCor);
-    regularColor[1].addEventListener('click', imprimiCor);
-    regularColor[2].addEventListener('click', imprimiCor);
-    regularColor[3].addEventListener('click', imprimiCor);
+    for (let cor of regularColor)
+        cor.addEventListener("click", imprimiCor);
+
+let pixel = document.getElementsByClassName("pixel")
+
+function mudaCor (event){
+    let selectedColor = document.querySelector(".selected");
+    let colorClick = selectedColor.className;
+    event.target.style.backgroundColor = colorClick;
+};
+    for(element of pixel){
+        element.addEventListener("click", mudaCor);
+    };
+
+function limparQuadro (){
+    for(element of pixel){
+    element.style.backgroundColor = white;
+};
+};
+let button = document.getElementById("clear-board");
+button.addEventListener("click", limparQuadro);
