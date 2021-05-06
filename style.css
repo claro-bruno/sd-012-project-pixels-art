@@ -50,7 +50,7 @@ body {
 }
 
 #clear-board {
-    margin: 20px;
+    margin: 10px;
     height: 35px;
     width: 60px;
     background-color: transparent;
@@ -81,4 +81,10 @@ body {
     flex-wrap: wrap;
     color: #fff;
     background-color: white;
+}
+
+.inline {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
 }
