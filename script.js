@@ -3,6 +3,8 @@ let cor2 = "rgb(255, 0, 0, 1)";
 let cor3 = "rgb(0, 100, 255, 1)";
 let cor4 = "rgb(0, 255, 0, 1)";
 let corBranco = "rgb(255, 255, 255, 1)";
+let linha = 5;
+let coluna = 5;
 
 let cor = [cor1, cor2, cor3, cor4]
 
@@ -51,21 +53,19 @@ function colorePixel() {
 }
 
 // cria dinamicamente linhas e colunas e atribui os pixels dentro
-function criaPixel() {
-  let linha = 5;
-  let coluna = 5;
+function criaPixel(row, col) {
   let divLinha = [];
   let idPixel = 1;
   let lugar = document.getElementById("pixel-board");
-  for (let indexColuna = 0; indexColuna < coluna; indexColuna += 1) {
+  for (let indexLinha = 0; indexLinha < col; indexLinha += 1) {
     let criaLinha = document.createElement("div");
     criaLinha.setAttribute("class", "linha");
     divLinha.push(criaLinha);
-    lugar.appendChild(divLinha[indexColuna]);
-    for (let indexLinha = 0; indexLinha < linha; indexLinha += 1) {
+    lugar.appendChild(divLinha[indexLinha]);
+    for (let indexColuna = 0; indexColuna < row; indexColuna += 1) {
       let pixel = document.createElement("div");
       pixel.setAttribute("class", "pixel");
-      divLinha[indexColuna].appendChild(pixel);
+      divLinha[indexLinha].appendChild(pixel);
       pixel.setAttribute("id", "pixel" + idPixel);
       idPixel += 1;
     }
@@ -107,9 +107,27 @@ function btnBranco() {
   });
 }
 
+function botaoQuadro() {  
+  let btnQuadro = document.getElementById("generate-board");
+  let divQuadro = document.getElementById("pixel-board");
+  btnQuadro.addEventListener("click", function() {
+    let inputSize = document.getElementById("board-size");
+    let size = inputSize.value;
+    if ((size >= 5) && (size <= 50)) {
+        divQuadro.innerHTML = "";
+        criaPixel(size, size); 
+    } else {
+        alert("Board inválido!");
+    }
+  });
+  
+}
+
 coresPaleta();
 clickCor();
-criaPixel();
+criaPixel(linha, coluna);
 colorePixel();
 //geraBotaoBranco();
 btnBranco();
+botaoQuadro();
+//userEscolheTam();

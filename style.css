@@ -20,6 +20,23 @@
 
 #clear-board {
   padding: 10px;
-  display: block;
+  display: inline-block;
   margin: 20px 0px;
+}
+
+.controles {
+    margin-top: 20px;
+}
+
+#board-size {
+    width: 122px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+#generate-board {
+    padding: 10px;
+    display: inline-block;
+    margin-left: 20px;
+    display: inline-block;
 }
