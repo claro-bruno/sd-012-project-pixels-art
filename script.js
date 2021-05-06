@@ -1,5 +1,5 @@
 // Desafio 1, 2 e 3
-function paletteColor () { // não entendi exatamente que será o parâmetro dessa função e se é necessário ter um;
+function paletteColor() { //  não entendi exatamente que será o parâmetro dessa função e se é necessário ter um;
   const divPai = document.getElementById('color-palette');
   const colorPalette = ['black', 'red', 'blue', 'yellow']; //cores de referência para o laço for
   for (let index = 0; index < colorPalette.length; index += 1) {
@@ -22,9 +22,9 @@ function linhaParaDivs() {
   return linhaParaPixels; // retorna 01 linha que é uma div
 }
 function loosParaCriarLinhas(base) { //loop para crias as 5 linhas antes de preencher. Cada linha é uma div.
-  const divPixel_board = document.getElementById('pixel-board'); //captura a div com Id=pixel-board, que será Pai dos elementos do loop
+  const divPixelBoard = document.getElementById('pixel-board'); //captura a div com Id=pixel-board, que será Pai dos elementos do loop
   for (let index = 0; index < base; index += 1) {
-    divPixel_board.appendChild(linhaParaDivs()); //cada linhaParaDivs será filha de divPixel_board
+    divPixelBoard.appendChild(linhaParaDivs()); //cada linhaParaDivs será filha de divPixelBoard
   }
 }
 function repetir(linhaParaPixels) { //
@@ -41,8 +41,8 @@ function quadrados(size) {
   }
 }
 function comporGrade(tamanho) {
-  const divPixel_board = document.getElementById('pixel-board');
-  divPixel_board.innerHTML = '';
+  const divPixelBoard = document.getElementById('pixel-board');
+  divPixelBoard.innerHTML = '';
   loosParaCriarLinhas(tamanho);
   quadrados(tamanho);
 }
@@ -54,3 +54,5 @@ function corPaleta() {
   coresPaleta[0].classList.add('selected');
 }
 corPaleta();
+
+// Desafio 7
