@@ -23,7 +23,7 @@ window.onload = function () {
     createPixels();
     //Defina a cor preta como inicial.
     function setBlackAsDefault () {
-        color2.className = 'color selected';
+        color1.className = 'color selected';
         }
     setBlackAsDefault();
     //Adiciona a classe selected ao clicar em uma cor da paleta
