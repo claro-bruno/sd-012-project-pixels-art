@@ -1,7 +1,6 @@
 const quadro = document.querySelector('#pixel-board');
 const pixel = '<div class="pixel"> <div>';
 const colors = document.querySelectorAll('.color');
-const selectedColor = 'selected';
 let corSelecionada = 'black';
 
 function coresAleatoias() {
