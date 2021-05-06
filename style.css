@@ -1,0 +1,20 @@
+#color-palette .color {
+    display: inline-block;
+    border: black solid 1px;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+}
+
+#red {
+    background-color: red;
+}
+#green {
+    background-color: green;
+}
+#blue {
+    background-color: blue;
+}
+#black {
+    background-color: black;
+}
