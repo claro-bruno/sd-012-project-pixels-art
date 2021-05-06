@@ -1,6 +1,8 @@
-const cores = ['black', 'blue', 'red', 'green'];
-
-
+const colors = ['black', 'greenyellow', 'blueviolet', 'orangered']; // black obrigatoriamente tenque ser a primeira cor do array
+const colorBoxes = document.getElementsByClassName('color');
+for (let index = 0; index < colorBoxes.length; index += 1) {
+    colorBoxes[index].style.backgroundColor = colors[index];
+}
 
 function fillBoard (lines, columns) {
 
@@ -25,7 +27,6 @@ function fillLineBoard(line,columns) {
 fillBoard (5, 5);
 
 let sectionColours =  document.querySelectorAll('.color');
-
 for(let indexColors = 0; indexColors < sectionColours.length; indexColors += 1) {
     sectionColours[indexColors].addEventListener('click',  fillCheckSelected)
 }
