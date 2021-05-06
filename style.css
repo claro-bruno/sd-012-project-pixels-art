@@ -1,5 +1,6 @@
 * {
     margin: 0%;
+    background-color: seagreen;
 }
 
 .table {
@@ -9,23 +10,29 @@
 
 .color {
     border: solid black 1px;
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     display: inline-block;
 }
 
 .color1 {
-    background-color: blue;
+    background-color: black;
 }
 
 .color2 {
-    background-color: green;
+    background-color: orange;
 }
 
 .color3 {
-    background-color: yellow;
+    background-color: purple;
 }
 
 .color4 {
-    background-color: black;
+    background-color: blue;
+}
+
+.pixel {
+    background-color: white;
+    height: 30px;
+    width: 30px;
 }
