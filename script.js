@@ -8,3 +8,12 @@ function creatingPixelBoardCollumns(row, colunas) {
       row.appendChild(divColumn);
     }
   }
+
+  function creatingPixelBoardRows(linhas) {
+    for (let row = 1; row <= linhas; row += 1) {
+      const divRow = document.createElement('div');
+      divRow.classList.add('tr');
+      pixelBoard.appendChild(divRow);
+      creatingPixelBoardCollumns(divRow, linhas);
+    }
+  }
