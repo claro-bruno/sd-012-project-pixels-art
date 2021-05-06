@@ -8,22 +8,6 @@
   height: 40px;
 }
 
-#black {
-  background-color: black;
-}
-
-#blue {
-  background-color: blue;
-}
-
-#green {
-  background-color: green;
-}
-
-#yellow {
-  background-color: yellow;
-}
-
 .divLine {
   border: 1px solid red;
   width: 500px;
