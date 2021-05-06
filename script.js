@@ -53,6 +53,9 @@ function createPixels() {
   const pixelBoard = document.getElementById('pixel-board');
 
   button.addEventListener('click', () => {
+    if (input.value === '') {
+      alert('Board inválido');
+    }
     const createdPixel = document.createElement('div');
     createdPixel.classList.add('created-pixel');
     createdPixel.style.width = `${input.value}px`;
