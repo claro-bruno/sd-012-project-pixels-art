@@ -57,18 +57,30 @@ const pintarPixel = () => {
   }
 };
 
+const removerTela = () => {
+  const sessaoPixelBoard = document.getElementById('pixel-board');
+
+  while (sessaoPixelBoard.firstChild) {
+    sessaoPixelBoard.removeChild(sessaoPixelBoard.firstChild);
+  }
+};
+
 const mudarTamanhoTelaDePintura = () => {
   const inputDoTamanhoDaTela = document.querySelector('#board-size').value;
-
+  const msgErro = 'Board inválido!';
   if (inputDoTamanhoDaTela >= 5 && inputDoTamanhoDaTela <= 50) {
-    const sessaoPixelBoard = document.getElementById('pixel-board');
-
-    while (sessaoPixelBoard.firstChild) {
-      sessaoPixelBoard.removeChild(sessaoPixelBoard.firstChild);
-    }
+    removerTela();
     gerarTelaDePintura(inputDoTamanhoDaTela);
+  } else if (inputDoTamanhoDaTela < 5) {
+    removerTela();
+    gerarTelaDePintura(5);
+    window.alert(msgErro);
+  } else if (inputDoTamanhoDaTela > 50) {
+    removerTela();
+    gerarTelaDePintura(50);
+    window.alert(msgErro);
   } else {
-    window.alert('Board inválido!');
+    window.alert(msgErro);
   }
   pintarPixel();
 };
