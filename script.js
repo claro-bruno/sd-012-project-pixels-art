@@ -44,13 +44,13 @@ function selectColor() {
 selectColor();
 
 function createBoard(lines) {
-  const myBoard = document.getElementById('create-board');
+  const myBoard = document.getElementById('pixel-board');
   for (let index = 0; index < lines; index += 1) {
     const createTr = document.createElement('tr');
     myBoard.appendChild(createTr);
     for (let index2 = 0; index2 < lines; index2 += 1) {
       const createTh = document.createElement('th');
-      createTh.className = 'pixel-size';
+      createTh.className = 'pixel';
       createTr.appendChild(createTh);
     }
   }
@@ -58,7 +58,7 @@ function createBoard(lines) {
 createBoard(5);
 
 function changeColor() {
-  const pixels = document.querySelectorAll('.pixel-size');
+  const pixels = document.querySelectorAll('.pixel');
   for (let indexColor = 0; indexColor < colors.length; indexColor += 1) {
     for (let indexPixels = 0; indexPixels < pixels.length; indexPixels += 1) {
       pixels[indexPixels].addEventListener('click', function () {
