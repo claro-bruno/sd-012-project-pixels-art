@@ -58,3 +58,13 @@ for(let pixels of colorSelected){
 
 } 
 
+let clearButton = document.getElementById('clear-board');
+
+
+function clearTable(){
+    for (let clear of colorSelected){
+        clear.style.backgroundColor = 'white';
+    }
+}
+clearButton.addEventListener('click', clearTable);
+
