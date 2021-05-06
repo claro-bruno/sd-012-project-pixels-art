@@ -32,7 +32,7 @@ function pixelsColors (cor){
 for (index = 0; index < palleteColors.length; index +=1){
     palleteColors[index].addEventListener("click", function(event){
     let colorSelected = document.querySelector('.selected');
-    if( event.target.classList !== "color selected"){
+    if(event.target.className !== "color selected"){
         event.target.classList.add("selected");
         colorSelected.classList.remove("selected");
         pixelsColors(event.target.style.backgroundColor);
