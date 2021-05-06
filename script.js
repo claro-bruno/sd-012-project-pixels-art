@@ -49,8 +49,8 @@ let pixel = document.getElementsByClassName("pixel")
 
 function mudaCor (event){
     let selectedColor = document.querySelector(".selected");
-    let colorClick = selectedColor.className;
-    event.target.style.backgroundColor = colorClick;
+    let colorClick = window.getComputedStyle(selectedColor);
+    event.target.style.backgroundColor = colorClick.getPropertyValue("background-color");
 };
     for(element of pixel){
         element.addEventListener("click", mudaCor);
