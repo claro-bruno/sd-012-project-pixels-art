@@ -1,5 +1,5 @@
 window.onload = function () {
-    let pixelBoard = document.getElementById('pixel-board');
+    //Variaveis importantes ou recorrentes
     let boardersNumberOfPixels = 25;
     //Seta as cores iniciais da paleta de cores
     const color1 = document.getElementsByClassName('color')[0];
@@ -12,6 +12,7 @@ window.onload = function () {
     color4.style.backgroundColor = 'green';
     //Cria dinamicamente os pixels do pixel-board
     function createPixels () {
+        let pixelBoard = document.getElementById('pixel-board');
         pixelBoard.style.maxWidth = '210px';
         for (let index = 0; index < boardersNumberOfPixels; index += 1) {
             let pixelCreate = document.createElement('div');
@@ -22,9 +23,9 @@ window.onload = function () {
     createPixels();
     //Defina a cor preta como inicial.
     function setBlackAsDefault () {
-        color1.className = 'color selected';
+        color2.className = 'color selected';
         }
-        setBlackAsDefault();
+    setBlackAsDefault();
     //Adiciona a classe selected ao clicar em uma cor da paleta
     function selectColor (color) {
     color.addEventListener('click', event => {
@@ -40,7 +41,7 @@ window.onload = function () {
     selectColor(color2);
     selectColor(color3);
     selectColor(color4);
-    //Reseta a classe para color
+    //Reseta a classe para color(esta função será invocada dentro da função selectcolor)
     function resetClass (color) {
         let colors = document.getElementsByClassName('color');
         for (let index = 0; index < colors.length; index += 1) {
@@ -48,9 +49,20 @@ window.onload = function () {
                 colors[index].className = 'color';
             }
         }
-    }
-    resetClass(color1);
-
+    } 
+//Pinta os pixels com a cor selecionada
+function pixelPainter () {
+    let pixel = document.querySelector('.pixel');
+    pixel.addEventListener('click', () => {
+        if (pixel.style.backgroundColor === 'white') {
+            let selectedColor = document.querySelector('.selected').style.backgroundColor;
+            pixel.style.backgroundColor = selectedColor;
+        } else {
+            pixel.style.backgroundColor = 'white';
+        }
+    })
+}
+pixelPainter();
 
 
 
