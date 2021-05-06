@@ -27,24 +27,24 @@ body {
 }
 
 .color:nth-child(1) {
-   background-color: black; 
+   background-color: black;
    border: 1px solid black;
 }
 
 .color:nth-child(2) {
-    background-color: #405d27; 
+    background-color: #405d27;
     color: #405d27;
     border: 1px solid black;
 }
 
 .color:nth-child(3) {
-    background-color: #034f84; 
+    background-color: #034f84;
     color: #034f84;
     border: 1px solid black;
 }
 
 .color:nth-child(4) {
-    background-color: #c94c4c; 
+    background-color: #c94c4c;
     color: #c94c4c;
     border: 1px solid black;
 }
