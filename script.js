@@ -27,3 +27,4 @@ function board(size){
 
 board(5);
 
+paleta.firstChild.classList.add("selected");
