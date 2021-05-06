@@ -41,7 +41,7 @@ window.onload = function () {
     });
   }
   selectColorInitial();
-  
+ 
 //Cria board no JS
   function createPixelBoard(){
     let board = document.querySelector('#pixel-board')
@@ -75,10 +75,10 @@ window.onload = function () {
     let selectedBlueColor = document.querySelector('.blue')
     let selectedGreenColor = document.querySelector('.green')
 
-    if (selectedBlackColor.addEventListener('click', selectBlack)){}
-    if (selectedRedColor.addEventListener('click', selectRed)){}
-    if (selectedBlueColor.addEventListener('click', selectBlue)){}
-    if (selectedGreenColor.addEventListener('click', selectGreen)){}
+    selectedBlackColor.addEventListener('click', selectBlack)
+    selectedRedColor.addEventListener('click', selectRed)
+    selectedBlueColor.addEventListener('click', selectBlue)
+    selectedGreenColor.addEventListener('click', selectGreen)
 
     function selectBlack(){
       let selectedPixel = document.querySelectorAll('.pixel')
@@ -129,5 +129,32 @@ setPixel();
     });
   }
   clearBoard();
+
+
+
+
+  // function selectedGenericColor(color){
+  //   let selectedPixel = document.querySelectorAll('.pixel')
+  //   for (let index = 0; index < selectedPixel.length; index += 1) {
+  //     selectedPixel[index].addEventListener('click', function() {
+  //     let pixel = selectedPixel[index].style.backgroundColor = color;
+  //     });
+  //   }
+  // }
+
+
+    // pinta board ???? Nao funciona ainda - Ref Gui de Paula
+    // function setPixel() {
+    //   let pixel = document.querySelector('.pixel');
+    //   for (let index = 0; index < pixel.length; index += 1){
+    //     pixel[index].addEventListener('click', function() {
+    //       let pixelColor = document.querySelector('.selected');
+    //       pixel[index].style.backgroundColor = pixelColor;
+    //     })
+    //   }
+    // }
+    // setPixel();
+
+
 
 };
