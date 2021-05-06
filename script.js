@@ -36,6 +36,7 @@ window.onload = function () {
         for (let pixel = 0; pixel < 25; pixel++) {
             let square = document.createElement('div');
             square.className = ("pixel");
+            square.id = 'erased';
             document.querySelector('#pixel-board').appendChild(square);
             boardPixels.style.width = 210 + "px";
             boardPixels.style.height = 210 + 'px';
