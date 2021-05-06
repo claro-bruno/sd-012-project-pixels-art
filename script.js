@@ -63,17 +63,27 @@ function setBoard(event) {
     let newSize = document.querySelector('#board-size').value;
     if(!Number(newSize)) {
         alert('Board inválido!');
-    } else if (newSize<5) {
-        document.querySelector('#board-size').value = 5;
-    } else if (newSize>50) {
-        document.querySelector('#board-size').value = 50;
     } else {
+        if(newSize > 50) {
+            newSize = 50;
+            document.querySelector('#board-size').value = 50;
+        }
+        else if(newSize < 5) {
+            newSize = 5;
+            document.querySelector('#board-size').value = 5;
+        }
+    }
+
+    if(Number(newSize)){
         let pixelBoard = document.querySelector('#pixel-board');
         pixelBoard.innerHTML = '';
-        fillBoard(Number(newSize),Number(newSize));
+        fillBoard(Number(newSize),Number(newSize));    
     }
+    
        
 }
+       
+
         
 
     
