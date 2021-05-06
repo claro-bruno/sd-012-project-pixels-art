@@ -14,17 +14,16 @@ body {
 }
 
 .color {
+    margin: 1px;
+    width: 40px;
+    height: 40px;
     color:blue;
     border: 1px solid black;
     display: inline-block;
 }
 
-#pixel-board {
-    display: inline-grid;
-    grid-template-columns: auto auto auto auto auto;
-}
-
 .pixel {
+    display: inline-block;
     border: solid 1px black;
     width: 40px;
     height: 40px;
