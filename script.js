@@ -1,4 +1,5 @@
-let colorBlack = document.getElementById('black').style.backgroundColor;
+const colorBlack = document.getElementById('black');
+colorBlack.style.backgroundColor = 'black';
 
 const colors = document.querySelectorAll('.color');
 const colorPalette = document.getElementById('color-palette');
