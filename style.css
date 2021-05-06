@@ -1,5 +1,6 @@
 #header {
-
+ margin-top: 0px;
+ background-color: green;
 }
 
 #title {
@@ -27,7 +28,9 @@ body {
   margin-bottom: 10px;
 }
 
-
+#generate-board {
+	margin-top: 10px;
+}
 
 #pixel-board {
   width: 210px;
