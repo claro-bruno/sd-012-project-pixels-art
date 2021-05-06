@@ -19,6 +19,13 @@ div{
     margin: auto;
 }
 
+#pixel-board, div{
+    margin: auto;
+}
+
+#color-palette{
+    padding: 5px;
+}
 
 
 #title{
