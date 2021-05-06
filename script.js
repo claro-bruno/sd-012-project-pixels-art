@@ -115,6 +115,10 @@ O que será verificado:
 Verifica se o quadro de pixels tem altura e comprimento de 5 elementos
 
 Verifica se 40 pixels é o tamanho total do elemento, incluindo seu conteúdo e excluindo a borda preta, que deve ser criada à parte. */
+// Dica CSS: .pixel{box-sizing: border-box}
+/* https://www.w3schools.com/csS/css3_box-sizing.asp */ 
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+
 function verificaTamanho () {
     let element = document.getElementsByClassName('pixel')[0]
     let elementHeight = window.getComputedStyle(element, null).getPropertyValue("height");
@@ -122,7 +126,6 @@ function verificaTamanho () {
     // console.log(` pixel height: ${elementHeight}\n pixel width: ${elementWidth}`)
 }
 verificaTamanho();
-// Dica CSS: .pixel{box-sizing: border-box}
 
 
 /* 6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels
@@ -135,6 +138,7 @@ O que será verificado:
 Verifica se o elemento da cor preta possui, inicialmente, a classe selected
 
 Verifica se nenhuma outra cor da paleta tem a classe selected */
+/* Credito: https://www.w3schools.com/howto/howto_js_remove_class.asp */
 
 function selecionaCorInicial () {
     let colorPalette = document.getElementsByClassName('color');
@@ -147,7 +151,7 @@ function selecionaCorInicial () {
     }
 }
 selecionaCorInicial();
-/* Credito: https://www.w3schools.com/howto/howto_js_remove_class.asp */
+
 
 /* 
 7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
@@ -196,3 +200,31 @@ function preenchePixelClicado () {
     }
 }
 preenchePixelClicado();
+
+
+/* 9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
+O que será verificado:
+
+Verifica se o botão tem o id denominado clear-board
+
+Verifica se o botão está posicionado entre a paleta de cores e o quadro de pixels
+
+Verifica se o texto do botão é 'Limpar'
+
+Verifica se ao clicar no botão, o quadro de pixels é totalmente preenchido de branco */
+/* https://www.w3schools.com/jsref/met_node_insertbefore.asp */
+
+function botaoClearBoard () {
+    let button = document.createElement('button')   
+    button.id = 'clear-board'
+    button.innerHTML = 'Limpar'
+    let board = document.getElementById('pixel-board')
+    document.body.insertBefore(button, board)
+    let pixels = document.getElementsByClassName('pixel')
+    button.addEventListener('click', function (event) {
+        for (pixel of pixels) {
+            pixel.style.backgroundColor = 'white'
+        }
+    })
+}
+botaoClearBoard();
