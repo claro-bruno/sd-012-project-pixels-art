@@ -1,6 +1,8 @@
+/* eslint-disable sonarjs/cognitive-complexity */
 /* eslint-disable max-lines-per-function */
-window.onload = function colorPaletteGenerator() {
-  const colorPaletteSection = document.getElementsByClassName('color');
+const colorPaletteSection = document.getElementsByClassName('color');
+
+function colorPaletteGenerator() {
   for (let paletteCreator = 0; paletteCreator < colorPaletteSection.length; paletteCreator += 1) {
     const redAmountRGB = Math.floor(Math.random() * 255);
     const greenAmountRGB = Math.floor(Math.random() * 255);
@@ -12,19 +14,26 @@ window.onload = function colorPaletteGenerator() {
       const rgbGenerator = `rgb(${redAmountRGB}, ${greenAmountRGB}, ${blueAmountRGB})`;
       colorPaletteSection[paletteCreator].style.backgroundColor = rgbGenerator;
     }
-    colorPaletteSection[paletteCreator].addEventListener('click', () => {
+  }
+}
+colorPaletteGenerator();
+
+function specificClassGiver() {
+  for (let index = 0; index < colorPaletteSection.length; index += 1) {
+    colorPaletteSection[index].addEventListener('click', () => {
       for (let classRemover = 0; classRemover < colorPaletteSection.length; classRemover += 1) {
         colorPaletteSection[classRemover].classList.remove(('selected'));
       }
-      colorPaletteSection[paletteCreator].classList.add('selected');
+      colorPaletteSection[index].classList.add('selected');
     });
   }
-};
+}
+specificClassGiver();
 
 function pixelCreation() {
   const maxRow = 5;
   const maxLine = 5;
-  const pixelSection = document.querySelector('#pixel-board');
+  const pixelSection = document.getElementById('pixel-board');
   for (let counter = 0; counter < maxLine; counter += 1) {
     const eachRowDiv = document.createElement('div');
     eachRowDiv.className = 'rowDiv';
@@ -37,3 +46,16 @@ function pixelCreation() {
   }
 }
 pixelCreation();
+
+function colorOutput() {
+  const colorGrabber = document.getElementsByClassName('selected')[0];
+  const selectedColor = colorGrabber.style.backgroundColor;
+  const selectedPixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < selectedPixel.length; index += 1) {
+    selectedPixel[index].addEventListener('click', () => {
+      console.log(selectedPixel[index]);
+      console.log(colorGrabber);
+    });
+  }
+}
+colorOutput();
