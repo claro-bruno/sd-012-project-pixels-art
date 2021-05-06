@@ -81,12 +81,19 @@ function clearBoardClick() {
 
 function userBoarder() {
   const userInput = document.getElementById('board-size');
-  const numberOfInput = parseInt(userInput.value);
-  let numberOfPixels = {};
+  let numberOfInput = 0;
+  if (parseInt(userInput.value) < 5) {
+    numberOfInput = 5;
+  } else if (parseInt(userInput.value) > 50){
+    numberOfInput = 50;
+  } else {
+    numberOfInput = parseInt(userInput.value);
+  }
+  const numberOfPixels = {};
   for (let index = 5; index <= 50; index += 1) {
     numberOfPixels[index] = index * index;
   }
-  let finalNumber = numberOfPixels[numberOfInput];
+  const finalNumber = numberOfPixels[numberOfInput];
   if (userInput.value.length < 1) {
     return alert('Board inválido!'), createPixelBaordElement(25);
   }
@@ -96,8 +103,15 @@ function userBoarder() {
 function sizeBoarder() {
   const pixelBoard = document.getElementById('pixel-board');
   const userInput = document.getElementById('board-size');
-  const numberOfInput = parseInt(userInput.value);
-  let numberOfPixels = {};
+  let numberOfInput = 0;
+  if (parseInt(userInput.value) < 5) {
+    numberOfInput = 5;
+  } else if (parseInt(userInput.value) > 50){
+    numberOfInput = 50;
+  } else {
+    numberOfInput = parseInt(userInput.value);
+  }
+  const numberOfPixels = {};
   for (let index = 5; index <= 50; index += 1) {
     numberOfPixels[index] = index * index;
   }
