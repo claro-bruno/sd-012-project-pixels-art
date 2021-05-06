@@ -11,3 +11,55 @@ function removeColor() {
   }
 }
 
+let colorSelected = 'black';
+
+function getblackColor(event) {
+  const evento = event.target;
+  removeColor();
+  evento.classList.add('selected');
+  colorSelected = 'black';
+}
+color1.addEventListener('click', getblackColor);
+
+function getburlywoodColor(event) {
+  const evento = event.target;
+  removeColor();
+  evento.classList.add('selected');
+  colorSelected = 'burlywood';
+}
+color2.addEventListener('click', getburlywoodColor);
+
+function gettealColor(event) {
+  const evento = event.target;
+  removeColor();
+  evento.classList.add('selected');
+  colorSelected = 'teal';
+}
+color3.addEventListener('click', gettealColor);
+
+function getgoldenrodColor(event) {
+  const evento = event.target;
+  removeColor();
+  evento.classList.add('selected');
+  colorSelected = 'goldenrod';
+}
+color4.addEventListener('click', getgoldenrodColor);
+
+const pixelBoard = document.querySelector('#pixel-board');
+
+function pixelBord(event) {
+  const evento = event.target;
+  evento.style.backgroundColor = colorSelected;
+}
+
+pixelBoard.addEventListener('click', pixelBord);
+
+const clearBoard = document.querySelector('#clear-board');
+
+function removePixel() {
+  const evento = document.getElementsByClassName('pixel');
+  for (let index = 0; index < evento.length; index += 1) {
+    evento[index].style.backgroundColor = 'white';
+  }
+}
+clearBoard.addEventListener('click', removePixel);
