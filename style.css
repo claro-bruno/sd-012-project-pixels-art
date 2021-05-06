@@ -11,17 +11,14 @@ body {
     margin-right: 30px;
 }
 
-#clear-board {
-    margin-bottom: 15px;
-}
-
 #pixel-board {
     display: inline-block;
 }
 
 #botoes {
-    display: flex;
     justify-content: center;
+    margin-bottom: 15px;
+    vertical-align: middle;
 }
 
 #board-size {
@@ -41,4 +38,8 @@ body {
 
 .pixel {
     background-color: white;
+}
+
+#generate-board {
+    margin-right: 15px;
 }

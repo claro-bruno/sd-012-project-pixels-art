@@ -1,8 +1,7 @@
 window.onload = function () {
   let paletaCores = document.querySelector('#color-palette');
   let quadro = document.querySelector('#pixel-board');
-  let botaoApagar = document.querySelector('#clear-board');
-  let inputSize = document.querySelector('#board-size');
+  let botoes = document.querySelector('#botoes');
   let tamanhoQuadro = 5;
 
   geraCores();
@@ -17,8 +16,6 @@ window.onload = function () {
   let cores = document.querySelectorAll('.color');
 
   let corInicial = cores[0];
-
-  let pixel = document.querySelectorAll('.pixel');
   
   corInicial.className = 'color selected';
   
@@ -98,14 +95,16 @@ window.onload = function () {
   function criaBotaoApagar() {
     let criaBotao = document.createElement('button');
     criaBotao.innerHTML = 'Limpar';
-    botaoApagar.appendChild(criaBotao);
+    criaBotao.id = 'clear-board';
+    botoes.appendChild(criaBotao);
   }
 
   function criaInputTamanho() {
     let criaInput = document.createElement('input');
     criaInput.className = 'input-size';
+    criaInput.id = 'board-size';
     criaInput.placeholder = 'Tamanho';
-    inputSize.appendChild(criaInput).focus();
+    botoes.appendChild(criaInput).focus();
   }
 
   function criaBotaoTamanho() {
@@ -113,7 +112,7 @@ window.onload = function () {
     criaBotao.innerHTML = 'VQV';
     criaBotao.className = 'botao-tamanho';
     criaBotao.id = 'generate-board';
-    inputSize.appendChild(criaBotao);
+    botoes.appendChild(criaBotao);
   }
 
   function novoQuadro() {
