@@ -28,3 +28,10 @@ function board(size){
 board(5);
 
 paleta.firstChild.classList.add("selected");
+
+document.body.addEventListener("click", function(event){
+    if(event.target.className === "color"){
+        this.querySelector(".selected").classList.remove("selected");
+        event.target.classList.add("selected");
+    }
+})
