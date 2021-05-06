@@ -51,6 +51,7 @@ function selectedEvent() {
 }
 selectedEvent();
 
+//Requisito 08
 function addCor(event) {
     let alvo = event.target;
     let corSelecionada = document.querySelector('.selected').style.backgroundColor;
@@ -63,3 +64,17 @@ function eventoAddCor() {
     }
 }
 eventoAddCor();
+
+//Requisito 09
+
+function reseta() {
+    let pixels = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixels.length; index += 1) {
+        pixels[index].style.backgroundColor = 'white';       
+    }
+}
+function eventoReseta() {
+    let botao = document.getElementById('clear-board');
+    botao.addEventListener('click', reseta);
+}
+eventoReseta();
