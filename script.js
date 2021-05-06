@@ -142,10 +142,9 @@ createButtonConfirm();
 
 // O que fazer quando o botão for clicado.
 function startEverithing() {
-  const inputValue = document.querySelector('#board-size');
   const buttonConfirm = document.querySelector('#generate-board');
-
   buttonConfirm.addEventListener('click', () => {
+    const inputValue = document.querySelector('#board-size');
     if (inputValue.value === '') {
       return alert('Board inválido!');
     }
