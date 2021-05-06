@@ -3,8 +3,8 @@ const preto = document.getElementById('preta')
 const azulClaro = document.getElementById('azul-claro')
 const azulEscuro = document.getElementById('azul-escuro')
 const claro = document.getElementById('clara')
-
-function gerarCor() {
+const colorPalette = document.getElementById('color-palette')
+/*function gerarCor() {
   const r = Math.random() * 255;
   const g = Math.random() * 255;
   const b = Math.random() * 255;
@@ -15,7 +15,7 @@ function gerarCor() {
 const zero = gerarCor();
 const one = gerarCor();
 const two = gerarCor();
-const three = gerarCor();
+const three = gerarCor();*/
 
 function colors() {
   for (let i = 0; i < 4; i += 1) {
@@ -27,10 +27,10 @@ function colors() {
 
 colors()
 
-document.getElementsByClassName('color')[0].style.backgroundColor = zero
+/*document.getElementsByClassName('color')[0].style.backgroundColor = zero
 document.getElementsByClassName('color')[1].style.backgroundColor = one
 document.getElementsByClassName('color')[2].style.backgroundColor = two
-document.getElementsByClassName('color')[3].style.backgroundColor = three
+document.getElementsByClassName('color')[3].style.backgroundColor = three*/
 
 function board() {
   for (let i = 0; i < 25; i += 1) {
