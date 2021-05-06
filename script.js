@@ -53,4 +53,16 @@ quadroPixels();
 let colorBlack = document.querySelector('.color');
 colorBlack.classList.add = ('selected');
 
+let cores = document.getElementsByClassName('color');
+let pixels = document.getElementsByClassName('pixel');
+
+function selecionaCor(evento) {
+    let selected = document.querySelector('.selected');
+    selected.classList.remove('selected');
+    evento.target.classList.add('selected');
+}
+
+
+
+
 // pesquisa de como adicionar uma classe ao elemento:https://tableless.com.br/manipulando-o-uso-de-classes-com-classlist-api/
