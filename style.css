@@ -42,15 +42,15 @@ main {
   background-color: blue;
 }
 
-#button-space {
-  margin: 10px;
-}
-
 #board-size {
-  width: 150px;
+  width: 100px;
   font-style: italic;
 }
 
 #generate-board {
   padding: 1px;
+}
+
+#input-section {
+  margin: 10px;
 }

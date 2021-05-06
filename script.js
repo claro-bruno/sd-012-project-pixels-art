@@ -1,6 +1,7 @@
 const shadows = '2px 2px 2px grey';
-
-const generateButton = document.getElementById('generate-board')
+const board = document.getElementById('pixel-board');
+const input = document.getElementById('board-size');
+const pixCollection = document.getElementsByClassName('pixel');
 
 const createPalette = (color) => {
   const palette = document.getElementById('color-palette');
@@ -14,7 +15,6 @@ const createPalette = (color) => {
   }
 };
 const createPixels = (n) => {
-  const board = document.getElementById('pixel-board');
   board.style.width = `${n * 42}px`;
   board.style.height = `${n * 42}px`;
   for (let i = 1; i <= n ** 2; i += 1) {
@@ -42,22 +42,15 @@ const selectColor = () => {
   }
 };
 const paintPixels = () => {
-  const pixelCollection = document.getElementsByClassName('pixel');
-  for (let i = 0; i < pixelCollection.length; i += 1) {
-    pixelCollection[i].addEventListener('click', () => {
+  for (let i = 0; i < pixCollection.length; i += 1) {
+    pixCollection[i].addEventListener('click', () => {
       const selected = document.querySelector('.selected');
       const selectedColor = selected.id;
-      pixelCollection[i].style.backgroundColor = selectedColor;
+      pixCollection[i].style.backgroundColor = selectedColor;
     });
   }
 };
-const createButton = () => {
-  const buttonSpace = document.querySelector('#button-space');
-  const button = document.createElement('button');
-  button.innerHTML = 'Limpar';
-  button.id = 'clear-board';
-  buttonSpace.appendChild(button);
-};
+
 const clearBoard = () => {
   const button = document.querySelector('#clear-board');
   button.addEventListener('click', () => {
@@ -67,7 +60,22 @@ const clearBoard = () => {
     }
   });
 };
-createButton();
+
+const boardGenerator = () => {
+  const buttonGen = document.getElementById('generate-board');
+
+  buttonGen.addEventListener('click', () => {
+    const value = parseInt(input.value, 36);
+    while (pixCollection.length > 0) {
+      board.removeChild(board.lastChild);
+    }
+    createPixels(value);
+    console.log(pixCollection);
+    input.value = '';
+  });
+};
+boardGenerator();
+
 window.onload = () => {
   createPalette('black');
   createPalette('red');
