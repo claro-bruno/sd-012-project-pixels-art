@@ -1,20 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
 body {
   text-align: center;
+  background-image: url(pexels-magda-ehlers-1279813.jpg);
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+}
+
+header {
+  margin: 0;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+}
+
+#title {
+  font-family: 'New Tegomin', serif;
+  font-size: 50px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+
+}
+
+span {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgba(192, 192, 192, 0.329);
 }
 
 .color {
   display: inline-block;
+  margin: 1px;
   width: 50px;
   height: 50px;
   border: 1px solid black;
+  box-shadow: 0 0 5px 2px black;
+}
+
+.color:hover {
+  width: 55px;
+  height: 55px;
 }
 
 button {
+  font-size: 16px;
   box-shadow: 0 0 5px 2px black;
-  width: 60px;
+  width: 70px;
   margin-top: 5px;
   margin-bottom: 10px;
   margin-right: 10px;
+}
+
+button:hover {
+  box-shadow: none;
+}
+
+button:active {
+  box-shadow: 0 0 2px 2px black;
+  width: 69px;
 }
 
 #pixel-board {
@@ -27,8 +71,25 @@ button {
   height: 40px;
   border: 1px solid black;
   background-color: white;
+  box-shadow: 0 0 5px 2px black;
+}
+
+.pixel:hover {
+  width: 42px;
+  height: 42px;
+  box-shadow: 0 0 2px 2px black;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
 input {
-  width: 35px;
+  width: 40px;
+  height: 20px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 8px;
+  margin-top: 128px;
 }

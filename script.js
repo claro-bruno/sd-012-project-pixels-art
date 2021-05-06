@@ -6,7 +6,19 @@ const clearBtn = document.getElementById('clear-board');
 const vqvBtn = document.getElementById('generate-board');
 const inputBoardSize = document.getElementById('board-size');
 const numberOfColors = 4;
-const colorsForPalette = ['black', 'lime', 'aqua', 'deeppink']; // Array com cores para serem adicionadas.
+// Gera cores aleatórias - baseado no exemplo do site https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript#:~:text=Gerando%20cores%20hexadecimais%20com%20Javascript&text=Multiplicamos%20Math.,o%20valor%20n%C3%BAmerico%20para%20hexadecimal.
+function colorGenerator(number) {
+  const arrayColors = ['black'];
+  for (let index = 1; index < number; index += 1) {
+    const colorR = Math.random() * 255;
+    const colorG = Math.random() * 255;
+    const colorB = Math.random() * 255;
+    const opacidade = 1;
+    arrayColors.push(`rgba(${colorR}, ${colorG}, ${colorB}, ${opacidade})`);
+  }
+  return arrayColors;
+}
+const colorsForPalette = colorGenerator(numberOfColors); // Array com cores para serem adicionadas.
 // Cria paleta de cores dinamicamente:
 function createPaletteColors(number) {
   for (let index = 0; index < number; index += 1) {
