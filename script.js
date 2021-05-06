@@ -1,15 +1,17 @@
-function PaletteColor () { // não entendi exatamente que será o parâmetro dessa função e se é necessário ter um;
+// Desafio 1, 2 e 3
+function paletteColor () { // não entendi exatamente que será o parâmetro dessa função e se é necessário ter um;
   const divPai = document.getElementById('color-palette');
   const colorPalette = ['black', 'red', 'blue', 'yellow']; //cores de referência para o laço for
   for (let index = 0; index < colorPalette.length; index += 1) {
     const divFilha = document.createElement('div');
     divFilha.className = 'color';
-    divFilha.style.backgroundColor =colorPalette[index];
+    divFilha.style.backgroundColor = colorPalette[index];
     divPai.appendChild(divFilha);
   }
 }
-// console.log(PaletteColor());
-function divFilha() { 
+paletteColor();
+// Desafio 4 e 5
+function divFilha() {
   const pixelDiv = document.createElement('div'); //cria 01 (um) quadrado (pixel) usando createElement.
   pixelDiv.className = 'pixel'; // adiciona a classe 'pixel'.
   return pixelDiv; // retorna 01 pixel que é uma div.
@@ -45,3 +47,10 @@ function comporGrade(tamanho) {
   quadrados(tamanho);
 }
 comporGrade(5);
+
+// desafio 6
+function corPaleta() {
+  const coresPaleta = document.getElementsByClassName('color');
+  coresPaleta[0].classList.add('selected');
+}
+corPaleta();
