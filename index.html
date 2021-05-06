@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project Pixels Art - Paulinha Carlos</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
     <h1 id="title">Paleta de Cores</h1>
-    <section class="center">
+    <main class="center">
         <table id="color-palette">
             <tr>
                 <td class="color black"></td>
@@ -20,6 +20,16 @@
             </tr>
         </table>
         <button id="clear-board">Limpar</button>
+
+        <section id="generate">
+            <h2>Qual o tamanho do seu quadro?</h2>
+            <p>Digite no campo abaixo a q quantidade de quadros em que você deseja pintar</p>
+            <input type="number" id="board-size" placeholder="Digite aqui">
+            <button id="generate-board">VQV</button>
+        </section>
+        
+
+
         <table id="pixel-board">
             <tr>
                 <td class="pixel"></td>
@@ -57,7 +67,11 @@
                 <td class="pixel"></td>
             </tr>
         </table>
-    </section>
+
+        
+
+
+    </main>
     
 <!-- 
     <input type="text" placeholder="teste">

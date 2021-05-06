@@ -40,6 +40,14 @@ body {
   background-color: green;
 }
 
+#clear-board {
+  margin: 20px 0px 5px 0px;
+}
+
+#board-size {
+  margin-bottom: 20px;
+}
+
 #pixel-board {
     margin: auto;
 }
@@ -51,6 +59,4 @@ body {
   background-color: white;
 }
 
-#clear-board {
-  margin: 20px 5px;
-}
+

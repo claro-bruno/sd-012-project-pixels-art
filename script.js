@@ -41,7 +41,7 @@ window.onload = function () {
     });
   }
   selectColorInitial();
-
+  
   function setBlackPixelInitial() {
     let selectedPixel = document.querySelectorAll('.pixel')
       for (let index = 0; index < selectedPixel.length; index += 1) {
