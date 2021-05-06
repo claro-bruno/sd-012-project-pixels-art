@@ -3,4 +3,13 @@
     height: 100px;
     display: table-cell;
     border: black solid 1px;
+
+}
+
+.pixel {
+    display: table-cell;
+    width: 100px;
+    height: 100px;
+    border: black solid 1px;
+    
 }
