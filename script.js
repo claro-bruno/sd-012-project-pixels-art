@@ -60,3 +60,10 @@ for (let index = 0; index < boardPixels.length; index += 1) {
     }
   });
 }
+// Configura botão Limpar
+const clearBtn = document.getElementById('clear-board');
+clearBtn.addEventListener('click', () => {
+  for (let index = 0; index < boardPixels.length; index += 1) {
+    boardPixels[index].style.backgroundColor = 'white';
+  }
+});
