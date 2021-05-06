@@ -1,4 +1,4 @@
-.color, .pixel{
+.color , .pixel {
   border-color: black;
   border-style: solid;
   border-width: 1px;
@@ -11,6 +11,7 @@
   height: 41px;
   width: 210px;
 }
+
 .pixel {
   background-color: white;
 }

@@ -11,6 +11,21 @@ for (let indexUl = 1; indexUl <= 5; indexUl += 1) {
   }
 }
 
-const corInicial = document.querySelector('#black');
+const corBlack = document.querySelector('#black');
+const corRed = document.querySelector('#red');
+const corBlue = document.querySelector('#blue');
+const corGreen = document.querySelector('#green');
+
 document.createElement.className = 'selected';
-corInicial.classList.add('selected');
+corBlack.classList.add('selected');
+
+function alteraCor(event) {
+  const corElement = document.querySelector('.selected');
+  corElement.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+corBlack.addEventListener('click', alteraCor);
+corRed.addEventListener('click', alteraCor);
+corBlue.addEventListener('click', alteraCor);
+corGreen.addEventListener('click', alteraCor);
