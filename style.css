@@ -1,8 +1,18 @@
+body {
+  background-image: url(../images/bladerunner.png);
+  background-size: cover;
+}
+
 main {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   font-family: Fira Sans, Roboto, Segoe, sans-serif;
+  box-shadow: 2px 2px 5px 2px black;
+  padding: 10px;
+  border-radius: 10px;
+  background-image: url(images/bg.png);
+  margin: auto;
 }
 
 .color {

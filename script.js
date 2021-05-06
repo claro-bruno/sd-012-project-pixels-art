@@ -1,7 +1,8 @@
-const shadows = '2px 2px 2px grey';
+const shadows = '2px 2px 2px black';
 const board = document.getElementById('pixel-board');
 const input = document.getElementById('board-size');
 const buttonGen = document.getElementById('generate-board');
+const main = document.querySelector('main');
 
 const createPalette = (color) => {
   const palette = document.getElementById('color-palette');
@@ -26,6 +27,7 @@ const paintPixels = (evt) => {
 };
 
 const createPixels = (n) => {
+  main.style.width = `${n * 50}px`;
   board.style.width = `${n * 42}px`;
   board.style.height = `${n * 42}px`;
   for (let i = 1; i <= n ** 2; i += 1) {
