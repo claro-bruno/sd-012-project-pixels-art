@@ -58,7 +58,7 @@ function mudaCor (event){
 
 function limparQuadro (){
     for(element of pixel){
-    element.style.backgroundColor = white;
+    element.style.backgroundColor = "white";
 };
 };
 let button = document.getElementById("clear-board");
