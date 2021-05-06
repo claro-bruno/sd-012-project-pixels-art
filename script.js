@@ -121,7 +121,6 @@ function createInput() {
   const input = document.createElement('input');
   input.type = 'number';
   input.style.width = '40px';
-  input.value = 5;
   input.min = 1;
   input.max = 50;
   input.id = 'board-size';
