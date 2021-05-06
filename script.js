@@ -7,7 +7,7 @@ document.getElementsByClassName("color")[2].innerHTML = "Blue"
 document.getElementsByClassName("color")[3].style.backgroundColor = "orange"
 document.getElementsByClassName("color")[3].innerHTML = "Orange"
 
-// funcoes para formar o quadro de pixels
+
 function linhasQuadrado (linhas){
     for (let index = 0; index < linhas; index+=1){
         let linha = document.createElement("div");
@@ -29,7 +29,21 @@ function preencherLinha (colunas){
 };
 preencherLinha(5);
 
-// atribui uma nova classe a paleta preta.
+
 let paletePreto = document.getElementsByClassName("color")[0];
 paletePreto.classList.add("selected");
 
+function imprimiCor (event){
+    if (!event.target.classList.contains("selected")){
+        let selectedColor = document.getElementsByClassName("selected");
+        selectedColor[0].classList.remove("selected");
+      event.target.classList.add("selected");
+    }
+};
+    
+    let regularColor = document.getElementsByClassName("color");
+    console.log(regularColor);
+    regularColor[0].addEventListener('click', imprimiCor);
+    regularColor[1].addEventListener('click', imprimiCor);
+    regularColor[2].addEventListener('click', imprimiCor);
+    regularColor[3].addEventListener('click', imprimiCor);
