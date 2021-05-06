@@ -4,15 +4,8 @@ body{
 div p {
     margin-right: 15px;
     margin-top: 15px;
-    margin-bottom: 15px;
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
+    margin-bottom: 15px;   
 }
-
 section ol ul{
     margin-left: 0px;
     margin-right: 1px;
