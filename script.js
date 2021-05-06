@@ -4,10 +4,10 @@ coresDosBlocos[2].style.backgroundColor = 'red';
 coresDosBlocos[3].style.backgroundColor = 'blue';
 coresDosBlocos[4].style.backgroundColor = 'green';
 
-//function CorInicial() {
+function CorInicial() {
 // document.getElementsByClassName("selected");
-document.querySelector('.selected');
-//}
+document.querySelector(".color-palette .selected");
+}
 
 //window.onload = CorInicial;
 
