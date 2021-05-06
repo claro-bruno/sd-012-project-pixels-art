@@ -7,8 +7,9 @@ coresDosBlocos[4].style.backgroundColor = "green";
 window.onload = CorInicial
 
 function CorInicial(){
-document.getElementsByClassName("selected");
+//document.getElementsByClassName("selected");
+document.querySelector(".selected");
 }
 
 //if (clicar=true)
-//document.getElementbyClassName
+//document.getElementbyClassName    
