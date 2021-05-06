@@ -23,6 +23,10 @@ main {
   margin: 0 5px;
 }
 
+.selected {
+  box-shadow: 2px 2px 2px black;
+}
+
 .pixel {
   width: 40px;
   height: 40px;
