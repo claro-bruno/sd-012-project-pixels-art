@@ -53,3 +53,15 @@ function colorBoard() {
   });
 }
 colorBoard();
+
+// Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
+// capturar o click do botão
+const button = document.querySelector('button');
+button.addEventListener('click', (event) => {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+});
+// capturar os elementos com a classe pixel
+// atribuir um bg white
