@@ -10,8 +10,8 @@ mainColor;
 function makeBoard(tamanho) {
     let destiny = document.querySelector('#pixel-board');
 
-    if (tamanho > 10) {
-        return 'Tamanho maximo e 10.'
+    if (tamanho > 50) {
+        return 'Tamanho maximo e 50.'
     }
     for (let index = 1; index <= tamanho; index += 1) {
         let lines = document.createElement('div');
@@ -91,13 +91,11 @@ function turnWhite() {
     let pixels = document.getElementsByClassName('pixel');
 
     button.addEventListener('click', function(){
-        for (let index = 0; index < pixels.length; index += 1){
+        for (let index = 0; index < pixels.length; index += 1) {
             pixels[index].style.backgroundColor = 'white';
         }
     })
 }
-
-
 turnWhite();
 
 function mouseOver() {
@@ -158,3 +156,18 @@ function mouseOut() {
 
 mouseOver();
 mouseOut();
+
+function paint(pixel) {
+    let colorClass = document.querySelector('.selected');
+    let paintColor = window.getComputedStyle(colorClass,null).getPropertyValue('background-color');
+    pixel.target.style.backgroundColor = paintColor;
+}
+
+function paintPixel(){
+    let pixels = document.querySelectorAll('.pixel');
+    for(let pixel of pixels) {
+        pixel.addEventListener('click', paint);
+    }
+}
+paintPixel();
+
