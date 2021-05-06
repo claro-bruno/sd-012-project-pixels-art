@@ -10,3 +10,12 @@
   display: inline-block;
   border: 1px solid black;
 }
+#buttonContainer {
+  display: inline-block;
+}
+#generate-board {
+  display: inline-block;
+}
+#board-size {
+  display: inline-block
+}
