@@ -1,10 +1,11 @@
 let matriz = 5;
-const cor1 = document.getElementById('color1');
-const cor2 = document.getElementById('color2');
-const cor3 = document.getElementById('color3');
-const cor4 = document.getElementById('color4');
-const botaoGerar = document.getElementById('generate-board');
+let cor1 = document.getElementById('color1');
+let cor2 = document.getElementById('color2');
+let cor3 = document.getElementById('color3');
+let cor4 = document.getElementById('color4');
+let botaoGerar = document.getElementById('generate-board');
 
+corAleatoria();
 gerarBoard(matriz);
 buttonGerar();
 selecionarCor();
@@ -88,3 +89,17 @@ function apagarBoard() {
     div.removeChild(div.lastChild);
   }
 }
+
+function corAleatoria() {
+  cor2.style.backgroundColor = gerarCores();
+  cor3.style.backgroundColor = gerarCores();
+  cor4.style.backgroundColor = gerarCores();
+}
+
+function gerarCores() {
+  return '#' + parseInt((Math.random() * 0xFFFFFF))
+    .toString(16)
+    .padStart(6, '0');
+}
+
+console.log(gerarCores());
