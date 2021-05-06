@@ -1,18 +1,5 @@
-// function givePaletteColor(){
-//     let colors = ["blue","green","red", "black"];
-//     let paletteC = document.querySelectorAll('.color');
-//     for (let index = 0; index < paletteC.length; index +=1){
-//         for (let index2 = 0; index2 < colors.length; index2 +=1){
-//             paletteC[index].style.background = colors[index];
-//         }
-//     };
-// };
-let areaDiv2 = document.getElementById("div2")
 
-
-
-
-
+const areaDiv2 = document.getElementById("div2")
 
 function createBoard(row, column) {
     let createTable = document.createElement('table');
@@ -32,3 +19,39 @@ function createBoard(row, column) {
     createTable.appendChild(tbody);
 }
 createBoard(5, 5);
+
+window.onload = function () {
+    let firstColor = document.querySelector(".color1");
+    firstColor.classList.add("selected");
+};
+
+function colorselector() {
+    let color1 = document.querySelector(".color1");
+    color1.addEventListener('click', function(event) {
+        let activeColor = document.querySelector(".selected");
+        activeColor.classList.remove("selected");
+        event.target.classList.add("selected");
+    })
+
+    let color2 = document.querySelector(".color1");
+    color1.addEventListener('click', function(event) {
+        let activeColor = document.querySelector(".selected");
+        activeColor.classList.remove("selected");
+        event.target.classList.add("selected");
+    })
+    
+    let color3 = document.querySelector(".color1");
+    color1.addEventListener('click', function() {
+        let activeColor = document.querySelector(".selected");
+        activeColor.classList.remove("selected");
+        activeColor.classList.add("selected");
+    })
+
+    let color4 = document.querySelector(".color1");
+    color1.addEventListener('click', function() {
+        let activeColor = document.querySelector(".selected");
+        activeColor.classList.remove("selected");
+        activeColor.classList.add("selected");
+    })
+};
+colorselector();

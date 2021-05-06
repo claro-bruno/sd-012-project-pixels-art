@@ -3,7 +3,6 @@
     background-color: seagreen;
 }
 
-
 .color {
     border: solid black 1px;
     height: 50px;
@@ -31,5 +30,5 @@
     background-color: white;
     height: 40px;
     width: 40px;
-    border: 1px black;
+    border: 1px solid black;
 }
