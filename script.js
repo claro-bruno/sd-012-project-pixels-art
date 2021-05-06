@@ -1,21 +1,13 @@
-window.onload = function BlackColor() {
-  let colorblack = document.getElementsByClassName(".color");
-  for (let index = 0; index < colorblack.length; index+=1 ) { 
-  colorblack[index].classList.remove('selected');
-  }
-  colorblack.classList.add("selected");
-  }
-  BlackColor();
+const colors = document.querySelectorAll('.color');
+const color1 = document.getElementById('black');
+const color2 = document.getElementById('burlywood');
+const color3 = document.getElementById('teal');
+const color4 = document.getElementById('goldenrod');
 
-  //exercicio 9 
-  function clearBoard() {
-    let pixels = document.querySelectorAll('.pixel');
-    for (let key of pixels) {
-      //key.document.style.background = 'white';
-    }
+function removeColor() {
+  const colorPallete = document.querySelectorAll('.color');
+  for (let index = 0; index < colorPallete.length; index += 1) {
+    colorPallete[index].classList.remove('selected');
   }
+}
 
-  function Clear() {
-    let Button = document.getElementById('clear-board');
-    Button.addEventListener('click',clearBoard)
-  }

@@ -1,34 +1,65 @@
-#color-palette {
+#black {
+  background-color: black;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}
+
+#burlywood{
+  background-color: burlywood;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}
+
+#teal {
+  background-color: teal;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}
+
+#goldenrod {
+  background-color: goldenrod;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}
+
+.pixel-board {
+  display: table;
+  border-color: black;
+  border-style: solid;
   border-width: 1px;
 }
 
-.color {
-  padding: 20px;
-  border: solid 1px black;
-  display: inline-block;
+.pixel-lines{
+  display: table-row;
 }
-
-#color-black {
-  background-color: black;
-}
-
-#color-burlywood {
-  background-color: burlywood;
-}
-
-#color-teal {
-  background-color: teal;
-}
-
-#color-goldenrod {
-  background-color: goldenrod;
-}
-
 .pixel {
+  display: table-cell;
   background-color: white;
-  width: 40px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
   height: 40px;
-  border: 1px black solid;
-  margin: -3px;
-  display: inline-block;
-};
+  width: 40px;
+}
+
+#clear-board {
+  margin-top: 15px;
+  height: 30px;
+  width: 90px;
+}
