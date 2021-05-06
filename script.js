@@ -6,7 +6,7 @@ function coresPaleta(array) {
     paletas[index].style.backgroundColor = array[index - 1];
   }
 }
-const paletaCores = ['red', 'white', 'blue'];
+const paletaCores = ['blue', 'green', 'yellow'];
 coresPaleta(paletaCores);
 
 let numberOfLines = 5;
