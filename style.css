@@ -15,3 +15,17 @@
     margin: 3px;
     display: inline-block;
 }
+#pixel-board {
+    top: 150px;
+    height: 175px; 
+    width: 175px;  
+}
+.pixel {
+    top: 75px;
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    margin:0px;
+    background-color: white; 
+}
