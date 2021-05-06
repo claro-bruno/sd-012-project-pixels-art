@@ -3,7 +3,6 @@ body {
   background-image: url('./images/sky.png');
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: pixel-li;
 }
 
 #title {
@@ -11,6 +10,7 @@ body {
   font-size: 120px;
   margin: 10px;
   color: rgb(130, 183, 221);
+  font-family: pixel-li, sans-serif;
 }
 
 #color-palette {
@@ -48,6 +48,7 @@ body {
   color: white;
   font-size: 30px;
   margin-left: 40px;
+  font-family: pixel-li, sans-serif;
 }
 
 #board-size:focus {
@@ -86,9 +87,10 @@ body {
 .btn {
   background-color: transparent;
   border: none;
-  color:white;
+  color: white;
   font-size: 30px;
   margin-left: 15px;
+  font-family: pixel-li, sans-serif;
 }
 
 .btn:hover {
