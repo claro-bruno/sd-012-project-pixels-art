@@ -146,17 +146,18 @@ function startEverithing() {
   buttonConfirm.addEventListener('click', () => {
     const inputValue = document.querySelector('#board-size');
     if (inputValue.value === '') {
-      return alert('Board inválido!');
+      alert('Board inválido!');
+    } else {
+      let linhas = parseInt(inputValue.value, 10);
+      if (linhas < 5) {
+        linhas = 5;
+        inputValue.value = '5';
+      } else if (linhas > 50) {
+        linhas = 50;
+        inputValue.value = '50';
+      }
+      createBoard(linhas);
     }
-    let linhas = parseInt(inputValue.value, 10);
-    if (linhas < 5) {
-      linhas = 5;
-      inputValue.value = '5';
-    } else if (linhas > 50) {
-      linhas = 50;
-      inputValue.value = '50';
-    }
-    createBoard(linhas);
   });
 }
 
