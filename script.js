@@ -17,7 +17,6 @@ function preencherBoard (tamanho) {
             pixel.style.border = '1px solid black';
             pixel.style.position = 'relative';
             pixel.style.display = 'inline-block';
-            pixel.style.verticalAlign = 'top';
             pixelBoard.appendChild(pixel);
         }
         let quebrar = document.createElement('br');
@@ -63,7 +62,7 @@ function mudarTamanho () {
     } else if (inputValue.value > 50) {
         removerBoard ();
         preencherBoard(50);
-    } else if (inputValue < 5) {
+    } else if (inputValue.value < 5) {
         removerBoard ();
         preencherBoard(5);
     } else {
