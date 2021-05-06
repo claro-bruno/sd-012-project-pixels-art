@@ -1,6 +1,17 @@
+const coresPainel = ['black', 'red', 'blue', 'green'];
+const idColorPalette = document.getElementById('color-palette');
+
+for (let index = 0; index < coresPainel.length; index += 1) {
+  const liColor = document.createElement('li');
+  liColor.className = 'color';
+  liColor.id = coresPainel[index];
+  liColor.innerText = coresPainel[index];
+  idColorPalette.appendChild(liColor);
+}
+
 const quadroPixel = document.querySelector('#pixel-board');
 
-for (let indexUl = 1; indexUl <= 5; indexUl += 1) {
+for (let indexDiv = 1; indexDiv <= 5; indexDiv += 1) {
   const divQuadro = document.createElement('div');
   divQuadro.className = 'ulDivPixel';
   quadroPixel.appendChild(divQuadro);
@@ -32,6 +43,7 @@ corGreen.addEventListener('click', alteraCor);
 
 const arrayColor = document.querySelectorAll('.color');
 let cor = 'black';
+
 for (let index = 0; index < arrayColor.length; index += 1) {
   arrayColor[index].addEventListener('click', () => {
     cor = arrayColor[index].innerText;
@@ -39,6 +51,7 @@ for (let index = 0; index < arrayColor.length; index += 1) {
 }
 
 const quadroPintura = document.getElementsByClassName('pixel');
+
 for (let index = 0; index < quadroPintura.length; index += 1) {
   quadroPintura[index].addEventListener('click', () => {
     quadroPintura[index].style.backgroundColor = cor;

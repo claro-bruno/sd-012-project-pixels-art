@@ -1,3 +1,7 @@
+body {
+  text-align: center;
+}
+
 .color , .pixel {
   border-color: black;
   border-style: solid;
@@ -9,50 +13,46 @@
 
 .ulDivPixel {
   height: 41px;
-  width: 210px;
+  width: 220px;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pixel {
   background-color: white;
 }
 
-#black {
-  background-color: black;
-  color: black;
+#black , #red , #blue , #green {
   font-size: 1px;
 }
 
+#black {
+  background-color: black;
+  color: black;
+}
 
 #red {
   background-color: red;
   color: red;
-  font-size: 1px;
 }
 
 #blue {
   background-color: blue;
   color: blue;
-  font-size: 1px;
 }
 
 #green {
   background-color: green;
   color: green;
-  font-size: 1px;
-}
-
-.selected {
-  background-color: black;
-  font-size: 1px;
 }
 
 #clear-board {
   background-color: cornflowerblue;
   color: white;
   font-size: 20px;
-  margin-left: 108px;
 }
 
-#color-palette , h1 {
-  margin-left: 15px;
+#color-palette , #pixel-board {
+  padding-left: 0%;
 }
