@@ -122,7 +122,7 @@ function createInput() {
   input.type = 'number';
   input.style.width = '40px';
   input.value = 5;
-  input.min = 5;
+  input.min = 1;
   input.max = 50;
   input.id = 'board-size';
   document.body.insertBefore(input, document.body.children[3]);
