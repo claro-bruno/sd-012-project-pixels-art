@@ -32,10 +32,9 @@ function quadroPixels() {
 
 quadroPixels()
 
-//funções para colorir pixels de preto
+//requisitos 6 e 7
 
-//1-função que define a cor preta (da paleta de cores) como inicial (com classe selected)
-let listaCores = document.getElementsByClassName('color');
+//requisito 6 - função que define a cor preta (da paleta de cores) como inicial (com classe selected)
 function setBlackAsDefault(){
     let corSelecionada = document.getElementById('black');
     corSelecionada.className = 'color selected';
@@ -43,16 +42,23 @@ function setBlackAsDefault(){
 
 setBlackAsDefault();
 
-// //2-função que adiciona event listeners
-// function addPixelEvent(){
-//     let listaPixels = document.getElementsByClassName('pixel'); //captura lista de pixels html
-//         for (index3 = 0; index3 < listaPixels.length; index3 += 1){
-//             let pixelListener = listaPixels[index3];
-//             pixelListener.addEventListener('click', colorirPixel);
-//         };
-// };
+//requisito 7 - função que adiciona eventos click na paleta e seleciona cores
+function adicionaEventosPaleta(){
+    let listaCores = document.getElementsByClassName('color');     //captura lista de cores paleta html
+    for (index3 = 0; index3 < listaCores.length; index3 += 1){
+        let corPaleta = listaCores[index3];
+        corPaleta.addEventListener('click', function() {
+            let corSelecionadaAntes = document.getElementsByClassName('color selected')[0]; //captura cor já selecionada
+            if (corPaleta.className = 'color'){
+                corSelecionadaAntes.classList.remove('selected')
+                corPaleta.className = 'color selected'
+            };
 
-// addPixelEvent();
+        });
+    };
+};
+
+adicionaEventosPaleta();
 
 // //3-função que faz mudar a cor para preto
 
