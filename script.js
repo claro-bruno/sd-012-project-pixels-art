@@ -47,3 +47,34 @@ function addingEventListenersToPixels(elements) {
     });
   }
 }
+
+addingEventListenersToPixels(pixels);
+
+function clearingTheBoard() {
+  const button = document.querySelector('#clear-board');
+  button.addEventListener('click', () => {
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
+    }
+  });
+}
+
+clearingTheBoard();
+
+const inputButton = document.querySelector('#generate-board');
+const input = document.querySelector('#board-size');
+
+function changingBoardSize() {
+  inputButton.addEventListener('click', () => {
+    if (input.value === '') return alert('Board inválido!');
+    const divsRowsPixels = pixelBoard.querySelectorAll('.tr');
+    for (let index = 0; index < divsRowsPixels.length; index += 1) {
+      pixelBoard.removeChild(divsRowsPixels[index]);
+    }
+    if (input.value < 5) input.value = 5;
+    if (input.value > 50) input.value = 50;
+    creatingPixelBoardRows(input.value);
+    pixels = document.querySelectorAll('.pixel');
+    addingEventListenersToPixels(pixels);
+  });
+}
