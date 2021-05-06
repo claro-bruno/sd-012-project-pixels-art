@@ -30,10 +30,22 @@ for(let colunaIndex = 0; colunaIndex < pixelLinhas.length; colunaIndex +=1 ){
   
     
 }
-window.onload = corInicial;
-function corInicial(){
+//window.onload = corInicial;
+//function corInicial(){
     let buscaColor = document.querySelector('.color');
     buscaColor.classList.add('selected');
+
+
+
+window.onload = corDiferente;
+function corDiferente(){
+    let mudaCor = document.getElementsByClassName('selected');
+    let recebeCor = document.getElementById('color-palette');
+    recebeCor.addEventListener('click', function(event) {
+    mudaCor[0].className = 'color';
+    event.target.className = 'color selected';
+    })
+        
 }
 
 
