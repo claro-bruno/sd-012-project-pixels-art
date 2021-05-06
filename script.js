@@ -1,7 +1,11 @@
 const table = document.querySelector('#pixel-board');
 const colors = document.querySelectorAll('.color');
-const pixels = document.querySelectorAll('.pixel');
+const pixels = document.getElementsByClassName('pixel');
 
+for (let indexColor = 0; indexColor < colors.length; indexColor += 1) {
+  let colorsArray = ['black', 'blue', 'darksalmon', 'darkseagreen'];
+  colors[indexColor].style.backgroundColor = colorsArray[indexColor];
+}
 
 function createSquares(numberOfLines) {
   for (let index = 0; index < numberOfLines; index += 1) {
@@ -28,4 +32,13 @@ function changeSelected(event) {
 
 for (let index3 = 0; index3 < colors.length; index3 += 1) {
   colors[index3].addEventListener('click', changeSelected);
+}
+
+function changeColor(event) {
+  const selected = document.querySelector('.selected');
+  event.target.style.backgroundColor = selected.style.backgroundColor;
+}
+
+for (let index4 = 0; index4 < pixels.length; index4 += 1) {
+  pixels[index4].addEventListener('click', changeColor);
 }
