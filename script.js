@@ -18,3 +18,11 @@ function selectColor(eventOrigem) {
          document.getElementById(idClick).className = "color selected";
      }
  }
+
+ let targetColor = document.getElementById("pixel-board");
+ targetColor.addEventListener("click", transferColor);
+
+ function transferColor(eventChange) {
+     let toColor = document.querySelector(".selected").id;
+     eventChange.target.style.backgroundColor = toColor;
+ }
