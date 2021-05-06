@@ -75,3 +75,28 @@ function selectColor() {
 }
 selectColor();
 
+function makeButton(string) {
+    let button = document.createElement('button');
+    let destiny = document.querySelector('#buttonSpace');
+
+    button.innerHTML = 'Limpar';
+    button.id = 'clear-board';
+
+    destiny.appendChild(button);
+}
+makeButton('Limpar');
+
+function turnWhite() {
+    let button = document.querySelector('#clear-board');
+    let pixels = document.getElementsByClassName('pixel');
+
+    button.addEventListener('click', function(){
+        for (let index = 0; index < pixels.length; index += 1){
+            pixels[index].style.backgroundColor = 'white';
+        }
+    })
+}
+
+
+turnWhite();
+
