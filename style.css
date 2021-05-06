@@ -1,9 +1,14 @@
-body {
+table,
+th,
+td {
+  border-collapse: collapse;
 }
 #color-palette li {
   display: inline-block;
 }
 .color {
+  width: 40px;
+  height: 40px;
   border: 1px solid;
 }
 .black {
@@ -18,7 +23,7 @@ body {
 .green {
   background-color: green;
 }
-.pixel {
+#pixel-board .pixel {
   border: 1px solid black;
   width: 40px;
   height: 40px;
