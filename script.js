@@ -52,7 +52,7 @@ for (let i = 0; i < clickedPixel.length; i += 1) {
 const clearButton = document.createElement('button');
 clearButton.id = 'clear-board';
 document.body.appendChild(clearButton);
-clearButton.innerText = 'Limpar';
+clearButton.innerText = 'Limpar desenho';
 clearButton.style.margin = '10px';
 clearButton.style.padding = '4px';
 
