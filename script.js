@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const colors = document.querySelectorAll('.color');
 const colorPalette = document.getElementById('color-palette');
 colorPalette.addEventListener('click', (event) => {
@@ -16,15 +17,16 @@ pixelBoard.addEventListener('click', (event) => {
   const changeColor = document.querySelector('.selected');
   const backgroundColor = window.getComputedStyle(changeColor).getPropertyValue('background');
   if (event.target.classList.contains('pixel')) {
-  // eslint-disable-next-line no-param-reassign
-    event.target.style.background = backgroundColor;
+    // eslint-disable-next-line no-return-assign
+    return event.target.style.background = backgroundColor;
   }
 });
 
 const pixels = document.getElementsByClassName('pixel');
 const clear = document.getElementById('clear-board');
-clear.addEventListener('click', () => {
+function clearBoard() {
   for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].style.backgroundColor = '#FFFFFF';
+    pixels[index].style.backgroundColor = 'white';
   }
-});
+}
+clear.addEventListener('click', clearBoard);
