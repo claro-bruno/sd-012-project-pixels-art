@@ -11,18 +11,17 @@ function makePalette(arrayColor) {
 }
 makePalette(colors);
 
-// Função que criar linha de pixel de forma dinâmica
-for (let index = 0; index < 5; index += 1) {
-  // criar a divLinha
-  const divLine = document.createElement('div');
-  divLine.className = 'pixel-line';
-  // criar os pixels e copular a divLinha
-  for (let index2 = 0; index2 < 5; index2 += 1) {
-    const divPixel = document.createElement('div');
-    divPixel.className = 'pixel';
-    divLine.appendChild(divPixel);
+function makerBoardPixel(size) {
+  for (let index = 0; index < size; index += 1) {
+    const divLine = document.createElement('div');
+    divLine.className = 'pixel-line';
+    for (let index2 = 0; index2 < size; index2 += 1) {
+      const divPixel = document.createElement('div');
+      divPixel.className = 'pixel';
+      divLine.appendChild(divPixel);
+    }
+    const divBoard = document.querySelector('section');
+    divBoard.appendChild(divLine);
   }
-  // copular a section com a divLinha e seus pixels
-  const divBoard = document.querySelector('section');
-  divBoard.appendChild(divLine);
 }
+makerBoardPixel(5);
