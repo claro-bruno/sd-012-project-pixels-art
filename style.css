@@ -35,9 +35,5 @@ border: black solid 1px;
 #pixel-board {
     width: 250px;
     height: 250px;
-    position: relative;
 }
 
-.selected {
-    
-}
