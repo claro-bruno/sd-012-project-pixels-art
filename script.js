@@ -91,8 +91,7 @@ window.onload = function () {
     buttonGenerate.addEventListener('click', function () {
       const boardSize = input.value;
       if (boardSize.length !== 0) {
-        boardSizeRange(boardSize);
-        fillBoard(boardSize);
+        fillBoard(boardSizeRange(boardSize));
       } else {
         alert('Board inválido!');
       }
