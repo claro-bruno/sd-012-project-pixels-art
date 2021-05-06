@@ -78,3 +78,22 @@ for (let pix = 0; pix < pixels.length; pix += 1) {
     }
   });
 }
+
+//Cria botão limpar board
+function createButtonClear() {
+  let buttonClear = document.createElement('button');
+  buttonClear.id = 'clear-board';
+  buttonClear.innerHTML = 'Limpar';
+  document.querySelector('#container-button').appendChild(buttonClear);
+}
+createButtonClear();
+
+// Cria event de limpar os pixels
+let buttonClear = document.querySelector('#clear-board');
+buttonClear.addEventListener('click', clearBoard);
+function clearBoard() {
+  let pixels = document.querySelectorAll('.pixel');
+  for (let pix = 0; pix < pixels.length; pix += 1) {
+    pixels[pix].style.backgroundColor = 'white';
+  }
+}
