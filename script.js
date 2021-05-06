@@ -26,7 +26,7 @@ function paletasCores(arrayColor) {
     }
   }
 }
-console.log(paletasCores(['black', 'red', 'purple', 'green']));
+paletasCores(['black', 'red', 'purple', 'green']);
 
 function criandoQuadrado(tamanho) {
   let getPixelContainer = document.querySelector('#pixel-board');
@@ -44,11 +44,11 @@ function criandoQuadrado(tamanho) {
 
   for (let index = 0; index < getTrContainer.length; index += 1) {
     //SEgunda iteração - index=1 - getTrContainer[1] - Segunda linha!
-    console.log(getTrContainer[index]);
     for (let colunaIndex = 0; colunaIndex < tamanho; colunaIndex += 1) {
       //Criando o segundo pixel
       let pixelColuna = document.createElement('td');
       pixelColuna.className = 'pixel';
+      pixelColuna.style.backgroundColor = 'white';
       //Inserindo na primeira linha o primeiro pixel!
       getTrContainer[index].appendChild(pixelColuna);
     }
@@ -59,7 +59,22 @@ criandoQuadrado(5);
 
 // Exercicio 6:
 
+// window.onload = function () {
+let firstColor = document.querySelector('.color');
+firstColor.className = 'color selected';
+// };
+
+// Exercicio 7:
+
 window.onload = function () {
-  let firstColor = document.querySelector('.color');
-  firstColor.classList.add('selected');
+  let colorContainer = document.querySelector('ul');
+  // let corSelecionada = document.querySelector('.selected');
+
+  colorContainer.addEventListener('click', function (event) {
+    let corSelecionada = document.querySelector('.selected');
+    console.log(corSelecionada);
+    corSelecionada.className = 'color';
+    console.log(corSelecionada);
+    event.target.className = 'color selected';
+  });
 };
