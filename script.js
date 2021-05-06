@@ -16,7 +16,7 @@ pixelBoard.addEventListener('click', (event) => {
   const changeColor = document.querySelector('.selected');
   const backgroundColor = window.getComputedStyle(changeColor).getPropertyValue('background');
   if (event.target.classList.contains('pixel')) {
-    // eslint-disable-next-line no-param-reassign
+  // eslint-disable-next-line no-param-reassign
     event.target.style.background = backgroundColor;
   }
 });
@@ -25,6 +25,6 @@ const pixels = document.getElementsByClassName('pixel');
 const clear = document.getElementById('clear-board');
 clear.addEventListener('click', () => {
   for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].style.backgroundColor = '#ffffff';
+    pixels[index].style.backgroundColor = '#FFFFFF';
   }
 });
