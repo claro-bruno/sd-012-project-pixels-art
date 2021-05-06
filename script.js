@@ -25,3 +25,8 @@ function initialColor(id) {
   let initialColor = document.getElementById(id);
   initialColor.className += 'selected';
 }
+function changeSelect(element) {
+  let selected = document.querySelector('.selected');
+  selected.className = 'color';
+  elemento.target.className += 'selected';
+}
