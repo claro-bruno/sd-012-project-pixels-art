@@ -28,3 +28,17 @@ color1.addEventListener('click', colorChange);
 color2.addEventListener('click', colorChange);
 color3.addEventListener('click', colorChange);
 color4.addEventListener('click', colorChange);
+
+function colorPixel() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', (event) => {
+      const paletteSelected = document.querySelector('.selected');
+      const pixelClick = event.target;
+      const color = paletteSelected.style.backgroundColor;
+      pixelClick.style.backgroundColor = color;
+      console.log(paletteSelected.style.backgroundColor);
+    });
+  }
+}
+colorPixel();
