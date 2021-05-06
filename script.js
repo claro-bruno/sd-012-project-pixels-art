@@ -1,18 +1,30 @@
-let blackSquare = document.querySelector('#color1');
+let blackSquare = document.querySelectorAll('.color')[0];
 blackSquare.style.backgroundColor = 'black'
 
-let redSquare = document.querySelector('#color2');
+let redSquare = document.querySelectorAll('.color')[1];
 redSquare.style.backgroundColor = 'red'
 
-let yellowSquare = document.querySelector('#color3');
+let yellowSquare = document.querySelectorAll('.color')[2];
 yellowSquare.style.backgroundColor = 'yellow'
 
-let greenSquare = document.querySelector('#color4');
+let greenSquare = document.querySelectorAll('.color')[3];
 greenSquare.style.backgroundColor = 'green'
 
 
-document.onload = () => {
-    let firstSquare = document.querySelector('.color')[0];
-    firstSquare.className('selected')
-    firstSquare.style.backgroundColor= 'black'
-}
+
+
+document.addEventListener('click', function(event){
+    let target = event.target
+
+    if (target.classList.contains('pixel')) {
+        target.style.backgroundColor = selected;
+    }
+    if (target.classList.contains('color')) {
+        for (let item of target.parentNode.children) {
+            item.className = ('color');
+        }
+        target.className = ('color selected');
+        selected = window.getComputedStyle(target).backgroundColor;
+    } 
+});
+
