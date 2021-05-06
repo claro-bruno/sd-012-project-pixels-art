@@ -1,5 +1,5 @@
 let coresPaleta = document.querySelectorAll('.color');
-console.log(coresPaleta);
+
 coresPaleta[0].style.backgroundColor = 'black';
 coresPaleta[1].style.backgroundColor = 'red';
 coresPaleta[2].style.backgroundColor = 'blue';
@@ -29,15 +29,6 @@ function corPixel(cor) {
   }
 }
 
-function corPixel(cor) {
-  let pixel = document.querySelectorAll('.pixel');
-  for (index = 0; index < pixel.length; index += 1) {
-    pixel[index].addEventListener ('click', function(event) {
-      event.target.style.backgroundColor = cor;
-    })
-  }
-}
-
 for (index = 0; index < coresPaleta.length; index += 1) {
   coresPaleta[index].addEventListener ('click', function(event) {
     let colorSelected = document.querySelector('.selected');
@@ -48,3 +39,8 @@ for (index = 0; index < coresPaleta.length; index += 1) {
     }    
   })
 }
+
+localStorage.setItem('corInicial', coresPaleta[0].style.backgroundColor);
+let corInicial = localStorage.getItem ('corInicial');
+if (corInicial) corPixel (corInicial);
+
