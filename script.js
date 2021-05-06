@@ -16,7 +16,7 @@ let areaDiv2 = document.getElementById("div2")
 
 function createBoard(row, column) {
     let createTable = document.createElement('table');
-    createTable.className = "pixel-board";
+    createTable.id = "pixel-board";
     let tbody = document.createElement('tbody');
     areaDiv2.appendChild(createTable)
 
