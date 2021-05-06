@@ -1,13 +1,16 @@
-function coresPaleta(array) {
+function coresPaleta() {
   const paletas = document.getElementsByClassName('color');
   paletas[0].style.backgroundColor = 'black';
   paletas[0].classList.add('selected');
   for (let index = 1; index < paletas.length; index += 1) {
-    paletas[index].style.backgroundColor = array[index - 1];
+    let randomColor = [];
+    for (let index = 0; index <= 2; index += 1) {
+      randomColor.push(Math.round(Math.random()*255));
+    }
+    paletas[index].style.backgroundColor = `rgb(${randomColor})`;
   }
 }
-const paletaCores = ['blue', 'green', 'yellow'];
-coresPaleta(paletaCores);
+coresPaleta();
 
 let linesContainer = document.getElementById('pixel-board');
 
