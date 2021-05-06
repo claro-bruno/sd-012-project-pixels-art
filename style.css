@@ -1,0 +1,35 @@
+* {
+  /* box-sizing: border-box; */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin-left: 20px;
+}
+
+.color {
+  border: 1px solid rgb(0, 0, 0);
+  display: inline-block;
+  margin-right: 10px;
+  height: 42px;
+  width: 42px;
+}
+
+#pixel-board {
+  background-color: saddlebrown;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  height: 200px;
+  width: 210px;
+}
+
+.pixel {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+}
