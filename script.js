@@ -41,10 +41,17 @@ for (index = 0; index < palleteColors.length; index +=1){
     });
 }
 
-
 localStorage.setItem("initColor", palleteColors[0].style.backgroundColor);
 let initColor = localStorage.getItem("initColor")
     if(initColor) pixelsColors (initColor);
 
-    
-
+function clearPixel (){
+    let pixel = document.querySelectorAll(".pixel")
+    let clearBox = document.querySelector("#clear-board")
+    clearBox.addEventListener("click", function(cor){
+    for(index = 0; index < pixel.length; index += 1){
+    pixel[index].style.backgroundColor = "white";
+        }
+    });
+}
+clearPixel()
