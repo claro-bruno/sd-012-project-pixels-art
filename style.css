@@ -21,3 +21,37 @@ body{
     padding: 0.5rem 1rem;
     background-color: lightskyblue
 }
+
+#color-palette {
+    display: flex;
+    flex: row;
+    justify-content: center;
+    padding: 40px;
+}
+
+.color {
+    border: solid black 1px;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+
+.preta {
+    background-color: black;
+}
+
+.azul-claro {
+    background-color: lightskyblue;
+}
+
+.azul-escuro {
+    background-color: mediumblue;
+}
+
+.clara {
+    background-color: #fefefe;
+}
+
+.rosto {
+    background-color: oldlace;;
+}
