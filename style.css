@@ -1,11 +1,11 @@
 #color-palette {
-        display: inline-flex;
+    display: inline-flex;
 }
 
 .color {
-        border: 1px solid black;
-        height: 50px;
-        width: 50px;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
 }
 
 #first-div {
