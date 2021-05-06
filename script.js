@@ -55,19 +55,17 @@ window.onload = function () {
       const currentPixel = listOfPixels[index];
 
       currentPixel.addEventListener('click', (e) => {
-        e.target.style.backgroundColor = document.querySelector(
-          '.selected'
-        ).style.backgroundColor;
+        e.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
       });
     }
   }
 
   function clearBoard() {
-    let btn = document.querySelector('#clear-board');
+    const btn = document.querySelector('#clear-board');
 
     btn.addEventListener('click', () => {
       for (let index = 0; index < listOfPixels.length; index += 1) {
-        let currentPixel = listOfPixels[index];
+        const currentPixel = listOfPixels[index];
         currentPixel.style.backgroundColor = 'white';
       }
     });
@@ -78,13 +76,13 @@ window.onload = function () {
     pixelBoard.removeChild(pixelBoard.firstElementChild);
   }
 
-  function generateBoard(boardSize) {
+  function generateBoard() {
     const table = document.createElement('table');
 
-    for (let index = 0; index < boardSize; index += 1) {
+    for (let indexTr = 0; indexTr < boardSize; indexTr += 1) {
       const tr = document.createElement('tr');
 
-      for (let index = 0; index < boardSize; index += 1) {
+      for (let indexTd = 0; indexTd < boardSize; indexTd += 1) {
         const td = document.createElement('td');
         td.className = 'pixel';
         tr.appendChild(td);
@@ -104,22 +102,21 @@ window.onload = function () {
       if (input.value === '') {
         alert('Board inválido!');
       } else if (input.value > 50) {
-         boardSize = 50;
+        boardSize = 50;
       } else if (input.value < 5) {
-         boardSize = 5;
+        boardSize = 5;
       } else {
-         boardSize = parseInt(input.value);
+        boardSize = parseInt(input.value, 10);
       }
 
       input.value = '';
       killBoard();
-      generateBoard(boardSize);
+      generateBoard();
       listOfPixels = document.querySelectorAll('.pixel');
       changePixelsColor();
       clearBoard();
     });
   }
-
 
   clickInputButton();
   setInitialColors();
