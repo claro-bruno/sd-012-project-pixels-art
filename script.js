@@ -1,4 +1,6 @@
 let colors = document.getElementsByClassName("color");
+let pixels = document.getElementsByClassName("pixel");
+let clearBoard = document.getElementById("clear-board");
 
 document.addEventListener("click", function (event) {
     let colorSelected = document.getElementsByClassName("selected")[0];
@@ -12,5 +14,11 @@ document.addEventListener("click", function (event) {
 
     if(event.target.classList.contains("pixel")) {
         event.target.style.backgroundColor = getComputedStyle(colorSelected).getPropertyValue("background-color");
+    }
+
+    if(event.target == clearBoard) {
+        for (let index = 0; index < pixels.length; index += 1) {
+            pixels[index].style.backgroundColor = "white";
+        }
     }
 })
