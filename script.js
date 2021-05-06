@@ -6,7 +6,7 @@ function createPalette() {
     let createDivs = document.createElement('div');
     createDivs.className = 'color';
     createDivs.style.backgroundColor = colors[index];
-    createDivs.id = 'uncolored';
+    createDivs.id = 'choseColor';
     divs.appendChild(createDivs);
     } 
 }
@@ -41,7 +41,16 @@ function selecteBlack() {
 }
 selecteBlack();
 
-let clickColors = document.querySelectorAll('.color');
-clickColors.addEventListener("click", function () {
-    console.log('funcionou');
-})
+
+let  choseColor = document.querySelectorAll('#choseColor');
+
+choseColor.addEventListener('click', selectColor);
+
+function selectColor(event) {
+    if (choseColor.className === 'color selected'){
+        event.target.className = 'color';
+    } else {
+        event.target.className = 'color selected';
+    }
+}
+selectColor();
