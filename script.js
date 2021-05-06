@@ -74,7 +74,7 @@ changeColor();
 
 function clearBoard() {
   const clearButton = document.getElementById('clear-board');
-  const pixels = document.querySelectorAll('.pixel-size');
+  const pixels = document.querySelectorAll('.pixel');
 
   clearButton.addEventListener('click', function () {
     for (let index = 0; index < pixels.length; index += 1) {
