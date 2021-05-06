@@ -1,14 +1,23 @@
 @font-face {
-    font-family: 'minecraftmedium';
+    font-family: minecraftmedium;
     src: url('minecraft.woff2') format('woff2'),
          url('minecraft.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
 
+body{
+    margin: 0;
 }
 
 #title {
     text-align: center;
     font-size: 50px;
-    font-family: 'minecraftmedium';
+    font-family: minecraftmedium;
+}
+
+.navbar{
+    position: relative;
+    padding: 0.5rem 1rem;
+    background-color: lightskyblue
 }
