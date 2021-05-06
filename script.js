@@ -55,8 +55,8 @@ const limparTelaDePintura = () => {
   }
 };
 
-// const selecionarCor = (elementoClicado) => {
-//   const paletaDeCor = document.querySelectorAll('.selected');
-//   elementoClicado.className += ' selected';
-//   console.log('clicado');
-// };
+const selecionarCor = (elementoClicado) => {
+  const paletaDeCor = document.querySelector('.selected');
+  paletaDeCor.classList.remove('selected');
+  elementoClicado.className += ' selected';
+};
