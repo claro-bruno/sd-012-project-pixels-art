@@ -31,16 +31,15 @@ function changeSelected() {
     let fourthColor = document.querySelector('#fourth-div');
 
 
-    firstColor.addEventListener('click', selectedColor(event));
-    secondColor.addEventListener('click', selectedColor(event));
-    thirdColor.addEventListener('click', selectedColor(event));
-    fourthColor.addEventListener('click', selectedColor(event));
+    firstColor.addEventListener('click', selectedColor());
+    secondColor.addEventListener('click', selectedColor());
+    thirdColor.addEventListener('click', selectedColor());
+    fourthColor.addEventListener('click', selectedColor());
 
     function selectedColor(event){ //Através da contribuição do colega André Moreno no Slack conheci a propriedade target event.
         let replaced = document.querySelector('.selected');
         replaced.classList.remove('.selected');
-        event.target.classList.add('selected');
-    }
-
-    
+        let clicked = event.target;
+        clicked.className = "collor selected";
+    }    
 }
