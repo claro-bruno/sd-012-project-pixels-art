@@ -14,17 +14,20 @@ header{
   height: 80px;
   display: inline-block;
 }
-.black{
+#black{
   background-color: black;
 }
-.red{
+#red{
   background-color: red;
 }
-.silver{
+#silver{
   background-color: silver;
 }
-.golden{
+#golden{
   background-color: gold;
+}
+.selected{
+
 }
 
 #pixel-board{
