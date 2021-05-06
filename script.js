@@ -29,16 +29,19 @@ O que será verificado:
 Verifica se a primeira cor da paleta é preta
 Verifica se as demais cores podem ser escolhidas livremente. */
 
-let colorPalette = document.createElement('div')
-document.body.appendChild(colorPalette)
-colorPalette.id = 'color-palette'
-let colorList = ['black', 'red', 'green', 'blue']
-for (color of colorList) {
-    let colorItem = document.createElement('div')
-    colorItem.className = 'color'
-    colorItem.style.backgroundColor = color
-    colorPalette.appendChild(colorItem)
+function adicionaPaleta () {
+    let colorPalette = document.createElement('div');
+    document.body.appendChild(colorPalette);
+    colorPalette.id = 'color-palette';
+    let colorList = ['black', 'red', 'green', 'blue'];
+    for (color of colorList) {
+        let colorItem = document.createElement('div');
+        colorItem.className = 'color';
+        colorItem.style.backgroundColor = color;
+        colorPalette.appendChild(colorItem);
+    }
 }
+adicionaPaleta();
 
 /* 4 - Adicione à página um quadro de pixels, com 25 pixels.
 O quadro de "pixels" deve ter 5 elementos de largura e 5 elementos de comprimento;
@@ -81,21 +84,24 @@ CSS
 }
 .td{ 
     display: table-cell; } */
-let pixelBoard = document.createElement('div')
-document.body.appendChild(pixelBoard)
-pixelBoard.id = 'pixel-board'
-let pixelLines = 5;
-let pixelColumns = 5;
-for (let lineIndex = 0; lineIndex < pixelLines; lineIndex += 1) {
-    let line = document.createElement('div')
-    pixelBoard.appendChild(line)
-    line.className = 'line'
-    for (let columnIndex = 0; columnIndex < pixelColumns; columnIndex += 1) {
-        let pixel = document.createElement('div')
-        line.appendChild(pixel)
-        pixel.className = 'pixel'
+function adicionaQuadro () {
+    let pixelBoard = document.createElement('div');
+    document.body.appendChild(pixelBoard);
+    pixelBoard.id = 'pixel-board';
+    let pixelLines = 5;
+    let pixelColumns = 5;
+    for (let lineIndex = 0; lineIndex < pixelLines; lineIndex += 1) {
+        let line = document.createElement('div');
+        pixelBoard.appendChild(line);
+        line.className = 'line';
+        for (let columnIndex = 0; columnIndex < pixelColumns; columnIndex += 1) {
+            let pixel = document.createElement('div');
+            line.appendChild(pixel);
+            pixel.className = 'pixel';
+        }
     }
 }
+adicionaQuadro();
 // window.onload
 
 
@@ -112,4 +118,38 @@ function verificaTamanho () {
     console.log(` pixel height: ${elementHeight}\n pixel width: ${elementWidth}`)
 }
 verificaTamanho();
-// CSS: .pixel{box-sizing: border-box}
+// Dica CSS: .pixel{box-sizing: border-box}
+
+
+/* 6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels
+O elemento da cor preta deve possuir, inicialmente, a classe selected;
+
+Note que o elemento que deverá receber a classe selected deve ser um dos elementos que possuem a classe color, como especificado no requisito 2.
+
+O que será verificado:
+
+Verifica se o elemento da cor preta possui, inicialmente, a classe selected
+
+Verifica se nenhuma outra cor da paleta tem a classe selected */
+
+function selecionaCorInicial () {
+    let colorPalette = document.getElementsByClassName('color');
+    for (colorItem of colorPalette) {
+        if (colorItem.style.backgroundColor !== 'black') {
+            colorItem.classList.remove('selected');
+        } else {
+            colorItem.classList.add('selected')
+        }
+    }
+}
+selecionaCorInicial();
+/* Credito: https://www.w3schools.com/howto/howto_js_remove_class.asp */
+
+
+
+
+
+
+
+
+
