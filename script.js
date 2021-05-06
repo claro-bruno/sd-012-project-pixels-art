@@ -14,17 +14,17 @@ const pixelBoard = document.getElementById('pixel-board');
 // a referencia de como usar window.getComputedStyle().getPropertyValue() para colorir background eu peguei em http://www.permadi.com/tutorial/cssGettingBackgroundColor/index.html
 pixelBoard.addEventListener('click', (event) => {
   const changeColor = document.querySelector('.selected');
-  const backgroundColor = window.getComputedStyle(changeColor, null).getPropertyValue('background');
+  const backgroundColor = window.getComputedStyle(changeColor).getPropertyValue('background');
   if (event.target.classList.contains('pixel')) {
     event.target.style.background = backgroundColor;
   }
 });
 
 const pixels = document.querySelectorAll('.pixel');
-const clear = document.getElementById('clear-board');
+const button = document.getElementById('clear-board');
 function clearBoard() {
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
 }
-clear.addEventListener('click', clearBoard);
+button.addEventListener('click', clearBoard);
