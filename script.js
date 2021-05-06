@@ -78,3 +78,22 @@ function changingBoardSize() {
     addingEventListenersToPixels(pixels);
   });
 }
+
+changingBoardSize();
+
+window.onload = () => {
+  const blackColor = document.querySelector('#first-color');
+  blackColor.classList.add('selected');
+  // Ideia retirada de https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+  function randomColors() {
+    const red = Math.random() * 255;
+    const green = Math.random() * 255;
+    const blue = Math.random() * 255;
+
+    return `rgb(${red},${green},${blue})`;
+  }
+
+  for (let color = 1; color < paletteColors.length; color += 1) {
+    paletteColors[color].style.backgroundColor = randomColors();
+  }
+};
