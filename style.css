@@ -1,4 +1,4 @@
-h1, section{
+h1 , section {
   text-align: center;
 }
 
@@ -17,7 +17,7 @@ table {
   margin: 0 auto;
 }
 
-table, tr, td{
+table , tr , td {
   border-spacing: 0;
   border: 1px solid black;
 }
