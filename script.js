@@ -44,9 +44,9 @@ for (let index = 0; index < elements; index += 1) {
 creatPixelBox(5);
 
 // Requisito 6
-function initialColor (color) {
+function initialColor () {
     const initialColor = document.getElementById('color-palete').firstChild;
     initialColor.classList.add('selected');
 }
-initialColor('black');
+initialColor();
 
