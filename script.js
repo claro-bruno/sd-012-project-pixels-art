@@ -30,16 +30,20 @@ corRed.addEventListener('click', alteraCor);
 corBlue.addEventListener('click', alteraCor);
 corGreen.addEventListener('click', alteraCor);
 
-// desafio 8
-
-const quadroPintura = document.getElementsByClassName('pixel');
-
-for (let indexQuadro = 0; indexQuadro < quadroPintura.length; indexQuadro += 1) {
-  quadroPintura[indexQuadro].addEventListener('click', () => {
-    quadroPintura[indexQuadro].style.backgroundColor = 'green';
+const arrayColor = document.querySelectorAll('.color');
+let cor = 'black';
+for (let index = 0; index < arrayColor.length; index += 1) {
+  arrayColor[index].addEventListener('click', () => {
+    cor = arrayColor[index].innerText;
   });
 }
-// desafio 9
+
+const quadroPintura = document.getElementsByClassName('pixel');
+for (let index = 0; index < quadroPintura.length; index += 1) {
+  quadroPintura[index].addEventListener('click', () => {
+    quadroPintura[index].style.backgroundColor = cor;
+  });
+}
 
 const botaoLimpar = document.querySelector('#clear-board');
 const pixels = document.querySelectorAll('.pixel');
