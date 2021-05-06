@@ -2,8 +2,6 @@ let boardSize = 5;
 
 createBoard(boardSize);
 
-changeSelected();
-
 function createBoard (boardSize) {
 
     for (let index = 0; index < boardSize; index += 1) {
