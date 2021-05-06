@@ -32,3 +32,18 @@ function addingEventListenersToPalette(elements) {
     });
   }
 }
+
+addingEventListenersToPalette(paletteColors);
+
+let pixels = document.querySelectorAll('.pixel');
+
+function addingEventListenersToPixels(elements) {
+  for (let index = 0; index < elements.length; index += 1) {
+    elements[index].addEventListener('click', (event) => {
+      const selColor = document.querySelector('.selected');
+      const bgColor = window.getComputedStyle(selColor, null).getPropertyValue('background-color');
+      const pixelClicked = event.target;
+      pixelClicked.style.backgroundColor = bgColor;
+    });
+  }
+}
