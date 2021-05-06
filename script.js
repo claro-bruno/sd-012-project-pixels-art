@@ -64,17 +64,17 @@ function createPixels() {
   });
 }
 
-function inputLength() {
-  const input = document.getElementById('board-size');
+// function inputLength() {
+//   const input = document.getElementById('board-size');
 
-  if (input.value < '5') {
-    input.value = '5';
-  }
-  if (input.value > '50') {
-    input.value = '50';
-  }
-  console.log(input.value);
-}
+//   if (input.value < '5') {
+//     input.value = '5';
+//   }
+//   if (input.value > '50') {
+//     input.value = '50';
+//   }
+//   console.log(input.value);
+// }
 
 window.onload = () => {
   selectedColorPrimary();
@@ -82,5 +82,5 @@ window.onload = () => {
   paintPixels();
   clearPixels();
   createPixels();
-  inputLength();
+  // inputLength();
 };
