@@ -17,3 +17,14 @@ function creatingPixelDivsCollumns(row, colunas) {
     }
 }
 creatingPixelDivs(element);
+
+// window.onload = function () {
+//     let button = document.getElementById('clear-board');
+
+//     button.addEventListener('click', evento);
+
+// }
+
+// function evento() {
+
+// }
