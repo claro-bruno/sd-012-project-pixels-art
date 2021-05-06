@@ -1,16 +1,24 @@
 window.onload = function () {
 
     let colorSelection = document.getElementById('color-palette');
-    let selectedColor = "black";
+    let selectedColor = undefined;
     let boardPixels = document.querySelector('#pixel-board');
     let boardClear = document.querySelector("#clear-board");
     let colors = document.querySelectorAll('.color');
+
+    colors.forEach(element => {
+        if (element.id == "black") {
+            element.classList.add('selected');
+            selectedColor = element.id;
+        }
+    })
 
     colors.forEach(element => {
         if (element.classList.contains('selected')) {
             element.id = selectedColor;
         }
     })
+
 
     createBoard();
 
