@@ -50,8 +50,14 @@ function pintarPixel(event) {
   event.target.style.backgroundColor = cor;   
 }
 
-buttonClick() { 
+function buttonClick() { 
+  let button = document.getElementById('clear-board');
+  button.addEventListener('click', handleButton);   
 }
 
-handleButton() {
+function handleButton() {
+  let listaDePixels = document.querySelectorAll('.pixel');
+  for (let n = 0; n < (matriz**2); n += 1) {
+  listaDePixels[n].style.backgroundColor = 'white';
+  }
 }
