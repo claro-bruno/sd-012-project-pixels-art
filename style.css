@@ -14,11 +14,10 @@ body {
 #pixel-board {
   width: 200px;
   height: 200px;
-  margin: auto;
 }
 
-#controls{
-  width: 30%;
+#controls {
+  width: 13%;
   margin: auto;
   padding: 20px;
 }
@@ -42,7 +41,3 @@ body {
   width: 40px;
   height: 40px;
 }
-/* 
-.clear-board {
-  margin: 20px 48%;
-} */

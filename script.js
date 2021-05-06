@@ -9,16 +9,34 @@ function inputColorsPalett(arrayColors) {
   }
 }
 
-const RGBColors = ['#000000', '#800000', '#008000', '#000080'];
+function randomHex() {
+  let color = '#';
+  for (let index = 0; index < 3; index += 1) {
+    const hex = Math.floor(Math.random() * (255 - 20) + 20).toString(16);
+    color += hex;
+  }
+  return color;
+}
 
-inputColorsPalett(RGBColors);
+function arrayHexColors(qtx) {
+  const arrayColors = ['#000000'];
+  for (let index = 0; index < qtx; index += 1) {
+    const color = randomHex();
+    arrayColors.push(color);
+  }
+  return arrayColors;
+}
+
+const hexColors = arrayHexColors(3);
+
+inputColorsPalett(hexColors);
 
 const pixelBoard = document.getElementById('pixel-board');
 
 function createPixelGrind(size, fatherElement, lineSize) {
   for (let index = 0; index < size; index += 1) {
     const divLine = document.createElement('div');
-    divLine.style.width = lineSize;
+    divLine.style.width = `${lineSize}px`;
     divLine.className = 'pixel-line';
     for (let indexCol = 0; indexCol < size; indexCol += 1) {
       const divColum = document.createElement('div');
@@ -30,7 +48,7 @@ function createPixelGrind(size, fatherElement, lineSize) {
   }
 }
 
-createPixelGrind(5, pixelBoard, '210px');
+createPixelGrind(5, pixelBoard, 210);
 
 function switchClass(event) {
   const selected = document.querySelector('.selected');
@@ -82,16 +100,18 @@ inputPixel.min = 1;
 inputPixel.max = 50;
 cleanBtn.insertAdjacentElement('afterend', inputPixel);
 
-function generatePixels(event) {
-  const size = inputPixel.value;
-  if (size < 5 || size > 50 || !size) return alert('Board inválido!');
+function generatePixels() {
+  let size = inputPixel.value;
+  if (!size) return alert('Board inválido!');
+  if (size < 5) size = 5;
+  if (size > 50) size = 50;
 
   const boardSize = 40 * size;
-  pixelBoard.style.width = boardSize + 'px';
-  pixelBoard.style.height = boardSize + 'px';
+  pixelBoard.style.width = boardSize;
+  pixelBoard.style.height = boardSize;
   pixelBoard.innerHTML = '';
 
-  const lineSize = boardSize + 50 + 'px';
+  const lineSize = boardSize + 50;
 
   createPixelGrind(size, pixelBoard, lineSize);
 }
