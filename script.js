@@ -1,19 +1,19 @@
 window.onload = function () {
   // Cria cores aleatórias
   const generateRandomColor = () => {
-    let randomR = Math.floor(Math.random()*255);
-    let randomG = Math.floor(Math.random()*255);
-    let randomB = Math.floor(Math.random()*255);
+    let randomR = Math.floor(Math.random() * 255);
+    let randomG = Math.floor(Math.random() * 255);
+    let randomB = Math.floor(Math.random() * 255);
     let randomColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
     while (randomColor === 'rgb(255, 255, 255)' || randomColor === 'rgb(0, 0, 0)') {
-      randomR = Math.floor(Math.random()*255);
-      randomG = Math.floor(Math.random()*255);
-      randomB = Math.floor(Math.random()*255);
-    };
+      randomR = Math.floor(Math.random() * 255);
+      randomG = Math.floor(Math.random() * 255);
+      randomB = Math.floor(Math.random() * 255);
+    }
     randomColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
     return randomColor;
   };
-  
+
   // Cria paleta de cores
   const captureColorPalette = document.querySelector('#color-palette');
 
@@ -26,11 +26,11 @@ window.onload = function () {
       newColor.style.backgroundColor = generateRandomColor();
     }
     captureColorPalette.appendChild(newColor);
-  };
-  
+  }
+
   // Cria quadro de pixels
   const captureBoard = document.querySelector('#pixel-board');
-  let captureBoardSize = document.querySelector('#board-size');
+  const captureBoardSize = document.querySelector('#board-size');
   captureBoardSize.value = 5;
 
   const createBoard = () => {
@@ -40,37 +40,37 @@ window.onload = function () {
       for (let cell = 0; cell < captureBoardSize.value; cell += 1) {
         const newCell = document.createElement('td');
         newCell.className = 'pixel';
-        newCell.style.backgroundColor = 'white'; 
+        newCell.style.backgroundColor = 'white';
         newLine.appendChild(newCell);
       }
       captureBoard.appendChild(newLine);
     }
     captureBoardSize.value = '';
   };
-  
+
   createBoard();
-  
+
   // Seleciona a cor preta como cor inicial
   const captureInitialColor = document.querySelector('.color');
   captureInitialColor.classList.add('selected');
-  
+
   // Seleciona a cor desejada
   const changeSelectedColor = (event) => {
     const captureColor = document.querySelector('.selected');
     captureColor.classList.remove('selected');
     event.target.classList.add('selected');
   };
-  
+
   // Colore os pixels com a cor selecionada
   const colorPixels = (event) => {
     const captureSelectedColor = document.querySelector('.color.selected').style.backgroundColor;
     if (event.target.style.backgroundColor === captureSelectedColor) {
-      event.target.style.backgroundColor = 'white'
+      event.target.style.backgroundColor = 'white';
     } else {
-      event.target.style.backgroundColor  = captureSelectedColor;
+      event.target.style.backgroundColor = captureSelectedColor;
     }
   };
-  
+
   // Adiciona o botão de limpar o board
   const clearBoard = () => {
     const capturePixel = document.querySelectorAll('.pixel');
@@ -78,7 +78,7 @@ window.onload = function () {
       capturePixel[index].style.backgroundColor = 'white';
     }
   };
-  
+
   // Permite que o usuário selecione o tamanho do quadro
   const createNewBoard = () => {
     if (captureBoardSize.value === '' || captureBoardSize.value <= 0) {
@@ -87,7 +87,7 @@ window.onload = function () {
       captureBoardSize.value = 5;
       createBoard();
     } else if (captureBoardSize.value > 50) {
-      captureBoardSize.value = 50
+      captureBoardSize.value = 50;
       createBoard();
     } else {
       createBoard();
