@@ -42,81 +42,73 @@ window.onload = function () {
   }
   selectColorInitial();
   
-//Cria board no JS
-  function createPixelBoard(){
-    let board = document.querySelector('#pixel-board')
-    for (let line = 1; line <= 5; line += 1){
-      let pixelLine = document.createElement('tr');
-      for (let column = 1; column <= 5; column += 1){
-        let pixelColumn = document.createElement('td');
-        pixelColumn.className = 'pixel';
-        pixelLine.appendChild(pixelColumn);
-      }
-      board.appendChild(pixelLine);
-    };
-  }
-  createPixelBoard();
-
-//Pinta os pixels iniciais de preto
   function setBlackPixelInitial() {
     let selectedPixel = document.querySelectorAll('.pixel')
       for (let index = 0; index < selectedPixel.length; index += 1) {
       selectedPixel[index].addEventListener('click', function() {
-      let pixel = selectedPixel[index].style.backgroundColor = 'black';
+      let blackPixel = selectedPixel[index]
+      blackPixel.style.backgroundColor = 'black';
       });
     }
   }
   setBlackPixelInitial();
 
-//Pinta board com table do JS
-  function setPixel() {
-    let selectedBlackColor = document.querySelector('.black')
-    let selectedRedColor = document.querySelector('.red')
-    let selectedBlueColor = document.querySelector('.blue')
-    let selectedGreenColor = document.querySelector('.green')
-
-    if (selectedBlackColor.addEventListener('click', selectBlack)){}
-    if (selectedRedColor.addEventListener('click', selectRed)){}
-    if (selectedBlueColor.addEventListener('click', selectBlue)){}
-    if (selectedGreenColor.addEventListener('click', selectGreen)){}
-
-    function selectBlack(){
+// Pinta board com table do html
+  function setBlackPixel() {
+    let selectedBlackColor = document.querySelector('.black');
+    selectedBlackColor.addEventListener('click', function(){
       let selectedPixel = document.querySelectorAll('.pixel')
       for (let index = 0; index < selectedPixel.length; index += 1) {
         selectedPixel[index].addEventListener('click', function() {
-        let pixel = selectedPixel[index].style.backgroundColor = 'black';
+        let blackPixel = selectedPixel[index]
+        blackPixel.style.backgroundColor = 'black';
         });
       }
-    }
+    });
+  }
+  setBlackPixel();
 
-    function selectRed(){
+  function setRedPixel() {
+    let selectedRedColor = document.querySelector('.red');
+    selectedRedColor.addEventListener('click', function(){
       let selectedPixel = document.querySelectorAll('.pixel')
       for (let index = 0; index < selectedPixel.length; index += 1) {
         selectedPixel[index].addEventListener('click', function() {
-        let pixel = selectedPixel[index].style.backgroundColor = 'red';
+        let redPixel = selectedPixel[index]
+        redPixel.style.backgroundColor = 'red';
         });
       }
-    }
+    });
+  }
+  setRedPixel();
 
-    function selectBlue(){
+  function setBluePixel() {
+    let selectedBlueColor = document.querySelector('.blue');
+    selectedBlueColor.addEventListener('click', function(){
       let selectedPixel = document.querySelectorAll('.pixel')
       for (let index = 0; index < selectedPixel.length; index += 1) {
         selectedPixel[index].addEventListener('click', function() {
-        let pixel = selectedPixel[index].style.backgroundColor = 'blue';
+        let bluePixel = selectedPixel[index]
+        bluePixel.style.backgroundColor = 'blue';
         });
       }
-    }
+    });
+  }
+  setBluePixel();
 
-    function selectGreen(){
+  function setGreenPixel() {
+    let selectedGreenColor = document.querySelector('.green');
+    selectedGreenColor.addEventListener('click', function(){
       let selectedPixel = document.querySelectorAll('.pixel')
       for (let index = 0; index < selectedPixel.length; index += 1) {
         selectedPixel[index].addEventListener('click', function() {
-        let pixel = selectedPixel[index].style.backgroundColor = 'green';
+        let greenPixel = selectedPixel[index]
+        greenPixel.style.backgroundColor = 'green';
         });
       }
-    }
-}
-setPixel();
+    });
+  }
+  setGreenPixel();
 
   function clearBoard(){
     let buttonClear = document.querySelector('#clear-board');
@@ -129,5 +121,10 @@ setPixel();
     });
   }
   clearBoard();
+
+
+  
+
+
 
 };
