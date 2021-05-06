@@ -7,4 +7,16 @@
   height: 40px;
   width: 40px; 
   border: 1px solid black; 
-} 
+}
+
+.pixel {
+  height: 40px;
+  width: 40px; 
+  border: 1px solid black;
+  background-color: white;
+  display: inline-block;
+}
+
+.pixel-line {
+  display: flex;
+}
