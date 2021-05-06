@@ -87,7 +87,7 @@ const getRandomColor = (array) => {
   const white = 'rgb(255, 255, 255)';
   const black = 'rgb(0, 0, 0)';
   for (let i = 0; i < 3; i += 1) {
-    array.push(Math.floor(Math.random() * 255));
+    array.push(Math.floor(Math.random() * 256));
   }
   let mask = 'rgb(x, x, x)';
   array.forEach((num) => {
