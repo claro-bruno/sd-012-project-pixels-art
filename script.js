@@ -82,6 +82,10 @@ function addEvents(){
                     if(colors[index].classList.contains('selected')){
                         pixel.style.backgroundColor = colors[index].style.backgroundColor;
                         console.log(colors[index].style.backgroundColor);
+
+                        if (colors[index].id == 'color1') {
+                            pixel.style.backgroundColor = 'black';
+                        }
                     } 
             }
                 
