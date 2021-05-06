@@ -86,10 +86,25 @@ function createBoard() {
   });
 }
 
+function randomColors() {
+  const colors = document.querySelectorAll('.color');
+  const colorsRandom = [
+    `#${(0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)}`,
+    `#${(0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)}`,
+    `#${(0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)}`,
+    `#${(0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)}`,
+  ];
+
+  for (let index = 1; index < colors.length; index += 1) {
+    colors[index].style.backgroundColor = colorsRandom[index];
+  }
+}
+
 window.onload = () => {
   selectedColorPrimary();
   selectColor();
   paintPixels();
   clearPixels();
   createBoard();
+  randomColors();
 };
