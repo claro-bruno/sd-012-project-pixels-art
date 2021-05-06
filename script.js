@@ -83,6 +83,7 @@ function cleanPixels() {
 function createBtn(id, text) {
   const btn = document.createElement('button');
   btn.id = id;
+  btn.className = 'btn';
   btn.innerHTML = text;
   return btn;
 }
@@ -106,14 +107,16 @@ function generatePixels() {
   if (size < 5) size = 5;
   if (size > 50) size = 50;
 
-  const boardSize = 40 * size;
-  pixelBoard.style.width = boardSize;
-  pixelBoard.style.height = boardSize;
+  const boardSize = 40 * size + 100;
+  addEvent(pixels, switchColor, 'click');
+  pixelBoard.style.width = `${boardSize}px`;
+  pixelBoard.style.height = `${boardSize}px`;
   pixelBoard.innerHTML = '';
 
-  const lineSize = boardSize + 50;
+  const lineSize = boardSize;
 
   createPixelGrind(size, pixelBoard, lineSize);
+  addEvent(pixels, switchColor, 'click');
 }
 
 const pixelBtn = createBtn('generate-board', 'VQV');
