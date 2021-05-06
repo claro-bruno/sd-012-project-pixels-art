@@ -25,6 +25,7 @@ body {
 }
 
 /* nav final */
+
 /* paleta inicio */
 
 #color-palette {
@@ -58,12 +59,12 @@ body {
 }
 
 #rosto {
-  background-color: oldlace;;
+  background-color: oldlace;
 }
 
-/*paleta final*/
+/* paleta final */
 
-/*board inicio*/
+/* board inicio */
 
 #pixel-board {
   display: grid;
