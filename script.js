@@ -53,3 +53,12 @@ for (let element of pixel) {
 };
 
 // O requisito 8 foi gracas ao colega Ryan Laiber, compreendi a alteracao do background do elemento selecionado apenas apos verificar seu repositorio, porem a linha 47, estou deduzindo que puxe a cor pelo id do elemento com a class selected, nao localizei outra explicacao mas faz sentido para mim. (https://github.com/tryber/sd-012-project-pixels-art/pull/99/files#)
+
+const button = document.getElementById('clear-board');
+
+function clearButton() {
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+}
+button.addEventListener('click', clearButton);
