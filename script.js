@@ -33,11 +33,21 @@ const cor2 = document.getElementById('color2').style.backgroundColor = 'rgb(255,
 const cor3 = document.getElementById('color3').style.backgroundColor = 'rgb(56, 255, 224)';
 const cor4 = document.getElementById('color4').style.backgroundColor = 'rgb(254, 5, 255)';
 
-function colorPixel (event) {
+function colorPixel(event) {
   const pixelBackground = document.querySelector('.selected');
   event.target.style.backgroundColor = pixelBackground.style.backgroundColor;
 }
 
-for (indexPixels = 0; indexPixels < pixels.length; indexPixels += 1) {
+for (let indexPixels = 0; indexPixels < pixels.length; indexPixels += 1) {
   pixels[indexPixels].addEventListener('click', colorPixel);
 }
+
+const button = document.querySelector('#clear-board');
+
+function reset() {
+  for (let indexReset = 0; indexReset < pixels.length; indexReset += 1) {
+    pixels[indexReset].style.backgroundColor = "white";
+  }
+}
+
+button.addEventListener('click', reset);

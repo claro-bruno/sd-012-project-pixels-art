@@ -5,6 +5,7 @@ h1 {
 #color-palette {
   list-style: none;
   text-align: center;
+  margin-right: 5%;
 }
 
 #color1 {
@@ -42,5 +43,10 @@ h1 {
 }
 
 table {
-  margin-left: 42%;
+  margin-left: 41%;
+}
+
+button {
+  margin-left: 47%;
+  margin-bottom: 1%;
 }
