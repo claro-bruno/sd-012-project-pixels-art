@@ -18,6 +18,17 @@ function colorPaletteGenerator() {
 }
 colorPaletteGenerator();
 
+function colorOutput() {
+  const colorGrabber = document.getElementsByClassName('selected')[0];
+  const selectedColor = colorGrabber.style.backgroundColor;
+  const selectedPixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < selectedPixel.length; index += 1) {
+    selectedPixel[index].addEventListener('click', () => {
+      selectedPixel[index].style.backgroundColor = selectedColor;
+    });
+  }
+}
+
 function specificClassGiver() {
   for (let index = 0; index < colorPaletteSection.length; index += 1) {
     colorPaletteSection[index].addEventListener('click', () => {
@@ -26,6 +37,7 @@ function specificClassGiver() {
       }
       colorPaletteSection[index].classList.add('selected');
     });
+    colorPaletteSection[index].addEventListener('click', colorOutput);
   }
 }
 specificClassGiver();
@@ -46,16 +58,3 @@ function pixelCreation() {
   }
 }
 pixelCreation();
-
-function colorOutput() {
-  const colorGrabber = document.getElementsByClassName('selected')[0];
-  const selectedColor = colorGrabber.style.backgroundColor;
-  const selectedPixel = document.getElementsByClassName('pixel');
-  for (let index = 0; index < selectedPixel.length; index += 1) {
-    selectedPixel[index].addEventListener('click', () => {
-      console.log(selectedPixel[index]);
-      console.log(colorGrabber);
-    });
-  }
-}
-colorOutput();
