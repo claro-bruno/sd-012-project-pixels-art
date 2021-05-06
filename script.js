@@ -1,4 +1,16 @@
-let cores = ["black", "blue", "red", "green"];
+
+function gerador_cores(){
+    let r = Math.random() * 255;
+    let g = Math.random() * 255;
+    let b = Math.random() * 255;
+
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+let cores = ["black"];
+for(let i = 0; i < 3; i++){
+    cores.push(gerador_cores());
+}
 
 var paleta = document.getElementById("color-palette");
 var quadro = document.getElementById("pixel-board");
