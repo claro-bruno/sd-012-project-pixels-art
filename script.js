@@ -36,8 +36,20 @@ function paintPixels() {
   }
 }
 
+function clearPixels() {
+  const pixels = document.querySelectorAll('.pixel');
+  const button = document.getElementById('clear-board');
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    button.addEventListener('click', () => {
+      pixels[index].style.backgroundColor = 'white';
+    });
+  }
+}
+
 window.onload = () => {
   selectedColorPrimary();
   selectColor();
   paintPixels();
+  clearPixels();
 };

@@ -16,18 +16,22 @@
 
 .color:nth-child(1), .selected {
   background-color: black;
+  cursor: pointer;
 }
 
 .color:nth-child(2) {
   background-color: blueviolet;
+  cursor: pointer;
 }
 
 .color:nth-child(3) {
   background-color: yellowgreen;
+  cursor: pointer;
 }
 
 .color:nth-child(4) {
   background-color: cornflowerblue;
+  cursor: pointer;
 }
 
 #pixel-board {
@@ -48,4 +52,22 @@
 
 .selected {
   box-shadow: 2px 2px 2px green;
+}
+
+button {
+  margin-top: 10px;
+  margin-left: 50px;
+  width: 80px;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: green;
+  transition: 0.5s;
+  color: #fff;
+}
+
+button:hover {
+  background-color: rgb(2, 83, 2);
 }
