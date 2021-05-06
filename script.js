@@ -1,19 +1,19 @@
 const pixelBoard = document.querySelector('#pixel-board');
-const elements = 5;
+let element = 5;
 
-function pixelBox (linhas) {
-    for (let file = 1; file <= linhas; file =+1); {
-      const boxFile = document.createElement('box');
-      pixelBoard.appendChild(boxFile);
-      pixelBoxColumns(boxFile, linhas);
+function creatingPixelDivs (linhas) {
+    for (let row = 1; row <= linhas; row += 1) {
+        const divRow = document.createElement('div');
+        pixelBoard.appendChild(divRow);
+        creatingPixelDivsCollumns(divRow, linhas);
     }
 }
 
-function pixelBoxColumns(file, colunas) {
-    for (let column = 1; column <= colunas; column += 1); {
-      const boxColumn = document.createElement('box');
-      boxColumn.classList.add('pixel');
-      file.appendChild(boxColumn);
+function creatingPixelDivsCollumns(row, colunas) {
+    for (let column = 1; column <= colunas; column += 1) {
+        const divColumn = document.createElement('div');
+        divColumn.classList.add('pixel');
+        row.appendChild(divColumn);
     }
 }
-pixelBox(elements);
+creatingPixelDivs(element);

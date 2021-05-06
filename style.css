@@ -23,22 +23,26 @@ ul {
     background-color: black;
     border: 1px solid black;
 }
+
 .color-2 {
     background-color: orange;
     border: 1px solid black;
 }
+
 .color-3 {
     background-color: blue;
     border: 1px solid black;
 }
+
 .color-4 {
     background-color: pink;
     border: 1px solid black;
 }
 
-#pixel-board {
+.pixel {
     width: 40px;
     height: 40px;
+    margin-left: 3px;
     background-color: white;
     border: 1px solid black;
     display: inline-block;
