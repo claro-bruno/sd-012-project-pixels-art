@@ -1,13 +1,29 @@
-let paletteColor = document.querySelector('#color-palette');
+let colors = ['blue', 'pink', 'orange', 'green'];
 
-for(let index = 0; index < paletteColor.length; index +=1) {
-    if(paletteColor[index] === 'Blue') {
-        paletteColor[index].style.backgroundColor = 'blue';
-    } else if(paletteColor[index] === 'Pink') {
-        paletteColor[index].style.backgroundColor = 'pink';
-    } else if(paletteColor[index] === 'Orange') {
-        paletteColor[index].style.backgroundColor = 'orange';
-    } else if(paletteColor[index] === 'Green') {
-        paletteColor[index].style.backgroundColor = 'green';
-    } 
-}
+function geraCores() {
+    let getColorList = document.querySelector('#color-palette');
+
+    for(let index = 0; index < colors.length; index += 1) {
+        let color = colors[index];
+        let colorItem = document.createElement('li');
+
+        if (color ==='blue'){
+            colorItem.className = 'color';
+            colorItem.style.backgroundColor = 'blue';
+            getColorList.appendChild(colorItem);
+        } else if (color === 'pink') {
+            colorItem.className = 'color';
+            colorItem.style.backgroundColor = 'pink';
+            getColorList.appendChild(colorItem);
+        } else if (color === 'orange') {
+            colorItem.className = 'color';
+            colorItem.style.backgroundColor = 'orange';
+            getColorList.appendChild(colorItem);
+        } else if (color === 'green') {
+            colorItem.className = 'color';
+            colorItem.style.backgroundColor = 'green';
+            getColorList.appendChild(colorItem);
+        }
+    };
+};
+geraCores();

@@ -1,8 +1,10 @@
-#color-palette {
+ #color-palette {
+  display: flex;
+} 
+
+.color {
   border-style: solid;
   border-color: black;
   border-width: 1px;
-  display: flex;
-  justify-content:space-around;
 }
 
