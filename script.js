@@ -47,40 +47,41 @@ function clearPixels() {
   }
 }
 
-function createPixels() {
-  const button = document.getElementById('generate-board');
-  const input = document.getElementById('board-size');
+// Trecho retirado do repositório de Rorigo Merlone
+// https://github.com/tryber/sd-012-project-pixels-art/pull/3
+function createPixels(n) {
   const pixelBoard = document.getElementById('pixel-board');
-
-  button.addEventListener('click', () => {
-    if (input.value === '') {
-      alert('Board inválido');
-    }
-    const createdPixel = document.createElement('div');
-    createdPixel.classList.add('created-pixel');
-    createdPixel.style.width = `${input.value}px`;
-    createdPixel.style.height = `${input.value}px`;
-    pixelBoard.appendChild(createdPixel);
-  });
+  for (let index = 1; index <= n ** 2; index += 1) {
+    const pixel = document.createElement('div');
+    pixel.classList.add('pixel');
+    pixelBoard.appendChild(pixel);
+  }
 }
 
-// function inputLength() {
-//   const input = document.getElementById('board-size');
+function createBoard() {
+  const button = document.getElementById('generate-board');
+  const input = document.getElementById('board-size');
 
-//   if (input.value < '5') {
-//     input.value = '5';
-//   }
-//   if (input.value > '50') {
-//     input.value = '50';
-//   }
-//   console.log(input.value);
-// }
+  button.addEventListener('click', () => {
+    let value = parseInt(input.value, 10);
+    if (!value) {
+      alert('Board inválido!');
+    } else {
+      if (value < 5) {
+        value = 5;
+      } else if (value > 50) {
+        value = 50;
+      }
+      createPixels(value);
+    }
+    input.value = '';
+  });
+}
 
 window.onload = () => {
   selectedColorPrimary();
   selectColor();
   paintPixels();
   clearPixels();
-  createPixels();
-  // inputLength();
+  createBoard();
 };
