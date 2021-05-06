@@ -46,3 +46,12 @@ function fillBoxSelected(event) {
     //console.log(window.getComputedStyle(event.target).getPropertyValue('background-color'));
 }
 
+let btnClean = document.querySelector('#clear-board');
+btnClean.addEventListener('click', setCleanBoard);
+
+function setCleanBoard(event) {
+    let selectedPixels = document.querySelectorAll('.pixel');
+    for(let index = 0; index < selectedPixels.length; index += 1) {
+        selectedPixels[index].style.backgroundColor = 'white';
+    }
+}
