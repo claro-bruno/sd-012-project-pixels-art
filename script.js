@@ -1,7 +1,50 @@
 window.onload = function () {
+  let section1 = document.createElement('section');
+  section1.id = 'color-palette';
+
+  let text = document.createElement('h3');
+  text.innerHTML = 'Insira a quantidade de linhas x colunas desejadas';
+
+  let input = document.createElement('input');
+  input.id = 'board-size';
+
+  let btn2 = document.createElement('button');
+  btn2.id = 'generate-board';
+  btn2.innerHTML = 'VQV';
+
+  let btn = document.createElement('button');
+  btn.id = 'clear-board';
+  btn.innerHTML = 'Limpar';
+
+  let section2 = document.createElement('section');
+  section2.id = 'pixel-board';
+
+  let main = document.querySelector('main');
+  main.appendChild(section1);
+  main.appendChild(text);
+  main.appendChild(input);
+  main.appendChild(btn2);
+  main.appendChild(btn);
+  main.appendChild(section2);
+  
+
   let color_palette = document.querySelector('#color-palette');
   let pixel_board = document.querySelector('#pixel-board');
 
+  let buttonVQV = document.querySelector('#generate-board');
+  let amount = document.querySelector('#board-size').value;
+
+  buttonVQV.addEventListener('click', verifiTam(amount));
+
+  function verifiTam (num) {
+    if (num < 5) {
+        num = 5
+    }
+    else if (num > 50) {
+        num = 50;
+    }
+    tamanho(num);
+  }
 
   function makeColor (quantity) {
     for(let index = 0; index < quantity; index += 1) {
@@ -66,17 +109,6 @@ window.onload = function () {
       makeLine(size)
       makeColum(size)
   }
-  verifiTam (5) // tamanho do board de pixel
-
-  function verifiTam (num) {
-    if (num < 5) {
-        num = 5
-    }
-    else if (num > 50) {
-        num = 50;
-    }
-    tamanho(num);
-  }
 
   function selecAux (param1) {
     let rem = document.querySelector('.selected');
@@ -107,12 +139,12 @@ window.onload = function () {
     param1.target.style.backgroundColor = cor;
   }
 
-  let btn = document.querySelector('#clear-board');
-  btn.addEventListener('click', function () {
+  let button = document.querySelector('#clear-board');
+  button.addEventListener('click', function () {
     let pixels = document.querySelectorAll('.pixel');
     for(let index = 0; index < pixels.length; index += 1) {
       pixels[index].style.backgroundColor = 'white';
     }
-  });
+  }); 
 
 }

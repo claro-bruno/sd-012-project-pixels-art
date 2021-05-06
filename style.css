@@ -10,6 +10,30 @@
     border: 2px solid black;
   }
 
+  #clear-board {
+    margin: 7px;
+    border-radius: 10%;
+    box-shadow: 2px 2px black;
+  }
+
+  #clear-board:hover {
+    background-color: fuchsia;
+    box-shadow: none;
+  }
+
+  #board-size {
+    box-shadow: 2px 2px black;
+  }
+
+  #generate-board {
+    box-shadow: 2px 2px black;
+  }
+
+  #generate-board:hover {
+    background-color: fuchsia;
+    box-shadow: none;
+  }
+
   title{
     text-align: center;
   }
