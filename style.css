@@ -1,7 +1,6 @@
 .color {
     width: 80px;
     height: 80px;
-    background-color: blue;
     margin-right: 10px;
     display: inline-block;
     border-color: black;
@@ -9,9 +8,6 @@
     border-width: 1px;
 }
 
-table{
-  size: 1000%;
-}
 
 .pixel{
     height: 40px;

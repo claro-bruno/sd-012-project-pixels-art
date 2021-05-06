@@ -11,10 +11,8 @@ let greenSquare = document.querySelectorAll('.color')[3];
 greenSquare.style.backgroundColor = 'green'
 
 
-
-
 document.addEventListener('click', function(event){
-    let target = event.target
+    let target = event.target;
     if (target.classList.contains('pixel')) {
         target.style.backgroundColor = selected;
     }
@@ -30,3 +28,10 @@ document.addEventListener('click', function(event){
 window.onload = function () {
     selected = window.getComputedStyle(blackSquare).backgroundColor;
 };
+
+
+document.addEventListener('click', function(event) {
+    let target= event.target;
+    
+})
+
