@@ -3,10 +3,6 @@
     background-color: seagreen;
 }
 
-.table {
-    width: 100%;
-    margin-top: 100px;
-}
 
 .color {
     border: solid black 1px;
@@ -33,6 +29,7 @@
 
 .pixel {
     background-color: white;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
+    border: 1px black;
 }
