@@ -30,8 +30,13 @@
     border: solid black 1px;
     display: table-cell;
 }
-#btn-clear {
+#clear-board {
     width: 60px;
     height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#preferences {
     margin-top: 10px;
 }
