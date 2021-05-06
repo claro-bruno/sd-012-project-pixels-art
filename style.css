@@ -41,3 +41,8 @@
   height: 40px;
   background-color: white;
 }
+
+body {
+  background-image:url(stardewdia.jpg);
+  background-size: cover;
+}

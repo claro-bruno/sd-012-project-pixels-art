@@ -1,49 +1,31 @@
-// const palette = document.querySelector('#color-palette');
-// const black = document.getElementsByClassName('color')[0];
-// const cyan = document.getElementsByClassName('color')[1];
-// const blueviolet = document.getElementsByClassName('color')[2];
-// const deeppink = document.getElementsByClassName('color')[3];
-// const pixelBoard = document.querySelector('#pixel-board');
-// const pixelRowConst = document.querySelector('.firstRow');
-
-// function createPixelRow(row, sizeChoice) {
-//   for (let index = 0; index < sizeChoice; index += 1) {
-//     const generatePixelRow = document.createElement('div');
-//     generatePixelRow.className = ('pixelRow');
-//     pixelBoard.appendChild(generatePixelRow);
-//   }
-// }
-
-// function createPixels(sizeChoice) {
-//   for (let index = 0; index < sizeChoice; index += 1) {
-//     const generatesPixelsConst = document.createElement('div');
-//     generatesPixelsConst.className = ('pixel');
-//     pixelBoard.appendChild(generatesPixelsConst);
-//     createPixelRow(createPixels, sizeChoice);
-//   }
-// }
-// createPixels(5);
-
-const palette = document.querySelectorAll('.color');
-const black = document.getElementsByClassName('color')[0];
-const blue = document.getElementsByClassName('color')[1];
-const red = document.getElementsByClassName('color')[2];
-const green = document.getElementsByClassName('color')[3];
-const selected = 'color selected';
 const pixelBoard = document.querySelector('#pixel-board');
-const boardSize = document.querySelector('#board-size');
-const buttomGenerate = document.querySelector('#generate-board');
+const blackColor = document.getElementById('#color1');
+// const colorsPalette = document.querySelectorAll('.color-palette');
+const color2 = document.querySelectorAll('#color2');
+const color3 = document.querySelectorAll('#color3');
+const color4 = document.querySelectorAll('#color4');
+const colorSelected = 'color selected';
+// const random = (Math.ceil(Math.random() * 255)
 
+function initialColorSelected() {
+  const paletteColor = document.getElementsByClassName('color');
+  paletteColor[0].style.backgroundColor = 'black';
+  paletteColor[1].style.backgroundColor = 'cyan';
+  paletteColor[2].style.backgroundColor = 'aquamarine';
+  paletteColor[3].style.backgroundColor = 'deeppink';
+  paletteColor[0].classList.add('selected');
+}
+initialColorSelected();
 
-function generateLinePixel(line, userSize) {
+function generateLinePixel(pam1, userSize) {
   for (let index2 = 0; index2 < userSize; index2 += 1) {
-    const createPixelLine = document.createElement('div');
-    createPixelLine.classList.add('pixel');
-    line.appendChild(createPixelLine);
+    const CreatePixelRow = document.createElement('div');
+    CreatePixelRow.classList.add('pixel');
+    pam1.appendChild(CreatePixelRow);
   }
 }
 
-function generatePixels(userSize) {
+function generatePixel(userSize) {
   for (let index = 0; index < userSize; index += 1) {
     const createPixel = document.createElement('div');
     createPixel.classList.add('pixelLine');
@@ -51,5 +33,4 @@ function generatePixels(userSize) {
     generateLinePixel(createPixel, userSize);
   }
 }
-
-generatePixels(5);
+generatePixel(5);
