@@ -36,3 +36,10 @@
 .selected {
   background-color: black;
 }
+
+#clear-board {
+  background-color: cornflowerblue;
+  color: white;
+  font-size: small;
+  margin-left: 100px;
+ }

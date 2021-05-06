@@ -29,3 +29,14 @@ corBlack.addEventListener('click', alteraCor);
 corRed.addEventListener('click', alteraCor);
 corBlue.addEventListener('click', alteraCor);
 corGreen.addEventListener('click', alteraCor);
+
+
+
+const butaoLimpar = document.querySelector('#clear-board');
+const pixels = document.querySelectorAll('.pixel');
+
+butaoLimpar.addEventListener('click', () => {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});
