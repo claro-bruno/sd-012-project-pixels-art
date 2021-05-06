@@ -41,22 +41,21 @@ function selecteBlack() {
 selecteBlack();
 
 
-let choseColor = document.querySelectorAll('.color');
+let choseColor = document.getElementById('color-palette');
 
-
-choseColor[0].addEventListener("click", selectColor);
-choseColor[1].addEventListener("click", selectColor);
-choseColor[2].addEventListener("click", selectColor);
-choseColor[3].addEventListener("click", selectColor);
-
-function selectColor(event) {
+choseColor.addEventListener('click',function (event) {
     let selectedColor = document.getElementsByClassName('selected');
-    selectedColor[0].classList.remove("selected")
-    event.target.className = 'color selected'
+    selectedColor[0].className = "color";
+    event.target.className = 'color selected';
+} )
+
+let pixelColor = document.getElementById('pixel-board');
+
+pixelBoard.addEventListener('click', function (event) {
+    let pixelColor = document.querySelector('.selected');
+    let chosedColor = pixelColor.style.backgroundColor;
+    event.target.style.backgroundColor = chosedColor;
 }
-
-
-
-
+)
 
 
