@@ -1,0 +1,17 @@
+#title {
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+}
+#color-palette {
+    top: 75px;
+    height: 85px; 
+    width: 344px;   
+}
+.color {
+    top:75px;
+    border: 1px solid black;
+    width: 75px;
+    height: 75px;
+    margin: 3px;
+    display: inline-block;
+}
