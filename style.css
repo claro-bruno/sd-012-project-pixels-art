@@ -40,6 +40,10 @@
 #clear-board {
   background-color: cornflowerblue;
   color: white;
-  font-size: small;
-  margin-left: 100px;
- }
+  font-size: 20px;
+  margin-left: 108px;
+}
+
+#color-palette , h1 {
+  margin-left: 15px;
+}
