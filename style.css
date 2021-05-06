@@ -1,25 +1,8 @@
-#pixel-board {
-    display: table;
-    border-spacing: 1px;
-    background-color: white;
-    border: 1px solid black;
-}
-
-.row {
-    display: table-row;
-}
-
-.pixel {
-    display: table-cell;
-    background-color: white;
-    width: 40px;
-    height: 40px;
-    border: 1px solid black;
-}
-
 .color {
     display: inline-block;
-    width: 40px;
-    height: 40px;
     border: 1px solid black;
-}
+    height: 40px;
+    width: 40px;
+  }
+
+  
