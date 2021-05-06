@@ -61,8 +61,19 @@ function createPixels() {
     createdPixel.style.width = `${input.value}px`;
     createdPixel.style.height = `${input.value}px`;
     pixelBoard.appendChild(createdPixel);
-    console.log(input.value);
   });
+}
+
+function inputLength() {
+  const input = document.getElementById('board-size');
+
+  if (input.value < '5') {
+    input.value = '5';
+  }
+  if (input.value > '50') {
+    input.value = '50';
+  }
+  console.log(input.value);
 }
 
 window.onload = () => {
@@ -71,4 +82,5 @@ window.onload = () => {
   paintPixels();
   clearPixels();
   createPixels();
+  inputLength();
 };
