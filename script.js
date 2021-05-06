@@ -56,3 +56,14 @@ function createBoard (width) {
 }
 
 createBoard(5);
+
+window.onload = function inicializa() {
+    function setVanillaColor() {
+      let colors = document.querySelectorAll('.color');
+      for (let index = 0; index < colors.length; index += 1) {
+        colors[index].classList.remove('selected');
+      }
+      colors[0].classList.add('selected');
+    }
+    setVanillaColor();
+  };
