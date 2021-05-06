@@ -171,11 +171,28 @@ function usuarioEscolheCor () {
                 cor.classList.remove('selected')
             }
             event.target.classList.add('selected')
-             console.log(event.target)
         })
     }
 }
 usuarioEscolheCor();
 
 
+/* 8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
+O que será verificado:
 
+Verifica se ao carregar a página deve ser possível pintar os pixels de preto
+
+Verifica se após selecionar uma outra cor na paleta, é possível pintar os pixels com essa cor
+
+Verifica se somente o pixel que foi clicado foi preenchido com a cor selecionada, sem influenciar na cor dos demais pixels. */
+
+function preenchePixelClicado () {
+    let pixels = document.getElementsByClassName('pixel')
+    for (pixel of pixels) {
+        pixel.addEventListener('click', function (event) {
+        let color = document.getElementsByClassName('color selected')[0].style.backgroundColor;
+            event.target.style.backgroundColor = color;
+        })
+    }
+}
+preenchePixelClicado();
