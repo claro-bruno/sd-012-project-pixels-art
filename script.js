@@ -1,5 +1,5 @@
-/* eslint-disable sonarjs/cognitive-complexity */
-/* eslint-disable max-lines-per-function */
+/* eslint-disable no-shadow */
+/* eslint-disable prefer-const */
 const colorPaletteSection = document.getElementsByClassName('color');
 
 function colorPaletteGenerator() {
@@ -18,17 +18,6 @@ function colorPaletteGenerator() {
 }
 colorPaletteGenerator();
 
-function colorOutput() {
-  const colorGrabber = document.getElementsByClassName('selected')[0];
-  const selectedColor = colorGrabber.style.backgroundColor;
-  const selectedPixel = document.getElementsByClassName('pixel');
-  for (let index = 0; index < selectedPixel.length; index += 1) {
-    selectedPixel[index].addEventListener('click', () => {
-      selectedPixel[index].style.backgroundColor = selectedColor;
-    });
-  }
-}
-
 function specificClassGiver() {
   for (let index = 0; index < colorPaletteSection.length; index += 1) {
     colorPaletteSection[index].addEventListener('click', () => {
@@ -37,7 +26,6 @@ function specificClassGiver() {
       }
       colorPaletteSection[index].classList.add('selected');
     });
-    colorPaletteSection[index].addEventListener('click', colorOutput);
   }
 }
 specificClassGiver();
@@ -58,3 +46,12 @@ function pixelCreation() {
   }
 }
 pixelCreation();
+
+const pixel = document.getElementsByClassName('pixel');
+for (let indexx = 0; indexx < pixel.length; indexx += 1) {
+  pixel[indexx].addEventListener('click', (event) => {
+    const colorGrabber = document.querySelector('.selected');
+    const selectedColor = colorGrabber.style.backgroundColor;
+    event.target.style.backgroundColor = selectedColor;
+  });
+}
