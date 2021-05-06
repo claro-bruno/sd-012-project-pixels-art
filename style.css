@@ -26,3 +26,20 @@
 #blue {
     background-color: blue;
 }
+
+#pixel-board {
+
+}
+
+.line {
+    width: 300px;
+    height: 55px;
+}
+
+.pixel {
+    border: 1px solid black;
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    background-color: white;  
+}
