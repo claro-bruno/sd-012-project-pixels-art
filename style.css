@@ -14,5 +14,10 @@
     height: 40px;
     border: 1px solid black;  
     display: inline-block;
+}
+#clear-board{
+    padding: 3px;
+    margin-bottom: 20px;
+    background-color: rgb(204, 204, 204);
     
 }

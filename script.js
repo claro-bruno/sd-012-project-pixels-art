@@ -1,8 +1,8 @@
-let palleteColors= document.querySelectorAll(".color")
-document.querySelectorAll(".color")[0].style.backgroundColor ="black";
-document.querySelectorAll(".color")[1].style.backgroundColor ="red";
-document.querySelectorAll(".color")[2].style.backgroundColor ="blue";
-document.querySelectorAll(".color")[3].style.backgroundColor ="green";
+let palleteColors = document.querySelectorAll('.color');
+palleteColors[0].style.backgroundColor = 'black';
+palleteColors[1].style.backgroundColor = 'red';
+palleteColors[2].style.backgroundColor = 'blue';
+palleteColors[3].style.backgroundColor = 'green';
 
 let pixelBoard = document.querySelector("#pixel-board")
 function createPixel (result){
@@ -25,7 +25,7 @@ function pixelsColors (cor){
     for(index = 0; index < pixel.length; index +=1){
         pixel[index].addEventListener('click', function(event){
             event.target.style.backgroundColor = cor
-        })
+        });
     }
 }
 
@@ -36,8 +36,15 @@ for (index = 0; index < palleteColors.length; index +=1){
         event.target.classList.add("selected");
         colorSelected.classList.remove("selected");
         pixelsColors(event.target.style.backgroundColor);
+    
         }
-    })
+    });
 }
 
+
+localStorage.setItem("initColor", palleteColors[0].style.backgroundColor);
+let initColor = localStorage.getItem("initColor")
+    if(initColor) pixelsColors (initColor);
+
+    
 
