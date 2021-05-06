@@ -17,6 +17,7 @@
 #black {
     background-color: black;
 }
+
 #red {
     background-color: red;
 }
@@ -42,4 +43,8 @@
     height: 40px;
     display: inline-block;
     background-color: white;  
+}
+
+.selected{
+
 }

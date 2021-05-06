@@ -1,6 +1,7 @@
 window.onload = function() {
     let lines = document.querySelectorAll(".line");
-
+    let selected = document.querySelector(".slected");
+    
     fillPixelBoard(lines);
 
     function createPixel(className) {
@@ -27,8 +28,8 @@ window.onload = function() {
             let pixel = createPixel('pixel');
             divline.appendChild(pixel);   
         };  
-
     };
+
 };
 
 
