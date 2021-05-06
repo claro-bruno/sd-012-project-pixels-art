@@ -36,41 +36,10 @@ ul {
     border: 1px solid black;
 }
 
-.pixel {
+#pixel-board {
     width: 40px;
     height: 40px;
     background-color: white;
     border: 1px solid black;
-    display: grid;
-}
-
-.element-1 {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: 1px solid black;
-}
-.element-2 {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: 1px solid black;
-}
-.element-3 {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: 1px solid black;
-}
-.element-4 {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: 1px solid black;
-}
-.element-5 {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: 1px solid black;
+    display: inline-block;
 }
