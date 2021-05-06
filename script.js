@@ -1,5 +1,4 @@
 let coresPaleta = document.querySelectorAll('.color');
-
 coresPaleta[0].style.backgroundColor = 'black';
 coresPaleta[1].style.backgroundColor = 'red';
 coresPaleta[2].style.backgroundColor = 'blue';
