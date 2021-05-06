@@ -37,7 +37,7 @@ window.onload = function () {
     const colorsArray = document.querySelectorAll('.color');
     colorsArray[0].className = 'color selected';
     for (let index = 0; index < colorsArray.length; index += 1) {
-      colorsArray[index].addEventListener('click', function (event) {
+      colorsArray[index].addEventListener('click', (event) => {
         const selectedColor = document.querySelector('.selected');
         selectedColor.className = 'color';
         const targetEvent = event.target;
@@ -49,7 +49,7 @@ window.onload = function () {
   function paintPixels() {
     const pixelsArray = document.querySelectorAll('.pixel');
     for (let index = 0; index < pixelsArray.length; index += 1) {
-      pixelsArray[index].addEventListener('click', function (event) {
+      pixelsArray[index].addEventListener('click', (event) => {
         const colorSelected = document.querySelector('.selected');
         const color = getComputedStyle(colorSelected).backgroundColor;
         const targetEvent = event.target;
@@ -61,7 +61,7 @@ window.onload = function () {
   function buttonClear() {
     const btnClear = document.getElementById('clear-board');
     const pixelsArray = document.querySelectorAll('.pixel');
-    btnClear.addEventListener('click', function () {
+    btnClear.addEventListener('click', () => {
       for (let index = 0; index < pixelsArray.length; index += 1) {
         pixelsArray[index].style.backgroundColor = 'white';
       }
@@ -89,7 +89,7 @@ window.onload = function () {
   function generateNewBoard() {
     const input = document.getElementById('board-size');
     const buttonGenerate = document.getElementById('generate-board');
-    buttonGenerate.addEventListener('click', function () {
+    buttonGenerate.addEventListener('click', () => {
       const boardSize = input.value;
       if (boardSize.length !== 0) {
         fillBoard(boardSizeRange(boardSize));
