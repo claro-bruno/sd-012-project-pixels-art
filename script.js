@@ -100,3 +100,61 @@ function turnWhite() {
 
 turnWhite();
 
+function mouseOver() {
+    let blackButton = document.querySelector('#bloco1');
+    let redButton = document.querySelector('#bloco2');
+    let greenButton = document.querySelector('#bloco3');
+    let blueButton = document.querySelector('#bloco4');
+
+    blackButton.addEventListener('mouseover', function(event){
+        event.target.style.width = '80px';
+        event.target.style.height = '80px';
+    })
+
+    redButton.addEventListener('mouseover', function(event){
+        event.target.style.width = '80px';
+        event.target.style.height = '80px';
+    })
+
+    greenButton.addEventListener('mouseover', function(event){
+        event.target.style.width = '80px';
+        event.target.style.height = '80px';
+    })
+
+    blueButton.addEventListener('mouseover', function(event){
+        event.target.style.width = '80px';
+        event.target.style.height = '80px';
+    })
+}
+
+function mouseOut() {
+    let blackButton = document.querySelector('#bloco1');
+    let redButton = document.querySelector('#bloco2');
+    let greenButton = document.querySelector('#bloco3');
+    let blueButton = document.querySelector('#bloco4');
+
+    blackButton.addEventListener('mouseout', function(event){
+        event.target.style.width = '60px';
+        event.target.style.height = '60px';
+    })
+
+    redButton.addEventListener('mouseout', function(event){
+        event.target.style.width = '60px';
+        event.target.style.height = '60px';
+    })
+
+    greenButton.addEventListener('mouseout', function(event){
+        event.target.style.width = '60px';
+        event.target.style.height = '60px';
+    })
+
+    blueButton.addEventListener('mouseout', function(event){
+        event.target.style.width = '60px';
+        event.target.style.height = '60px';
+    })
+}
+
+
+
+mouseOver();
+mouseOut();
