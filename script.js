@@ -66,6 +66,11 @@ window.onload = function () {
         let boardSize = input.value;
         console.log(boardSize)
         if (boardSize.length !== 0) {
+            if (boardSize < 5) {
+                boardSize = 5;
+            } else if (boardSize > 50) {
+                boardSize = 50;
+            }
             fillBoard(boardSize);
         } else {
             alert('Board inválido!')
