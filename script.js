@@ -28,12 +28,10 @@ window.onload = function () {
     setBlackAsDefault();
     //Adiciona a classe selected ao clicar em uma cor da paleta
     function selectColor (color) {
-    color.addEventListener('click', event => {
+        color.addEventListener('click', event => {
         if (event.target.className !== 'color selected') {
             event.target.className = 'color selected';
             resetClass(color);
-        } else {
-            event.target.className = 'color';
             }
         })
     }
