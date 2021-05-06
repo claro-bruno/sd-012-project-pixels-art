@@ -20,3 +20,23 @@ for (let index = 0; index < colorPalette.length; index += 1) {
 }
 }
 console.log(PaletteColor()); // não entendi exatamente que será o parâmetro dessa função e se é necessário ter um;
+// esse console de cima ^ pode ficar aqui?
+
+
+function boardPixels () {
+  let divPixelPai = document.querySelector('#pixel-board');
+  const base = 5;
+  for (let index = 0; index < base ; index += 1) {
+    let divPixel = document.createElement('div');
+    divPixel.className = 'pixel';
+    divPixelPai.appendChild(divPixel);
+    for (let index = 1; index < base ; index += 1) {
+      let divPixel = document.createElement('div');
+      divPixel.className = 'pixel';
+      divPixelPai.appendChild(divPixel);
+    }
+  }
+
+}
+console.log(boardPixels());
+
