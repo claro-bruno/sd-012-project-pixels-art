@@ -4,6 +4,7 @@ const azulClaro = document.getElementById('azul-claro')
 const azulEscuro = document.getElementById('azul-escuro')
 const claro = document.getElementById('clara')
 const colorPalette = document.getElementById('color-palette')
+
 /*function gerarCor() {
   const r = Math.random() * 255;
   const g = Math.random() * 255;
