@@ -1,10 +1,12 @@
 let matriz = 5;
-let cor1 = document.getElementById('color1');
-let cor2 = document.getElementById('color2');
-let cor3 = document.getElementById('color3');
-let cor4 = document.getElementById('color4');
+const cor1 = document.getElementById('color1');
+const cor2 = document.getElementById('color2');
+const cor3 = document.getElementById('color3');
+const cor4 = document.getElementById('color4');
+const botaoGerar = document.getElementById('generate-board');
 
 gerarBoard(matriz);
+buttonGerar();
 selecionarCor();
 handleBoard();
 buttonClick();
@@ -59,5 +61,26 @@ function handleButton() {
   let listaDePixels = document.querySelectorAll('.pixel');
   for (let n = 0; n < (matriz**2); n += 1) {
   listaDePixels[n].style.backgroundColor = 'white';
+  }
+}
+
+function buttonGerar() {
+  botaoGerar.addEventListener('click', () => {
+    let valor = document.getElementById('board-size').value;
+    if (valor >= 5 && valor <= 50){
+      apagarBoard();
+      matriz = valor;
+      gerarBoard(matriz);
+      handleBoard();
+    } else {
+      alert('Board inválido!');
+    }
+  });
+}
+
+function apagarBoard() {
+  const div = document.getElementById("pixel-board");
+  while (div.firstChild) {
+    div.removeChild(div.lastChild);
   }
 }
