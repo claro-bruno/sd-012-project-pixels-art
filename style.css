@@ -1,19 +1,20 @@
 header {
-  background-color: rgb(59, 59, 59);
+  background-color: black;
   color: white;
-  
 }
 #title {
   display: inline-block;
 }
 #logo {
   height: 60px;
+  vertical-align: middle;
+  padding-left: 5px;
 }
 body {
-  background-image: url(images/wood-texture.jpg);
-  background-size: cover;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url(images/wood-texture.jpg);
+  margin: 0;
 }
 
 section {
@@ -21,7 +22,8 @@ section {
   background-size: cover;
   padding-top: 10px;
   padding-bottom: 10px;
-  min-height: 600px;
+  min-height: 900px;
+  margin: 20px;
 }
 
 .color {
@@ -54,7 +56,7 @@ section {
 }
 
 #rodape {
-  background-color: rgb(59, 59, 59);
+  background-color: black;
   position: fixed;
   left: 0;
   bottom: 0;
