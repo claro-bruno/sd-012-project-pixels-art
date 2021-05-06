@@ -17,6 +17,12 @@ body {
   margin: auto;
 }
 
+#controls{
+  width: 30%;
+  margin: auto;
+  padding: 20px;
+}
+
 .color {
   display: inline-block;
   border: 1px solid black;
@@ -36,7 +42,7 @@ body {
   width: 40px;
   height: 40px;
 }
-
+/* 
 .clear-board {
-margin: 20px 48% ;
-}
+  margin: 20px 48%;
+} */
