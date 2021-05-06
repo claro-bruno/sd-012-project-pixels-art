@@ -1,0 +1,26 @@
+.color{
+    border: 1px black solid;
+     display: inline-block;
+     width: 50px;
+     height: 50px;
+     }
+
+ #bloco1 {
+     background-color: #00EE6E;
+     display: inline-block;
+  }
+
+  #bloco2{
+    background-color: #04C696;
+    display: inline-block;
+ }
+
+ #bloco3{
+    background-color: #089DBE;
+    display: inline-block;
+ }
+
+ #bloco4{
+    background-color: #0C75E6;
+    display: inline-block;
+ }
