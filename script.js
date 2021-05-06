@@ -35,7 +35,7 @@ function changeSelectedClick() {
   let color1 = document.getElementById('color1');
   let color2 = document.getElementById('color2');
   let color3 = document.getElementById('color3');
-  const color4 = document.getElementById('color4');
+  let color4 = document.getElementById('color4');
 
   color1.addEventListener('click', changeSelected);
   color2.addEventListener('click', changeSelected);
