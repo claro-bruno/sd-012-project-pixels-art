@@ -73,13 +73,15 @@ buttonGen.addEventListener('click', () => {
   let value = parseInt(input.value, 10);
   if (!value) {
     alert('Board inválido!');
-  } else if (value < 5) {
-    value = 5;
-  } else if (value > 50) {
-    value = 50;
+  } else {
+    if (value < 5) {
+      value = 5;
+    } else if (value > 50) {
+      value = 50;
+    }
+    deleteBoard();
+    createPixels(value);
   }
-  deleteBoard();
-  createPixels(value);
   input.value = '';
 });
 
