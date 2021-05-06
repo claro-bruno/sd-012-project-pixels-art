@@ -6,7 +6,10 @@
     height: 40px;
 }
 
-#red {
+#black {
+    background-color: black;
+}
+#red { 
     background-color: red;
 }
 #green {
@@ -15,6 +18,10 @@
 #blue {
     background-color: blue;
 }
-#black {
-    background-color: black;
+
+#pixel-board .pixel {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border: black 1px solid;
 }
