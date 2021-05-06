@@ -51,10 +51,10 @@ for (let i = 0; i < clickedPixel.length; i += 1) {
 //9 
 const clearButton = document.createElement('button');
 clearButton.id = 'clear-board';
-document.body.appendChild(clearButton);
+document.body.insertBefore(clearButton, pixelBoard);
 clearButton.innerText = 'Limpar desenho';
 clearButton.style.margin = '10px';
-clearButton.style.padding = '4px';
+clearButton.style.padding = '5px';
 
 function cleanBoard() {
   for (let i = 0; i < clickedPixel.length; i += 1) {
