@@ -76,9 +76,11 @@ function canvasSize() {
     const inputBoxValue = inputBox.value;
     if (inputBoxValue === '') {
       alert('Board inválido!');
-    }
-    if (inputBoxValue > 5 && inputBoxValue <= 50) {
-      console.log(inputBoxValue);
+    } else if (inputBoxValue < 5) {
+      tableGenerator(5);
+    } else if (inputBoxValue > 50) {
+      tableGenerator(50);
+    } else {
       tableGenerator(inputBoxValue);
     }
   });
