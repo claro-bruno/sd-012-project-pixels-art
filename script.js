@@ -61,7 +61,12 @@ btnGenerateBoard.addEventListener('click', setBoard);
 
 function setBoard(event) {
     let newSize = document.querySelector('#board-size').value;
-    let pixelBoard = document.querySelector('#pixel-board');
-    pixelBoard.innerHTML = '';
-    fillBoard(Number(newSize),Number(newSize));
+    if(!Number(newSize)) {
+        alert('Board inválido!');
+    } else {
+        let pixelBoard = document.querySelector('#pixel-board');
+        pixelBoard.innerHTML = '';
+        fillBoard(Number(newSize),Number(newSize));
+    }
+    
 }
