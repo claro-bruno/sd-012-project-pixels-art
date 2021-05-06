@@ -145,7 +145,9 @@ const inputValue = document.querySelector('#board-size');
 const buttonConfirm = document.querySelector('#generate-board');
 
 buttonConfirm.addEventListener('click', () => {
-  if (inputValue.value === '') return alert('Board inválido!');
+  if (inputValue.value === '') {
+    return alert('Board inválido!');
+  }
   let linhas = parseInt(inputValue.value, 10);
   if (linhas < 5) {
     linhas = 5;
