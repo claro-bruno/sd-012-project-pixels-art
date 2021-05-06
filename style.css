@@ -1,0 +1,31 @@
+* {
+    margin: 0%;
+}
+
+.table {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.color {
+    border: solid black 1px;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+}
+
+.color1 {
+    background-color: blue;
+}
+
+.color2 {
+    background-color: green;
+}
+
+.color3 {
+    background-color: yellow;
+}
+
+.color4 {
+    background-color: black;
+}
