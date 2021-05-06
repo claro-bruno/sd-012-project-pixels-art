@@ -7,8 +7,10 @@
 body {
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0)), url("./images/bg.png") center no-repeat;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0)), url("./images/bg.png") no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   position: relative;
 }
 
@@ -17,12 +19,16 @@ main {
 }
 
 h1 {
+  height: auto;
+  background: url("./images/site-03.png") center no-repeat;
+  background-clip: border-box;
 	text-align: center;
-  padding: 50px
+  color: rgba(0, 0, 0, 0);
+  padding: 50px;
 }
 
 #color-palette {
-  width: 500px;
+  width: 45%;
   text-align: center;
   margin: auto;
 }
@@ -44,6 +50,9 @@ h1 {
   margin: auto;
   padding: 0;
   margin-bottom: 75px;
+  background: rgb(96 197 236 / 80%);
+  padding: 20px 10px 17px;
+  border-radius: 4%;
 }
 
 .pixel {
@@ -62,6 +71,19 @@ h1 {
   display: inline-block;
   margin-bottom: 50px;
   width: 100%;
+}
+
+#clear-board {
+  background-color: rgb(255, 128, 149);
+  font-family: '04b', sans-serif;
+  -webkit-text-stroke: 2px rgb(38, 38, 38);
+  color: white;
+  border: none;
+  border-radius: 3%;
+  text-decoration: none;
+  padding: 15px 32px;
+  font-size: 25px;
+  cursor: pointer;
 }
 
 footer {

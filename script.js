@@ -6,8 +6,6 @@ window.onload = function () {
       const div = document.createElement('div');
       if (i === 0) {
         div.className = 'color selected';
-        //div.style.transition = 'transform .2s';
-        //div.style.transform = 'scale(1.2)';
         div.style.backgroundColor = 'black';
       } else {
         div.className = 'color';
@@ -44,8 +42,6 @@ window.onload = function () {
           resetSelect();
           pintalPixel(event.target.style.backgroundColor);
           event.target.className = 'color selected';
-          //event.target.style.transition = 'transform .2s';
-          //event.target.style.transform = 'scale(1.2)';
         } 
       })
     }
@@ -55,7 +51,6 @@ window.onload = function () {
     const cores = document.querySelectorAll('.color');
     for (let i = 0; i < cores.length; i += 1) {
       cores[i].className = 'color';
-      //cores[i].style.transform = 'scale(1.0)';
     }
   }
 
@@ -102,16 +97,4 @@ window.onload = function () {
   }
 
   VQV();
-
-  /*function gerarCoresBotao() {
-    const pegarBotaoCores = document.getElementById('generate-colors');
-    pegarBotaoCores.addEventListener('click', function (event) {
-      const coresAtuais = document.querySelectorAll('.color')
-      for (let i = 0; i < coresAtuais.length; i += 1) {
-        if (i !== 0) coresAtuais[i].style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
-      }
-    })
-  }
-
-  gerarCoresBotao();*/
 }
