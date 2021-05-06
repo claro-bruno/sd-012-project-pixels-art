@@ -47,7 +47,7 @@
   width: 40px;
   border: 1px solid black;
   margin-top: 1px;
-  background-color: #fff;
+  background-color: white;
 }
 
 .selected {
@@ -64,7 +64,7 @@ button {
   cursor: pointer;
   background-color: green;
   transition: 0.5s;
-  color: #fff;
+  color: white;
 }
 
 input {
