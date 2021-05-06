@@ -1,31 +1,18 @@
-#color-palette{
-    display: table-row;
-}
 .color{
-    background-color: blue;
-    border: black solid 1px;
+  border: black solid 1px;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
 }
-#black{
-    background-color: black;
-    width: 100px;
-    height: 100px;
-    display: table-cell;
+.black{
+  background-color: black;
 }
-#golden{
-    background-color:gold;
-    width: 100px;
-    height: 100px;
-    display: table-cell;
+.red{
+  background-color: red;
 }
-#silver{
-    background-color: silver;
-    width: 100px;
-    height: 100px;
-    display: table-cell;
+.silver{
+  background-color: silver;
 }
-#red{
-    background-color: red;
-    width: 100px;
-    height: 100px;
-    display: table-cell;
+.golden{
+  background-color: gold;
 }
