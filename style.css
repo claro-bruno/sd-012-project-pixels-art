@@ -4,6 +4,9 @@
     width: 80px;
     height: 50px;
 }
+#pixel-board{
+    width: 250px;
+}
 .pixel{
     background-color: white;
     width: 40px;
