@@ -14,6 +14,14 @@ main {
   background: url('/images/bg.png') no-repeat center fixed;
   margin: auto;
 }
+#title {
+  color: #d85355;
+  text-shadow: 1px 1px 2px black;
+}
+
+#title:hover {
+  cursor: default;
+}
 
 .color {
   width: 40px;
@@ -42,7 +50,7 @@ main {
 
 
 #board-size {
-  width: 100px;
+  width: 105px;
   font-style: italic;
 }
 
