@@ -95,10 +95,10 @@ window.onload = function () {
   selec()
 
   function getColor () {
-      let pixels = document.querySelectorAll('.pixel')
-      for (let index = 0; index < pixels.length; index += 1) {
-          pixels[index].addEventListener('click', inputColor);
-      }
+    let pixels = document.querySelectorAll('.pixel')
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].addEventListener('click', inputColor);
+    }
   }
   getColor()
 
@@ -107,5 +107,12 @@ window.onload = function () {
     param1.target.style.backgroundColor = cor;
   }
 
+  let btn = document.querySelector('#clear-board');
+  btn.addEventListener('click', function () {
+    let pixels = document.querySelectorAll('.pixel');
+    for(let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
+    }
+  });
 
 }
