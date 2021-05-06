@@ -1,4 +1,5 @@
-window.onload = function (){
+
+const pixelboard = document.querySelector('#pixel-board')
 function mudarCorPaleta (array){
     let arrayCores = ["black","yellow", "red", "green"];
     let paleta = document.getElementsByClassName('color')
@@ -12,7 +13,7 @@ function mudarCorPaleta (array){
 }
 mudarCorPaleta();
 
-
+//cria pixeis
 function createBoard (pixeis) {
     let quadroPixel = document.createElement('table');
     document.body.appendChild(quadroPixel);
@@ -27,8 +28,9 @@ function createBoard (pixeis) {
         }
     }
 }
-createBoard(5);
+createBoard(8);
 
+//selecao da paleta
 let color = document.querySelectorAll('.color')
 function mudarSelecao(event){
     const selected = document.querySelector('.selected');
@@ -39,10 +41,22 @@ function mudarSelecao(event){
     color[index].addEventListener('click', mudarSelecao);
 }
 
+//muda cor com base no selecionado
+const changeColor = document.querySelector('#pixel-board');
+changeColor.addEventListener('click', (e) => {
+    const selected = document.querySelector('.selected');
+    e.target.style.backgroundColor = selected.style.backgroundColor;
+  });
 
 
 
 
 
 
-}
+
+
+
+
+
+
+
