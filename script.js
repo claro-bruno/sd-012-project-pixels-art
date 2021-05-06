@@ -11,25 +11,28 @@ function quadroPixel(){
   let quadro = document.querySelector('#pixel-board')
   
   for(let linha = 1; linha <= 5;linha +=1){
+  let quadrinhoLinha = document.createElement('tr');
+
       for(let coluna =1 ; coluna <= 5 ; coluna +=1){
-          let quadrinho = document.createElement('div');
-          quadrinho.className = 'pixel';
-          quadro.appendChild(quadrinho)
+          let quadrinhoData = document.createElement('td');
+          quadrinhoData.className = 'pixel';
+          quadrinhoLinha.appendChild(quadrinhoData)
       }
+      quadro.appendChild(quadrinhoLinha)
   };
 };
 quadroPixel();
 
 function corInicial(){
 //adiciona a nova classe das classes color
-let cor = document.querySelectorAll('.color');
+let cor = document.querySelector('.color');
 cor[0].className += ' selected';
-for(let ICor = 0; ICor < cor.length;ICor+=1){
-  cor[ICor]
-}
-
-// muda a cor dos pixel para a mesma cor do item com classe selected
-
-
 }
 corInicial();
+
+function colorir(){
+// A `classe` `selected` deve ser adicionada à cor selecionada na paleta, ao mesmo tempo em que é removida da cor anteriormente selecionada;
+
+
+}
+colorir()
