@@ -1,6 +1,12 @@
 body {
   text-align: center;
   background-color: grey;
+  font-family: sans-serif;
+}
+
+#color-palete {
+  margin: 20px;
+  padding-left: 0;
 }
 
 .color {
