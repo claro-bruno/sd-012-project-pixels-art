@@ -11,18 +11,6 @@ body{
     border: 1px solid black;
   }
 
-#box1 {
-    background-color: black;
-}
-#box2 {
-    background-color: red;
-}
-#box3 {
-    background-color: green;
-}
-#box4 {
-    background-color: blue;
-}
 
 #pixel-board {
     margin-top: 5%;

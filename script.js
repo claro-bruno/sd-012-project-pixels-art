@@ -1,13 +1,12 @@
-  
-let cor = ['box1', 'box2', 'box3', 'box4'];
-
+const colors = ['black', 'blue', 'red', 'green'];
 
 function createPalette() {
     let divs = document.getElementById('color-palette'); 
-    for(let index = 0; index < cor.length; index += 1){
+    for(let index = 0; index < colors.length; index += 1){
     let createDivs = document.createElement('div');
     createDivs.className = 'color';
-    createDivs.id = cor[index];
+    createDivs.style.backgroundColor = colors[index];
+    createDivs.id = 'uncolored';
     divs.appendChild(createDivs);
     } 
 }
@@ -37,8 +36,12 @@ function createBoard(size) {
 createBoard(5);
 
 function selecteBlack() {
-    let selectedBlack = document.getElementById('box1');
-    selectedBlack.className = 'color selected'
+    let selectedBlack = document.getElementsByClassName('color')[0];
+    selectedBlack.className = 'color selected';
 }
 selecteBlack();
 
+let clickColors = document.querySelectorAll('.color');
+clickColors.addEventListener("click", function () {
+    console.log('funcionou');
+})
