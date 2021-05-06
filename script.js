@@ -1,6 +1,5 @@
-
 function setSquareColor() {
-    let colors = ['black', 'blue', 'red', 'green'];
+    const colors = ['black', 'blue', 'red', 'green'];
     let colorPalette = document.querySelectorAll('.color');
     for (let index = 0; index < colorPalette.length; index += 1) {
         colorPalette[index].style.backgroundColor = colors[index];
@@ -17,6 +16,7 @@ function createSquare() {
     square.style.display = 'inline-block';
     square.style.boxSizing = 'border-box';
     square.style.marginBottom = '-4px'
+    square.style.background = 'white';
     
     return square;
 }
