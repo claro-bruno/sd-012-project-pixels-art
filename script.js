@@ -1,3 +1,3 @@
-let colors
-function cores() {
+function pixelboard() {
+    let lines = document.querySelectorAll(".pixel")
 }
