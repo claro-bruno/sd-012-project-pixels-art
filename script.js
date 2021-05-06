@@ -52,3 +52,17 @@ creatPixelBox(5);
 
 let initialColorBlack = document.getElementsByClassName('color')[0];
 initialColorBlack.classList.add('selected');
+
+//Requisito 7
+function selectedColor () {
+    const colorPalette =  document.querySelector('#color-palette');
+    colorPalette.addEventListener('click', (event) => {
+        if (event.target.className === 'color') {
+          const colorSelected = document.querySelector('.selected');
+          colorSelected.classList.remove('selected');
+          event.target.classList.add('selected');
+        }
+      }  );
+}
+
+selectedColor();
