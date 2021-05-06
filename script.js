@@ -13,7 +13,7 @@ function coloreDivsPaleta() {
 
 coloreDivsPaleta();
 
-//função para criar o quadro de pixels - requisitos 4 e 5
+//REQUISITOS 4 e 5
 
 let linhasQuadroPixels = document.getElementsByClassName('linha-pixel'); //captura lista linhas html
 
@@ -32,9 +32,7 @@ function quadroPixels() {
 
 quadroPixels()
 
-//requisitos 6 e 7
-
-//requisito 6 - função que define a cor preta (da paleta de cores) como inicial (com classe selected)
+//REQUISITO 6 - função que define a cor preta (da paleta de cores) como inicial (com classe selected)
 function setBlackAsDefault(){
     let corSelecionada = document.getElementById('black');
     corSelecionada.className = 'color selected';
@@ -42,7 +40,7 @@ function setBlackAsDefault(){
 
 setBlackAsDefault();
 
-//requisito 7 - função que adiciona eventos click na paleta e seleciona cores
+//REQUISITO 7 - função que adiciona eventos click na paleta e seleciona cores
 function adicionaEventosPaleta(){
     let listaCores = document.getElementsByClassName('color');     //captura lista de cores paleta html
     for (index3 = 0; index3 < listaCores.length; index3 += 1){
@@ -60,17 +58,18 @@ function adicionaEventosPaleta(){
 
 adicionaEventosPaleta();
 
-// //3-função que faz mudar a cor para preto
+//REQUISITO 8 - função que adiciona event listeners aos pixels e os faz mudar de cor
 
-// function colorirPixel(){
-//     let listaPixels = document.getElementsByClassName('pixel'); //captura lista de pixels html
-//     for (index4 = 0; index4 < listaPixels.length; index4 += 1){
-//         if (listaPixels[index4].style.backgroundColor === 'black'){
-//             listaPixels[index4].style.backgroundColor = 'white';
-//         }else{
-//             listaPixels[index4].style.backgroundColor = 'black';
-//         };
-//     };
-// };
+function adicionaEventosPixel(){
+    let listaPixels = document.getElementsByClassName('pixel'); //captura lista de pixels html
+    for (index4 = 0; index4 < listaPixels.length; index4 += 1){
+        let umPixel = listaPixels[index4];
+        umPixel.addEventListener ('click', function () {          
+            let selectedColor = document.getElementsByClassName('color selected')[0];
+            umPixel.style.backgroundColor = selectedColor.style.backgroundColor;
+        });
+    };
+};
 
+adicionaEventosPixel();
 
