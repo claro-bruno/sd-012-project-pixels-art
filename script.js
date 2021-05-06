@@ -1,4 +1,16 @@
 window.onload = function () {
+  function generateRandomColors() {
+    let colorsArray = document.getElementsByClassName('color');
+    for (let index = 1; index < colorsArray.length; index += 1) {
+      let color =
+        '#' +
+        parseInt(Math.random() * 0xfff)
+          .toString(16)
+          .padStart(3, '0');
+      colorsArray[index].style.backgroundColor = color;
+    }
+  }
+
   function generatePixelsLine() {
     let divPixel = document.createElement('div');
     divPixel.className = 'pixel';
@@ -34,7 +46,6 @@ window.onload = function () {
       });
     }
   }
-  selectedColors();
 
   function paintPixels() {
     let pixelsArray = document.querySelectorAll('.pixel');
@@ -42,11 +53,11 @@ window.onload = function () {
       pixelsArray[index].addEventListener('click', function (event) {
         let colorSelected = document.querySelector('.selected');
         let color = getComputedStyle(colorSelected).backgroundColor;
+        console.log(color);
         event.target.style.backgroundColor = color;
       });
     }
   }
-  paintPixels();
 
   function buttonClear() {
     let buttonClear = document.getElementById('clear-board');
@@ -57,14 +68,12 @@ window.onload = function () {
       }
     });
   }
-  buttonClear();
 
   function generateNewBoard() {
     let input = document.getElementById('board-size');
     let buttonGenerate = document.getElementById('generate-board');
     buttonGenerate.addEventListener('click', function () {
       let boardSize = input.value;
-      console.log(boardSize);
       if (boardSize.length !== 0) {
         if (boardSize < 5) {
           boardSize = 5;
@@ -75,7 +84,16 @@ window.onload = function () {
       } else {
         alert('Board inválido!');
       }
+      initialize();
     });
   }
-  generateNewBoard();
+
+  function initialize() {
+    generateRandomColors();
+    selectedColors();
+    paintPixels();
+    buttonClear();
+    generateNewBoard();
+  }
+  initialize();
 };
