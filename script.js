@@ -1,9 +1,10 @@
-window.onload = function () {
+window.onload = function main() {
   let line = 5;
   let colom = 5;
   let square = document.getElementsByClassName('color');
   let pixelFather = document.getElementById('pixel-board');
   let clean =document.getElementById('clear-board');
+ 
   let cor = {
     0: 'black',
     1: 'red',
