@@ -67,11 +67,11 @@ function handleButton() {
 function buttonGerar() {
   botaoGerar.addEventListener('click', () => {
     let valor = document.getElementById('board-size').value;
+    apagarBoard();
     if (valor >= 5 && valor <= 50){
-      apagarBoard();
       matriz = valor;
       gerarBoard(matriz);
-      handleBoard();
+      handleBoard();    
     } else {
       alert('Board inválido!');
     }
