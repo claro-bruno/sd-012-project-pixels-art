@@ -1,4 +1,16 @@
-const colors = ['black', 'greenyellow', 'blueviolet', 'orangered']; // black obrigatoriamente tenque ser a primeira cor do array
+function gerar_cor() {
+    let r = Math.random() * 255;
+    let g = Math.random() * 255;
+    let b = Math.random() * 255;
+    
+    return `rgb(${r}, ${g}, ${b})`;
+ }
+
+
+
+
+
+const colors = ['black', gerar_cor(), gerar_cor(), gerar_cor()]; // black obrigatoriamente tenque ser a primeira cor do array
 const colorBoxes = document.getElementsByClassName('color');
 for (let index = 0; index < colorBoxes.length; index += 1) {
     colorBoxes[index].style.backgroundColor = colors[index];
