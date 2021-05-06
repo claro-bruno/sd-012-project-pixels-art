@@ -30,7 +30,7 @@ cor.className += ' selected';
 }
 corInicial();
 
-function colorir(){
+function trocaClass(){
 
 let cor = document.querySelectorAll('.color');
 
@@ -43,7 +43,21 @@ for(let i =0;i < cor.length;i+=1){
     cor[i].className = select;
   })
 }
+}
+trocaClass();
 
+function colorir(){
 
+  let pixel= document.querySelectorAll('.pixel');
+  
+  
+
+ for(let i=0;i<pixel.length;i+=1){
+   
+   pixel[i].addEventListener('click', function(){
+     let itemCor = document.querySelector('.selected') ;
+     pixel[i].style.backgroundColor = itemCor.style.backgroundColor
+    })
+ }
 }
 colorir()
