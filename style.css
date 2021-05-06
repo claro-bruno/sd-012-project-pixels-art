@@ -1,30 +1,25 @@
 #pixel-board {
-    width: 5;
-    height: 5;
+    display: table;
+    border-spacing: 1px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.row {
+    display: table-row;
 }
 
 .pixel {
-    border: 1px solid black;
+    display: table-cell;
+    background-color: white;
     width: 40px;
     height: 40px;
-    background-color: white;
-}
-
-#color1 {
-    background-color: blue;
-}
-#color2 {
-    background-color: yellow;
-}
-
-#color3 {
-    background-color: green;
-}
-
-#color4 {
-    background-color: red;
+    border: 1px solid black;
 }
 
 .color {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
     border: 1px solid black;
 }
