@@ -141,20 +141,24 @@ function createButtonConfirm() {
 createButtonConfirm();
 
 // O que fazer quando o botão for clicado.
-const inputValue = document.querySelector('#board-size');
-const buttonConfirm = document.querySelector('#generate-board');
+function startEverithing() {
+  const inputValue = document.querySelector('#board-size');
+  const buttonConfirm = document.querySelector('#generate-board');
 
-buttonConfirm.addEventListener('click', () => {
-  if (inputValue.value === '') {
-    return alert('Board inválido!');
-  }
-  let linhas = parseInt(inputValue.value, 10);
-  if (linhas < 5) {
-    linhas = 5;
-    inputValue.value = '5';
-  } else if (linhas > 50) {
-    linhas = 50;
-    inputValue.value = '50';
-  }
-  createBoard(linhas);
-});
+  buttonConfirm.addEventListener('click', () => {
+    if (inputValue.value === '') {
+      return alert('Board inválido!');
+    }
+    let linhas = parseInt(inputValue.value, 10);
+    if (linhas < 5) {
+      linhas = 5;
+      inputValue.value = '5';
+    } else if (linhas > 50) {
+      linhas = 50;
+      inputValue.value = '50';
+    }
+    createBoard(linhas);
+  });
+}
+
+startEverithing();
