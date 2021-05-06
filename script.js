@@ -66,3 +66,12 @@ function selectedColor () {
 }
 
 selectedColor();
+
+//Requisito 9
+const pixel = document.querySelectorAll('.pixel');
+function clearPixelBox ()  {
+    for (let element of pixel) {
+        element.style.backgroundColor = 'white';
+    }
+}
+clearPixelBox ();
