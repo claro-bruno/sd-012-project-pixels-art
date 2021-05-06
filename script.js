@@ -1,11 +1,9 @@
 let pixelBoard = document.querySelector('#pixel-board');
 document.querySelectorAll('.color')[0].style.backgroundColor = 'black';
-let cor2 = document.querySelectorAll('.color')[1];
-let cor3 = document.querySelectorAll('.color')[2];
-let cor4 = document.querySelectorAll('.color')[3];
-cor2.style.backgroundColor = "#" + ((1<<24)*Math.random() | 0).toString(16);
-cor3.style.backgroundColor = "#" + ((1<<24)*Math.random() | 0).toString(16);
-cor4.style.backgroundColor = "#" + ((1<<24)*Math.random() | 0).toString(16);
+document.querySelectorAll('.color')[1].style.backgroundColor = "#" + ((1<<24)*Math.random() | 0).toString(16);
+document.querySelectorAll('.color')[2].style.backgroundColor = "#" + ((1<<24)*Math.random() | 0).toString(16);
+document.querySelectorAll('.color')[3].style.backgroundColor = "#" + ((1<<24)*Math.random() | 0).toString(16);
+// código de cor aleatória ""#" + ((1<<24)*Math.random() | 0).toString(16)" tirado da página "https://stackoverflow.com/questions/1484506/random-color-generator"
 
 function preencherBoard (tamanho) {
     for (let index = 1; index <= tamanho; index +=1) {
@@ -39,7 +37,7 @@ document.querySelector('#pixel-board').addEventListener('click', function preenc
     event.target.style.backgroundColor = corSelecionada;
 });
 
-document.querySelector('#clear-board').addEventListener('click', function limpaCores () {
+document.querySelector('#clear-board').addEventListener('click', function limpaCores() {
     let pixelALimpar = document.querySelector('#pixel-board').firstChild;
     for (let index in document.querySelector('#pixel-board').children) {
         pixelALimpar.style.backgroundColor = 'white';
@@ -58,18 +56,18 @@ function removerBoard() {
     }
 }
 
-function mudarTamanho () {
+function mudarTamanho() {
     let inputValue = document.querySelector('#board-size');
     if (inputValue.value === '') {
         window.alert('Board inválido!');
     } else if (inputValue.value > 50) {
-        removerBoard ();
+        removerBoard();
         preencherBoard(50);
     } else if (inputValue.value < 5) {
-        removerBoard ();
+        removerBoard();
         preencherBoard(5);
     } else {
-        removerBoard ();
+        removerBoard();
         preencherBoard(inputValue.value);
     }
 }; vqv.addEventListener('click', mudarTamanho);
