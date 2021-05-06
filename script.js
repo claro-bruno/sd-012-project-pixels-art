@@ -34,19 +34,7 @@ quadroPixels()
 
 //funções para colorir pixels de preto
 
-//1-função que adiciona event listeners
-function addPixelEvent(){
-
-    let listaPixels = document.getElementsByClassName('pixel'); //captura lista de pixels html
-        for (index3 = 0; index3 < listaPixels.length; index3 += 1){
-            let pixelListener = listaPixels[index3];
-            pixelListener.addEventListener('click', colorirPixel);
-        };
-};
-
-addPixelEvent();
-
-//3-função que define a cor preta (da paleta de cores) como inicial (com classe selected)
+//1-função que define a cor preta (da paleta de cores) como inicial (com classe selected)
 let listaCores = document.getElementsByClassName('color');
 function setBlackAsDefault(){
     let corSelecionada = document.getElementById('black');
@@ -55,17 +43,28 @@ function setBlackAsDefault(){
 
 setBlackAsDefault();
 
-//2-função que faz mudar a cor para preto
+// //2-função que adiciona event listeners
+// function addPixelEvent(){
+//     let listaPixels = document.getElementsByClassName('pixel'); //captura lista de pixels html
+//         for (index3 = 0; index3 < listaPixels.length; index3 += 1){
+//             let pixelListener = listaPixels[index3];
+//             pixelListener.addEventListener('click', colorirPixel);
+//         };
+// };
 
-//function colorirPixel(){
-    let listaPixels = document.getElementsByClassName('pixel'); //captura lista de pixels html
-    for (index4 = 0; index4 < listaPixels.length; index4 += 1){
-        if (listaPixels[index4].style.backgroundColor === 'black'){
-            listaPixels[index4].style.backgroundColor = 'white';
-        }else{
-            listaPixels[index4].style.backgroundColor = 'black';
-        };
-    };
-};
+// addPixelEvent();
+
+// //3-função que faz mudar a cor para preto
+
+// function colorirPixel(){
+//     let listaPixels = document.getElementsByClassName('pixel'); //captura lista de pixels html
+//     for (index4 = 0; index4 < listaPixels.length; index4 += 1){
+//         if (listaPixels[index4].style.backgroundColor === 'black'){
+//             listaPixels[index4].style.backgroundColor = 'white';
+//         }else{
+//             listaPixels[index4].style.backgroundColor = 'black';
+//         };
+//     };
+// };
 
 
