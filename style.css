@@ -30,3 +30,6 @@
     margin:0px;
     background-color: white; 
 }
+.selected {
+    top: 75px;
+ }
