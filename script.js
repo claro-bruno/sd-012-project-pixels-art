@@ -1,4 +1,3 @@
-window.onload = function inicializa() {
 // Requisito 04 e 05
 function criaQuadradosDiv() {
   const pixel = document.createElement('div');
@@ -48,77 +47,77 @@ function alteraCor() {
 alteraCor();
 
 // Requisito 06
-  function corPadrao() {
-    const paletaCorPadrao = document.getElementsByClassName('color');
-    for (let index = 0; index < paletaCorPadrao.length; index += 1) {
-      paletaCorPadrao[index].classList.remove('selected');
-    }
-    paletaCorPadrao[0].classList.add('selected');
+function corPadrao() {
+  const paletaCorPadrao = document.getElementsByClassName('color');
+  for (let index = 0; index < paletaCorPadrao.length; index += 1) {
+    paletaCorPadrao[index].classList.remove('selected');
   }
-  corPadrao();
+  paletaCorPadrao[0].classList.add('selected');
+}
+corPadrao();
 
+// Requisito 08
+function getColor(event) {
+  const alvo = event.target;
+  const selectedColor = document.querySelector('.selected').style.backgroundColor;
+  alvo.style.backgroundColor = selectedColor;
+}
+function getColorEvent() {
+  const square = document.getElementsByClassName('pixel');
+  for (let index = 0; index < square.length; index += 1) {
+    square[index].addEventListener('click', getColor);
+  }
+}
+getColorEvent();
+
+// Requisito 07
+function selected(event) {
+  const removeSelection = document.querySelector('.selected');
+  removeSelection.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+function selectedEvent() {
+  const paleta = document.getElementsByClassName('color');
+  for (let index = 0; index < paleta.length; index += 1) {
+    paleta[index].addEventListener('click', selected);
+  }
+}
+selectedEvent();
+
+// Requisito 09
+function clearButton() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+function clearButtonEvent() {
+  const button = document.querySelector('#clear-board');
+  button.addEventListener('click', clearButton);
+}
+clearButtonEvent();
+
+// Requisito 10
+function customSize() {
+  const inputValue = parseInt(document.getElementById('board-size').value);
+  if (inputValue < 51 && inputValue > 0) {
+    createSquare(inputValue);
+  } else {
+    alert('Board inválido!');
+  }
+  getColorEvent();
+}
+function customSizeEvent() {
+  const button = document.querySelector('.button>button');
+  button.addEventListener('click', customSize);
+}
+customSizeEvent();
+
+window.onload = function inicializa() {
   function boardSizeDefault() {
     createSquare(5);
   }
   boardSizeDefault();
   getColorEvent();
-  
-  // Requisito 07
-  function selected(event) {
-    const removeSelection = document.querySelector('.selected');
-    removeSelection.classList.remove('selected');
-    event.target.classList.add('selected');
-  }
-  function selectedEvent() {
-    const paleta = document.getElementsByClassName('color');
-    for (let index = 0; index < paleta.length; index += 1) {
-      paleta[index].addEventListener('click', selected);
-    }
-  }
-  selectedEvent();
-  
-  // Requisito 08
-  function getColor(event) {
-    const alvo = event.target;
-    const selectedColor = document.querySelector('.selected').style.backgroundColor;
-    alvo.style.backgroundColor = selectedColor;
-  }
-  function getColorEvent() {
-    const square = document.getElementsByClassName('pixel');
-    for (let index = 0; index < square.length; index += 1) {
-      square[index].addEventListener('click', getColor);
-    }
-  }
-  getColorEvent();
-  
-  // Requisito 09
-  function clearButton() {
-    const pixels = document.getElementsByClassName('pixel');
-    for (let index = 0; index < pixels.length; index += 1) {
-      pixels[index].style.backgroundColor = 'white';
-    }
-  }
-  function clearButtonEvent() {
-    const button = document.querySelector('#clear-board');
-    button.addEventListener('click', clearButton);
-  }
-  clearButtonEvent();
-  
-  // Requisito 10
-  function customSize() {
-    const inputValue = parseInt(document.getElementById('board-size').value);
-    if (inputValue < 51 && inputValue > 0) {
-      createSquare(inputValue);
-    } else {
-      alert('Board inválido!');
-    }
-    getColorEvent();
-  }
-  function customSizeEvent() {
-    const button = document.querySelector('.button>button');
-    button.addEventListener('click', customSize);
-  }
-  customSizeEvent();
-  
 };
 // window.onload braket;
