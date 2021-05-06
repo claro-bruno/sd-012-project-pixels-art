@@ -38,13 +38,10 @@ cor3.addEventListener("click", colocaClassSelected);
 cor4.addEventListener("click", colocaClassSelected);
 
 
-function adiocionaCor() {
-  let tds = document.querySelectorAll('#pixel-board tr td');
-  let corDaPaleta = document.querySelector('.selected');
-  for (let index = 0; index < tds.length; index += 1) {
-    tds[index].addEventListener('click', function (event) {
-      event.target.id = corDaPaleta.id;
-    });
-  }
-}
-adiocionaCor();
+
+  let corP = document.querySelector("#pixel-board");
+  corP.addEventListener("click", function(evento){
+      evento.target.id = document.querySelector(".selected").id;
+  });
+
+
