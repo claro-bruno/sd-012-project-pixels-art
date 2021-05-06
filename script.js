@@ -36,5 +36,16 @@ color2.addEventListener('click', getColor);
 color3.addEventListener('click', getColor);
 color4.addEventListener('click', getColor);
 
+//8 
+function putColor(event) {
+  const selectedColor = document.querySelector('.selected');
+  const colorOfSelectedColor = window.getComputedStyle(selectedColor); //MDN Web DOcs utilizado.
+  event.target.style.backgroundColor = colorOfSelectedColor.getPropertyValue('background-color');
+}
+
+const clickedPixel = document.querySelectorAll('.pixel');
+for (let i3 = 0; i3 < clickedPixel.length; i3 += 1) {
+  clickedPixel[i3].addEventListener('click', putColor);
+}
 
 }
