@@ -1,5 +1,6 @@
 
 .color{
+background-color: #fff;
 width: 40px;
 height: 40px;
 border: 1px solid black;
@@ -7,6 +8,7 @@ display: inline-block;
 
 }
 .pixel{
+background-color: #fff;
 width: 40px;
 height: 40px;
 border: 1px solid black;
@@ -14,6 +16,7 @@ display: inline-block;
 }
 
 .pixel-line{
+background-color: #fff;
 height: 40px;
 
 
