@@ -15,22 +15,22 @@
   margin-left: 5px;
 }
 
-.color:nth-child(1), .selected {
+.color:nth-child( 1 ) , .selected {
   background-color: black;
   cursor: pointer;
 }
 
-.color:nth-child(2) {
+.color:nth-child( 2 ) {
   background-color: blueviolet;
   cursor: pointer;
 }
 
-.color:nth-child(3) {
+.color:nth-child( 3 ) {
   background-color: yellowgreen;
   cursor: pointer;
 }
 
-.color:nth-child(4) {
+.color:nth-child( 4 ) {
   background-color: cornflowerblue;
   cursor: pointer;
 }
@@ -48,7 +48,7 @@
   width: 40px;
   border: 1px solid black;
   margin-top: 1px;
-  background-color: white;
+  background-color: #fff;
 }
 
 .selected {
@@ -86,5 +86,5 @@ button:hover {
 .created-pixel {
   border: 1px solid black;
   margin-top: 1px;
-  background-color: white;
+  background-color: #fff;
 }
