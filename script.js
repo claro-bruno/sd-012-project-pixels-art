@@ -1,22 +1,40 @@
 const colorPalete = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
-const colors = ['#000', '#405d27', '#034f84', '#c94c4c'];
 const clearBtn = document.getElementById('clear-board');
 
 
-
-function colorSelector() {
-    for(let index = 0; index < colors.length; index+=1) {
-        const eachColor = document.createElement('div');
-        eachColor.className = 'color';
-        const color = colors[index];
-        eachColor.innerText = color;
-        colorPalete.appendChild(eachColor);
-        colorPalete.firstChild.className = 'color selected';
-    };
-    
+function randomPalette(colors) {
+    for(let index = 0; index < 4; index += 1) {
+        const randomColor = Math.floor(Math.random() * (colors.length - 1)); 
+        const color = colors[randomColor]
+        if(index === 0) {
+            const divBlack = document.createElement('div');
+            divBlack.className = 'color selected';
+            divBlack.innerText = 'black';
+            colorPalete.appendChild(divBlack);
+        } else {
+            const newColorDiv = document.createElement('div');
+            newColorDiv.className = 'color';
+            newColorDiv.style.backgroundColor = color;
+            newColorDiv.innerHTML = color;
+            colorPalete.appendChild(newColorDiv);
+        }
+    }
 }
-colorSelector();    
+randomPalette(['#F4EBD0', '#405d27', '#034f84', '#c94c4c', '#FFAEBC', '#F8D210', '#2FF3E0', '#B68D40', '#122620']);
+
+// function colorSelector() {
+//     for(let index = 0; index < colors.length; index+=1) {
+//         const eachColor = document.createElement('div');
+//         eachColor.className = 'color';
+//         const color = colors[index];
+//         eachColor.innerText = color;
+//         colorPalete.appendChild(eachColor);
+//         colorPalete.firstChild.className = 'color selected';
+//     };
+    
+// }
+// colorSelector();
 
 function drawingBoarder(board) {    
     const boardWidth = board * 40 + board * 2 + 1;
