@@ -40,7 +40,7 @@ table, tr, td{
   display: inline-block;
 }
 
-button {
+#clear-board {
   display: block;
   margin: 7px auto 10px;
 }
