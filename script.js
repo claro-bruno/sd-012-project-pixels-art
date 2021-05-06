@@ -62,7 +62,6 @@ function captureColor (){
     let selectColor = document.querySelector('.selected');
 
     for(let index = 0; index < getColor.length; index += 1) {
-        selectColor.classList.remove('selected');
         getColor[index].addEventListener('click', function (event) {
             for(let index = 0; index < getColor.length; index += 1) {
                 getColor[index].classList.remove('selected')
@@ -74,3 +73,23 @@ function captureColor (){
 }
 
 captureColor()
+
+// //===========================================================
+
+// // Exercício 8:
+
+
+
+function paint () {
+    let pixelSelect = document.getElementsByClassName('pixel');
+    
+
+    for(let index = 0; index < pixelSelect.length; index += 1) {
+        pixelSelect[index].addEventListener('click', function (event) {   
+            let selectedColor = document.querySelector('.selected');
+            event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+        })
+    }
+}
+
+paint ();
