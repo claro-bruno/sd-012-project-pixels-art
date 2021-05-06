@@ -45,20 +45,35 @@ function tabela() {
   body.appendChild(table);
 }
 tabela();
-
+//coloca a classe selected na cor preta
 window.onload = function() {
   let black = document.querySelector('.color');
   black.classList.add('selected');
 }
-
+//muda a classe selected para a cor que foi clicada
 function selectedColor() {
   let colorSelected = document.querySelectorAll('.color');
   for (let i = 0; i < colorSelected.length; i++) {
     colorSelected[i].addEventListener('click', function(event) {
-      let corSelecionada = document.querySelector('.selected')
+      let corSelecionada = document.querySelector('.selected');
       corSelecionada.classList.remove('selected');
       event.target.classList.add('selected');
     });
   }
 }
 selectedColor();
+//cê pinta com meu pinto
+function pintar() {
+  let pixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixels.length; i++) {
+    pixels[i].addEventListener('click', function(event) {
+      let cor = document.querySelector('.selected').style.backgroundColor;
+      if (cor === pixels[i].style.backgroundColor) {
+        pixels[i].style.backgroundColor = 'white';
+      } else {
+      pixels[i].style.backgroundColor = cor;
+      }
+    });
+  }
+}
+pintar();
