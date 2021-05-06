@@ -1,8 +1,20 @@
+
+
 window.onload = function() {
     let lines = document.querySelectorAll(".line");
-    let selected = document.querySelector(".slected");
-    
+    let selected = document.querySelector(".selected");
+    let black = document.getElementById("black");
+    let red = document.getElementById("red");
+    let blue = document.getElementById("blue");
+    let green = document.getElementById("green");
+
+    function primaryColor(black){
+        selected = black.style.background-color;
+    };
+
     fillPixelBoard(lines);
+
+    
 
     function createPixel(className) {
         let pixel = document.createElement("div");
