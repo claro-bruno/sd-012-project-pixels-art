@@ -1,4 +1,3 @@
-const shadows = '2px 2px 2px black';
 const board = document.getElementById('pixel-board');
 const input = document.getElementById('board-size');
 const buttonGen = document.getElementById('generate-board');
@@ -13,7 +12,6 @@ const createPalette = (color) => {
   palette.appendChild(colorSquare);
   if (color === 'black') {
     colorSquare.classList.add('selected');
-    colorSquare.style.boxShadow = shadows;
   }
 };
 
@@ -44,12 +42,10 @@ const selectColor = () => {
   for (let i = 0; i < paletteItems.length; i += 1) {
     paletteItems[i].addEventListener('click', () => {
       let selected = document.querySelector('.selected');
-      selected.style.boxShadow = '';
       if (paletteItems[i].classList.contains('selected') === false) {
         paletteItems[i].classList.add('selected');
         selected.classList.remove('selected');
         selected = paletteItems[i];
-        selected.style.boxShadow = shadows;
       }
     });
   }
