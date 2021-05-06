@@ -34,10 +34,9 @@ window.onload = pageStart;
 
 // Código para seleção de cor de preenchimento para o quadro de "pixels".
 function selectColor(event) {
-  const selection = event.target;
-  for (let index = 0; index < palleteColor.length; index += 1) {
-    if (palleteColor[index] === selection) { palleteColor[index].classList.add('selected'); }
-    if (palleteColor[index] !== selection) { palleteColor[index].classList.remove('selected'); }
+  if (!event.target.classList.contains('selected')) {
+    document.querySelector('.selected').classList.remove('selected');
+    event.target.classList.add('selected');
   }
 }
 palColor.addEventListener('click', selectColor);
