@@ -48,7 +48,9 @@ function quadroPixels() {
 };
 
 quadroPixels();
+// retirei esse código da aluna Camila Malvess : camila-pereira-pixels-art//
 
+let colorBlack = document.getElementsByClassName('color')[0];
+colorBlack.classList.add = ('selected');
 
-
-
+// pesquisa de como adicionar uma classe ao elemento:https://tableless.com.br/manipulando-o-uso-de-classes-com-classlist-api/
