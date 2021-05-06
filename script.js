@@ -108,3 +108,28 @@ function mudaCor () {
 }
 
 mudaCor();
+
+// ex 9
+
+function createsButton (name) {
+    let getBContainer = document.getElementsByClassName('button-container');
+    let getPixel = document.querySelectorAll('.pixel');
+    let newButton = document.createElement('button');
+    let newButtonID = 'clear-board';
+    console.log(getBContainer);
+
+
+    newButton.id = newButtonID;
+    newButton.innerHTML = name;
+    newButton.addEventListener('click', function() {
+        for (let allPixel = 0; allPixel < getPixel.length; allPixel += 1) {
+            if (getPixel[allPixel].style.backgroundColor !== 'white') {
+                getPixel[allPixel].style.backgroundColor = 'white';
+            }
+        }
+    })
+
+    getBContainer.appendChild(newButton);
+}
+let buttonName = 'Limpar';
+createsButton(buttonName);
