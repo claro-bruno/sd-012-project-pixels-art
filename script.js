@@ -31,7 +31,6 @@
 
 //referência para resolução do requisito https://trybecourse.slack.com/archives/C01T2C18DSM/p1620259863380200
 //https://developer.mozilla.org/pt-BR/docs/Web/API/Element/id
-let colorSelected = document.getElementsByClassName('pixel');
 
 function selectColorsPallet(event){
     let select = document.querySelector('.selected');
@@ -47,5 +46,15 @@ for(let colors of selectedPixel){
 
 }
 
-    
+function paintPixel(event){
+    let pixelColor = document.querySelector('.selected');
+    event.target.style.backgroundColor = pixelColor.style.backgroundColor;//pega o estilo do selected e atribui a cor ao evento
+}
+
+let colorSelected = document.getElementsByClassName('pixel');
+
+for(let pixels of colorSelected){
+    pixels.addEventListener('click', paintPixel);//atribui evento aos pixels da tabela
+
+} 
 
