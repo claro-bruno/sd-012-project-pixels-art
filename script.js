@@ -25,3 +25,8 @@ function makerBoardPixel(size) {
   }
 }
 makerBoardPixel(5);
+
+window.onload = () => {
+  const firstColor = document.querySelector('#color-palette').firstChild;
+  firstColor.classList.add('selected')
+}
