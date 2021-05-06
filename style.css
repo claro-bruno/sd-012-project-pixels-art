@@ -1,12 +1,12 @@
 body {
   text-align: center;
-  background-color: gray;
+  background-color: grey;
 }
 
-#color-palette div {
+.color {
   display: inline-block;
-  width: 25px;
-  height: 25px;
+  border-radius: 100%;
+  padding: 20px;
 }
 
 #black {
@@ -29,17 +29,28 @@ body {
   background-color: green;
 }
 
-#pixel-board {
-  display: inline-block;
-  margin: 0;
-  width: 250px;
-  height: 250px;
+#yellow {
+  border: 1px solid black;
+  background-color: yellow;
+}
+
+#orange {
+  border: 1px solid black;
+  background-color: orange;
+}
+
+#purple {
+  border: 1px solid black;
+  background-color: purple;
+}
+
+table {
+  margin: auto;
+  border-spacing: 0;
 }
 
 .pixel {
   border: 1px solid black;
   background-color: white;
-  width: 40px;
-  height: 40px;
-  float: left;
+  padding: 40px;
 }
