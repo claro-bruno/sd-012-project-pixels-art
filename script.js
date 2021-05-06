@@ -46,6 +46,6 @@ let botao = document.querySelector('#clear-board');
 let pixels = document.querySelectorAll('.pixel');
 botao.addEventListener('click', function () {
   for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].style.backgroundColor = 'white';
+    pixels[i].id = 'pixel';
   }
 });
