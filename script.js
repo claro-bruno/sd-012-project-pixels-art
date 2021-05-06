@@ -1,5 +1,5 @@
 window.onload = function () {
-
+//5
 const pixelBoard = document.getElementById('pixel-board');
 nPixels = 5;
 
@@ -16,4 +16,29 @@ for (let i = 0; i < nPixels; i += 1) {
     pixelLines.appendChild(eachPixel);
   }
 }
+//6
+
+const colors = document.querySelectorAll('.color');
+const black = colors[0];
+black.classList.add('selected');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
