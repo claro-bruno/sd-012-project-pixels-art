@@ -1,4 +1,3 @@
-
 const pixelboard = document.querySelector('#pixel-board')
 function mudarCorPaleta (array){
     let arrayCores = ["black","yellow", "red", "green"];
@@ -57,17 +56,3 @@ botaoClear.addEventListener('click', () =>{
         pixels[index].style.backgroundColor = 'white';
     }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
