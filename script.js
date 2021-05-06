@@ -87,18 +87,18 @@ function tamanhoPixel(tamanho) {
   }
 }
 // função que CRIA o botão para apagar tudo (volta o background de todos os pixels pra branco)
-function geraBotaoBranco() {
-  let lugar = document.getElementById("color-palette");
-  let botao = document.createElement("button");
-  botao.id = "clear-board";
-  botao.innerText = "Limpar";
-  lugar.appendChild(botao);
-}
+// function geraBotaoBranco() {
+//   let lugar = document.getElementById("color-palette");
+//   let botao = document.createElement("button");
+//   botao.id = "clear-board";
+//   botao.innerText = "Limpar";
+//   lugar.appendChild(botao);
+// }
 
 // Ao clicar no botão, todos os elementos com a classe "pixel" voltam a ter Branco como sua cor de fundo
 function btnBranco() {
   document.addEventListener("click", function(botao) {
-    if (event.target.id == "btnBranco") {
+    if (event.target.id == "clear-board") {
       let pixel = document.getElementsByClassName("pixel");
       for (let index = 0; index < pixel.length; index += 1) {
         pixel[index].style.backgroundColor = corBranco;
@@ -111,5 +111,5 @@ coresPaleta();
 clickCor();
 criaPixel();
 colorePixel();
-geraBotaoBranco();
+//geraBotaoBranco();
 btnBranco();
