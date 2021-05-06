@@ -19,14 +19,16 @@ function createBoard (boardSize) {
     }
 }
 
+
 let allCollors = document.querySelector('#color-palette');
 
-function selectedColor(event) { //Através da contribuição do colega André Moreno no Slack conheci a propriedade target event.
+allCollors.addEventListener('click', function (event) {
     let replaced = document.querySelector('.selected');
-    replaced.classList.remove('.selected');
+    replaced.classList.remove('selected');
     let clicked = event.target;
-    clicked.classList.add('.selected');        
-}
+    clicked.classList.add('selected');        
+})
 
-allCollors.addEventListener('click', selectedColor());
+
+
 
