@@ -4,11 +4,11 @@
     height: 40px;
     width: 40px;
   }
-
+  
   .color:hover {
     cursor: pointer;
   }
-
+  
   #first-color {
     background-color: black;
   }
@@ -16,12 +16,11 @@
   #clear-board {
     margin: 10px;
   }
-
-
+  
   #input-container {
     margin: 10px;
   }
-
+  
   .table {
     display: table;
     border: 2px solid black;
