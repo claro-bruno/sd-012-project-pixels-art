@@ -18,19 +18,42 @@
 
 .btn2 {
     background: yellow;
+    margin-left: 20px;
 }
 
 .btn3 {
     background: blue;
+    margin-left: 20px;
 }
 
 .btn4 {
     background: red;
+    margin-left: 20px;
 }
 
 .color {
-    padding: 40px;
-    margin-left: 20px;
+    padding: 20px;
     border: solid black 1px;
     cursor: pointer;
+}
+
+#pixel-board {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    border-spacing: 1px;
+    background-color: black;
+    border: 1px solid black;
+}
+
+.linha {
+    display: table-row;
+}
+
+.pixel {
+    display: table-cell;
+    background-color: white;
+    width: 40px;
+    height: 40px;
 }
