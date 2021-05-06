@@ -1,13 +1,15 @@
-paletaDeCores();
+window.onload = paletaDeCores();
 quadroBranco();
 
 function paletaDeCores (){
 const paletaCores = document.getElementsByClassName('color');
 
 paletaCores[0].style.backgroundColor = 'black';
+paletaCores[0].classList.add('selected');
 paletaCores[1].style.backgroundColor = 'yellow';
 paletaCores[2].style.backgroundColor = '#ff9933';
 paletaCores[3].style.backgroundColor = '#009933';
+
 }
 
 function quadroBranco (){
