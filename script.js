@@ -1,6 +1,7 @@
 const colorPalete = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
 const colors = ['#000', '#405d27', '#034f84', '#c94c4c'];
+const clearBtn = document.getElementById('clear-board');
 
 
 function colorSelector() {
@@ -30,14 +31,11 @@ drawingBoarder();
 
 const colorDraw = document.querySelectorAll('.pixel');
 
-function initColor() {
-    colorDraw.forEach((pixel, idx) => {
-        pixel.addEventListener('click', () => {
-            pixel.style.backgroundColor = 'black';
-        })
+colorDraw.forEach((pixel, idx) => {
+    pixel.addEventListener('click', () => {
+        pixel.style.backgroundColor = 'black';
     })
-}
-initColor()
+})
 
 document.body.addEventListener('click', function (event) {
     if (event.target.className === 'color' ){
@@ -52,3 +50,12 @@ document.body.addEventListener('click', function (event) {
         })
     }
 })    
+
+function clearBoard() {
+    clearBtn.addEventListener('click', () => {
+        for(let index = 0; index < colorDraw.length; index +=1) {
+            colorDraw[index].style.backgroundColor = 'white';
+        }
+    })
+}
+clearBoard();
