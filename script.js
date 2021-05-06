@@ -29,6 +29,7 @@ function createBoard(size) {
         for (let index2 = 0; index2 < size; index2 += 1) {
             let pixel = document.createElement('div');
             pixel.className = 'pixel';
+
             arrayPixelLine[index].appendChild(pixel);
         }
     }
