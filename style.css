@@ -4,22 +4,18 @@
     padding: 20px;
 }
 
-.black {
-    background-color: black;
+.color:nth-child(1) {
+    background-color: aqua;
 }
 
-.green {
-    background-color: green;
+.color:nth-child(2) {
+    background-color: blueviolet;
 }
 
-.red {
-    background-color: red;
+.color:nth-child(3) {
+    background-color: chartreuse;
 }
 
-.yellow {
-    background-color: yellow;
-}
-
-.blue {
-    background-color: blue;
+.color:nth-child(4) {
+    background-color: darkorange;
 }
