@@ -1,8 +1,11 @@
 let pixelBoard = document.querySelector('#pixel-board');
 document.querySelectorAll('.color')[0].style.backgroundColor = 'black';
-document.querySelectorAll('.color')[1].style.backgroundColor = 'blue';
-document.querySelectorAll('.color')[2].style.backgroundColor = 'red';
-document.querySelectorAll('.color')[3].style.backgroundColor = 'yellow';
+let cor2 = document.querySelectorAll('.color')[1];
+let cor3 = document.querySelectorAll('.color')[2];
+let cor4 = document.querySelectorAll('.color')[3];
+cor2.style.backgroundColor = "#" + ((1<<24)*Math.random() | 0).toString(16);
+cor3.style.backgroundColor = "#" + ((1<<24)*Math.random() | 0).toString(16);
+cor4.style.backgroundColor = "#" + ((1<<24)*Math.random() | 0).toString(16);
 
 function preencherBoard (tamanho) {
     for (let index = 1; index <= tamanho; index +=1) {
