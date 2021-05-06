@@ -1,14 +1,10 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+  }
 div#color-palette{
-    display: flex;
-}
-div.color {
-    width: 50px;
-    height: 50px;
-    background-color: black;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 100%
+    margin-bottom: 10px;
 }
 div.color:nth-child(1) {
     background-color: black;
@@ -22,3 +18,27 @@ div.color:nth-child(3) {
 div.color:nth-child(4) {
     background-color: #7b53ad;
 }
+div.color {
+    display: inline-block;
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+    border:1px solid rgb(0, 0, 0);   
+}
+div#pixel-board{
+    padding: 60px;
+    background-color: white;
+    border: 1px; 
+}div.pixelLine{
+    padding: 0px;
+    height: 50px;
+}
+div.pixel{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black ;
+    background-color:rgb(255, 255, 255);    
+}
+
+    
