@@ -1,3 +1,6 @@
+body {
+  text-align: center;
+}
 .color {
   background-color: rgb(179, 179, 179);
   height: 30px;
@@ -15,7 +18,4 @@
   border: 1px solid black;
   box-sizing: border-box;
   margin-bottom: -4px;
-}
-.button {
-  width: 150px;
 }

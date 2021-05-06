@@ -106,11 +106,11 @@ alteraCor();
   
   // Requisito 10
   function customSize() {
-    const inputValue = parseInt(document.getElementById('generate-border').value);
+    const inputValue = parseInt(document.getElementById('board-size').value);
     if (inputValue < 51 && inputValue > 0) {
       createSquare(inputValue);
     } else {
-      alert('Board inválido');
+      alert('Board inválido!');
     }
     getColorEvent();
   }
