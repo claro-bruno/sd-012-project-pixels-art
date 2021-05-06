@@ -1,4 +1,4 @@
-function randomColor() {
+function randomColorGenereter() {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
   return `#${randomColor}`;
 }
@@ -12,9 +12,9 @@ function createPalette(id, color) {
   colorPalette.appendChild(createDiv);
 }
 
-function createPixelBoard(numero) {
+function createPixelBoard(number) {
   const pixelBoard = document.getElementById('pixel-board');
-  for (let index = 0; index < numero; index += 1) {
+  for (let index = 0; index < number; index += 1) {
     const createPixel = document.createElement('div');
     createPixel.className = 'pixel';
     pixelBoard.appendChild(createPixel);
@@ -74,7 +74,7 @@ function userBoarder() {
   let numberOfInput = 0;
   if (parseInt(inputNumber.value) < 5) {
     numberOfInput = 5;
-  } else if (parseInt(inputNumber.value) > 50){
+  } else if (parseInt(inputNumber.value) > 50) {
     numberOfInput = 50;
   } else {
     numberOfInput = parseInt(inputNumber.value);
@@ -85,7 +85,7 @@ function userBoarder() {
   }
   const finalNumber = numberOfPixels[numberOfInput];
   if (inputNumber.value.length < 1) {
-    return alert('Board inválido!'), createPixelBoard(25);
+    return alert('Board inválido!'); // createPixelBoard(25);
   }
   return finalNumber;
 }
@@ -96,7 +96,7 @@ function sizeBoard() {
   let numberOfInput = 0;
   if (parseInt(inputNumber.value) < 5) {
     numberOfInput = 5;
-  } else if (parseInt(inputNumber.value) > 50){
+  } else if (parseInt(inputNumber.value) > 50) {
     numberOfInput = 50;
   } else {
     numberOfInput = parseInt(inputNumber.value);
@@ -112,24 +112,24 @@ function sizeBoard() {
 function finalBoarderElements() {
   const pixelBoard = document.getElementById('pixel-board');
   const vqvButton = document.getElementById('generate-board');
-  let defaultSize = createPixelBoard(25);
+  // let defaultSize = createPixelBoard(25);
 
-  vqvButton.addEventListener('click', function() {
+function vqvButton.addEventListener('click') {
     pixelBoard.innerHTML = '';
     defaultSize = createPixelBoard(userBoarder());
     sizeBoard();
     changeSelectedClick();
     changeColorClick();
     clearBoardClick();
-  });
+  }
 }
 
 window.onload = function pixelsArt() {
   finalBoarderElements();
   createPalette('color1', 'black');
-  createPalette('color2', randomColor());
-  createPalette('color3', randomColor());
-  createPalette('color4', randomColor());
+  createPalette('color2', randomColorGenereter());
+  createPalette('color3', randomColorGenereter());
+  createPalette('color4', randomColorGenereter());
   initialColor('color1');
   changeSelectedClick();
   changeColorClick();
