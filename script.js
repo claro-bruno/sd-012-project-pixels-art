@@ -28,6 +28,15 @@ function corPaleta() {
 }
 corPaleta();
 
+//cria bUtão
+function criaBotao() {
+  let botao = document.createElement('button');
+  botao.id = 'clear-board';
+  botao.innerHTML = 'Limpar';
+  document.body.appendChild(botao);
+}
+criaBotao();
+
 //cria a tabela
 function tabela() {
   let table = document.createElement('table');
@@ -45,6 +54,7 @@ function tabela() {
   body.appendChild(table);
 }
 tabela();
+
 //coloca a classe selected na cor preta
 window.onload = function() {
   let black = document.querySelector('.color');
@@ -68,12 +78,24 @@ function pintar() {
   for (let i = 0; i < pixels.length; i++) {
     pixels[i].addEventListener('click', function(event) {
       let cor = document.querySelector('.selected').style.backgroundColor;
-      if (cor === pixels[i].style.backgroundColor) {
-        pixels[i].style.backgroundColor = 'white';
+      if (cor === event.target.style.backgroundColor) {
+        event.target.style.backgroundColor = 'white';
       } else {
-      pixels[i].style.backgroundColor = cor;
+      event.target.style.backgroundColor = cor;
       }
     });
   }
 }
 pintar();
+
+//limpa quadro
+function limpar() {
+  let botao = document.querySelector('#clear-board');
+  let pixels = document.querySelectorAll('.pixel');
+  botao.addEventListener('click', function() {
+    for (let i = 0; i < pixels.length; i++) {
+      pixels[i].style.backgroundColor = 'white';
+    }
+  });
+}
+limpar();
