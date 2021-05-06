@@ -2,18 +2,27 @@
 
 window.onload = function() {
     let lines = document.querySelectorAll(".line");
-    let selected = document.querySelector(".selected");
+    
     let black = document.getElementById("black");
     let red = document.getElementById("red");
     let blue = document.getElementById("blue");
     let green = document.getElementById("green");
 
-    function primaryColor(black){
-        selected = black.style.background-color;
-    };
+   function colorSelector(){
+    black.addEventListener('click', event);
+    red.addEventListener('click', event);
+    blue.addEventListener('click', event);
+    green.addEventListener('click', event);
+   };
+
+   function event(event){
+    let selected = document.querySelector(".selected");
+    selected.classList.remove('selected');
+    event.target.classList.add('selected');
+   };
 
     fillPixelBoard(lines);
-
+    colorSelector();
     
 
     function createPixel(className) {
