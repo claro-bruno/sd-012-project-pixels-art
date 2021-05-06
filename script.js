@@ -1,0 +1,1 @@
+const pixelBoard = document.querySelector('#pixel-board');
