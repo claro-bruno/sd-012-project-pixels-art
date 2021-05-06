@@ -9,7 +9,7 @@ function board() {
     const div = document.createElement('div');
     div.className = 'pixel';
     pixel.appendChild(div);
-    }
+  }
 }
 
 board();
@@ -18,10 +18,9 @@ function select(event) {
   const selectedElement = document.querySelector('.selected');
   selectedElement.classList.remove('selected');
   event.target.classList.add('selected');
-  input.value = '';
 }
 
-preto.addEventListener('click', select)
-azulClaro.addEventListener('click', select)
-azulEscuro.addEventListener('click', select)
-claro.addEventListener('click', select)
+preto.addEventListener('click', select);
+azulClaro.addEventListener('click', select);
+azulEscuro.addEventListener('click', select);
+claro.addEventListener('click', select);
