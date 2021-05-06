@@ -34,3 +34,5 @@ function quadroDePixels() {
     }
 }
 quadroDePixels(); 
+
+document.getElementsByClassName('color')[0].classList.add('selected');
