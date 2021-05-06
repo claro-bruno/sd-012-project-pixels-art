@@ -3,7 +3,10 @@
   width: 40px;
   display: inline-block;
   border: 1px solid black;
-  margin: 0, 0, 0, 100px;
+}
+
+#color-palette {
+  padding: 0;
 }
 
 .pixel {

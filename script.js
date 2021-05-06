@@ -15,10 +15,26 @@ window.onload = function () {
     square[key].style.backgroundColor = cor[key]
   }
 
-  square[0].className = 'color selected';
+  square[0].className = 'color selected'; 
 
   lines();
 
+  let bt1 = square[0];
+  let bt2 = square[1];
+  let bt3 = square[2];
+  let bt4 = square[3];
+
+  bt1.addEventListener("click", mudaSelecter);
+  bt2.addEventListener("click", mudaSelecter);
+  bt3.addEventListener("click", mudaSelecter);
+  bt4.addEventListener("click", mudaSelecter);
+  
+  function mudaSelecter(bt) {
+    let remov = document.querySelector('.selected');
+    remov.classList.remove('selected');
+    bt.target.className = ('color selected');
+  }
+  
   function lines() {
     for (let linha = 0; linha < line; linha += 1) {
       let pixelChild = document.createElement('div');
@@ -35,5 +51,4 @@ window.onload = function () {
       pixelLine.appendChild(pixelChild);
     }
   }
-
-};
+}
