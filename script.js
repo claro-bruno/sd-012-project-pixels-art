@@ -1,9 +1,10 @@
 const table = document.querySelector('#pixel-board');
 const colors = document.querySelectorAll('.color');
 const pixels = document.getElementsByClassName('pixel');
+const button = document.querySelector('#clear-board');
 
 for (let indexColor = 0; indexColor < colors.length; indexColor += 1) {
-  let colorsArray = ['black', 'blue', 'darksalmon', 'darkseagreen'];
+  const colorsArray = ['black', 'blue', 'darksalmon', 'darkseagreen'];
   colors[indexColor].style.backgroundColor = colorsArray[indexColor];
 }
 
@@ -42,3 +43,11 @@ function changeColor(event) {
 for (let index4 = 0; index4 < pixels.length; index4 += 1) {
   pixels[index4].addEventListener('click', changeColor);
 }
+
+function clear() {
+  for (let indexClear = 0; indexClear < pixels.length; indexClear += 1) {
+    pixels[indexClear].style.backgroundColor = 'white';
+  }
+}
+
+button.addEventListener('click', clear);

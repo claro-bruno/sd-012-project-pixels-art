@@ -16,7 +16,12 @@ h1 {
   width: 40px;
 }
 
-/* Usei como referência a colega Adriana Biberg para colocar as id's de cada cor */
+#clear-board {
+  position: relative;
+  left: 44.8%;
+  margin-top: 3%;
+}
+
 #pixel-board {
   position: relative;
   left: 38%;
