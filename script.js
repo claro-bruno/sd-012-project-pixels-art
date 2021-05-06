@@ -1,10 +1,11 @@
 window.onload = function () {
-  let boardSide = document.getElementById('board-size').value;
+  let inputValue = document.getElementById('board-size').value;
+  const defaultValue = inputValue;
   let getBoard = document.getElementById('pixel-board');  
   let firstColor = document.querySelector('.color1');
   firstColor.classList.add('selected');
   
-  createTable(boardSide);
+  createTable(defaultValue);
 
   document.addEventListener('click', function (event) {
     if (event.target.classList.contains('color')) {
@@ -17,26 +18,22 @@ window.onload = function () {
       resetBoard();
     };
     if (event.target.id === 'generate-board') {
-      boardSide = document.getElementById('board-size').value;
-      if (boardSide > 0) {
-        getBoard.innerHTML = '';
-        createTable(boardSide);
-      }
+      newBoard();
     };
   });
   
-  function createTable(boardSide) {
-    for (let row = 0; row < boardSide; row += 1) {
-      createTableRow(row);
+  function createTable(inputValue) {
+    for (let row = 0; row < inputValue; row += 1) {
+      createTableRow(row, inputValue);
     };
   };
 
-  function createTableRow(row) {
+  function createTableRow(row, inputValue) {
     let tableRow = document.createElement('tr');
     tableRow.className = 'board-row';
     getBoard.appendChild(tableRow);
     let getBoardRow = document.getElementsByClassName('board-row')[row];
-    for (let column = 1; column <= boardSide; column += 1) {
+    for (let column = 1; column <= inputValue; column += 1) {
       const tableColumn = document.createElement('td');
       tableColumn.className = 'pixel';
       tableColumn.style.backgroundColor = 'white';
@@ -65,6 +62,22 @@ window.onload = function () {
     const allPixels = document.getElementsByClassName('pixel');
     for (let pixel of allPixels) {
       pixel.style.backgroundColor = 'white';
+    };
+  };
+
+  function newBoard() {
+    inputValue = document.getElementById('board-size').value;
+    if (inputValue >= 50) {
+      getBoard.innerHTML = '';
+      createTable(50);
+    } else if (inputValue > 5 && inputValue < 50) {
+      getBoard.innerHTML = '';
+      createTable(inputValue);
+    } else if (inputValue > 0) {
+      getBoard.innerHTML = '';
+      createTable(defaultValue);
+    } else {
+      window.alert('Board inválido!');
     };
   };
 
