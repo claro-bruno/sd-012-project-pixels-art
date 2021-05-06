@@ -36,17 +36,9 @@ function createBoard(size) {
 }
 createBoard(5);
 
-function chanceColor() {
-    let colorsSelected = document.querySelectorAll('.color selected');
-    let clickColor = document.querySelectorAll('.color')
-    clickColor.addEventListener('click',function chanceColor(event) {
-       if (colorsSelected.length === 0){
-           event.target.className = 'color selected';
-       } else {
-           event.target.className = 'task';
-       }
-        
-    });
-};
+function selecteBlack() {
+    let selectedBlack = document.getElementById('box1');
+    selectedBlack.className = 'color selected'
+}
+selecteBlack();
 
-chanceColor()
