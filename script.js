@@ -10,8 +10,12 @@ function createPixel (result){
         let pixel = document.createElement("div");
         pixel.className = "pixel";
         pixelBoard.appendChild(pixel);
-          
+    for (let index2 = 1; index2 < result; index2 += 1) {
+        let pixel = document.createElement('div');
+        pixel.className = 'pixel';
+        pixelBoard.appendChild(pixel);
+          }
     }
 }
 
-createPixel(25)
+createPixel(5)
