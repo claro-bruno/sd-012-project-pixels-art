@@ -1,9 +1,23 @@
+let paletaCores = document.getElementsByClassName('color');
+
+let classeSelecionada = document.querySelector('.selected');
+
 window.onload = paletaDeCores();
 quadroBranco();
 
-function paletaDeCores (){
-const paletaCores = document.getElementsByClassName('color');
 
+for (let index = 0; index < paletaCores.length; index += 1){
+paletaCores[index].addEventListener('click', function(evento){
+    for (let index2 = 0; index2 < paletaCores.length; index2 += 1){
+        paletaCores[index2].className = 'color';
+    }
+    evento.target.classList.add('selected');
+    });
+}
+
+    
+
+function paletaDeCores () {
 paletaCores[0].style.backgroundColor = 'black';
 paletaCores[0].classList.add('selected');
 paletaCores[1].style.backgroundColor = 'yellow';
@@ -12,7 +26,7 @@ paletaCores[3].style.backgroundColor = '#009933';
 
 }
 
-function quadroBranco (){
+function quadroBranco () {
    
     let colunas = 5;
     let linhas = 5;
@@ -24,7 +38,7 @@ function quadroBranco (){
         criarDiv.className = ('pixel-line');
         divQuadroBranco.appendChild(criarDiv);
         
-        for (let indice = 0; indice < colunas; indice += 1){
+        for (let indice = 0; indice < colunas; indice += 1) {
             const divPixelLine = document. querySelector('#pixel-board').lastElementChild;
 
             const criarDivPixel = document.createElement('div');
@@ -33,5 +47,13 @@ function quadroBranco (){
             divPixelLine.appendChild(criarDivPixel);
         }
     }
-    
 }
+
+// function recebeClick(elemento) {
+//     for (index = 0; index < classeSelecionada; index += 1){
+//         classeSelecionada[index].classList.remove('selected');
+//     }
+
+//     elemento.target.classList.add('selected');
+ 
+// }
