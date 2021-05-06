@@ -4,10 +4,14 @@ O texto do título deve ser exatamente "Paleta de Cores".
 O que será verificado:
 Verifica se contém um elemento h1 com o id title com o título correto */
 
-let h1 = document.createElement('h1')
-h1.id = 'title'
-h1.innerHTML = 'Paleta de Cores'
-document.body.appendChild(h1)
+function addTitle () {
+    let h1 = document.createElement('h1')
+    h1.id = 'title'
+    h1.innerHTML = 'Paleta de Cores'
+    document.body.appendChild(h1)
+}
+addTitle();
+
 
 /* 2 - Adicione à página uma paleta de quatro cores distintas.
 A paleta de cores deve ser um elemento com id denominado color-palette, ao passo que cada cor individual da paleta de cores deve possuir a classe color;
@@ -34,7 +38,7 @@ function adicionaPaleta () {
     document.body.appendChild(colorPalette);
     colorPalette.id = 'color-palette';
     let colorList = ['black', 'red', 'green', 'blue'];
-    for (color of colorList) {
+    for (let color of colorList) {
         let colorItem = document.createElement('div');
         colorItem.className = 'color';
         colorItem.style.backgroundColor = color;
@@ -115,7 +119,7 @@ function verificaTamanho () {
     let element = document.getElementsByClassName('pixel')[0]
     let elementHeight = window.getComputedStyle(element, null).getPropertyValue("height");
     let elementWidth = window.getComputedStyle(element, null).getPropertyValue("width");
-    console.log(` pixel height: ${elementHeight}\n pixel width: ${elementWidth}`)
+    // console.log(` pixel height: ${elementHeight}\n pixel width: ${elementWidth}`)
 }
 verificaTamanho();
 // Dica CSS: .pixel{box-sizing: border-box}
@@ -134,22 +138,44 @@ Verifica se nenhuma outra cor da paleta tem a classe selected */
 
 function selecionaCorInicial () {
     let colorPalette = document.getElementsByClassName('color');
-    for (colorItem of colorPalette) {
+    for (let colorItem of colorPalette) {
         if (colorItem.style.backgroundColor !== 'black') {
             colorItem.classList.remove('selected');
         } else {
-            colorItem.classList.add('selected')
+            colorItem.classList.add('selected');
         }
     }
 }
 selecionaCorInicial();
 /* Credito: https://www.w3schools.com/howto/howto_js_remove_class.asp */
 
+/* 
+7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+A classe selected deve ser adicionada à cor selecionada na paleta, ao mesmo tempo em que é removida da cor anteriormente selecionada;
 
+Somente uma das cores da paleta deve ter a classe selected de cada vez;
 
+Note que os elementos que deverão receber a classe selected devem ser os mesmos elementos que possuem a classe color, como especificado no requisito 2.
 
+O que será verificado:
 
+Verifica se somente uma cor da paleta de cores tem a classe selected de cada vez
 
+Verifica se os pixels dentro do quadro não têm a classe selected quando são clicados */
+
+function usuarioEscolheCor () {
+    let cores = document.getElementsByClassName('color')
+    for (let cor of cores) {
+        cor.addEventListener('click', function (event) {
+            for (let cor of cores) {
+                cor.classList.remove('selected')
+            }
+            event.target.classList.add('selected')
+             console.log(event.target)
+        })
+    }
+}
+usuarioEscolheCor();
 
 
 
