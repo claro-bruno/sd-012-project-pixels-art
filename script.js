@@ -49,4 +49,11 @@ window.onload = function classSelected() {
   if (palette[0].style.backgroundColor == 'rgb(0, 0, 0)') {
     palette[0].classList.add('selected');
   }
+  for (let index = 0; index < palette.length; index += 1) {
+    palette[index].addEventListener('click', function (event) {
+      let elementSelected = document.querySelector('.selected');
+      elementSelected.classList.remove('selected');
+      event.target.classList.add('selected');
+    });
+  }
 };
