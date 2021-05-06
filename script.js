@@ -50,3 +50,16 @@ function selectedEvent() {
     }
 }
 selectedEvent();
+
+function addCor(event) {
+    let alvo = event.target;
+    let corSelecionada = document.querySelector('.selected').style.backgroundColor;
+    alvo.style.backgroundColor = corSelecionada;
+}
+function eventoAddCor() {
+    let quadro = document.getElementsByClassName('pixel');
+    for (let index = 0; index < quadro.length; index += 1) {
+        quadro[index].addEventListener('click', addCor);
+    }
+}
+eventoAddCor();
