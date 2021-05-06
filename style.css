@@ -9,20 +9,8 @@ h1, section{
   border: 1px solid black;
 }
 
-.color1 {
+.first-color {
   background-color: black;
-}
-
-.color2 {
-  background-color: red;
-}
-
-.color3 {
-  background-color: green;
-}
-
-.color4 {
-  background-color: blue;
 }
 
 table {

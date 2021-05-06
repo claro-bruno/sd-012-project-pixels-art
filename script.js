@@ -1,9 +1,19 @@
 window.onload = function () {
   let inputValue = document.getElementById('board-size').value;
-  const defaultValue = inputValue;
+  const defaultValue = 5;
   let getBoard = document.getElementById('pixel-board');  
-  let firstColor = document.querySelector('.color1');
+  let firstColor = document.querySelector('.first-color');
   firstColor.classList.add('selected');
+
+  for (let index = 1; index < 4; index += 1) {
+    let randomColorArray = [];
+    for(let randomRGB = 1; randomRGB <= 3; randomRGB += 1){
+      let randomNumberRGB = parseInt(((Math.random() * 255) + 1));
+      randomColorArray.push(randomNumberRGB);
+    };
+    let colorNumber = document.getElementsByClassName('color');
+    colorNumber[index].style.backgroundColor = `rgb(${randomColorArray[0]},${randomColorArray[1]},${randomColorArray[2]})`;
+  };
   
   createTable(defaultValue);
 
