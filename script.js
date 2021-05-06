@@ -1,6 +1,9 @@
 let paletaCores = document.getElementsByClassName('color');
 
-let classeSelecionada = document.querySelector('.selected');
+let pixelBranco = document.getElementsByClassName('pixel');
+
+let corSelecionada = document.querySelector('.selected');
+
 
 window.onload = paletaDeCores();
 quadroBranco();
@@ -15,7 +18,11 @@ paletaCores[index].addEventListener('click', function(evento){
     });
 }
 
-    
+for (let index = 0; index < pixelBranco.length; index += 1){
+   pixelBranco[index].addEventListener('click', function(evento){
+    evento.target.style.backgroundColor = '#009933';
+   });
+}
 
 function paletaDeCores () {
 paletaCores[0].style.backgroundColor = 'black';
@@ -39,7 +46,7 @@ function quadroBranco () {
         divQuadroBranco.appendChild(criarDiv);
         
         for (let indice = 0; indice < colunas; indice += 1) {
-            const divPixelLine = document. querySelector('#pixel-board').lastElementChild;
+            const divPixelLine = document.querySelector('#pixel-board').lastElementChild;
 
             const criarDivPixel = document.createElement('div');
 
@@ -48,12 +55,3 @@ function quadroBranco () {
         }
     }
 }
-
-// function recebeClick(elemento) {
-//     for (index = 0; index < classeSelecionada; index += 1){
-//         classeSelecionada[index].classList.remove('selected');
-//     }
-
-//     elemento.target.classList.add('selected');
- 
-// }
