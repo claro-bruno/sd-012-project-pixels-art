@@ -15,8 +15,8 @@ function createSquare() {
     square.style.height = '40px';
     square.style.border = '1px solid black';
     square.style.display = 'inline-block';
-    // square.style.boxSizing = 'border-box';
-    // square.style.marginBottom = '-4px'
+    square.style.boxSizing = 'border-box';
+    square.style.marginBottom = '-4px'
     
     return square;
 }
@@ -24,7 +24,6 @@ function createSquare() {
 function createLineDiv() {
     let line = document.createElement('div');
     line.className = 'linha-pixel';
-    line.style.lineHeight = '0px'
 
     return line;
 }
