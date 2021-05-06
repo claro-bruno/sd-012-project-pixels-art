@@ -40,7 +40,8 @@ window.onload = function () {
       colorsArray[index].addEventListener('click', function (event) {
         const selectedColor = document.querySelector('.selected');
         selectedColor.className = 'color';
-        event.target.className = 'color selected';
+        const targetEvent = event.target;
+        targetEvent.className = 'color selected';
       });
     }
   }
@@ -51,16 +52,16 @@ window.onload = function () {
       pixelsArray[index].addEventListener('click', function (event) {
         const colorSelected = document.querySelector('.selected');
         const color = getComputedStyle(colorSelected).backgroundColor;
-        console.log(color);
-        event.target.style.backgroundColor = color;
+        const targetEvent = event.target;
+        targetEvent.style.backgroundColor = color;
       });
     }
   }
 
   function buttonClear() {
-    const buttonClear = document.getElementById('clear-board');
+    const btnClear = document.getElementById('clear-board');
     const pixelsArray = document.querySelectorAll('.pixel');
-    buttonClear.addEventListener('click', function () {
+    btnClear.addEventListener('click', function () {
       for (let index = 0; index < pixelsArray.length; index += 1) {
         pixelsArray[index].style.backgroundColor = 'white';
       }
