@@ -1,19 +1,19 @@
 function creatBoard(linha) {
-let tamanho = linha * linha;
+  const tamanho = linha * linha;
   for (let index = 0; index < tamanho; index++) {
-  let div = document.createElement('div');
-  div.className = 'pixel';
-  let pai = document.getElementById('pixel-board');
-  pai.appendChild(div);
+  const div = document.createElement('div');
+    div.className = 'pixel';
+    let pai = document.getElementById('pixel-board');
+    pai.appendChild(div);
   }
 }  
 creatBoard(5);
-//6
+
 const colorBlackSelected = document.getElementsByClassName('color')[0];
 colorBlackSelected.className = 'color selected';
 
 let backgrColor = 'black';
-document.addEventListener('click',(event) => {
+document.addEventListener('click', (event) => {
   if (event.target.classList.contains('color')) {
     const classesSelecionadas = document.querySelector('.selected');
     classesSelecionadas.classList.remove('selected');
@@ -21,12 +21,11 @@ document.addEventListener('click',(event) => {
     selecionada.classList.add('selected');
     backgrColor = selecionada.style.backgroundColor;
   }
-}, false)
+}, false);
 
-document.addEventListener('click',(event) => {
-    if (event.target.classList.contains('pixel')) {
-      const pixelSelecionado = event.target;
-      pixelSelecionado.style.backgroundColor = backgrColor;
-    }
-  }, false)
-
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('pixel')) {
+    const pixelSelecionado = event.target;
+    pixelSelecionado.style.backgroundColor = backgrColor;
+  }
+}, false);
