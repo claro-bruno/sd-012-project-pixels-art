@@ -60,3 +60,14 @@ const selecionarCor = (elementoClicado) => {
   paletaDeCor.classList.remove('selected');
   elementoClicado.className += ' selected';
 };
+
+const pintarPixel = () => {
+  const listaDePixel = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < listaDePixel.length; index += 1) {
+    listaDePixel[index].addEventListener('click', () => {
+      const corSelecionada = document.querySelector('.selected').style.backgroundColor;
+      listaDePixel[index].style.backgroundColor = corSelecionada;
+    });
+  }
+};
