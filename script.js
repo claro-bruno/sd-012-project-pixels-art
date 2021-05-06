@@ -20,7 +20,8 @@ const createPalette = (color) => {
 
 const paintPixels = (evt) => {
   const selected = document.querySelector('.selected');
-  evt.target.style.backgroundColor = selected.id;
+  const pixel = evt.target;
+  pixel.style.backgroundColor = selected.id;
 };
 
 const createPixels = (n) => {
