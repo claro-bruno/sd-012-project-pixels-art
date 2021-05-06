@@ -51,19 +51,20 @@ window.onload = function () {
         }
     } 
 //Pinta os pixels com a cor selecionada
-function pixelPainter () {
-    let pixel = document.querySelector('.pixel');
-    pixel.addEventListener('click', () => {
-        if (pixel.style.backgroundColor === 'white') {
-            let selectedColor = document.querySelector('.selected').style.backgroundColor;
-            pixel.style.backgroundColor = selectedColor;
-        } else {
-            pixel.style.backgroundColor = 'white';
-        }
-    })
-}
-pixelPainter();
+    function pixelPainter () {
+        let pixels = document.querySelectorAll('.pixel');
 
+        for (let index = 0; index < pixels.length; index += 1) {
+            pixels[index].addEventListener('click', event => {
+                let selectedColor = document.querySelector('.selected');
+                let pixel = event.target;
+
+                pixel.style.backgroundColor = selectedColor.style.backgroundColor;
+
+            })
+        }
+    }
+    pixelPainter();
 
 
 
