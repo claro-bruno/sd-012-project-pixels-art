@@ -28,7 +28,7 @@ function createBoard (pixeis) {
         }
     }
 }
-createBoard(8);
+createBoard(5);
 
 //selecao da paleta
 let color = document.querySelectorAll('.color')
@@ -43,9 +43,9 @@ function mudarSelecao(event){
 
 //muda cor com base no selecionado
 const changeColor = document.querySelector('#pixel-board');
-changeColor.addEventListener('click', (e) => {
+changeColor.addEventListener('click', (event) => {
     const selected = document.querySelector('.selected');
-    e.target.style.backgroundColor = selected.style.backgroundColor;
+    event.target.style.backgroundColor = selected.style.backgroundColor;
   });
 
 
