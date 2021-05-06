@@ -8,8 +8,18 @@
   height: 40px;
 }
 
-.divLine {
-  border: 1px solid red;
-  width: 500px;
+#pixel-board {
+  background-color: red;
+  display: inline-block;
+}
+
+.pixel-line {
+  display: flex;
+}
+
+.pixel {
+  border: 1px solid black;
+  width: 40px;
   height: 40px;
+  background-color: white;
 }
