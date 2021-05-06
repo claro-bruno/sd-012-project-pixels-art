@@ -63,3 +63,6 @@ function cleanBoard() {
 }
 clearButton.addEventListener('click', cleanBoard);
 }
+
+//Bonus
+//10
