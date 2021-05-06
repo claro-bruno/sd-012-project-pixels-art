@@ -4,22 +4,22 @@ const azulClaro = document.getElementById('azul-claro');
 const azulEscuro = document.getElementById('azul-escuro');
 const claro = document.getElementById('clara');
 const selectedElement = document.querySelector('.selected');
-const colorPalette = document.getElementById('color-palette')
+const colorPalette = document.getElementById('color-palette');
 
 /* cores da paleta inicio */
 
 function gerarCor() {
-  let r = Math.random()*255;
-  let g = Math.random()*255;
-  let b = Math.random()*255;
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
 
   return `rgb(${r},${g},${b})`
 }
 
-let zero= gerarCor();
-let one = gerarCor();
-let two = gerarCor();
-let three = gerarCor();
+const zero = gerarCor();
+const one = gerarCor();
+const two = gerarCor();
+const three = gerarCor();
 
 function colors() {
   for (let i = 0; i < 4; i += 1) {
@@ -59,8 +59,6 @@ azulEscuro.addEventListener('click', select);
 claro.addEventListener('click', select);
 
 const color = document.getElementsByClassName('selected')[0].style.backgroundColor
-
-console.log(color)
   
 function paint(event) {
   event.target.style.backgroundColor = 'color'
