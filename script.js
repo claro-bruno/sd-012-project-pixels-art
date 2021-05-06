@@ -68,11 +68,23 @@ clearBtn.addEventListener('click', () => {
   }
 });
 // Configura interação do usuário com relação ao tamanho do quadro de pixels
+// Configura função se input (< 5 = 5) ou (> 50 = 50)
+function fiveOrFifty() {
+  if (inputBoardSize.value < 5) {
+    pixelBoard.innerText = '';
+    createBoard(5);
+  } else if (inputBoardSize.value > 50) {
+    pixelBoard.innerText = '';
+    createBoard(50);
+  }
+}
 vqvBtn.addEventListener('click', () => {
-  if (inputBoardSize.value > 4 && inputBoardSize.value < 51) {
+  if (inputBoardSize.value >= 5 && inputBoardSize.value <= 50) {
     pixelBoard.innerText = '';
     createBoard(inputBoardSize.value);
   } else if (inputBoardSize.value === '') {
     alert('Board inválido!');
+  } else {
+    fiveOrFifty();
   }
 });
