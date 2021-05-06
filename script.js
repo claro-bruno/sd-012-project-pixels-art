@@ -1,11 +1,5 @@
 const pixelBoard = document.querySelector('#pixel-board');
-const blackColor = document.getElementById('#color1');
-// const colorsPalette = document.querySelectorAll('.color-palette');
-const color2 = document.querySelectorAll('#color2');
-const color3 = document.querySelectorAll('#color3');
-const color4 = document.querySelectorAll('#color4');
-const colorSelected = 'color selected';
-// const random = (Math.ceil(Math.random() * 255)
+// requerimento6
 
 function initialColorSelected() {
   const paletteColor = document.getElementsByClassName('color');
@@ -16,6 +10,10 @@ function initialColorSelected() {
   paletteColor[0].classList.add('selected');
 }
 initialColorSelected();
+
+window.onload = initialColorSelected;
+
+// requerimento 4
 
 function generateLinePixel(pam1, userSize) {
   for (let index2 = 0; index2 < userSize; index2 += 1) {
@@ -34,3 +32,28 @@ function generatePixel(userSize) {
   }
 }
 generatePixel(5);
+
+// requerimento 7 e 8 (ajuda da Gisele)
+
+function clickOnColor() {
+  const allColors = document.querySelector('#color-palette');
+  allColors.addEventListener('click', (event) => {
+    const selectedColor = event.target;
+    document.querySelector('.selected').className = 'color';
+    selectedColor.classList.add('selected');
+  });
+}
+
+clickOnColor();
+
+function setColor() {
+  const pixelTable = document.querySelector('#pixel-board');
+  pixelTable.addEventListener('click', (event) => {
+    const selectPixel = event.target;
+    const color = document.querySelector('.selected').style.backgroundColor;
+    // console.log(color)
+    selectPixel.style.backgroundColor = color;
+  });
+}
+
+setColor();
