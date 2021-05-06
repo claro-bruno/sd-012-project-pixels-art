@@ -2,3 +2,35 @@
 	text-align: center;
 	align-items: center;
 }
+#color-palette {
+	align-items: center;
+	position: fixed;
+}
+.color-black {
+	width: 150px;
+	height: 150px;
+	border: 1px;
+	border-style: solid;
+	background-color: black;
+}
+.color-green {
+	width: 150px;
+	height: 150px;
+	border: 1px;
+	border-style: solid;
+	background-color: green;
+}
+.color-red {
+	width: 150px;
+	height: 150px;
+	border: 1px;
+	border-style: solid;
+	background-color: red;
+}
+.color-blue {
+	width: 150px;
+	height: 150px;
+	border: 1px;
+	border-style: solid;
+	background-color: blue;
+}
