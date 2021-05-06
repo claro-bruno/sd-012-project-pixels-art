@@ -9,6 +9,7 @@ body {
 
 #color-palette {
   padding: 20px 0 0;
+  margin-bottom: 0;
 }
 
 .color {
@@ -30,4 +31,11 @@ body {
   display: inline-block;
   margin-bottom: -4px;
   background-color: white;
+}
+
+#clear-board {
+  padding: 10px;
+  margin: 20px 0 20px 60px;
+  font-size: 20px;
+  border-radius: 15px;
 }

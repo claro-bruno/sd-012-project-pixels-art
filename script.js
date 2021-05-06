@@ -1,9 +1,10 @@
-let coresPaleta = document.querySelectorAll('.color');
+const coresPaleta = document.querySelectorAll('.color');
 coresPaleta[0].style.backgroundColor = 'black';
 coresPaleta[1].style.backgroundColor = 'red';
 coresPaleta[2].style.backgroundColor = 'blue';
 coresPaleta[3].style.backgroundColor = 'green';
 
+// criar dinamicamente divs com classe pixel
 const pixelBoard = document.querySelector('#pixel-board');
 function criaPixels(valor) {
   for (let index = 0; index < valor; index += 1) {
@@ -19,27 +20,42 @@ function criaPixels(valor) {
 }
 criaPixels(5);
 
+// função colocar cor nos pixels
 function corPixel(cor) {
-  let pixel = document.querySelectorAll('.pixel');
-  for (index = 0; index < pixel.length; index += 1) {
-    pixel[index].addEventListener ('click', function(event) {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].addEventListener('click', function(event) {
       event.target.style.backgroundColor = cor;
-    })
+    });
   }
 }
-
-for (index = 0; index < coresPaleta.length; index += 1) {
-  coresPaleta[index].addEventListener ('click', function(event) {
-    let colorSelected = document.querySelector('.selected');
+// função ativar paleta cores e alternar classe "color selected"
+for (let index = 0; index < coresPaleta.length; index += 1) {
+  coresPaleta[index].addEventListener('click', function(event) {
+    const colorSelected = document.querySelector('.selected');
     if (event.target.className !== 'color selected') {
       event.target.classList.add('selected');
       colorSelected.classList.remove('selected');
       corPixel(event.target.style.backgroundColor);
-    }    
-  })
+    }
+  });
 }
 
+// para iniciar com a cor preta
 localStorage.setItem('corInicial', coresPaleta[0].style.backgroundColor);
-let corInicial = localStorage.getItem ('corInicial');
-if (corInicial) corPixel (corInicial);
+const corInicial = localStorage.getItem('corInicial');
+if (corInicial) corPixel(corInicial);
 
+const btnClearBoard = document.querySelector('#clear-board');
+btnClearBoard.innerHTML = 'Limpar';
+
+// para tornar todos os pixels na cor branca
+function clearBoard() {
+  btnClearBoard.addEventListener('click', function(limpar) {
+    const pixel = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixel.length; index += 1) {
+      pixel[index].style.backgroundColor = 'white';
+    }
+  });
+}
+clearBoard();
