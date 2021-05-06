@@ -26,7 +26,18 @@ function makerBoardPixel(size) {
 }
 makerBoardPixel(5);
 
-window.onload = () => {
-  const firstColor = document.querySelector('#color-palette').firstChild;
-  firstColor.classList.add('selected')
+function selectFirstColor () {
+const firstColor = document.querySelector('#color-palette').firstChild;
+firstColor.classList.add('selected');
 }
+selectFirstColor();
+
+// Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+// adicionar uma escuta na div color-palette
+// identificar com o target de onde veio o click
+// capturar a div da paleta em forma de array
+// verificar item por item se tem a classe selected
+// se tiver a classe selected remover
+// atribuir a classe selected a cor que cliquei
+
+
