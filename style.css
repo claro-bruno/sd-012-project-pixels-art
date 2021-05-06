@@ -1,26 +1,20 @@
-#color-palette div{ /*não entendi porque quando este id é colocado como primeiro, os quadrados não aparecem.*/
+.color {
   display: inline-block;
   border: solid 1px black;
   margin: 1px;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   background-color: black;
+}
+#color-palette div{ /*não entendi porque quando este id é colocado como primeiro, os quadrados não aparecem.*/
+  display: inline-block;
 }
 .pixel {
   display: inline-block;
-  border: black 1px solid;
-  width: 25px;
-  height: 25px;
-}
-#pixel-board {
-
-}
-.wrapper {
-  display: grid;
-  grid-template-columns: 200px 200px 200px;
-}
-.container {
-  display: grid;
-  grid-template-columns: 25px 25px 25px 25px 25px;
-  grid-template-rows: 25px 25px 25px 25px 25px;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+  box-sizing: border-box;
+  margin-bottom: -4px;
 }
