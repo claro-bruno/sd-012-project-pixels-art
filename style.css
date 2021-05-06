@@ -1,57 +1,83 @@
 @font-face {
-    font-family: minecraftmedium;
-    src: url('minecraft.woff2') format('woff2'),
-         url('minecraft.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: minecraftmedium;
+  src: url('minecraft.woff2') format('woff2'),
+    url('minecraft.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
 
+
+/*nav inicio*/
 #title {
-    text-align: center;
-    font-size: 50px;
-    font-family: minecraftmedium;
+  text-align: center;
+  font-size: 50px;
+  font-family: minecraftmedium;
 }
 
-.navbar{
-    position: relative;
-    padding: 0.5rem 1rem;
-    background-color: lightskyblue
+.navbar {
+  position: relative;
+  padding: 0.5rem 1rem;
+  background-color: lightskyblue;
 }
+
+/*nav final*/
+/*paleta inicio*/
 
 #color-palette {
-    display: flex;
-    flex: row;
-    justify-content: center;
-    padding: 40px;
+  display: flex;
+  flex: row;
+  justify-content: center;
+  padding: 40px;
 }
 
 .color {
-    border: solid black 1px;
-    height: 100px;
-    width: 100px;
-    margin: 10px;
+  border: solid black 1px;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
 }
 
 .preta {
-    background-color: black;
+  background-color: black;
 }
 
 .azul-claro {
-    background-color: lightskyblue;
+  background-color: lightskyblue;
 }
 
 .azul-escuro {
-    background-color: mediumblue;
+  background-color: mediumblue;
 }
 
 .clara {
-    background-color: #fefefe;
+  background-color: #fefefe;
 }
 
 .rosto {
-    background-color: oldlace;;
+  background-color: oldlace;;
+}
+
+/*paleta final*/
+
+/*board inicio*/
+
+#pixel-board {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(35, 1fr);
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 100px;
+  width: 410px;
+}
+
+.pixel {
+    width: 20px;
+    height: 20px;
+    border: solid black 1px;
+    background-color: white;
 }
