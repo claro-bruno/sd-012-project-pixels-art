@@ -1,3 +1,7 @@
+const cores = ['black', 'blue', 'red', 'green'];
+
+
+
 function fillBoard (lines, columns) {
 
     for(let index = 0; index < lines; index += 1) {
@@ -18,3 +22,18 @@ function fillLineBoard(line,columns) {
 }
 
 fillBoard (5, 5);
+
+let sectionColours =  document.querySelectorAll('.color');
+
+for(let indexColors = 0; indexColors < sectionColours.length; indexColors += 1) {
+    sectionColours[indexColors].addEventListener('click',  fillCheckSelected)
+}
+
+function fillCheckSelected(event) {
+    
+    //console.log(window.getComputedStyle(event.target).getPropertyValue('background-color'));
+    const removeSelected = document.querySelector('.selected');
+    removeSelected.classList.remove('selected');
+    event.target.classList.add('selected');
+}
+
