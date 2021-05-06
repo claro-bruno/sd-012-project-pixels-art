@@ -7,10 +7,11 @@ const generateBoardButton = document.querySelector('#generate-board');
 function colorPixel() {
   const pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].addEventListener('click', function (event) {
+    pixels[index].addEventListener('click', (event) => {
       const selected = document.querySelector('.selected');
       const selectedColor = window.getComputedStyle(selected).backgroundColor;
-      event.target.style.backgroundColor = selectedColor;
+      const targ = event.target;
+      targ.style.backgroundColor = selectedColor;
     });
   }
 }
@@ -46,7 +47,7 @@ for (let index = 1; index < colorClass.length; index += 1) {
 }
 
 for (let index = 0; index < colorClass.length; index += 1) {
-  colorClass[index].addEventListener('click', function (event) {
+  colorClass[index].addEventListener('click', (event) => {
     for (let index2 = 0; index2 < colorClass.length; index2 += 1) {
       if (colorClass[index2].classList.contains('selected')) {
         colorClass[index2].classList.remove('selected');
@@ -56,14 +57,14 @@ for (let index = 0; index < colorClass.length; index += 1) {
   });
 }
 
-clearButton.addEventListener('click', function () {
+clearButton.addEventListener('click', () => {
   const pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
 });
 
-generateBoardButton.addEventListener('click', function () {
+generateBoardButton.addEventListener('click', () => {
   if (!input.value) {
     alert('Board inválido!');
   }
