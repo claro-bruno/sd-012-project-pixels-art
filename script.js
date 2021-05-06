@@ -27,21 +27,25 @@ function classes() {
 classes();
 
 function colocaClassSelected(evento) {
- let selecao = document.querySelector('.selected');
- selecao.classList.remove('selected');
- evento.target.classList.add('selected')
+  let selecao = document.querySelector('.selected');
+  selecao.classList.remove('selected');
+  evento.target.classList.add('selected');
 }
 
-cor1.addEventListener("click", colocaClassSelected);
-cor2.addEventListener("click", colocaClassSelected);
-cor3.addEventListener("click", colocaClassSelected);
-cor4.addEventListener("click", colocaClassSelected);
+cor1.addEventListener('click', colocaClassSelected);
+cor2.addEventListener('click', colocaClassSelected);
+cor3.addEventListener('click', colocaClassSelected);
+cor4.addEventListener('click', colocaClassSelected);
 
+let corP = document.querySelector('#pixel-board');
+corP.addEventListener('click', function (evento) {
+  evento.target.id = document.querySelector('.selected').id;
+});
 
-
-  let corP = document.querySelector("#pixel-board");
-  corP.addEventListener("click", function(evento){
-      evento.target.id = document.querySelector(".selected").id;
-  });
-
-
+let botao = document.querySelector('#clear-board');
+let pixels = document.querySelectorAll('.pixel');
+botao.addEventListener('click', function () {
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
+  }
+});
