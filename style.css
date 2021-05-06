@@ -1,11 +1,7 @@
-* {
-  box-sizing: border-box;
-}
-
 #color-palette {
   display: flex;
   width: 100%;
-  gap: 1px;
+
 }
 
 .color {
@@ -13,4 +9,23 @@
   width: 40px;
   border: 1px solid black;
   margin-left: 5px;
+
 }
+
+#pixel-board {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 200px;
+  gap: 5px;
+}
+
+.box {
+  margin-top: 10px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+
