@@ -24,7 +24,7 @@ function paletaArco(){
       paiPaleta.appendChild(criaPaleta);
    };
    let selecBlack = document.getElementsByClassName("color")[0];
-   selecBlack.className = "selected";
+   selecBlack.classList.add("selected");
 };
 paletaArco();
 function quadroPixels(){
