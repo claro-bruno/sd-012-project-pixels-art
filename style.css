@@ -46,8 +46,8 @@
     height: 40px;
     display: inline-block;
     background-color: white;
-    margin: -4px;
-    margin-top: -4px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 
