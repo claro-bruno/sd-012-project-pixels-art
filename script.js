@@ -1,10 +1,11 @@
 let quadrado = document.querySelector('#pixel-board');
-const cor1 = document.querySelector('#black');
+const cor1 = document.querySelector('#cor1');
 const cor2 = document.querySelector('#cor2');
 const cor3 = document.querySelector('#cor3');
 const cor4 = document.querySelector('#cor4');
 let valor = document.querySelector('#board-size').value;
 const botaoGerar = document.querySelector('#generate-board');
+criaTabela(5);
 
 //cria a tabela
 function criaTabela(size) {
@@ -19,6 +20,7 @@ function criaTabela(size) {
     }
   }
 }
+//botao gerar
 botaoGerar.addEventListener('click', function () {
   let valor = document.querySelector('#board-size').value;
   const ultimaLinha = document.querySelectorAll('.linha');
@@ -48,6 +50,7 @@ function gerarCor () {
   return `rgb(${r}, ${g}, ${b})`
 }
 
+document.querySelector('#cor1').style.backgroundColor = "black";
 document.querySelector('#cor2').style.backgroundColor = gerarCor();
 document.querySelector('#cor3').style.backgroundColor = gerarCor();
 document.querySelector('#cor4').style.backgroundColor = gerarCor();
