@@ -63,7 +63,13 @@ function generateBoard() {
     while (board.hasChildNodes()) {
       board.removeChild(board.firstChild)
     }
-    createPixelBoard(input.value, input.value);
+    if (input.value < 5) {
+      createPixelBoard(5, 5);
+    } else if (input.value > 50) {
+      createPixelBoard(50, 50);
+    } else {
+      createPixelBoard(input.value, input.value);
+    }
   }
 }
 
