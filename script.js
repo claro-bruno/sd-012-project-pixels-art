@@ -8,9 +8,8 @@ window.onload = function () {
   const input = document.createElement('input');
   input.id = 'board-size';
   input.type = 'number';
-  input.min = 1;
+  input.min = 0;
   input.max = 50;
-  input.oninput = 'validity.valid';
 
   const btn2 = document.createElement('button');
   btn2.id = 'generate-board';
@@ -49,7 +48,7 @@ window.onload = function () {
       el.target.value = 50;
     }
     if (el.target.value <= parseInt(el.target.getAttribute("min"))) {
-     el.target.value = '';
+     el.target.value = 1;
     }
   })
 
@@ -168,6 +167,7 @@ window.onload = function () {
 
   const button = document.querySelector('#clear-board');
   button.addEventListener('click', function () {
+    document.querySelector("#board-size").value = '';
     const pixels = document.querySelectorAll('.pixel');
     for(let index = 0; index < pixels.length; index += 1) {
       pixels[index].style.backgroundColor = 'white';
