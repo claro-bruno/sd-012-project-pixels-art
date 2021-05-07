@@ -1,4 +1,24 @@
-const colors = ['black', 'red', 'blue', 'green'];
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let index2 = 0; index2 < 6; index2 += 1) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+  // referencia para a paleta randômica:https://stackoverflow.com/questions/1484506/random-color-generator
+}
+
+// Esta função cria por padrão uma paleta de cores random de acordo com o tamanho em 'size'. Caso queira uma paleta epecífica deve-se oferecer o array com as cores no segundo parâmetro
+function setColorPalette(size, specific) {
+  if (specific !== '') {
+    return specific;
+  }
+  const colors = ['black'];
+  for (let index = 1; index < size; index += 1) {
+    colors.push(getRandomColor());
+  }
+  return colors;
+}
 
 function makePalette(arrayColor) {
   for (let index = 0; index < arrayColor.length; index += 1) {
@@ -9,7 +29,7 @@ function makePalette(arrayColor) {
     divPalette.appendChild(divColor);
   }
 }
-makePalette(colors);
+makePalette(setColorPalette(4, ''));
 
 function makerBoardPixel(size) {
   for (let index = 0; index < size; index += 1) {
