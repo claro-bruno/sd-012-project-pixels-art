@@ -11,13 +11,24 @@ window.onload = function(){
     for (let div of divColor ){
       div.addEventListener('click', handleSelect);
     }
-    
+
+    function createRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i += 1) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
     //Coloca as cores na Paleta
     function paintPaleta() {
-      let colors =['black','red','blue','yellow']
       let paleta = document.getElementsByClassName('color');
       for (let i = 0; i < paleta.length; i += 1){
-          paleta[i].style.backgroundColor = colors[i];
+        if (i === 0){
+          paleta[i].style.backgroundColor = 'black';
+        } else {
+          paleta[i].style.backgroundColor = createRandomColor();
+        }
       }
     }
     paintPaleta();
@@ -49,4 +60,60 @@ window.onload = function(){
     const cleanButton = document.getElementById('clear-board');
     cleanButton.addEventListener('click', resetPixels);
 
+    //Exercicio 10
+
+    function createBoard(size) {
+      const getTable = document.getElementById('pixel-board');
+      for (let i = 0; i < size; i += 1){
+        const newTr = document.createElement('tr');
+        for (let i2 = 0; i2 < size; i2 += 1){
+        newTr.innerHTML += "<td class='pixel'></td>";
+        }
+        getTable.appendChild(newTr);
+
+      }
+    }
+    function getBoardSize(){
+      const input = document.getElementById('board-size');
+      const inputValue = input.value;
+      return inputValue;
+    }
+    function cleanInput(){
+      const input = document.getElementById('board-size');
+      input.value = '';
+    }
+    function cleanTable(){
+      const table = document.getElementById('pixel-board');
+      table.innerHTML = '';
+    }
+    function setBoardSize(){
+      const size = getBoardSize();
+      if (size == 0){
+        alert("Board inválido!");
+        cleanInput();
+      } else if (size < 5){
+        alert("Entre com um numero entre 5 e 50!");
+        cleanInput();
+        cleanTable();
+        createBoard(5);
+      }else if (size > 50){
+        alert("Entre com um numero entre 5 e 50!");
+        cleanInput();
+        cleanTable();
+        createBoard(50);
+      } else {
+        cleanTable();
+        createBoard(size);
+        cleanInput();
+      }
+      
+    }
+    createBoard(5);
+    const sizeButton = document.getElementById('generate-board');
+    sizeButton.addEventListener('click', setBoardSize);
+
+    const inputSize = document.getElementById('board-size');
+    inputSize.addEventListener('keyup', (e) => {
+      if(e.key ==='Enter')  setBoardSize();
+  });
 }

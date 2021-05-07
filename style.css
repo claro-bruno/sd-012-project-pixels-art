@@ -1,5 +1,39 @@
+body {
+
+    
+}
+header, section, nav {
+    display: flex;
+    justify-content: center;
+}
+nav {
+    
+    flex-flow: row nowrap;
+    justify-content: center;
+    
+}
+
+main nav button, input {
+    margin: 5px;
+    
+}
+main nav input {
+    width: 40px;
+    
+}
+
+#main-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    flex-flow: column nowrap;
+
+    
+}
 #color-palette {
     display: inline-block;
+    
 }
 .color {
     border: solid 1px black;
@@ -21,11 +55,6 @@ td.pixel {
 
 }
 #nav-cont {
-    display: flex;
-    height: 25px;
-    padding: 5px;
-    width: 220px;
-    justify-content: center;
-    vertical-align: middle;
+  
 
 }
