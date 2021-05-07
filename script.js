@@ -1,4 +1,9 @@
+// Getting the elements from HTML
 const colorPaletteSection = document.getElementsByClassName('color');
+const pixelSection = document.getElementById('pixel-board');
+const squareSizeInput = document.getElementById('board-size');
+const clearButton = document.getElementById('clear-board');
+const VQVButton = document.getElementById('generate-board');
 
 function colorPaletteGenerator() {
   for (let paletteCreator = 0; paletteCreator < colorPaletteSection.length; paletteCreator += 1) {
@@ -16,7 +21,7 @@ function colorPaletteGenerator() {
 }
 colorPaletteGenerator();
 
-function specificClassGiver() {
+function selectedClass() {
   for (let index = 0; index < colorPaletteSection.length; index += 1) {
     colorPaletteSection[index].addEventListener('click', () => {
       for (let classRemover = 0; classRemover < colorPaletteSection.length; classRemover += 1) {
@@ -26,38 +31,53 @@ function specificClassGiver() {
     });
   }
 }
-specificClassGiver();
+selectedClass();
 
-function pixelCreation() {
-  const maxRow = 5;
-  const maxLine = 5;
-  const pixelSection = document.getElementById('pixel-board');
-  for (let counter = 0; counter < maxLine; counter += 1) {
+function pixelPainting(event) {
+  const colorGrabber = document.querySelector('.selected');
+  const selectedColor = colorGrabber.style.backgroundColor;
+  const evento = event.target;
+  evento.style.backgroundColor = selectedColor;
+}
+
+function pixelCreation(maxRowAndLine) {
+  // Clean a previous board first
+  pixelSection.innerHTML = '';
+  // Creates the div line where the pixel would be
+  for (let counter = 0; counter < maxRowAndLine; counter += 1) {
     const eachRowDiv = document.createElement('div');
     eachRowDiv.className = 'rowDiv';
     pixelSection.appendChild(eachRowDiv);
-    for (let index = 0; index < maxRow; index += 1) {
+    // Create the pixel and append it in the line
+    for (let index = 0; index < maxRowAndLine; index += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       eachRowDiv.appendChild(pixel);
+      pixel.addEventListener('click', pixelPainting);
     }
   }
+  // The input.value must be empty after you change the board size
+  squareSizeInput.value = '';
 }
-pixelCreation();
+// 5 is the first board number
+pixelCreation(5);
 
-const pixel = document.getElementsByClassName('pixel');
-for (let indexx = 0; indexx < pixel.length; indexx += 1) {
-  pixel[indexx].addEventListener('click', (event) => {
-    const colorGrabber = document.querySelector('.selected');
-    const selectedColor = colorGrabber.style.backgroundColor;
-    event.target.style.backgroundColor = selectedColor;
-  });
-}
-
-const button = document.getElementById('clear-board');
-
-button.addEventListener('click', () => {
+clearButton.addEventListener('click', () => {
+  const pixel = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = '';
+  }
+});
+
+// fazer condicional aqui pra chegar > 5 < 50
+VQVButton.addEventListener('click', () => {
+  if (squareSizeInput.value === '') {
+    window.alert('Board inválido!');
+  } else if (squareSizeInput.value <= 5) {
+    pixelCreation(squareSizeInput.value = 5);
+  } else if (squareSizeInput.value >= 50) {
+    pixelCreation(50);
+  } else {
+    pixelCreation(squareSizeInput.value);
   }
 });
