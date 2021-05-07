@@ -9,29 +9,21 @@ function createBoxPalette() {
 }
 createBoxPalette();
 
-function addBgcPalette(color1, color2, color3) {
-  let boxOptionPalette = document.querySelectorAll('.color');
-  for (let box = 0; box < boxOptionPalette.length; box += 1) {
-    if (color1 === color2 || color2 === color3 || color1 === color3) {
-      return 'erro';
-    } else if (color1 === 'white' || color2 === 'white' || color3 === 'white') {
-      return 'erro';
-    } else {
-      if (boxOptionPalette[0]) {
-        boxOptionPalette[0].style.backgroundColor = 'rgb(0,0,0)';
-      }
-      if (boxOptionPalette[1]) {
-        boxOptionPalette[1].style.backgroundColor = color1;
-      }
-      if (boxOptionPalette[2]) {
-        boxOptionPalette[2].style.backgroundColor = color2;
-      }
-      if (boxOptionPalette[3]) {
-        boxOptionPalette[3].style.backgroundColor = color3;
-      }
+//Consegui esse requisito através do PR do Jossany Moura
+//https://github.com/tryber/sd-012-project-pixels-art/pull/67/files
+function colorsPalette() {
+  let palette = document.getElementsByClassName('color');
+  palette[0].style.backgroundColor = 'rgb(000,000,000)';
+  palette[0].classList.add('selected');
+  for (let index = 1; index < palette.length; index += 1) {
+    let colorRandom = [];
+    for (let index = 0; index <= 2; index += 1) {
+      colorRandom.push(Math.round(Math.random() * 255));
     }
+    palette[index].style.backgroundColor = `rgb(${colorRandom})`;
   }
 }
+colorsPalette();
 
 function addpixels(numberPixel) {
   let containerPixels = document.querySelector('#pixel-board');
@@ -147,4 +139,3 @@ function paintPixels() {
     });
   }
 }
-addBgcPalette('darkorange', 'green', 'orange');
