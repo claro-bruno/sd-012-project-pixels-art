@@ -80,13 +80,13 @@ for ( let i =0; i < pixel.length; i++){
 pixel[i].addEventListener('click', paint)
 }
 
-/*function apaga(){
+function apaga(){
 
   let pixel = document.getElementsByClassName('pixel')
-  for (let i = 0; i < pixel.length; i += 0) {
-    pixel[i].style.backgroundColor = 'red'
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white'
   }
 }
 
 const botao = document.getElementById('clear-board')
-botao.addEventListener('click',apaga())*/
+botao.addEventListener('click',apaga)
