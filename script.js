@@ -6,6 +6,7 @@ const cor4 = document.querySelector('#cor4');
 let valor = document.querySelector('#board-size').value;
 const botaoGerar = document.querySelector('#generate-board');
 
+//cria a tabela
 function criaTabela(size) {
   for (let index = 0; index < size; index += 1) {
     let criarTr = document.createElement('tr');
@@ -38,6 +39,7 @@ botaoGerar.addEventListener('click', function () {
   }
 });
 
+//gerar cor random
 function gerarCor () {
   let r = Math.random() * 255;
   let g = Math.random() * 255;
@@ -50,6 +52,7 @@ document.querySelector('#cor2').style.backgroundColor = gerarCor();
 document.querySelector('#cor3').style.backgroundColor = gerarCor();
 document.querySelector('#cor4').style.backgroundColor = gerarCor();
 
+//class selected
 function colocaClassSelected(evento) {
   const selecao = document.querySelector('.selected');
   selecao.classList.remove('selected');
@@ -61,16 +64,18 @@ cor2.addEventListener('click', colocaClassSelected);
 cor3.addEventListener('click', colocaClassSelected);
 cor4.addEventListener('click', colocaClassSelected);
 
+//adicionar cor aos pixel
 const corP = document.querySelector('#pixel-board');
 corP.addEventListener('click', function (evento) {
   evento.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
 });
 
+//limpar
 const botao = document.querySelector('#clear-board');
 botao.addEventListener('click', function () {
   const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].removeAttribute('id');
+    pixels[i].style.backgroundColor = 'white';
   }
 });
 
