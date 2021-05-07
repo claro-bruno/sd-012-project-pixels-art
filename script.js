@@ -36,17 +36,22 @@ function createSquare(tamanho) {
 }
 createSquare();
 
-function randomColorGenerator() {
+function randomRGB() {
   const cores = ['black'];
-  for (let index = 0; index < 4; index += 1) {
-    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-    cores.push(randomColor);
+  for (let index = 0; index < 4; index +=1 ){
+  var num = Math.round(0xffffff * Math.random());
+  var r = num >> 16
+  var g = num >> 8 & 255
+  var b = num & 255
+  const rgb = `rgb(${r}, ${g}, ${b})`
+    cores.push(rgb);
   }
   return cores;
 }
-randomColorGenerator();
+randomRGB();
+
 // Requisito 03
-const cores = randomColorGenerator(); // black obrigatoriamente tenque ser a primeira cor do array
+const cores = randomRGB(); // black obrigatoriamente tenque ser a primeira cor do array
 function alteraCor() {
   const paletaCores = document.getElementsByClassName('color');
   for (let index = 0; index < paletaCores.length; index += 1) {
