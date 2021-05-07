@@ -4,11 +4,11 @@
     padding: 25px 25px
 }
 
-.pixel-line{
+.pixel-line {
     margin: 0;
 }
 
-.pixel{
+.pixel {
     display: inline-block;
     height: 40px;
     width: 40px;
@@ -16,4 +16,19 @@
     background-color: rgb(255, 255, 255);
     margin-bottom: -5px;
     margin-left: -1px;
+}
+header {
+    text-align: center;
+}
+
+h1 {
+    margin-left: 50px;
+}
+button {
+    margin-left: 660px;
+    margin-bottom: 60px;
+}
+
+.pixel-line{
+    margin-left: 587px;
 }
