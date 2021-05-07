@@ -67,25 +67,26 @@ function board() {
 board();
 /* daqui pra cima tá de boa */
 
-/*function paint(event) {
+function paint(event) {
+  const selectedElement = document.querySelector('.selected')
   const color = selectedElement.style.backgroundColor
   event.target.style.backgroundColor = color
   console.log(color)
 }
 
-const pixel = document.getElementsByClassName('pixel')
+const pixel = document.querySelectorAll('.pixel')
 
-pixel.addEventListener('click', paint)*/
-
-function apaga(){
-  const botao = document.getElementById('clear-board')
-
-botao.addEventListener('click', function(){
-  let pixel = document.getElementsByClassName('pixel')
-  for (let i = 0; i < pixel.length; i += 0) {
-    pixel[i].style.backgroundColor = 'white'
-  }
-})
+for ( let i =0; i < pixel.length; i++){
+pixel[i].addEventListener('click', paint)
 }
 
-apaga()
+/*function apaga(){
+
+  let pixel = document.getElementsByClassName('pixel')
+  for (let i = 0; i < pixel.length; i += 0) {
+    pixel[i].style.backgroundColor = 'red'
+  }
+}
+
+const botao = document.getElementById('clear-board')
+botao.addEventListener('click',apaga())*/

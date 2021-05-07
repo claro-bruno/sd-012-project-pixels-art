@@ -1,10 +1,4 @@
-@font-face {
-  font-family: minecraftmedium;
-  src: url('minecraft.woff2') format('woff2'),
-    url('minecraft.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+
 body {
   margin: 0;
 }
