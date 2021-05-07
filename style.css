@@ -32,8 +32,12 @@
     height: 40px;
     display: inline-block;
     background-color: white;
+    margin: -3px;
 }
 
 .selected {
-    top: 75px;
+}
+
+#clear-board {
+    
 }

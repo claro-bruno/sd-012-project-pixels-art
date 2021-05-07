@@ -1,13 +1,30 @@
-const coresDosBlocos = document.querySelectorAll('div');
-const primeiroBloco = coresDosBlocos[1].style.backgroundColor = 'black';
-const segundoBloco = coresDosBlocos[2].style.backgroundColor = 'red';
-const terceiroBloco = coresDosBlocos[3].style.backgroundColor = 'blue';
-const quartoBloco = coresDosBlocos[4].style.backgroundColor = 'green';
+let corSelecionada = 'black'
 
-let selecionado = document.querySelector('.selected');
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('color')){
+       let selecionaClasse = document.querySelector('.selected');
+       selecionaClasse.classList.remove('selected');
+       event.target.classList.add('selected');
+       corSelecionada = event.target.style.backgroundColor;
+    }
+ })
 
-//primeiroBloco.addEventListener('click', () => {
-//    selecionado.classList.remove('selected');
-//    selecionado.target.classList.add('selected');
-//    coresDosBlocos[6].style.backgroundColor = quartoBloco;
-//})
+ document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('pixel')){
+       event.target.style.backgroundColor = corSelecionada;
+    }
+ })
+
+ document.addEventListener('click', (event) => {
+    if (event.target.id === 'clear-board'){
+       const quadro = document.querySelector('#pixel-board')
+       const pixels = quadro.children
+        for (let index = 0; index < pixels.length; index += 1) {
+            pixels[index].style.backgroundColor = 'white';
+        }
+
+    }
+ })
+
+
+ 
