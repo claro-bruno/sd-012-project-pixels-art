@@ -10,8 +10,6 @@
 }
 
 .pixel {
-  height: 40px;
-  width: 40px;
   border: 1px solid black;
   display: inline-block;
   margin: 0;
@@ -20,8 +18,4 @@
 
 .pixel-board {
   display: inline-block;
-}
-
-.line {
-  height: 40px;
 }
