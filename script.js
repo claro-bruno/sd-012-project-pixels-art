@@ -12,7 +12,7 @@ function clear() {
 }
 
 function paint(event) {
-  let cor = event;
+  const cor = event;
   if (event.style.backgroundColor === getColorSelected()) {
     cor.style.backgroundColor = 'white';
   } else {
@@ -23,7 +23,7 @@ function paint(event) {
 function mudaSelecter(bt) {
   const remov = document.querySelector('.selected');
   remov.classList.remove('selected');
-  let button = bt;
+  const button = bt;
   button.target.className = ('color selected');
 }
 
@@ -49,10 +49,10 @@ function lines(line, pixelFather) {
 }
 
 function createColor(square) {
-  let algo = square;
+  const algo = square;
   const array = [0];
   for (let index = 0; index < 9; index += 1) {
-    array.push(Math.round(Math.random()*255));
+    array.push(Math.round(Math.random() * 255));
   }
   const cor = {
     0: 'black',
@@ -60,7 +60,7 @@ function createColor(square) {
     2: `rgb(${array[4]},${array[5]},${array[6]})`,
     3: `rgb(${array[7]},${array[8]},${array[9]})`,
   };
-  for (const key of cor) {
+  for (const key in cor) {
     algo[key].style.backgroundColor = cor[key];
   }
 }
