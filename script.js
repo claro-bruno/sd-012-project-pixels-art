@@ -109,8 +109,8 @@ function customSize() {
     createSquare(50);
   }
   if (inputValue < 51 && inputValue > 0) {
-    customSizeCond(inputValue);
     createSquare(inputValue);
+    customSizeCond(inputValue);
   } else {
     alert('Board inválido!');
   }
