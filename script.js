@@ -80,6 +80,9 @@ const button = document.getElementById('clear-board');
 
   });
 
+  //10 - Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária.
+
+  
 
 
 
