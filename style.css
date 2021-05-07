@@ -21,6 +21,11 @@ body {
   height: 50px;
   margin-right: 10px;
 }
+#controls {
+  align-items: center;
+  margin-inline-start: 520px;
+  margin-top: 20px;
+}
 
 #clear-board {
   margin-top: 10px;
@@ -29,11 +34,13 @@ body {
 
 #generate-board {
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 #pixel-board {
   width: 210px;
   height: 210px;
+  margin-inline-start: 500px;
 }
 
 .pixel {
