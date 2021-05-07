@@ -11,10 +11,10 @@ function addColoPalette() {
     if (index === 0) {
       colorPalette.style.background = 'black';
     } else {
-      let colorOne = Math.ceil(Math.random() * 200);
-      let colortwo = Math.ceil(Math.random() * 200);
-      let colorthree = Math.ceil(Math.random() * 200);
-      colorPalette.style.backgroundColor = `rgb(${colorOne}, ${colortwo}, ${colorthree})`;
+      const colorOne = Math.ceil(Math.random() * 200);
+      const colorTwo = Math.ceil(Math.random() * 200);
+      const colorThree = Math.ceil(Math.random() * 200);
+      colorPalette.style.backgroundColor = `rgb(${colorOne}, ${colorTwo}, ${colorThree})`;
     }
     colorPalette.addEventListener('click', changeSelected);
     document.querySelector('#color-palette').appendChild(colorPalette);
