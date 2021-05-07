@@ -7,11 +7,11 @@ let valor = document.querySelector('#board-size').value;
 const botaoGerar = document.querySelector('#generate-board');
 
 function criaTabela(size) {
-  for (index = 0; index < size; index += 1) {
+  for (let index = 0; index < size; index += 1) {
     let criarTr = document.createElement('tr');
     criarTr.className = 'linha';
     quadrado.appendChild(criarTr);
-    for (i = 0; i < size; i += 1) {
+    for (let i = 0; i < size; i += 1) {
       let criarTd = document.createElement('td');
       criarTd.className = 'pixel';
       criarTr.appendChild(criarTd);
@@ -20,7 +20,7 @@ function criaTabela(size) {
 }
 botaoGerar.addEventListener('click', function () {
   let valor = document.querySelector('#board-size').value;
-  let ultimaLinha = document.querySelectorAll('.linha');
+  const ultimaLinha = document.querySelectorAll('.linha');
 
   if (valor === '' || valor === 0) {
     alert('Valor inválido!');
@@ -39,7 +39,7 @@ botaoGerar.addEventListener('click', function () {
 });
 
 function colocaClassSelected(evento) {
-  let selecao = document.querySelector('.selected');
+  const selecao = document.querySelector('.selected');
   selecao.classList.remove('selected');
   evento.target.classList.add('selected');
 }
@@ -49,14 +49,14 @@ cor2.addEventListener('click', colocaClassSelected);
 cor3.addEventListener('click', colocaClassSelected);
 cor4.addEventListener('click', colocaClassSelected);
 
-let corP = document.querySelector('#pixel-board');
+const corP = document.querySelector('#pixel-board');
 corP.addEventListener('click', function (evento) {
   evento.target.id = document.querySelector('.selected').id;
 });
 
-let botao = document.querySelector('#clear-board');
+const botao = document.querySelector('#clear-board');
 botao.addEventListener('click', function () {
-  let pixels = document.querySelectorAll('.pixel');
+  const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].removeAttribute('id');
   }
