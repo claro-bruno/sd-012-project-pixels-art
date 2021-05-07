@@ -19,17 +19,21 @@ for (let index = 0; index < board; index += 1) {
 // requisito 4 feito baseado no repositorio de Adriana Biberg : adriana-biberg-pixels-art
 // pesquisa da funcao da classList.add :https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList 
 // requisito 5 esta no css
-// requisito 6 esta no html
+// requisito 6 está no html
 
 //requisito 7
-document.addEventListener('click', (event) => {
-    if (event.target.classList.contains('color')) {
-      const color = event.target.style.backgroundColor;
-      setColorSelected(color);
-    }
-    if (event.target.classList.contains('pixel')) {
-      let elementColorSelected = document.querySelector('.selected');
-      event.target.style.backgroundColor = elementColorSelected.style.backgroundColor;
-    }
-  });
-  // usei a dica que Samuel Constantino, deu quando fez um comentário no code-review de um colega
+function selected(event) {
+  const removeSelection = document.querySelector('.selected');
+  removeSelection.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+function selectedEvent() {
+  const paleta = document.getElementsByClassName('color');
+  for (let index = 0; index < paleta.length; index += 1) {
+    paleta[index].addEventListener('click', selected);
+  }
+}
+selectedEvent();
+
+// tive que consultar o repositório de Caio-takeshi:caio-takeshi-pixels-art, para me ajudar na conclusao do requisito
+  
