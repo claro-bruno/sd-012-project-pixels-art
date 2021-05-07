@@ -75,3 +75,6 @@ quadroPixels();
 
 let selectedBlack = document.getElementsByClassName("color")[0];
    selectedBlack.classList.add("selected");
+   selectedBlack;
+
+// document.addEventListener("click", event) 
