@@ -8,6 +8,7 @@
     height: 40px;
     display: inline-block;
     margin: 5px;
+    border-radius: 50px;
 }
 
 #black {
@@ -26,7 +27,7 @@
 }
 
 #golden {
-    background-color: rgb(241, 124, 13);
+    background-color: rgb(248, 157, 20);
     display: inline-block;
 }
 
@@ -47,6 +48,7 @@
     background-color: white;
     margin: -4px;
     margin-top: -4px;
-  }
+    border-radius: 3px;
+}
 
 
