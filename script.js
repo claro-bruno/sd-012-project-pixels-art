@@ -5,6 +5,7 @@ for(let iCor = 0; iCor < 3; iCor++){
       let b = parseInt(Math.random() * 255)
      arrayCores.push("rgb"+"("+r+" ,"+g+" ,"+ b+")");
 }
+
 const paiPaleta = document.getElementById("color-palette");
 let paiBody = document.getElementById("bodi");
 function paletaArco(){
@@ -27,6 +28,7 @@ function paletaArco(){
    selectedBlack.classList.add("selected");
 };
 paletaArco();
+
 function quadroPixels(){
    let quadro = document.createElement("section");
    paiBody.appendChild(quadro);
@@ -55,9 +57,11 @@ function quadroPixels(){
    }
 }
 quadroPixels();
+
 function botao(){
    let butone = document.createElement("button");
-   butone.innerHTML = "Limpar Blocos";
+   butone.innerHTML = "Limpar";
+   butone.id = "clear-board";''
    paiBody.appendChild(butone);
    butone.style.padding = "15px";
    butone.style.margin = "20px";
