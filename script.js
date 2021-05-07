@@ -2,14 +2,17 @@ let paletaCores = document.getElementsByClassName('color');
 
 let pixelBranco = document.getElementsByClassName('pixel');
 
-let corSelecionada = document.querySelector('.selected');
-
 let botaoClearBoard = document.getElementById('clear-board');
 
 
-window.onload = paletaDeCores();
 quadroBranco();
 limparDesenho();
+
+paletaCores[0].style.backgroundColor = 'black';
+paletaCores[0].classList.add('selected');
+paletaCores[1].style.backgroundColor = 'yellow';
+paletaCores[2].style.backgroundColor = '#ff9933';
+paletaCores[3].style.backgroundColor = '#009933';
 
 for (let index = 0; index < paletaCores.length; index += 1){
 paletaCores[index].addEventListener('click', function(evento){
@@ -19,14 +22,13 @@ paletaCores[index].addEventListener('click', function(evento){
     evento.target.classList.add('selected');
     });
 }
-    let getSelectedBackground = window.getComputedStyle(corSelecionada).getPropertyValue("background-color");
+   
 
 for (let index = 0; index < pixelBranco.length; index += 1){
    pixelBranco[index].addEventListener('click', function(evento){
-       
+    let corSelecionada = document.querySelector('.selected');
 
-    
-    evento.target.style.backgroundColor = getSelectedBackground;
+    evento.target.style.backgroundColor = corSelecionada.style.backgroundColor;
    });
 }
 
@@ -38,8 +40,6 @@ function limparDesenho(){
 
     })
 }
-
-
 
 
 function paletaDeCores () {
