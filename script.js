@@ -69,7 +69,16 @@ pixelBoard.addEventListener('click', (event) => {
   }
 });
 
+//9 - CRIEI A CONST PRA RESGATAR O O BOTAO PELA ID. ADICIONEI O EVENT LISTENER COM UM CLICK. DENTRO CRIEI UMA CONST PRA RESGATAR OS ELEMENTOS COM A CLASSE PIXEL QUE SAO OS QUADRADOS. CRIEI UM FOR PRA PERCORRER TODOS ELES E EXECUTAR O BACKGROUND COLOR EM CADA UM.
 
+const button = document.getElementById('clear-board');
+  button.addEventListener('click', (event) => {
+    const pixel = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixel.length; index += 1) {
+      pixel[index].style.backgroundColor = 'white';
+    }
+
+  });
 
 
 
