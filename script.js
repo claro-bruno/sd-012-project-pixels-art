@@ -71,7 +71,7 @@ board();
   const color = selectedElement.style.backgroundColor
   event.target.style.backgroundColor = color
   console.log(color)
-}*/
+}
 
 const pixel = document.getElementsByClassName('pixel')
 
@@ -82,4 +82,4 @@ const botao = document.getElementById('clear-board')
 function apaga(event){
   event.target.style.backgroundColor = 'white'
 }
-botao.addEventListener('click', apaga)
+botao.addEventListener('click', apaga)*/
