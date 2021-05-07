@@ -43,10 +43,6 @@ window.onload = function() {
         };
     };
 
-    fillPixelBoard(lines);
-    colorSelector();
-    pixelSelector();
-
     function createPixel(className) {
         let pixel = document.createElement("div");
         pixel.className = className;
@@ -66,6 +62,23 @@ window.onload = function() {
             divline.appendChild(pixel);   
         };  
     };
+
+    function pixelCleaner(){ 
+        let buttonClean = document.getElementById('clear-board');
+        buttonClean.addEventListener('click', clean);
+    };
+
+    function clean(event){
+        for (let index = 0; index < pixelSelected.length; index += 1){
+            pixelSelected[index].style.backgroundColor = "white";
+        };     
+        
+    };
+
+    fillPixelBoard(lines);
+    colorSelector();
+    pixelSelector();
+    pixelCleaner();
 };
 
 
