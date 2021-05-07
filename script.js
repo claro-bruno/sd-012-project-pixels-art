@@ -21,37 +21,43 @@ function paint(event) {
 }
 
 function mudaSelecter(bt) {
-  let remov = document.querySelector('.selected');
+  const remov = document.querySelector('.selected');
   remov.classList.remove('selected');
   bt.target.className = ('color selected');
 }
 
+function colunas(pixelLine, colom) {
+  for (let coluna = 0; coluna < colom; coluna += 1) {
+    const pixelChild = document.createElement('div');
+    pixelChild.className = 'pixel';
+    pixelChild.style.backgroundColor = 'white';
+    pixelChild.style.width = `${(200 / colom)}px`;
+    pixelChild.style.height = `${(200 / colom)}px`;
+    pixelLine.appendChild(pixelChild);
+  }
+}
+
 function lines(line, pixelFather) {
   for (let linha = 0; linha < line; linha += 1) {
-    let pixelChild = document.createElement('div');
+    const pixelChild = document.createElement('div');
     pixelFather.appendChild(pixelChild);
     pixelChild.className = 'line';
-    pixelChild.style.height = `${(200/line)}px`;
+    pixelChild.style.height = `${(200 / line)}px`;
     colunas(pixelChild, line);
   }
 }
 
-function colunas(pixelLine, colom) {
-  for (let coluna = 0; coluna < colom; coluna += 1) {
-    let pixelChild = document.createElement('div');
-    pixelChild.className = 'pixel';
-    pixelChild.style.backgroundColor = 'white';
-    pixelChild.style.width = `${(200/colom)}px`;
-    pixelChild.style.height = `${(200/colom)}px`;
-    pixelLine.appendChild(pixelChild);
-  }
-}
 function createColor(square) {
-   let cor = {
+  let array = [];
+  for (let index = 0; index < 3 * square; index += 1) {
+    array.push(Math.round(Math.random()*255))
+  }
+  
+  const cor = {
     0: 'black',
-    1: `rgb(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)})`,
-    2: `rgb(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)})`,
-    3: `rgb(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)})`
+    1: `rgb(${array[0]},${array[1]},${array[2]})`,
+    2: `rgb(${array[3]}},${array[4]},${array[5]})`,
+    3: `rgb(${array[6]},${array[7]},${array[8]})`
   };
   for (let key in cor) {
     square[key].style.backgroundColor = cor[key]
