@@ -22,6 +22,7 @@ function createCollumns(row, colunas) {
     const divColumn = document.createElement('div');
     divColumn.classList.add('pixel');
     row.appendChild(divColumn);
+
   }
 }
 // Gera as linhas
@@ -41,11 +42,25 @@ createBoardRows(5);
 
 
 // Seleciona um pixel
-const colorPalette = document.querySelector('#color-palette');
-colorPalette.addEventListener('click', (event) => {
-  for (let index = 0; index < colorPalette.children.length; index += 1) {
-    colorPalette.children[index].classList.remove('selected');
-  }
-  return event.target.classList.toggle('selected');
-});
+const palette = document.querySelector('#color-palette')
+
+function select() {
+  palette.addEventListener('click', function (event) {
+    let beforeColor = document.querySelector('.selected')
+    if (event.target.id !== 'color-palette') {
+      beforeColor.classList.remove('selected')
+      event.target.classList.add('selected');
+    }
+  });
+}
+select();
 // <==
+
+
+pixelBox.addEventListener('click', function (event) {
+
+  let toColor = document.querySelector('.selected').id;
+  if (event.target.className === 'pixel') {
+    event.target.style.backgroundColor = toColor;
+  }
+});
