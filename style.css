@@ -6,7 +6,7 @@ body {
 
 .color {
     border: 1px solid black;
-    display: inline;
+    display: inline-block;
     padding: 25px;
 }
 
