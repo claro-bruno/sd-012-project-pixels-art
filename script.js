@@ -1,4 +1,4 @@
-let PALETTE_COLOR = ['blue', 'green', 'black', 'orange'];
+let PALETTE_COLOR = ['black', 'green', 'blue', 'orange'];
 
 function addColoPalette() {
   for (let index = 0; index < PALETTE_COLOR.length; index += 1) {
