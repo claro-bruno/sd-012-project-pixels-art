@@ -1,3 +1,6 @@
+paleta();
+quadrados();
+
 function paleta(){
     let quadradocores = document.querySelector('#color-palette');
     let cores = ['black', 'red', 'blue', 'green'];
@@ -11,7 +14,7 @@ function paleta(){
         quadradocores.appendChild(coresitem);
     };
 };
-paleta();
+
 function quadrados() {
     let pixell = document.querySelector('#pixel-board');
     let ospixels = [];
@@ -25,14 +28,14 @@ function quadrados() {
         pixell.appendChild(quadrado);
     };
 };
-quadrados();
 
 window.onload = function () {
     let cor = document.getElementsByClassName('color')[0];
+
     cor.className = 'selected';
     cor.addEventListener('click', pegacor)
     function pegacor() {
-       cor.style.backgroundColor = 'black';
+            
     };
 };
 
