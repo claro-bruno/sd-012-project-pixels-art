@@ -6,7 +6,7 @@
     width: 40px;
     height: 40px;
     margin: 2px;
-    margin-bottom: 25px;
+    margin-bottom: 7px;
 }
 .selected {
     border: solid black;
@@ -14,8 +14,8 @@
     display: inline-block;
     width: 40px;
     height: 40px;
-    margin: 2px;
-    margin-bottom: 25px;
+    margin: -2px;
+    margin-right: 1px;
 }
 #pixel-board {
     width: 210px;
@@ -24,9 +24,9 @@
 .pixel {
     border: solid black;
     border-width: 1px;
+    display: inline-block;
     width: 40px;
     height: 40px;
-    display: inline-block;
-    margin-bottom: -5px;
-    
+    margin: -2px;
+    margin-right: 1px;
 }
