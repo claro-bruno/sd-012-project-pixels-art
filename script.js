@@ -1,3 +1,5 @@
+// Resolvendo: DESAFIO 2 / DESAFIO 3 / DESAFIO 4 / DESAFIO 5 
+
 let quadroPixels = document.getElementById("pixel-board");
 
 function board(tamanhoBoard) {
@@ -11,5 +13,5 @@ function board(tamanhoBoard) {
   }
 }
 }
-board(10);
+board(5);
 
