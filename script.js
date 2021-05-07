@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   const section1 = document.createElement('section');
   section1.id = 'color-palette';
 
@@ -9,6 +9,8 @@ window.onload = function() {
   input.id = 'board-size';
   input.type = 'number';
   input.min = 0;
+  input.max = 50;
+  input.oninput = 'validity.valid';
 
   const btn2 = document.createElement('button');
   btn2.id = 'generate-board';
@@ -34,18 +36,28 @@ window.onload = function() {
 
   const buttonVQV = document.querySelector('#generate-board');
 
-  function clearBox () {
+  function clearBox() {
     const box = document.querySelectorAll('.line');
     for (let index = 0; index < box.length; index += 1) {
       pixel_board.removeChild(box[index]);
     }
   }
   
+  document.querySelector("#board-size").addEventListener("input", el => {
+    if (el.target.value > parseInt(el.target.getAttribute("max"))) {
+      el.target.value = el.target.getAttribute("max");
+      el.target.value = 50;
+    }
+    if (el.target.value <= parseInt(el.target.getAttribute("min"))) {
+     el.target.value = '';
+    }
+  })
+
   tamanho(5);
   buttonVQV.addEventListener('click', function () {
     clearBox();
     let num = document.querySelector('#board-size').value;
-    if (num === '' || num === ' ' || num < 0) {
+    if (num === '' || num === ' ' || num < 5) {
       alert('Board inválido!');
     }
     if (num < 5) {
@@ -60,7 +72,7 @@ window.onload = function() {
   });
 
   function makeColor(quantity) {
-    for(let index = 0; index < quantity; index += 1) {
+    for (let index = 0; index < quantity; index += 1) {
       const color = document.createElement('div');
       color.className = 'color';
       defineColors(index, color);
