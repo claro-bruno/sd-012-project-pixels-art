@@ -69,12 +69,19 @@ firstColor.className = 'color selected';
 window.onload = function () {
   let colorContainer = document.querySelector('ul');
   // let corSelecionada = document.querySelector('.selected');
-
   colorContainer.addEventListener('click', function (event) {
     let corSelecionada = document.querySelector('.selected');
-    console.log(corSelecionada);
     corSelecionada.className = 'color';
-    console.log(corSelecionada);
     event.target.className = 'color selected';
   });
 };
+
+function setPixelBackgroundColor(event) {
+  let boxCorSelecionado = document.querySelector('.selected').style
+    .backgroundColor;
+  event.target.style.backgroundColor = boxCorSelecionado;
+}
+let getPixel = document.getElementsByClassName('pixel');
+for (index = 0; index < getPixel.length; index += 1) {
+  getPixel[index].addEventListener('click', setPixelBackgroundColor);
+}
