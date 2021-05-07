@@ -31,13 +31,12 @@ for(let colunaIndex = 0; colunaIndex < pixelLinhas.length; colunaIndex +=1 ){
   
     
 }
-//window.onload = corInicial;
-//function corInicial(){
-    let buscaColor = document.querySelector('.color');
-    buscaColor.classList.add('selected');
+//Deixa o quadrado preto ao iniciar
+let buscaColor = document.querySelector('.color');
+buscaColor.classList.add('selected');
 
 
-
+//Requisito07
 window.onload = corDiferente;
 function corDiferente(){
     let mudaCor = document.getElementsByClassName('selected');
@@ -48,13 +47,22 @@ function corDiferente(){
     })  
 
 }
-
+//Requisito 08
 function alteraCorQuadrado(event){
     let boxCorSelecionada = document.querySelector('.selected');//seleciona o box da cor
-    let cor = window.getComputedStyle(boxCorSelecionada).getPropertyValue('background-color');
-    event.target.style.backgroundColor = cor;
+    let cor = window.getComputedStyle(boxCorSelecionada).getPropertyValue('background-color');//pegou a cor do pixel
+    event.target.style.backgroundColor = cor;//Aplica a cor no pixel do quadrado
+
 }
 
+//requisito 09 botão limpa a cor
+let elemento = document.querySelectorAll('.pixel');
+let botaoClear = document.getElementById('clear-board');
+botaoClear.addEventListener('click', function(){
+    for(let index = 0; index < elemento.length; index += 1){
+      elemento[index].style.backgroundColor = '#fff';
+    }
+ })
 
 
 
