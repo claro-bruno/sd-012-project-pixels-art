@@ -1,3 +1,15 @@
+body {
+  background-image: url("https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/af1cbda2ba0baa8.png");
+  text-align: center;
+}
+
+#title {
+  font-size: 80px;
+  color: rgb(255, 255, 255);
+  font-family: VT323;
+  margin-top: 20px;
+}
+
 .color {
   border: 1px solid black;
   display: inline-block;
@@ -5,6 +17,11 @@
   height: 40px;
   width: 40px;
   margin-bottom: 20px;
+}
+
+#pixel-board {
+  display: inline-block;
+
 }
 
 .pixel {
