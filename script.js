@@ -33,11 +33,9 @@ for (let index = 0; index < pixels.length; index += 1) {
 
 button.addEventListener('click', clear);
 
-function genTable() {
-  const number = document.getElementById('board-size').value;
+function genValidTable(number) {
   const table = document.getElementById('pixel-board');
   table.innerHTML = '';
-
   for (let i = 0; i < number; i += 1) {
     const tr = document.createElement('tr');
     for (let j = 0; j < number; j += 1) {
@@ -46,6 +44,16 @@ function genTable() {
       tr.appendChild(th);
     }
     table.appendChild(tr);
+  }
+}
+
+function genTable() {
+  const number = document.getElementById('board-size').value;
+
+  if (number === '') {
+    alert('Board inválido!');
+  } else {
+    genValidTable(number);
   }
 }
 
