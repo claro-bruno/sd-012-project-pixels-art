@@ -11,10 +11,10 @@ function addColoPalette() {
     if (index === 0) {
       colorPalette.style.background = 'black';
     } else {
-      let numberColorOne = Math.ceil(Math.random() * 200);
-      let numberColortwo = Math.ceil(Math.random() * 200);
-      let numberColorthree = Math.ceil(Math.random() * 200);
-      colorPalette.style.backgroundColor = `rgb(${numberColorOne}, ${numberColortwo}, ${numberColorthree})`;
+      let colorOne = Math.ceil(Math.random() * 200);
+      let colortwo = Math.ceil(Math.random() * 200);
+      let colorthree = Math.ceil(Math.random() * 200);
+      colorPalette.style.backgroundColor = `rgb(${colorOne}, ${colortwo}, ${colorthree})`;
     }
     colorPalette.addEventListener('click', changeSelected);
     document.querySelector('#color-palette').appendChild(colorPalette);
@@ -40,12 +40,10 @@ function createPixelBoard(line, column) {
     line = 50;
     column = 50;
   }
-  if(line < 5) {
+  if (line < 5) {
     line = 5;
     column = 5;
   }
-  
-
   for (let lineIndex = 0; lineIndex < line; lineIndex += 1) {
     const linePixel = document.createElement('div');
     linePixel.classList.add('line');
