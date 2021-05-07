@@ -1,24 +1,23 @@
 function getColorSelected() {
-  let select = document.getElementsByClassName('selected')[0];
-  let bgColor = select.style.backgroundColor;
+  const select = document.getElementsByClassName('selected')[0];
+  const bgColor = select.style.backgroundColor;
   return bgColor;
 }
 
 function clear() {
-  let board = document.getElementsByClassName('pixel');
+  const board = document.getElementsByClassName('pixel');
   for (let boardClear = 0; boardClear < board.length; boardClear += 1) {
     board[boardClear].style.backgroundColor = 'white';
   }
 }
 
 function paint(event) {
-  let cor = event.style.backgroundColor;
-  if(cor === getColorSelected()) {
+  const cor = event.style.backgroundColor;
+  if (cor === getColorSelected()) {
     event.style.backgroundColor = 'white';
   } else {
     event.style.backgroundColor = getColorSelected();
   }
-  
 }
 
 function mudaSelecter(bt) {
