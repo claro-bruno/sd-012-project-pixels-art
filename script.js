@@ -65,24 +65,33 @@ function clearBoard() {
 }
 clearBoard();
 
-// Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária. Ao clicar no botão, deve ser gerado um quadro de N pixels de largura e N pixels de altura, onde N é o número inserido no input;
-// colocar um evento de click no botão VQV
-const generateBoard = document.querySelector('#generate-board');
-generateBoard.addEventListener('click', () => {
-  const boardSize = document.querySelector('#board-size');
-  // Se estiver vazio emitir um alert "Board inválido"
-  if (boardSize.value === '') {
-    alert('Board inválido!');
-  } else {
-    // faz um for e remove a board anterior
+function boardSize(min, max) {
+  const imputBoard = document.querySelector('#board-size');
+  if (imputBoard.value < min) {
+    alert('O tamanho mínimo é 5');
+    return min;
+  } if ((imputBoard.value > max)) {
+    alert('O tamanho máximo é 50');
+    return max;
+  }
+  return imputBoard.value;
+}
 
-    const divLine = document.querySelectorAll('.pixel-line');
-    for (let index = 0; index < divLine.length; index += 1) {
-      const test = divLine[index].parentElement;
-      test.removeChild(divLine[index]);
+function generateBoard() {
+  const buttonBoard = document.querySelector('#generate-board');
+  buttonBoard.addEventListener('click', () => {
+    const imputBoard = document.querySelector('#board-size');
+    if (imputBoard.value === '') {
+      alert('Board inválido!');
+    } else {
+      const divLine = document.querySelectorAll('.pixel-line');
+      for (let index = 0; index < divLine.length; index += 1) {
+        const pixelBoard = divLine[index].parentElement;
+        pixelBoard.removeChild(divLine[index]);
+      }
+      makerBoardPixel(boardSize(5, 50));
+      imputBoard.value = '';
     }
-    makerBoardPixel(boardSize.value);
-  };
-})
-// Se estiver tudo ok Capturar o número do imput
-// Chamar a função que cria o boar e passar o valor do imput como parâmetro
+  });
+}
+generateBoard();
