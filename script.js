@@ -16,15 +16,14 @@ for (let index = 0; index <= 3; index += 1){
     };
 };
 
-let arrayColorPalette = ['black', 'red', 'blue', 'green'];
-let color = document.getElementsByClassName('color');
-
-function creatColorPalette (array) {
+function creatColorPalette () {
+    let arrayColorPalette = ['black', 'red', 'blue', 'green'];
+    let color = document.getElementsByClassName('color');
     for (let index = 0; index < arrayColorPalette.length; index += 1) { 
-        color[index].style.backgroundColor = array[index];
+        color[index].style.backgroundColor = arrayColorPalette[index];
     };
 }
-creatColorPalette(arrayColorPalette);
+creatColorPalette();
  
 //Requisito 4
 function creatPixelBox (elements) {
@@ -50,28 +49,56 @@ creatPixelBox(5);
 // }
 // initialColor();
 
-let initialColorBlack = document.getElementsByClassName('color')[0];
-initialColorBlack.classList.add('selected');
+
+function eventClick() {
+    let initialColor = document.getElementsByClassName('color');
+
+    for (let index = 0; index < initialColor.length; index += 1){
+        initialColor[index].classList.remove('selected');
+    }
+    initialColor[0].classList.add('selected');
+}
+eventClick();
 
 //Requisito 7
 function selectedColor () {
-    const colorPalette =  document.querySelector('#color-palette');
-    colorPalette.addEventListener('click', (event) => {
-        if (event.target.className === 'color') {
-          const colorSelected = document.querySelector('.selected');
-          colorSelected.classList.remove('selected');
-          event.target.classList.add('selected');
-        }
-      }  );
+    const colorPalette =  document.querySelector('#color-palette').children;
+    console.log(colorPalette);
+    for (let index = 0; index < colorPalette.length; index += 1){
+        colorPalette[index].addEventListener('click', (event) => {
+            if (event.target.className === 'color') {
+            const colorSelected = document.querySelector('.selected');
+            colorSelected.classList.remove('selected');
+            event.target.classList.add('selected');
+            }
+        } );
+    }
 }
 
 selectedColor();
 
-//Requisito 9
+// Reqiosito 8
+function colorPixelBox() {
+    const pixelBoard = document.getElementsByClassName('pixel');
+    const selected = document.querySelector('.selected');
+    const selectedColor = selected.style.backgroundColor;
+    for (let index = 0; index < pixelBoard.length; index += 1) {
+       pixelBoard[index].addEventListener('click', function (event) {
+           event.target.style.backgroundColor = selectedColor;
+        }); 
+    }
+}
+colorPixelBox();
+
+
+
+// Requisito 9
 // const pixel = document.querySelectorAll('.pixel');
-// function clearPixelBox ()  {
+// function clearPixelBox () {
 //     for (let element of pixel) {
-//         element.style.backgroundColor = 'white';
-//     }
+//         element.style.backgroundColor = "white";
+//     };
 // }
-// clearPixelBox ();
+
+// let button = document.getElementById("clear-board");
+// button.addEventListener("click", clearPixelBox);
