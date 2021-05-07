@@ -4,15 +4,22 @@ const pixelBoard = document.getElementById('pixel-board');
 const buttonVqv = document.getElementById('generate-board');
 const input = document.getElementById('board-size');
 let boarderSize = 25;
+// Gerar cores aleatorias
+function randomColors () {
+  let r = Math.ceil(Math.random() * 255);
+  let g = Math.ceil(Math.random() * 255);
+  let b = Math.ceil(Math.random() * 255);
+  return `rgb(${r}, ${g}, ${b})`;
+}
 // Seta as cores iniciais da paleta de cores
 const color1 = document.getElementsByClassName('color')[0];
 color1.style.backgroundColor = 'black';
 const color2 = document.getElementsByClassName('color')[1];
-color2.style.backgroundColor = 'red';
+color2.style.backgroundColor = randomColors();
 const color3 = document.getElementsByClassName('color')[2];
-color3.style.backgroundColor = 'blue';
+color3.style.backgroundColor = randomColors();
 const color4 = document.getElementsByClassName('color')[3];
-color4.style.backgroundColor = 'green';
+color4.style.backgroundColor = randomColors();
 // Cria dinamicamente os pixels do pixel-board
 function createPixels() {
   pixelBoard.style.maxWidth = (Math.sqrt(boarderSize) * 42) + 'px';
