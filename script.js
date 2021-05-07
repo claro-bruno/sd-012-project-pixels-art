@@ -51,8 +51,8 @@ comporGrade(5);
 // desafio 6
 function corPaleta() {
   const coresPaleta = document.getElementsByClassName('color');
-    for (let index = 0; index < coresPaleta.length; index += 1) {
-  coresPaleta[index].classList.remove('selected');
+  for (let index = 0; index < coresPaleta.length; index += 1) {
+    coresPaleta[index].classList.remove('selected');
   }
   coresPaleta[0].classList.add('selected');
 }
@@ -60,7 +60,7 @@ corPaleta();
 
 // Desafio 7
 
-function selectColor(event) {
+function selectOneObject(event) {
   const removeSelec = document.querySelector('.selected');
   removeSelec.classList.remove('selected');
   event.target.classList.add('selected');
@@ -69,7 +69,22 @@ function selectColor(event) {
 function eventoSelected() {
   const coresDaPaleta = document.getElementsByClassName('color');
   for (let index = 0; index < coresDaPaleta.length; index += 1) {
-    coresDaPaleta[index].addEventListener('click', selectColor)
+    coresDaPaleta[index].addEventListener('click', selectOneObject);
   }
 }
 eventoSelected();
+
+// Desafio 8
+function corSelected(event) {
+  const objetoAlvo = event.target;
+  const colorRequired = document.querySelector('.selected').style.backgroundColor; //será capturado a cor de background do objeto selicionado.
+  objetoAlvo.style.backgroundColor = colorRequired;
+}
+
+function corAtribuida() {
+  const DivDePixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < DivDePixels.length; index += 1) {
+    DivDePixels[index].addEventListener('click', corSelected);
+  }
+}
+corAtribuida();
