@@ -29,7 +29,23 @@ boxNumbers.className = 'pixel';
 
 }
    
-console.log(box);
+// console.log(box);
+
+// let colorBox = [];
+// for (index = 1; index < 4;index += 1){
+//     colorBox.push (index);
+// }
+let selectedBox = document.querySelector('#firstColor');
+selectedBox.className = 'color selected'
+// for (let aux = 0; aux < colorBox.length; aux +=1){
+//     let blackBox = colorBox[aux];
+//     if (blackBox === 1){
+        // selectedBox.className = 'color selected'
+    // }
+// }
+
+// }
+
 
 // let box = [];
     
