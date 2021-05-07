@@ -98,9 +98,18 @@ function clearButtonEvent() {
 clearButtonEvent();
 
 // Requisito 10
+function customSizeCond(inputValue) {
+  if (inputValue < 5) {
+    createSquare(5);
+  }
+}
 function customSize() {
-  const inputValue = parseInt(document.getElementById('board-size').value);
+  const inputValue = parseInt(document.getElementById('board-size').value, 10); // value, 10) radix 10 para numeros decimal
+  if (inputValue > 50) {
+    createSquare(50);
+  }
   if (inputValue < 51 && inputValue > 0) {
+    customSizeCond(inputValue);
     createSquare(inputValue);
   } else {
     alert('Board inválido!');
