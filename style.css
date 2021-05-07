@@ -1,3 +1,14 @@
+body {
+    margin:auto;
+    justify-content: center;
+    text-align: center;
+}
+
+section {
+    padding: 20px;
+}
+
+
 #color-palette {
     display: inline-flex;
 }
@@ -9,6 +20,8 @@
 }
 
 
+#board-size {
+    width: 50px;
 }
 
 #pixel-board {

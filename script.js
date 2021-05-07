@@ -1,9 +1,13 @@
 let boardSize = 5;
+let allCollors = document.querySelector('#color-palette');
+let pixelBoard = document.querySelector('#pixel-board');  
+
 
 setBackgroundColor();
 createBoard(boardSize);
 selectColor();
 changePixelColor();
+
 
 
 function setBackgroundColor() {
@@ -31,8 +35,7 @@ function createBoard(boardSize) {
     }
 }
 function selectColor() {
-    let allCollors = document.querySelector('#color-palette');
-
+    
     allCollors.addEventListener('click', function(event) {
         let replaced = document.querySelector('.selected');
         replaced.classList.remove('selected');
@@ -43,7 +46,7 @@ function selectColor() {
 
 
 function changePixelColor() {
-    let pixelBoard = document.querySelector('#pixel-board');    
+      
         
         pixelBoard.addEventListener('click', function(event) {
                    
@@ -58,4 +61,15 @@ function resetColors() {
     window.location.reload(false);
 }
 
+function userBoardSize() {
+    boardSize = document.querySelector('#board-size').value;    
+    if(boardSize.length === 0){
+        alert("Board inválido!");
+    } else {
+        while(pixelBoard.firstChild) {
+            pixelBoard.removeChild(pixelBoard.lastChild);
+        }   
+        createBoard(boardSize);
+    }
+}
 
