@@ -60,20 +60,16 @@ corPaleta();
 
 // Desafio 7
 
+function selectColor(event) {
+  const removeSelec = document.querySelector('.selected');
+  removeSelec.classList.remove('selected');
+  event.target.classList.add('selected');
+}
 
-
-
-// function setTaskClass() {
-//   let selectedTask = document.getElementsByClassName('task selected');
-//   let myTasks = document.querySelector('.task');
-
-//   myTasks.addEventListener('click', function(event) {
-//     if (selectedTask.length === 0) {
-//       event.target.className = 'task selected';
-//     } else {
-//       event.target.className = 'task';
-//     }
-//   });
-// };
-
-// setTaskClass();
+function eventoSelected() {
+  const coresDaPaleta = document.getElementsByClassName('color');
+  for (let index = 0; index < coresDaPaleta.length; index += 1) {
+    coresDaPaleta[index].addEventListener('click', selectColor)
+  }
+}
+eventoSelected();
