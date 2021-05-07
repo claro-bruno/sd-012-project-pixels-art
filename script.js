@@ -69,12 +69,7 @@ function botao(){
    })
 }
 botao();
-document.getElementsByTagName("p")[0].style.backgroundColor;
-
-window.onload()= function blackSelect(){
-   
+function blackSelect(){
       let blackS = document.getElementsByTagName("p")[0].style.backgroundColor;
-       blackS
 };
-
-
+blackSelect();
