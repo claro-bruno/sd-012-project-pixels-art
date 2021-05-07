@@ -47,8 +47,8 @@ function mudaDeCor() {
  let getPixel = documento.getElementsByClassName('pixel');
 
  for(let index = 0; index < getPixel.length; index += 1) {
-   getPixel[index].addEventListener('click', mudaDeCor);
+   getPixel[index].addEventListener('click', pegaCor);
        
    }
-  }
+  } mudaDeCor();
   // vi essa a dica  de usar o evento.target postada no slack pelo Nuwanda
