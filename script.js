@@ -36,8 +36,17 @@ function createSquare(tamanho) {
 }
 createSquare();
 
+function randomColorGenerator() {
+  const cores = ['black'];
+  for (let index = 0; index < 4; index += 1) {
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    cores.push(randomColor);
+  }
+  return cores;
+}
+randomColorGenerator();
 // Requisito 03
-const cores = ['black', 'blue', 'red', 'green']; // black obrigatoriamente tenque ser a primeira cor do array
+const cores = randomColorGenerator(); // black obrigatoriamente tenque ser a primeira cor do array
 function alteraCor() {
   const paletaCores = document.getElementsByClassName('color');
   for (let index = 0; index < paletaCores.length; index += 1) {
