@@ -3,7 +3,7 @@ function paletteColor() {
   const divPai = document.getElementById('color-palette');
   const colorPalette = ['black', 'red', 'blue', 'yellow'];
   for (let index = 0; index < colorPalette.length; index += 1) {
-    let div2 = document.createElement('div');
+    const div2 = document.createElement('div');
     div2.className = 'color';
     div2.style.backgroundColor = colorPalette[index];
     divPai.appendChild(div2);
@@ -51,8 +51,29 @@ comporGrade(5);
 // desafio 6
 function corPaleta() {
   const coresPaleta = document.getElementsByClassName('color');
+    for (let index = 0; index < coresPaleta.length; index += 1) {
+  coresPaleta[index].classList.remove('selected');
+  }
   coresPaleta[0].classList.add('selected');
 }
 corPaleta();
 
 // Desafio 7
+
+
+
+
+// function setTaskClass() {
+//   let selectedTask = document.getElementsByClassName('task selected');
+//   let myTasks = document.querySelector('.task');
+
+//   myTasks.addEventListener('click', function(event) {
+//     if (selectedTask.length === 0) {
+//       event.target.className = 'task selected';
+//     } else {
+//       event.target.className = 'task';
+//     }
+//   });
+// };
+
+// setTaskClass();
