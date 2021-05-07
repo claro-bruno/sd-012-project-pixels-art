@@ -58,11 +58,12 @@ function selectColor() {
 selectColor();
 
 //8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
-const colorSelected = document.querySelector('.selected').id;
+
 
 pixelBoard.addEventListener('click', (event) => {
 
   if (event.target.className === 'pixel') {
+    const colorSelected = document.querySelector('.selected').style.backgroundColor;
     const selectedPixel = event.target;
     selectedPixel.style.backgroundColor = colorSelected;
   }
