@@ -3,10 +3,10 @@ function paletteColor() {
   const divPai = document.getElementById('color-palette');
   const colorPalette = ['black', 'red', 'blue', 'yellow'];
   for (let index = 0; index < colorPalette.length; index += 1) {
-    let divFilha = document.createElement('div');
-    divFilha.className = 'color';
-    divFilha.style.backgroundColor = colorPalette[index];
-    divPai.appendChild(divFilha);
+    let div2 = document.createElement('div');
+    div2.className = 'color';
+    div2.style.backgroundColor = colorPalette[index];
+    divPai.appendChild(div2);
   }
 }
 paletteColor();
