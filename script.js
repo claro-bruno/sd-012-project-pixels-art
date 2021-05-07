@@ -16,13 +16,20 @@ function createBoardRows(linhas) {
 function createCollumns(row, colunas) {
   for (let column = 1; column <= colunas; column += 1) {
     const divColumn = document.createElement('div');
-    divColumn.classList.add('box');
+    divColumn.classList.add('pixel');
     row.appendChild(divColumn);
   }
 }
 let = createBoardRows(5);
 
-let colors = document.querySelector('#palette-one');
+let colorsOne = document.querySelector('#palette-one');
+colorsOne.style.backgroundColor = 'black'
 
-colors.style.backgroundColor = 'black'
+let colorsTwo = document.querySelector('#palette-two');
+colorsTwo.style.backgroundColor = 'green'
 
+let colorsThree = document.querySelector('#palette-three');
+colorsThree.style.backgroundColor = 'orange'
+
+let colorsFour = document.querySelector('#palette-four');
+colorsFour.style.backgroundColor = 'purple'

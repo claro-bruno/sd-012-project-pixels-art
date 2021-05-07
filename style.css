@@ -15,7 +15,9 @@
 
 }
 
-
+#palette-one {
+  background-color: white;
+}
 
 #pixel-board {
   margin-top: 10px;
@@ -25,7 +27,7 @@
   gap: 5px;
 }
 
-.box {
+.pixel {
   margin-top: 10px;
   height: 40px;
   width: 40px;
@@ -45,5 +47,3 @@
 
   background-color: rgb(184, 38, 38);
 }
-
-
