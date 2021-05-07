@@ -39,3 +39,17 @@ function paintPixel(eventPaint) {
 for (let indexPixels = 0; indexPixels < pixed.length; indexPixels += 1) {
   pixed[indexPixels].addEventListener('click', paintPixel);
 }
+
+const elementDartVader = document.getElementById('body');
+const buttonLuke = document.createElement('button');
+buttonLuke.id ='clear';
+buttonLuke.innerHTML = 'Limpa';
+elementDartVader.appendChild(buttonLuke);
+
+const buttonClick = document.getElementById('clear');
+function clear() {
+  for (let pix = 0; pix < pixed.length; pix += 1) {
+    pixed[pix].style.backgroundColor = 'white';
+  }
+}
+buttonClick.addEventListener('click', clear);

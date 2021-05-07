@@ -27,3 +27,17 @@ table {
   width: 40px;
   height: 40px;
 }
+
+#clear {
+  background-color: yellow;
+  width: 120px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#clear:hover {
+  background-color: chocolate;
+  color: white;
+}
