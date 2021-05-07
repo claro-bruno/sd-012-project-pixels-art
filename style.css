@@ -1,0 +1,11 @@
+body {
+  align-content: center;
+}
+
+.color {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin: 3px;
+  border: 1px solid black;
+}
