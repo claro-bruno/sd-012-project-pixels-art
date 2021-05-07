@@ -4,7 +4,7 @@ window.onload = firstColor
     black.addEventListener('click', firstColor);
 
     function firstColor() {
-        black.className = 'color selected'
+        black.className = 'color selected';
     }
     
     const color = document.getElementsByClassName('color');
