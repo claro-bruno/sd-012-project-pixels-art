@@ -61,9 +61,18 @@ function eventClick() {
 eventClick();
 
 //Requisito 7
+document.addEventListener('click', event => {
+    if(event.target.classList.contains('pixel')) {
+        const pixelBoard = document.getElementsByClassName('pixel');
+        const selected = document.querySelector('.selected');
+        const selectedColor = selected.style.backgroundColor;
+        event.target.style.backgroundColor = selectedColor;
+    }
+})
 function selectedColor () {
     const colorPalette =  document.querySelector('#color-palette').children;
     console.log(colorPalette);
+    
     for (let index = 0; index < colorPalette.length; index += 1){
         colorPalette[index].addEventListener('click', (event) => {
             if (event.target.className === 'color') {
@@ -73,22 +82,20 @@ function selectedColor () {
             }
         } );
     }
-}
+} 
 
 selectedColor();
 
 // Reqiosito 8
-function colorPixelBox() {
-    const pixelBoard = document.getElementsByClassName('pixel');
-    const selected = document.querySelector('.selected');
-    const selectedColor = selected.style.backgroundColor;
-    for (let index = 0; index < pixelBoard.length; index += 1) {
-       pixelBoard[index].addEventListener('click', function (event) {
-           event.target.style.backgroundColor = selectedColor;
-        }); 
-    }
-}
-colorPixelBox();
+// function colorPixelBox() {
+    
+//     for (let index = 0; index < pixelBoard.length; index += 1) {
+//        pixelBoard[index].addEventListener('click', function (event) {
+           
+//         }); 
+//     }
+// }
+// colorPixelBox();
 
 
 
