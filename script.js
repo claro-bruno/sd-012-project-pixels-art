@@ -1,5 +1,30 @@
 // Criando Box Pixels
+
+
 const pixelBox = document.querySelector('#pixel-board');
+
+const colorPalette = document.querySelector('#color-palette');
+
+const colorsOne = document.querySelector('#palette-one');
+colorsOne.style.backgroundColor = 'black'
+
+const colorsTwo = document.querySelector('#palette-two');
+colorsTwo.style.backgroundColor = 'green'
+
+const colorsThree = document.querySelector('#palette-three');
+colorsThree.style.backgroundColor = 'orange'
+
+const colorsFour = document.querySelector('#palette-four');
+colorsFour.style.backgroundColor = 'purple'
+
+
+
+colorPalette.addEventListener('click', (event) => {
+  for (let index = 0; index < colorPalette.children.length; index += 1) {
+    colorPalette.children[index].classList.remove('selected');
+  }
+  return event.target.classList.toggle('selected');
+});
 
 
 
@@ -14,6 +39,12 @@ function createBoardRows(linhas) {
 }
 linhas = createBoardRows(5);
 
+
+
+
+
+
+
 // Gera as Colunas
 function createCollumns(row, colunas) {
   for (let column = 1; column <= colunas; column += 1) {
@@ -22,36 +53,3 @@ function createCollumns(row, colunas) {
     row.appendChild(divColumn);
   }
 }
-
-
-let colorsOne = document.querySelector('#palette-one');
-colorsOne.style.backgroundColor = 'black'
-
-let colorsTwo = document.querySelector('#palette-two');
-colorsTwo.style.backgroundColor = 'green'
-
-let colorsThree = document.querySelector('#palette-three');
-colorsThree.style.backgroundColor = 'orange'
-
-let colorsFour = document.querySelector('#palette-four');
-colorsFour.style.backgroundColor = 'purple'
-
-
-
-const palette = document.querySelectorAll('.color');
-const black = palette[0];
-const palette2 = palette[1];
-const palette3 = palette[2];
-const palette4 = palette[3];
-black.classList.add('selected');
-
-function getePalette(event) {
-  const currentSelectedColor = document.querySelector('.color.selected');
-  currentSelectedColor.classList.remove('selected');
-  event.target.classList.add('selected');
-}
-
-black.addEventListener('click', getePalette);
-palette2.addEventListener('click', getePalette);
-palette3.addEventListener('click', getePalette);
-palette4.addEventListener('click', getePalette);
