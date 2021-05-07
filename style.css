@@ -3,22 +3,39 @@
     border-style: solid;
     border-width: 1px;
     display: inline-block;
-    width: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 #black {
     background-color: black;
 
 }
+
 #green {
     background-color: green;
     color: green;
 }
+
 #red {
     background-color: red;
     color: red;
 }
+
 #yellow {
     background-color: yellow;
     color: yellow;
 }
+
+#pixel-board {
+    margin-top: 15px;
+    background-color:white;
+}
+
+.pixel {
+    border: solid 1px black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
