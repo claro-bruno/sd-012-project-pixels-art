@@ -43,3 +43,13 @@ function createPixelBoard(line, column) {
 }
 
 createPixelBoard(5,5);
+
+function clearBoad() {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+}
+
+const buttonClear = document.querySelector('#clear-board');
+buttonClear.addEventListener('click', clearBoad);
