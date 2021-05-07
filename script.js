@@ -7,10 +7,8 @@ for(let iCor = 0; iCor < 3; iCor++){
    
 }
 const paiPaleta = document.getElementById("color-palette");
-
+let paiBody = document.getElementById("bodi");
 function paletaArco(){
-   
-   
    for(let index = 0; index < arrayCores.length; index++){
       const criaPaleta = document.createElement("p");
       criaPaleta.className = "color";
@@ -21,6 +19,10 @@ function paletaArco(){
       criaPaleta.style.height = "40px";
       criaPaleta.style.width = "40px";
       criaPaleta.style.display = "inline-block"
+      criaPaleta.style.marginRight = "15px";
+      criaPaleta.style.marginTop = "15px";
+      criaPaleta.style.marginBotto = "15px";
+   
       paiPaleta.appendChild(criaPaleta);
    };
 };
@@ -28,7 +30,7 @@ function paletaArco(){
 paletaArco();
 
 function quadroPixels(){
-   let paiBody = document.getElementById("bodi");
+   
    let quadro = document.createElement("section");
    paiBody.appendChild(quadro);
    quadro.id = "pixel-board";
@@ -57,6 +59,22 @@ function quadroPixels(){
    }
 }
 quadroPixels();
+
+function botao(){
+   let butone = document.createElement("button");
+   butone.innerHTML = "Limpar Blocos";
+   paiBody.appendChild(butone);
+   butone.style.padding = "15px";
+   butone.style.margin = "20px";
+   butone.addEventListener("click",function(){
+      let pegaUls = document.getElementsByTagName("ul");
+      for(let index = 0; index < pegaUls.length; index ++){
+         pegaUls[index].style.backgroundColor = "white";
+      }
+   })
+}
+botao();
+document.getElementsByTagName("p")[0].style.backgroundColor;
 
 
 
