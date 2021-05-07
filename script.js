@@ -3,6 +3,7 @@ cores[0].style.background = "black";
 cores[1].style.background = "red";
 cores[2].style.background = "blue";
 cores[3].style.background = "green";
+cores[0].className += " selected";
 
 function creatingBoard(contador) {
   for (index = 0; index < contador; index++) {
@@ -16,7 +17,7 @@ function creatingBoard(contador) {
       let pixelS = document.createElement("div");
       pixelS.className = "pixel";
       linesPixel[index].appendChild(pixelS);
-    };
+    }; 
   };
 };
 creatingBoard(5);
