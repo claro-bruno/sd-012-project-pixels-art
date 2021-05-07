@@ -7,6 +7,7 @@ window.onload = function () {
 
   let input = document.createElement('input');
   input.id = 'board-size';
+  input.type = 'number';
 
   let btn2 = document.createElement('button');
   btn2.id = 'generate-board';
@@ -26,25 +27,32 @@ window.onload = function () {
   main.appendChild(btn2);
   main.appendChild(btn);
   main.appendChild(section2);
-  
 
   let color_palette = document.querySelector('#color-palette');
   let pixel_board = document.querySelector('#pixel-board');
 
   let buttonVQV = document.querySelector('#generate-board');
-  let amount = document.querySelector('#board-size').value;
 
-  buttonVQV.addEventListener('click', verifiTam(amount));
-
-  function verifiTam (num) {
-    if (num < 5) {
-        num = 5
+  function clearBox () {
+    let box = document.querySelectorAll('.line');
+    for (let index = 0; index < box.length; index += 1) {
+      pixel_board.removeChild(box[index]);
     }
-    else if (num > 50) {
-        num = 50;
-    }
-    tamanho(num);
   }
+
+  tamanho(5);
+  buttonVQV.addEventListener('click', function () {
+    clearBox();
+    let num = document.querySelector('#board-size').value;
+    if (num < 5) {
+      num = 5;
+    }
+    if (num > 50) {
+      num = 50;
+    }
+    document.querySelector('#board-size').value = '';
+    tamanho(num);
+  });
 
   function makeColor (quantity) {
     for(let index = 0; index < quantity; index += 1) {
@@ -71,25 +79,28 @@ window.onload = function () {
     .padStart(6, '0');
   }
 
-
-  function makeDivs () {
+  function makeDivs (tam) {
     let pixel = document.createElement('div');
     pixel.className = 'pixel';
-    return pixel;
-  }
-
-  function makeColum (tam) {
-    let ln = document.querySelectorAll('.line');
-    for ( let index = 0; index < ln.length; index += 1) {
-       aux(index, tam, ln);
+    if (tam >= 30) {
+      pixel.style.height = '22px';
+      pixel.style.width = '22px';
     }
+    return pixel;
   }
 
   function aux (num1, num2, num3) {
     if (num1 < num2) {
-        for (let index = 0; index < num3.length; index += 1) {
-          num3[index].appendChild(makeDivs());
-        }
+      for (let index = 0; index < num3.length; index += 1) {
+        num3[index].appendChild(makeDivs(num2));
+      }
+    }
+  }
+
+  function makeBox (tam) {
+    let ln = document.querySelectorAll('.line');
+    for ( let index = 0; index < ln.length; index += 1) {
+       aux(index, tam, ln);
     }
   }
 
@@ -106,8 +117,8 @@ window.onload = function () {
   }
 
   function tamanho (size) {
-      makeLine(size)
-      makeColum(size)
+    makeLine(size)
+    makeBox(size)
   }
 
   function selecAux (param1) {
@@ -118,7 +129,7 @@ window.onload = function () {
 
   function selec () {
     for (let index = 0; index < colors.length; index += 1) {
-        colors[index].addEventListener('click', selecAux);
+      colors[index].addEventListener('click', selecAux);
     }
   }
 
@@ -127,7 +138,7 @@ window.onload = function () {
   selec()
 
   function getColor () {
-    let pixels = document.querySelectorAll('.pixel')
+    let pixels = document.querySelectorAll('.pixel');
     for (let index = 0; index < pixels.length; index += 1) {
       pixels[index].addEventListener('click', inputColor);
     }
@@ -146,5 +157,4 @@ window.onload = function () {
       pixels[index].style.backgroundColor = 'white';
     }
   }); 
-
 }

@@ -1,75 +1,85 @@
-  body{
-    margin: 0;
-    background-color:whitesmoke;
-    display: block;
-  }
+body {
+  margin: 0;
+  background-color: whitesmoke;
+  display: block;
+}
 
-  header{
-    margin: 20px 500px;
-    text-align: center;
-    border: 2px solid black;
-  }
+header {
+  margin: 20px 500px;
+  text-align: center;
+  border: 2px solid black;
+}
 
-  #clear-board {
-    margin: 7px;
-    border-radius: 10%;
-    box-shadow: 2px 2px black;
-  }
+#clear-board {
+  margin: 7px;
+  border-radius: 10%;
+  box-shadow: 2px 2px black;
+}
 
-  #clear-board:hover {
-    background-color: fuchsia;
-    box-shadow: none;
-  }
+#clear-board:hover {
+  background-color: fuchsia;
+  box-shadow: none;
+}
 
-  #board-size {
-    box-shadow: 2px 2px black;
-  }
+#board-size {
+  box-shadow: 2px 2px black;
+}
 
-  #generate-board {
-    box-shadow: 2px 2px black;
-  }
+#generate-board {
+  margin: 4px;
+  box-shadow: 2px 2px black;
+}
 
-  #generate-board:hover {
-    background-color: fuchsia;
-    box-shadow: none;
-  }
+#generate-board:hover {
+  background-color: fuchsia;
+  box-shadow: none;
+}
 
-  title{
-    text-align: center;
-  }
+title {
+  text-align: center;
+}
 
-  main{
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-  }
+main {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
 
-  #color-palette {
-    display: inline-block;
-    width: 100%;
-    margin-top: 20px;
-  }
+#color-palette {
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+}
 
-  .color {
-    display: inline-block;
-    border: 1px solid black;
-    margin: 2px;
-    width: 60px;
-    height: 60px;
-  }
+.color {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 2px;
+  width: 60px;
+  height: 60px;
+}
 
-  #pixel-board {
-      display: inline-block;
-      width: 100%;
-      margin-top: 20px;
-      text-align: center;
-  }
+#pixel-board {
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
 
-  .pixel {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    border: 1px solid black;
-    background-color: white;
-    margin: 1px;
-  }
+.pixel {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  background-color: white;
+  margin: 1px;
+}
+
+.pixel2 {
+  display: inline-block;
+  height: 22px;
+  width: 22px;
+  border: 1px solid black;
+  background-color: white;
+  margin: 1px;
+}
