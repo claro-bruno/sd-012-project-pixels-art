@@ -39,18 +39,17 @@ selectedEvent();
 // tive que consultar o repositório de Caio-takeshi:caio-takeshi-pixels-art, para me ajudar na conclusao do requisito 7
   
 //requisito 8
- function getColor(event) {
-  let selecionaCor = document.querySelector('.selected').style.backgroundColor;
-  event.target.style.backgroundColor = selecionaCor;
+function getColor(event) {
+  const alvo = event.target;
+  const selectedColor = document.querySelector('.selected').style.backgroundColor;
+  alvo.style.backgroundColor = selectedColor;
 }
+function getColorEvent() {
+  const square = document.getElementsByClassName('pixel');
+  for (let index = 0; index < square.length; index += 1) {
+    square[index].addEventListener('click', getColor);
+  }
+}
+getColorEvent();
 
-function changeColor() {
- let getPixel = documento.getElementsByClassName('pixel');
-
- for(let index = 0; index < getPixel.length; index += 1) {
-   getPixel[index].addEventListener('click', getColor);
-       
-   }
-  } 
-  changeColor(); 
-  // vi essa a dica  de usar o evento.target postada no slack pelo Nuwanda
+  // vi essa a dica  de usar o evento.target postada no slack pelo Nuwanda e usei o repositório do Caio-takeshi -caio-takeshi-pixels-art
