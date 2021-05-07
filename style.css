@@ -1,37 +1,35 @@
 body {
-    margin:auto;
-    justify-content: center;
-    text-align: center;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
 }
 
 section {
-    padding: 20px;
+  padding: 20px;
 }
 
-
 #color-palette {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 .color {
-    border: 1px solid black;
-    height: 50px;
-    width: 50px;
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
 }
 
-
 #board-size {
-    width: 50px;
+  width: 50px;
 }
 
 #pixel-board {
-        display: inline-block;
+  display: inline-block;
 }
 
 .pixel {
-        display: table-cell;
-        background-color: white;
-        height: 40px;
-        width: 40px;
-        border: 1px solid black;
+  display: table-cell;
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
 }

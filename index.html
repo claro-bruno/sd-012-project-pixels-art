@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,44 +8,41 @@
     <title>Paleta de Cores</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-<header>
-    <h1 id="title">Paleta de Cores</h1>
-</header>
-<main>
-    <section>
-        <div id="color-palette">
-            <div class="color selected" id="first-div"></div>
-            <div class="color" id="second-div"></div>
-            <div class="color" id="third-div"></div>
-            <div class="color" id="fourth-div"></div>
-        </div>     
-    </section>
+    <header>
+        <h1 id="title">Paleta de Cores</h1>
+    </header>
+    <main>
+        <section>
+            <div id="color-palette">
+                <div class="color selected" id="first-div"></div>
+                <div class="color" id="second-div"></div>
+                <div class="color" id="third-div"></div>
+                <div class="color" id="fourth-div"></div>
+            </div>
+        </section>
 
-    <section>
-        <button id="clear-board" onclick="resetColors()">Limpar</button>          
-        <label for="quantity">Tamanho:</label>
-        <input type="number" id="board-size" name="quantity" min="1">
-        <button id="generate-board" onclick="userBoardSize()">VQV</button>
-          
-    </section>
-    
-   <section>
-        <div id="pixel-board">            
-         
-        </div>
-   </section>
-    
+        <section>
+            <button id="clear-board" onclick="resetColors()">Limpar</button>
+            <label for="quantity">Tamanho:</label>
+            <input type="number" id="board-size" name="quantity" min="1">
+            <button id="generate-board" onclick="userBoardSize()">VQV</button>
 
-    
+        </section>
 
-    
+        <section>
+            <div id="pixel-board">
 
-    <script src="script.js"></script>
-</main>
-   
+            </div>
+        </section>
+        
+        <script src="script.js"></script>
+    </main>
 
-   
-    
+
+
+
 </body>
+
 </html>
