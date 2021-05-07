@@ -25,7 +25,7 @@ botaoGerar.addEventListener('click', function () {
   let valor = document.querySelector('#board-size').value;
   const ultimaLinha = document.querySelectorAll('.linha');
 
-  if (valor === '' || valor === 0 || valor < 0) {
+  if (valor === '') {
     alert('Valor inválido!');
   } else {
     for (let i = 0; i < ultimaLinha.length; i += 1) {
@@ -42,15 +42,15 @@ botaoGerar.addEventListener('click', function () {
 });
 
 //gerar cor random
-function gerarCor () {
+function gerarCor() {
   let r = Math.random() * 255;
   let g = Math.random() * 255;
   let b = Math.random() * 255;
 
-  return `rgb(${r}, ${g}, ${b})`
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
-document.querySelector('#cor1').style.backgroundColor = "black";
+document.querySelector('#cor1').style.backgroundColor = 'black';
 document.querySelector('#cor2').style.backgroundColor = gerarCor();
 document.querySelector('#cor3').style.backgroundColor = gerarCor();
 document.querySelector('#cor4').style.backgroundColor = gerarCor();
@@ -70,7 +70,9 @@ cor4.addEventListener('click', colocaClassSelected);
 //adicionar cor aos pixel
 const corP = document.querySelector('#pixel-board');
 corP.addEventListener('click', function (evento) {
-  evento.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+  evento.target.style.backgroundColor = document.querySelector(
+    '.selected'
+  ).style.backgroundColor;
 });
 
 //limpar
@@ -81,4 +83,3 @@ botao.addEventListener('click', function () {
     pixels[i].style.backgroundColor = 'white';
   }
 });
-
