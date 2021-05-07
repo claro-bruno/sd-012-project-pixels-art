@@ -1,16 +1,23 @@
 const PALETTE_COLOR = ['black', 'green', 'blue', 'orange'];
 
+function changeSelected(event) {
+  let getSelected = document.querySelector('.selected');
+  getSelected.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
 function addColoPalette() {
   for (let index = 0; index < PALETTE_COLOR.length; index += 1) {
     const colorPalette = document.createElement('div');
     colorPalette.classList.add('color');
     colorPalette.style.backgroundColor = PALETTE_COLOR[index];
+    colorPalette.addEventListener('click', changeSelected);
     document.querySelector('#color-palette').appendChild(colorPalette);
   }
+  document.querySelector('.color').classList.add('selected');
 }
 
 addColoPalette();
-
 
 function addPixel(element) {
   let pixel = document.createElement('div');
