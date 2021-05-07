@@ -62,8 +62,17 @@ function resetColors() {
 }
 
 function userBoardSize() {
-    boardSize = document.querySelector('#board-size').value;    
-    if(boardSize.length === 0){
+    newBoardSize = document.querySelector('#board-size').value;
+    
+    if(newBoardSize < 5) {
+        boardSize = 5;
+    } else if (newBoardSize > 50) {
+        boardSize = 50;
+    } else {
+        boardSize = newBoardSize;
+    }
+
+    if(newBoardSize.length === 0){
         alert("Board inválido!");
     } else {
         while(pixelBoard.firstChild) {
