@@ -44,3 +44,14 @@ const palette2 = palette[1];
 const palette3 = palette[2];
 const palette4 = palette[3];
 black.classList.add('selected');
+
+function getColor(event) {
+  const currentSelectedColor = document.querySelector('.color.selected');
+  currentSelectedColor.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+black.addEventListener('click', getColor);
+color2.addEventListener('click', getColor);
+color3.addEventListener('click', getColor);
+color4.addEventListener('click', getColor);
