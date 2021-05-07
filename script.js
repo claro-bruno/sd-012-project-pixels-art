@@ -29,19 +29,3 @@ function quadrados() {
     };
 };
 
-window.onload = mudacor;
-function mudacor() {
-    let cor = document.getElementsByClassName('color')[0];
-    let cor2 = document.getElementsByClassName('pixel')[0];
-    cor.addEventListener('click', pegacor)
-    cor.className = 'selected';
-    cor2.className = 'selected';
-    function pegacor() {
-        
-        cor.style.backgroundColor = 'black';
-        cor2.style.backgroundColor = 'black';
-    };
-};
-
-
-

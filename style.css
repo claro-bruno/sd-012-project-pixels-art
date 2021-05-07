@@ -1,4 +1,6 @@
-
+#title {
+   
+}
 .color {
     border: solid black;
     border-width: 1px;
@@ -6,17 +8,9 @@
     width: 40px;
     height: 40px;
     margin: 2px;
-    margin-bottom: 7px;
+    margin-bottom: 25px;
 }
-.selected {
-    border: solid black;
-    border-width: 1px;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    margin: -2px;
-    margin-right: 1px;
-}
+
 #pixel-board {
     width: 210px;
     height: 210px;
@@ -24,9 +18,9 @@
 .pixel {
     border: solid black;
     border-width: 1px;
-    display: inline-block;
     width: 40px;
     height: 40px;
-    margin: -2px;
-    margin-right: 1px;
+    display: inline-block;
+    margin-bottom: -5px;
+    
 }
