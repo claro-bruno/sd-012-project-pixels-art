@@ -12,18 +12,19 @@ function clear() {
 }
 
 function paint(event) {
-  const cor = event.style.backgroundColor;
-  if (cor === getColorSelected()) {
-    event.style.backgroundColor = 'white';
+  let cor = event;
+  if (event.style.backgroundColor === getColorSelected()) {
+    cor.style.backgroundColor = 'white';
   } else {
-    event.style.backgroundColor = getColorSelected();
+    cor.style.backgroundColor = getColorSelected();
   }
 }
 
 function mudaSelecter(bt) {
   const remov = document.querySelector('.selected');
   remov.classList.remove('selected');
-  bt.target.className = ('color selected');
+  let button = bt;
+  button.target.className = ('color selected');
 }
 
 function colunas(pixelLine, colom) {
@@ -48,16 +49,16 @@ function lines(line, pixelFather) {
 }
 
 function createColor(square) {
-  let array = [];
-  for (let index = 0; index < 3 * square; index += 1) {
+  let array = [0];
+  for (let index = 0; index < 9; index += 1) {
     array.push(Math.round(Math.random()*255))
   }
-  
+  console.log(`rgb(${array[4]}},${array[5]},${array[6]})`)
   const cor = {
     0: 'black',
-    1: `rgb(${array[0]},${array[1]},${array[2]})`,
-    2: `rgb(${array[3]}},${array[4]},${array[5]})`,
-    3: `rgb(${array[6]},${array[7]},${array[8]})`
+    1: `rgb(${array[1]},${array[2]},${array[3]})`,
+    2: `rgb(${array[4]},${array[5]},${array[6]})`,
+    3: `rgb(${array[7]},${array[8]},${array[9]})`
   };
   for (let key in cor) {
     square[key].style.backgroundColor = cor[key]
