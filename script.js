@@ -1,5 +1,5 @@
 const colors = ['black', 'blue', 'red', 'green'];
-
+const primaryBoardColor= ['white']
 function createPalette() {
     let divs = document.getElementById('color-palette'); 
     for(let index = 0; index < colors.length; index += 1){
@@ -58,4 +58,16 @@ pixelBoard.addEventListener('click', function (event) {
 }
 )
 
+let makeBotton = document.getElementById('div-botton');
+let botton = document.createElement('button');
+botton.id = 'clear-board'
+botton.innerText = 'Limpar'
+makeBotton.appendChild(botton);
+
+botton.addEventListener('click', function () {
+    let pixelsBoardAll = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixelsBoardAll.length; index+=1){
+        pixelsBoardAll[index].style.backgroundColor = 'white'
+    }
+})
 
