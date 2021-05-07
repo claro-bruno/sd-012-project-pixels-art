@@ -29,7 +29,6 @@ botaoGerar.addEventListener('click', function () {
       quadrado.removeChild(quadrado.lastChild);
     }
   }
-
   if (valor <= 5) {
     criaTabela(5);
   } else if (valor >= 50) {
