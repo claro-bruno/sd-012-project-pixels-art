@@ -23,8 +23,8 @@ function paletaArco(){
       criaPaleta.style.marginBotto = "15px";
       paiPaleta.appendChild(criaPaleta);
    };
-   let selecBlack = document.getElementsByClassName("color")[0];
-   selecBlack.classList.add("selected");
+   let selectedBlack = document.getElementsByClassName("color")[0];
+   selectedBlack.classList.add("selected");
 };
 paletaArco();
 function quadroPixels(){
@@ -69,8 +69,11 @@ function botao(){
    })
 }
 botao();
-function blackSelect(){
-      let blackS = document.getElementsByClassName("selected")[0].style.backgroundColor;
-      blackS
-};
-blackSelect();
+
+
+
+// function selectedColorPalette(){
+//    let selectCOlor = document.
+
+
+// }
