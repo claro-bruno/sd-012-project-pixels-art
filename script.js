@@ -1,6 +1,7 @@
 // Criando Box Pixels
 const pixelBox = document.querySelector('#pixel-board');
-let = createBoardRows(5);
+
+
 
 // Gera as linhas
 function createBoardRows(linhas) {
@@ -19,3 +20,9 @@ function createCollumns(row, colunas) {
     row.appendChild(divColumn);
   }
 }
+let = createBoardRows(5);
+
+let colors = document.querySelector('#palette-one');
+
+colors.style.backgroundColor = 'black'
+
