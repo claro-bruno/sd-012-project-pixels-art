@@ -8,18 +8,6 @@
   background-color: black;
 }
 
-#orange {
-  background-color: orange;
-}
-
-#red {
-  background-color: red;
-}
-
-#yellow {
-  background-color: yellow;
-}
-
 #color-palette {
   margin: auto;
 }
@@ -47,8 +35,8 @@
   border: solid black 1px;
 }
 
-#generate-board:hover{
-  background-color: #4CAF50; 
+#generate-board:hover {
+  background-color: #4caf50;
   color: white;
 }
 
