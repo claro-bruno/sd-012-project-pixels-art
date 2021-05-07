@@ -3,14 +3,51 @@ document.querySelectorAll(".color")[1].style.background = "violet";
 document.querySelectorAll(".color")[2].style.background = "salmon";
 document.querySelectorAll(".color")[3].style.background = "yellow";
 
-window.onload = document.querySelectorAll(".color")[0].className = "color selected"
+let tabble = document.querySelector("#pixel-board");
 
+function CreateBox(event) {
+  for (let i = 0; i < event; i += 1) {
+    let linhasTr = document.createElement("tr");
+    linhasTr.className = "linha"
+    tabble.appendChild(linhasTr);
+    for (let index = 0; index < event; index += 1) {
+      let colunasTd = document.createElement("td");
+      colunasTd.className = "coluna pixel"
+      linhasTr.appendChild(colunasTd);
+
+    }
+
+  }
+}
+
+let butons = document.getElementById("generate-board");
+
+butons.addEventListener("click", function () {
+
+  let linhas = document.querySelectorAll(".linha")
+  if(linhas) {
+    for (let i = 0; i < linhas.length; i += 1) {
+      tabble.removeChild(tabble.lastChild);
+    }
+  }
+  
+  let inputs = document.getElementById("board-size").value;
+
+  CreateBox(inputs);
+
+});
+
+
+
+
+
+window.onload = document.querySelectorAll(".color")[0].className = "color selected"
 
 let black = document.getElementsByClassName("color")[0];
 let violet = document.getElementsByClassName("color")[1];
 let salmon = document.getElementsByClassName("color")[2];
 let yellow = document.getElementsByClassName("color")[3];
-let button = document.getElementsByClassName("color")[4];
+
 
 function changeSelected(event) {
 
@@ -27,30 +64,22 @@ salmon.addEventListener("click", changeSelected);
 yellow.addEventListener("click", changeSelected);
 
 
-
-let pixels = document.getElementById("pixel-board");
-
-pixels.addEventListener("click", function (event) {
+tabble.addEventListener("click", function (event) {
 
   event.target.style.backgroundColor = document.querySelector(".selected").style.backgroundColor;
 
 });
 
-let botaoApagar = document.querySelector("#botton")
-let botao = document.createElement("button");
+let botaoApagar = document.querySelector("#clear-board")
 
-botaoApagar.appendChild(botao);
+botaoApagar.addEventListener("click", function () {
 
-botao.id="clear-board"
-botao.innerText="Limpar"
+  let pixels = document.querySelectorAll(".pixel")
 
+  for (let i = 0; i < pixels.length; i += 1) {
 
-botao.addEventListener("click", function(){
+ pixels[i].style.backgroundColor = "white";
 
-    for(let i = 0; i<25; i+=1){
+  }
 
-    document.querySelectorAll(".pixel")[i].style.backgroundColor="white"
-}
-})
-
-
+});
