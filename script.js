@@ -11,7 +11,10 @@ function addColoPalette() {
     if (index === 0) {
       colorPalette.style.background = 'black';
     } else {
-      colorPalette.style.backgroundColor = `rgb(${Math.ceil(Math.random() * 200)}, ${Math.ceil(Math.random() * 200)}, ${Math.ceil(Math.random() * 200)})`;
+      let numberColorOne = Math.ceil(Math.random() * 200);
+      let numberColortwo = Math.ceil(Math.random() * 200);
+      let numberColorthree = Math.ceil(Math.random() * 200);
+      colorPalette.style.backgroundColor = `rgb(${numberColorOne}, ${numberColortwo}, ${numberColorthree})`;
     }
     colorPalette.addEventListener('click', changeSelected);
     document.querySelector('#color-palette').appendChild(colorPalette);
@@ -63,7 +66,7 @@ function generateBoard() {
     alert('Board inválido!');
   } else {
     while (board.hasChildNodes()) {
-      board.removeChild(board.firstChild)
+      board.removeChild(board.firstChild);
     }
     if (input.value < 5) {
       createPixelBoard(5, 5);
