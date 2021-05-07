@@ -1,7 +1,7 @@
 const PALETTE_COLOR = ['black', 'green', 'blue', 'orange'];
 
 function changeSelected(event) {
-  let getSelected = document.querySelector('.selected');
+  const getSelected = document.querySelector('.selected');
   getSelected.classList.remove('selected');
   event.target.classList.add('selected');
 }
@@ -24,9 +24,9 @@ function setPixelColor(event) {
 }
 
 function addPixel(element) {
-  let pixel = document.createElement('div');
+  const pixel = document.createElement('div');
   pixel.classList.add('pixel');
-  pixel.addEventListener('click', setPixelColor)
+  pixel.addEventListener('click', setPixelColor);
   element.appendChild(pixel);
 }
 
@@ -42,7 +42,7 @@ function createPixelBoard(line, column) {
   }
 }
 
-createPixelBoard(5,5);
+createPixelBoard(5, 5);
 
 function clearBoad() {
   const pixel = document.querySelectorAll('.pixel');
@@ -53,3 +53,19 @@ function clearBoad() {
 
 const buttonClear = document.querySelector('#clear-board');
 buttonClear.addEventListener('click', clearBoad);
+
+function generateBoard() {
+  const input = document.querySelector('#board-size');
+  const board = document.querySelector('#pixel-board');
+  if (input.value === '') {
+    alert('Board inválido!');
+  } else {
+    while (board.hasChildNodes()) {
+      board.removeChild(board.firstChild)
+    }
+    createPixelBoard(input.value, input.value);
+  }
+}
+
+const generetionBoard = document.querySelector('#generate-board');
+generetionBoard.addEventListener('click', generateBoard);
