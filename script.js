@@ -35,7 +35,7 @@ for (let index = 0; index < 5; index += 1) {
 //CRIEI UMA VARIAVEL PARA ADICIONAR A CLASSE SELECTED A PRIMEIRA COR QUE É A PRETA:
 
 
-const addNewClass = document.querySelectorAll('.color')[0].classList.add('selected');
+
 
 //7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
 //PRIMEIRO RESGATEI O ELEMENTO COM O ID COLOR-PALLETE
@@ -58,6 +58,15 @@ function selectColor() {
 selectColor();
 
 //8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
+
+pixelBoard.addEventListener('click', (event) => {
+  const colorSelected = document.querySelector('.selected');
+  if (event.target.className === 'pixel') {
+    const selectedPixel = event.target;
+    selectedPixel.style.backgroundColor = colorSelected;
+  }
+});
+
 
 
 
