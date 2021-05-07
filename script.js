@@ -12,6 +12,8 @@ function createBoardRows(linhas) {
     createCollumns(divRow, linhas);
   }
 }
+linhas = createBoardRows(5);
+
 // Gera as Colunas
 function createCollumns(row, colunas) {
   for (let column = 1; column <= colunas; column += 1) {
@@ -20,7 +22,7 @@ function createCollumns(row, colunas) {
     row.appendChild(divColumn);
   }
 }
-let = createBoardRows(5);
+
 
 let colorsOne = document.querySelector('#palette-one');
 colorsOne.style.backgroundColor = 'black'
@@ -33,3 +35,12 @@ colorsThree.style.backgroundColor = 'orange'
 
 let colorsFour = document.querySelector('#palette-four');
 colorsFour.style.backgroundColor = 'purple'
+
+
+
+const palette = document.querySelectorAll('.color');
+const black = palette[0];
+const palette2 = palette[1];
+const palette3 = palette[2];
+const palette4 = palette[3];
+black.classList.add('selected');

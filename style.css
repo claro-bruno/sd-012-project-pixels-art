@@ -5,13 +5,11 @@
 }
 
 
-
 #color-palette .color {
   height: 40px;
   width: 40px;
   border: 1px solid black;
   margin-left: 5px;
-  //background-color: blue;
 
 }
 
@@ -31,6 +29,9 @@
   margin-top: 10px;
   height: 40px;
   width: 40px;
+  display: inline-block;
+  margin: 0;
+  padding: 0px;
   border: 1px solid black;
   background-color: white;
 }
