@@ -49,19 +49,19 @@ function lines(line, pixelFather) {
 }
 
 function createColor(square) {
-  let array = [0];
+  let algo = square;
+  const array = [0];
   for (let index = 0; index < 9; index += 1) {
-    array.push(Math.round(Math.random()*255))
+    array.push(Math.round(Math.random()*255));
   }
-  console.log(`rgb(${array[4]}},${array[5]},${array[6]})`)
   const cor = {
     0: 'black',
     1: `rgb(${array[1]},${array[2]},${array[3]})`,
     2: `rgb(${array[4]},${array[5]},${array[6]})`,
-    3: `rgb(${array[7]},${array[8]},${array[9]})`
+    3: `rgb(${array[7]},${array[8]},${array[9]})`,
   };
   for (let key in cor) {
-    square[key].style.backgroundColor = cor[key]
+    algo[key].style.backgroundColor = cor[key];
   }
 }
 
