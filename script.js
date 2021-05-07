@@ -19,9 +19,14 @@ function addColoPalette() {
 
 addColoPalette();
 
+function setPixelColor(event) {
+  event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+}
+
 function addPixel(element) {
   let pixel = document.createElement('div');
   pixel.classList.add('pixel');
+  pixel.addEventListener('click', setPixelColor)
   element.appendChild(pixel);
 }
 
