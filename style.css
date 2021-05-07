@@ -13,26 +13,7 @@ body {
   display: inline-block;
   border-radius: 100%;
   padding: 20px;
-}
-
-#black {
   border: 1px solid black;
-  background-color: black;
-}
-
-#red {
-  border: 1px solid black;
-  background-color: red;
-}
-
-#blue {
-  border: 1px solid black;
-  background-color: blue;
-}
-
-#green {
-  border: 1px solid black;
-  background-color: green;
 }
 
 table {
