@@ -1,5 +1,3 @@
-const PALETTE_COLOR = ['black', 'green', 'blue', 'orange'];
-
 function changeSelected(event) {
   const getSelected = document.querySelector('.selected');
   getSelected.classList.remove('selected');
@@ -7,10 +5,14 @@ function changeSelected(event) {
 }
 
 function addColoPalette() {
-  for (let index = 0; index < PALETTE_COLOR.length; index += 1) {
+  for (let index = 0; index < 4; index += 1) {
     const colorPalette = document.createElement('div');
     colorPalette.classList.add('color');
-    colorPalette.style.backgroundColor = PALETTE_COLOR[index];
+    if (index === 0) {
+      colorPalette.style.background = 'black';
+    } else {
+      colorPalette.style.backgroundColor = `rgb(${Math.ceil(Math.random() * 200)}, ${Math.ceil(Math.random() * 200)}, ${Math.ceil(Math.random() * 200)})`;
+    }
     colorPalette.addEventListener('click', changeSelected);
     document.querySelector('#color-palette').appendChild(colorPalette);
   }
