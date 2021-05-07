@@ -36,6 +36,16 @@ function addPixel(element) {
 }
 
 function createPixelBoard(line, column) {
+  if (line > 50) {
+    line = 50;
+    column = 50;
+  }
+  if(line < 5) {
+    line = 5;
+    column = 5;
+  }
+  
+
   for (let lineIndex = 0; lineIndex < line; lineIndex += 1) {
     const linePixel = document.createElement('div');
     linePixel.classList.add('line');
@@ -68,13 +78,7 @@ function generateBoard() {
     while (board.hasChildNodes()) {
       board.removeChild(board.firstChild);
     }
-    if (input.value < 5) {
-      createPixelBoard(5, 5);
-    } else if (input.value > 50) {
-      createPixelBoard(50, 50);
-    } else {
-      createPixelBoard(input.value, input.value);
-    }
+    createPixelBoard(input.value, input.value);
   }
 }
 
