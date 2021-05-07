@@ -12,9 +12,9 @@ changePixelColor();
 
 function setBackgroundColor() {
     document.getElementById('first-div').style.backgroundColor = "black";
-    document.getElementById('second-div').style.backgroundColor = "grey";
-    document.getElementById('third-div').style.backgroundColor = "goldenrod";
-    document.getElementById('fourth-div').style.backgroundColor = "antiquewhite";
+    document.getElementById('second-div').style.backgroundColor = getRandomColor();
+    document.getElementById('third-div').style.backgroundColor = getRandomColor();
+    document.getElementById('fourth-div').style.backgroundColor = getRandomColor();
 }
 
 
@@ -82,3 +82,13 @@ function userBoardSize() {
     }
 }
 
+
+function getRandomColor() { // encontrei no https://stackoverflow.com/questions/1484506/random-color-generator
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+  
