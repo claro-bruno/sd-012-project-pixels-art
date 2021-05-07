@@ -1,5 +1,14 @@
 // requisito 1 esta no html
-// requisitos 2 e 3 esta no html e css 
+// requisitos 2 e 3 , tirei do css e html pois não estava iterando com o js, conforme a orientação do Caio-Takeshi, transferi para aqui.Usei também o repositório dele para me ajudar.
+let cores = ['black', 'pink', 'orange', 'blue']; 
+function alteraCor() {
+  let paletaCores = document.getElementsByClassName('color');
+  for (let index = 0; index < paletaCores.length; index += 1) {
+    paletaCores[index].style.backgroundColor = cores[index];
+  }
+}
+alteraCor();
+
 //requisito 4
 let getPixelBoard = document.getElementById('pixel-board');
 

@@ -14,22 +14,6 @@
   margin-right: 5%;
 }
 
-#black {
-  background-color: black;
-}
-
-#pink {
-  background-color: pink;
-}
-
-#orange {
-  background-color: orange;
-}
-
-#blue {
-  background-color: blue;
-} 
-
 .pixel {
   display: inline-block;
   width: 40px;
