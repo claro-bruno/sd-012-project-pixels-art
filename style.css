@@ -13,8 +13,11 @@
 .line {
   display: inline-block;
 }
+
 .pixel {
   border: 1px solid black;
-  height: 10px;
-  width: 10px;
+  height: 40px;
+  width: 40px;
+
+  background-color: rgb(255, 255, 255)
 }
