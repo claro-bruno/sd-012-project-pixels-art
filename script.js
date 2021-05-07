@@ -1,17 +1,13 @@
 const coresDosBlocos = document.querySelectorAll('div');
-coresDosBlocos[1].style.backgroundColor = 'black';
-coresDosBlocos[2].style.backgroundColor = 'red';
-coresDosBlocos[3].style.backgroundColor = 'blue';
-coresDosBlocos[4].style.backgroundColor = 'green';
+const primeiroBloco = coresDosBlocos[1].style.backgroundColor = 'black';
+const segundoBloco = coresDosBlocos[2].style.backgroundColor = 'red';
+const terceiroBloco = coresDosBlocos[3].style.backgroundColor = 'blue';
+const quartoBloco = coresDosBlocos[4].style.backgroundColor = 'green';
 
-//function CorInicial() {
-// document.getElementsByClassName("selected");
-document.querySelector(".color-palette .selected");
-//}
+let selecionado = document.querySelector('.selected');
 
-//window.onload = CorInicial;
-
-
-
-// if (clicar=true)
-// document.getElementbyClassName
+//primeiroBloco.addEventListener('click', () => {
+//    selecionado.classList.remove('selected');
+//    selecionado.target.classList.add('selected');
+//    coresDosBlocos[6].style.backgroundColor = quartoBloco;
+//})
