@@ -60,16 +60,16 @@ function createColor(square) {
     2: `rgb(${array[4]},${array[5]},${array[6]})`,
     3: `rgb(${array[7]},${array[8]},${array[9]})`,
   };
-  for (let key in cor) {
+  for (const key of cor) {
     algo[key].style.backgroundColor = cor[key];
   }
 }
 
 function changeSize(test) {
-  let father = document.getElementById('pixel-board');
+  const father = document.getElementById('pixel-board');
   if (test > 4 && test < 51) {
     while (father.firstChild) {
-      father.removeChild(father.firstChild)
+      father.removeChild(father.firstChild);
     }
     lines(test, father);
   } else {
