@@ -20,3 +20,12 @@ td.pixel {
     
 
 }
+#nav-cont {
+    display: flex;
+    height: 25px;
+    padding: 5px;
+    width: 220px;
+    justify-content: center;
+    vertical-align: middle;
+
+}
