@@ -69,7 +69,7 @@ const buttonGen = document.getElementById('generate-board');
 buttonGen.addEventListener('click', genTable);
 
 function genNumber() {
-  const randomNumber = Math.floor(Math.random() * 255);
+  const randomNumber = Math.ceil(Math.random() * 255);
   return randomNumber;
 }
 

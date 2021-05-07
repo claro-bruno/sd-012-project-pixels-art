@@ -38,7 +38,7 @@ header {
 }
 
 .form {
-  width: 60%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
 }
@@ -51,7 +51,12 @@ header {
   color: #262c38;
   padding: 5px;
   border: none;
-  border-radius: 5%;
+  border-radius: 5px;
+}
+
+.btn-alt {
+  color: white;
+  background-color: #262c38;
 }
 
 .generate-board-size label {
