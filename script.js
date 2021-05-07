@@ -43,9 +43,9 @@ document.getElementsByClassName('color')[3].style.backgroundColor = three
 
 
 //seleciona cor da paleta
-const selectedElement = document.querySelector('.selected');
 
 function select(event) {
+  const selectedElement = document.querySelector('.selected')
   selectedElement.classList.remove('selected');
   event.target.classList.add('selected');
 }
@@ -82,4 +82,5 @@ const botao = document.getElementById('clear-board')
 function apaga(event){
   event.target.style.backgroundColor = 'white'
 }
-botao.addEventListener('click', apaga)*/
+botao.addEventListener('click', apaga)
+*/
