@@ -8,7 +8,7 @@ window.onload = function () {
   const input = document.createElement('input');
   input.id = 'board-size';
   input.type = 'number';
-  input.min = 0;
+  input.min = 1;
   input.max = 50;
   input.oninput = 'validity.valid';
 
