@@ -11,7 +11,7 @@ for (let index = 0; index < quantidadeDeQuadros; index += 1) {
   getPixelBoard.appendChild(newLine);
 
   for (let columns = 0; columns < quantidadeDeQuadros; columns += 1) {
-    
+
     let newColumn = document.createElement('td');
     newColumn.classList.add('pixel');
     newLine.appendChild(newColumn);
@@ -39,7 +39,7 @@ selectedEvent();
 // tive que consultar o repositório de Caio-takeshi:caio-takeshi-pixels-art, para me ajudar na conclusao do requisito 7
   
 //requisito 8
-function pegaCor(event) {
+ /* function pegaCor(event) {
   let selecionaCor = document.querySelector('.select').style.backgroundColor;
   event.target.style.backgroundColor = selecionaCor;
 }
@@ -51,5 +51,5 @@ function mudaDeCor() {
    getPixel[index].addEventListener('click', pegaCor);
        
    }
-  } mudaDeCor();
+  } mudaDeCor();  */
   // vi essa a dica  de usar o evento.target postada no slack pelo Nuwanda
