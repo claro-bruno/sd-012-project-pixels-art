@@ -17,7 +17,15 @@ function creatingBoard(contador) {
       let pixelS = document.createElement("div");
       pixelS.className = "pixel";
       linesPixel[index].appendChild(pixelS);
-    }; 
+    };
   };
 };
 creatingBoard(5);
+
+document.addEventListener("click", function (call) {
+  if (call.target.className === "color") {
+    let del = document.querySelector(".selected");
+    del.className = "color";
+    call.target.className = "color selected"
+  };
+});
