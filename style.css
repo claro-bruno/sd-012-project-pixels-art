@@ -27,15 +27,15 @@ body {
 }
 
 #pixel-board {
-    width: 30vw;
+    width: 20vw;
     height: fit-content;
     margin: 100px auto;
 }
 
 .pixel {
     background-color: white;
-    padding: 20px;
     border: 1px solid black;
-    width: 25px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
 }
