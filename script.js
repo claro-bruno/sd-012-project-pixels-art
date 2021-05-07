@@ -20,7 +20,7 @@ function makerBoardPixel(size) {
       divPixel.className = 'pixel';
       divLine.appendChild(divPixel);
     }
-    const divBoard = document.querySelector('section');
+    const divBoard = document.querySelector('#pixel-board');
     divBoard.appendChild(divLine);
   }
 }
@@ -45,7 +45,7 @@ function selectColor() {
 selectColor();
 
 function colorBoard() {
-  const board = document.querySelector('section');
+  const board = document.querySelector('#pixel-board');
   board.addEventListener('click', (event) => {
     const colorSelected = document.querySelector('.selected').style.backgroundColor;
     const eventListen = event.target;
@@ -54,14 +54,35 @@ function colorBoard() {
 }
 colorBoard();
 
-// Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
-// capturar o click do botão
-const button = document.querySelector('button');
-button.addEventListener('click', (event) => {
-  const pixel = document.querySelectorAll('.pixel');
-  for (let index = 0; index < pixel.length; index += 1) {
-    pixel[index].style.backgroundColor = 'white';
-  }
-});
-// capturar os elementos com a classe pixel
-// atribuir um bg white
+function clearBoard() {
+  const button = document.querySelector('#clear-board');
+  button.addEventListener('click', () => {
+    const pixel = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixel.length; index += 1) {
+      pixel[index].style.backgroundColor = 'white';
+    }
+  });
+}
+clearBoard();
+
+// Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária. Ao clicar no botão, deve ser gerado um quadro de N pixels de largura e N pixels de altura, onde N é o número inserido no input;
+// colocar um evento de click no botão VQV
+const generateBoard = document.querySelector('#generate-board');
+generateBoard.addEventListener('click', () => {
+  const boardSize = document.querySelector('#board-size');
+  // Se estiver vazio emitir um alert "Board inválido"
+  if (boardSize.value === '') {
+    alert('Board inválido!');
+  } else {
+    // faz um for e remove a board anterior
+
+    const divLine = document.querySelectorAll('.pixel-line');
+    for (let index = 0; index < divLine.length; index += 1) {
+      const test = divLine[index].parentElement;
+      test.removeChild(divLine[index]);
+    }
+    makerBoardPixel(boardSize.value);
+  };
+})
+// Se estiver tudo ok Capturar o número do imput
+// Chamar a função que cria o boar e passar o valor do imput como parâmetro
