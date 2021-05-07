@@ -37,6 +37,21 @@
   display: block;
 }
 
+#quadradoPersonalizado {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#generate-board {
+  transition-duration: 0.4s;
+  border: solid black 1px;
+}
+
+#generate-board:hover{
+  background-color: #4CAF50; 
+  color: white;
+}
+
 .color {
   border: solid black 1px;
   width: 40px;
@@ -53,7 +68,7 @@
 }
 
 body {
-  background-color: rgb(231, 220, 231);
+  background-image: url('fundo2.jpg');
 }
 
 footer {

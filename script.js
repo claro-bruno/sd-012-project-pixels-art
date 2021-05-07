@@ -1,30 +1,43 @@
-let quadrad = document.querySelector('#pixel-board');
-let cor1 = document.querySelector('#black');
-let cor2 = document.querySelector('#orange');
-let cor3 = document.querySelector('#red');
-let cor4 = document.querySelector('#yellow');
-let nlinhas = 5;
-let nPixels = 5;
+let quadrado = document.querySelector('#pixel-board');
+const cor1 = document.querySelector('#black');
+const cor2 = document.querySelector('#orange');
+const cor3 = document.querySelector('#red');
+const cor4 = document.querySelector('#yellow');
+let valor = document.querySelector('#board-size').value;
+const botaoGerar = document.querySelector('#generate-board');
 
-function criaTabela() {
-  for (index = 0; index < nlinhas; index += 1) {
+function criaTabela(size) {
+  for (index = 0; index < size; index += 1) {
     let criarTr = document.createElement('tr');
-    quadrad.appendChild(criarTr);
-    for (i = 0; i < nPixels; i += 1) {
+    criarTr.className = 'linha';
+    quadrado.appendChild(criarTr);
+    for (i = 0; i < size; i += 1) {
       let criarTd = document.createElement('td');
+      criarTd.className = 'pixel';
       criarTr.appendChild(criarTd);
     }
   }
 }
-criaTabela();
+botaoGerar.addEventListener('click', function () {
+  let valor = document.querySelector('#board-size').value;
+  let ultimaLinha = document.querySelectorAll('.linha');
 
-function classes() {
-  let tds = document.querySelectorAll('#pixel-board tr td');
-  for (let index = 0; index < tds.length; index += 1) {
-    tds[index].className = 'pixel';
+  if (valor === '' || valor === 0) {
+    alert('Valor inválido!');
+  } else {
+    for (let i = 0; i < ultimaLinha.length; i += 1) {
+      quadrado.removeChild(quadrado.lastChild);
+    }
   }
-}
-classes();
+
+  if (valor <= 5) {
+    criaTabela(5);
+  } else if (valor >= 50) {
+    criaTabela(50);
+  } else {
+    criaTabela(valor);
+  }
+});
 
 function colocaClassSelected(evento) {
   let selecao = document.querySelector('.selected');
@@ -43,9 +56,9 @@ corP.addEventListener('click', function (evento) {
 });
 
 let botao = document.querySelector('#clear-board');
-let pixels = document.querySelectorAll('.pixel');
 botao.addEventListener('click', function () {
+  let pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].id = 'pixel';
+    pixels[i].removeAttribute('id');
   }
 });
