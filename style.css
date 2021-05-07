@@ -7,6 +7,7 @@ body {
 #color-palete {
   margin: 20px;
   padding-left: 0;
+  display: inline-block;
 }
 
 .color {
@@ -28,16 +29,17 @@ table {
   height: 40px;
 }
 
-#clear {
+#clear-board {
+  margin: 15px auto;
   background-color: yellow;
   width: 120px;
   border-radius: 10px;
-  margin-top: 10px;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
+  border: 1px solid black;
 }
 
-#clear:hover {
+#clear-board:hover {
   background-color: chocolate;
   color: white;
 }
