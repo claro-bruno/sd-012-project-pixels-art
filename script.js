@@ -1,8 +1,16 @@
-const arrayCores = ["black", "purple", "red", "blue"];
-
+let arrayCores = ["black"];
+for(let iCor = 0; iCor < 3; iCor++){
+   let r = parseInt(Math.random() * 255)
+     let g = parseInt(Math.random() * 255)
+     let b = parseInt(Math.random() * 255)
+     arrayCores.push("rgb"+"("+r+" ,"+g+" ,"+ b+")");  
+   
+}
 const paiPaleta = document.getElementById("color-palette");
 
 function paletaArco(){
+   
+   
    for(let index = 0; index < arrayCores.length; index++){
       const criaPaleta = document.createElement("p");
       criaPaleta.className = "color";
@@ -16,6 +24,7 @@ function paletaArco(){
       paiPaleta.appendChild(criaPaleta);
    };
 };
+
 paletaArco();
 
 function quadroPixels(){
@@ -25,7 +34,6 @@ function quadroPixels(){
    quadro.id = "pixel-board";
    let paiQuadro = document.getElementById("pixel-board");
   
-   // paiQuadro É a section
    const lupFive = 5; 
    for(let index = 0; index < lupFive; index++){
       let linha = document.createElement("ol");
@@ -49,3 +57,7 @@ function quadroPixels(){
    }
 }
 quadroPixels();
+
+
+
+
