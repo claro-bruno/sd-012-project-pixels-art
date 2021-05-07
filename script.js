@@ -29,3 +29,16 @@ function quadrados() {
     };
 };
 
+window.onload = function () {
+    let cor = document.getElementsByClassName('color')[0];
+    cor.classList.add('selected');
+    cor.addEventListener('click', pegacor)
+    function pegacor() {
+        
+        cor.style.backgroundColor = document.getElementsByClassName('color')[0];
+    };
+    console.log(cor.style.backgroundColor)
+};
+
+
+
