@@ -36,3 +36,4 @@ for (let index = 0; index < cores.length; index += 1) {
   cores[index].addEventListener('click', selecionaCor);
 }
 };
+
