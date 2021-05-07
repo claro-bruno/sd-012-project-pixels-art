@@ -8,6 +8,7 @@ for(let iCor = 0; iCor < 3; iCor++){
 
 const paiPaleta = document.getElementById("color-palette");
 let paiBody = document.getElementById("bodi");
+let paiQuadro = document.getElementById("pixel-board");
 function paletaArco(){
    for(let index = 0; index < arrayCores.length; index++){
       const criaPaleta = document.createElement("p");
@@ -24,10 +25,24 @@ function paletaArco(){
       criaPaleta.style.marginBotto = "15px";
       paiPaleta.appendChild(criaPaleta);
    };
-   let selectedBlack = document.getElementsByClassName("color")[0];
-   selectedBlack.classList.add("selected");
 };
 paletaArco();
+
+function botao(){
+   let butone = document.createElement("button");
+   butone.innerHTML = "Limpar";
+   butone.id = "clear-board";''
+   paiBody.appendChild(butone);
+   butone.style.padding = "15px";
+   butone.style.margin = "20px";
+   butone.addEventListener("click",function(){
+      let pegaUls = document.getElementsByTagName("ul");
+      for(let index = 0; index < pegaUls.length; index ++){
+         pegaUls[index].style.backgroundColor = "white";
+      }
+   })
+}
+botao();
 
 function quadroPixels(){
    let quadro = document.createElement("section");
@@ -58,26 +73,5 @@ function quadroPixels(){
 }
 quadroPixels();
 
-function botao(){
-   let butone = document.createElement("button");
-   butone.innerHTML = "Limpar";
-   butone.id = "clear-board";''
-   paiBody.appendChild(butone);
-   butone.style.padding = "15px";
-   butone.style.margin = "20px";
-   butone.addEventListener("click",function(){
-      let pegaUls = document.getElementsByTagName("ul");
-      for(let index = 0; index < pegaUls.length; index ++){
-         pegaUls[index].style.backgroundColor = "white";
-      }
-   })
-}
-botao();
-
-
-
-// function selectedColorPalette(){
-//    let selectCOlor = document.
-
-
-// }
+let selectedBlack = document.getElementsByClassName("color")[0];
+   selectedBlack.classList.add("selected");
