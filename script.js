@@ -29,3 +29,10 @@ document.addEventListener("click", function (call) {
     call.target.className = "color selected"
   };
 });
+
+document.addEventListener("click", function (toColor) {
+  if (toColor.target.className === "pixel") {
+    let cor = document.querySelector(".selected").style.background;
+    toColor.target.style.background = cor;
+  };
+});
