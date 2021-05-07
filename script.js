@@ -86,9 +86,19 @@ resetColors();
 // Define o tamanho do quadro
 function boarderGenerate() {
   buttonVqv.addEventListener('click', () => {
-  boarderSize = parseInt(input.value) ** 2;
-  deletePixels();
-  createPixels();
+    if (input.value === '') {
+      alert('Board inválido!');
+    }
+    if (input.value < 5) {
+      input.value = 5;
+    }
+    if (input.value > 50) {
+      input.value = 50;
+    }
+    boarderSize = parseInt(input.value) ** 2;
+    deletePixels();
+    createPixels();
+    pixelPainter();
   });
 }
 boarderGenerate();
