@@ -80,7 +80,7 @@ function limBoard(test) {
 }
 
 function testIn(test) {
-  if (isNaN(test) || test === '') {
+  if (test === '') {
     alert('Board inválido!');
   } else {
     changeSize(parseInt(test));
