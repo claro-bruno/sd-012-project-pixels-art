@@ -1,26 +1,49 @@
 function paletteGenerator() {
-  const colors = ['black', 'green', 'blue', 'orange'];
+  const colors = ['green', 'blue', 'orange', 'purple',];
   const paletteSection = document.getElementById('color-palette');
+
+  function randomPalette() {
+    function generateArray() {
+      let array = [];
+      for (let index = 0; index <= 3; index += 1) {
+        array.push(Math.ceil((Math.random() * 4)));
+      }
+      return array;
+    }
+    let numbersArray = generateArray();
+    let count = 0;
+    while (count !== numbersArray.length) {
+      numbersArray = generateArray();
+      count = 0;
+      for (let index = 0; index < numbersArray.length; index += 1) {
+        for (let indexNum = 0; indexNum < numbersArray.length; indexNum += 1) {
+          if (numbersArray[index] === numbersArray[indexNum]) {
+            count += 1;
+          }
+        }
+      }
+    }
+    return numbersArray;
+  }
+  const numbersArray = randomPalette();
 
   for (let index = 0; index < colors.length; index += 1) {
     if (index === 0) {
       const createDiv = document.createElement('div');
       paletteSection.appendChild(createDiv);
       createDiv.className = 'color selected';
-      createDiv.style.backgroundColor = colors[index];
+      createDiv.style.backgroundColor = 'black';
     } else {
       const createDiv = document.createElement('div');
       paletteSection.appendChild(createDiv);
       createDiv.className = 'color';
-      const randomNumber = parseInt((Math.random() * 3) + 1);
-      createDiv.style.backgroundColor = colors[randomNumber];
+      createDiv.style.backgroundColor = colors[numbersArray[index] - 1];
     }
   }
 }
 paletteGenerator();
 
-function tableGenerator(size) {
-  const canvasSize = size;
+function tableGenerator(canvasSize) {
   const tableTag = document.querySelector('table');
   tableTag.innerHTML = '';  // essa forma de limpar todos os filhos da table foi lida no: https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
   for (let index = 0; index < canvasSize; index += 1) {
