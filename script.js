@@ -67,3 +67,26 @@ function genTable() {
 
 const buttonGen = document.getElementById('generate-board');
 buttonGen.addEventListener('click', genTable);
+
+function genNumber() {
+  const randomNumber = Math.floor(Math.random() * 255);
+  return randomNumber;
+}
+
+function genColor() {
+  const randomColor = `rgb(${genNumber()}, ${genNumber()}, ${genNumber()})`;
+  return randomColor;
+}
+
+function paintColor() {
+  const colorRandom = document.getElementsByClassName('random-color');
+  for (let index = 0; index < colorRandom.length; index += 1) {
+    colorRandom[index].style.backgroundColor = genColor();
+  }
+}
+
+window.onload = function randomColors() {
+  paintColor();
+  paintColor();
+  paintColor();
+};
