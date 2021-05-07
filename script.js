@@ -32,3 +32,20 @@ for (let index = 0; index < pixels.length; index += 1) {
 }
 
 button.addEventListener('click', clear);
+
+// function genTable() {
+//   const number = 40;
+//   const table = document.getElementById('pixel-board');
+
+//   for (let i = 0; i < number; i += 1) {
+//     const tr = document.createElement('tr');
+//     for (let j = 0; j < number; j += 1) {
+//       const th = document.createElement('th');
+//       th.className = 'pixel';
+//       tr.appendChild(th);
+//     }
+//     table.appendChild(tr);
+//   }
+// }
+
+// genTable();
