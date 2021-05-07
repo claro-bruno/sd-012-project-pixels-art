@@ -124,8 +124,8 @@ main h2 {
 }
 
 .table-container {
-  max-width: 416px;
-  max-height: 416px;
+  max-width: 1016px;
+  max-height: 1016px;
   overflow: auto;
   margin-bottom: 10px;
 }
