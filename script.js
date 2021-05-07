@@ -45,13 +45,13 @@ const palette3 = palette[2];
 const palette4 = palette[3];
 black.classList.add('selected');
 
-function getColor(event) {
+function getePalette(event) {
   const currentSelectedColor = document.querySelector('.color.selected');
   currentSelectedColor.classList.remove('selected');
   event.target.classList.add('selected');
 }
 
-black.addEventListener('click', getColor);
-color2.addEventListener('click', getColor);
-color3.addEventListener('click', getColor);
-color4.addEventListener('click', getColor);
+black.addEventListener('click', getePalette);
+palette2.addEventListener('click', getePalette);
+palette3.addEventListener('click', getePalette);
+palette4.addEventListener('click', getePalette);
