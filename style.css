@@ -1,24 +1,29 @@
 #color-palet{
     background-color: white;
 }
-
 .color{
+    width: 60px;
+    height: 60px;
     border: 1px solid black;
     display: inline-block;
 }
-
-#preto{
+#black{
     background-color: black;
 }
-
-#azul{
+#blue{
     background-color: blue;
 }
-
-#vermelho{
+#red{
     background-color: red;
 }
-
-#verde{
+#green{
     background-color: green;
+}
+
+.pixel{
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: white;
 }
