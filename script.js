@@ -1,9 +1,14 @@
-var title = document.querySelector('.pixel')
+const colorPalette = document.querySelector('#color-palette');
 
 
-title.addEventListener('mouseover', function() {
-    this.style.backgroundColor = "black"
+colorPalette.addEventListener('click', eventColor => {
+  
+  if (eventColor.target.className === 'color') {
+    const selectedColor = document.querySelector('.selected')
+    selectedColor.classList.remove('selected')
+    eventColor.target.classList.add('selected')
+  }
 })
-title.addEventListener('mouseout', function() {
-    this.style.backgroundColor = "white"
-})
+
+
+
