@@ -79,11 +79,11 @@ pixel.addEventListener('click', paint)*/
 
 function apaga(){
   const botao = document.getElementById('clear-board')
-  let pixel = document.getElementsByClassName('pixel')
 
 botao.addEventListener('click', function(){
+  let pixel = document.getElementsByClassName('pixel')
   for (let i = 0; i < pixel.length; i += 0) {
-    pixel[i].style.backgroundColor = 'red'
+    pixel[i].style.backgroundColor = 'white'
   }
 })
 }
