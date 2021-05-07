@@ -1,13 +1,13 @@
 .color {
   border: 1px solid black;
   display: inline-block;
-  width:20px;
-  height:20px;
-  margin:5px;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
 }
 
-#black{
-   background-color: black;
+#black {
+  background-color: black;
 
 }
 
@@ -29,4 +29,11 @@
 #yellow {
   background-color: yellow;
 
+}
+
+.pixel {
+  border: 1px solid black;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
 }
