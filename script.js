@@ -75,12 +75,17 @@ board();
 
 const pixel = document.getElementsByClassName('pixel')
 
-pixel.addEventListener('click', paint)
+pixel.addEventListener('click', paint)*/
 
-const botao = document.getElementById('clear-board')
+function apaga(){
+  const botao = document.getElementById('clear-board')
+  let pixel = document.getElementsByClassName('pixel')
 
-function apaga(event){
-  event.target.style.backgroundColor = 'white'
+botao.addEventListener('click', function(){
+  for (let i = 0; i < pixel.length; i += 0) {
+    pixel[i].style.backgroundColor = 'red'
+  }
+})
 }
-botao.addEventListener('click', apaga)
-*/
+
+apaga()
