@@ -8,7 +8,7 @@ window.onload = function () {
   const input = document.createElement('input');
   input.id = 'board-size';
   input.type = 'number';
-  input.min = 0;
+  input.min = 1;
   input.max = 50;
 
   const btn2 = document.createElement('button');
@@ -42,12 +42,12 @@ window.onload = function () {
     }
   }
   
-  document.querySelector("#board-size").addEventListener("input", el => {
-    if (el.target.value > parseInt(el.target.getAttribute("max"))) {
-      el.target.value = el.target.getAttribute("max");
+  document.querySelector('#board-size').addEventListener('input', el => {
+    if (el.target.value > parseInt(el.target.getAttribute('max'))) {
+      el.target.value = el.target.getAttribute('max');
       el.target.value = 50;
     }
-    if (el.target.value <= parseInt(el.target.getAttribute("min"))) {
+    if (el.target.value <= parseInt(el.target.getAttribute('min'))) {
      el.target.value = 1;
     }
   })
