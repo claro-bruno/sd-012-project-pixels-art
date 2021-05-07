@@ -1,7 +1,4 @@
-body {
 
-    
-}
 header, section, nav {
     display: flex;
     justify-content: center;
@@ -22,15 +19,36 @@ main nav input {
     
 }
 
+h1, #footer{
+    color: white;
+    background-color: black;
+    min-width:100%;
+    text-align: center;
+}
 #main-container {
     display: flex;
     justify-content: center;
     align-content: center;
     align-self: center;
     flex-flow: column nowrap;
-
+    background-color: rgba(173, 173, 171, 0.459);
+    min-height: 80vh;
+    padding: 1vh;
     
 }
+#s-container {
+   background-color: darkcyan;
+   padding: 10%;
+   margin-left: 10vw;
+   margin-right: 10vw;
+   border: 1px solid white;
+    
+}
+#core {
+    background-color: rgb(232, 238, 238);
+    border: 1px solid white;
+     
+ }
 #color-palette {
     display: inline-block;
     
