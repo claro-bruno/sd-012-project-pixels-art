@@ -63,6 +63,7 @@ function createColor(square) {
   for (const key in cor) {
     algo[key].style.backgroundColor = cor[key];
   }
+  square[0].className = 'color selected'; 
 }
 
 function changeSize(test) {
@@ -73,15 +74,11 @@ function changeSize(test) {
     }
     lines(test, father);
   } else {
-    limBoard(test);
-  }
-}
-
-function limBoard(test) {
-  if (test > 50) {
-    changeSize(50);
-  } else {
-    changeSize(5);
+      if (test > 50) {
+        changeSize(50);
+    } else {
+        changeSize(5);
+    }
   }
 }
 
@@ -89,38 +86,34 @@ function testIn(test) {
   if (test === '') {
     alert('Board inválido!');
   } else {
-    changeSize(parseInt(test));
+    changeSize(parseInt(test, 10));
   }
 }
 
 window.onload = function main() {
-  let line = 5;
-  let square = document.getElementsByClassName('color');
-  let pixelFather = document.getElementById('pixel-board');
-  let clean = document.getElementById('clear-board');
-  let mudaTamanho = document.getElementById('generate-board');
+  const line = 5;
+  const square = document.getElementsByClassName('color');
+  const pixelFather = document.getElementById('pixel-board');
+  const clean = document.getElementById('clear-board');
+  const mudaTamanho = document.getElementById('generate-board');
 
   createColor(square);
-
-  square[0].className = 'color selected'; 
-
   lines(line, pixelFather);
-  
+
   clean.addEventListener('click', clear);
 
   for (let evento = 0; evento < square.length; evento += 1) {
     square[evento].addEventListener("click", mudaSelecter);
   }
-    
-  document.addEventListener('click', function (event) {
-    if (event.target.className === 'pixel') {
-      let eventBgColor = event.target;
-      paint(eventBgColor);
-    }  
-    });
-
   mudaTamanho.addEventListener('click', function (event) {
     let test = document.getElementById('board-size').value;
     testIn(test);
   });
 }
+
+document.addEventListener('click', function (event) {
+  if (event.target.className === 'pixel') {
+    let eventBgColor = event.target;
+    paint(eventBgColor);
+  }  
+});
