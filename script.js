@@ -11,6 +11,7 @@ for (let index = 0; index < quantidadeDeQuadros; index += 1) {
   getPixelBoard.appendChild(newLine);
 
   for (let columns = 0; columns < quantidadeDeQuadros; columns += 1) {
+    
     let newColumn = document.createElement('td');
     newColumn.classList.add('pixel');
     newLine.appendChild(newColumn);
