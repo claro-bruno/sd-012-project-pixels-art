@@ -1,15 +1,17 @@
-let quadradocores = document.querySelector('#color-palette');
-let cores = ['black', 'red', 'blue', 'green'];
-for (indice = 0; indice < cores.length; indice += 1) {
-    let cor = cores[indice];
-    let coresitem = document.createElement('div');
-    coresitem.className = 'color';
-    coresitem.style.backgroundColor = cor;
-    coresitem.style.color = cor;
-    coresitem.innerHTML = cor;
-    quadradocores.appendChild(coresitem);
+function paleta(){
+    let quadradocores = document.querySelector('#color-palette');
+    let cores = ['black', 'red', 'blue', 'green'];
+    for (indice = 0; indice < cores.length; indice += 1) {
+        let cor = cores[indice];
+        let coresitem = document.createElement('div');
+        coresitem.className = 'color';
+        coresitem.style.backgroundColor = cor;
+        coresitem.style.color = cor;
+        coresitem.innerHTML = cor;
+        quadradocores.appendChild(coresitem);
+    };
 };
-window.onload = quadrados;
+paleta();
 function quadrados() {
     let pixell = document.querySelector('#pixel-board');
     let ospixels = [];
@@ -23,3 +25,16 @@ function quadrados() {
         pixell.appendChild(quadrado);
     };
 };
+quadrados();
+
+window.onload = function () {
+    let cor = document.getElementsByClassName('color')[0];
+    cor.className = 'selected';
+    cor.addEventListener('click', pegacor)
+    function pegacor() {
+       cor.style.backgroundColor = 'black';
+    };
+};
+
+
+

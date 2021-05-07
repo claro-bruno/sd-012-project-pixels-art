@@ -10,6 +10,15 @@
     margin: 2px;
     margin-bottom: 25px;
 }
+.selected {
+    border: solid black;
+    border-width: 1px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    margin-bottom: 25px;
+}
 #pixel-board {
     width: 210px;
     height: 210px;
