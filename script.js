@@ -1,15 +1,19 @@
-let div1 = document.createElement('div1');
-div1.className = 'color';
-div.appendChild(div1);
+let quadrado = document.getElementById('pixel-board');
+function quadrado25(num) {
+    for (let index = 0; index < num; index += 1) {
+        let linha = document.createElement('div');
+        quadrado.appendChild(linha);
+        for (let index = 0; index < num; index += 1) {
+            let coluna = document.createElement('div')
+            coluna.className = 'pixel';
+            quadrado.appendChild(coluna);
+        }
+    }
+}
+quadrado25(5)
 
-let div2 = document.createElement('div2');
-div2.className = 'color';
-div.appendChild(div2);
-
-let div3 = document.createElement('div3');
-div3.className = 'color';
-div.appendChild(div3);
-
-let div4 = document.createElement('div4');
-div4.className = 'color';
-div.appendChild(div4);
+let initColor = document.body.addEventListener('click', function (event) {
+    if (event.target.className = 'pixel') {
+       event.target.style.backgroundColor = 'black';
+    }
+})
