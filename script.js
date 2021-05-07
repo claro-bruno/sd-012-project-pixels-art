@@ -70,6 +70,7 @@ function botao(){
 }
 botao();
 function blackSelect(){
-      let blackS = document.getElementsByTagName("p")[0].style.backgroundColor;
+      let blackS = document.getElementsByClassName("selected")[0].style.backgroundColor;
+      blackS
 };
 blackSelect();
