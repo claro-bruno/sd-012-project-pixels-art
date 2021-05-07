@@ -2,6 +2,14 @@ let boardSize = 5;
 const allCollors = document.querySelector('#color-palette');
 const pixelBoard = document.querySelector('#pixel-board');
 
+function getRandomColor() { // encontrei no https://stackoverflow.com/questions/1484506/random-color-generator
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i += 1) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
 function setBackgroundColor() {
   document.getElementById('first-div').style.backgroundColor = 'black';
@@ -29,14 +37,14 @@ function selectColor() {
     replaced.classList.remove('selected');
     let clicked = event.target;
     clicked.classList.add('selected');
-  })
+  });
 }
 
 function changePixelColor() {
   pixelBoard.addEventListener('click', function (event) {
     let selectedColor = document.querySelector('.selected').style.backgroundColor;
     event.target.style.backgroundColor = selectedColor;
-  })
+  });
 }
 
 function resetColors() {
@@ -62,15 +70,6 @@ function userBoardSize() {
     }
     createBoard();
   }
-}
-
-function getRandomColor() { // encontrei no https://stackoverflow.com/questions/1484506/random-color-generator
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i += 1) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
 }
 
 setBackgroundColor();
