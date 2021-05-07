@@ -36,14 +36,14 @@ function createSquare(tamanho) {
 }
 createSquare();
 
-function randomRGB() {
+function randomRGB() { // declara uma "function" randomBetween e utiliza os valores declarados(0, 255); By:assembly_wizard https://stackoverflow.com/questions/23095637/how-do-you-get-random-rgb-in-javascript
   const cores = ['black'];
-  for (let index = 0; index < 4; index +=1 ){
-  var num = Math.round(0xffffff * Math.random());
-  var r = num >> 16
-  var g = num >> 8 & 255
-  var b = num & 255
-  const rgb = `rgb(${r}, ${g}, ${b})`
+  for (let index = 0; index < 4; index += 1) {
+    const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+    const r = randomBetween(0, 255);
+    const g = randomBetween(0, 255);
+    const b = randomBetween(0, 255);
+    const rgb = `rgb(${r}, ${g}, ${b})`;
     cores.push(rgb);
   }
   return cores;
