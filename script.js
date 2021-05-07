@@ -57,13 +57,25 @@ function createBoard (width) {
 
 createBoard(5);
 
-window.onload = function inicializa() {
-    function setVanillaColor() {
+window.onload = function() {
       let colors = document.querySelectorAll('.color');
       for (let index = 0; index < colors.length; index += 1) {
         colors[index].classList.remove('selected');
       }
       colors[0].classList.add('selected');
+};
+
+//requisito 7
+
+function colorSelect() {
+    const paleta = document.getElementsByClassName('color');
+    for (let index = 0; index < paleta.length; index += 1) {
+      paleta[index].addEventListener('click', function(event) {
+        const removeSelection = document.querySelector('.selected');
+        removeSelection.classList.remove('selected');
+        event.target.classList.add('selected');
+        console.log('opa')
+      });
     }
-    setVanillaColor();
-  };
+}
+colorSelect();
