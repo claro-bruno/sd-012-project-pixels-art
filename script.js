@@ -81,7 +81,7 @@ function colorSelect() {
 colorSelect();
 
 //requisito 8
-  function addColor() {
+function addColor() {
     const pixel = document.getElementsByClassName('pixel');
     for(let index = 0; index < pixel.length; index += 1){
         pixel[index].addEventListener('click', function(event) {
@@ -92,3 +92,12 @@ colorSelect();
     } 
 }
 addColor();
+
+//requisito 9
+const clearButton = document.getElementById('clear-board');
+clearButton.addEventListener('click', function (){
+    const pixel = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixel.length; index += 1) {
+        pixel[index].style.backgroundColor = 'white';
+    }
+})
