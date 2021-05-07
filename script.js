@@ -79,3 +79,16 @@ function colorSelect() {
     }
 }
 colorSelect();
+
+//requisito 8
+  function addColor() {
+    const pixel = document.getElementsByClassName('pixel');
+    for(let index = 0; index < pixel.length; index += 1){
+        pixel[index].addEventListener('click', function(event) {
+            const pixelToColor = event.target;
+            const colorSelected = document.querySelector('.selected').style.backgroundColor;
+            pixelToColor.style.backgroundColor = colorSelected;
+        })
+    } 
+}
+addColor();
