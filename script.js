@@ -1,12 +1,12 @@
 function paletteGenerator() {
-  const colors = ['green', 'blue', 'orange', 'purple',];
+  const colors = ['green', 'blue', 'orange', 'purple', 'teal', 'navy', 'yellow', 'lime', 'maroon', 'red', 'gray', 'silver', 'chocolate', 'pink'];
   const paletteSection = document.getElementById('color-palette');
 
   function randomPalette() {
     function generateArray() {
       let array = [];
-      for (let index = 0; index <= 3; index += 1) {
-        array.push(Math.ceil((Math.random() * 4)));
+      for (let index = 0; index < 14; index += 1) {
+        array.push(Math.ceil((Math.random() * 14)));
       }
       return array;
     }
@@ -27,7 +27,7 @@ function paletteGenerator() {
   }
   const numbersArray = randomPalette();
 
-  for (let index = 0; index < colors.length; index += 1) {
+  for (let index = 0; index < 4; index += 1) {
     if (index === 0) {
       const createDiv = document.createElement('div');
       paletteSection.appendChild(createDiv);
