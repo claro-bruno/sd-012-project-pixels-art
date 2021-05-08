@@ -114,10 +114,14 @@ function botaoQuadro() {
     let inputSize = document.getElementById("board-size");
     let size = inputSize.value;
     if ((size >= 5) && (size <= 50)) {
-        divQuadro.innerHTML = "";
-        criaPixel(size, size); 
-    } else {
+        divQuadro.innerHTML = ""; // apaga todos os pixels
+        criaPixel(size, size);  // chama função de criação de pixels
+    } else if (size === "") {
         alert("Board inválido!");
+    } else if (size > 50) {
+      size = 50;
+      divQuadro.innerHTML = ""; // apaga todos os pixels
+      criaPixel(size, size);  // chama função de criação de pixels
     }
   });
   
