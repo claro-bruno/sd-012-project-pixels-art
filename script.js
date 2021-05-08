@@ -1,7 +1,11 @@
 const colorPalette = document.querySelector('#color-palette');
 const colorArray = ['black', 'red', 'blue', 'pink', 'purple', 'green', 'orange', 'yellow'];
 const pixelBoard = document.querySelector('#pixel-board');
+const clearButton = document.querySelector('#clear-board');
+
 let selectedColor = 'black';
+
+clearButton.innerHTML = 'Limpar';
 
 window.onload = applyColor();
 
@@ -35,7 +39,7 @@ function applyColor() {
       event.target.style.backgroundColor = selectedColor;
     }
   })
-}
+};
 
 function copyColor() {
   document.addEventListener('click', function(event) {
@@ -46,9 +50,19 @@ function copyColor() {
       selectedColor = event.target.style.backgroundColor;
     }
   })
-}
+};
+
+function clearPixelBoard() {
+  clearButton.addEventListener('click', function() {
+    const classPixel = document.querySelectorAll('.pixel');
+    for (let index = 0; index < classPixel.length; index ++) {
+      classPixel[index].style.backgroundColor = 'white';
+    }
+  })
+};
 
 paletaDeCores(4, colorArray);
 fillPixelBoard(5, 5);
 copyColor();
 applyColor();
+clearPixelBoard();
