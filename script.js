@@ -19,10 +19,10 @@ function createPalette() {
   div.style.backgroundColor = 'black';
   colorPalette.appendChild(div);
   for (let index = 0; index < 3; index += 1) {
-    const div = document.createElement('div');
-    div.className = 'color';
-    div.style.backgroundColor = randomRGB();
-    colorPalette.appendChild(div);
+    const newDiv = document.createElement('div');
+    newDiv.className = 'color';
+    newDiv.style.backgroundColor = randomRGB();
+    colorPalette.appendChild(newDiv);
   }
 }
 
@@ -32,17 +32,27 @@ function resetBoard() {
   }
 }
 
-function createBoard() {
-  let size = boardSize.value;
+function fixValue(size) {
+  if (size < 5 || size == null) { return 5; }
+  if (size > 50) { return 50; }
+  return size;
+}
+
+function getValue() {
+  const size = boardSize.value;
   if (size < 5 || size > 50 || size == null) {
     window.alert('Board inválido!');
-    if (size < 5 || size == null) { size = 5; }
-    if (size > 50) { size = 50; }
+    return fixValue(size);
   }
+  return size;
+}
+
+function createBoard() {
+  const size = getValue();
   resetBoard();
-  pixelBoard.style.width = (size * 42) + 'px';
+  pixelBoard.style.width = `${(size * 42)}px`;
   for (let row = 1; row <= size * size; row += 1) {
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     div.className = 'pixel';
     pixelBoard.appendChild(div);
   }
@@ -58,8 +68,9 @@ function selectColor(event) {
 }
 
 function changeColor(event) {
+  const functionEvent = event;
   const color = document.querySelector('.selected').style.backgroundColor;
-  event.target.style.backgroundColor = color;
+  functionEvent.target.style.backgroundColor = color;
 }
 
 function clearBoard() {
@@ -69,11 +80,11 @@ function clearBoard() {
   }
 }
 
-window.onload = function pageLoad() {
+window.onload = () => {
   createPalette();
   pixelBoard.addEventListener('click', changeColor);
   for (let index = 0; index < pallete.length; index += 1) {
-    pallete[index].addEventListener ('click', selectColor);
+    pallete[index].addEventListener('click', selectColor);
   }
   btnClear.addEventListener('click', clearBoard);
   createBoard();
