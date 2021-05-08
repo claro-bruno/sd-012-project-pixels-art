@@ -13,10 +13,10 @@
     border: solid 1px black;
     display: inline-block;
     box-sizing: border-box;
-    margin-bottom: 4px;
+    margin-bottom: -4px;
 }
 
 #pixel-board {
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;    
 }

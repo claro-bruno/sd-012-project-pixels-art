@@ -1,6 +1,6 @@
 const quadroPixel = document.querySelector('#pixel-board');
 const pixel = document.getElementById('#pixel-board');
-const colores = document.querySelectorAll('.color');
+const cores = document.querySelectorAll('.color');
 
 function criaLinhas(linhas) {
     for (let index = 0; index < linhas; index += 1) {
@@ -23,3 +23,20 @@ function criaColunas(colunas) {
 };
 criaColunas(5);
 
+function selectedEvent(click) {
+    let removeSelected = document.querySelector('.selected');
+    removeSelected.classList.remove('selected'); 
+    click.target.classList.add('selected');
+};
+
+
+function clickEvent() {
+    for (let index = 0; index < cores.length; index += 1 ) {
+    cores[index].addEventListener('click', selectedEvent);
+    };
+};
+clickEvent();
+
+function geraCor() {
+    
+}
