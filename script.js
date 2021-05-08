@@ -1,5 +1,7 @@
 const pixelBoard = document.getElementById('pixel-board');
 const colorPalette = document.getElementById('color-palette');
+const input = document.getElementById('board-size')
+let n = 5;
 
 // gera cor aleatoria
 
@@ -11,7 +13,6 @@ function gerarCor() {
   return `rgb(${r},${g},${b})`
 }
 
-const zero = gerarCor();
 const one = gerarCor();
 const two = gerarCor();
 const three = gerarCor();
@@ -56,8 +57,21 @@ document.getElementsByClassName('color')[2].addEventListener('click', select);
 document.getElementsByClassName('color')[3].addEventListener('click', select);
 
 // cria a board
+
 function board() {
-  for (let i = 0; i < 25; i += 1) {
+  for (let i = 0; i < n**2; i += 1) {
+    const div = document.createElement('div');
+    div.className = 'pixel';
+    pixelBoard.appendChild(div);
+  }
+}
+
+function changeBoard() {
+  let elements = document.getElementsByClassName('pixel')
+  while (elements.length > 0) elements[0].remove()
+
+  let n = input.value;
+  for (let i = 0; i < n**2; i += 1) {
     const div = document.createElement('div');
     div.className = 'pixel';
     pixelBoard.appendChild(div);
@@ -65,6 +79,8 @@ function board() {
 }
 
 board();
+const vqv = document.getElementById('generate-board')
+vqv.addEventListener('click',changeBoard)
 /* daqui pra cima tá de boa */
 
 function paint(event) {
