@@ -27,6 +27,11 @@
 }
 
 
+#pixel-board {
+  width: 200px;
+  height: 200px;
+}
+
 
 .linha {
   border: 1px white;
