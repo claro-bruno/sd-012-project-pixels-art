@@ -29,8 +29,8 @@
 
 
 .linha {
-  border: 1px solid white;  
-  display: inline-block;
+  border: 1px white;  
+  display: block;
   width: 40px;
   height: 40px;
   
@@ -38,7 +38,7 @@
 
 .pixel {
   border: 1px solid black;
-  display: block;
+  display: inline-block;
   width: 40px;
   height: 40px;
  
