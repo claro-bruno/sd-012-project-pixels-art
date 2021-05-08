@@ -29,7 +29,7 @@
 
 
 .linha {
-    border: solid white;
+  border: 1px solid white;  
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -37,8 +37,8 @@
 }
 
 .pixel {
-  border: 0.5px solid black;
+  border: 1px solid black;
   display: block;
   width: 40px;
   height: 40px;
-}
+ 
