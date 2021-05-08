@@ -3,7 +3,7 @@
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin: 5px;
+  margin-bottom: 40px;
 }
 
 #black {
@@ -28,34 +28,17 @@
 
 
 #pixel-board {
-  
-  height: 214px;
-  width: 214px;
+
+  height: 210px;
+  width: 210px;
 }
 
-
-.linha {
-  border: 1px white;
-  background-color: white;
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  top: auto;
-  left: auto;
-  right: auto;
-  bottom: auto
-}
 
 .pixel {
   border: 1px solid black;
-  display: block;
   width: 40px;
   height: 40px;
   background-color: white;
-  position: relative;
-  top: auto;
-  left: auto;
-  right: auto;
-  bottom: auto
+  float: left;
+
 }
