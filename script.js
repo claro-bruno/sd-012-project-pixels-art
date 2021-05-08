@@ -38,10 +38,7 @@ function changeSelected(event) {
 //         event.target.style.backgroundColor = 'black'
 //        }
 //    }
-
-
-   
-};         
+        
 function boardPixels (n) {
     for (let cont = 0; cont < n**2; cont += 1){
         let board = document.createElement('div');
