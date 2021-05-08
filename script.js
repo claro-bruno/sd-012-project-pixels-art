@@ -80,12 +80,17 @@ function quadroPixels(){
 quadroPixels();
 
 function pegaCorPaletaArco(event){
+   let pS = document.getElementsByTagName("p");
+   for(let index = 0; index < pS.length; index++){
+      pS[index].classList.remove("selected");
+   }
    event.target.classList.add("selected");
+   
 }
 
 function injectCor(event){
-   let pegacor = document.querySelector(".selected")[0].style.backgroundColor;
-   event.target.backgroundColor = pegacor;
+   let pegaCor = document.querySelector(".selected").style.backgroundColor;
+   event.target.style.backgroundColor =  pegaCor;
 }
 
 // falta somente passar a cor do .selected para onde estou clicando nos pixels brancos
