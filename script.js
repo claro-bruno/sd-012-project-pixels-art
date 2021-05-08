@@ -9,10 +9,12 @@ for(let iCor = 0; iCor < 3; iCor++){
 const paiPaleta = document.getElementById("color-palette");
 let paiBody = document.getElementById("bodi");
 let paiQuadro = document.getElementById("pixel-board");
+
 function paletaArco(){
    for(let index = 0; index < arrayCores.length; index++){
       const criaPaleta = document.createElement("p");
       criaPaleta.className = "color";
+      criaPaleta.addEventListener("click", pegaCorPaletaArco);
       criaPaleta.style.background = arrayCores[index];
       criaPaleta.style.borderStyle = "solid";
       criaPaleta.style.borderColor = "black";
@@ -25,22 +27,43 @@ function paletaArco(){
       criaPaleta.style.marginBotto = "15px";
       paiPaleta.appendChild(criaPaleta);
    };
+   const pegaPreto = document.getElementsByClassName("color")[0];
+   pegaPreto.classList.add("selected")
 };
 paletaArco();
 
+// function darSelected (){
+   
+// }
+
+// function pegaCorPaletaArco(event){
+//    let pega = event.target.style.backgroundColor;
+//    let pixel = document.getElementsByClassName("color");
+//    pega.addEventListener("click", pixel);
+//    console.log(pega);
+// }
+
+// function passaCorParaPixel(){
+//    let pegaCor = document.getElementsByClassName("selected")[0];
+//    pegaCor.style.backgroundColor;
+  
+//    target.style.backgroundColor = pegaCor;
+// }
+
 function botao(){
    let butone = document.createElement("button");
+   butone.id = "clear-board";
    butone.innerHTML = "Limpar";
-   butone.id = "clear-board";''
+   butone.addEventListener("click", clearQuadro);
    paiBody.appendChild(butone);
    butone.style.padding = "15px";
    butone.style.margin = "20px";
-   butone.addEventListener("click",function(){
+   function clearQuadro(){
       let pegaUls = document.getElementsByTagName("ul");
       for(let index = 0; index < pegaUls.length; index ++){
          pegaUls[index].style.backgroundColor = "white";
       }
-   })
+   }
 }
 botao();
 
@@ -59,6 +82,7 @@ function quadroPixels(){
             let pixel = document.createElement("ul");
             linha.appendChild(pixel);
             pixel.className = "pixel";
+            pixel.addEventListener("click", passaCorParaPixel);
             pixel.style.borderStyle = "solid";
             pixel.style.borderColor = "black";
             pixel.style.borderWidth = "1px";
@@ -72,9 +96,3 @@ function quadroPixels(){
    }
 }
 quadroPixels();
-
-let selectedBlack = document.getElementsByClassName("color")[0];
-   selectedBlack.classList.add("selected");
-   selectedBlack;
-
-// document.addEventListener("click", event) 
