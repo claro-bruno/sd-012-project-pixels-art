@@ -1,8 +1,5 @@
-.color-pallete{
-    border: 1px solid black;
+.color-palete{
     display: inline-block;
-    margin: 5px;
-    padding: 30px;
 }
 
 .color{
@@ -12,21 +9,6 @@
     display: inline-block;
 }
 
-#black{
-    background-color: black;
-}
-
-#red{
-    background-color: red;
-}
-
-#green{
-    background-color: green;
-}
-
-#blue{
-    background-color: blue;
-}
 
 
 
