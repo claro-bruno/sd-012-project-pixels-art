@@ -3,7 +3,7 @@ for(let iCor = 0; iCor < 3; iCor++){
       let r = parseInt(Math.random() * 255)
       let g = parseInt(Math.random() * 255)
       let b = parseInt(Math.random() * 255)
-     arrayCores.push("rgb"+"("+r+" ,"+g+" ,"+ b+")");
+      arrayCores.push("rgb"+"("+r+" ,"+g+" ,"+ b+")");
 }
 
 const paiPaleta = document.getElementById("color-palette");
@@ -32,29 +32,11 @@ function paletaArco(){
 };
 paletaArco();
 
-// function darSelected (){
-   
-// }
-
-// function pegaCorPaletaArco(event){
-//    let pega = event.target.style.backgroundColor;
-//    let pixel = document.getElementsByClassName("color");
-//    pega.addEventListener("click", pixel);
-//    console.log(pega);
-// }
-
-// function passaCorParaPixel(){
-//    let pegaCor = document.getElementsByClassName("selected")[0];
-//    pegaCor.style.backgroundColor;
-  
-//    target.style.backgroundColor = pegaCor;
-// }
-
 function botao(){
    let butone = document.createElement("button");
    butone.id = "clear-board";
    butone.innerHTML = "Limpar";
-   butone.addEventListener("click", clearQuadro);
+   butone.addEventListener("click", clearQuadro());
    paiBody.appendChild(butone);
    butone.style.padding = "15px";
    butone.style.margin = "20px";
@@ -82,7 +64,7 @@ function quadroPixels(){
             let pixel = document.createElement("ul");
             linha.appendChild(pixel);
             pixel.className = "pixel";
-            pixel.addEventListener("click", passaCorParaPixel);
+            pixel.addEventListener("click", injectCor);
             pixel.style.borderStyle = "solid";
             pixel.style.borderColor = "black";
             pixel.style.borderWidth = "1px";
@@ -96,3 +78,14 @@ function quadroPixels(){
    }
 }
 quadroPixels();
+
+function pegaCorPaletaArco(event){
+   event.target.classList.add("selected");
+}
+
+function injectCor(event){
+   let pegacor = document.querySelector(".selected")[0].style.backgroundColor;
+   event.target.backgroundColor = pegacor;
+}
+
+// falta somente passar a cor do .selected para onde estou clicando nos pixels brancos
