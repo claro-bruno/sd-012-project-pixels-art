@@ -71,6 +71,13 @@ function changeBoard() {
   while (elements.length > 0) elements[0].remove()
 
   let n = input.value;
+  if(n < 5){
+    n = 5
+  } else if(n > 50){
+    n = 50
+  }
+  pixelBoard.style.gridTemplateColumns = `repeat(${n}, 1fr)`
+
   for (let i = 0; i < n**2; i += 1) {
     const div = document.createElement('div');
     div.className = 'pixel';
@@ -78,6 +85,7 @@ function changeBoard() {
   }
 }
 
+pixelBoard.style.gridTemplateColumns = `repeat(${n}, 1fr)`
 board();
 const vqv = document.getElementById('generate-board')
 vqv.addEventListener('click',changeBoard)
