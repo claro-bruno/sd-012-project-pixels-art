@@ -13,10 +13,6 @@ function gerarCor() {
   return `rgb(${r},${g},${b})`;
 }
 
-const one = gerarCor();
-const two = gerarCor();
-const three = gerarCor();
-
 // inicializa a primeira cor com preto
 function gerarBlack() {
   const div = document.createElement('div');
@@ -37,9 +33,9 @@ gerarBlack();
 gerarPaleta();
 
 document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
-document.getElementsByClassName('color')[1].style.backgroundColor = one;
-document.getElementsByClassName('color')[2].style.backgroundColor = two;
-document.getElementsByClassName('color')[3].style.backgroundColor = three;
+document.getElementsByClassName('color')[1].style.backgroundColor = gerarCor();
+document.getElementsByClassName('color')[2].style.backgroundColor = gerarCor();
+document.getElementsByClassName('color')[3].style.backgroundColor = gerarCor();
 
 // seleciona cor da paleta
 

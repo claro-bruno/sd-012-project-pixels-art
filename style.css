@@ -1,7 +1,7 @@
-
 body {
   margin: 0;
 }
+
 /* nav inicio */
 #title {
   text-align: center;
@@ -9,12 +9,15 @@ body {
   font-family: minecraftmedium;
 }
 .navbar {
+
   position: relative;
   padding: 0.5rem 1rem;
   background-color: lightskyblue;
 }
 /* nav final */
+
 /* paleta inicio */
+
 #color-palette {
   display: flex;
   flex: row;
@@ -27,26 +30,13 @@ body {
   width: 100px;
   margin: 10px;
 }
-#preta {
-  background-color: black;
-}
-#azul-claro {
-  background-color: lightskyblue;
-}
-#azul-escuro {
-  background-color: mediumblue;
-}
-
-#clara {
-  background-color: oldlace;
-}
 
 /* paleta final */
 /* board inicio */
+
 #pixel-board {
   display: grid;
   justify-content: center;
- /*grid-template-columns: repeat(5, 1fr);*/
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 100px;
