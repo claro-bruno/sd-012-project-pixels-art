@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+}
+.color {
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  margin: 10px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}
