@@ -29,13 +29,15 @@
 
 
 .linha {
+    border: solid white;
   display: inline-block;
   width: 40px;
   height: 40px;
+  
 }
 
 .pixel {
-  border: 1px solid black;
+  border: 0.5px solid black;
   display: block;
   width: 40px;
   height: 40px;
