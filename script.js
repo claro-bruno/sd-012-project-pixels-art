@@ -14,7 +14,7 @@ function paletteColor() {
                 colorPalette.style.background = 'yellow';
                 break;
             case 3:
-                colorPalette.style.background= 'red';
+                colorPalette.style.background = 'red';
                 break;
         };
         colorPalette.addEventListener('click', changeSelected);
@@ -28,22 +28,17 @@ function changeSelected(event) {
     selectedChange.classList.remove('selected');
     event.target.classList.add('selected');
 };
-// function selectedSetColor(event) {
-//    const selectedColor = document.querySelector('.selected');
-//    const pixelPalette = document.querySelectorAll('.color');
-//    for (cont = 0; cont < pixelPalette.length; cont += 1) {
-//        console.log(pixelPalette[cont])
-
-//        if (pixelPalette[cont] === 0) {
-//         event.target.style.backgroundColor = 'black'
-//        }
-//    }
+function selectedSetColor (event) {
+    const selectedColor = document.querySelector('.selected');
+    event.target.style.background = selectedColor.style.background;
+}
         
 function boardPixels (n) {
     for (let cont = 0; cont < n**2; cont += 1){
         let board = document.createElement('div');
         board.classList.add ('pixel');
         document.querySelector('#pixel-board').appendChild(board);
+        board.addEventListener('click', selectedSetColor);
     };
 };
 boardPixels(5);
