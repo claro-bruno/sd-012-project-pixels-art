@@ -19,7 +19,6 @@ function createCollumns(row, colunas) {
     divColumn.classList.add('pixel');
     row.appendChild(divColumn);
   }
-
 }
 // Gera as linhas
 function createBoardRows(lines) {
@@ -33,33 +32,41 @@ function createBoardRows(lines) {
 
 createBoardRows(5);
 
-const palette = document.querySelector('#color-palette');
+const paletteColor = document.querySelectorAll('.color');
+const paletteBlack = paletteColor[0];
+const paletteTwo = paletteColor[1];
+const paletteThree = paletteColor[2];
+const paletteFour = paletteColor[3];
+paletteBlack.classList.add('selected');
 
-function select() {
-  palette.addEventListener('click', function (event) {
-    let oldColor = document.querySelector('.selected')
-    // if (event.target.id !== 'color-palette') {
-    oldColor.classList.remove('selected')
-    event.target.classList.add('selected');
-
-  });
+function getColor(event) {
+  const currentSelectedColor = document.querySelector('.color.selected');
+  currentSelectedColor.classList.remove('selected');
+  event.target.classList.add('selected');
 }
-select();
 
 
+paletteBlack.addEventListener('click', getColor);
+paletteTwo.addEventListener('click', getColor);
+paletteThree.addEventListener('click', getColor);
+paletteFour.addEventListener('click', getColor);
 
-pixelBox.addEventListener('click', function (event) {
-
-  let fillPixel = document.querySelector('.selected').id;
-  if (event.target.className === 'pixel') {
-    event.target.style.backgroundColor = fillPixel;
-  }
-});
+// Seleciona e adiciona cor
+function coloring(event) {
+  const selectedColor = document.querySelector('.selected');
+  const colorOf = window.getComputedStyle(selectedColor);
+  event.target.style.backgroundColor = colorOf.getPropertyValue('background-color');
+}
+const clickedPixel = document.querySelectorAll('.pixel');
+for (let index = 0; index < clickedPixel.length; index += 1) {
+  clickedPixel[index].addEventListener('click', coloring);
+}
+// <==
 
 const clear = document.getElementById('clear-board');
 
 clear.addEventListener('click', function () {
-  const colorPixel = document.querySelectorAll('.pixel');
+  let colorPixel = document.querySelectorAll('.pixel');
   for (let index = 0; index <= colorPixel.length; index += 1) {
     colorPixel[index].style.backgroundColor = 'white'
   }
