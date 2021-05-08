@@ -1,0 +1,32 @@
+.color-pallete{
+    border: 1px solid black;
+    display: inline-block;
+    margin: 5px;
+    padding: 30px;
+}
+
+.color{
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+    display: inline-block;
+}
+
+#black{
+    background-color: black;
+}
+
+#red{
+    background-color: red;
+}
+
+#green{
+    background-color: green;
+}
+
+#blue{
+    background-color: blue;
+}
+
+
+
