@@ -32,15 +32,16 @@ function fillPixelBoard(lineNumber, columnNumber) {
 }
 
 function applyColor() {
-  document.addEventListener('click', event => {
+  document.addEventListener('click', (event) => {
     if (event.target.className === 'pixel') {
-      event.target.style.backgroundColor = selectedColor;
+      const pixelTarget = event.target;
+      pixelTarget.style.backgroundColor = selectedColor;
     }
   });
 }
 
 function copyColor() {
-  document.addEventListener('click', event => {
+  document.addEventListener('click', (event) => {
     if (event.target.className === 'color') {
       const classSelected = document.querySelector('.selected');
       classSelected.classList.remove('selected');
