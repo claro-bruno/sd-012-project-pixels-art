@@ -2,6 +2,7 @@
 
 const pixelBox = document.querySelector('#pixel-board');
 
+
 // Gerando cores do Palette
 const colorsOne = document.querySelector('#palette-one');
 colorsOne.style.backgroundColor = 'black';
@@ -39,17 +40,17 @@ const paletteThree = paletteColor[2];
 const paletteFour = paletteColor[3];
 paletteBlack.classList.add('selected');
 
-function getColor(event) {
+function pinColor(event) {
   const currentSelectedColor = document.querySelector('.color.selected');
   currentSelectedColor.classList.remove('selected');
   event.target.classList.add('selected');
 }
 
 
-paletteBlack.addEventListener('click', getColor);
-paletteTwo.addEventListener('click', getColor);
-paletteThree.addEventListener('click', getColor);
-paletteFour.addEventListener('click', getColor);
+paletteBlack.addEventListener('click', pinColor);
+paletteTwo.addEventListener('click', pinColor);
+paletteThree.addEventListener('click', pinColor);
+paletteFour.addEventListener('click', pinColor);
 
 // Seleciona e adiciona cor
 function coloring(event) {
@@ -62,12 +63,10 @@ for (let index = 0; index < clickedPixel.length; index += 1) {
   clickedPixel[index].addEventListener('click', coloring);
 }
 // <==
-
-const clear = document.getElementById('clear-board');
-
+const clear = document.querySelector('#clear-board');
 clear.addEventListener('click', function () {
-  let colorPixel = document.querySelectorAll('.pixel');
-  for (let index = 0; index <= colorPixel.length; index += 1) {
-    colorPixel[index].style.backgroundColor = 'white'
+  const colorPixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < colorPixel.length; index += 1) {
+    colorPixel[index].style.backgroundColor = 'white';
   }
 });

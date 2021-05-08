@@ -26,6 +26,10 @@
   gap: 5px;
 }
 
+#clear-borad {
+  background-color: rgb(81, 196, 52);
+  color: aqua;
+}
 
 
 #divRow {
