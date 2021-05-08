@@ -1,12 +1,28 @@
-let cor1 = "rgb(0, 0, 0, 1)";
-let cor2 = "rgb(255, 0, 0, 1)";
-let cor3 = "rgb(0, 100, 255, 1)";
-let cor4 = "rgb(0, 255, 0, 1)";
-let corBranco = "rgb(255, 255, 255, 1)";
+let cor1 = "rgb(0, 0, 0)";
+let cor2 = "rgb(255, 0, 0)";
+let cor3 = "rgb(0, 100, 255)";
+let cor4 = "rgb(0, 255, 0)";
+let cor5 = "rgb(56,102,65)";
+let cor6 = "rgb(41,51,92)";
+let cor7 = "rgb(243,167,18)";
+let cor8 = "rgb(3,206,164)";
+let cor9 = "rgb(227, 99,151)";
+let cor10 = "rgb(128, 26, 134)";
+let cor11 = "rgb(106,90,205)";
+let cor12 = "rgb(192,192,192)";
+let cor13 = "rgb(173,216,230)";
+let cor14 = "rgb(0,100,0)";
+let cor15 = "rgb(210,105,30)";
+let cor16 = "rgb(139,69,19)";
+let cor17 = "rgb(255,99,71)";
+let cor18 = "rgb(255,215,0)";
+let cor19 = "rgb(143,188,143)";
+let cor20 = "rgb(245,222,179)";
+let corBranco = "rgb(255, 255, 255)";
 let linha = 5;
 let coluna = 5;
 
-let cor = [cor1, cor2, cor3, cor4]
+let cor = [cor1, cor2, cor3, cor4, cor5, cor6, cor7, cor8, cor9, cor10, cor11, cor12, cor13, cor14, cor15, cor16, cor17, cor18, cor19, cor20];
 
 let espaco = " ";
 let selected = "selected";
@@ -19,10 +35,18 @@ function coresPaleta() {
   let paleta = document.getElementsByClassName("color");
   for (let index = 0; index < paleta.length; index += 1) {
     paleta[index].setAttribute("id", "cor" + (index+1));
-    if (paleta[index].id === ("cor" + (index+1))) {
-      paleta[index].style.backgroundColor = cor[index];
+    if (paleta[index].id === "cor1") {
+      paleta[index].style.backgroundColor = cor1;
+    } else if (paleta[index].id === ("cor" + (index + 1))) {
+      let defineCor = parseInt(Math.random() * 20);
+      while (defineCor === 0) {
+        defineCor = parseInt(Math.random() * 10);
+      }
+      console.log(defineCor);
+      paleta[index].style.backgroundColor = cor[defineCor];
     }
     if (index === 0) {
+      paleta[index].style.backgroundColor = cor1;
       paleta[index].className = paleta[index].className + espaco + selected;
     }
   }
