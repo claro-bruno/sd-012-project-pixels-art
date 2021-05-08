@@ -1,15 +1,19 @@
-const black = document.querySelector('#black');
-const red = document.querySelector('#red');
-const silver = document.querySelector('#silver');
-const golden = document.querySelector('#golden');
-
-function addSelected(event) {
-  const selectedElement = document.querySelector('.selected');
-  selectedElement.classList.remove('selected');
-  event.target.classList.add('selected');
+function makePallete(colors) {
+  const colorNumber = colors;
+  for (let index = 0; index < colorNumber; index += 1) {
+    const pallete = document.getElementById('color-palette');
+    const palletSlot = document.createElement('div');
+    palletSlot.className = 'color';
+    pallete.appendChild(palletSlot);
+  }
 }
+makePallete(4);
 
-black.addEventListener('click', addSelected);
-red.addEventListener('click', addSelected);
-silver.addEventListener('click', addSelected);
-golden.addEventListener('click', addSelected);
+const colors = ['black', 'red', 'silver', 'gold'];
+function paintPallete(painting) {
+  const fillPallet = document.getElementsByClassName('color');
+  for (let index = 0; index < fillPallet.length; index += 1) {
+    fillPallet[index].style.backgroundColor = painting[index];
+  }
+}
+paintPallete(colors);

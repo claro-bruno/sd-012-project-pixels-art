@@ -14,29 +14,11 @@ header{
   height: 80px;
   display: inline-block;
 }
-#black{
-  background-color: black;
-}
-#red{
-  background-color: red;
-}
-#silver{
-  background-color: silver;
-}
-#golden{
-  background-color: gold;
-}
-.selected{
-
-}
 
 #pixel-board{
   display: table;
   width: fit-content;
   margin:auto
-}
-#board-line{
-  width: fit-content;
 }
 .pixel{
   display: inline-block;
