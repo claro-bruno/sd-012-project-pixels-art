@@ -27,18 +27,8 @@ function paletaArco(){
       criaPaleta.style.marginBotto = "15px";
       paiPaleta.appendChild(criaPaleta);
    };
-   const pegaPreto = document.getElementsByClassName("color")[0];
-   pegaPreto.classList.add("selected")
 };
 paletaArco();
-
-
-
-
-
-
-
-
 
 function botao(){
    let butone = document.createElement("button");
@@ -56,11 +46,6 @@ function botao(){
    }
 }
 botao();
-
-
-
-
-
 
 function quadroPixels(){
    let quadro = document.createElement("section");
@@ -98,10 +83,14 @@ function pegaCorPaletaArco(event){
       pS[index].classList.remove("selected");
    }
    event.target.classList.add("selected");
-   
 }
 
 function injectCor(event){
    let pegaCor = document.querySelector(".selected").style.backgroundColor;
    event.target.style.backgroundColor =  pegaCor;
+}
+
+window.onload = function(){
+   const pegaPreto = document.getElementsByClassName("color")[0];
+   pegaPreto.classList.add("selected");
 }
