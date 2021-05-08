@@ -1,6 +1,6 @@
 function cores(){
 let cores = document.querySelectorAll('.color');
-let arraycolor = ['#000','#faf0ca','#f4d35e','#ee964b'];
+let arraycolor = ['rgb(0, 0, 0)','rgb(250, 240, 202)','rgb(244, 211, 94)','rgb(238, 150, 75)'];
 for(let index =0; index < cores.length;index +=1){
 cores[index].style.backgroundColor = arraycolor[index];
 };
@@ -57,16 +57,16 @@ function colorir(){
      let arraycolor = ['rgb(0, 0, 0)','rgb(250, 240, 202)','rgb(244, 211, 94)','rgb(238, 150, 75)'];
        switch(pixel[i].style.backgroundColor){
                   case arraycolor[0]:
-         pixel[i].style.backgroundColor = '#fff';
+         pixel[i].style.backgroundColor = 'rgb(255,255,255)';
          break;
                   case arraycolor[1]:
-         pixel[i].style.backgroundColor = '#fff';
+         pixel[i].style.backgroundColor = 'rgb(255,255,255)';
          break;
                   case arraycolor[2]:
-         pixel[i].style.backgroundColor = '#fff';
+         pixel[i].style.backgroundColor = 'rgb(255,255,255)';
          break;
                   case arraycolor[3]:
-         pixel[i].style.backgroundColor = '#fff';
+         pixel[i].style.backgroundColor = 'rgb(255,255,255)';
          break;
          default:
          pixel[i].style.backgroundColor = itemCor.style.backgroundColor;
@@ -78,3 +78,14 @@ function colorir(){
  }
 }
 colorir();
+
+function LimpaPainel(){
+  let limpaPainelBTN = document.querySelector('#clear-board')
+  limpaPainelBTN.addEventListener('click', function(){
+    let getPixel = document.querySelectorAll('.pixel')
+    for(index = 0; index < getPixel.length; index += 1){
+      getPixel[index].style.backgroundColor = '#fff';
+    }
+  })
+}
+LimpaPainel();
