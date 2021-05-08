@@ -17,7 +17,7 @@ function paintPallete(painting) {
   }
 }
 paintPallete(colors);
-
+// cria planilha de pixels dinamica
 const board = document.querySelector('#pixel-board');
 const boardControl = 5;
 for (let index = 0; index < boardControl; index += 1) {
@@ -42,3 +42,12 @@ function addSelected(event) {
   event.target.classList.add('selected');
 }
 replaceSelected.addEventListener('click', addSelected);
+
+// Seleciona cor para pintar pixels
+function paintPixel(event) {
+  const painter = document.querySelector('.selected');
+  if (event.target.className === 'pixel') {
+    event.target.style.backgroundColor = painter.style.backgroundColor;
+  }
+}
+board.addEventListener('click', paintPixel);
