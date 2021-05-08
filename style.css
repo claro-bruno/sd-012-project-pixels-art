@@ -1,8 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+body {
+  background-image: url(./imgs/background.png);
+  background-size: cover;
+}
+
+#title {
+  font-family: 'Bangers', 'cursive';
+  font-weight: 100;
+  text-align: center;
+  font-size: 60px;
+  color: #5cefff;
+  text-shadow: 4px 4px 3px #CE4BF2;
+  margin-top: 9px;
+}
+
 .color {
   width: 25px;
   height: 25px;
   border: solid 1px black;
   display: inline-block;
+}
+
+#color-palette {
+  margin-left: 620px;
+}
+
+#color-palette div {
+  margin-right: 9px;
+  margin-bottom: 15px;
+}
+
+#clear-board {
+  margin-left: 520px;
+}
+
+input {
+  height: 23px;
+  border-radius: 6px;
+  border: solid 3px #F26D3D;
+}
+
+#pixel-board  {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  border: none;
+  background-color: #CE4BF2;
+  color: #F2D22E;
+  font-weight: bolder;
+  font-size: 1.3em;
+  border-radius: 9px;
+  border: solid 1px black;
+  height: 33px;
+  text-shadow: 2px 2px 3px #3264A6;
+}
+
+#canvas {
+  margin-top: 15px;
 }
 
 .pixel {
