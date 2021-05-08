@@ -1,3 +1,7 @@
+#color-palette{
+    display: table;
+}
+
 .color {
     height: 30px;
     width: 30px;
@@ -19,4 +23,10 @@
 #pixel-board {
     height: 250px;
     width: 250px;    
+}
+
+#clear-board{
+    weight: 40px;
+    width: 60px;
+    margin-bottom: 20px;
 }
