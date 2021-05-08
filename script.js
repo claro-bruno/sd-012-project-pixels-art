@@ -1,5 +1,33 @@
 let pixeles = document.querySelector("#pixel-board");
-let list = document.getElementsByClassName('color');
+
+let palette = document.querySelector("#color-palette");
+
+function criaPreto() {
+  for (let i = 0; i < 1; i += 1) {
+    let preto = document.createElement('div')
+    preto.className = 'color selected'
+    palette.appendChild(preto);
+    preto.style.backgroundColor = 'black'
+  }
+}
+criaPreto();
+
+function quadroPalette() {
+
+  let color = '#';
+  let simbolos = '0123456789ABCDEF';
+  for (let i = 0; i < 6; i += 1) {
+    color += simbolos[Math.floor(Math.random() * 16)];
+  }
+
+  for (let j = 0; j < 3; j += 1) {
+    let pix = document.createElement('div');
+    pix.className = 'color';
+    palette.appendChild(pix);
+    pix.style.backgroundColor = color;
+  }
+}
+quadroPalette()
 
 function criaLinha() {
   for (let index = 0; index < 5; index += 1) {
@@ -27,14 +55,10 @@ function criaPixel() {
 
 criaPixel();
 
-function mudaCor(event) {
-  let selected = document.querySelector('.selected');
-  let cor = selected.style.backgroundColor;
-  event.target.style.backgroundColor = cor;
-  console.log('jsjsks')
-}
+let selected = document.querySelector('.selected');
 
 function classe() {
+  let list = document.querySelectorAll('.color');
   for (let index = 0; index < list.length; index += 1) {
     list[index].addEventListener('click', () => {
       for (let index3 = 0; index3 < list.length; index3 += 1) {
@@ -45,3 +69,19 @@ function classe() {
   }
 }
 classe();
+
+function mudaCor(event) {
+
+  let cor = selected.style.backgroundColor;
+  event.target.style.backgroundColor = cor;
+
+  console.log('jsjsks')
+}
+
+window.onload = function () {
+  let botao = document.getElementById("reinicia");
+  botao.addEventListener('click', () => {
+    console.log(palette);
+    console.log('jsjjs')
+  });
+}
