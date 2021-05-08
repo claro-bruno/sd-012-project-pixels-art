@@ -62,7 +62,6 @@ function genTable() {
   } else {
     genValidTable(number);
   }
-  console.log(number);
 }
 
 const buttonGen = document.getElementById('generate-board');
