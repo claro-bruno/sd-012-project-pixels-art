@@ -17,39 +17,25 @@ function paintPallete(painting) {
   }
 }
 paintPallete(colors);
-// cria colunas da tabela
-function makeColumn() {
-  const board = document.querySelector('#pixel-board');
-  const pixel = document.createElement('div');
-  pixel.className = ('pixel');
-  pixel.style.display = 'table-column';
-  board.appendChild(pixel);
-}
-// cria linhas da tabela
-function makeLine() {
-  const board = document.querySelector('#pixel-board');
-  const pixel = document.createElement('div');
-  pixel.className = ('pixel');
-  pixel.style.display = 'table-cell';
-  board.appendChild(pixel);
-}
-const boardColumn = 5;
-const lineBoard = 5;
-// For que ativa as funções e cria tudo
-for (let index = 0; index < boardColumn; index += 1) {
-  makeColumn();
-  for (let index = 0; index < lineBoard; index += 1) {
-    makeLine();
-  }
-}
 
+const board = document.querySelector('#pixel-board');
+const boardControl = 5;
+for (let index = 0; index < boardControl; index += 1) {
+  const line = document.createElement('tr');
+  for (let index1 = 0; index1 < boardControl; index1 += 1) {
+    const cell = document.createElement('td');
+    cell.className = 'pixel';
+    line.appendChild(cell);
+  }
+  board.appendChild(line);
+}
 // adiciona classe selected
 window.onload = function () {
   const selectedColor = document.querySelector('.color');
   selectedColor.classList.add('selected');
 };
-// Adiciona troca por cliques
-const replaceSelected = document.querySelector ('#color-palette');
+// Adiciona troca de cor selecionada por clique
+const replaceSelected = document.querySelector('#color-palette');
 function addSelected(event) {
   const selectedElement = document.querySelector('.selected');
   selectedElement.classList.remove('selected');
