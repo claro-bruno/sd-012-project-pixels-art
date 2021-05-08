@@ -26,20 +26,17 @@
 
 }
 
-#yellow {
-  background-color: yellow;
 
-}
 
 .linha {
-  border: 1px solid black;
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
-.coluna{
-    border: 1px solid black;
+
+.pixel {
+  border: 1px solid black;
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
