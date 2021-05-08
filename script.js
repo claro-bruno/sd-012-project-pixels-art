@@ -49,15 +49,32 @@ trocaClass();
 function colorir(){
 
   let pixel= document.querySelectorAll('.pixel');
-  
-  
 
  for(let i=0;i<pixel.length;i+=1){
    
    pixel[i].addEventListener('click', function(){
      let itemCor = document.querySelector('.selected') ;
-     pixel[i].style.backgroundColor = itemCor.style.backgroundColor
+     let arraycolor = ['rgb(0, 0, 0)','rgb(250, 240, 202)','rgb(244, 211, 94)','rgb(238, 150, 75)'];
+       switch(pixel[i].style.backgroundColor){
+                  case arraycolor[0]:
+         pixel[i].style.backgroundColor = '#fff';
+         break;
+                  case arraycolor[1]:
+         pixel[i].style.backgroundColor = '#fff';
+         break;
+                  case arraycolor[2]:
+         pixel[i].style.backgroundColor = '#fff';
+         break;
+                  case arraycolor[3]:
+         pixel[i].style.backgroundColor = '#fff';
+         break;
+         default:
+         pixel[i].style.backgroundColor = itemCor.style.backgroundColor;
+         break;
+
+       }
+
     })
  }
 }
-colorir()
+colorir();
