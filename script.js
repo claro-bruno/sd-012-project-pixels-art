@@ -59,18 +59,11 @@ document.getElementsByClassName('color')[3].addEventListener('click', select);
 // cria a board
 
 function board() {
-  for (let i = 0; i < n**2; i += 1) {
-    const div = document.createElement('div');
-    div.className = 'pixel';
-    pixelBoard.appendChild(div);
-  }
-}
-
-function changeBoard() {
   let elements = document.getElementsByClassName('pixel')
   while (elements.length > 0) elements[0].remove()
-
-  let n = input.value;
+  
+  n = input.value;
+  
   if(n < 5){
     n = 5
   } else if(n > 50){
@@ -85,11 +78,8 @@ function changeBoard() {
   }
 }
 
-pixelBoard.style.gridTemplateColumns = `repeat(${n}, 1fr)`
 board();
-const vqv = document.getElementById('generate-board')
-vqv.addEventListener('click',changeBoard)
-/* daqui pra cima tá de boa */
+document.getElementById('generate-board').addEventListener('click',board)
 
 function paint(event) {
   const selectedElement = document.querySelector('.selected')
