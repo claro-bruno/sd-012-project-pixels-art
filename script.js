@@ -32,11 +32,19 @@ function paletaArco(){
 };
 paletaArco();
 
+
+
+
+
+
+
+
+
 function botao(){
    let butone = document.createElement("button");
    butone.id = "clear-board";
    butone.innerHTML = "Limpar";
-   butone.addEventListener("click", clearQuadro());
+   butone.addEventListener("click", clearQuadro);
    paiBody.appendChild(butone);
    butone.style.padding = "15px";
    butone.style.margin = "20px";
@@ -48,6 +56,11 @@ function botao(){
    }
 }
 botao();
+
+
+
+
+
 
 function quadroPixels(){
    let quadro = document.createElement("section");
@@ -92,5 +105,3 @@ function injectCor(event){
    let pegaCor = document.querySelector(".selected").style.backgroundColor;
    event.target.style.backgroundColor =  pegaCor;
 }
-
-// falta somente passar a cor do .selected para onde estou clicando nos pixels brancos
