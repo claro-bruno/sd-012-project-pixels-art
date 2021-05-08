@@ -1,5 +1,5 @@
 body {
- font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell;
 }
 .color, .pixel {
     border: 1px solid black;
@@ -7,14 +7,12 @@ body {
     height: 40px;
     display: inline-block;
 }
-#cp0, #cp1, #cp2, #cp3{
-border: 1px solid black;
+.color{
 margin: 3px;
 }
 #clear-board {
     display: block;
 }
-
 #pixel-board {
     display: inline-block;
     width: 250px;
