@@ -7,18 +7,11 @@ body {
     height: 40px;
     display: inline-block;
 }
-#b1 {
-    background-color: black;
+#cp0, #cp1, #cp2, #cp3{
+border: 1px solid black;
+margin: 3px;
 }
-#b2 {
-    background-color: green;
-}
-#b3 {
-    background-color: yellow;
-}
-#b4{
-    background-color: red;
-}
+
 #pixel-board {
     display: inline-block;
     width: 250px;
