@@ -19,6 +19,12 @@
   background-color: blue;
 }
 
+#limpar {
+  display: inline-block;
+  width: 100px;  
+  height: 20px;
+}
+
 #color4 {
   color: green;
   background-color: green;
