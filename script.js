@@ -1,6 +1,5 @@
-
 function changeSelected(event) {
-    const selectedChange= document.querySelector('.selected');
+    const selectedChange = document.querySelector('.selected');
     selectedChange.classList.remove('selected');
     event.target.classList.add('selected');
 };
@@ -45,7 +44,7 @@ function boardPixels (n) {
 };
 boardPixels(5);
 
-const resetButton = document.querySelector('#reset-button');
+const resetButton = document.querySelector('#clear-board');
 resetButton.addEventListener('click', clearBoard)
 function clearBoard() {
     const pixel = document.querySelectorAll('.pixel');
