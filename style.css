@@ -14,7 +14,13 @@ header{
   height: 80px;
   display: inline-block;
 }
-
+#clear-board{
+  margin-left: 50%;
+}
+#pixel-board{
+  margin-top: 20px;
+  margin-left: 40%
+}
 .pixel{
   width: 40px;
   height: 40px;

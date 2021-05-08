@@ -51,3 +51,13 @@ function paintPixel(event) {
   }
 }
 board.addEventListener('click', paintPixel);
+
+// Cria botão que limpa a pagina
+const button = document.querySelector('#clear-board');
+const pixel = document.querySelectorAll('.pixel');
+function clearBoard() {
+  for(let cleaner = 0; cleaner < pixel.length; cleaner += 1) {
+    pixel[cleaner].style.backgroundColor = 'white';
+  }
+}
+button.addEventListener('click', clearBoard);
