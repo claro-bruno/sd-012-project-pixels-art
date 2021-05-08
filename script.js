@@ -1,17 +1,7 @@
-const divColor = document.createElement('div');
-divColor.className = 'color';
-console.log(divColor);
+for (let index = 0; index < 4; index += 1) {
+  const divColor = document.createElement('div');
+  divColor.className = 'color';
+  const colorPalette = document.getElementById('color-palette');
 
-let colorPalette = document.getElementById("color-palette");
-
-colorPalette.appendChild(divColor);
-
-console.log(colorPalette);
-
-
-
-/*
-    1 - capturar a div pai.
-    2 - Salvar o elemento pai em uma variavel.
-    3 - fazer um filho na variavel.
-*/
+  colorPalette.appendChild(divColor);
+}
