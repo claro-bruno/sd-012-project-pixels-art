@@ -57,15 +57,37 @@ document.getElementsByClassName('color')[3].addEventListener('click', select);
 // cria a board
 
 function board() {
+
+  pixelBoard.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
+  for (let i = 0; i < n ** 2; i += 1) {
+    const div = document.createElement('div');
+    div.className = 'pixel';
+    pixelBoard.appendChild(div);
+  }
+
+  function paint(event) {
+    const color = document.querySelector('.selected').style.backgroundColor;
+    event.target.style.backgroundColor = color;
+  }
+  const pixel = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].addEventListener('click', paint);
+  }
+}
+
+function changeBoard() {
   const elements = document.getElementsByClassName('pixel');
   while (elements.length > 0) elements[0].remove();
   n = input.value;
-  if (n < 5) {
+
+  if (!parseInt(n, 10)) {
+    alert('Board inválido!');
+    n = 5;
+  }
+  else if (n < 5) {
     n = 5;
   } else if (n > 50) {
     n = 50;
-  } else if (!parseInt(n, 10)) {
-    alert('Board inválido!');
   }
   pixelBoard.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
 
@@ -84,9 +106,8 @@ function board() {
     pixel[i].addEventListener('click', paint);
   }
 }
-
 board();
-document.getElementById('generate-board').addEventListener('click', board);
+document.getElementById('generate-board').addEventListener('click', changeBoard);
 
 function apaga() {
   const pixel = document.getElementsByClassName('pixel');
