@@ -34,8 +34,19 @@ function createBoardRows(lines) {
 createBoardRows(5);
 
 const palette = document.querySelector('#color-palette');
-const clear = document.getElementById('clear-board');
-const getPixel = document.querySelectorAll('.pixel');
+
+function select() {
+  palette.addEventListener('click', function (event) {
+    let oldColor = document.querySelector('.selected')
+    // if (event.target.id !== 'color-palette') {
+    oldColor.classList.remove('selected')
+    event.target.classList.add('selected');
+
+  });
+}
+select();
+
+
 
 pixelBox.addEventListener('click', function (event) {
 
@@ -45,9 +56,11 @@ pixelBox.addEventListener('click', function (event) {
   }
 });
 
+const clear = document.getElementById('clear-board');
 
 clear.addEventListener('click', function () {
-  for (let index = 0; index < getPixel.length; index += 1) {
-    getPixel[index].style.backgroundColor = 'white'
+  const colorPixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index <= colorPixel.length; index += 1) {
+    colorPixel[index].style.backgroundColor = 'white'
   }
 });
