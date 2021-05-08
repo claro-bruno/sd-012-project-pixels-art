@@ -1,4 +1,4 @@
-const pixels = document.getElementsByClassName('pixel');
+
 function changeSelected(event) {
     const selectedChange= document.querySelector('.selected');
     selectedChange.classList.remove('selected');
@@ -44,6 +44,16 @@ function boardPixels (n) {
     };
 };
 boardPixels(5);
+
+const resetButton = document.querySelector('#reset-button');
+resetButton.addEventListener('click', clearBoard)
+function clearBoard() {
+    const pixel = document.querySelectorAll('.pixel');
+    for (cont = 0; cont < pixel.length; cont += 1) {
+        pixel[cont].style.background = 'white';
+    };
+    //console.log('ok')
+};
         
 
 
