@@ -47,6 +47,6 @@ local.insertBefore(creatingButton, section);
 document.querySelector("#clear-board").addEventListener("click", function () {
   let pixel = document.querySelectorAll(".pixel");
   for (key in pixel) {
-    pixel[key].style.background = "white";
+    pixel[key].style.backgroundColor = "white";
   };
 });
