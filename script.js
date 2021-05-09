@@ -1,5 +1,18 @@
+function sizePixels() {
+  let xablau = document.getElementById('board-size').value;
+  let n;
+  n = parseInt(xablau);
+  clear();
+  if (n >= 5 && n <= 50) {
+    pixelLine = n;
+  } else {
+    alert('Board inválido');
+  }
+}
+
+let pixelLine = 5;
 function grid(pixelLine) {
-  const pixels = document.getElementById('pixel-board');
+  let pixels = document.getElementById('pixel-board');
   for (let index = 0; index < pixelLine; index += 1) {
     const createDivLine = document.createElement('tr');
     createDivLine.classList.add('line');
@@ -12,8 +25,9 @@ function grid(pixelLine) {
     }
   }
 }
-const pixelLine = 5;
+
 grid(pixelLine);
+
 
 const elementColor = document.getElementsByClassName('color');
 function colorSelect(event) {
@@ -25,10 +39,13 @@ for (let index = 0; index < elementColor.length; index += 1) {
   elementColor[index].addEventListener('click', colorSelect);
 }
 
-const black = document.getElementById('black').style.backgroundColor = 'black';
-const red = document.getElementById('red').style.backgroundColor = '#FF0000';
-const blue = document.getElementById('blue').style.backgroundColor = '#0000FF';
-const green = document.getElementById('green').style.backgroundColor = '#008000';
+const black = (document.getElementById('black').style.backgroundColor =
+  'black');
+const red = (document.getElementById('red').style.backgroundColor = '#FF0000');
+const blue = (document.getElementById('blue').style.backgroundColor =
+  '#0000FF');
+const green = (document.getElementById('green').style.backgroundColor =
+  '#008000');
 
 const pixed = document.querySelectorAll('.pixel');
 function paintPixel(eventPaint) {
