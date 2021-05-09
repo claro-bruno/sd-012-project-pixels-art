@@ -26,7 +26,7 @@ function createBoard(row) {
 }
 createBoard(5);
 
-//gerando cor aleatória
+//Gerando cores aleatórias
 function colorGenerator(referencia) {
     let indice1 = Math.random() * 255;
     let indice2 = Math.random() * 255;
@@ -34,7 +34,7 @@ function colorGenerator(referencia) {
     return `rgb(${indice1}, ${indice2}, ${indice3})`;
 };
 
-//preenchendo cores da paleta
+//Preenchendo Paleta
 function paletteColor() {
     for (let index = 0; index < colors.length; index += 1) {
       colors[index].style.backgroundColor = colorGenerator();
@@ -42,13 +42,14 @@ function paletteColor() {
   };
 paletteColor();
 
-//selecionando preto como cor primária
+//Adicionando cor preta como primária
 window.onload = function () {
     let firstColor = document.querySelector(".color1");
     firstColor.classList.add("selected");
+    firstColor.style.backgroundColor = "black";
 };
 
-//evento para atribuir .selected ao clicar
+//Atribuindo classe .selected a cada celula da paleta de cores
 function colorselector() {
     let color1 = document.querySelector(".color1");
     color1.addEventListener('click', function(event) {
@@ -80,7 +81,7 @@ function colorselector() {
 };
 colorselector();
 
-//pinta os pixels
+//Pitando cada celula do Pixel Board
 function pixelBoardColor() {
     for (let index = 0; index < printPixel.length; index += 1) {
       printPixel[index].addEventListener('click', (event) => {
@@ -92,7 +93,7 @@ function pixelBoardColor() {
   };
 pixelBoardColor();
 
-//botão pra resetar cores
+//Botão para resetar cores
 function whiteBtn() {
     whiteButton.addEventListener('click', function() {
     for (let index = 0; index < printPixel.length; index += 1) {
@@ -102,7 +103,7 @@ function whiteBtn() {
 }
 whiteBtn();
 
-//altera tamanho do board
+//Alterando o tamanho do Pixel Board
 boardSize.addEventListener('click', function() {
   console.log(inputSize)
   if (inputSize.value < 5){
