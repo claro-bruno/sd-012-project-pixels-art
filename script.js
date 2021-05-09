@@ -1,40 +1,40 @@
-let cor1 = 'rgb(0, 0, 0)';
-let cor2 = 'rgb(255, 0, 0)';
-let cor3 = 'rgb(0, 100, 255)';
-let cor4 = 'rgb(0, 255, 0)';
-let cor5 = 'rgb(56,102,65)';
-let cor6 = 'rgb(41,51,92)';
-let cor7 = 'rgb(243,167,18)';
-let cor8 = 'rgb(3,206,164)';
-let cor9 = 'rgb(227, 99,151)';
-let cor10 = 'rgb(128, 26, 134)';
-let cor11 = 'rgb(106,90,205)';
-let cor12 = 'rgb(192,192,192)';
-let cor13 = 'rgb(173,216,230)';
-let cor14 = 'rgb(0,100,0)';
-let cor15 = 'rgb(210,105,30)';
-let cor16 = 'rgb(139,69,19)';
-let cor17 = 'rgb(255,99,71)';
-let cor18 = 'rgb(255,215,0)';
-let cor19 = 'rgb(143,188,143)';
-let cor20 = 'rgb(245,222,179)';
-let corBranco = 'rgb(255, 255, 255)';
-let linha = 5;
-let coluna = 5;
+const cor1 = 'rgb(0, 0, 0)';
+const cor2 = 'rgb(255, 0, 0)';
+const cor3 = 'rgb(0, 100, 255)';
+const cor4 = 'rgb(0, 255, 0)';
+const cor5 = 'rgb(56,102,65)';
+const cor6 = 'rgb(41,51,92)';
+const cor7 = 'rgb(243,167,18)';
+const cor8 = 'rgb(3,206,164)';
+const cor9 = 'rgb(227, 99,151)';
+const cor10 = 'rgb(128, 26, 134)';
+const cor11 = 'rgb(106,90,205)';
+const cor12 = 'rgb(192,192,192)';
+const cor13 = 'rgb(173,216,230)';
+const cor14 = 'rgb(0,100,0)';
+const cor15 = 'rgb(210,105,30)';
+const cor16 = 'rgb(139,69,19)';
+const cor17 = 'rgb(255,99,71)';
+const cor18 = 'rgb(255,215,0)';
+const cor19 = 'rgb(143,188,143)';
+const cor20 = 'rgb(245,222,179)';
+const corBranco = 'rgb(255, 255, 255)';
+const linha = 5;
+const coluna = 5;
 
-let cor = [cor1, cor2, cor3, cor4, cor5, cor6, cor7, cor8, cor9, cor10, cor11, cor12, cor13, cor14, cor15, cor16, cor17, cor18, cor19, cor20];
+const cor = [cor1, cor2, cor3, cor4, cor5, cor6, cor7, cor8, cor9, cor10, cor11, cor12, cor13, cor14, cor15, cor16, cor17, cor18, cor19, cor20];
 
-let espaco = ' ';
-let selected = 'selected';
-let corEscolha = 'cor1';
+const espaco = ' ';
+const selected = 'selected';
+const corEscolha = 'cor1';
 
 // Atribui um ID para os elementos com a classe "color"
 // e atribui uma cor de fundo para cada elemento
 // atribui a classe "selected" para o primeiro item do array cor[]
 function coresPaleta() {
-  let paleta = document.getElementsByClassName('color');
+  const paleta = document.getElementsByClassName('color');
   for (let index = 0; index < paleta.length; index += 1) {
-    paleta[index].setAttribute('id', 'cor' + (index+1));
+    paleta[index].setAttribute('id', 'cor' + (index + 1));
     if (paleta[index].id === 'cor1') {
       paleta[index].style.backgroundColor = cor1;
     } else if (paleta[index].id === ('cor' + (index + 1))) {
@@ -54,7 +54,7 @@ function coresPaleta() {
 function clickCor() {
   document.addEventListener('click', function(clicado) {
     if (event.target.className === 'color') {
-      let selecao = document.querySelector('.selected');
+      const selecao = document.querySelector('.selected');
       selecao.className = 'color';
       clicado.target.classList += espaco + selected;
     }
