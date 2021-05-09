@@ -8,3 +8,17 @@ function pallet(palletNumber) {
   }
 }
 pallet(5);
+
+function selection() {
+
+};
+
+let colorSelection = document.getElementById("color-palette");
+colorSelection.addEventListener("click", selection);
+
+
+function loadBlack() {
+
+};
+let bodyName = document.getElementsByTagName('body');
+bodyName.addEventListener("load", loadBlack);
