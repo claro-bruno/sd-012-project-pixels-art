@@ -26,8 +26,14 @@ header {
     text-align: center;
 }
 
+
 h1 {
+    font-size: 45px;
     margin-left: 50px;
+    color: #000099;
+    font-family: 'Itim', cursive;
+    -webkit-text-stroke: 1px white;
+    /* Propriedade para inserir borda em texto vista no link https://bit.ly/3hduE8y */
 }
 
 button {
