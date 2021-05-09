@@ -11,7 +11,6 @@ function criaLinhas(linhas) {
 };
 criaLinhas(5);
 
-
 function criaColunas(colunas) {
     let linhas = document.querySelectorAll('.linha');
     for (let linha of linhas) {
@@ -24,10 +23,10 @@ function criaColunas(colunas) {
 };
 criaColunas(5);
 
-function selecionaEvento(click) {
+function selecionaEvento(evento) {
     let removeSelected = document.querySelector('.selected');
     removeSelected.classList.remove('selected'); 
-    click.target.classList.add('selected');
+    evento.target.classList.add('selected');
 };
 
 function clickEvento() {
@@ -37,15 +36,19 @@ function clickEvento() {
 };
 clickEvento();
 
-function mudaCor() {
+let pixelCor = document.getElementsByClassName("pixel");
 
+function alteraCor(evento) {
+    let selecionaCor = document.querySelector('.selected');
+    let corClick = window.getComputedStyle(selecionaCor);
+    evento.target.style.backgroundColor = corClick.getPropertyValue('background-color');
 };
-    for(element of cores) {
-        element.addEventListener('click', mudaCor);
-};
+    for(element of pixelCor) {
+        element.addEventListener('click', alteraCor);
+    };
 
 function limparQuadro() {
-    for(element of cores) {
+    for(element of pixelCor) {
     element.style.backgroundColor = 'white';
     };
 };
