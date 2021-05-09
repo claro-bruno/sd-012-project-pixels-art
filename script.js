@@ -26,13 +26,13 @@ const cor = [cor1, cor2, cor3, cor4, cor5, cor6, cor7, cor8, cor9, cor10, cor11,
 
 const espaco = ' ';
 const selected = 'selected';
-const corEscolha = 'cor1';
+let corEscolha = 'cor1';
 
 // Atribui um ID para os elementos com a classe "color"
 // e atribui uma cor de fundo para cada elemento
 // atribui a classe "selected" para o primeiro item do array cor[]
 function coresPaleta() {
-  const paleta = document.getElementsByClassName('color');
+  let paleta = document.getElementsByClassName('color');
   for (let index = 0; index < paleta.length; index += 1) {
     paleta[index].setAttribute('id', 'cor' + (index + 1));
     if (paleta[index].id === 'cor1') {
@@ -54,7 +54,7 @@ function coresPaleta() {
 function clickCor() {
   document.addEventListener('click', function(clicado) {
     if (event.target.className === 'color') {
-      const selecao = document.querySelector('.selected');
+      let selecao = document.querySelector('.selected');
       selecao.className = 'color';
       clicado.target.classList += espaco + selected;
     }
@@ -64,7 +64,7 @@ function clickCor() {
 function colorePixel() {
   document.addEventListener('click', function(colore) {
     if (event.target.className === 'pixel') {
-      const selecao = document.getElementsByClassName('selected');
+      let selecao = document.getElementsByClassName('selected');
       corEscolha = selecao[0].style.backgroundColor;
       colore.target.style.backgroundColor = corEscolha;
     }
