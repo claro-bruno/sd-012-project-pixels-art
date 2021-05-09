@@ -17,17 +17,17 @@
    }
 
 #mint {
-    background-color:rgb(124, 189, 162);
+    background-color:rgb(140, 214, 180);
     display: inline-block;
 }
 
 #blue {
-    background-color: rgb(10, 20, 65);
+    background-color: rgb(7, 19, 53);
     display: inline-block;
 }
 
 #golden {
-    background-color: rgb(248, 157, 20);
+    background-color: rgb(255, 166, 0);
     display: inline-block;
 }
 
@@ -46,8 +46,7 @@
     height: 40px;
     display: inline-block;
     background-color: white;
-    margin-left: 0;
-    margin-right: 0;
+    margin-top: -4px;
 }
 
 
