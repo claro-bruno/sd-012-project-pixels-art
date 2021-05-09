@@ -14,3 +14,21 @@ corSelecionada.addEventListener('click', apertarMouse)
 function apertarMouse(){
 console.log('click')
 }
+
+const button1 = document.getElementById('color1'); 
+const button2 = document.getElementById('color2'); 
+const button3 = document.getElementById('color3'); 
+const button4 = document.getElementById('color4'); 
+
+function handleChangeSelected(event) {
+const SelectedOriginal = document.querySelector('.selected');
+SelectedOriginal.classList.remove('selected');
+event.target.classList.add('selected'); 
+}
+button1.addEventListener('click', handleChangeSelected)
+button2.addEventListener('click', handleChangeSelected)
+button3.addEventListener('click', handleChangeSelected)
+button4.addEventListener('click', handleChangeSelected)
+
+
+
