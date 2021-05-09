@@ -5,9 +5,20 @@ paletaCores[0].classList.add('selected');
 paletaCores[1].style.backgroundColor = 'yellow';
 paletaCores[2].style.backgroundColor = '#ff9933';
 paletaCores[3].style.backgroundColor = '#009933';
-   
-let colunas = 5;
-let linhas = 5;
+
+gerarQuadro ();
+
+function gerarQuadro (valor){
+    let colunas;
+    let linhas;
+
+    if (valor === (undefined)) {
+        colunas = 5;
+        linhas = 5
+    } else {
+        colunas = valor;
+        linhas = valor;
+    }
 
 for (let index = 0; index < linhas; index += 1){
     const divQuadroBranco = document.getElementById('pixel-board');
@@ -24,7 +35,12 @@ for (let index = 0; index < linhas; index += 1){
     criarDivPixel.className = ('pixel');
     divPixelLine.appendChild(criarDivPixel);
     }   
+ }
+
 }
+
+
+
 
 for (let index = 0; index < paletaCores.length; index += 1){
     paletaCores[index].addEventListener('click', function(evento){
@@ -46,12 +62,39 @@ for (let index = 0; index < pixelBranco.length; index += 1){
     });
 }
 
+
+let botaoGenerateBoard = document.getElementById('generate-board')
+
+botaoGenerateBoard.addEventListener('click', modificarQuadro);
+
+function modificarQuadro (){
+
+let linhasPixel = document.querySelectorAll('.pixel-line');
+
+let valorInserido = document.getElementById('board-size');
+
+if (valorInserido.value == false){
+    alert('Board inválido!')
+} else {
+
+for (index = 0; index < linhasPixel.length; index += 1){
+    linhasPixel[index].remove();
+}
+    gerarQuadro(valorInserido.value);
+}
+}
+
+
+
 let botaoClearBoard = document.getElementById('clear-board');
 
-    botaoClearBoard.addEventListener('click', limparQuadro);
+botaoClearBoard.addEventListener('click', limparQuadro);
 
-    function limparQuadro(){
-    for (let index = 0; index < pixelBranco.length; index += 1){
-        pixelBranco[index].style.backgroundColor = 'rgb(255, 255, 255)'
+function limparQuadro(){
+        
+for (let index = 0; index < pixelBranco.length; index += 1){
+pixelBranco[index].style.backgroundColor = 'rgb(255, 255, 255)'
     }
 }
+
+   
