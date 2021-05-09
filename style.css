@@ -10,6 +10,7 @@ body {
 
 .pixel-line {
     margin: 0;
+    margin-left: 587px;
 }
 
 .pixel {
@@ -28,11 +29,8 @@ header {
 h1 {
     margin-left: 50px;
 }
+
 button {
     margin-left: 660px;
     margin-bottom: 17px;
-}
-
-.pixel-line{
-    margin-left: 587px;
 }
