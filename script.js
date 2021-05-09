@@ -1,12 +1,13 @@
 
 const areaDiv2 = document.getElementById("div2");
 const colors = document.getElementsByClassName("color");
-const colorPixel = document.querySelector('.pixel');
 const printPixel = document.getElementsByClassName("pixel");
 const whiteButton = document.getElementById("clear-board");
+const boardSize = document.getElementById("generate-board")
+const inputSize = document.getElementById("board-size");
 
 // Populando PixelBoard
-function createBoard(row, column) {
+function createBoard(row) {
     let createTable = document.createElement('table');
     createTable.id = "pixel-board";
     let tbody = document.createElement('tbody');
@@ -23,13 +24,20 @@ function createBoard(row, column) {
     };
     createTable.appendChild(tbody);
 }
-createBoard(5, 5);
+createBoard(5);
+
+//gerando cor aleatória
+function colorGenerator(referencia) {
+    let indice1 = Math.random() * 255;
+    let indice2 = Math.random() * 255;
+    let indice3 = Math.random() * 255;
+    return `rgb(${indice1}, ${indice2}, ${indice3})`;
+};
 
 //preenchendo cores da paleta
 function paletteColor() {
-    const arrayCores = ["black", "orange", "blue", "green"];
     for (let index = 0; index < colors.length; index += 1) {
-      colors[index].style.backgroundColor = arrayCores[index];
+      colors[index].style.backgroundColor = colorGenerator();
     };
   };
 paletteColor();
@@ -86,10 +94,24 @@ pixelBoardColor();
 
 //botão pra resetar cores
 function whiteBtn() {
-    whiteButton.addEventListener('click', () => {
+    whiteButton.addEventListener('click', function() {
     for (let index = 0; index < printPixel.length; index += 1) {
       printPixel[index].style.backgroundColor = 'white';
     }
   });
 }
 whiteBtn();
+
+//altera tamanho do board
+boardSize.addEventListener('click', function() {
+  console.log(inputSize)
+  if (inputSize.value < 5){
+    createBoard(5);
+  } else if (inputSize.value > 50) {
+    createBoard(50);
+  } else if (inputSize.value > 4 | inputSize.value < 51) {
+    createBoard(inputSize);
+  } else {
+    alert("Board inválido!");
+  }
+});

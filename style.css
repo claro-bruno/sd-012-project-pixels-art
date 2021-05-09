@@ -10,8 +10,8 @@ body {
 #title {
     font-size: 60px;
     text-align: center;
-    margin-left: 100px;
-    color: rebeccapurple;
+    margin-left: 150px;
+    color: rgb(138, 35, 138);
 }
 
 .color {
@@ -31,20 +31,30 @@ body {
 }
 
 #clear-board {
-    width: 60px;
+    width: 50px;
     height: 30px;
     background-color: purple;
     font-weight: bold;
     color: white;
-    font-size: small;
+    font-size: x-small;
     margin-left: 550px;
+}
 
+#generate-board {
+    width: 40px;
+    height: 30px;
+    background-color: purple;
+    font-weight: bold;
+    color: white;
+    font-size: x-small;
 }
 
 #color-palette {
-    margin-left: 550px;
+    margin-left: 570px;
+    margin-bottom: 20px;
 }
 
 #div2 {
-    margin-left: 550px;
+    margin-left: 570px;
+    margin-top: 15px;
 }
