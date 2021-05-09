@@ -57,18 +57,14 @@ function addEventPalette() {
   }
 }
 
-function addEventPixels() {
-  const pixelDivs = document.querySelectorAll('.pixel');
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('pixel')) {
+    const paletteColorSelected = document.querySelector('.selected');
+    const pixelClicked = event.target;
 
-  for (let index = 0; index < pixelDivs.length; index += 1) {
-    pixelDivs[index].addEventListener('click', (event) => {
-      const paletteColorSelected = document.querySelector('.selected');
-      const pixelClicked = event.target;
-
-      pixelClicked.style.backgroundColor = paletteColorSelected.style.backgroundColor;
-    });
+    pixelClicked.style.backgroundColor = paletteColorSelected.style.backgroundColor;
   }
-}
+});
 
 function addEventButton() {
   const clearButton = document.querySelector('#clear-board');
@@ -98,15 +94,12 @@ function changeBoard() {
   } else if (changeInput.value < 5) {
     removeBoard();
     createBoardBlocks(5);
-    addEventPixels();
   } else if (changeInput.value > 50) {
     removeBoard();
     createBoardBlocks(50);
-    addEventPixels();
   } else {
     removeBoard();
     createBoardBlocks(changeInput.value);
-    addEventPixels();
   }
 }
 
@@ -119,6 +112,5 @@ function addEventChangeBoard() {
 createPaletteBlocks(['blue', 'green', 'red', 'orange', 'yellow', 'purple']);
 createBoardBlocks(5);
 addEventPalette();
-addEventPixels();
 addEventButton();
 addEventChangeBoard();
