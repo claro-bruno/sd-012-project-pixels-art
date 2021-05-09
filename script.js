@@ -1,8 +1,3 @@
-function corInicial(corInicio) {
-const corInicial = document.getElementById(corInicio);
-  corInicial.className = 'color selected';
-}
-
 function iniciaPalhetas(coresIniciais) {
   const palhetas = document.getElementsByClassName('color');
   if (palhetas.length === coresIniciais.length) {
@@ -14,8 +9,13 @@ function iniciaPalhetas(coresIniciais) {
    else {
      return 'Quantidade de cores é diferente da quantidade de palhetas';
    }
-}
+};
 
+function corSelecionada(corInicio) {
+  const corInicial = document.getElementById(corInicio);
+  corInicial.className = 'color selected';
+};
+  
 function clicouCor() {
   const corAntiga = document.getElementById('color-palette');
   corAntiga.addEventListener('click', function(event) {
@@ -25,17 +25,29 @@ function clicouCor() {
  };
 
  function pintar() {
-  const tabelaPixel = document.querySelectorAll(".pixel");
+  const tabelaPixel = document.querySelectorAll('.pixel');
   for (let indice = 0; indice < tabelaPixel.length; indice +=1) {
     tabelaPixel[indice].addEventListener('click', function(event) {
       let corEscolhida = document.getElementsByClassName('color selected')[0].style.backgroundColor;
       event.target.style.background = corEscolhida;
     })
   }
- }
+ };
+
+function limpar() {
+  const botaoClicado = document.getElementById('clear-board');
+  botaoClicado.addEventListener('click', function(event) {
+    const quadroPixel = document.querySelectorAll('.pixel');
+    for (let indice = 0; indice < quadroPixel.length; indice +=1) {
+      quadroPixel[indice].style.color = 'white';
+      quadroPixel[indice].style.backgroundColor = 'white';
+    }
+  })
+};
 
 /* window.onload = function () { */
 iniciaPalhetas(['black', 'red', 'blue', 'green']);
-corInicial('color1');
+corSelecionada('color1');
 clicouCor();
 pintar();
+limpar();
