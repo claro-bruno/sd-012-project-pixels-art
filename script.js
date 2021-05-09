@@ -1,8 +1,8 @@
 let cores = document.querySelectorAll(".color")
-cores[0].style.background = "black";
-cores[1].style.background = "red";
-cores[2].style.background = "blue";
-cores[3].style.background = "green";
+cores[0].style.backgroundColor = "black";
+cores[1].style.backgroundColor = "red";
+cores[2].style.backgroundColor = "blue";
+cores[3].style.backgroundColor = "green";
 cores[0].className += " selected";
 
 function creatingBoard(contador) {
@@ -32,8 +32,8 @@ document.addEventListener("click", function (call) {
 
 document.addEventListener("click", function (toColor) {
   if (toColor.target.className === "pixel") {
-    let cor = document.querySelector(".selected").style.background;
-    toColor.target.style.background = cor;
+    let cor = document.querySelector(".selected").style.backgroundColor;
+    toColor.target.style.backgroundColor = cor;
   };
 });
 
@@ -48,6 +48,8 @@ document.querySelector("#clear-board").addEventListener("click", function () {
   let pixel = document.querySelectorAll(".pixel");
   for (key in pixel) {
     pixel[key].style.backgroundColor = "white";
-    pixel[key].style.border = "0px";
-  };
+    if (pixel[key].style.backgroundColor != "white") {
+      return true;
+    }
+  }
 });
