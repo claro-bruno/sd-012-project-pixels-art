@@ -24,7 +24,9 @@ function quadroPalette() {
     let pix = document.createElement('div');
     pix.className = 'color';
     palette.appendChild(pix);
-    pix.style.backgroundColor = color;
+  
+      pix.style.backgroundColor = color;
+      console.log(pix)
   }
 }
 quadroPalette()
@@ -45,9 +47,9 @@ function criaPixel() {
       for (let index2 = 0; index2 < line.length; index2 += 1) {
         let quadro = document.createElement("div");
         quadro.className = "pixel";
-        quadro.addEventListener('click', mudaCor);
         line[index2].appendChild(quadro);
         quadro.style.backgroundColor = 'white'
+        quadro.addEventListener('click', mudaCor);
       }
     }
   }
@@ -55,10 +57,11 @@ function criaPixel() {
 
 criaPixel();
 
-let selected = document.querySelector('.selected');
+let selected = document.querySelector('.selected')
+let list = document.querySelectorAll('.color');;
 
-function classe() {
-  let list = document.querySelectorAll('.color');
+function mudaClasse() {
+
   for (let index = 0; index < list.length; index += 1) {
     list[index].addEventListener('click', () => {
       for (let index3 = 0; index3 < list.length; index3 += 1) {
@@ -68,22 +71,20 @@ function classe() {
     })
   }
 }
-classe();
+mudaClasse();
 
 function mudaCor(event) {
-
   let cor = selected.style.backgroundColor;
   event.target.style.backgroundColor = cor;
-
   console.log('jsjsks')
 }
 
-window.onload = function () {
+window.onload = function() {
   let botao = document.getElementById("clear-board");
   botao.addEventListener('click', () => {
     let reset = document.querySelectorAll('.pixel');
     for(let i = 0; i < reset.length; i += 1) {
-      reset[i].style.backgroundColor = 'white';
+      reset[i].style.backgroundColor = 'white'
     }
   })
 }
