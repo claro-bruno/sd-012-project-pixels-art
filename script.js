@@ -22,8 +22,10 @@ function addline (line) {
 }
 
 document.body.addEventListener("click", function(event){
-  document.querySelector(".selected").classList.remove("selected");
-  event.target.classList.add("selected");
+  if(event.target.className === "color"){
+    document.querySelector(".selected").classList.remove("selected");
+    event.target.classList.add("selected");
+  }
 })
 
 addColumn(column);
