@@ -122,8 +122,8 @@ boardSize.addEventListener('click', function() {
   } else if (size > 4 | size < 51) {
     clearBoard();
     createBoard(size);
-  } else {
-    window.alert("Board inválido!");
+  } else if (size !== 0) {
+    alert("Board inválido!");
   }
 });
 
