@@ -35,9 +35,5 @@ function clickEvento() {
     cores[index].addEventListener('click', selecionaEvento);
     };
 };
+clickEvento();
 
-function mudaCor(event) {
-    let selectedColor = document.querySelector('.selected');
-    let colorClick = window.getComputedStyle(selectedColor);
-    event.target.style.backgroundColor = colorClick.getPropertyValue('backgraund-color');
-};
