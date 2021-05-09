@@ -1,27 +1,12 @@
 #color-palette {
   display: inline-block;
-  width: 100px;  
+  width: 100px;
   height: 20px;
 }
 
-/* #color1 {
-  color: black;
-  background-color: black;
-} */
-
-/* #color2 {
-  color: red;
-  background-color: red;
-}
-
-#color3 {
-  color: blue;
-  background-color: blue;
-}
- */
 #clear-board {
   display: block;
-  width: 100px;  
+  width: 100px;
   height: 20px;
 }
 
