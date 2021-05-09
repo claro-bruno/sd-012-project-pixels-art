@@ -47,7 +47,7 @@ function criaPixel() {
         quadro.className = "pixel";
         quadro.addEventListener('click', mudaCor);
         line[index2].appendChild(quadro);
-
+        quadro.style.backgroundColor = 'white'
       }
     }
   }
@@ -79,9 +79,11 @@ function mudaCor(event) {
 }
 
 window.onload = function () {
-  let botao = document.getElementById("reinicia");
+  let botao = document.getElementById("clear-board");
   botao.addEventListener('click', () => {
-    console.log(palette);
-    console.log('jsjjs')
-  });
+    let reset = document.querySelectorAll('.pixel');
+    for(let i = 0; i < reset.length; i += 1) {
+      reset[i].style.backgroundColor = 'white';
+    }
+  })
 }
