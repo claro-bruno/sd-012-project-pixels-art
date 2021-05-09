@@ -19,8 +19,8 @@
   background-color: blue;
 }
  */
-#limpar {
-  display: inline-block;
+#clear-board {
+  display: block;
   width: 100px;  
   height: 20px;
 }

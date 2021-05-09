@@ -35,7 +35,7 @@ function clicouCor() {
  }
 
 /* window.onload = function () { */
-corInicial('color1');
 iniciaPalhetas(['black', 'red', 'blue', 'green']);
+corInicial('color1');
 clicouCor();
 pintar();
