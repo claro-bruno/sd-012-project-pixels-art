@@ -18,26 +18,26 @@ function corSelecionada(corInicio) {
 function clicouCor() {
   const corAntiga = document.getElementById('color-palette');
   corAntiga.addEventListener('click', function (event) {
-    document.querySelector(".selected").classList.remove("selected");
-    event.target.classList.add("selected");
+    document.querySelector('.selected').classList.remove('elected');
+    event.target.classList.add('selected');
   })
- };
+};
 
- function pintar() {
+function pintar() {
   const tabelaPixel = document.querySelectorAll('.pixel');
-  for (let indice = 0; indice < tabelaPixel.length; indice +=1) {
+  for (let indice = 0; indice < tabelaPixel.length; indice += 1) {
     tabelaPixel[indice].addEventListener('click', function (event) {
-      let corEscolhida = document.getElementsByClassName('color selected')[0].style.backgroundColor;
+      const corEscolhida = document.getElementsByClassName('color selected')[0].style.backgroundColor;
       event.target.style.background = corEscolhida;
     })
   }
- };
+};
 
 function limpar() {
   const botaoClicado = document.getElementById('clear-board');
-  botaoClicado.addEventListener('click', function (event) {
+  botaoClicado.addEventListener('click', function () {
     const quadroPixel = document.querySelectorAll('.pixel');
-    for (let indice = 0; indice < quadroPixel.length; indice +=1) {
+    for (let indice = 0; indice < quadroPixel.length; indice +=1 ) {
       quadroPixel[indice].style.color = 'white';
       quadroPixel[indice].style.backgroundColor = 'white';
     }
