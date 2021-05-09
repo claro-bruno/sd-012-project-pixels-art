@@ -2,14 +2,19 @@ body {
     background-image: url('./images/stardewValley.jpg');
 }
 
+ul {
+    height: 70px;
+}
+
 .color {
     border: solid black 1px;
     display: inline-block;
     padding: 25px 25px;
+    margin-left: 5px;
 }
 
 .color:hover {
-    border: solid 3px white;
+    opacity: 70%;
 }
 
 .color:active {
