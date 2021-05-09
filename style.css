@@ -7,6 +7,13 @@ body {
     margin: 0%;
 }
 
+#title {
+    font-size: 60px;
+    text-align: center;
+    margin-left: 100px;
+    color: rebeccapurple;
+}
+
 .color {
     border: solid black 1px;
     height: 50px;
@@ -26,8 +33,18 @@ body {
 #clear-board {
     width: 60px;
     height: 30px;
-    background-color: paleturquoise;
+    background-color: purple;
     font-weight: bold;
-    font-style: oblique;
+    color: white;
     font-size: small;
+    margin-left: 550px;
+
+}
+
+#color-palette {
+    margin-left: 550px;
+}
+
+#div2 {
+    margin-left: 550px;
 }
