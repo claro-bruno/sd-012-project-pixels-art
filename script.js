@@ -1,3 +1,16 @@
+function iniciaPalhetas(coresIniciais) {
+  const palhetas = document.getElementsByClassName('color');
+  if (palhetas.length === coresIniciais.length) {
+    for (let indice = 0; indice < palhetas.length ; indice += 1) {
+      palhetas[indice].style.color = coresIniciais[indice];
+      palhetas[indice].style.backgroundColor = coresIniciais[indice];
+    }
+  }
+   else {
+     return 'Quantidade de cores é diferente da quantidade de palhetas';
+   }
+}
+
 function clicouCor() {
   const corAntiga = document.getElementById('color-palette');
   corAntiga.addEventListener('click', function(event) {
@@ -18,12 +31,15 @@ function clicouCor() {
   }
  }
 /* window.onload = function () { */
-const corPixel = document.getElementById("color1");
-corPixel.style.color = black; 
-corPixel.style.background = black;
+  iniciaPalhetas(['black', 'red', 'blue', 'green']);
+  // estou aqui
+
+/* document.getElementById('color1').style.backgroundColor = 'black';
+document.getElementById("color1").style.color = "black"; */
+
 
 /* corPixel.style.background-color = black; */
-const corInicial = document.getElementById('color1');
+/* const corInicial = document.getElementById('color1');
 corInicial.className = 'color selected';
-clicouCor();
+ */clicouCor();
 pintar();

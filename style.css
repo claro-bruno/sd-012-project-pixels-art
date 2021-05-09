@@ -4,12 +4,12 @@
   height: 20px;
 }
 
-#color1 {
+/* #color1 {
   color: black;
   background-color: black;
-}
+} */
 
-#color2 {
+/* #color2 {
   color: red;
   background-color: red;
 }
@@ -18,7 +18,7 @@
   color: blue;
   background-color: blue;
 }
-
+ */
 #limpar {
   display: inline-block;
   width: 100px;  
