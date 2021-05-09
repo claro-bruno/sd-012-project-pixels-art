@@ -10,5 +10,17 @@ function addColumn(column) {
   };
 };
 
-addColumn(column)
+addColumn(column);
+
+addline(line)
+function addline (line) {
+  let lineColumn = document.getElementsByClassName('column');
+  for (let lines of lineColumn) {
+    for ( let index = 0; index < line; index += 1) {
+      let divline = document.createElement('div');
+      divline.className = 'pixel';
+      lines.appendChild(divline);
+    };
+  };
+};
 
