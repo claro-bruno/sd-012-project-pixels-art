@@ -9,17 +9,6 @@ for (let index = 0; index < arrayColor.length; index += 1) {
   colorPalette.appendChild(divColor);
 }
 
-
-
-
-
-colorPalette.style.backgroundColor = arrayColor[1];
-
-const colorPalette = document.getElementById('color-palette');
-
-console.log(colorPalette.style.backgroundColor);
-
-console.log(colorPalette.style);
 /*
 1 - Escolher quais são as cores que eu quero.
 2 - A primeira cor tem que ser preta.
