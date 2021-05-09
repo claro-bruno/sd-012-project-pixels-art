@@ -8,20 +8,20 @@ function iniciaPalhetas(coresIniciais) {
   } else {
     return 'Quantidade de cores é diferente da quantidade de palhetas';
   }
-};
+}
 
 function corSelecionada(corInicio) {
   const corInicial = document.getElementById(corInicio);
   corInicial.className = 'color selected';
-};
-  
+}
+
 function clicouCor() {
   const corAntiga = document.getElementById('color-palette');
   corAntiga.addEventListener('click', function (event) {
     document.querySelector('.selected').classList.remove('elected');
     event.target.classList.add('selected');
-  })
-};
+  });
+}
 
 function pintar() {
   const tabelaPixel = document.querySelectorAll('.pixel');
@@ -29,7 +29,7 @@ function pintar() {
     tabelaPixel[indice].addEventListener('click', function (event) {
       const corEscolhida = document.getElementsByClassName('color selected')[0].style.backgroundColor;
       event.target.style.background = corEscolhida;
-    })
+    });
   }
 };
 
@@ -37,11 +37,11 @@ function limpar() {
   const botaoClicado = document.getElementById('clear-board');
   botaoClicado.addEventListener('click', function () {
     const quadroPixel = document.querySelectorAll('.pixel');
-    for (let indice = 0; indice < quadroPixel.length; indice +=1 ) {
+    for (let indice = 0; indice < quadroPixel.length; indice += 1) {
       quadroPixel[indice].style.color = 'white';
       quadroPixel[indice].style.backgroundColor = 'white';
     }
-  })
+  });
 };
 
 /* window.onload = function () { */
