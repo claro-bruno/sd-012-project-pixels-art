@@ -37,3 +37,18 @@ function clickEvento() {
 };
 clickEvento();
 
+function mudaCor() {
+
+};
+    for(element of cores) {
+        element.addEventListener('click', mudaCor);
+};
+
+function limparQuadro() {
+    for(element of cores) {
+    element.style.backgroundColor = 'white';
+    };
+};
+
+let button = document.getElementById('clear-board');
+button.addEventListener('click', limparQuadro);
