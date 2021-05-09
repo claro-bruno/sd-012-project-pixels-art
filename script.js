@@ -126,3 +126,6 @@ boardSize.addEventListener('click', function() {
     window.alert("Board inválido!");
   }
 });
+
+colorselector();
+pixelBoardColor();
