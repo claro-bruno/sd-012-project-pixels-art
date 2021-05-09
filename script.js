@@ -1,3 +1,1 @@
-window.onload = function(){
-    document.getElementById('color1').className += 'selected'
-}
+document.getElementById("color1").className = 'selected';
