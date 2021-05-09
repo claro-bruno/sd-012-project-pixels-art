@@ -40,9 +40,8 @@ function coresPaleta() {
     } else if (paleta[index].id === ("cor" + (index + 1))) {
       let defineCor = parseInt(Math.random() * 20);
       while (defineCor === 0) {
-        defineCor = parseInt(Math.random() * 10);
+        defineCor = parseInt(Math.random() * 20);
       }
-      console.log(defineCor);
       paleta[index].style.backgroundColor = cor[defineCor];
     }
     if (index === 0) {
