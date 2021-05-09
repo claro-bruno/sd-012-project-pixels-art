@@ -36,3 +36,17 @@ document.addEventListener("click", function (toColor) {
     toColor.target.style.background = cor;
   };
 });
+
+let local = document.querySelector("body");
+let creatingButton = document.createElement("button");
+creatingButton.id = "clear-board";
+creatingButton.innerHTML = "Limpar";
+let section = document.querySelector("#pixel-board");
+local.insertBefore(creatingButton, section);
+
+document.querySelector("#clear-board").addEventListener("click", function () {
+  let pixel = document.querySelectorAll(".pixel");
+  for (key in pixel) {
+    pixel[key].style.background = "white";
+  };
+});
