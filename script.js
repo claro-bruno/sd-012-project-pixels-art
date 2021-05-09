@@ -48,5 +48,6 @@ document.querySelector("#clear-board").addEventListener("click", function () {
   let pixel = document.querySelectorAll(".pixel");
   for (key in pixel) {
     pixel[key].style.backgroundColor = "white";
+    pixel[key].style.border = "0px";
   };
 });
