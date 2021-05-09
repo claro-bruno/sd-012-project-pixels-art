@@ -71,7 +71,7 @@ function colorselector() {
 };
 colorselector();
 
-
+//pinta os pixels
 function pixelBoardColor() {
     for (let index = 0; index < printPixel.length; index += 1) {
       printPixel[index].addEventListener('click', (event) => {
@@ -81,4 +81,13 @@ function pixelBoardColor() {
       });
     };
   };
-  pixelBoardColor();
+pixelBoardColor();
+
+function whiteBtn() {
+    whiteButton.addEventListener('click', () => {
+    for (let index = 0; index < printPixel.length; index += 1) {
+      printPixel[index].style.backgroundColor = 'white';
+    }
+  });
+}
+whiteBtn();
