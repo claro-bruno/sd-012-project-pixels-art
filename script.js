@@ -3,6 +3,7 @@ const areaDiv2 = document.getElementById("div2");
 const colors = document.getElementsByClassName("color");
 const colorPixel = document.querySelector('.pixel');
 const printPixel = document.getElementsByClassName("pixel");
+const whiteButton = document.getElementById("clear-board");
 
 // Populando PixelBoard
 function createBoard(row, column) {
@@ -83,6 +84,7 @@ function pixelBoardColor() {
   };
 pixelBoardColor();
 
+//botão pra resetar cores
 function whiteBtn() {
     whiteButton.addEventListener('click', () => {
     for (let index = 0; index < printPixel.length; index += 1) {
