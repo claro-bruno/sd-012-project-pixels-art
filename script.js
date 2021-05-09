@@ -93,5 +93,4 @@ function injectCor(event){
 window.onload = function(){
    const pegaPreto = document.getElementsByClassName("color")[0];
    pegaPreto.classList.add("selected");
-   document.getElementsByClassName("selected").style.backgroundColor;
 }
