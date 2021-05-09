@@ -21,6 +21,10 @@ ul {
     transform: translateY(2px);
 }
 
+input {
+    width: 5%;
+}
+
 .pixel-line {
     margin: 0;
     margin-left: 587px;
@@ -44,7 +48,6 @@ header {
     text-align: center;
 }
 
-
 h1 {
     font-size: 45px;
     margin-left: 50px;
@@ -54,9 +57,12 @@ h1 {
     /* Propriedade para inserir borda em texto vista no link https://bit.ly/3hduE8y */
 }
 
+#clear-board{
+    margin-bottom: 25px;
+}
+
 button {
-    margin-left: 650px;
-    margin-bottom: 17px;
+
     color: white;
     background-color: #0066cc;
     border-radius: 20%;
@@ -66,6 +72,7 @@ button {
     font-weight: 500;
     outline: none;
     box-shadow: 0 3px #999;
+    margin-left: 5px;
 }
 
 /* Animação do botão inspirada no link https://bit.ly/3vUFq7M */
@@ -78,4 +85,8 @@ button:active {
     background-color: #3399ff;
     box-shadow: 1px #666;
     transform: translateY(2px);
+}
+
+input {
+    margin-left: 584px;
 }
