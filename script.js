@@ -26,6 +26,12 @@ function createBoard(row) {
 }
 createBoard(5);
 
+//Limpando Pixel Board
+function clearBoard() {
+  let pixelBoard = document.getElementById("pixel-board");
+  pixelBoard.parentNode.removeChild(pixelBoard);
+};
+
 //Gerando cores aleatórias
 function colorGenerator(referencia) {
     let indice1 = Math.random() * 255;
@@ -105,14 +111,18 @@ whiteBtn();
 
 //Alterando o tamanho do Pixel Board
 boardSize.addEventListener('click', function() {
-  console.log(inputSize)
-  if (inputSize.value < 5){
+  let size = document.getElementById("board-size").value;
+  console.log(size)
+  if (size < 5 && size > 0){
+    clearBoard();
     createBoard(5);
-  } else if (inputSize.value > 50) {
+  } else if (size > 50) {
+    clearBoard();
     createBoard(50);
-  } else if (inputSize.value > 4 | inputSize.value < 51) {
-    createBoard(inputSize);
+  } else if (size > 4 | size < 51) {
+    clearBoard();
+    createBoard(size);
   } else {
-    alert("Board inválido!");
+    window.alert("Board inválido!");
   }
 });
