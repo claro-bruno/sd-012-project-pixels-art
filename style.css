@@ -35,6 +35,11 @@ ul {
     margin-bottom: -5px;
     margin-left: -1px;
 }
+
+.pixel:hover{
+    opacity: 70%;
+}
+
 header {
     text-align: center;
 }
