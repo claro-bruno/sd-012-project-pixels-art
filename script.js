@@ -1,14 +1,36 @@
-for (index = 0; index < 25; index += 1) {
-    let criacao = document.createElement("div")
-    criacao.className = 'pixel'
-    criacao.addEventListener('click', adicionaCor)
-    const div = document.querySelector('#pixel-board').appendChild(criacao)
+resetaCaixas();
+let botao = document.querySelector('#clear-board')
+botao.addEventListener('click', function(event) {
 
-    //criaçao de botão e adicionado o evento de apagar todas as cores das divs
-    let botao = document.querySelector('#clear-board')
-    botao.addEventListener('click', function(event) {
-        criacao.style.backgroundColor = 'white'
-    })
+    let pixelss = document.querySelectorAll('.pixel')
+    for (let index = 0; index < pixelss.length; index += 1) {
+        pixelss[index].style.backgroundColor = 'white'
+    }
+})
+
+let botaoEvento = document.querySelector('#generate-board')
+botaoEvento.addEventListener('click', resetaCaixas)
+
+function resetaCaixas() {
+    let pai = document.querySelector('#pixel-board')
+    pai.innerHTML = ''
+    let textNumber = document.querySelector('#board-size').value;
+    let caixaValor = !Number(textNumber) ? 5 : textNumber;
+
+    for (let index = 0; index < caixaValor; index += 1) {
+        let board = document.querySelector('#pixel-board');
+        let criacaoLinha = document.createElement("div");
+        criacaoLinha.style.className = 'line';
+        board.appendChild(criacaoLinha);
+
+        for (let indexJ = 0; indexJ < caixaValor; indexJ += 1) {
+            let criacaoColuna = document.createElement("div");
+            criacaoColuna.className = 'pixel'
+            criacaoColuna.addEventListener('click', adicionaCor)
+            criacaoLinha.appendChild(criacaoColuna);
+        }
+    }
+
 }
 window.onload = function inicializacao() {
     let preto = document.querySelector('#preto')
@@ -36,3 +58,4 @@ function adicionaCor(event) {
     event.target.style.backgroundColor = corSeleciona
 
 }
+let botaoLimpar = document.querySelector('#clear-board')

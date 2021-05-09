@@ -26,8 +26,6 @@
 
 #pixel-board {
     margin-top: 30px;
-    width: 250px;
-    height: 200px;
     line-height: 0;
 }
 
@@ -37,4 +35,8 @@
     height: 40px;
     background-color: white;
     display: inline-block;
+}
+
+.line {
+    line-height: 0px;
 }
