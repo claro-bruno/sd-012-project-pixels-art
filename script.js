@@ -57,7 +57,7 @@ function criaPixel() {
 
 criaPixel();
 
-let selected = document.querySelector('.selected')
+
 let list = document.querySelectorAll('.color');;
 
 function mudaClasse() {
@@ -74,7 +74,9 @@ function mudaClasse() {
 mudaClasse();
 
 function mudaCor(event) {
+  let selected = document.querySelector('.selected')
   let cor = selected.style.backgroundColor;
+  console.lo
   event.target.style.backgroundColor = cor;
   console.log('jsjsks')
 }

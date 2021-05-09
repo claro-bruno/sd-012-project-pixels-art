@@ -9,7 +9,7 @@ border-radius: 14px;
 }
 
     .pixel {
-  
+    background-color: rgb(143, 235, 155);
     box-sizing: border-box;
     margin-bottom: -4px; 
     width: 40px;
