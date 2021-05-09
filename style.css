@@ -5,7 +5,15 @@ body {
 .color {
     border: solid black 1px;
     display: inline-block;
-    padding: 25px 25px
+    padding: 25px 25px;
+}
+
+.color:hover {
+    border: solid 3px white;
+}
+
+.color:active {
+    transform: translateY(2px);
 }
 
 .pixel-line {
@@ -37,6 +45,27 @@ h1 {
 }
 
 button {
-    margin-left: 660px;
+    margin-left: 650px;
     margin-bottom: 17px;
+    color: white;
+    background-color: #0066cc;
+    border-radius: 20%;
+    border: solid 1px white;
+    font-family: 'Itim', cursive;
+    font-size: 20px;
+    font-weight: 500;
+    outline: none;
+    box-shadow: 0 3px #999;
+}
+
+/* Animação do botão inspirada no link https://bit.ly/3vUFq7M */
+
+button:hover {
+    background-color: #3399ff;
+}
+
+button:active {
+    background-color: #3399ff;
+    box-shadow: 1px #666;
+    transform: translateY(2px);
 }
