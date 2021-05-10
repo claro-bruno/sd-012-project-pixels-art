@@ -33,7 +33,7 @@ function gridNew() {
     alert('Somente número maior que 5 e menor que 50');
     document.getElementById('board-size').value = 50;
   } if (newGrid === ''){
-    alert('Board inválido');
+    alert('Board inválido!');
   }
 }
 let button = document.getElementById('generate-board');
