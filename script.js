@@ -4,7 +4,9 @@ coresPaleta[1].style.backgroundColor = 'red';
 coresPaleta[2].style.backgroundColor = 'blue';
 coresPaleta[3].style.backgroundColor = 'green';
 let inputValor = document.getElementById('board-size');
-
+const btnValor = document.querySelector('#generate-board');
+btnValor.innerHTML = 'VQV';
+let pixelBoard = document.querySelector('#pixel-board');
 
 function createPixelFrame() {
   const elementBoard = document.createElement('div');
@@ -16,39 +18,42 @@ function createPixelFrame() {
 // define a largura e altura do quadrado de pixels
 function createPixels(number) {
   for (let linha = 0; linha < number; linha += 1) {
-    let pixelBoard = document.querySelector('#pixel-board');
     let linhaPixel = document.createElement('div');
     for (let col = 0; col < number; col += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       linhaPixel.appendChild(pixel);
       pixelBoard.appendChild(linhaPixel);
-    }     
+      if (btnValor.addEventListener('click', boardSize)) {
+        // linhaPixel.innerHTML = '';
+      }
+    }
   }
 }
 createPixels(5);
 
-const btnValor = document.querySelector('#generate-board');
-btnValor.innerHTML = 'VQV';
 // função para aumentar tamanho dos quadros de pixels
-btnValor.addEventListener('click', () => {
+function boardSize() {
   if (inputValor.value >= 5 && inputValor.value <= 50) {
-      createPixels(inputValor.value);
-      inputValor.value = '';
+    pixelBoard.innerHTML = '';
+    createPixels(inputValor.value);
+    inputValor.value = '';
   }
-  else if (inputValor.value === '') {    
+  else if (inputValor.value === '') {
     alert('Board inválido!');
     inputValor.value = '';
   }else {
     limitMaxMin();
   }
-});
+}
 
 function limitMaxMin() {
   if(inputValor.value < 5) {
+    pixelBoard.innerHTML = '';
     createPixels(5)
     inputValor.value = '';
   }else if (inputValor.value > 50) {
+    pixelBoard.innerHTML = '';
     inputValor.value = '';
     createPixels(50);
   }
@@ -110,3 +115,35 @@ const cor3 = document.getElementsByClassName('color')[2];
 cor3.style.backgroundColor = randomColors();
 const cor4 = document.getElementsByClassName('color')[3];
 cor4.style.backgroundColor = randomColors();
+
+
+// // define a largura e altura do quadrado de pixels
+// function createPixels(number) {
+//   for (let linha = 0; linha < number; linha += 1) {
+//     let pixelBoard = document.querySelector('#pixel-board');
+//     let linhaPixel = document.createElement('div');
+//     for (let col = 0; col < number; col += 1) {
+//       const pixel = document.createElement('div');
+//       pixel.className = 'pixel';
+//       linhaPixel.appendChild(pixel);
+//       pixelBoard.appendChild(linhaPixel);
+//     }     
+//   }
+// }
+// createPixels(5);
+
+// const btnValor = document.querySelector('#generate-board');
+// btnValor.innerHTML = 'VQV';
+// // função para aumentar tamanho dos quadros de pixels
+// btnValor.addEventListener('click', () => {  
+//   if (inputValor.value >= 5 && inputValor.value <= 50) {
+//       createPixels(inputValor.value);
+//       inputValor.value = '';
+//   }
+//   else if (inputValor.value === '') {
+//     alert('Board inválido!');
+//     inputValor.value = '';
+//   }else {
+//     limitMaxMin();
+//   }
+// });
