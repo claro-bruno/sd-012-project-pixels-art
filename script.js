@@ -1,7 +1,4 @@
 document.querySelectorAll(".color")[0].style.background = "black";
-document.querySelectorAll(".color")[1].style.background = "violet";
-document.querySelectorAll(".color")[2].style.background = "salmon";
-document.querySelectorAll(".color")[3].style.background = "yellow";
 
 let tabble = document.querySelector("#pixel-board");
 
@@ -93,3 +90,17 @@ botaoApagar.addEventListener("click", function () {
   }
 
 });
+
+function RandomColor(){
+
+let color1 = Math.random() * 255;
+let color2 = Math.random() * 255; 
+let color3 = Math.random() * 255;
+
+return `rgb(${color1},${color2},${color3})`;
+
+}
+
+yellow.style.backgroundColor = RandomColor();
+salmon.style.backgroundColor = RandomColor();
+violet.style.backgroundColor = RandomColor();
