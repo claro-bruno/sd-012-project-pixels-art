@@ -14,21 +14,22 @@
 
 #green {
     background-color: green;
-    color: green;
+    
 }
 
 #red {
     background-color: red;
-    color: red;
+
 }
 
 #yellow {
     background-color: yellow;
-    color: yellow;
+
 }
 
 #pixel-board {
-    margin-top: 15px;
+    margin-top: 10px;
+    
     
 }
 

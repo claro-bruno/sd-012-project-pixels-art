@@ -20,3 +20,6 @@ function createPixel (size) {
 
 createPixel(5);
 
+let captureInitialColor = document.querySelector('.color');
+captureInitialColor.classList.add('selected')
+
