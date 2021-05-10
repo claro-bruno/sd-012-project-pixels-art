@@ -2,6 +2,7 @@ let line = 5;
 let column = 5;
 let board = document.getElementById('pixel-board');
 let colorPallet = document.querySelectorAll('.color')
+let button = document.getElementById('clear-board')
 
 function addColumn(column) {
   for (let index = 0; index < column; index += 1) {
@@ -46,3 +47,10 @@ for (let index = 1 ; index < colorPallet.length; index++) {
   colorPallet[index].style.backgroundColor = color;
   
 }
+
+button.addEventListener("click", function(){
+  const pixelSquare = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixelSquare.length; index += 1) {
+    pixelSquare[index].style.backgroundColor = 'white';
+}
+})
