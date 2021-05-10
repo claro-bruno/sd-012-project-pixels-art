@@ -1,3 +1,4 @@
+/*
 #title {
     text-align: center;
 }
@@ -56,5 +57,70 @@
     background-color: white;
     width: 40px;
     height: 40px;
+    border: 1px solid black;
+}
+*/
+#title {
+    text-align: center;
+}
+
+.color {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#color-palete {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#preto {
+    background: black;
+}
+
+#amarelo {
+    background: yellow;
+}
+
+#azul {
+    background: blue;
+}
+
+#vermelho {
+    background: red;
+}
+
+#inputTamanho {
+    text-align: center;
+}
+
+#inputStyle {
+    margin-top: 30px;
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pixel {
+    display: table-cell;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+#pixel-board {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    border-spacing: 1px;
+    background-color: black;
     border: 1px solid black;
 }
