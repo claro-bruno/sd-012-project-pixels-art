@@ -31,8 +31,13 @@ butons.addEventListener("click", function () {
   
   let inputs = document.getElementById("board-size").value;
   
-  CreateBox(inputs);
 
+  if(inputs === ""){
+    alert("Board Invalido")
+  }
+
+ 
+  CreateBox(inputs);
 
 });
 
