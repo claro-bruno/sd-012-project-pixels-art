@@ -124,3 +124,11 @@
     background-color: black;
     border: 1px solid black;
 }
+
+.linha {
+    display: table-row;
+}
+
+#condicao {
+    text-align: center;
+}
