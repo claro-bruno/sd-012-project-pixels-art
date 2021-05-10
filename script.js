@@ -9,3 +9,11 @@ colorPalette.addEventListener('click', (event) => {
         }
     }
 });
+let pixelBoard = document.getElementById('pixel-board');
+pixelBoard.addEventListener('click', (event) => {
+  const changeColor = document.querySelector('.selected');
+  const backgroundColor = window.getComputedStyle(changeColor).getPropertyValue('background');
+  if (event.target.classList.contains('pixel')) {
+    event.target.style.background = backgroundColor;
+  }
+});
