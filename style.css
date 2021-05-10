@@ -34,7 +34,7 @@ body {
   margin: 10px 0;
 }
 
-.color:hover {
+.selected {
   border: 2px dotted white;
 }
 
