@@ -1,15 +1,26 @@
 body {
   margin-left: 0;
   padding-left: 50px;
+  background-image:url(imagem/pixel_art.jpeg);
 }
 
 #title {
-  padding: 50px 0 0;
+  font-size: 30px;
 }
 
 #color-palette {
   padding: 20px 0 0;
+}
+
+#paleta {
+  margin: 0 auto;
+  text-align: center;
+  width: 300px;
+  padding: 50px 20px;
+  border-radius: 20px;
+  background-color: white;
   margin-bottom: 0;
+  box-shadow:lightslategrey 5px 5px 20px ;
 }
 
 .color {
