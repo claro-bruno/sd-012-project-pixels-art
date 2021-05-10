@@ -13,6 +13,7 @@ function removeEAdd(mouseClick) {
   changeClass.classList.remove('selected');
   mouseClick.target.classList.add('selected');
 }
+// envento para executar acao click do mouse
 bloco1.addEventListener('click', removeEAdd);
 bloco2.addEventListener('click', removeEAdd);
 bloco3.addEventListener('click', removeEAdd);
