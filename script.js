@@ -33,7 +33,7 @@ butons.addEventListener("click", function () {
   
 
   if(inputs === ""){
-    alert("Board Invalido")
+    alert("Board inválido!")
   }
 
   if( inputs <= 5  ){
