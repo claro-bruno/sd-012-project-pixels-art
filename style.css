@@ -1,5 +1,8 @@
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 #color-palette {
-    margin: 23px;
+    margin-bottom: 23px;
 }
 .color {
     border: 1px solid;
@@ -11,32 +14,9 @@
     border-radius: 50px;
 }
 
-#black {
-    display: inline-block;
-    background-color: black;
-   }
-
-#mint {
-    background-color:rgb(140, 214, 180);
-    display: inline-block;
-}
-
-#blue {
-    background-color: rgb(7, 19, 53);
-    display: inline-block;
-}
-
-#golden {
-    background-color: rgb(255, 166, 0);
-    display: inline-block;
-}
-
 .pixel-board {
     width: 250px;
     height: 250px;
-}
-.linha {
-    margin: 0;
 }
 
 .pixel{
@@ -47,6 +27,7 @@
     display: inline-block;
     background-color: white;
     margin-top: -4px;
+    border-radius: 2px;
 }
 
 
