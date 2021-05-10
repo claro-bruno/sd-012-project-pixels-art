@@ -13,5 +13,12 @@
     width: 40px;
     height: 40px;
     border: solid 1px black;
-    display: inline-block; 
+}
+
+.line{
+    display: flex;
+}
+
+#pixel-board{
+    display: inline-block;
 }
