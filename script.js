@@ -15,3 +15,13 @@ function createPixels(size) {
 }
 
 createPixels(5);
+
+function setClassSelectd(event) {
+  const colorsSelected = document.querySelectorAll('.selected');
+  for (let index = 0; index < colorsSelected.length; index += 1) {
+    colorsSelected[index].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
+}
+const palletColors = document.querySelector('#color-palette');
+palletColors.addEventListener('click', setClassSelectd);
