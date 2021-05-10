@@ -1,14 +1,11 @@
-function createColorPaletteDiv(bgColor) {
-    let colorPaletteSection = document.getElementById('color-palette');
-    let colorPaletteDiv = document.createElement('div');
-
-    colorPaletteDiv.className = 'color';
-    colorPaletteDiv.style.backgroundColor = bgColor;
-
-    colorPaletteSection.appendChild(colorPaletteDiv);
-}
-
-let paletteColors = ['black','red', 'blue', 'green'];
-for (let index = 0; index <paletteColors.length; index +=1) {
-    createColorPaletteDiv(paletteColors[index]);
-}
+let colors = document.querySelectorAll('.color');
+let colorPalette = document.getElementById('color-palette');
+colorPalette.addEventListener('click', (event) => {
+    for (let index = 0; index < colors.length; index += 1) {
+        if(colors[index].classList.contains('color')) {
+            colors[index].classList.remove('selected');
+            (event.target.classList.contains('color'));
+            event.target.classList.add('selected');
+        }
+    }
+});
