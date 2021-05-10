@@ -36,11 +36,23 @@ btnValor.addEventListener('click', () => {
       createPixels(inputValor.value);
       inputValor.value = '';
   }
-  else{
+  else if (inputValor.value === '') {    
     alert('Board inválido!');
     inputValor.value = '';
-  }  
+  }else {
+    limitMaxMin();
+  }
 });
+
+function limitMaxMin() {
+  if(inputValor.value < 5) {
+    createPixels(5)
+    inputValor.value = '';
+  }else if (inputValor.value > 50) {
+    inputValor.value = '';
+    createPixels(50);
+  }
+}
 
 // função colocar cor nos pixels
 function corPixel(cor) {
