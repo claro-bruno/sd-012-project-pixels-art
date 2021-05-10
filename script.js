@@ -36,8 +36,16 @@ butons.addEventListener("click", function () {
     alert("Board Invalido")
   }
 
+  if( inputs <= 5  ){
+    inputs = 5;
+  }
+  if(inputs >= 50){
+    inputs = 50;
+  }
+
  
   CreateBox(inputs);
+
 
 });
 
