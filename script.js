@@ -21,5 +21,18 @@ function createPixel (size) {
 createPixel(5);
 
 let captureInitialColor = document.querySelector('.color');
-captureInitialColor.classList.add('selected')
+captureInitialColor.classList.add('selected');
+
+let captureColor = document.querySelectorAll('.color');
+
+for (let index = 0; index < captureColor.length; index += 1) {
+	captureColor[index].addEventListener('click', (event) => {
+		for (let index2 = 0; index2 < captureColor.length; index2 += 1) {
+			captureColor[index2].classList.remove('selected');
+		}
+	    event.target.classList.add('selected');
+	})
+
+};
+
 
