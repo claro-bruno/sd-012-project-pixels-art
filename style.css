@@ -30,10 +30,6 @@ body {
   margin: 10px 0;
 }
 
-.selected {
-  border: 2px dotted white;
-}
-
 table {
   margin: auto;
   border-spacing: 0;
