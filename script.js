@@ -1,7 +1,6 @@
 //Cores da paleta inicial(atribuindo cor aos filhos da div color-palete)
-let paleta = document.getElementById("color-palette");
+let paleta = document.getElementById("color-palette").childNodes;
 let cor = document.getElementsByClassName("color");
-
 
 // // Função gera cores: Com referência do stackoverflow.
 // function geraCores() {
