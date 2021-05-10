@@ -57,7 +57,7 @@ document.addEventListener('click', selecionaCor);
 
 // Funcao que reseta o board
 function resetBoard() {
-  const button = document.querySelector('#reset-board');
+  const button = document.querySelector('#clear-board');
   button.addEventListener('click', () => {
     const pixelSquare = document.querySelectorAll('.pixel');
     for (let index = 0; index < pixelSquare.length; index += 1) {
