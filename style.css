@@ -2,9 +2,6 @@ body {
     background-image: url('./images/stardewValley.jpg');
 }
 
-ul {
-    height: 70px;
-}
 
 .color {
     border: solid black 1px;
@@ -21,13 +18,20 @@ ul {
     transform: translateY(2px);
 }
 
+ul {
+    width: 300px;
+    position: relative;
+    left: 480px;
+}
+
 input {
-    width: 5%;
+    width: 4%;
 }
 
 .pixel-line {
     margin: 0;
-    margin-left: 587px;
+    position: relative;
+    text-align: center;
 }
 
 .pixel {
@@ -50,7 +54,7 @@ header {
 
 h1 {
     font-size: 45px;
-    margin-left: 50px;
+    margin-left: 25px;
     color: #000099;
     font-family: 'Itim', cursive;
     -webkit-text-stroke: 1px white;
@@ -88,5 +92,5 @@ button:active {
 }
 
 input {
-    margin-left: 584px;
+    margin-left: 570px;
 }

@@ -1,20 +1,30 @@
 let paletaCores = document.getElementsByClassName('color');
+let randomColor1 = Math.random().toString(16).substr(-6);
+let randomColor2 = Math.random().toString(16).substr(-6);
+let randomColor3 = Math.random().toString(16).substr(-6);
+
+// Código para gerar cor aleatória visto no link https://bit.ly/3exV2bd.
 
 paletaCores[0].style.backgroundColor = 'black';
 paletaCores[0].classList.add('selected');
-paletaCores[1].style.backgroundColor = 'yellow';
-paletaCores[2].style.backgroundColor = '#ff9933';
-paletaCores[3].style.backgroundColor = '#009933';
+paletaCores[1].style.backgroundColor = `#${randomColor1}`;
+paletaCores[2].style.backgroundColor = `#${randomColor2}`;
+paletaCores[3].style.backgroundColor = `#${randomColor3}`;
 
 gerarQuadro ();
+
 
 function gerarQuadro (valor){
     let colunas;
     let linhas;
 
-    if (valor === (undefined)) {
+    if (valor === (undefined) || valor < 5) {
         colunas = 5;
-        linhas = 5
+        linhas = 5;
+
+    } else if (valor >= 50){
+        colunas = 50;
+        linhas = 50;
     } else {
         colunas = valor;
         linhas = valor;
@@ -36,11 +46,8 @@ for (let index = 0; index < linhas; index += 1){
     divPixelLine.appendChild(criarDivPixel);
     }   
  }
-
+ 
 }
-
-
-
 
 for (let index = 0; index < paletaCores.length; index += 1){
     paletaCores[index].addEventListener('click', function(evento){
@@ -50,7 +57,6 @@ for (let index = 0; index < paletaCores.length; index += 1){
         evento.target.classList.add('selected');
     });
 }
-
 
 let pixelBranco = document.getElementsByClassName('pixel');
 
@@ -67,8 +73,8 @@ let botaoGenerateBoard = document.getElementById('generate-board')
 
 botaoGenerateBoard.addEventListener('click', modificarQuadro);
 
-function modificarQuadro (){
 
+function modificarQuadro (){
 let linhasPixel = document.querySelectorAll('.pixel-line');
 
 let valorInserido = document.getElementById('board-size');
