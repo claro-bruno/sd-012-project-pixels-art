@@ -38,6 +38,7 @@ window.onload = function () {
         cor.style.backgroundColor = document.getElementsByClassName('color')[0];
     };
     console.log(cor.style.backgroundColor)
+    
 };
 
 
