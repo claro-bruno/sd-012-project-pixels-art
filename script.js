@@ -1,6 +1,7 @@
 let line = 5;
 let column = 5;
 let board = document.getElementById('pixel-board');
+let colorPallet = document.querySelectorAll('.color')
 
 function addColumn(column) {
   for (let index = 0; index < column; index += 1) {
@@ -24,9 +25,24 @@ function addline (line) {
 document.body.addEventListener("click", function(event){
   if(event.target.className === "color"){
     document.querySelector(".selected").classList.remove("selected");
-    event.target.classList.add("selected");
+    event.target.classList.add("selected"); 
   }
 })
 
 addColumn(column);
-addline(line);
+addline(line); 
+
+
+function randomColor() {
+  const red = Math.random() * 256;
+  const green = Math.random() * 256;
+  const blue = Math.random() * 256;
+  return `rgb( ${red} , ${green} , ${blue})`;
+}
+
+
+for (let index = 1 ; index < colorPallet.length; index++) {
+  const color = randomColor()
+  colorPallet[index].style.backgroundColor = color;
+  
+}
