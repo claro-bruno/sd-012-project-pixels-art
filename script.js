@@ -1,3 +1,4 @@
+// Funcao que cria paleta de cores random
 // https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
 const paletaDeCores = document.querySelectorAll('.color');
 
@@ -17,6 +18,7 @@ window.onload = () => {
   }
 };
 
+// Funcao que cria o pixel-board
 const pixelBoard = document.querySelector('#pixel-board');
 
 function pixelBoardColunas(linhas, colunas) {
@@ -37,6 +39,7 @@ function pixelBoardLinhas(linhas) {
 
 pixelBoardLinhas(5);
 
+// Funcao que seleciona a cor e da as cores ao board
 let cor = 'black';
 
 function selecionaCor(corSelecionada) {
@@ -51,3 +54,15 @@ function selecionaCor(corSelecionada) {
 }
 
 document.addEventListener('click', selecionaCor);
+
+// Funcao que reseta o board
+function resetBoard() {
+  const button = document.querySelector('#reset-board');
+  button.addEventListener('click', () => {
+    const pixelSquare = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixelSquare.length; index += 1) {
+      pixelSquare[index].style.backgroundColor = 'white';
+    }
+  });
+}
+resetBoard();
