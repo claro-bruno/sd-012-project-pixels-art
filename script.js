@@ -15,3 +15,14 @@ function board(tamanhoBoard) {
 }
 board(5);
 
+// Resolvendo: DESAFIO 6 / DESAFIO 7 
+
+let selecionaCor = document.getElementsByClassName("color");
+for(index = 0; index < selecionaCor.length; index += 1){
+  selecionaCor[index].addEventListener("click", function(event){
+    let elemento = document.querySelector(".selected");
+    elemento.classList.remove("selected");
+    event.target.classList.add("selected");  
+  })
+}
+
