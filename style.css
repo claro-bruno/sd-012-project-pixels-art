@@ -20,3 +20,11 @@
 .grey {
   background-color: grey;
 }
+
+.pixel {
+  border: 1px black solid;
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+}
