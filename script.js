@@ -4,6 +4,7 @@ let board = document.getElementById('pixel-board');
 let colorPallet = document.querySelectorAll('.color')
 let button = document.getElementById('clear-board')
 
+
 function addColumn(column) {
   for (let index = 0; index < column; index += 1) {
     let divColumn = document.createElement('div');
@@ -41,12 +42,21 @@ function randomColor() {
   return `rgb( ${red} , ${green} , ${blue})`;
 }
 
-
+colorPallet[0].style.backgroundColor = 'black';
 for (let index = 1 ; index < colorPallet.length; index++) {
   const color = randomColor()
   colorPallet[index].style.backgroundColor = color;
   
 }
+
+document.body.addEventListener("click", function(event){
+  if(event.target.className === "pixel"){
+    let colorSelected = document.querySelector('.selected');
+    event.target.style.backgroundColor =  colorSelected.style.backgroundColor;
+
+  }
+})
+
 
 button.addEventListener("click", function(){
   const pixelSquare = document.querySelectorAll('.pixel');
