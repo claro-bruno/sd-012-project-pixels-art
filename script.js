@@ -17,3 +17,14 @@ pixelBoard.addEventListener('click', (event) => {
     event.target.style.background = backgroundColor;
   }
 });
+
+let pixels = document.querySelectorAll('.pixel');
+let button = document.getElementById('clear-board');
+function clearBoard() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+button.addEventListener('click', clearBoard);
+
+//https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle

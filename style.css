@@ -7,29 +7,29 @@ div {
 
 #black {
     background-color: black;
-    }
+}
 
 #red {
     background-color: red;
-    }
+}
     
-    #blue {
+#blue {
     background-color: blue;
-    }
+}
     
-    #green {
+#green {
     background-color: green;
-    }
+}
     
-    .pixel {
-        width: 40px;
-        height: 40px;
-        border: solid black 1px;
-        float: left;
-        background-color: white;
-    }
+.pixel {
+    width: 40px;
+    height: 40px;
+    border: solid black 1px;
+    float: left;
+    background-color: white;
+}
     
-    #pixel-board {
-        width: 250px;
-        height: 250px;
-    } 
+#pixel-board {
+    width: 250px;
+    height: 250px;
+} 
