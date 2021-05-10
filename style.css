@@ -16,10 +16,6 @@ body {
   background-color: rgb(0, 0, 255, 0.5);
 }
 
-#paleta {
-  background-color: rgb(128, 128, 128, 0.5);
-}
-
 #color-palete {
   margin: 0;
   display: inline-block;
