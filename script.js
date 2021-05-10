@@ -19,9 +19,8 @@ for (let indexSelect = 0; indexSelect < cores.length; indexSelect += 1) {
     cores[indexSelect].addEventListener('click', mudaClasse);
 }
 }
-ColorePixel();
+document.body.addEventListener('click', ColorePixel);
 function ColorePixel(event){//colore a classe pixel clicada 
-  document.body.addEventListener('click', ColorePixel);
   if (event.target.className === 'pixel') {
     event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
   }

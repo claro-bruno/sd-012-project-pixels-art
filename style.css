@@ -11,3 +11,7 @@
   height: 40px;
   width: 40px;
 }
+#clear-board {
+  margin-top: 10px;
+  align-items: center;  
+}
