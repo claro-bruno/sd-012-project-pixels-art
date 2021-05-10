@@ -5,7 +5,6 @@ const cor3 = document.querySelector('#cor3');
 const cor4 = document.querySelector('#cor4');
 let valor = document.querySelector('#board-size').value;
 const botaoGerar = document.querySelector('#generate-board');
-criaTabela(5);
 
 //cria a tabela
 function criaTabela(size) {
@@ -25,13 +24,13 @@ botaoGerar.addEventListener('click', function () {
   let valor = document.querySelector('#board-size').value;
   const ultimaLinha = document.querySelectorAll('.linha');
 
-  if (valor === '') {
+  if (valor === '' || valor < 5) {
     alert('Valor inválido!');
-  } else {
-    for (let i = 0; i < ultimaLinha.length; i += 1) {
-      quadrado.removeChild(quadrado.lastChild);
-    }
   }
+  for (let i = 0; i < ultimaLinha.length; i += 1) {
+    quadrado.removeChild(quadrado.lastChild);
+  }
+  
   if (valor <= 5) {
     criaTabela(5);
   } else if (valor >= 50) {
@@ -40,6 +39,8 @@ botaoGerar.addEventListener('click', function () {
     criaTabela(valor);
   }
 });
+
+criaTabela(5);
 
 //gerar cor random
 function gerarCor() {
