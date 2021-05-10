@@ -1,4 +1,3 @@
-let pixelLine = 5;
 function grid(pixelLine) {
   const pixels = document.getElementById('pixel-board');
   for (let index = 0; index < pixelLine; index += 1) {
@@ -13,6 +12,7 @@ function grid(pixelLine) {
     }
   }
 }
+let pixelLine = 5;
 grid(pixelLine);
 
 function gridNew() {
@@ -25,7 +25,14 @@ function gridNew() {
       tabela.removeChild(tabela.lastElementChild);
     }
     grid(pixelLine);
-  } else {
+    paintPixel(eventPaint);
+  } if(newGrid < 5 && newGrid !== '') {
+    alert('Somente número maior que 5 e menor que 50');
+    document.getElementById('board-size').value = 5;
+  } if (newGrid > 50 && newGrid !== '') {
+    alert('Somente número maior que 5 e menor que 50');
+    document.getElementById('board-size').value = 50;
+  } if (newGrid === ''){
     alert('Board inválido');
   }
 }
@@ -56,7 +63,7 @@ for (let index = 0; index < elementColor.length; index += 1) {
   elementColor[index].addEventListener('click', colorSelect);
 }
 
-const pixed = document.getElementsByClassName('pixel');
+const pixed = document.querySelectorAll('.pixel');
 function paintPixel(eventPaint) {
   const paint = document.querySelector('.selected');
   eventPaint.target.style.backgroundColor = paint.style.backgroundColor;
