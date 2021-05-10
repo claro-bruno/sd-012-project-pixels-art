@@ -14,9 +14,7 @@ function CreateBox(event) {
       let colunasTd = document.createElement("td");
       colunasTd.className = "coluna pixel"
       linhasTr.appendChild(colunasTd);
-
     }
-
   }
 }
 
@@ -32,14 +30,13 @@ butons.addEventListener("click", function () {
   }
   
   let inputs = document.getElementById("board-size").value;
-
+  
   CreateBox(inputs);
+
 
 });
 
-
-
-
+window.onload = CreateBox(5);
 
 window.onload = document.querySelectorAll(".color")[0].className = "color selected"
 
