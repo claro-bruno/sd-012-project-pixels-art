@@ -1,3 +1,22 @@
+// https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
+const paletaDeCores = document.querySelectorAll('.color');
+
+window.onload = () => {
+  const blackColor = document.querySelector('#first-color');
+  blackColor.classList.add('selected');
+  function randomColors() {
+    const orange = Math.random() * 255;
+    const blue = Math.random() * 255;
+    const grey = Math.random() * 255;
+
+    return `rgb(${orange},${blue},${grey})`;
+  }
+
+  for (let color = 1; color < paletaDeCores.length; color += 1) {
+    paletaDeCores[color].style.backgroundColor = randomColors();
+  }
+};
+
 const pixelBoard = document.querySelector('#pixel-board');
 
 function pixelBoardColunas(linhas, colunas) {
@@ -17,3 +36,18 @@ function pixelBoardLinhas(linhas) {
 }
 
 pixelBoardLinhas(5);
+
+let cor = 'black';
+
+function selecionaCor(corSelecionada) {
+  const corEscolhida = corSelecionada.target;
+  if (corEscolhida.classList.contains('pixel')) {
+    corEscolhida.style.backgroundColor = cor;
+  } else if (corEscolhida.classList.contains('color')) {
+    document.querySelector('.selected').className = ('color');
+    corEscolhida.className = ('color selected');
+    cor = window.getComputedStyle(corEscolhida).backgroundColor;
+  }
+}
+
+document.addEventListener('click', selecionaCor);
