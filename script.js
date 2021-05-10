@@ -15,3 +15,11 @@ function selectColor(){
         event.target.classList.add('selected');
     }
 }
+
+let clearButton = document.getElementById('clear-board');
+clearButton.addEventListener('click', function () {
+    let arrayPixels = document.getElementsByClassName('pixel');
+    for (let i = 0; i < arrayPixels.length; i += 1) {
+        arrayPixels[i].style.backgroundColor = 'white';
+    }
+});
