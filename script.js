@@ -26,3 +26,18 @@ function createBoard(size) {
   }
 }
 createBoard(5);
+
+const firstColor = document.getElementById('color-palette').firstElementChild;
+
+firstColor.classList.add('selected');
+
+console.log(firstColor);
+
+/* 
+
+1 - Capturar o Elemento da Cor Preta.
+1.1 - Capturar o primeiro filho elemento que tem classe color palette.
+2 - Criar uma classe.
+3 - Apenas que tem classe color que pode receber a classe select.
+
+*/
