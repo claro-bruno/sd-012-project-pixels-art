@@ -25,3 +25,10 @@ function ColorePixel(event){//colore a classe pixel clicada
     event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
   }
 }
+document.querySelector('#clear-board').addEventListener('click', clear);
+function clear(){
+  const quadroPixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < quadroPixel.length; index += 1) {
+    quadroPixel[index].style.backgroundColor = 'white';
+  }
+}
