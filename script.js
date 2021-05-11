@@ -90,7 +90,10 @@ function injectCor(event){
    event.target.style.backgroundColor =  pegaCor;
 }
 
-window.onload = function pegaColorBlack(){
+function pegaColorBlack(){
+   // Seleciona
    const pegaPreto = document.getElementsByClassName("color")[0];
    pegaPreto.classList.add("selected");
+   pegaPreto.style.backgroundColor;
 }
+pegaColorBlack();
