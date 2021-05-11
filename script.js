@@ -40,10 +40,7 @@ butons.addEventListener("click", function () {
     inputs = 50;
   }
 
- 
   CreateBox(inputs);
-
-
 });
 
 window.onload = CreateBox(5);
@@ -54,7 +51,7 @@ let black = document.getElementsByClassName("color")[0];
 let violet = document.getElementsByClassName("color")[1];
 let salmon = document.getElementsByClassName("color")[2];
 let yellow = document.getElementsByClassName("color")[3];
-
+let all = document.getElementById("allColors");
 
 function changeSelected(event) {
 
@@ -65,17 +62,20 @@ function changeSelected(event) {
 
 }
 
-black.addEventListener("click", changeSelected);
+black.addEventListener("click",  changeSelected);
 violet.addEventListener("click", changeSelected);
 salmon.addEventListener("click", changeSelected);
 yellow.addEventListener("click", changeSelected);
+all.addEventListener("click",changeSelected);
 
 
 tabble.addEventListener("click", function (event) {
 
   event.target.style.backgroundColor = document.querySelector(".selected").style.backgroundColor;
+  event.target.style.backgroundColor = document.querySelector(".selected").value
 
 });
+
 
 let botaoApagar = document.querySelector("#clear-board")
 
@@ -99,7 +99,7 @@ let color3 = Math.random() * 255;
 
 return `rgb(${color1},${color2},${color3})`;
 
-}
+};
 
 yellow.style.backgroundColor = RandomColor();
 salmon.style.backgroundColor = RandomColor();
