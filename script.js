@@ -52,13 +52,12 @@ function addEventToPalette() {
 addEventToPalette();
 
 // Adicionando função de pintar quadro de pixels
-let takeSelectedBg = document.querySelector('.selected').style.backgroundColor;
-
+// let takeSelectedBg = document.querySelector('.selected').style.backgroundColor;
 let takePixels = document.querySelectorAll('.pixel');
 
 for (let index = 0; index < takePixels.length; index += 1) {
   takePixels[index].addEventListener('click', function(event) {
-    event.target.style.backgroundColor = takeSelectedBg;
+    event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
   });
 };
 
