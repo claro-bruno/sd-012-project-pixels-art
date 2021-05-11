@@ -27,13 +27,21 @@ function mudaSelecter(bt) {
   button.target.className = ('color selected');
 }
 
+function pixelzin(div) {
+  if (div < 19) {
+    return 200/div;
+  } else {
+    return 11;
+  }
+}
+
 function colunas(pixelLine, colom) {
   for (let coluna = 0; coluna < colom; coluna += 1) {
     const pixelChild = document.createElement('div');
     pixelChild.className = 'pixel';
     pixelChild.style.backgroundColor = 'white';
-    pixelChild.style.width = `${(200 / colom)}px`;
-    pixelChild.style.height = `${(200 / colom)}px`;
+    pixelChild.style.width = `${pixelzin(colom)}px`;
+    pixelChild.style.height = `${pixelzin(colom)}px`;
     pixelLine.appendChild(pixelChild);
   }
 }
@@ -43,7 +51,7 @@ function lines(line, pixelFather) {
     const pixelChild = document.createElement('div');
     pixelFather.appendChild(pixelChild);
     pixelChild.className = 'line';
-    pixelChild.style.height = `${(200 / line)}px`;
+    pixelChild.style.height = `${pixelzin(line)}px`;
     colunas(pixelChild, line);
   }
 }

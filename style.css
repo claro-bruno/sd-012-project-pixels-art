@@ -19,3 +19,7 @@
 .pixel-board {
   display: inline-block;
 }
+
+footer p {
+  margin: '100px', '0', '0';
+}
