@@ -66,6 +66,8 @@ window.onload = function () {
   //10 e 8
   const boardSize = document.createElement('input');
   boardSize.id = 'board-size';
+  boardSize.type = 'number';
+  boardSize.min = '1';
   document.body.insertBefore(boardSize, clearButton);
 
   const boardButton = document.createElement('button');
@@ -76,7 +78,7 @@ window.onload = function () {
   function changeBoardSize() {
     const inputValue = document.getElementById('board-size').value;
     if (inputValue === '') {
-      alert('Board inválido');
+      alert('Board inválido!');
     } else if (inputValue < 5 && inputValue != '') {
       const pixelBoard = document.querySelectorAll('.pixel-line');
       for (let i = 0; i < pixelBoard.length; i += 1) {
