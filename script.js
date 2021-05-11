@@ -13,7 +13,12 @@ let paiQuadro = document.getElementById("pixel-board");
 function paletaArco(){
    for(let index = 0; index < arrayCores.length; index++){
       const criaPaleta = document.createElement("p");
-      criaPaleta.className = "color";
+      
+      if(index === 0){
+         criaPaleta.className = "color selected";
+      }else{
+         criaPaleta.className = "color";
+      }
       criaPaleta.addEventListener("click", pegaCorPaletaArco);
       criaPaleta.style.background = arrayCores[index];
       criaPaleta.style.borderStyle = "solid";
@@ -78,7 +83,7 @@ function quadroPixels(){
 quadroPixels();
 
 function pegaCorPaletaArco(event){
-   let pS = document.getElementsByTagName("p");
+   let pS = document.getElementsByClassName("selected");
    for(let index = 0; index < pS.length; index++){
       pS[index].classList.remove("selected");
    }
@@ -89,11 +94,10 @@ function injectCor(event){
    let pegaCor = document.querySelector(".selected").style.backgroundColor;
    event.target.style.backgroundColor =  pegaCor;
 }
-
+// Desafio 6
 function pegaColorBlack(){
-   // Seleciona
-   const pegaPreto = document.getElementsByClassName("color")[0];
-   pegaPreto.classList.add("selected");
-   document.getElementsByClassName("selected")[0].style.backgroundColor
+   const pegaPreto = document.querySelector(".color").style.backgroundColor;
+   console.log(pegaPreto);
+  
 }
 pegaColorBlack();
