@@ -1,4 +1,10 @@
 const pixelboard = document.querySelector('#pixel-board')
+let quadroPixel = document.createElement('table');
+const botaoCriaPixel = document.querySelector('#generate-board');
+const entradaPixels = document.querySelector('#board-size');
+let color = document.querySelectorAll('.color')
+const botaoClear = document.querySelector('#clear-board');
+
 function mudarCorPaleta (array){
     let arrayCores = ["black","yellow", "red", "green"];
     let paleta = document.getElementsByClassName('color')
@@ -13,24 +19,35 @@ function mudarCorPaleta (array){
 mudarCorPaleta();
 
 //cria pixeis
-function createBoard (pixeis) {
-    let quadroPixel = document.createElement('table');
+
+function inputBoard(){
+    if(entradaPixels.value === ""){
+        alert('Board inválido!')
+    } else if (entradaPixels.value < 5){
+        entradaPixels.value = 5;
+    } else if (entradaPixels.value > 50) {
+        entradaPixels.value = 50;
+    }
+    createBoard(entradaPixels.value)
+}
+botaoCriaPixel.addEventListener('click',inputBoard);
+
+function createBoard (entradaPixels) {
     document.body.appendChild(quadroPixel);
     quadroPixel.id = 'pixel-board'
-    for(let index = 0; index < pixeis; index += 1) {
+    for(let index = 0; index < entradaPixels; index += 1) {
         let lineCanvas = document.createElement('tr');
         quadroPixel.appendChild(lineCanvas);
-        for (let index = 0; index < pixeis; index += 1) {
+        for (let index = 0; index < entradaPixels; index += 1) {
             let criaPixels = document.createElement('td')
             lineCanvas.appendChild(criaPixels);
             criaPixels.className = 'pixel';
         }
     }
 }
-createBoard(5);
+createBoard();
 
 //selecao da paleta
-let color = document.querySelectorAll('.color')
 function mudarSelecao(event){
     const selected = document.querySelector('.selected');
     selected.classList.remove('selected');
@@ -49,7 +66,6 @@ changeColor.addEventListener('click', (event) => {
 
 
 //botao limpa board
-  const botaoClear = document.querySelector('#clear-board');
 botaoClear.addEventListener('click', () =>{
     const pixels = document.getElementsByClassName('pixel');
     for (let index = 0; index < pixels.length; index += 1){

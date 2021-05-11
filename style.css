@@ -23,11 +23,15 @@ th, td {
     border: 1px solid black;
     display: table-cell;
 }
-#pixel-board{
+#pixel-board {
     margin-top: 2%;
 }
-#clear-board{
+#clear-board {
 margin-left: 48%;
+margin-top: 2%;
+}
+.entrada {
+text-align: center;
 margin-top: 2%;
 }
 body {
