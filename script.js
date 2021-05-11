@@ -16,7 +16,7 @@ window.onload = function () {
                 criaPixel.addEventListener('click', function(event){
                 })
                 document.querySelectorAll('.linha')[indexLinha].appendChild(criaPixel);
-                }   
+                }
             };
             } else if(entradaFormatado < 5){
                 entradaFormatado = 5;
@@ -30,7 +30,7 @@ window.onload = function () {
                     criaPixel.addEventListener('click', function(event){
                     })
                     document.querySelectorAll('.linha')[indexLinha].appendChild(criaPixel);
-                    }   
+                    }
                 };
             } else if(entradaFormatado > 50){
                 entradaFormatado = 50;
@@ -44,7 +44,7 @@ window.onload = function () {
                     criaPixel.addEventListener('click', function(event){
                     })
                     document.querySelectorAll('.linha')[indexLinha].appendChild(criaPixel);
-                    }   
+                    }
                 };
             }
         })
