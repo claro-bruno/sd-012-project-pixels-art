@@ -94,6 +94,6 @@ function pegaColorBlack(){
    // Seleciona
    const pegaPreto = document.getElementsByClassName("color")[0];
    pegaPreto.classList.add("selected");
-   document.getElementsByClassName("selected").style.backgroundColor;
+   document.getElementsByClassName("selected")[0].style.backgroundColor
 }
 pegaColorBlack();
