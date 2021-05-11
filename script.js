@@ -45,3 +45,23 @@ function selectColor() {
   });
 }
 selectColor();
+
+const pixelBoard = document.querySelector('#pixel-board');
+
+pixelBoard.addEventListener('click', (event) => {
+  const colorSelected = document.querySelector('.selected');
+
+  console.log(colorSelected.style.backgroundColor);
+
+  let bgColor = event.target.style;
+  bgColor.backgroundColor = colorSelected.style.backgroundColor;
+
+});
+
+
+
+/*
+- Criar um escutador de eventos no pixel board.
+- Alterar o background-color do pixel clicado.
+- Capturar o Background-color da paleta clicada.
+*/
