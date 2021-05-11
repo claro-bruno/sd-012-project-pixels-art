@@ -1,11 +1,12 @@
-h1 {
-  position: relative;
-  left: 38.5%;
+header {
+  text-align: center;
+  width: 100%;
+  margin: 15px auto;
 }
 
 #color-palette {
-  position: relative;
-  left: 40%;
+  text-align: center;
+  margin: auto;
 }
 
 .color {
@@ -16,16 +17,19 @@ h1 {
   width: 40px;
 }
 
-#clear-board {
-  position: relative;
-  left: 44.8%;
-  margin-top: 3%;
+#clear-button {
+  text-align: center;
+  margin: 20px auto;
+}
+
+#generate-button {
+  text-align: center;
+  margin: 20px auto;
 }
 
 #pixel-board {
-  position: relative;
-  left: 38%;
-  margin-top: 3%;
+  margin: 25px auto;
+  width: max-content;
 }
 
 .pixel {

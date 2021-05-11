@@ -2,10 +2,18 @@ const table = document.querySelector('#pixel-board');
 const colors = document.querySelectorAll('.color');
 const pixels = document.getElementsByClassName('pixel');
 const button = document.querySelector('#clear-board');
+const input = document.querySelector('#board-size');
+const generateBoard = document.querySelector('#generate-board');
 
 for (let indexColor = 0; indexColor < colors.length; indexColor += 1) {
   const colorsArray = ['black', 'blue', 'darksalmon', 'darkseagreen'];
   colors[indexColor].style.backgroundColor = colorsArray[indexColor];
+}
+
+function changeColor(event) {
+  const selected = document.querySelector('.selected');
+  const target = event.target;
+  target.style.backgroundColor = selected.style.backgroundColor;
 }
 
 function createSquares(numberOfLines) {
@@ -18,12 +26,36 @@ function createSquares(numberOfLines) {
       const column = document.createElement('td');
       column.id = `column ${index2}`;
       column.classList.add('pixel');
+      column.addEventListener('click', changeColor);
       line.appendChild(column);
     }
   }
 }
 
 createSquares(5);
+
+function changeBoard() {
+  const tr = document.getElementsByTagName('tr');
+  for (let destroy = tr.length - 1; destroy >= 0; destroy -= 1) {
+    table.removeChild(tr[destroy]);
+  }
+
+  let value = parseInt(input.value);
+
+  if (value >= 5 && value <= 50) {
+    createSquares(value);
+  } else if (value < 1) {
+    alert('Board inválido!');
+  } else if (value < 5 && value >= 1) {
+    value = 5;
+    createSquares(value);
+  } else if (value > 50) {
+    value = 50;
+    createSquares(value);
+  } 
+}
+
+generateBoard.addEventListener('click', changeBoard);
 
 function changeSelected(event) {
   const selected = document.querySelector('.selected');
@@ -33,15 +65,6 @@ function changeSelected(event) {
 
 for (let index3 = 0; index3 < colors.length; index3 += 1) {
   colors[index3].addEventListener('click', changeSelected);
-}
-
-function changeColor(event) {
-  const selected = document.querySelector('.selected');
-  event.target.style.backgroundColor = selected.style.backgroundColor;
-}
-
-for (let index4 = 0; index4 < pixels.length; index4 += 1) {
-  pixels[index4].addEventListener('click', changeColor);
 }
 
 function clear() {
