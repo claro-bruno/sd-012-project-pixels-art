@@ -49,8 +49,6 @@ function recebePaleta(event){
     let pixel = document.querySelector('.selected')
     let opixel = window.getComputedStyle(pixel);
     event.target.style.backgroundColor = opixel.getPropertyValue('background-color');
-    console.log(this.classList.value);
-    console.log(pixel);
     //fonte sobre uso do event.target = https://pt.stackoverflow.com/questions/63395/quando-usar-this-e-quando-usar-event-target
     //o uso do getProperTyValue, se deu do code review da colega Caroline Benichio, e conteúdo da Web = https://www.w3schools.com/jsref/met_cssstyle_getpropertyvalue.asp
 };
