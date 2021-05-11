@@ -21,5 +21,5 @@ function loadBlack() {
 
 };
 
-.addEventListener("load", loadBlack);
+
 
