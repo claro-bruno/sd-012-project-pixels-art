@@ -1,3 +1,11 @@
+// Adicionando cores à paleta
+let takeColor = document.querySelectorAll('.color');
+let colors = ['black', 'red', 'blue', 'green'];
+
+for (let index = 0; index < takeColor.length; index += 1) {
+  takeColor[index].style.backgroundColor = colors[index];
+}
+
 // Adicionando quadro de pixels
 const takePixelBoard = document.getElementById('pixel-board');
 
@@ -15,12 +23,13 @@ function createBoard() {
       takeRow[walksCol].style.cursor = 'pointer';
     };
   };
-  // let takeCol = document.querySelectorAll('#pixel-board tr td');
-  // for (let indexTd = 0; indexTd < takeCol.length; indexTd += 1) {
-  //   takeCol[indexTd].style.background = 'white';
-  // };
+  let takeCol = document.querySelectorAll('#pixel-board tr td');
+  for (let indexTd = 0; indexTd < takeCol.length; indexTd += 1) {
+    takeCol[indexTd].style.background = 'white';
+  };
 };
 createBoard();
+
 
 // Adicionando funcionalidade à paleta de cores
 function removeSelected() {
@@ -43,50 +52,27 @@ function addEventToPalette() {
 addEventToPalette();
 
 // Adicionando função de pintar quadro de pixels
-let takePaletteColor = document.getElementsByClassName('selected')[0].style.backgroundColor;
+let takeSelectedBg = document.querySelector('.selected').style.backgroundColor;
 
 let takePixels = document.querySelectorAll('.pixel');
-console.log(takePaletteColor);
 
 for (let index = 0; index < takePixels.length; index += 1) {
   takePixels[index].addEventListener('click', function(event) {
-    event.target.style.backgroundColor = takePaletteColor;
-    console.log('teste');
+    event.target.style.backgroundColor = takeSelectedBg;
   });
 };
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function clearBoard() {
-//   const takeClearBoard = document.getElementById('clear-board');
-//   const takePixels = document.querySelectorAll('td.pixel');
-  
-//   takeClearBoard.addEventListener('click', function() {
-//     for (let index = 0; index < takePixels.length; index += 1) {
-//       takePixels[index].style.backgroundColor = 'white';
-//     };
-//   });
-// };
-// clearBoard();
+// Limpa quadro de pixels
+function clearBoard() {
+  const takeClearBoard = document.getElementById('clear-board');
+  const takePixels = document.querySelectorAll('td.pixel');
+ 
+  takeClearBoard.addEventListener('click', function() {
+    for (let index = 0; index < takePixels.length; index += 1) {
+      takePixels[index].style.backgroundColor = 'white';
+    };
+  });
+};
+clearBoard();
