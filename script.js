@@ -25,3 +25,26 @@ function setClassSelectd(event) {
 }
 const palletColors = document.querySelector('#color-palette');
 palletColors.addEventListener('click', setClassSelectd);
+
+
+function paintPixel(event) {
+  // Descobrir qual a cor da paleta de cores está selecionada
+  // Descobrir uma forma de pegar o background color do elemento que tem a classe selected
+  // Adicionar este backgroundColor ao elemento clicado
+  // event.target
+  const storageColor = document.querySelector('.selected').id;
+  if (event.target.className === 'pixel') {
+    const getColor = event.target;
+    getColor.style.backgroundColor = storageColor;
+  }
+}
+const pixelBoard = document.querySelector('#pixel-board');
+pixelBoard.addEventListener('click', paintPixel);
+
+const clearBtn = document.querySelector('#clear-board');
+clearBtn.addEventListener('click', () => {
+  const pixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});
