@@ -11,6 +11,7 @@ function paleta(){
         coresitem.style.backgroundColor = cor;
         coresitem.style.color = cor;
         coresitem.innerHTML = cor;
+        coresitem.addEventListener('click', color7);
         quadradocores.appendChild(coresitem);
     };
 };
@@ -25,14 +26,14 @@ function quadrados() {
         quadrado.className = 'pixel';
         quadrado.style.backgroundColor = 'White';
         quadrado.innerHTML = pixels;
+        //quadrado.addEventListener('click',);
         pixell.appendChild(quadrado);
     };
 };
 
 window.onload = function () {
     let cor = document.getElementsByClassName('color')[0];
-    cor.classList.remove('color');
-    cor.className = 'selected';
+    cor.classList.add('selected');
     cor.addEventListener('click', pegacor)
     function pegacor() {
         
@@ -40,18 +41,11 @@ window.onload = function () {
     };
 };
 
-function requesito7() {
-    let cor7 = document.querySelectorAll('.color');
-    let cores7 = [];
-    for (indice = 0; indice < cor7.length; indice += 1) { 
-        cores7 = cor7[indice];
-        console.log(cores7)
-    };
-    cores7.addEventListener('click', color7);
-        function color7() {
-            cores7.className = 'selected';
-            console.log(this.classList.value)
-        };
-    console.log(cores7)
+function color7() {
+    let color = document.querySelector('.color.selected');
+    color.classList.remove('selected');
+    event.target.classList.add('selected');
+    console.log(this.classList.value)
+    console.log(color);
 };
-requesito7();
+
