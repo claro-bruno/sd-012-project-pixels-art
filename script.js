@@ -31,14 +31,28 @@ function quadrados() {
 
 window.onload = function () {
     let cor = document.getElementsByClassName('color')[0];
-    cor.classList.add('selected');
+    cor.classList.remove('color');
+    cor.className = 'selected';
     cor.addEventListener('click', pegacor)
     function pegacor() {
         
         cor.style.backgroundColor = document.getElementsByClassName('color')[0];
     };
-    console.log(cor.style.backgroundColor)
 };
 
-
+function requesito7() {
+    let cor7 = document.querySelectorAll('.color');
+    let cores7 = [];
+    for (indice = 0; indice < cor7.length; indice += 1) { 
+        cores7 = cor7[indice];
+        console.log(cores7)
+    };
+    cores7.addEventListener('click', color7);
+        function color7() {
+            cores7.className = 'selected';
+            console.log(this.classList.value)
+        };
+    console.log(cores7)
+};
+requesito7();
 
