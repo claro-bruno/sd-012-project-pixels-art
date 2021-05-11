@@ -60,12 +60,6 @@ corPaleta();
 
 // Desafio 7
 
-function selectOneObject(event) {
-  const removeSelec = document.querySelector('.selected');
-  removeSelec.classList.remove('selected');
-  event.target.classList.add('selected');
-}
-
 function eventoSelected() {
   const coresDaPaleta = document.getElementsByClassName('color');
   for (let index = 0; index < coresDaPaleta.length; index += 1) {
@@ -73,6 +67,12 @@ function eventoSelected() {
   }
 }
 eventoSelected();
+
+function selectOneObject(event) {
+  const removeSelec = document.querySelector('.selected');
+  removeSelec.classList.remove('selected');
+  event.target.classList.add('selected');
+}
 
 // Desafio 8
 function corSelected(event) {
@@ -88,3 +88,28 @@ function corAtribuida() {
   }
 }
 corAtribuida();
+
+// Desafio 9
+
+// const buttonErase = document.getElementById('clear-board')
+function limparPixels(event) {
+  const pixelParaLimpar = document.querySelectorAll('.pixel');
+  if (event.target.id === 'clear-board') {
+    for (let index = 0; index < pixelParaLimpar.length; index += 1) {
+      pixelParaLimpar[index].style.backgroundColor = 'white';
+    }
+  }
+}
+document.addEventListener('click', limparPixels);
+
+
+
+
+// clica em um elemento e só a ele será adicionada a classe 'selected'.
+// ao clicar em outro elemento, a classe não estará mais no elemento anteriormente clicado
+// function clickNoLi(event) {
+//   const removerSelecao = document.querySelector('.selected');
+//   if (removerSelecao !== null) {
+//     removerSelecao.classList.remove('selected');
+//   }
+//   event.target.classList.add('selected');
