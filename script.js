@@ -55,4 +55,3 @@ function requesito7() {
     console.log(cores7)
 };
 requesito7();
-
