@@ -35,20 +35,13 @@ selectBlack();
 
 const colorPalette = document.getElementById('color-palette');
 
-colorPalette.addEventListener('click', (event) => {
-  if (event.target.className === 'color') {
-    const classSelected = document.querySelector('.selected');
-    classSelected.classList.remove('selected');
-    event.target.classList.add('selected');
-  }
-});
-
-
-/*
-- Criar um evento de click na paleta de cores.
-- Captura o elemento que tem a classe select.
-- Remover da classe seleciona.
-- Colocar na classe que foi clicada.
-- Colocar a class select em quem tem a classe color.
-- se tiver a classe color adiciona a class select se não tiver não faça nada.
-*/
+function selectColor() {
+  colorPalette.addEventListener('click', (event) => {
+    if (event.target.className === 'color') {
+      const classSelected = document.querySelector('.selected');
+      classSelected.classList.remove('selected');
+      event.target.classList.add('selected');
+    }
+  });
+}
+selectColor();
