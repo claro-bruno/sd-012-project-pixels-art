@@ -15,28 +15,14 @@ function createBoard() {
       takeRow[walksCol].style.cursor = 'pointer';
     };
   };
-  let takeCol = document.querySelectorAll('#pixel-board tr td');
-  for (let indexTd = 0; indexTd < takeCol.length; indexTd += 1) {
-    takeCol[indexTd].style.background = 'white';
-  };
+  // let takeCol = document.querySelectorAll('#pixel-board tr td');
+  // for (let indexTd = 0; indexTd < takeCol.length; indexTd += 1) {
+  //   takeCol[indexTd].style.background = 'white';
+  // };
 };
 createBoard();
 
-// Adicionando classe Selected quando elemento da paleta de cores for clicado.
-
-//   for (let indexTakePalette = 0; indexTakePalette < takePalette.length; indexTakePalette += 1) {
-  //     takePalette[indexTakePalette].style.cursor = 'pointer';
-  
-  //     takePalette[indexTakePalette].addEventListener('click', function(){
-    
-    //       // takePalette[indexTakePalette].classList.remove('selected');
-    //       takePalette[indexTakePalette].className = 'color selected';
-    
-    //     });
-//   };
-// };
-
-// Tentativa 2
+// Adicionando funcionalidade à paleta de cores
 function removeSelected() {
   const takePalette = document.querySelectorAll('.color');
   for (let index = 0; index < takePalette.length; index += 1) {
@@ -51,6 +37,56 @@ function addEventToPalette() {
       removeSelected();
       event.target.className += ' selected';
     });
+    takePalette[index].style.cursor = 'pointer';
   };
 };
 addEventToPalette();
+
+// Adicionando função de pintar quadro de pixels
+let takePaletteColor = document.getElementsByClassName('selected')[0].style.backgroundColor;
+
+let takePixels = document.querySelectorAll('.pixel');
+console.log(takePaletteColor);
+
+for (let index = 0; index < takePixels.length; index += 1) {
+  takePixels[index].addEventListener('click', function(event) {
+    event.target.style.backgroundColor = takePaletteColor;
+    console.log('teste');
+  });
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function clearBoard() {
+//   const takeClearBoard = document.getElementById('clear-board');
+//   const takePixels = document.querySelectorAll('td.pixel');
+  
+//   takeClearBoard.addEventListener('click', function() {
+//     for (let index = 0; index < takePixels.length; index += 1) {
+//       takePixels[index].style.backgroundColor = 'white';
+//     };
+//   });
+// };
+// clearBoard();
