@@ -1,0 +1,32 @@
+.color {
+    height: 100px;
+    width: 100px;
+}
+#color1 {
+    background-color: black;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    display: inline-block;
+}
+#color2 {
+    background-color: green;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    display: inline-block;
+}
+#color3 {
+    background-color: blue;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    display: inline-block;
+}
+#color4 {
+    background-color: blueviolet;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    display: inline-block;
+}
