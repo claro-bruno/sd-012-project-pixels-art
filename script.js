@@ -20,5 +20,6 @@ colorSelection.addEventListener("click", selection);
 function loadBlack() {
 
 };
-let bodyName = document.getElementsByTagName('body');
-bodyName.addEventListener("load", loadBlack);
+
+.addEventListener("load", loadBlack);
+
