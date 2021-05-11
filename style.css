@@ -26,6 +26,25 @@ ul {
 
 input {
     width: 4%;
+    border-radius: 20%;
+    height: 25px;
+    font-size: 18px;
+    font-family:'Itim', cursive;
+    color: #0066cc;
+    font-weight: 700;
+    text-align: center;
+    border: #999 2px solid;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* Propriedade que remove as setas do input vista no link https://bit.ly/2SA6DOp */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 .pixel-line {

@@ -13,7 +13,6 @@ paletaCores[3].style.backgroundColor = `#${randomColor3}`;
 
 gerarQuadro ();
 
-
 function gerarQuadro (valor){
     let colunas;
     let linhas;
@@ -45,6 +44,7 @@ for (let index = 0; index < linhas; index += 1){
     criarDivPixel.className = ('pixel');
     divPixelLine.appendChild(criarDivPixel);
     }   
+    letsColor ();
  }
  
 }
@@ -58,14 +58,15 @@ for (let index = 0; index < paletaCores.length; index += 1){
     });
 }
 
+function letsColor(){
 let pixelBranco = document.getElementsByClassName('pixel');
-
 for (let index = 0; index < pixelBranco.length; index += 1){
     pixelBranco[index].addEventListener('click', function(evento){
      let corSelecionada = document.querySelector('.selected');
  
      evento.target.style.backgroundColor = corSelecionada.style.backgroundColor;
     });
+}
 }
 
 
@@ -87,17 +88,15 @@ for (index = 0; index < linhasPixel.length; index += 1){
     linhasPixel[index].remove();
 }
     gerarQuadro(valorInserido.value);
+    letsColor ();
 }
 }
-
-
 
 let botaoClearBoard = document.getElementById('clear-board');
-
 botaoClearBoard.addEventListener('click', limparQuadro);
 
-function limparQuadro(){
-        
+function limparQuadro(){  
+let pixelBranco = document.getElementsByClassName('pixel');       
 for (let index = 0; index < pixelBranco.length; index += 1){
 pixelBranco[index].style.backgroundColor = 'rgb(255, 255, 255)'
     }
