@@ -44,4 +44,26 @@ function selecionaColor() {
       let selecao = event.target;
       selecao.classList.add('selected');
     });
+  } 
+
+// //Função pinta quadro
+//   function pintaPixel(event) {
+//     let corPixel = document.querySelector('.selected');
+//     event.target.style.corPixel = corPixel.style.backgroundColor;
+//   }
+  
+//   for (let index = 0; index < pixels.length; index += 1) {
+//     pixels[index].addEventListener('click', pintaPixel());
+//   }
+
+//Função limpa quadro
+let pixels = document.querySelectorAll("#pixel");
+let botao = document.getElementById('clear-board');
+
+function limpar() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = "white";
   }
+}
+botao.addEventListener('click', limpar);
+
