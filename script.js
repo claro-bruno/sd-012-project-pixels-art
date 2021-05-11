@@ -56,22 +56,13 @@ function coloringPixel() {
 }
 coloringPixel();
 
-const buttonClean = document.querySelector('#clear-board');
-buttonClean.addEventListener('click', () => {
-  const btlimpa = document.querySelectorAll('.pixel');
-  for (let index = 0; index < btlimpa.length; index += 1) {
-    btlimpa[index].style.backgroundColor = 'white';
-  };
-
-})
-
-
-
-/*
-1 - Criar o botão na linguagem HTML. OK
-2 - Fazer uma interação com o botão ao ser clicado. OK
-4 - Fazer o preenchinmento das cores com Branco.
-5 - Colocar o id no botão como clear-board. OK
-6 - verificação do botão entre a paleta de cores e o quadro de pixels. OK
-7 - verificação do texto Limpar no botão. OK
-*/
+function deletePixel() {
+  const buttonClean = document.querySelector('#clear-board');
+  buttonClean.addEventListener('click', () => {
+    const btnClean = document.querySelectorAll('.pixel');
+    for (let index = 0; index < btnClean.length; index += 1) {
+      btnClean[index].style.backgroundColor = 'white';
+    }
+  });
+}
+deletePixel();
