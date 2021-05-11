@@ -27,17 +27,28 @@ function createBoard(size) {
 }
 createBoard(5);
 
-const firstColor = document.getElementById('color-palette').firstElementChild;
+function selectBlack() {
+  const firstColor = document.getElementById('color-palette').firstElementChild;
+  firstColor.classList.add('selected');
+}
+selectBlack();
 
-firstColor.classList.add('selected');
+const colorPalette = document.getElementById('color-palette');
 
-console.log(firstColor);
+colorPalette.addEventListener('click', (event) => {
+  if (event.target.className === 'color') {
+    const classSelected = document.querySelector('.selected');
+    classSelected.classList.remove('selected');
+    event.target.classList.add('selected');
+  }
+});
 
-/* 
 
-1 - Capturar o Elemento da Cor Preta.
-1.1 - Capturar o primeiro filho elemento que tem classe color palette.
-2 - Criar uma classe.
-3 - Apenas que tem classe color que pode receber a classe select.
-
+/*
+- Criar um evento de click na paleta de cores.
+- Captura o elemento que tem a classe select.
+- Remover da classe seleciona.
+- Colocar na classe que foi clicada.
+- Colocar a class select em quem tem a classe color.
+- se tiver a classe color adiciona a class select se não tiver não faça nada.
 */
