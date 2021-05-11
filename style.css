@@ -5,16 +5,33 @@
 
 #black{
     background-color: black;
+    width: 40px;
+    height: 40px;
 }
 
 #red{
     background-color: red;
+    width: 40px;
+    height: 40px;
 }
 
 #blue{
     background-color: blue;
+    width: 40px;
+    height: 40px;
 }
 
 #green{
     background-color: green;
+    width: 40px;
+    height: 40px;
+}
+
+.pixel{
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    background-color: white;
+    display: inline-block;
+    
 }
