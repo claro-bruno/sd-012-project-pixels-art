@@ -23,6 +23,7 @@ mudarCorPaleta();
 function inputBoard(){
     if(entradaPixels.value === ""){
         alert('Board inválido!')
+        inputBoard.value = 5;
     } else if (entradaPixels.value < 5){
         entradaPixels.value = 5;
     } else if (entradaPixels.value > 50) {
@@ -45,7 +46,7 @@ function createBoard (entradaPixels) {
         }
     }
 }
-createBoard();
+createBoard(5);
 
 //selecao da paleta
 function mudarSelecao(event){
