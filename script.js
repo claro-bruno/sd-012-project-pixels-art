@@ -10,15 +10,27 @@ const paiPaleta = document.getElementById("color-palette");
 let paiBody = document.getElementById("bodi");
 let paiQuadro = document.getElementById("pixel-board");
 
+function corPadrao(){
+  let paletaCorPadrao = document.getElementsByClassName("color")[0];
+  paletaCorPadrao.classList.add("selected");
+  paletaCorPadrao.style.background = arrayCores[0];
+  paletaCorPadrao.addEventListener("click", pegaCorPaletaArco);
+  paletaCorPadrao.style.borderStyle = "solid";
+  paletaCorPadrao.style.borderColor = "black";
+  paletaCorPadrao.style.borderWidth = "1px";
+  paletaCorPadrao.style.height = "40px";
+  paletaCorPadrao.style.width = "40px";
+  paletaCorPadrao.style.display = "inline-block"
+  paletaCorPadrao.style.marginRight = "15px";
+  paletaCorPadrao.style.marginTop = "15px";
+  paletaCorPadrao.style.marginBotto = "15px";
+}
+corPadrao();
 function paletaArco(){
-   for(let index = 0; index < arrayCores.length; index++){
+
+   for(let index = 1; index < arrayCores.length; index++){
       const criaPaleta = document.createElement("p");
-      
-      if(index === 0){
-         criaPaleta.className = "color selected";
-      }else{
-         criaPaleta.className = "color";
-      }
+      criaPaleta.className = "color";
       criaPaleta.addEventListener("click", pegaCorPaletaArco);
       criaPaleta.style.background = arrayCores[index];
       criaPaleta.style.borderStyle = "solid";
@@ -83,7 +95,7 @@ function quadroPixels(){
 quadroPixels();
 
 function pegaCorPaletaArco(event){
-   let pS = document.getElementsByClassName("selected");
+   let pS = document.getElementsByTagName("p");
    for(let index = 0; index < pS.length; index++){
       pS[index].classList.remove("selected");
    }
@@ -94,10 +106,3 @@ function injectCor(event){
    let pegaCor = document.querySelector(".selected").style.backgroundColor;
    event.target.style.backgroundColor =  pegaCor;
 }
-// Desafio 6
-function pegaColorBlack(){
-   const pegaPreto = document.querySelector(".color").style.backgroundColor;
-   console.log(pegaPreto);
-  
-}
-pegaColorBlack();
