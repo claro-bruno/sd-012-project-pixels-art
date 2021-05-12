@@ -1,0 +1,18 @@
+.color {
+    display: inline-block;
+    border: 1px black solid;
+    margin: 5px;
+    padding: 30px;
+}
+#black {
+    background-color: black;
+}
+#red{
+    background-color: red;
+}
+#blue{
+    background-color: blue;
+}
+#yellow {
+    background-color: yellow;
+}
