@@ -1,5 +1,4 @@
 function pallet(palletNumber) {
-  let pixBoard = document.getElementById("pixel-board");
   let allPixels = palletNumber * palletNumber;
   for (indice1 = 0; indice1 < allPixels; indice1 += 1) {
     let bornPixel = document.createElement("div");
@@ -7,6 +6,7 @@ function pallet(palletNumber) {
     pixBoard.children[indice1].className = "pixel";
   }
 }
+let pixBoard = document.getElementById("pixel-board");
 pallet(5);
 
 function selection(event) {
