@@ -12,8 +12,15 @@ function quadrado25(num) {
 }
 quadrado25(5)
 
-let initColor = document.body.addEventListener('click', function (event) {
-    if (event.target.className = 'pixel') {
+let initColor = document.querySelectorAll('.pixel');
+    for (let index = 0 ; index < initColor.length; index +=1){
+    initColor[index].addEventListener('click', function (event) {
        event.target.style.backgroundColor = 'black';
-    }
-})
+
+});
+}
+
+function (){
+    let corSelecionada = document.querySelector('#color-palete');
+    if()
+}
