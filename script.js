@@ -18,9 +18,4 @@ let initColor = document.querySelectorAll('.pixel');
        event.target.style.backgroundColor = 'black';
 
 });
-}
-
-function (){
-    let corSelecionada = document.querySelector('#color-palete');
-    if()
-}
+};
