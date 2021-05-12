@@ -43,11 +43,25 @@ window.onload = function () {
   selectColorInitial();
  
 //Cria board no JS
-  function createPixelBoard(){
+  // function createPixelBoard(){
+  //   let board = document.querySelector('#pixel-board')
+  //   for (let line = 1; line <= 5; line += 1){
+  //     let pixelLine = document.createElement('tr');
+  //     for (let column = 1; column <= 5; column += 1){
+  //       let pixelColumn = document.createElement('td');
+  //       pixelColumn.className = 'pixel';
+  //       pixelLine.appendChild(pixelColumn);
+  //     }
+  //     board.appendChild(pixelLine);
+  //   };
+  // }
+  // createPixelBoard();
+
+  function createPixelBoard(size){
     let board = document.querySelector('#pixel-board')
-    for (let line = 1; line <= 5; line += 1){
+    for (let line = 1; line <= size; line += 1){
       let pixelLine = document.createElement('tr');
-      for (let column = 1; column <= 5; column += 1){
+      for (let column = 1; column <= size; column += 1){
         let pixelColumn = document.createElement('td');
         pixelColumn.className = 'pixel';
         pixelLine.appendChild(pixelColumn);
@@ -55,7 +69,8 @@ window.onload = function () {
       board.appendChild(pixelLine);
     };
   }
-  createPixelBoard();
+  createPixelBoard(5);
+
 
 //Pinta os pixels iniciais de preto
   function setBlackPixelInitial() {
@@ -115,7 +130,7 @@ window.onload = function () {
         });
       }
     }
-}
+  }
 setPixel();
 
   function clearBoard(){
@@ -131,30 +146,31 @@ setPixel();
   clearBoard();
 
 
+  function removeBoard() {
+    let board = document.querySelector('#pixel-board');
+    board.remove('.pixel')
+  }
 
+  function changeBoard() {
+    let input = document.querySelector('#board-size').value;
+    if (input === '') {
+      alert('Board inválido!');
+    } else if (input < 5) {
+      removeBoard();
+      createPixelBoard(5);
+    } else if (input > 50) {
+      removeBoard();
+      createPixelBoard(50);
+    } else {
+      removeBoard();
+      createPixelBoard(input);
+    }
+  }
 
-  // function selectedGenericColor(color){
-  //   let selectedPixel = document.querySelectorAll('.pixel')
-  //   for (let index = 0; index < selectedPixel.length; index += 1) {
-  //     selectedPixel[index].addEventListener('click', function() {
-  //     let pixel = selectedPixel[index].style.backgroundColor = color;
-  //     });
-  //   }
-  // }
-
-
-    // pinta board ???? Nao funciona ainda - Ref Gui de Paula
-    // function setPixel() {
-    //   let pixel = document.querySelector('.pixel');
-    //   for (let index = 0; index < pixel.length; index += 1){
-    //     pixel[index].addEventListener('click', function() {
-    //       let pixelColor = document.querySelector('.selected');
-    //       pixel[index].style.backgroundColor = pixelColor;
-    //     })
-    //   }
-    // }
-    // setPixel();
-
-
-
+  function addEventChangeBoard() {
+    let changeButton = document.querySelector('#generate-board');
+    changeButton.addEventListener('click', changeBoard);
+  }
+  addEventChangeBoard();
+  
 };
