@@ -54,3 +54,17 @@ function colorSelector () {
     })
 };
 colorSelector ();
+
+function pixelBoardColor() {
+    
+    const printPixel = document.getElementsByClassName("pixel");
+
+    for (let index = 0; index < printPixel.length; index += 1) {
+      printPixel[index].addEventListener('click', (event) => {
+        let selectedColor = document.querySelector('.selected');
+        let selectedBackgroundColor = window.getComputedStyle(selectedColor).backgroundColor;
+        event.target.style.backgroundColor = selectedBackgroundColor;
+      });
+    };
+  };
+pixelBoardColor();
