@@ -9,10 +9,12 @@ const colorSlecting = document.getElementById('color-palette');
 colorSlecting.addEventListener('click', selectColor); 
 
 function paintPixel(event){
-    let selectColor = document.querySelector('.selected').style.backgroundColor;
-    if (event.target.classList.contains('pixel')) {
-        event.target.style.backgroundColor = selectColor;
+    const painter = document.querySelector('.selected');
+    if (event.target.className === 'pixel') {
+      event.target.style.backgroundColor = painter.style.backgroundColor;
     }
 }
 
-document.addEventListener('click', paintPixel);
+const board = document.getElementById('pixel-board')
+
+board.addEventListener('click', paintPixel);

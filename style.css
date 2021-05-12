@@ -6,22 +6,6 @@
     margin: 5px;
     margin-bottom: 20px;
 }
-
-#color1 {
-    background-color: black;
-}
-
-#color2 {
-    background-color: cyan;
-}
-
-#color3 {
-    background-color: grey;
-}
-
-#color4 {
-    background-color: crimson;
-}
  
 #pixel-board{
     display: table;
