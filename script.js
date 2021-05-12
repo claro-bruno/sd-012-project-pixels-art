@@ -16,12 +16,12 @@ function selection(event) {
   event.target.classList.add('selected');
 };
 
-let colorSelection = document.getElementById("color-palette");
+let colorSelection = document.getElementsByClassName("color");
 let memberSelected = document.getElementsByClassName("selected");
 colorSelection.addEventListener("click", selection);
 
 function changeColor(event){
- event.target.value == memberSelected[0];
+ event.target.style.color == memberSelected[0].style.color;
 };
 
 pixBoard.addEventListenner("click", changeColor);
