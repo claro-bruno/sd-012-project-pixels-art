@@ -23,6 +23,6 @@ let quadradinho = document.getElementsByClassName('pixel');
 let botao1 = document.getElementById('clear-board');
     botao1.addEventListener('click',function (){
     for (let index = 0; index < quadradinho.length; index +=1){
-        quadradinho[index].style.backgroundColor = 'white'
+        quadradinho[index].style.backgroundColor = 'white';
     }
     })
