@@ -1,22 +1,3 @@
-function selecioneColor1() {
-    let mudançaDeCor = document.getElementsByClassName("selected")[0];
-    mudançaDeCor.style.backgroundColor = "black";
-}
-
-function selecioneColor2() {
-    let mudançaDeCor = document.getElementsByClassName("selected")[0];
-    mudançaDeCor.style.backgroundColor = "green";
-}
-
-function selecioneColor3() {
-    let mudançaDeCor = document.getElementsByClassName("selected")[0];
-    mudançaDeCor.style.backgroundColor = "blue";
-}
-
-function selecioneColor4() {
-    let mudançaDeCor = document.getElementsByClassName("selected")[0];
-    mudançaDeCor.style.backgroundColor = "blueviolet";
-}
 
 window.onload = function () {
     let firstColor = document.querySelector("#color1");
