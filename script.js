@@ -44,7 +44,7 @@ function changeBoard() {
 
   if (value >= 5 && value <= 50) {
     createSquares(value);
-  } else if (value < 1) {
+  } else if (value < 1 || input.value.length === 0) {
     alert('Board inválido!');
   } else if (value < 5 && value >= 1) {
     value = 5;
