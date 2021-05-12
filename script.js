@@ -5,10 +5,21 @@ const button = document.querySelector('#clear-board');
 const input = document.querySelector('#board-size');
 const generateBoard = document.querySelector('#generate-board');
 
-for (let indexColor = 0; indexColor < colors.length; indexColor += 1) {
-  const colorsArray = ['black', 'blue', 'darksalmon', 'darkseagreen'];
-  colors[indexColor].style.backgroundColor = colorsArray[indexColor];
+function randomColors() {
+  let colorsArray = ['black'];
+  for (let indexRandom = 1; indexRandom < colors.length; indexRandom += 1) {
+    const randomNumber1 = Math.ceil(Math.random() * 255);
+    const randomNumber2 = Math.ceil(Math.random() * 255);
+    const randomNumber3 = Math.ceil(Math.random() * 255);
+    let newColor = `rgb(${randomNumber1}, ${randomNumber2}, ${randomNumber3})`;
+    colorsArray.push(newColor);
+  }
+  for (let indexColor = 0; indexColor < colors.length; indexColor += 1) {
+    colors[indexColor].style.backgroundColor = colorsArray[indexColor];
+  }
 }
+
+randomColors();
 
 function changeColor(event) {
   const selected = document.querySelector('.selected');
