@@ -1,3 +1,20 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(196, 196, 196);
+}
+
+header {
+    background-color: rgb(92, 92, 92);
+    padding: 15px;
+    color: white;
+    font-size: 30px;
+}
+
 .color {    
     width: 40px;
     height: 40px;
@@ -8,10 +25,22 @@
     margin-left: 20px;
 }
 
-#pixel-board {
-    margin-top: 50px;
+.board {
+    background-color: rgb(92, 92, 92);
+    padding: 15px;
+    margin: 50px auto 50px auto;    
+    width: 20%;
+    border-radius: 25px;
+}
+
+#pixel-board {    
+    margin: 10px auto 0px auto;    
     display: table;
     border-collapse: collapse;        
+}
+
+#color-palette {
+    margin: 50px auto 20px auto;
 }
 
 .pixel {
