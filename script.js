@@ -10,15 +10,18 @@ function pallet(palletNumber) {
 pallet(5);
 
 function selection(event) {
- for(let indice=0; indice<colorSelection.length; indice+=1){
-  colorSelection[indice].classList.remove('selected');
- }
- event.target.classList.add('selected');
+  for (let indice = 0; indice < colorSelection.length; indice += 1) {
+    colorSelection[indice].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
 };
 
 let colorSelection = document.getElementById("color-palette");
-let membersSelected = document.getElementsByClassName("selected");
+let memberSelected = document.getElementsByClassName("selected");
 colorSelection.addEventListener("click", selection);
 
+function changeColor(event){
+ event.target.value == memberSelected[0];
+};
 
-
+pixBoard.addEventListenner("click", changeColor);
