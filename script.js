@@ -1,21 +1,21 @@
 // Código para gerar cor de fundo aleátoria:
 // Referência: 
-// https://stackoverflow.com/questions/1484506/random-color-generator
+// https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
 
-const paletaDeCores = document.querySelectorAll('.color');
+const colorSelected = document.querySelectorAll('.color');
 
 window.onload = () => {
   const blackColor = document.querySelector('#c1');
   blackColor.classList.add('selected');
   function randomColors() {
-    const orange = Math.random() * 255;
-    const blue = Math.random() * 255;
-    const grey = Math.random() * 255;
+    const red = Math.random() * 256;
+    const green = Math.random() * 256;
+    const blue = Math.random() * 256;
 
-    return `rgb(${orange},${blue},${grey})`;
+    return `rgb(${red},${green},${blue})`;
   }
 
-  for (let color = 1; color < paletaDeCores.length; color += 1) {
-    paletaDeCores[color].style.backgroundColor = randomColors();
+  for (let color = 1; color < colorSelected.length; color += 1) {
+    colorSelected[color].style.backgroundColor = randomColors();
   }
 };
