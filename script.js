@@ -1,11 +1,14 @@
 window.onload = function () {
     
     function criaQuadro() {
-        let btn = document.getElementById('btn');
+        let btn = document.getElementById('generate-board');
         btn.addEventListener('click', function() {
-            let entrada = document.getElementById('inputTamanho').value;
+            let entrada = document.getElementById('board-size').value;
             let entradaFormatado = parseInt(entrada);
-            if(entradaFormatado >= 5 && entradaFormatado <= 50){
+            if(entrada == ''){
+                alert('Board Inválido!')
+            }
+            else if(entradaFormatado >= 5 && entradaFormatado <= 50){
             for(indexLinha = 0; indexLinha < entradaFormatado; indexLinha += 1){
                 let linha = document.createElement('div');
                 linha.className = 'linha';
@@ -16,6 +19,7 @@ window.onload = function () {
                 criaPixel.addEventListener('click', function(event){
                 })
                 document.querySelectorAll('.linha')[indexLinha].appendChild(criaPixel);
+                document.querySelector('#pixel-board').style.border = '1px solid black';
                 }
             };
             } else if(entradaFormatado < 5){
@@ -30,6 +34,7 @@ window.onload = function () {
                     criaPixel.addEventListener('click', function(event){
                     })
                     document.querySelectorAll('.linha')[indexLinha].appendChild(criaPixel);
+                    document.querySelector('#pixel-board').style.border = '1px solid black';
                     }
                 };
             } else if(entradaFormatado > 50){
@@ -44,6 +49,7 @@ window.onload = function () {
                     criaPixel.addEventListener('click', function(event){
                     })
                     document.querySelectorAll('.linha')[indexLinha].appendChild(criaPixel);
+                    document.querySelector('#pixel-board').style.border = '1px solid black';
                     }
                 };
             }

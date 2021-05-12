@@ -96,7 +96,7 @@
     background: red;
 }
 
-#inputTamanho {
+#board-size {
     text-align: center;
 }
 
@@ -120,9 +120,6 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
-    border-spacing: 1px;
-    background-color: black;
-    border: 1px solid black;
 }
 
 .linha {
