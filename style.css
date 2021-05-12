@@ -1,22 +1,17 @@
-
  #tittle {
    text-align: center;
  }
- 
- 
  .color {
     border: solid 1px black;
     display: inline-block;
     width: 60px;
     height: 80px;
      }
-
   #black {
     background-color: black;
-
   }  
-  #red {
-    background-color: red;
+  #green {
+    background-color: green;
   } 
   #yellow {
     background-color: yellow;
@@ -24,19 +19,17 @@
   #blue {
     background-color: blue;
   }
-
-  
-
-
-
-
-
-
-
-  
   body {
     display: inline-table;
     flex-direction: initial;
     align-items: center;
   }
-  
+
+  .pixel {
+    border: 1px solid black;  
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    line-height: 0px;
+    background-color: white;
+    } 
