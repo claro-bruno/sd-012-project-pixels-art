@@ -1,142 +1,196 @@
 window.onload = function () {
-  function selectColorInitial() {
-    let selectedBlackColor = document.querySelector('.black');
-    let selectedRedColor = document.querySelector('.red');
-    let selectedBlueColor = document.querySelector('.blue');
-    let selectedGreenColor = document.querySelector('.green');
+  makeColorsSelector();
+  selectColorInitial();
+  createPixelBoard();
+  clearBoard();
+  addEventChangeBoard();
 
-    // ao iniciar a pagina, o black é selected
-    selectedBlackColor.className += ' selected';
+  function makeColorsSelector() {
+    let colorPalette = document.querySelector('#color-palette');
+    for (let index = 0; index < 4; index += 1) {
+      let quadrado = document.createElement('td');
+      quadrado.className = 'color';
+      if (index === 0) {
+        quadrado.style.backgroundColor = '#000000';
+        quadrado.className += ' selected';
+      } else {
+        quadrado.style.backgroundColor = getRandomColor();
+      }
+      colorPalette.appendChild(quadrado);
+    }
+  }
+
+  function selectColorInitial() {
+    let selectedFirstColor = document.querySelectorAll('.color')[0];
+    let selectedSecondColor = document.querySelectorAll('.color')[1];
+    let selectedThirdColor = document.querySelectorAll('.color')[2];
+    let selectedFourthColor = document.querySelectorAll('.color')[3];
 
     //seleciona black
-    selectedBlackColor.addEventListener('click', function (){
-      selectedBlackColor.className += ' selected';
-      selectedRedColor.classList.remove('selected');
-      selectedBlueColor.classList.remove('selected');
-      selectedGreenColor.classList.remove('selected');
+    selectedFirstColor.addEventListener('click', function () {
+      selectedFirstColor.className += ' selected';
+      selectedSecondColor.classList.remove('selected');
+      selectedThirdColor.classList.remove('selected');
+      selectedFourthColor.classList.remove('selected');
     });
 
     //seleciona red
-    selectedRedColor.addEventListener('click', function (){
-      selectedRedColor.className += ' selected';
-      selectedBlackColor.classList.remove('selected');
-      selectedBlueColor.classList.remove('selected');
-      selectedGreenColor.classList.remove('selected');
+    selectedSecondColor.addEventListener('click', function () {
+      selectedSecondColor.className += ' selected';
+      selectedFirstColor.classList.remove('selected');
+      selectedThirdColor.classList.remove('selected');
+      selectedFourthColor.classList.remove('selected');
     });
 
     //seleciona blue
-    selectedBlueColor.addEventListener('click', function (){
-      selectedBlueColor.className += ' selected';
-      selectedBlackColor.classList.remove('selected');
-      selectedRedColor.classList.remove('selected');
-      selectedGreenColor.classList.remove('selected');
+    selectedThirdColor.addEventListener('click', function () {
+      selectedThirdColor.className += ' selected';
+      selectedFirstColor.classList.remove('selected');
+      selectedSecondColor.classList.remove('selected');
+      selectedFourthColor.classList.remove('selected');
     });
 
     //seleciona green
-    selectedGreenColor.addEventListener('click', function (){
-      selectedGreenColor.className += ' selected';
-      selectedBlackColor.classList.remove('selected');
-      selectedRedColor.classList.remove('selected');
-      selectedBlueColor.classList.remove('selected');
+    selectedFourthColor.addEventListener('click', function () {
+      selectedFourthColor.className += ' selected';
+      selectedFirstColor.classList.remove('selected');
+      selectedSecondColor.classList.remove('selected');
+      selectedThirdColor.classList.remove('selected');
     });
   }
-  selectColorInitial();
- 
-//Cria board
-  // function createPixelBoard(){
-  //   let board = document.querySelector('#pixel-board')
-  //   for (let line = 1; line <= 5; line += 1){
-  //     let pixelLine = document.createElement('tr');
-  //     for (let column = 1; column <= 5; column += 1){
-  //       let pixelColumn = document.createElement('td');
-  //       pixelColumn.className = 'pixel';
-  //       pixelLine.appendChild(pixelColumn);
-  //     }
-  //     board.appendChild(pixelLine);
-  //   };
-  // }
-  // createPixelBoard();
 
-  function createPixelBoard(size = 5){
+  // function selectColorInitial() {
+  //   let selectedBlackColor = document.querySelector('.black');
+  //   let selectedRedColor = document.querySelector('.red');
+  //   let selectedBlueColor = document.querySelector('.blue');
+  //   let selectedGreenColor = document.querySelector('.green');
+
+  //   // ao iniciar a pagina, o black é selected
+  //   selectedBlackColor.className += ' selected';
+
+  //   //seleciona black
+  //   selectedBlackColor.addEventListener('click', function (){
+  //     selectedBlackColor.className += ' selected';
+  //     selectedRedColor.classList.remove('selected');
+  //     selectedBlueColor.classList.remove('selected');
+  //     selectedGreenColor.classList.remove('selected');
+  //   });
+
+  //   //seleciona red
+  //   selectedRedColor.addEventListener('click', function (){
+  //     selectedRedColor.className += ' selected';
+  //     selectedBlackColor.classList.remove('selected');
+  //     selectedBlueColor.classList.remove('selected');
+  //     selectedGreenColor.classList.remove('selected');
+  //   });
+
+  //   //seleciona blue
+  //   selectedBlueColor.addEventListener('click', function (){
+  //     selectedBlueColor.className += ' selected';
+  //     selectedBlackColor.classList.remove('selected');
+  //     selectedRedColor.classList.remove('selected');
+  //     selectedGreenColor.classList.remove('selected');
+  //   });
+
+  //   //seleciona green
+  //   selectedGreenColor.addEventListener('click', function (){
+  //     selectedGreenColor.className += ' selected';
+  //     selectedBlackColor.classList.remove('selected');
+  //     selectedRedColor.classList.remove('selected');
+  //     selectedBlueColor.classList.remove('selected');
+  //   });
+  // }
+  // selectColorInitial();
+
+  function createPixelBoard(size = 5) {
     let board = document.querySelector('#pixel-board')
-    for (let line = 1; line <= size; line += 1){
+    for (let line = 1; line <= size; line += 1) {
       let pixelLine = document.createElement('tr');
-      for (let column = 1; column <= size; column += 1){
+      for (let column = 1; column <= size; column += 1) {
         let pixelColumn = document.createElement('td');
         pixelColumn.className = 'pixel';
         pixelLine.appendChild(pixelColumn);
       }
       board.appendChild(pixelLine);
     };
+    setPixel();
   }
-  createPixelBoard();
 
+  //Pinta os pixels iniciais de preto
+  // function setBlackPixelInitial() {
+  //   let selectedPixel = document.querySelectorAll('.pixel')
+  //     for (let index = 0; index < selectedPixel.length; index += 1) {
+  //     selectedPixel[index].addEventListener('click', function() {
+  //       selectedPixel[index].style.backgroundColor = 'black';
+  //     });
+  //   }
+  // }
+  // setBlackPixelInitial();
 
-//Pinta os pixels iniciais de preto
-  function setBlackPixelInitial() {
-    let selectedPixel = document.querySelectorAll('.pixel')
-      for (let index = 0; index < selectedPixel.length; index += 1) {
-      selectedPixel[index].addEventListener('click', function() {
-      let pixel = selectedPixel[index].style.backgroundColor = 'black';
+  function setPixel() {
+    let selectedPixel = document.querySelectorAll('.pixel');
+    for (let index = 0; index < selectedPixel.length; index += 1) {
+      selectedPixel[index].addEventListener('click', function () {
+        let selectedElement = document.querySelector('.selected');
+        selectedPixel[index].style.backgroundColor = selectedElement.style.backgroundColor;
       });
     }
   }
-  setBlackPixelInitial();
 
-//Pinta pixel 
-  function setPixel() {
-    let selectedBlackColor = document.querySelector('.black')
-    let selectedRedColor = document.querySelector('.red')
-    let selectedBlueColor = document.querySelector('.blue')
-    let selectedGreenColor = document.querySelector('.green')
+  //Pinta pixel 
+  // function setPixel() {
+  //   let selectedBlackColor = document.querySelector('.black')
+  //   let selectedRedColor = document.querySelector('.red')
+  //   let selectedBlueColor = document.querySelector('.blue')
+  //   let selectedGreenColor = document.querySelector('.green')
 
-    selectedBlackColor.addEventListener('click', selectBlack)
-    selectedRedColor.addEventListener('click', selectRed)
-    selectedBlueColor.addEventListener('click', selectBlue)
-    selectedGreenColor.addEventListener('click', selectGreen)
+  //   selectedBlackColor.addEventListener('click', selectBlack)
+  //   selectedRedColor.addEventListener('click', selectRed)
+  //   selectedBlueColor.addEventListener('click', selectBlue)
+  //   selectedGreenColor.addEventListener('click', selectGreen)
 
-    function selectBlack(){
-      let selectedPixel = document.querySelectorAll('.pixel')
-      for (let index = 0; index < selectedPixel.length; index += 1) {
-        selectedPixel[index].addEventListener('click', function() {
-        let pixel = selectedPixel[index].style.backgroundColor = 'black';
-        });
-      }
-    }
+  //   function selectBlack(){
+  //     let selectedPixel = document.querySelectorAll('.pixel')
+  //     for (let index = 0; index < selectedPixel.length; index += 1) {
+  //       selectedPixel[index].addEventListener('click', function() {
+  //       let pixel = selectedPixel[index].style.backgroundColor = 'black';
+  //       });
+  //     }
+  //   }
 
-    function selectRed(){
-      let selectedPixel = document.querySelectorAll('.pixel')
-      for (let index = 0; index < selectedPixel.length; index += 1) {
-        selectedPixel[index].addEventListener('click', function() {
-        let pixel = selectedPixel[index].style.backgroundColor = 'red';
-        });
-      }
-    }
+  //   function selectRed(){
+  //     let selectedPixel = document.querySelectorAll('.pixel')
+  //     for (let index = 0; index < selectedPixel.length; index += 1) {
+  //       selectedPixel[index].addEventListener('click', function() {
+  //       let pixel = selectedPixel[index].style.backgroundColor = 'red';
+  //       });
+  //     }
+  //   }
 
-    function selectBlue(){
-      let selectedPixel = document.querySelectorAll('.pixel')
-      for (let index = 0; index < selectedPixel.length; index += 1) {
-        selectedPixel[index].addEventListener('click', function() {
-        let pixel = selectedPixel[index].style.backgroundColor = 'blue';
-        });
-      }
-    }
+  //   function selectBlue(){
+  //     let selectedPixel = document.querySelectorAll('.pixel')
+  //     for (let index = 0; index < selectedPixel.length; index += 1) {
+  //       selectedPixel[index].addEventListener('click', function() {
+  //       let pixel = selectedPixel[index].style.backgroundColor = 'blue';
+  //       });
+  //     }
+  //   }
 
-    function selectGreen(){
-      let selectedPixel = document.querySelectorAll('.pixel')
-      for (let index = 0; index < selectedPixel.length; index += 1) {
-        selectedPixel[index].addEventListener('click', function() {
-        let pixel = selectedPixel[index].style.backgroundColor = 'green';
-        });
-      }
-    }
-  }
-  setPixel();
+  //   function selectGreen(){
+  //     let selectedPixel = document.querySelectorAll('.pixel')
+  //     for (let index = 0; index < selectedPixel.length; index += 1) {
+  //       selectedPixel[index].addEventListener('click', function() {
+  //       let pixel = selectedPixel[index].style.backgroundColor = 'green';
+  //       });
+  //     }
+  //   }
+  // }
+  // setPixel();
 
-//Limpa Board
-  function clearBoard(){
+  //Limpa Board
+  function clearBoard() {
     let buttonClear = document.querySelector('#clear-board');
-    buttonClear.addEventListener('click', function(){
+    buttonClear.addEventListener('click', function () {
       let allPixels = document.querySelectorAll('.pixel')
       for (let index = 0; index < allPixels.length; index += 1) {
         console.log('woooooo')
@@ -144,8 +198,6 @@ window.onload = function () {
       }
     });
   }
-  clearBoard();
-
 
   function removeBoard() {
     let board = document.querySelector('#pixel-board')
@@ -172,5 +224,13 @@ window.onload = function () {
     let changeButton = document.querySelector('#generate-board');
     changeButton.addEventListener('click', changeBoard);
   }
-  addEventChangeBoard();
+
+  function getRandomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let index = 0; index < 6; index += 1) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 };
