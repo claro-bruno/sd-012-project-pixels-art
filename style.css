@@ -37,3 +37,7 @@
     line-height: 0px;
     background-color: white;
     } 
+
+    .selected {
+      background-color: black;
+    }
