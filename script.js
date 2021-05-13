@@ -18,17 +18,23 @@ function selection(event) {
 
 let colorSelection = document.getElementsByClassName("color");
 let memberSelected = document.getElementsByClassName("selected");
-for (let indice2 = 0; indice2 < colorSelection.length; indice2+=1) {
+for (let indice2 = 0; indice2 < colorSelection.length; indice2 += 1) {
   colorSelection[indice2].addEventListener("click", selection);
 }
 
-function changeColor(event) {
-  event.target.style.color == memberSelected[0].style.color;
+function changeColor(event){
+  event.target.style.backgroundColor = memberSelected[0].style.backgroundColor;
 };
 
 let membersPix = document.getElementsByClassName("pixel");
-for(let indice3=0; indice3<membersPix.length; indice3+=1){
-  console.log(membersPix.length)
+for (let indice3 = 0; indice3 < membersPix.length; indice3 += 1) {
   membersPix[indice3].addEventListener("click", changeColor);
 }
 
+function colorCube() {
+  let color = ['black', 'blue', 'yellow', 'red'];
+  for (let indice4 = 0; indice4 < colorSelection.length; indice4 += 1) {
+    colorSelection[indice4].style.backgroundColor = color[indice4];
+  }
+};
+ colorCube();
