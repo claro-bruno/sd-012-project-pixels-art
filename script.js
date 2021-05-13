@@ -14,11 +14,17 @@ let frame = document.getElementById("pixel-board");;
     }  
     frameBoard(5);  
 
-    window.onload = function () {
-      let InitialColor = document.querySelector("#black");
-      InitialColor.classList.add("selected");
-      InitialColor.style.background = "black";
-  }
+
+
+
+
+
+
+
+    function startColor () {
+      let initialColor = document.querySelector("#black");
+      initialColor.className = ("selected");
+      }
 
 
 
