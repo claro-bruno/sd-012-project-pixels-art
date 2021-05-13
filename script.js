@@ -22,9 +22,12 @@ window.onload = () => {
 };
 
 //Código para gerar quadro pixels:
-const createBoard = document.querySelector("#pixel-board")
+//Referência:
+// https://github.com/tryber/sd-012-project-pixels-art/pull/152/files#
 
-function createBoardColumns(lines, columns) {
+const createBoard = document.querySelector("#pixel-board");
+
+  function createBoardColumns(lines, columns) {
   for (let indexColumns = 1; indexColumns <= columns; indexColumns += 1) {
     const pixelColumns = document.createElement('div');
     pixelColumns.classList.add('pixel');
@@ -41,3 +44,29 @@ function createBoardLines (lines) {
 };
 
 createBoardLines(5);
+
+
+//Código para selecionar as cores a serem pintadas no board: 
+
+let color = '#000';
+
+function selectColor (selectedColor) {
+  const pickedColor = selectedColor.target;
+  if (pickedColor.classList.contains('pixel')) {
+    pickedColor.style.backgroundColor = color;
+  } else if (pickedColor.classList.contains('color')) {
+    document.querySelector('.selected').className = ('color');
+    pickedColor.className = ('color selected');
+    color = window.getComputedStyle(pickedColor).backgroundColor;
+  }
+}
+
+document.addEventListener('click', selectColor);
+// Código para usuário escolher tamanho do board: 
+
+const randomSizeInput = document
+const randomSizeButton = document.querySelector('#generate-board');
+
+
+
+
