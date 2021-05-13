@@ -1,14 +1,16 @@
-let quadro = document.getElementById("pixel-board");
-
-function quadroPixels(num) {
-    for (let index = 0; index < num; index += 1) {
-        let linha = document.createElement("div");
-        quadro.appendChild(linha);
-        for (let index = 0; index < num; index += 1) {
+let frame = document.getElementById("pixel-board");;  
+        
+    function frameBoard (size) {
+        for ( let index=0 ; index < size; index +=1) {
+            let linha = document.createElement("div");
+            frame.appendChild(linha);
+       for ( let index=0 ; index < size; index +=1) {
             let coluna = document.createElement("div");
-            coluna.className = "pixel"
-            quadro.appendChild(coluna);
+            coluna.className = "pixel"   
+            frame.appendChild(coluna);      
         }
-    }
-} 
-quadroPixels(5);
+      }
+       
+    }  
+    frameBoard(5);  
+
