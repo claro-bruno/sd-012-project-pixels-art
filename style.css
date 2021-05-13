@@ -5,8 +5,17 @@
   display: inline-block;
 }
 
+#color-palette {
+  display: inline-block; 
+}
+
+#clear-board {
+  margin-left: 100px;
+  margin-top: 5px;  
+}
+
 #pixel-board {
-  padding-top: 70px;
+  padding-top: 55px;
 }
 
 .black {
@@ -30,8 +39,8 @@
   background-color: white;
   display: inline;
   padding: 50px;
-  height: 42px;
-  width: 42px;
+  height: 38px;
+  width: 38px;
 }
 
 #secao1 #secao2 #secao3 #secao4 #secao5 {
