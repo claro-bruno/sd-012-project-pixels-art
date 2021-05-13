@@ -9,15 +9,19 @@
      }
   #black {
     background-color: black;
+    display: inline-block;
   }  
   #green {
     background-color: green;
+    display: inline-block;
   } 
   #yellow {
     background-color: yellow;
+    display: inline-block;
   }
   #blue {
     background-color: blue;
+    display: inline-block;
   }
   body {
     display: inline-table;
