@@ -21,8 +21,8 @@ window.onload = () => {
   };
 };
 
-//Código para gerar quadro pixels:
-//Referência:
+// Código para gerar quadro pixels:
+// Referência:
 // https://github.com/tryber/sd-012-project-pixels-art/pull/152/files#
 
 const createBoard = document.querySelector("#pixel-board");
@@ -45,7 +45,7 @@ function createBoardLines (lines) {
 
 createBoardLines(5);
 
-//Código para selecionar as cores a serem pintadas no board: 
+// Código para selecionar as cores a serem pintadas no board: 
 
 let color = '#000';
 
@@ -72,17 +72,18 @@ function clearBoard () {
   selectButtonClear.addEventListener('click', function () {
 
     const pixelColor = document.querySelectorAll('.pixel');
-    
+
     for (let indexClear = 0; indexClear < pixelColor.length; indexClear += 1) {
     pixelColor[indexClear].style.backgroundColor = '#fff';
     };
   });
 };
 
+clearBoard();
+
 // Código para usuário escolher tamanho do board: 
 
-const randomSizeInput = document
-const randomSizeButton = document.querySelector('#generate-board');
+
 
 
 
