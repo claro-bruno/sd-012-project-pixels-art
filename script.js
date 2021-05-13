@@ -43,12 +43,10 @@ for (let index = 0; index < captureColor.length; index += 1) {
 const capturePixel = document.querySelectorAll('.pixel');
 for (let index = 0; index < capturePixel.length; index += 1) {
   capturePixel[index].addEventListener('click', (event) => {
-    let captureSelectedColor = document.querySelector('.color.selected').style.backgroundColor;
-	if (event.target.style.backgroundColor === captureSelectedColor) {
-		event.target.style.backgroundColor = 'black'
-	  } else {
-		event.target.style.backgroundColor = captureSelectedColor;
-    }
+    let captureSelectedColor = document.querySelector('.selected')
+	let selectedColor = window.getComputedStyle(captureSelectedColor).backgroundColor;
+	event.target.style.backgroundColor = selectedColor;
+    
   })
 }
 
