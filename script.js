@@ -1,4 +1,6 @@
 // Desafio 1, 2 e 3
+const divPixelBoard = document.getElementById('pixel-board');
+
 function paletteColor() {
   const divPai = document.getElementById('color-palette');
   const colorPalette = ['black', 'red', 'blue', 'yellow'];
@@ -22,7 +24,7 @@ function linhaParaDivs() {
   return linhaParaPixels; // retorna 01 linha que é uma div
 }
 function loosParaCriarLinhas(base) { // loop para crias as 5 linhas antes de preencher. Cada linha é uma div.
-  const divPixelBoard = document.getElementById('pixel-board'); // captura a div com Id=pixel-board, que será Pai dos elementos do loop
+ // captura a div com Id=pixel-board, que será Pai dos elementos do loop
   for (let index = 0; index < base; index += 1) {
     divPixelBoard.appendChild(linhaParaDivs()); // cada linhaParaDivs será filha de divPixelBoard
   }
@@ -36,7 +38,7 @@ function quadrados(size) {
   const linhaParaPixels = document.getElementsByClassName('linha-do-pixel');
   for (let index = 0; index < linhaParaPixels.length; index += 1) {
     if (index < size) {
-      repetir(linhaParaPixels);
+      repetir(linhaParaPixels); // linhas para conter os
     }
   }
 }
@@ -102,14 +104,14 @@ function limparPixels(event) {
 }
 document.addEventListener('click', limparPixels);
 
+// Requisito 10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário.
 
+function botaoVqv(comporGrade) {
+  let getInputBoardSize = document.querySelector('#board-size');
+  if (getInputBoardSize.value > 4 && getInputBoardSize.value < 51) {
+    comporGrade.innerHTML
+  }
 
+}
 
-// clica em um elemento e só a ele será adicionada a classe 'selected'.
-// ao clicar em outro elemento, a classe não estará mais no elemento anteriormente clicado
-// function clickNoLi(event) {
-//   const removerSelecao = document.querySelector('.selected');
-//   if (removerSelecao !== null) {
-//     removerSelecao.classList.remove('selected');
-//   }
-//   event.target.classList.add('selected');
+document.addEventListener('click', botaoVqv)
