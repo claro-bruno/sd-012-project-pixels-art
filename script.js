@@ -25,3 +25,14 @@ for (let index = 1; index <= 25; index += 1) {
   const pixelBoard = document.querySelector(ident);
   pixelBoard.appendChild(div);
 }
+
+window.onload = selectColor
+
+function selectColor () {
+
+}
+
+function clearPixel () {
+    const pixels = document.querySelectorAll('.pixel');
+    pixels.stylecolor = white;
+}
