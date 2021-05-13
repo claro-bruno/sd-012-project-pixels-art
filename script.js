@@ -1,4 +1,14 @@
 let frame = document.getElementById("pixel-board");;  
+
+//    //define cor inicial : preta
+  window.onload  =  function () {
+    let startcolor = document.querySelector(".color1");
+    startcolor.className= "color color1 selected";
+    startcolor.style.backgroundColor = "black";
+};
+ 
+
+
         //função cria 25 frames
     function frameBoard (size) {
         for ( let index=0 ; index < size; index +=1) {
@@ -16,13 +26,7 @@ let frame = document.getElementById("pixel-board");;
 
 
 
-   //define cor inicial : preta
-    function () {
-    let startcolor = document.querySelector(".color1");
-    startcolor.classList.add("selected");
-    startcolor.style.backgroundColor = "black";
-};
- 
+
 
 
 
