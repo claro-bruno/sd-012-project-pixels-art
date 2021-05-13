@@ -1,10 +1,12 @@
 const colorPalette = document.querySelector('#color-palette');
 const colors = ['black selected', 'red', 'green', 'blue'];
+
 let ident = '';
 
 for (let index = 0; index < colors.length; index += 1) {
-  const div = document.createElement('div');
+  const div = document.createElement('div');  
   div.className = 'color ' + colors[index];
+  div.id = index + 1;
   colorPalette.appendChild(div);
 }
 
@@ -36,7 +38,9 @@ for (let index = 1; index <= 25; index += 1) {
 const button = document.getElementById('clear-board');
 
 button.addEventListener('click', () => {
-  let div = document.getElementsByClassName("pixel");
+  const div = document.createElement('div');
   for (let index = 0; index < 25; index += 1) {
-    //div['#' + index].rgb(0, 0, 0);
+    //pixel[index].style.backgroundColor = "white";
+    div['#'+ index].sty
+  }  
 });

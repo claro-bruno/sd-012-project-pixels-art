@@ -28,9 +28,9 @@
 .pixel {
   background-color: white;
   display: inline;
-  padding: 50px;
-  height: 40px;
-  width: 40px;
+  padding: 27px;
+  height: 41px;
+  width: 41px;
   border: 1px solid black;
 }
 
@@ -39,17 +39,17 @@
 }
 
 #secao2 {
-  padding-top: 101px;
+  padding-top: 55px;
 }
 
 #secao3 {
-  padding-top: 101px;
+  padding-top: 55px;
 }
 
 #secao4 {
-  padding-top: 101px;
+  padding-top: 55px;
 }
 
 #secao5 {
-  padding-top: 101px;
+  padding-top: 55px;
 }
