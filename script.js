@@ -42,7 +42,7 @@ window.onload = function () {
   }
   selectColorInitial();
  
-//Cria board no JS
+//Cria board
   // function createPixelBoard(){
   //   let board = document.querySelector('#pixel-board')
   //   for (let line = 1; line <= 5; line += 1){
@@ -57,7 +57,7 @@ window.onload = function () {
   // }
   // createPixelBoard();
 
-  function createPixelBoard(size){
+  function createPixelBoard(size = 5){
     let board = document.querySelector('#pixel-board')
     for (let line = 1; line <= size; line += 1){
       let pixelLine = document.createElement('tr');
@@ -69,7 +69,7 @@ window.onload = function () {
       board.appendChild(pixelLine);
     };
   }
-  createPixelBoard(5);
+  createPixelBoard();
 
 
 //Pinta os pixels iniciais de preto
@@ -83,7 +83,7 @@ window.onload = function () {
   }
   setBlackPixelInitial();
 
-//Pinta board com table do JS
+//Pinta pixel 
   function setPixel() {
     let selectedBlackColor = document.querySelector('.black')
     let selectedRedColor = document.querySelector('.red')
@@ -131,8 +131,9 @@ window.onload = function () {
       }
     }
   }
-setPixel();
+  setPixel();
 
+//Limpa Board
   function clearBoard(){
     let buttonClear = document.querySelector('#clear-board');
     buttonClear.addEventListener('click', function(){
@@ -147,8 +148,8 @@ setPixel();
 
 
   function removeBoard() {
-    let board = document.querySelector('#pixel-board');
-    board.remove('.pixel')
+    let board = document.querySelector('#pixel-board')
+    board.innerHTML = '';
   }
 
   function changeBoard() {
@@ -157,7 +158,7 @@ setPixel();
       alert('Board inválido!');
     } else if (input < 5) {
       removeBoard();
-      createPixelBoard(5);
+      createPixelBoard(5);;
     } else if (input > 50) {
       removeBoard();
       createPixelBoard(50);
@@ -172,5 +173,4 @@ setPixel();
     changeButton.addEventListener('click', changeBoard);
   }
   addEventChangeBoard();
-  
 };
