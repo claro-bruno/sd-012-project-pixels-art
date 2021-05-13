@@ -7,17 +7,21 @@ for (let index = 0; index < colors.length; index += 1) {
   div.className = 'color ' + colors[index];
   colorPalette.appendChild(div);
 }
- 
-for (let index = 1; index <= 15; index += 1) {
+
+for (let index = 1; index <= 25; index += 1) {
   const div = document.createElement('div');
   div.className = 'pixel';
-    
-  if (index > 10) {
-      ident = '#secao3';
+  
+  if (index > 20) {
+    ident = '#secao5';
+  } else if (index > 15) {
+    ident = '#secao4';
+  } else if (index > 10) {
+    ident = '#secao3';
   } else if (index > 5) {
-      ident = '#secao2';
+    ident = '#secao2';
   } else {
-      ident = '#secao1';
+    ident = '#secao1';
   }
   const pixelBoard = document.querySelector(ident);
   pixelBoard.appendChild(div);

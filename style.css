@@ -34,7 +34,7 @@
   width: 40px;
 }
 
-#secao1 #secao2 #secao3 {
+#secao1 #secao2 #secao3 #secao4 #secao5 {
   display: block;
 }
 
@@ -43,5 +43,13 @@
 }
 
 #secao3 {
+  padding-top: 110px;
+}
+
+#secao4 {
+  padding-top: 110px;
+}
+
+#secao5 {
   padding-top: 110px;
 }
