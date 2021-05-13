@@ -10,8 +10,7 @@ for (let index = 0; index < colors.length; index += 1) {
 
 for (let index = 1; index <= 25; index += 1) {
   const div = document.createElement('div');
-  div.className = 'pixel';
-  
+  div.className = 'pixel';  
   if (index > 20) {
     ident = '#secao5';
   } else if (index > 15) {
