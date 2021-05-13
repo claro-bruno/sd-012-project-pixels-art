@@ -4,13 +4,13 @@ body {
 }
 
 #title {
-  background-color:  rgb(202, 202, 202);
+  background-color: rgb(202, 202, 202);
   padding: 20px;
   text-align: center;
 }
 
 .center {
-  background-color:  rgb(202, 202, 202);
+  background-color: rgb(202, 202, 202);
   padding: 30px;
 }
 
@@ -24,24 +24,8 @@ body {
   border: 1px solid black;
 }
 
-/* .black {
-  background-color: black;
-}
-
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
-} */
-
 #clear-board {
-  margin: 20px 0px 5px 0px;
+  margin: 20px 0 5px;
 }
 
 #board-size {
@@ -49,7 +33,7 @@ body {
 }
 
 #pixel-board {
-    margin: auto;
+  margin: auto;
 }
 
 .pixel {
@@ -58,5 +42,3 @@ body {
   border: 1px solid black;
   background-color: white;
 }
-
-
