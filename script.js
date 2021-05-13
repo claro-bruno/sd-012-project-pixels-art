@@ -27,9 +27,17 @@ for (let index = 1; index <= 25; index += 1) {
   pixelBoard.appendChild(div);
 }
 
-function clearPixel () {    
+/*function clearPixel () {    
   let div = document.getElementsByClassName("pixel");
-  for (let index = 1; index <= 25; index += 1) {
-    div[index - 1].style.background = "white";
-  }  
-}
+  for (let index = 0; index < 25; index += 1) {
+    div[index].style.background = '';
+  }  onclick="clearPixel()"
+}*/
+const button = document.getElementById('clear-board');
+
+button.addEventListener('click', () => {
+  let div = document.getElementsByClassName("pixel");  
+  for (let index = 0; index < 25; index += 1) {
+    div[index].style.backgroundColor = "white";
+  }
+});
