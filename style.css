@@ -26,12 +26,12 @@
 }
 
 .pixel {
-/* border: 1px solid black; */
-  background-color: black; /*white*/
+  background-color: white;
   display: inline;
   padding: 50px;
   height: 40px;
   width: 40px;
+  border: 1px solid black;
 }
 
 #secao1 #secao2 #secao3 #secao4 #secao5 {
