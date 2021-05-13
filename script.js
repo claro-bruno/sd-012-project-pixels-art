@@ -36,7 +36,7 @@ for (let index = 1; index <= 25; index += 1) {
 const button = document.getElementById('clear-board');
 
 button.addEventListener('click', () => {
-  let div = document.getElementsByClassName("pixel");  
+  let div = document.getElementsByClassName("pixel");
   for (let index = 0; index < 25; index += 1) {
-    div['#' + index].rgb(0, 0, 0);    
+    //div['#' + index].rgb(0, 0, 0);
 });
