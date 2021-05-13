@@ -22,14 +22,14 @@ selecaoCor[index].addEventListener('click', function(event){
   })
 }
 
-// let pintaPixel = document.querySelectorAll('.pixel');
-// for(let key of pintaPixel){
-//     key.addEventListener('click', function(event){
-//         let cor = document.getElementsByClassName('selected')[0];
-//         let comCor = window.getComputedStyle(cor).getPropertyValue('background-color');
-//         event.target.style.backgroundcolor = comCor;
-//     })
-// }
+let pintaPixel = document.querySelectorAll('.pixel');
+for(let index =0; index < pintaPixel.length; index +=1){
+    pintaPixel[index].addEventListener('click', function(event){
+        let cor = document.getElementsByClassName('selected')[0];
+        let comCor = window.getComputedStyle(cor).getPropertyValue('background-color');
+        event.target.style.backgroundcolor = comCor;
+    })
+}
 
 let quadradinho = document.getElementsByClassName('pixel');
 let botao1 = document.getElementById('clear-board');
