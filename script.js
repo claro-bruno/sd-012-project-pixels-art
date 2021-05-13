@@ -27,7 +27,9 @@ for (let index = 1; index <= 25; index += 1) {
   pixelBoard.appendChild(div);
 }
 
-function clearPixel () {
-    const pixels = document.querySelectorAll('.pixel');
-    pixels.stylecolor = white;
+function clearPixel () {    
+  let div = document.getElementsByClassName("pixel");
+  for (let index = 1; index <= 25; index += 1) {
+    div[index - 1].style.background = "white";
+  }  
 }
