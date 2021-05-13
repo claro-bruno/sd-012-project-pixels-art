@@ -27,20 +27,21 @@
 
 .pixel {
   border: 5px solid black;
-  background-color: white;  
+  background-color: white;
   display: inline;
   padding: 50px;
-  height: 40px;
-  width: 40px;
+  height: 25px;
+  width: 25px;
 }
- #secao1 #secao2 #secao3 {
+
+#secao1 #secao2 #secao3 {
   display: block;
- }
+}
 
- #secao2 {
-  padding-top: 110px; 
- }
+#secao2 {
+  padding-top: 110px;
+}
 
- #secao3 {
-  padding-top: 110px; 
- }
+#secao3 {
+  padding-top: 110px;
+}
