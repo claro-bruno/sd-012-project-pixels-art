@@ -22,11 +22,19 @@ selecaoCor[index].addEventListener('click', function(event){
   })
 }
 
-let pintaPixel = document.querySelectorAll('.pixel');
-for(let key of pintaPixel){
-    key.addEventListener('click', function(event){
-        let cor = document.getElementsByClassName('selected')[0];
-        let comCor = window.getComputedStyle(cor).getPropertyValue('background-color');
-        event.target.style.backgroundcolor = comCor;
-    })
-}
+// let pintaPixel = document.querySelectorAll('.pixel');
+// for(let key of pintaPixel){
+//     key.addEventListener('click', function(event){
+//         let cor = document.getElementsByClassName('selected')[0];
+//         let comCor = window.getComputedStyle(cor).getPropertyValue('background-color');
+//         event.target.style.backgroundcolor = comCor;
+//     })
+// }
+
+let quadradinho = document.getElementsByClassName('pixel');
+let botao1 = document.getElementById('clear-board');
+botao1.addEventListener('click', function () {
+  for (let index = 0; index < quadradinho.length; index += 1) {
+    quadradinho[index].style.backgroundColor = 'white';
+  }
+})
