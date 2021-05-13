@@ -1,6 +1,23 @@
 .color {
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
     display: inline-block;
-}
+    border: 1px solid black;
+    height: 40px;
+    width: 40px;
+  }
+  
+  #first-color {
+    background-color: black;
+  }
+  
+  .pixel {
+    border: 1px black solid;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+  }
+  
+  #clear-board {
+    display: inline-block;
+    margin: 4px 0;
+  }
