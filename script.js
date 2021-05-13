@@ -21,10 +21,10 @@ let frame = document.getElementById("pixel-board");;
 
 
 
-    function startColor () {
-      let initialColor = document.querySelector("#black");
-      initialColor.className = ("selected");
-      }
+    
+
+
+
 
 
 
