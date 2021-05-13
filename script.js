@@ -12,3 +12,12 @@ function board(num) {
 }
 }
 board(5);
+
+let selecaoCor = document.getElementsByClassName('color');
+for(index = 0; index < selecaoCor.length; index +=1){
+selecaoCor[index].addEventListener('click', function(event){
+    let elemento = document.querySelector('.selected');
+    elemento.classList.remove('selected');
+    event.target.classList.add('selected');
+  })
+}
