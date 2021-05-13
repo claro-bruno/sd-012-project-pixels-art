@@ -25,6 +25,15 @@ for (let index = 0; index < selecionador.length; index += 1) {
     let elemento = document.querySelector('.selected');
     elemento.classList.remove('selected');
     event.target.classList.add('selected');
+
+  })
+}
+let x = document.getElementsByClassName('pixel');
+for (let index = 0; index < x.length; index += 1) {
+  x[index].addEventListener('click', function (event) {
+    let elemento = document.querySelector('.selected');
+    let armazenar = window.getComputedStyle(elemento).getPropertyValue('background-color');
+    event.target.style.backgroundColor = armazenar;
   })
 }
 
