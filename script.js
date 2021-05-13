@@ -14,3 +14,5 @@ let frame = document.getElementById("pixel-board");;
     }  
     frameBoard(5);  
 
+    
+

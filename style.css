@@ -4,8 +4,8 @@
  .color {
     border: solid 1px black;
     display: inline-block;
-    width: 60px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
      }
   #black {
     background-color: black;
@@ -27,8 +27,8 @@
 
   .pixel {
     border: 1px solid black;  
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     display: inline-block;
     line-height: 0px;
     background-color: white;
