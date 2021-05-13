@@ -17,11 +17,11 @@ let frame = document.getElementById("pixel-board");;
 
 
    //define cor inicial : preta
-   window.onload = function () {
-    let startcolor = document.querySelector(".color1");
-    startcolor.classList.add("selected");
-    startcolor.style.backgroundColor = "black";
-};
+//     function () {
+//     let startcolor = document.querySelector(".color1");
+//     startcolor.classList.add("selected");
+//     startcolor.style.backgroundColor = "black";
+// };
  
 
 
