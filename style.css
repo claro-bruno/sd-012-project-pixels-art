@@ -1,3 +1,8 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
 #color-palette {
   display: flex;
   width: 100%;
@@ -16,7 +21,7 @@
 #palette-one {
   background-color: white;
 }
-
+/*
 #pixel-board {
   margin-top: 10px;
   display: grid;
@@ -25,7 +30,7 @@
   width: 40px;
   gap: 5px;
 }
-
+*/
 #clear-borad {
   background-color: rgb(81, 196, 52);
   color: aqua;
@@ -49,7 +54,7 @@
 
   background-color: rgb(0, 0, 0);
 }
-
+/*
 
 .pixel {
 
@@ -58,6 +63,29 @@
   display: inline-block;
   margin: 0;
   padding: 0px;
-  border: 1px solid black;
+  border: 1px solid rgb(167, 31, 31);
   background-color: white;
+}
+*/
+/*
+.pixel {
+  display: inline-block;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+  box-sizing: border-box;
+  margin-bottom: -4px;
+}
+*/
+.pixel {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 0;
+  padding: 0px;
+  margin-right: -1px;
+  margin-bottom: -5px;
+  border: 1px solid black;
+  background: white;
 }
