@@ -21,3 +21,12 @@ selecaoCor[index].addEventListener('click', function(event){
     event.target.classList.add('selected');
   })
 }
+
+let pintaPixel = document.querySelectorAll('.pixel');
+for(let key of pintaPixel){
+    key.addEventListener('click', function(event){
+        let cor = document.getElementsByClassName('selected')[0];
+        let comCor = window.getComputedStyle(cor).getPropertyValue('background-color');
+        event.target.style.backgroundcolor = comCor;
+    })
+}
