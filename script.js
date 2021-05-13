@@ -1,4 +1,4 @@
-// Código para gerar cor de fundo aleátoria:
+// Código para gerar cores aleátorias:
 // Referência: 
 // https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
 
@@ -45,23 +45,40 @@ function createBoardLines (lines) {
 
 createBoardLines(5);
 
-
 //Código para selecionar as cores a serem pintadas no board: 
 
 let color = '#000';
 
 function selectColor (selectedColor) {
+
   const pickedColor = selectedColor.target;
+
   if (pickedColor.classList.contains('pixel')) {
     pickedColor.style.backgroundColor = color;
   } else if (pickedColor.classList.contains('color')) {
     document.querySelector('.selected').className = ('color');
     pickedColor.className = ('color selected');
     color = window.getComputedStyle(pickedColor).backgroundColor;
-  }
-}
+  };
+};
 
 document.addEventListener('click', selectColor);
+
+// Código para limpar board: 
+
+function clearBoard () {
+
+  const selectButtonClear = document.querySelector('#clear-board');
+  selectButtonClear.addEventListener('click', function () {
+
+    const pixelColor = document.querySelectorAll('.pixel');
+    
+    for (let indexClear = 0; indexClear < pixelColor.length; indexClear += 1) {
+    pixelColor[indexClear].style.backgroundColor = '#fff';
+    };
+  });
+};
+
 // Código para usuário escolher tamanho do board: 
 
 const randomSizeInput = document
