@@ -12,19 +12,19 @@ paletaCores[2].style.backgroundColor = `#${randomColor2}`;
 paletaCores[3].style.backgroundColor = `#${randomColor3}`;
 
 function gerarQuadro(valor) {
-let colunas;
-let linhas;
+  let colunas;
+  let linhas;
 
-if (valor === (undefined) || valor < 5) {
-colunas = 5;
-linhas = 5;
-} else if (valor >= 50) {
- colunas = 50;
- linhas = 50;
-} else {
-  colunas = valor;
-  linhas = valor;
-}
+  if (valor === (undefined) || valor < 5) {
+    colunas = 5;
+    linhas = 5;
+  } else if (valor >= 50) {
+    colunas = 50;
+     linhas = 50;
+  } else {
+    colunas = valor;
+    linhas = valor;
+  }
 
   for (let index = 0; index < linhas; index += 1) {
     const divQuadroBranco = document.getElementById('pixel-board');
@@ -32,16 +32,15 @@ linhas = 5;
 
     criarDiv.className = ('pixel-line');
     divQuadroBranco.appendChild(criarDiv);
-        
+
     for (let indice = 0; indice < colunas; indice += 1) {
-    const divPixelLine = document.querySelector('#pixel-board').lastElementChild;
+        const divPixelLine = document.querySelector('#pixel-board').lastElementChild;
+        const criarDivPixel = document.createElement('div');
 
-    const criarDivPixel = document.createElement('div');
-
-    criarDivPixel.className = ('pixel');
-    divPixelLine.appendChild(criarDivPixel);
-  }   
-    letsColor();
+        criarDivPixel.className = ('pixel');
+        divPixelLine.appendChild(criarDivPixel);
+  }
+  letsColor();
 }
 }
 gerarQuadro();
@@ -59,7 +58,7 @@ function letsColor() {
   const pixelBranco = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixelBranco.length; index += 1) {
     pixelBranco[index].addEventListener('click', function(evento) {
-    let corSelecionada = document.querySelector('.selected');
+    const corSelecionada = document.querySelector('.selected');
     evento.target.style.backgroundColor = corSelecionada.style.backgroundColor;
     });
 }
@@ -69,9 +68,8 @@ const botaoGenerateBoard = document.getElementById('generate-board');
 botaoGenerateBoard.addEventListener('click', modificarQuadro);
 
 function modificarQuadro() {
-  let linhasPixel = document.querySelectorAll('.pixel-line');
-
-  let valorInserido = document.getElementById('board-size');
+  const linhasPixel = document.querySelectorAll('.pixel-line');
+  const valorInserido = document.getElementById('board-size');
 
   if (valorInserido.value == false) {
     alert('Board inválido!');
@@ -87,7 +85,7 @@ function modificarQuadro() {
 const botaoClearBoard = document.getElementById('clear-board');
 botaoClearBoard.addEventListener('click', limparQuadro);
 
-function limparQuadro() {  
+function limparQuadro() {
   const pixelBranco = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixelBranco.length; index += 1) {
     pixelBranco[index].style.backgroundColor = 'rgb(255, 255, 255)';
