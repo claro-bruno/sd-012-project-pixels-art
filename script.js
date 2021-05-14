@@ -38,9 +38,8 @@ function quadroPixel(){
   itemQuadro.addEventListener('click', () => {
     let tamanhoQuadro = document.querySelector('#board-size').value;
 
-    if(tamanhoQuadro === ''){
+    if(!Number(tamanhoQuadro)){
       alert("Board inválido!")
-      return false
     }
      if(tamanhoQuadro > 50){
       tamanhoQuadro = 50;
