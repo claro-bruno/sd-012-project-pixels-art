@@ -1,115 +1,110 @@
 body {
-    background-image: url('./images/stardewValley.jpg');
+background-image: url('./images/stardewValley.jpg');
 }
 
 
 .color {
-    border: solid black 1px;
-    display: inline-block;
-    padding: 25px 25px;
-    margin-left: 5px;
+border: solid black 1px;
+display: inline-block;
+padding: 25px 25px;
+margin-left: 5px;
 }
 
 .color:hover {
-    opacity: 70%;
+opacity: 70%;
 }
 
 .color:active {
-    transform: translateY(2px);
+transform: translateY(2px);
 }
 
 ul {
-    width: 300px;
-    position: relative;
-    left: 480px;
+width: 300px;
+position: relative;
+left: 480px;
 }
 
 input {
-    width: 4%;
-    border-radius: 20%;
-    height: 25px;
-    font-size: 18px;
-    font-family:'Itim', cursive;
-    color: #0066cc;
-    font-weight: 700;
-    text-align: center;
-    border: #999 2px solid;
+width: 4%;
+border-radius: 20%;
+height: 25px;
+font-size: 18px;
+font-family: Itim, cursive;
+color:  #06c;
+font-weight: 700;
+text-align: center;
+border: #999 2px solid;
 }
 
 input:focus {
-    outline: none;
+outline: none;
 }
 
 /* Propriedade que remove as setas do input vista no link https://bit.ly/2SA6DOp */
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-
 .pixel-line {
-    margin: 0;
-    position: relative;
-    text-align: center;
+margin: 0;
+position: relative;
+text-align: center;
 }
 
 .pixel {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    border: solid black 1px;
-    background-color: rgb(255, 255, 255);
-    margin-bottom: -5px;
-    margin-left: -1px;
+display: inline-block;
+height: 40px;
+width: 40px;
+border: solid black 1px;
+background-color: white;
+margin-bottom: -5px;
+margin-left: -1px;
 }
 
-.pixel:hover{
-    opacity: 70%;
+.pixel:hover {
+opacity: 70%;
 }
 
 header {
-    text-align: center;
+text-align: center;
 }
 
 h1 {
-    font-size: 45px;
-    margin-left: 25px;
-    color: #000099;
-    font-family: 'Itim', cursive;
-    -webkit-text-stroke: 1px white;
-    /* Propriedade para inserir borda em texto vista no link https://bit.ly/3hduE8y */
+font-size: 45px;
+margin-left: 25px;
+color:darkblue;
+font-family: Itim, cursive;
+-webkit-text-stroke: 1px white;
+
+/* Propriedade para inserir borda em texto vista no link https://bit.ly/3hduE8y */
 }
 
-#clear-board{
-    margin-bottom: 25px;
+#clear-board {
+margin-bottom: 25px;
 }
 
 button {
-
-    color: white;
-    background-color: #0066cc;
-    border-radius: 20%;
-    border: solid 1px white;
-    font-family: 'Itim', cursive;
-    font-size: 20px;
-    font-weight: 500;
-    outline: none;
-    box-shadow: 0 3px #999;
-    margin-left: 5px;
+color: white;
+background-color: #06c;
+border-radius: 20%;
+border: solid 1px white;
+font-family: Itim, cursive;
+font-size: 20px;
+font-weight: 500;
+outline: none;
+box-shadow: 0 3px #999;
+margin-left: 5px;
 }
 
 /* Animação do botão inspirada no link https://bit.ly/3vUFq7M */
 
 button:hover {
-    background-color: #3399ff;
+background-color: #39f;
 }
 
 button:active {
-    background-color: #3399ff;
-    box-shadow: 1px #666;
-    transform: translateY(2px);
+background-color: #39f;
+box-shadow: 1px #666;
+transform: translateY(2px);
 }
 
 input {
-    margin-left: 570px;
-}
+margin-left: 570px;
+};
