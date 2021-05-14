@@ -12,19 +12,19 @@ function board(tamanhoBoard) {
       quadroPixels.appendChild(coluna);
     }
   }
-}
+};
 board(5);
 
 // Resolvendo: DESAFIO 6 / DESAFIO 7 
 
 let selecionaCor = document.getElementsByClassName("color");
 for (index = 0; index < selecionaCor.length; index += 1) {
-  selecionaCor[index].addEventListener("click", function (event) {
+  selecionaCor[index].addEventListener("click", function(event) {
     let elemento = document.querySelector(".selected");
     elemento.classList.remove("selected");
     event.target.classList.add("selected");
   })
-}
+};
 
 
 // Resolvendo: DESAFIO 8
@@ -33,9 +33,18 @@ for(let key of quadradinho){
   key.addEventListener("click", function(event){
     let corSelecionada = document.getElementsByClassName("selected")[0];
     let temCor = window.getComputedStyle(corSelecionada).getPropertyValue("background-color");
-    event.target.style.backgroundColor = temCor;  
+    event.target.style.backgroundColor = temCor;
   })
-}
+};
 
+// Resolvendo: DESAFIO 9 
+let pixel = document.getElementsByClassName("pixel");
 
+function limparQuadro (){
+  for(key of pixel){
+  key.style.backgroundColor = "white";
+  };
+};
 
+let button = document.getElementById("clear-board");
+button.addEventListener("click", limparQuadro);
