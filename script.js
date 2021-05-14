@@ -6,7 +6,7 @@ let ident = '';
 for (let index = 0; index < colors.length; index += 1) {
   const div = document.createElement('div');  
   div.className = 'color ' + colors[index];
-  div.id = index + 1;
+  div.id = index + 30;
   colorPalette.appendChild(div);
 }
 
@@ -29,18 +29,32 @@ for (let index = 1; index <= 25; index += 1) {
   pixelBoard.appendChild(div);
 }
 
-/*function clearPixel () {    
-  let div = document.getElementsByClassName("pixel");
-  for (let index = 0; index < 25; index += 1) {
-    div[index].style.background = '';
-  }  onclick="clearPixel()"
-}*/
 const button = document.getElementById('clear-board');
 
-button.addEventListener('click', () => {
-  const div = document.createElement('div');
+button.addEventListener('click', () => {  
   for (let index = 0; index < 25; index += 1) {
-    //pixel[index].style.backgroundColor = "white";
-    div['#'+ index].sty
-  }  
+    document.getElementById(index + 1).style.backgroundColor = "#fff";
+  }
 });
+
+// Algoritmo do colega Caio Takeshi.
+let paleta = document.getElementsByClassName('color');
+for (let index = 0; index < paleta.length; index += 1) {
+  paleta[index].addEventListener('click', function(event) {
+    let removeSelection = document.querySelector('.selected');
+    removeSelection.classList.remove('selected');
+    event.target.classList.add('selected');
+  });
+}
+
+let pixel = document.getElementsByClassName('pixel');
+
+for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].addEventListener('click', function(event) {  
+        let div = document.getElementById(index + 1);        
+        //let color = document.getElementById(32);        
+        
+        div.style.backgroundColor = color.style.backgroundColor;//'red';//document.querySelector('.selected').backgroundColor;
+    //event.target.style.backgroundColor = selectedColor;
+  });
+}
