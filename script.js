@@ -57,23 +57,16 @@ window.onload = function () {
     }
 
     function paletaCores() {
+        let selectColor = document.getElementsByClassName('color');
         let cor1 = document.getElementById('cor-1');
-        cor1.classList.add('selected')
-        cor1.addEventListener('click', function(){
-            cor1.classList.toggle('selected')
-        })
-        let cor2 = document.getElementById('cor-2');
-        cor2.addEventListener('click', function(){
-            cor2.classList.toggle('selected')
-        })
-        let cor3 = document.getElementById('cor-3');
-        cor3.addEventListener('click', function(){
-            cor3.classList.toggle('selected')
-        })
-        let cor4 = document.getElementById('cor-4');
-        cor4.addEventListener('click', function(){
-            cor4.classList.toggle('selected')
-        })   
+        cor1.classList.add('selected');
+        for (indexColor = 0; indexColor < selectColor.length; indexColor += 1){
+            selectColor[indexColor].addEventListener('click', function(event) {
+                let selecionado = document.querySelector('.selected');
+                selecionado.classList.remove('selected');
+                event.target.classList.add('selected');
+            })
+        };
     }
     
     criaQuadro();
