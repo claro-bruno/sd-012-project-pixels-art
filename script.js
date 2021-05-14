@@ -98,31 +98,13 @@ function colorir(){
 
  for(let i=0;i<pixel.length;i+=1){
    
-   pixel[i].addEventListener('click', function(){
-     let itemCor = document.querySelector('.selected') ;
-     let arraycolor = geraCores();
+   pixel[i].addEventListener('click', function() {
 
-       switch(pixel[i].style.backgroundColor){
-                  case arraycolor[0]:
-         pixel[i].style.backgroundColor = 'rgb(255,255,255)';
-         break;
-                  case arraycolor[1]:
-         pixel[i].style.backgroundColor = 'rgb(255,255,255)';
-         break;
-                  case arraycolor[2]:
-         pixel[i].style.backgroundColor = 'rgb(255,255,255)';
-         break;
-                  case arraycolor[3]:
-         pixel[i].style.backgroundColor = 'rgb(255,255,255)';
-         break;
-         default:
+    let itemCor = document.querySelector('.selected') ;
          pixel[i].style.backgroundColor = itemCor.style.backgroundColor;
-         break;
 
-       }
-
-    })
- }
+            })
+  }
 }
 colorir();
 
