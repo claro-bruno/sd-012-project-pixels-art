@@ -22,11 +22,15 @@ for (let indexClassColor = 0; indexClassColor < getClassColor.length; indexClass
     });
 };
 
+let getButton = document.getElementById('clear-board');
+let getPixelsId = document.querySelectorAll('.pixel');
+getButton.addEventListener('click', function (){
+    for (let indexPixels = 0; indexPixels < getPixelsId.length; indexPixels += 1) {
+        getPixelsId[indexPixels].style.backgroundColor = 'rgb(255,255,255)';
+    }
+})
 
 
-//function getSelectedClass () {
-   // let getSelectedColor = document.getElementsByClassName('selected');
-//}
 
 
 
