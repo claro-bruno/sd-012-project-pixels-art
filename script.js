@@ -1,5 +1,5 @@
 // Desafio 1, 2 e 3
-const divPixelBoard = document.getElementById('pixel-board');
+const containerPixelBoard = document.getElementById('pixel-board');
 
 function paletteColor() {
   const divPai = document.getElementById('color-palette');
@@ -13,39 +13,39 @@ function paletteColor() {
 }
 paletteColor();
 // Desafio 4 e 5
-function divFilha() {
-  const pixelDiv = document.createElement('div'); // cria 01 (um) quadrado (pixel) usando createElement.
-  pixelDiv.className = 'pixel'; // adiciona a classe 'pixel'.
-  return pixelDiv; // retorna 01 pixel que é uma div.
+function pixel() {
+  const pixel = document.createElement('div'); // cria 01 (um) quadrado (pixel) usando createElement.
+  pixel.className = 'pixel'; // adiciona a classe 'pixel'.
+  return pixel; // retorna 01 pixel que é uma div.
 }
-function linhaParaDivs() {
-  const linhaParaPixels = document.createElement('div'); // cria uma div que será uma (01) linha.
-  linhaParaPixels.className = 'linha-do-pixel'; // cria classe para para linhaParaPixels.
-  return linhaParaPixels; // retorna 01 linha que é uma div
+function containerLineDiv() {
+  const containerLineDiv = document.createElement('div'); // cria uma div que será uma (01) linha.
+  containerLineDiv.className = 'linha-do-pixel'; // cria classe para para containerLineDiv.
+  return containerLineDiv; // retorna 01 linha que é uma div
 }
-function loosParaCriarLinhas(base) { // loop para crias as 5 linhas antes de preencher. Cada linha é uma div.
+function pixelBoardParent(base) { // loop para crias as 5 linhas antes de preencher. Cada linha é uma div.
  // captura a div com Id=pixel-board, que será Pai dos elementos do loop
   for (let index = 0; index < base; index += 1) {
-    divPixelBoard.appendChild(linhaParaDivs()); // cada linhaParaDivs será filha de divPixelBoard
+    containerPixelBoard.appendChild(containerLineDiv()); // cada containerLineDiv será filha de containerPixelBoard
   }
 }
-function repetir(linhaParaPixels) { // loop para que divFilha se torne filha do pai linhaParaPixels
-  for (let indexRepet = 0; indexRepet < linhaParaPixels.length; indexRepet += 1) {
-    linhaParaPixels[indexRepet].appendChild(divFilha());
+function lineDivParent(containerLineDiv) { // loop para que pixel se torne filha do pai containerLineDiv
+  for (let indexPixel = 0; indexPixel < containerLineDiv.length; indexPixel += 1) {
+    containerLineDiv[indexPixel].appendChild(pixel());
   }
 }
 function quadrados(size) {
-  const linhaParaPixels = document.getElementsByClassName('linha-do-pixel');
-  for (let index = 0; index < linhaParaPixels.length; index += 1) {
+  const containerLineDiv = document.getElementsByClassName('linha-do-pixel');
+  for (let index = 0; index < containerLineDiv.length; index += 1) {
     if (index < size) {
-      repetir(linhaParaPixels); // linhas para conter os
+      lineDivParent(containerLineDiv); // linhas para conter os pixels
     }
   }
 }
 function comporGrade(tamanho) {
-  const divPixelBoard = document.getElementById('pixel-board');
-  divPixelBoard.innerHTML = '';
-  loosParaCriarLinhas(tamanho);
+  const containerPixelBoard = document.getElementById('pixel-board');
+  containerPixelBoard.innerHTML = '';
+  pixelBoardParent(tamanho);
   quadrados(tamanho);
 }
 comporGrade(5);
@@ -106,12 +106,22 @@ document.addEventListener('click', limparPixels);
 
 // Requisito 10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário.
 
-function botaoVqv(comporGrade) {
+function comporGradeComInput(getInputBoardSize) {
+  const containerPixelBoard = document.getElementById('pixel-board');
+  containerPixelBoard.innerHTML = '';
+  pixelBoardParent(getInputBoardSize);
+  quadrados(getInputBoardSize);
+}
+comporGradeComInput(getInputBoardSize);
+
+function novoQuadro() {
   let getInputBoardSize = document.querySelector('#board-size');
   if (getInputBoardSize.value > 4 && getInputBoardSize.value < 51) {
-    comporGrade.innerHTML
+    // se atender, leve o valor de input na função que recebe o tamanho da grade
+    comporGradeComInput(getInputBoardSize);
+
   }
 
 }
 
-document.addEventListener('click', botaoVqv)
+document.addEventListener('click', novoQuadro)
