@@ -3,27 +3,36 @@ window.onload = mainColor;
 function mainColor() {
     let setBlack = document.querySelector('#bloco1');
     setBlack.className = 'color selected';
+    makeBoard(5);
+    paintPixel();
 }
 
 mainColor;
 
 function makeBoard(tamanho) {
     let destiny = document.querySelector('#pixel-board');
+    
+    destiny.innerHTML = '';
 
-    if (tamanho > 50) {
-        return 'Tamanho maximo e 50.'
+    let size = tamanho;
+
+    if (size > 50) {
+        alert('Tamanho maximo e 50.');
+        size = 50;
+    } if (size < 5) {
+        size = 5;
     }
-    for (let index = 1; index <= tamanho; index += 1) {
+    for (let index = 1; index <= size; index += 1) {
         let lines = document.createElement('div');
         destiny.appendChild(lines);
-            for (let index = 1; index <= tamanho; index += 1) {
+            for (let index = 1; index <= size; index += 1) {
                 let columns = document.createElement('div');
                 columns.className = 'pixel';
                 lines.appendChild(columns);
         }
-    }
+    }       
+    
 }
-makeBoard(5);
 
 function makePallete(tamanho) {
     let destiny = document.querySelector('#color-palette');
@@ -171,3 +180,18 @@ function paintPixel(){
 }
 paintPixel();
 
+function boardSize() {
+    const confirmButton = document.querySelector('#generate-board');
+    
+    confirmButton.addEventListener('click', function() {
+        const inputValue = document.querySelector('#board-size').value;
+        if (inputValue === '') {
+            alert('Board inválido!');
+            return;
+        }
+        makeBoard(inputValue);
+        paintPixel();
+    })
+    
+}
+boardSize();
