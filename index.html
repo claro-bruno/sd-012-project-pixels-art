@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <title>Pixels Art</title>
 </head>
 <body>
-    <header>
-        <h1 id="title" >Paleta de cores</h1>
-    </header>
-    <ul id="color-palette">
-        <li id="blue" class="color"></li>
-        <li id="red" class="color"></li>
-        <li id="green" class="color"></li>
-        <li id="yellow" class="color"></li>
-    </ul>
-    
-    <section></section>
+    <head class="header">
+        <h1 id="title">Paleta de Cores</h1>
+        <div id='color-palette'>
+            <ul class="colorsList">
+                <li class="color selected" style="background-color: black;"> </li>
+                <li class="color" style="background-color: red;"> </li>
+                <li class="color" style="background-color: blue;"> </li>
+                <li class="color" style="background-color: blueviolet;"> </li>
+            </ul>
+        </div>
+    </head>
+    <div class="botoes">
+    <input type="number" min="1" max="50" id="board-size"><button id="generate-board" onclick="quadroPersonalizado()">VQV</button>
+    <button id="clear-board">Limpar</button>
+    </div>
+    <section id="pixel-board">
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
