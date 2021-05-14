@@ -44,7 +44,7 @@ function quadroPixel(){
       tamanhoQuadro = 50;
     }else if(tamanhoQuadro < 5){
       tamanhoQuadro = 5;
-    }else{
+    }
       let getPixel = document.querySelectorAll('tr')
 
       for(index = 0; index < getPixel.length; index += 1){
@@ -62,7 +62,7 @@ function quadroPixel(){
 
             quadro.appendChild(quadrinhoLinha)
       };
-    }
+    
     colorir()
   });
 
