@@ -12,7 +12,6 @@ function createBoard(row) {
     createTable.id = "pixel-board";
     let tbody = document.createElement('tbody');
     areaDiv2.appendChild(createTable)
-
     for (let index = 0; index < row; index +=1){
         let createrow = document.createElement("tr");
         for (let index = 0; index < row; index +=1){
@@ -96,6 +95,7 @@ function pixelBoardColor() {
         event.target.style.backgroundColor = selectedBackgroundColor;
       });
     };
+    console.log("teste");
   };
 pixelBoardColor();
 
@@ -119,12 +119,12 @@ boardSize.addEventListener('click', function() {
   } else if (size > 50) {
     clearBoard();
     createBoard(50);
-  } else if (size > 4 | size < 51) {
+  } else if (size > 4 && size < 51) {
     clearBoard();
     createBoard(size);
-  } else if (size !== 0) {
+  } else {
     alert("Board inválido!");
-  }
+  };
 });
 
 colorselector();
