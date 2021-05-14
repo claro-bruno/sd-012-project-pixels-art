@@ -9,7 +9,6 @@ function geraCores() {
   }
   return cor
 }
-console.log(geraCores())
 
 function cores(){
 let cores = document.querySelectorAll('.color');
@@ -37,9 +36,8 @@ function quadroPixel(){
 
   itemQuadro.addEventListener('click', () => {
     let tamanhoQuadro = document.querySelector('#board-size').value;
-
-    if(!Number(tamanhoQuadro)){
-      alert("Board inválido!")
+    if(tamanhoQuadro === ''){
+      alert("Board inválido!");
     }
      if(tamanhoQuadro > 50){
       tamanhoQuadro = 50;
