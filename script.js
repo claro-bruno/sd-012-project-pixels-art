@@ -38,11 +38,14 @@ function quadroPixel(){
   itemQuadro.addEventListener('click', () => {
     let tamanhoQuadro = document.querySelector('#board-size').value;
 
-    if(tamanhoQuadro == ''){
-      window.alert("Board inválido!")
-    }else if(tamanhoQuadro > 50){
+    if(tamanhoQuadro === ''){
+      alert("Board inválido!")
+      return false
+    }
+     if(tamanhoQuadro > 50){
       tamanhoQuadro = 50;
-    }else if(tamanhoQuadro < 5){
+    }
+     if(tamanhoQuadro < 5){
       tamanhoQuadro = 5;
     }
       let getPixel = document.querySelectorAll('tr')
