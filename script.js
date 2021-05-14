@@ -1,5 +1,6 @@
 // Desafio 1, 2 e 3
 const containerPixelBoard = document.getElementById('pixel-board');
+let getInputBoardSize = document.querySelector('#board-size');
 
 function paletteColor() {
   const divPai = document.getElementById('color-palette');
@@ -13,12 +14,12 @@ function paletteColor() {
 }
 paletteColor();
 // Desafio 4 e 5
-function pixel() {
+function pixelFunction() {
   const pixel = document.createElement('div'); // cria 01 (um) quadrado (pixel) usando createElement.
   pixel.className = 'pixel'; // adiciona a classe 'pixel'.
   return pixel; // retorna 01 pixel que é uma div.
 }
-function containerLineDiv() {
+function containerLineDivFunction() {
   const containerLineDiv = document.createElement('div'); // cria uma div que será uma (01) linha.
   containerLineDiv.className = 'linha-do-pixel'; // cria classe para para containerLineDiv.
   return containerLineDiv; // retorna 01 linha que é uma div
@@ -26,12 +27,12 @@ function containerLineDiv() {
 function pixelBoardParent(base) { // loop para crias as 5 linhas antes de preencher. Cada linha é uma div.
  // captura a div com Id=pixel-board, que será Pai dos elementos do loop
   for (let index = 0; index < base; index += 1) {
-    containerPixelBoard.appendChild(containerLineDiv()); // cada containerLineDiv será filha de containerPixelBoard
+    containerPixelBoard.appendChild(containerLineDivFunction()); // cada containerLineDiv será filha de containerPixelBoard
   }
 }
 function lineDivParent(containerLineDiv) { // loop para que pixel se torne filha do pai containerLineDiv
   for (let indexPixel = 0; indexPixel < containerLineDiv.length; indexPixel += 1) {
-    containerLineDiv[indexPixel].appendChild(pixel());
+    containerLineDiv[indexPixel].appendChild(pixelFunction());
   }
 }
 function quadrados(size) {
@@ -43,7 +44,6 @@ function quadrados(size) {
   }
 }
 function comporGrade(tamanho) {
-  const containerPixelBoard = document.getElementById('pixel-board');
   containerPixelBoard.innerHTML = '';
   pixelBoardParent(tamanho);
   quadrados(tamanho);
@@ -62,6 +62,12 @@ corPaleta();
 
 // Desafio 7
 
+function selectOneObject(event) {
+  const removeSelec = document.querySelector('.selected');
+  removeSelec.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
 function eventoSelected() {
   const coresDaPaleta = document.getElementsByClassName('color');
   for (let index = 0; index < coresDaPaleta.length; index += 1) {
@@ -70,16 +76,10 @@ function eventoSelected() {
 }
 eventoSelected();
 
-function selectOneObject(event) {
-  const removeSelec = document.querySelector('.selected');
-  removeSelec.classList.remove('selected');
-  event.target.classList.add('selected');
-}
-
 // Desafio 8
 function corSelected(event) {
   const objetoAlvo = event.target;
-  const colorRequired = document.querySelector('.selected').style.backgroundColor; //será capturado a cor de background do objeto selicionado.
+  const colorRequired = document.querySelector('.selected').style.backgroundColor; // será capturado a cor de background do objeto selicionado.
   objetoAlvo.style.backgroundColor = colorRequired;
 }
 
@@ -107,7 +107,6 @@ document.addEventListener('click', limparPixels);
 // Requisito 10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário.
 
 function comporGradeComInput(getInputBoardSize) {
-  const containerPixelBoard = document.getElementById('pixel-board');
   containerPixelBoard.innerHTML = '';
   pixelBoardParent(getInputBoardSize);
   quadrados(getInputBoardSize);
@@ -115,7 +114,6 @@ function comporGradeComInput(getInputBoardSize) {
 comporGradeComInput(getInputBoardSize);
 
 function novoQuadro() {
-  let getInputBoardSize = document.querySelector('#board-size');
   if (getInputBoardSize.value > 4 && getInputBoardSize.value < 51) {
     // se atender, leve o valor de input na função que recebe o tamanho da grade
     comporGradeComInput(getInputBoardSize);
@@ -124,4 +122,4 @@ function novoQuadro() {
 
 }
 
-document.addEventListener('click', novoQuadro)
+document.addEventListener('click', novoQuadro);
