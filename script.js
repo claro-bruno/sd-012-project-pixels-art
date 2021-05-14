@@ -3,7 +3,7 @@ const areaDiv2 = document.getElementById("div2");
 const colors = document.getElementsByClassName("color");
 const printPixel = document.getElementsByClassName("pixel");
 const whiteButton = document.getElementById("clear-board");
-const boardSize = document.getElementById("generate-board")
+const boardSize = document.getElementById("generate-board");
 const inputSize = document.getElementById("board-size");
 
 // Populando PixelBoard
@@ -113,19 +113,20 @@ whiteBtn();
 boardSize.addEventListener('click', function() {
   let size = document.getElementById("board-size").value;
   console.log(size)
+  clearBoard();
   if (size < 5 && size > 0){
-    clearBoard();
     createBoard(5);
+    colorselector();
+    pixelBoardColor();
   } else if (size > 50) {
-    clearBoard();
     createBoard(50);
+    colorselector();
+    pixelBoardColor();
   } else if (size > 4 && size < 51) {
-    clearBoard();
     createBoard(size);
+    colorselector();
+    pixelBoardColor();
   } else {
     alert("Board inválido!");
   };
 });
-
-colorselector();
-pixelBoardColor();
