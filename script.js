@@ -1,6 +1,6 @@
 // Desafio 1, 2 e 3
 const containerPixelBoard = document.getElementById('pixel-board');
-let getInputBoardSize = document.querySelector('#board-size');
+const getInputBoardSize = document.querySelector('#board-size');
 
 function paletteColor() {
   const divPai = document.getElementById('color-palette');
@@ -24,10 +24,9 @@ function containerLineDivFunction() {
   containerLineDiv.className = 'linha-do-pixel'; // cria classe para para containerLineDiv.
   return containerLineDiv; // retorna 01 linha que é uma div
 }
-function pixelBoardParent(base) { // loop para crias as 5 linhas antes de preencher. Cada linha é uma div.
- // captura a div com Id=pixel-board, que será Pai dos elementos do loop
+function pixelBoardParent(base) {
   for (let index = 0; index < base; index += 1) {
-    containerPixelBoard.appendChild(containerLineDivFunction()); // cada containerLineDiv será filha de containerPixelBoard
+    containerPixelBoard.appendChild(containerLineDivFunction());
   }
 }
 function lineDivParent(containerLineDiv) { // loop para que pixel se torne filha do pai containerLineDiv
