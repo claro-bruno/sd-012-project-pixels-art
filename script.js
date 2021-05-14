@@ -21,29 +21,12 @@ selecaoCor[index].addEventListener('click', function(event){
     event.target.classList.add('selected');
   })
 }
-// function pinta (){
-//     let pintaPixel = document.getElementsByClassName('pixel');
-//     for(let index =0; index < pintaPixel.length; index +=1){
-//         pintaPixel[index].addEventListener('click', function(event){
-//             let cor = document.querySelector('.selected');
-    
-//              event.target.style.backgroundcolor = cor.style.backgroundcolor;
-//     })
-//   }
-// }
-// pinta();
 
-function changeColorClick() {
-    const pixels = document.querySelectorAll('.pixel');
-    for (const pixel of pixels) {
-      pixel.addEventListener('click', changeColor);
-    }
-  }
-  
-  // Botão que deixa o background de todos os pixels da board como 'white'.
-  function clearBoard() {
-    const pixels = document.querySelectorAll('.pixel');
-    for (const pixel of pixels) {
-      pixel.style.backgroundColor = 'white';
-    }
-  }
+let quadradinho = document.querySelectorAll(".pixel");
+for(let key of quadradinho){
+  key.addEventListener("click", function(event){
+    let corSelecionada = document.getElementsByClassName("selected")[0];
+    let temCor = window.getComputedStyle(corSelecionada).getPropertyValue("background-color");
+    event.target.style.backgroundColor = temCor;
+  })
+};
