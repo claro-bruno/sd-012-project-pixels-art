@@ -1,19 +1,22 @@
 window.onload = function () {
 
     entradaFormatado = 5;
-                for(indexLinha = 0; indexLinha < entradaFormatado; indexLinha += 1){
-                    let linha = document.createElement('div');
-                    linha.className = 'linha';
-                    document.querySelector('#pixel-board').appendChild(linha);
-                    for(indexColuna = 0; indexColuna < entradaFormatado; indexColuna += 1){
-                    let criaPixel = document.createElement('div');
-                    criaPixel.className = 'pixel';
-                    criaPixel.addEventListener('click', function(event){
-                    })
-                    document.querySelectorAll('.linha')[indexLinha].appendChild(criaPixel);
-                    document.querySelector('#pixel-board').style.border = '1px solid black';
-                    }
-                };
+        for(indexLinha = 0; indexLinha < entradaFormatado; indexLinha += 1){
+            let linha = document.createElement('div');
+            linha.className = 'linha';
+            document.querySelector('#pixel-board').appendChild(linha);
+            for(indexColuna = 0; indexColuna < entradaFormatado; indexColuna += 1){
+                let criaPixel = document.createElement('div');
+                criaPixel.className = 'pixel';
+                criaPixel.addEventListener('click', function(event){
+                    let cor = document.querySelector('.selected');
+                    let corSelected = window.getComputedStyle(cor).getPropertyValue('background-color');
+                    event.target.style.backgroundColor = corSelected;
+                })
+                document.querySelectorAll('.linha')[indexLinha].appendChild(criaPixel);
+                document.querySelector('#pixel-board').style.border = '1px solid black';
+            }
+        };
     
     function criaQuadro() {
         let btn = document.getElementById('generate-board');
@@ -32,6 +35,9 @@ window.onload = function () {
                 let criaPixel = document.createElement('div');
                 criaPixel.className = 'pixel';
                 criaPixel.addEventListener('click', function(event){
+                    let cor = document.querySelector('.selected');
+                    let corSelected = window.getComputedStyle(cor).getPropertyValue('background-color');
+                    event.target.style.backgroundColor = corSelected;
                 })
                 document.querySelectorAll('.linha')[indexLinha].appendChild(criaPixel);
                 document.querySelector('#pixel-board').style.border = '1px solid black';
@@ -47,6 +53,9 @@ window.onload = function () {
                     let criaPixel = document.createElement('div');
                     criaPixel.className = 'pixel';
                     criaPixel.addEventListener('click', function(event){
+                        let cor = document.querySelector('.selected');
+                    let corSelected = window.getComputedStyle(cor).getPropertyValue('background-color');
+                    event.target.style.backgroundColor = corSelected;
                     })
                     document.querySelectorAll('.linha')[indexLinha].appendChild(criaPixel);
                     document.querySelector('#pixel-board').style.border = '1px solid black';
@@ -62,6 +71,9 @@ window.onload = function () {
                     let criaPixel = document.createElement('div');
                     criaPixel.className = 'pixel';
                     criaPixel.addEventListener('click', function(event){
+                        let cor = document.querySelector('.selected');
+                    let corSelected = window.getComputedStyle(cor).getPropertyValue('background-color');
+                    event.target.style.backgroundColor = corSelected;
                     })
                     document.querySelectorAll('.linha')[indexLinha].appendChild(criaPixel);
                     document.querySelector('#pixel-board').style.border = '1px solid black';
