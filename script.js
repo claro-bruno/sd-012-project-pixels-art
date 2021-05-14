@@ -100,37 +100,3 @@ clearButton.addEventListener('click', function (){
         pixel[index].style.backgroundColor = 'white';
     }
 })
-
-
-
-function customSizeCond(inputValue) {
-    if (inputValue < 5) {
-        createBoard(5);
-    }
-  }
-  function customSize() {
-    const inputValue = parseInt(document.getElementById('board-size').value, 10); // value, 10) radix 10 para numeros decimal
-    if (inputValue > 50) {
-      createBoard(50);
-    }
-    if (inputValue < 51 && inputValue > 0) {
-      createBoard(inputValue);
-      customSizeCond(inputValue);
-    } else {
-      alert('Board inválido!');
-    }
-    getColorEvent();
-  }
-  function customSizeEvent() {
-    const button = document.querySelector('.button>button');
-    button.addEventListener('click', customSize);
-  }
-  customSizeEvent();
-  
-  window.onload = function inicializa() {
-    function boardSizeDefault() {
-      createBoard(5);
-    }
-    boardSizeDefault();
-    getColorEvent();
-  };
