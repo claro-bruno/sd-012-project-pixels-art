@@ -12,5 +12,21 @@ for (let indexTr = 0; indexTr < 5; indexTr += 1) {
         };
 };
 
+let getClassColor = document.querySelectorAll('.color');
+
+for (let indexClassColor = 0; indexClassColor < getClassColor.length; indexClassColor += 1) {
+    getClassColor[indexClassColor].addEventListener('click', function (event){
+        let getFirstSelection = document.getElementsByClassName('selected')[0];
+        getFirstSelection.classList.remove('selected');
+        event.target.classList.add('selected');
+    });
+};
+
+
+
+//function getSelectedClass () {
+   // let getSelectedColor = document.getElementsByClassName('selected');
+//}
+
 
 
