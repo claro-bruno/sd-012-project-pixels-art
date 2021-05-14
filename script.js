@@ -1,5 +1,6 @@
 // Desafio 1, 2 e 3
 const containerPixelBoard = document.getElementById('pixel-board');
+const minValue = 5;
 
 function paletteColor() {
   const divPai = document.getElementById('color-palette');
@@ -122,7 +123,12 @@ function novoQuadro() {
   } else {
     alert('Board inválido!');
   }
-
+  if (getInputBoardSize < 5) {
+    minValue;
+  }
+  if (getInputBoardSize > 50) {
+    comporGradeComInput(50);
+  }
 }
 
 document.addEventListener('click', novoQuadro)
