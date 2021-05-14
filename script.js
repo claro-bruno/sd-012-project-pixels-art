@@ -34,14 +34,25 @@ function makeBoard(tamanho) {
     
 }
 
+
 function makePallete(tamanho) {
     let destiny = document.querySelector('#color-palette');
     
     for (let index = 1; index <= tamanho; index += 1) {
-        let cores = document.createElement('div');
-        cores.className = 'color';
-        cores.id = 'bloco' + index;
-        destiny.appendChild(cores);
+        if (index === 1) {
+            let cores = document.createElement('div');
+            cores.className = 'color';
+            cores.id = 'bloco' + index;
+            cores.style.backgroundColor = 'black';
+            destiny.appendChild(cores);
+        } else {
+            let cores = document.createElement('div');
+            let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+            cores.className = 'color';
+            cores.id = 'bloco' + index;
+            cores.style.backgroundColor = randomColor;
+            destiny.appendChild(cores);
+        }
     }
 }
 makePallete(4);
