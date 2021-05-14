@@ -21,13 +21,14 @@ selecaoCor[index].addEventListener('click', function(event){
     event.target.classList.add('selected');
   })
 }
-
-let pintaPixel = document.querySelectorAll('.pixel');
-for(let index =0; index < pintaPixel.length; index +=1){
-    pintaPixel[index].addEventListener('click', function(event){
-        let cor = document.getElementsByClassName('selected')[0];
-        let comCor = window.getComputedStyle(cor).getPropertyValue('background-color');
-        event.target.style.backgroundcolor = comCor;
+function pinta (){
+    let pintaPixel = document.getElementsByClassName('pixel');
+    for(let index =0; index < pintaPixel.length; index +=1){
+        pintaPixel[index].addEventListener('click', function(event){
+            let cor = document.querySelector('.selected');
+    
+        event.target.style.backgroundcolor = cor.style.backgroundcolor;
     })
+  }
 }
-
+pinta();
