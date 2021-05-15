@@ -1,15 +1,35 @@
-#blue{
-    background-color: blue;
-}
-#red{
-    background-color: red;
-}
-#grenn{
-    background-color: green;
-}
-#yellow{
-    background-color: yellow;
-}
-.conlor{
+.color {
+    display: inline-block;
     border: 1px solid black;
-}
+    border-radius: 7px;
+    height: 40px;
+    width: 40px;
+  }
+  
+   .color:nth-child(1) {
+     background-color: black;
+   }
+  
+   .color:nth-child(2) {
+    background-color: aqua;
+  }
+  
+  .color:nth-child(3) {
+    background-color: lightcoral;
+  }
+  
+  .color:nth-child(4) {
+    background-color: lightslategray;
+  }
+  
+  .pixel {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    background-color: white;
+  }
+
+ #generate-board {
+    display: inline-block;
+  }
