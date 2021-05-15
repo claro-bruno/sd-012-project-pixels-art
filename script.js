@@ -4,7 +4,7 @@ const minValue = 5;
 
 function paletteColor() {
   const divPai = document.getElementById('color-palette');
-  const colorPalette = ['black', 'red', 'blue', 'yellow'];
+  const colorPalette = ['black', gerarCor(1), gerarCor(1), gerarCor(1)];
   for (let index = 0; index < colorPalette.length; index += 1) {
     const div2 = document.createElement('div');
     div2.className = 'color';
@@ -15,7 +15,7 @@ function paletteColor() {
 paletteColor();
 // Desafio 4 e 5
 function pixel() {
-  const pixel = document.createElement('div'); // cria 01 (um) quadrado (pixel) usando createElement.
+  const pixel = document.createElement('div'); 
   pixel.className = 'pixel'; // adiciona a classe 'pixel'.
   return pixel; // retorna 01 pixel que é uma div.
 }
@@ -113,7 +113,7 @@ function comporGradeComInput(getInputBoardSize) {
   quadrados(getInputBoardSize);
 }
 
-
+// Requisito 11
 function novoQuadro() {
   let getInputBoardSize = document.querySelector('#board-size').value ;
   console.log(getInputBoardSize);
@@ -132,3 +132,11 @@ function novoQuadro() {
 }
 
 document.addEventListener('click', novoQuadro)
+
+//Requisito 12
+function gerarCor(opacidade = 1) {
+  let r = parseInt(Math.random() * 255);
+  let g = parseInt(Math.random() * 255);
+  let b = parseInt(Math.random() * 255);
+  return `rgba(${r}, ${g}, ${b}, ${opacidade})`;
+}
