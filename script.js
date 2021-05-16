@@ -1,4 +1,5 @@
 // cria paleta
+const pixel = document.querySelectorAll('.pixel');
 function makePallete(colors) {
   for (let index = 0; index < colors; index += 1) {
     const pallete = document.getElementById('color-palette');
@@ -8,26 +9,47 @@ function makePallete(colors) {
   }
 }
 makePallete(4);
-// colore paleta
-const colors = ['black', 'red', 'silver', 'gold'];
-function paintPallete(painting) {
+// colore paleta aleatoriamente
+function paintPallete() {
   const fillPallet = document.getElementsByClassName('color');
-  for (let index = 0; index < fillPallet.length; index += 1) {
-    fillPallet[index].style.backgroundColor = painting[index];
+  fillPallet[0].style.backgroundColor = 'black';
+  for (let index = 1; index < fillPallet.length; index += 1) {
+    const Red = Math.floor(Math.random() * 256);
+    const Green = Math.floor(Math.random() * 256);
+    const Blue = Math.floor(Math.random() * 256);
+    const RGB = `rgb(${Red}, ${Green}, ${Blue})`;
+    fillPallet[index].style.backgroundColor = RGB;
   }
 }
-paintPallete(colors);
+paintPallete();
 // cria planilha de pixels dinamica
 const board = document.querySelector('#pixel-board');
-const boardControl = 5;
-for (let index = 0; index < boardControl; index += 1) {
-  const line = document.createElement('tr');
-  for (let index1 = 0; index1 < boardControl; index1 += 1) {
-    const cell = document.createElement('td');
-    cell.className = 'pixel';
-    line.appendChild(cell);
+function makeBoard(tamanho = 5) {
+  for (let index = 0; index < tamanho; index += 1) {
+    for (let index1 = 0; index1 < tamanho; index1 += 1) {
+      const square = document.createElement('div');
+      square.className = ('pixel');
+      board.appendChild(square);
+    }
+    const br = document.createElement('br');
+    board.appendChild(br);
   }
-  board.appendChild(line);
+}
+makeBoard();
+
+function makeBoardAux() {
+  const input = document.querySelector('input');
+  if (input.value > 18) {
+    board.style.margin = 0;
+  } else {
+    board.style.marginLeft = '40%';
+  }
+  if (input.value < 5) {
+    input.value = 5;
+  } else if (input.value > 50) {
+    input.value = 50;
+  }
+  makeBoard(input.value);
 }
 // adiciona classe selected
 window.onload = function () {
@@ -54,10 +76,34 @@ board.addEventListener('click', paintPixel);
 
 // Cria botão que limpa a pagina
 const button = document.querySelector('#clear-board');
-const pixel = document.querySelectorAll('.pixel');
 function clearBoard() {
-  for(let cleaner = 0; cleaner < pixel.length; cleaner += 1) {
-    pixel[cleaner].style.backgroundColor = 'white';
+  const newPixel = document.querySelectorAll('.pixel');
+  for (let cleaner = 0; cleaner < newPixel.length; cleaner += 1) {
+    newPixel[cleaner].style.backgroundColor = 'white';
   }
 }
 button.addEventListener('click', clearBoard);
+
+// Define o que o input pode receber
+const buttonRange = document.querySelector('#generate-board');
+
+function boardConfer() {
+  const input = document.querySelector('#board-size');
+  if (input.value === '') {
+    alert('Board inválido!');
+  }
+}
+
+buttonRange.addEventListener('click', boardConfer);
+
+function removeBoard() {
+  const input = document.querySelector('#board-size');
+  const sizePixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < sizePixel.length; index += 1) {
+    const opa = document.querySelector('.pixel');
+    board.removeChild(opa);
+  }
+  makeBoardAux();
+}
+
+buttonRange.addEventListener('click', removeBoard);
