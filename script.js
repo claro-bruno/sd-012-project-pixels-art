@@ -1,13 +1,13 @@
 const containerPixelBoard = document.getElementById('pixel-board');
-let tamanho = document.getElementById('board-size').value;
-const valorMin = 5;
+
+
 
 
 //Requisito 12
 function gerarCor(opacidade = 1) {
-  let r = parseInt(Math.random() * 255);
-  let g = parseInt(Math.random() * 255);
-  let b = parseInt(Math.random() * 255);
+  const r = parseInt(Math.random() * 255, 10);
+  const g = parseInt(Math.random() * 255, 10);
+  const b = parseInt(Math.random() * 255, 10);
   return `rgba(${r}, ${g}, ${b}, ${opacidade})`;
 }
 
@@ -19,7 +19,7 @@ function paletteColor() {
     const div2 = document.createElement('div');
     div2.className = 'color';
     div2.style.backgroundColor = colorPalette[index];
-    div2.addEventListener('click', function(event) {
+    div2.addEventListener('click', function (event) {
       const removeSelec = document.querySelector('.selected');
       removeSelec.classList.remove('selected');
       event.target.classList.add('selected');
@@ -34,19 +34,19 @@ paletteColor();
 function criarPixel() {
   const pixel = document.createElement('div'); 
   pixel.className = 'pixel';
-  pixel.addEventListener('click', function(event) {
+  pixel.addEventListener('click', function (event) {
     const alvo = event.target;
     alvo.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
   });
-  return pixel
+  return pixel;
 }
 criarPixel();
 
 function variosPixels(tamanho) {
-  for (let index = 0; index < tamanho*tamanho; index += 1) {
+  for (let index = 0; index < tamanho *tamanho; index += 1) {
     containerPixelBoard.appendChild(criarPixel());
   }
-  containerPixelBoard.style.width = (tamanho * 40) + 'px';
+  containerPixelBoard.style.width = (tamanho * 40) +'px';
 }
 variosPixels(5);
 
