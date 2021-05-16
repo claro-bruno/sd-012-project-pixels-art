@@ -1,24 +1,28 @@
-let quadroDePixels = document.getElementById('pixel-board');
+let pixelBoard = document.getElementById('pixel-board');
+let quadrados = 5
 
-function board25 (){
-for(let linha = 0; linha < 5; linha += 1){
-    let coluna = document.createElement('div')
-   quadroDePixels.appendChild(coluna)
-    
-
-    for(let i = 0; i < 5; i += 1){
-       let coluna = document.createElement('div')
-        coluna.className = 'pixel'
-       quadroDePixels.appendChild(coluna)
-              
-        
-    }
+function criandoLinha(linha){
+for (let row = 1; row <= linha; row += 1){
+    divlinha = document.createElement('div')
+    pixelBoard.appendChild(divlinha);
+    criandoColuna(divlinha, linha)
+  }
 }
-}
-board25(5)
 
-document.body.addEventListener('click', function(event){
-    if(event.target.className = 'pixel'){
-        event.target.style.backgroundColor = 'yellow';
-    }
-})
+function criandoColuna (row, coluna){
+ for (let column = 1; column <= coluna; column += 1 ){
+     divColuna = document.createElement('div');
+     divColuna.classList.add('pixel');
+     row.appendChild(divColuna)
+     
+ }
+}
+
+criandoLinha(quadrados)
+
+
+function corPretaInicial (){
+    let preto = document.getElementById('black');
+    preto.classList.add('selected');
+    window.onload = corPretaInicial
+}
