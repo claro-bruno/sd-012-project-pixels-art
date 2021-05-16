@@ -13,3 +13,19 @@
     text-align: center;
     width: 100%;
 }
+
+div.color:nth-child(1) {
+    background-color: black;
+}
+
+div.color:nth-child(2) {
+    background-color: blue;
+}
+
+div.color:nth-child(3) {
+    background-color: red;
+}
+
+div.color:nth-child(4) {
+    background-color: green;
+}
