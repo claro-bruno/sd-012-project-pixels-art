@@ -8,19 +8,19 @@
   border: 1px solid black;
 }
 
-.black {
+#black {
   background-color: #000000;
 }
 
-.blue {
+#blue {
   background-color: #14213d;
 }
 
-.yellow {
+#yellow {
   background-color: #fca311;
 }
 
-.gray {
+#gray {
   background-color: #e5e5e5;
 }
 
