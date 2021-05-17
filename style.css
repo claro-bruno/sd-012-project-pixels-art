@@ -1,48 +1,49 @@
 body{
-    margin:50px ;
-}
+    margin:50px;
+ }
 
-.cor-amarela{
+h1{
+  font-size: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+
+#yellow{
     width: 100px;
     height: 100px;
     background-color: yellow;
     border-radius: 20px;
     border: solid;
     border-width: 1px;
-    border-color: yellow;
     display: inline-block;
-}
+ }
 
-.cor-azul{
+#blue{
     width: 100px;
     height: 100px;
     background-color: blue;
     border-radius: 20px;
     border: solid;
     border-width: 1px;
-    border-color: blue;
     display: inline-block;
-}
+ }
 
-.cor-verde{
+#green{
     width: 100px;
     height: 100px;
     background-color: green;
     border-radius: 20px;
     border: solid;
     border-width: 1px;
-    border-color:green;
     display: inline-block;
 }
 
-.cor-azul-claro{
+#orange{
     width: 100px;
     height: 100px;
-    background-color: rgb(9, 191, 247);
+    background-color: orange;
     border-radius: 20px;
     border: solid;
     border-width: 1px;
-    border-color: rgb(9, 191, 247);
     display: inline-block;
 }
 
