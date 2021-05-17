@@ -1,0 +1,48 @@
+body{
+    margin:50px ;
+}
+
+.cor-amarela{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 20px;
+    border: solid;
+    border-width: 1px;
+    border-color: yellow;
+    display: inline-block;
+}
+
+.cor-azul{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 20px;
+    border: solid;
+    border-width: 1px;
+    border-color: blue;
+    display: inline-block;
+}
+
+.cor-verde{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border-radius: 20px;
+    border: solid;
+    border-width: 1px;
+    border-color:green;
+    display: inline-block;
+}
+
+.cor-azul-claro{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(9, 191, 247);
+    border-radius: 20px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(9, 191, 247);
+    display: inline-block;
+}
+
