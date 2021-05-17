@@ -13,20 +13,17 @@ function criaPreto() {
 criaPreto();
 
 function quadroPalette() {
-
+  
+  for (let j = 0; j < 3; j += 1) {
   let color = '#';
   let simbolos = '0123456789ABCDEF';
   for (let i = 0; i < 6; i += 1) {
     color += simbolos[Math.floor(Math.random() * 16)];
   }
-
-  for (let j = 0; j < 3; j += 1) {
     let pix = document.createElement('div');
     pix.className = 'color';
+    pix.style.backgroundColor = color;
     palette.appendChild(pix);
-  
-      pix.style.backgroundColor = color;
-      console.log(pix)
   }
 }
 quadroPalette()
@@ -78,7 +75,6 @@ function mudaCor(event) {
   let cor = selected.style.backgroundColor;
   console.lo
   event.target.style.backgroundColor = cor;
-  console.log('jsjsks')
 }
 
 window.onload = function() {
@@ -86,7 +82,7 @@ window.onload = function() {
   botao.addEventListener('click', () => {
     let reset = document.querySelectorAll('.pixel');
     for(let i = 0; i < reset.length; i += 1) {
-      reset[i].style.backgroundColor = 'white'
+      reset[i].style.backgroundColor = 'white';
     }
   })
 }
