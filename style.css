@@ -1,49 +1,52 @@
 body{
-    margin:50px;
+  margin:50px;
  }
 
 h1{
   font-size: 80px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
  }
 
-#yellow{
-    width: 100px;
-    height: 100px;
-    background-color: yellow;
-    border-radius: 20px;
-    border: solid;
-    border-width: 1px;
-    display: inline-block;
+#black{
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	border-radius: 20px;
+	border: solid;
+	border-width: 1px;
+	border-color: black;
+	display: inline-block;
  }
 
 #blue{
-    width: 100px;
-    height: 100px;
-    background-color: blue;
-    border-radius: 20px;
-    border: solid;
-    border-width: 1px;
-    display: inline-block;
- }
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	border-radius: 20px;
+	border: solid;
+	border-width: 1px;
+	border-color: black;
+	display: inline-block;
+}
 
 #green{
-    width: 100px;
-    height: 100px;
-    background-color: green;
-    border-radius: 20px;
-    border: solid;
-    border-width: 1px;
-    display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-color: green;
+	border-radius: 20px;
+	border: solid;
+	border-width: 1px;
+	border-color: black;
+	display: inline-block;
 }
 
 #orange{
-    width: 100px;
-    height: 100px;
-    background-color: orange;
-    border-radius: 20px;
-    border: solid;
-    border-width: 1px;
-    display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  border-radius: 20px;
+  border: solid;
+  border-width: 1px;
+  border-color: black;
+  display: inline-block;
 }
-
