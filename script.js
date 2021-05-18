@@ -15,12 +15,20 @@ function board(num){
 }
 board(5);
 
-document.body.addEventListener('click', function(event){
-  if(event.target.className === 'pixel'){
-    event.target.style.backgroundColor = 'black';
-  }
-});
+// Em primeiro lugar eu preciso selecionar meu elemento color-palette, usando getElementById ou querySelector
+// Atribuir o evento de clique para que eu selecione a cor desejada
+// Ao clicar em qualquer cor da paleta faz com que minha cor seja trocada
+// Ao clicar nos pixels faz com que
 
+
+let trocaCorPaleta = document.querySelector('#color-palette')
+for(let index = 0; index < trocaCorPaleta.length; index += 1){
+trocaCorPaleta.addEventListener('click', function(event){
+  if(event.target.className === 'pixel'){
+    event.target.style.backgroundColor = trocaCorPaleta[index];
+  }
+  });
+}
 // Primeiro capturar os elementos da paleta de cores, posso usar o getElementByclassName ou querySelectorAll
 // Atribuir o evento de clique para cada um dos elementos, através de um "for"
 // Meu evento de clique precisa capturar o elemento que possui a classe selected, e depois deletar a classe selected desse elemento anterior
