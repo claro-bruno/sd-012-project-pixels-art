@@ -1,9 +1,9 @@
 .color {
     border: 1px solid black;
     display: inline-block;
-    height: 50px;
+    height: 5px;
     margin-right: 20px;
-    width: 50px;
+    width: 5px;
     padding: 35px;
 }
 
@@ -28,4 +28,13 @@ div.color:nth-child(3) {
 
 div.color:nth-child(4) {
     background-color: green;
+}
+
+.pixel {
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    margin: -3px;
+    display: inline-block;
+    border: 1px solid black;
 }
