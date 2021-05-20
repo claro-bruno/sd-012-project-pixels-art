@@ -7,36 +7,29 @@ ul {
     list-style: none;
 }
 
-.medidas {
+.color {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border: 1px solid;
     width: 40px;
     height: 40px;
     display: inline-block;
 }
 
-.color {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    border: 1px solid;
-}
-
-.color-1 {
+#color-1 {
     background-color: black;
-    border: 1px solid black;
 }
 
-.color-2 {
+#color-2 {
     background-color: orange;
-    border: 1px solid black;
 }
 
-.color-3 {
+#color-3 {
     background-color: blue;
-    border: 1px solid black;
 }
 
-.color-4 {
+#color-4 {
     background-color: pink;
-    border: 1px solid black;
 }
 
 .pixel {
