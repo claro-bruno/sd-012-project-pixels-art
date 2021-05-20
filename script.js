@@ -31,8 +31,9 @@ for (let index = 0; index < paleta.length; index += 1) {
   });
 }
 
-document.body.addEventListener('click', function (event) {
-  if (event.target.getElementById === 'clear-board') {
+const clear = document.querySelector('#clear-board')
+clear.addEventListener('click', function (event) {
+  if (event.target.className === 'pixel') {
     event.target.style.backgroundColor = 'white';
   }
 });
