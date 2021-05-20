@@ -24,8 +24,9 @@ board(5);
 let trocaCorPaleta = document.querySelector('#pixel-board')
 trocaCorPaleta.addEventListener('click', function(event){
   if(event.target.className === 'pixel'){
-    let selectedColor = document.querySelector('.selected')
-    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+    let selectedColor = document.querySelector('.selected');
+    let cor = window.getComputedStyle(selectedColor).backgroundColor;
+    event.target.style.backgroundColor = cor;
   }
   });
 // Primeiro capturar os elementos da paleta de cores, posso usar o getElementByclassName ou querySelectorAll
