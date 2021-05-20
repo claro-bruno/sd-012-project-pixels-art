@@ -21,19 +21,39 @@ function criandoColuna (row, coluna){
 criandoLinha(quadrados)
 
 
-let paletaDeCores = document.getElementsByClassName('color')
+let paletaDeCores = document.getElementsByClassName('color');
 
 
-for(let index = 0; index <= paletaDeCores.length; index += 1){
-    paletaDeCores[index].addEventListener('click', myFunction)
-}
+let black = document.getElementById('black');
+let red = document.getElementById('red');
+let blue = document.getElementById('blue');
+let green = document.getElementById('green');
 
+black.addEventListener('click', myFunction); 
+red.addEventListener('click', myFunction); 
+blue.addEventListener('click', myFunction); 
+green.addEventListener('click', myFunction); 
 
 function myFunction (event){
     let selected = document.querySelector('.selected');
     selected.classList.remove('selected');
-    event.target.classList.add('selected')
+    event.target.classList.add('selected');
 }
 
+document.body.addEventListener('click', (event) => {
+    
+  if(event.target.className === 'pixel'){
+      event.target.style.backgroundColor = window.getComputedStyle(document.querySelector('.selected')).backgroundColor; 
+  }
+})
 
+
+document.body.addEventListener('click', (event) => {
+  if(event.target.id === 'clear-board'){
+    let clearboard = document.querySelectorAll('.pixel');
+    for(let index = 0; index < clearboard.length; index += 1){
+      clearboard[index].style.backgroundColor = 'white';
+    }
+  }
+})
 
