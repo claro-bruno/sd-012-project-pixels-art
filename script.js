@@ -1,23 +1,19 @@
-// 7.. capturar os elementos classe color
-// tem 4 elementos (for para acessar cada um dos elementos)
-// adicionar evento de clique (addEventList...) em cada elemento
-// evento precisa capturar o elemento com a classe selected
-// remover classe selected do elemento
-// adicionar classe selected ao elemento selecionado.
-let selecionaCor = document.querySelector('color');
-
-function capturaClasseColor() {
-    for (let indice = 0; indice < selecionaCor.length ; indice += 1) {
-        selecionaCor[indice].addEventListener('click', seleciona);
-    }
-};
+//Desafio 7
+let selecionaCor = document.getElementsByClassName('color');
 
 function seleciona(event) {
-    let selecionado = document.querySelector('selected');
-    selecionado.classList.remove('selected');
-    event.target.classList.add('selected');
-};
+  let selecionado = document.querySelector('.selected');
+  selecionado.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+function capturaClasseColor() {
+    for (let indice = 0; indice < selecionaCor.length ; indice += 1) {
+      selecionaCor[indice].addEventListener('click', seleciona);
+    }
+}
+capturaClasseColor()
 
+//Desafio 8
 
 //8.. capturar todos os pixels "brancos"
 // for na lista que retornar e adicionar um evento de clique para cada pixel
