@@ -20,9 +20,19 @@ function criandoColuna (row, coluna){
 
 criandoLinha(quadrados)
 
+//1.capturar os elementos da paleta de cores
+let paletaDeCores = document.getElementsByClassName('color')
 
-function corPretaInicial (){
-    let preto = document.getElementById('black');
-    preto.classList.add('selected');
-    window.onload = corPretaInicial
+//2. Colocar um for para rodar o passo 1 e depois adicionar um eventli.. click
+for(let index = 0; index <= paletaDeCores; index += 1){
+    paletaDeCores.addEventListener('click', myFunction)
 }
+
+//3. capturar um elemento com a classe selected e remover esse class no elemento depois de clicar na cor deve estar dentro evento click passo 2
+function myFunction (){
+    
+}
+
+//4. Adicionar a classe selected para elemento que foi clicado
+  
+
