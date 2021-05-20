@@ -50,3 +50,9 @@ h1{
   border-color: black;
   display: inline-block;
 }
+
+.pixel{
+	width: 100px;
+	height: 100px;
+	background-color: white;
+}
