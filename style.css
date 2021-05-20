@@ -8,17 +8,20 @@
 #black {
   background-color: black;
 }
+
 #red {
   background-color: red;
 }
+
 #blue {
   background-color: blue;
 }
-#yellow{
+
+#yellow {
   background-color: yellow;
 }
 
-.pixel{
+.pixel {
   width: 40px;
   height: 40px;
   border: 1px black solid;
