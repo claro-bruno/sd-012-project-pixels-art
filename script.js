@@ -30,43 +30,26 @@ allColors.addEventListener("click", function (event) {
 
 let paletas = document.querySelectorAll('.color');
 for (let index = 0; index < paletas.length; index += 1) {
-    paletas[index].addEventListener('click', function (event) {
+  paletas[index].addEventListener('click', function (event) {
     let selectedColor = document.querySelector('.selected');
     selectedColor.classList.remove('selected');
     event.target.classList.add('selected');
   });
-}
+};
 
+const quadrado = document.getElementsByClassName('pixel');
+for (let index = 0; index < quadrado.length; index += 1) {
+  quadrado[index].addEventListener('click', function () {
+    let novaCor = document.getElementsByClassName('selected')[0].style.backgroundColor;
+    quadrado[index].style.backgroundColor = novaCor;
+  });
+};
 
+const button = document.getElementById('clear-board');
+button.addEventListener('click', clear);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// window.onload = function () {
-//     let button = document.getElementById('clear-board');
-
-//     button.addEventListener('click', evento);
-
-// }
-
-// function evento() {
-
-// }
+function clear() {
+  for (let index = 0; index < quadrado.length; index += 1) {
+    document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
+  };
+};
