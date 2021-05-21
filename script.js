@@ -66,7 +66,13 @@ function adicionandoQuadrado (){
   let elementoPaiPixels = document.getElementById('pixel-board');
   let boardsize = document.getElementById('board-size').value;
   elementoPaiPixels.innerHTML = ''
+  if(boardsize < 5 ){
+    boardsize = 5
+  } else if (boardsize > 50){
+    boardsize = 50
+  }
   criandoLinha(boardsize)
+
 }
 
 
@@ -80,7 +86,5 @@ function invalido() {
    alert('Board inválido!')
  }
 }
-
-
 
 
