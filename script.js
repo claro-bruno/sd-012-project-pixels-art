@@ -15,6 +15,26 @@ capturaClasseColor()
 
 //Desafio 8
 
+let selecionaPixel = document.getElementsByClassName('pixel');
+for (let index = 0; index < selecionaPixel.length ; index +=1){
+  selecionaPixel[index].addEventListener('click', pintar)
+}
+function pintar (evento) {
+  let corSelecionado = document.querySelector('.selected');
+  let pintarPixel = window.getComputedStyle(corSelecionado).getPropertyValue("background-color");
+  evento.target.style.backgroundColor = pintarPixel;
+}
+
+
+
+
+
+
+
+
+
+
+
 //8.. capturar todos os pixels "brancos"
 // for na lista que retornar e adicionar um evento de clique para cada pixel
 // o evento de clique tem q pegar o elemento com a classe selected e descobrir a cor dele
