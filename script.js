@@ -31,9 +31,18 @@ for (let index = 0; index < paleta.length; index += 1) {
   });
 }
 
-const clear = document.querySelector('#clear-board')
-clear.addEventListener('click', function (event) {
-  if (event.target.className === 'pixel') {
-    event.target.style.backgroundColor = 'white';
+const pixels = document.getElementsByClassName('pixel');
+for(let i = 0; i < pixels.length; i+= 1){
+  pixels[i].addEventListener("click", function(){
+  let corNova = document.getElementsByClassName("selected")[0].style.backgroundColor;
+  pixels[i].style.backgroundColor = corNova;
+  })
+}
+
+const button = document.getElementById("clear-board");
+button.addEventListener('click', clear);
+function clear (){
+  for(let i = 0; i < pixels.length; i+= 1){
+    document.getElementsByClassName("pixel")[i].style.backgroundColor = "white"
   }
-});
+}
