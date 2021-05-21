@@ -54,6 +54,33 @@ document.body.addEventListener('click', (event) => {
     for(let index = 0; index < clearboard.length; index += 1){
       clearboard[index].style.backgroundColor = 'white';
     }
-  }
+  } 
 })
+
+
+let generateboard = document.getElementById('generate-board');
+
+generateboard.addEventListener('click', adicionandoQuadrado);
+
+function adicionandoQuadrado (){
+  let elementoPaiPixels = document.getElementById('pixel-board');
+  let boardsize = document.getElementById('board-size').value;
+  elementoPaiPixels.innerHTML = ''
+  criandoLinha(boardsize)
+}
+
+
+let boardInvalido = document.getElementById('generate-board')
+
+boardInvalido.addEventListener('click', invalido)
+
+function invalido() {
+ let boardSize = document.getElementById('board-size').value
+ if(boardSize === ''){
+   alert('Board inválido!')
+ }
+}
+
+
+
 
