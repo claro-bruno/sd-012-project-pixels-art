@@ -11,34 +11,30 @@ function capturaClasseColor() {
       selecionaCor[indice].addEventListener('click', seleciona);
     }
 }
-capturaClasseColor()
+capturaClasseColor();
 
 //Desafio 8
 
 let selecionaPixel = document.getElementsByClassName('pixel');
 for (let index = 0; index < selecionaPixel.length ; index +=1){
-  selecionaPixel[index].addEventListener('click', pintar)
+  selecionaPixel[index].addEventListener('click', pintar);
 }
-function pintar (evento) {
+function pintar(event) {
   let corSelecionado = document.querySelector('.selected');
   let pintarPixel = window.getComputedStyle(corSelecionado).getPropertyValue("background-color");
-  evento.target.style.backgroundColor = pintarPixel;
+  event.target.style.backgroundColor = pintarPixel;
 }
 
+//Desafio 9
 
-
-
-
-
-
-
-
-
-
-//8.. capturar todos os pixels "brancos"
-// for na lista que retornar e adicionar um evento de clique para cada pixel
-// o evento de clique tem q pegar o elemento com a classe selected e descobrir a cor dele
-// adicionar essa cor como bg-color do pixel
-// funciona como o requisito 7 - ppega lista de elementos e faz for na lista
-// pegar elemento com a cor selecionada e a cor e atribuir para o pixel
-// atraves do evento (addEvent...)
+function clearBoard() {
+  let botaoLimpar = document.querySelector('#clear-board');
+  botaoLimpar.addEventListener('click', limpar );
+}
+function limpar() {
+  let limparBoard = document.querySelectorAll('.pixel');
+  for (let index = 0 ; index < limparBoard.length ; index += 1){
+    limparBoard[index].style.backgroundColor = '#fff';
+  }
+}
+clearBoard();
