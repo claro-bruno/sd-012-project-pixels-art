@@ -53,3 +53,42 @@ function clear() {
     document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
   };
 };
+
+let recuperaNum = document.querySelector('#board-size').value
+let inputNumber = document.querySelector('#board-size')
+inputNumber.addEventListener('keyup', function(){
+  recuperaNum = document.querySelector('#board-size').value
+});
+
+function creatingPixelBoard(size) {
+  for (let row = 0; row < size; row += 1) {
+    const tableRow = document.createElement('tr');
+    pixelBoard.appendChild(tableRow);
+   for (let column = 0; column < size; column += 1) {
+      const tableColumn = document.createElement('td');
+      tableRow.appendChild(tableColumn);
+      tableColumn.classList.add('pixel');
+    };
+  };
+};
+
+const botao = document.getElementById('generate-board')
+botao.addEventListener('click', function(){
+
+const pixelBoard = document.querySelector('#pixel-board');
+pixelBoard.innerHTML = '';
+const boardSize = document.getElementById('board-size');
+let size = boardSize.value;
+  if (size === '') {
+    alert("Board inválido!");
+    return;
+  }
+  if (size < 5) {
+    size = 5;
+  } 
+  if (size > 50) {
+    size = 50;
+  }
+
+creatingPixelBoard(size);
+});
