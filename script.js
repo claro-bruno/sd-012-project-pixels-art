@@ -57,7 +57,7 @@ inputNumber.addEventListener('keyup', function () {
 function creatingPixelBoard(size) {
   for (let row = 0; row < size; row += 1) {
     const tableRow = document.createElement('tr');
-    pixelBoard.appendChild(tableRow);
+    quadro.appendChild(tableRow);
     for (let column = 0; column < size; column += 1) {
       const tableColumn = document.createElement('td');
       tableRow.appendChild(tableColumn);
@@ -65,12 +65,11 @@ function creatingPixelBoard(size) {
     };
   };
 };
+
 const botao = document.getElementById('generate-board')
 botao.addEventListener('click', function () {
-  const pixelBoard = document.querySelector('#pixel-board');
-  pixelBoard.innerHTML = '';
-  const boardSize = document.getElementById('board-size');
-  let size = boardSize.value;
+  quadro.innerHTML = '';
+  let size = recuperaNum;
   if (size === '') {
     alert("Board inválido!");
     return;
