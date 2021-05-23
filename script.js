@@ -33,5 +33,12 @@ document.addEventListener('click', function (event) {
         activeColor.classList.toggle("selected");
         event.target.classList.toggle("selected");
       };
+
+    if (event.target.classList.contains('pixel')) {      
+
+        let selectedCor = document.querySelector('.selected');
+        // Link de referencia https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+        event.target.style.backgroundColor = window.getComputedStyle(selectedCor).backgroundColor;
+      };
   })
 
