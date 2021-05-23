@@ -16,41 +16,11 @@
         <div class="color"></div>
     </div>
     <button id="clear-board">Limpar</button>
-    <div id="pixel-board">
-        <div class="pixel-line">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="pixel-line">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="pixel-line">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="pixel-line">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="pixel-line">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
+    <div class="generate-board-size">
+        <label for="board-size" class="vqv">Número: </label>
+        <input type="number" name="board-size" id="board-size" class="vqv" min="1" max="50">
+        <button type="button" id="generate-board" class="vqv">VQV</button>       
+        <div id="pixel-board">
         </div>
     </div>
     <script src="script.js"></script>
