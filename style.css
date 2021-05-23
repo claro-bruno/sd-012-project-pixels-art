@@ -5,19 +5,19 @@
     border: 1px solid black;
 }
 
-.black {
+.clr1 {
     background-color: black;
 }
 
-.red {
+.clr2 {
     background-color: red;
 }
 
-.yellow {
+.clr3 {
     background-color: yellow;
 }
 
-.orange {
+.clr4 {
     background-color: orange;
 }
 

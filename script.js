@@ -9,3 +9,29 @@ function pixelBoard(){
                
     }    
 }
+
+
+document.addEventListener('click', function (event) {
+    let activeColor = document.querySelector(".selected");
+
+    if (event.target.classList.contains('clr1')) {        
+        activeColor.classList.toggle("selected");
+        event.target.classList.toggle("selected");
+     };
+
+    if (event.target.classList.contains('clr2')) {        
+        activeColor.classList.toggle("selected");
+        event.target.classList.toggle("selected");
+      };
+
+    if (event.target.classList.contains('clr3')) {       
+        activeColor.classList.toggle("selected");
+        event.target.classList.toggle("selected");
+      };
+
+    if (event.target.classList.contains('clr4')) {       
+        activeColor.classList.toggle("selected");
+        event.target.classList.toggle("selected");
+      };
+  })
+
