@@ -41,7 +41,7 @@ function novaTabelaDinamica(number) {
     }
     tabela.appendChild(tr);
   }
-
+  //Requisito 8
   let selecionaPixel = document.getElementsByClassName('pixel');
   for (let index = 0; index < selecionaPixel.length ; index +=1){
     selecionaPixel[index].addEventListener('click', pintar);
@@ -59,6 +59,10 @@ function tabelaValida() {
 
   if (number === '') {
     alert('Board inválido!');
+  } else if (number < 5 ) {
+    novaTabelaDinamica(5);
+  } else if (number > 50) {
+    novaTabelaDinamica(50);
   } else {
     novaTabelaDinamica(number);
   }
@@ -66,15 +70,3 @@ function tabelaValida() {
 
 let botaoVQV = document.getElementById('generate-board');
 botaoVQV.addEventListener('click', tabelaValida);
-
-//Desafio 8
-
-// let selecionaPixel = document.getElementsByClassName('pixel');
-// for (let index = 0; index < selecionaPixel.length ; index +=1){
-//   selecionaPixel[index].addEventListener('click', pintar);
-// }
-// function pintar(event) {
-//   let corSelecionado = document.querySelector('.selected');
-//   let pintarPixel = window.getComputedStyle(corSelecionado).getPropertyValue("background-color");
-//   event.target.style.backgroundColor = pintarPixel;
-// }
