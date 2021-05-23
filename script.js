@@ -7,6 +7,32 @@ let frame = document.getElementById("pixel-board");;
     startcolor.style.backgroundColor = "black";
 };
  
+  // let coresDaPaleta = document.querySelectorAll('.color')
+  // let listaDeCores = [
+  //   'black'
+  //   'green'
+  //   'yellow'
+  //   'blue'
+  // ]
+  // let pixelsColor = document.querySelectorAll('.color');
+
+  
+
+
+
+
+
+
+
+
+    document.body.addEventListener("click", function(event){
+     if(event.target.className === "pixel"){
+     let SelectedColor = document.querySelector('.selected');
+    event.target.style.backgroundColor =  SelectedColor.style.backgroundColor;
+
+  }
+})
+
 
 
         //função cria 25 frames
@@ -23,28 +49,4 @@ let frame = document.getElementById("pixel-board");;
        
     }  
     frameBoard(5);  
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
 
