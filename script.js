@@ -7,46 +7,33 @@ let frame = document.getElementById("pixel-board");;
     startcolor.style.backgroundColor = "black";
 };
  
-  // let coresDaPaleta = document.querySelectorAll('.color')
-  // let listaDeCores = [
-  //   'black'
-  //   'green'
-  //   'yellow'
-  //   'blue'
-  // ]
-  // let pixelsColor = document.querySelectorAll('.color');
-
+   //função cria 25 frames
+   function frameBoard (size) {
+    for ( let index=0 ; index < size; index +=1) {
+     let linha = document.createElement("div");
+      frame.appendChild(linha);
+    for ( let index=0 ; index < size; index +=1) {
+        let coluna = document.createElement("div");
+      coluna.className = "pixel"   
+      frame.appendChild(coluna);      
+      }
+    }
+      
+    }  
+  frameBoard(5);  
   
 
 
 
 
 
+// document.body.addEventListener('click', function(event){
+//  if(event.target.className === "pixel"){
+//    let SelectedColor = document.querySelector('.selected');
+//   event.target.style.backgroundColor =  SelectedColor.style.backgroundColor;
+//   }
+// })
 
 
 
-    document.body.addEventListener("click", function(event){
-     if(event.target.className === "pixel"){
-     let SelectedColor = document.querySelector('.selected');
-    event.target.style.backgroundColor =  SelectedColor.style.backgroundColor;
-
-  }
-})
-
-
-
-        //função cria 25 frames
-    function frameBoard (size) {
-        for ( let index=0 ; index < size; index +=1) {
-            let linha = document.createElement("div");
-            frame.appendChild(linha);
-       for ( let index=0 ; index < size; index +=1) {
-            let coluna = document.createElement("div");
-            coluna.className = "pixel"   
-            frame.appendChild(coluna);      
-        }
-      }
-       
-    }  
-    frameBoard(5);  
-
+ 
