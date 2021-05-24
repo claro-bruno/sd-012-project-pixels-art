@@ -21,10 +21,6 @@
     background-color: orange;
 }
 
-#pixel-board{
-    width: 210px;
-    height: 210px !important;
-}
 
 .pixel {
     display: inline-block;

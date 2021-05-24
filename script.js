@@ -1,13 +1,33 @@
-window.onload = pixelBoard;
+window.onload = function () {
+    pixelBoard(5);
+};
 
-function pixelBoard(){ 
-    for (let index = 0; index < 25; index += 1) {       
-        const pxBoard = document.querySelector('#pixel-board');
-        let pxl = document.createElement('div');
-        pxl.className = 'pixel';
-        pxBoard.appendChild(pxl); 
-               
-    }    
+function pixelBoard(tam){ 
+
+    let pxBrd = document.getElementById("pxBrd");
+
+    let PxBoard = document.createElement('table');
+        PxBoard.id = "pixel-board";       
+
+    let corpo = document.createElement('tbody');
+
+    pxBrd.appendChild(PxBoard);
+    for (let index = 0; index < tam; index += 1) {   
+        
+        let linha = document.createElement("tr");
+
+        for (let index = 0; index < tam; index += 1) {  
+            let coluna = document.createElement("td");
+            coluna.className = 'pixel';
+            linha.appendChild(coluna);
+        } 
+       
+        corpo.appendChild(linha);
+
+    }   
+    
+    PxBoard.appendChild(corpo);
+
 }
 
 
@@ -46,7 +66,37 @@ document.addEventListener('click', function (event) {
   function limparBoard(){
     
       let pxl = document.querySelectorAll('.pixel');
-      for (let index = 0; index < 25; index += 1) {
+
+      for (let index = 0; index < pxl.length; index += 1) {
           pxl[index].style.backgroundColor = "white";          
       }
   }
+
+  function apagaBoard() {
+    let pixelBoard = document.getElementById("pixel-board");
+    pixelBoard.parentNode.removeChild(pixelBoard);
+  };
+
+  function gerarBoard() {
+
+    let size = document.getElementById("board-size").value;
+    
+    if (size != 0) {
+        if (size < 5 && size > 0){
+            apagaBoard();
+            pixelBoard(5);
+          } else if (size > 50) {
+            apagaBoard();
+            pixelBoard(50);
+          } else if (size > 4 | size < 51) {
+            apagaBoard();
+            pixelBoard(size);
+          } else {
+            window.alert("Board inválido!");
+          }
+    } else {
+        window.alert("Board inválido!");
+    }
+
+    
+  };
