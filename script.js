@@ -58,7 +58,7 @@ const btnClear = document.getElementById('clear-board');
 let framePixels = document.getElementsByClassName('pixel');
 function limpaTudo() {
   for (let index = 0; index < framePixels.length; index += 1) {
-    framePixels[index].style.backgroundColor = 'white';
+    framePixels[index].style.backgroundColor = rgb(255,255,255);
   }
 }
 btnClear.addEventListener('click', limpaTudo);
