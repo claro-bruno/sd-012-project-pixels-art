@@ -1,17 +1,17 @@
 body{
-  margin:50px;
+  margin:5px;
 }
 
 h1{
-  font-size: 80px;
+  font-size: 50px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #black{
-	width: 100px;
-	height: 100px;
+	width: 40px;
+	height: 40px;
 	background-color: black;
-	border-radius: 20px;
+	border-radius: 5px;
 	border: solid;
 	border-width: 1px;
 	border-color: black;
@@ -19,10 +19,10 @@ h1{
 }
 
 #blue{
-	width: 100px;
-	height: 100px;
+	width: 40px;
+	height: 40px;
 	background-color: blue;
-	border-radius: 20px;
+	border-radius: 5px;
 	border: solid;
 	border-width: 1px;
 	border-color: black;
@@ -30,10 +30,10 @@ h1{
 }
 
 #green{
-	width: 100px;
-	height: 100px;
+	width: 40px;
+	height: 40px;
 	background-color: green;
-	border-radius: 20px;
+	border-radius: 5px;
 	border: solid;
 	border-width: 1px;
 	border-color: black;
@@ -41,10 +41,10 @@ h1{
 }
 
 #orange{
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   background-color: orange;
-  border-radius: 20px;
+  border-radius: 5px;
   border: solid;
   border-width: 1px;
   border-color: black;
@@ -52,7 +52,13 @@ h1{
 }
 
 .pixel{
-	width: 100px;
-	height: 100px;
+	width: 40px;
+	height: 40px;
 	background-color: white;
+	border: 1px solid rgb(0, 0, 0);
+}
+.pixel-board{
+	width: 40px;
+	height: 40px;
+	border-width: 1px;
 }
