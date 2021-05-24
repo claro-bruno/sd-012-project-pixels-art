@@ -20,19 +20,41 @@ let frame = document.getElementById("pixel-board");;
     }
       
     }  
-  frameBoard(5);  
-function OneSelected (event) {
-  const selection = event.target;
-  let paleteDeCores = document.getElementsByTagName('td')
-  for (let index = 0; index < paleteDeCores.length; index += 1 ){
-   (paleteDeCores[index].classList.remove('selected') );
+  frameBoard(5); 
+
+  
+  
+
+
+
+ 
+// function OneSelected (event) {
+//   let selecionada = document.querySelector(".selected");
+//   selecionada.classList.remove("selected");
+//     event.target.className.add("color selected");
+// };
+
+// let listaDasCores = document.querySelectorAll(".color");
+
+// for (let index = 0; index < listaDasCores.length; index += 1) {
+//     listaDasCores[index].addEventListener("click", OneSelected);
+// };
+
+
+// botao limparAll 
+const btnLimpar = document.getElementById('clear-board')
+
+
+function limpaTudo () {
+btnLimpar.addEventListener('click', () => {
+let limpaPixels = document.querySelectorAll(".pixel");
+
+  for(let index = 0; index < limpaPixels.length; index += 1) {
+      limpaPixels[index].style.backgroundColor = "white";
+  }
+});
 }
-  selection.classList.add('selected')
-}
-
-document.addEventListener('click', OneSelected)
-
-
+limpaTudo();
 
 
 
