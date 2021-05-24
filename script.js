@@ -21,19 +21,47 @@ let frame = document.getElementById("pixel-board");;
       
     }  
   frameBoard(5);  
+
+
+
   
-
-
-
-
-
-// document.body.addEventListener('click', function(event){
-//  if(event.target.className === "pixel"){
-//    let SelectedColor = document.querySelector('.selected');
-//   event.target.style.backgroundColor =  SelectedColor.style.backgroundColor;
+// const selectColor = document.getElementsByClassName('.color'); 
+// function colorSelected (event) {
+//   for ( let index=0; index < selectColor.length; index += 1) {
+//     if (selectColor[index].classList.remove('selected'));
 //   }
-// })
+//   onlySelected.classList.add('selected')
+// }
 
+
+// onlySelected.addEventListener('click', colorSelected);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const btnClear = document.getElementById('clear-board');
+let framePixels = document.getElementsByClassName('pixel');
+function limpaTudo() {
+  for (let index = 0; index < framePixels.length; index += 1) {
+    framePixels[index].style.backgroundColor = 'white';
+  }
+}
+btnClear.addEventListener('click', limpaTudo);
 
 
  
