@@ -58,11 +58,20 @@ botaoBoard.addEventListener('click', tabela);
 
 
 function tabela() {
-	let qantidadeQuadros = document.getElementById('board-size').value;
-    if(qantidadeQuadros === ""){
+	let quantidadeQuadros = document.getElementById('board-size').value;
+    if(quantidadeQuadros === ""){
        window.alert("Board inválido!")
     }
-	let matrix = qantidadeQuadros;
+
+    if(quantidadeQuadros < 5){
+quantidadeQuadros = 5
+}
+
+if(quantidadeQuadros > 50){
+    quantidadeQuadros =50
+}
+
+	let matrix = quantidadeQuadros;
 	document.getElementById('tabela-pixels').innerHTML = ''
 
 	for (let index = 0; index < matrix; index += 1) {
