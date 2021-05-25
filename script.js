@@ -6,10 +6,7 @@ let frame = document.getElementById("pixel-board");;
     startcolor.className= "color color1 selected";
     startcolor.style.backgroundColor = "black";
 };
- 
- 
-  
-  document.addEventListener('click', function (event) {
+ document.addEventListener('click', function (event) {
     let selectColor = document.querySelector(".selected");
     if (event.target.classList.contains('color1')) {        
         selectColor.classList.toggle("selected");
@@ -50,25 +47,25 @@ function frameBoard (size) {
     }  
   frameBoard(5); 
 
-
 const btnLimpar = document.getElementById('clear-board')
-
 btnLimpar.addEventListener('click', () => {
 let limpaPixels = document.querySelectorAll(".pixel");
   for ( let index = 0; index < limpaPixels.length; index += 1) {
       limpaPixels[index].style.backgroundColor = "white";
   }
 })
+ 
 
-
-
-
-
-
-
-
-
-
-
-  
-
+const btnSize = document.querySelector('#generate-board');
+btnSize.innerHTML = 'VQV';
+let sizeFrame = document.getElementById('board-size');
+btnSize.addEventListener('click', () => {
+  if (sizeFrame.value >= 5 && sizeFrame.value <= 50) {
+      frameBoard(sizeFrame.value);
+      sizeFrame.value = '';
+  }
+  else{
+    alert('Board inválido!');
+    sizeFrame.value = '';
+  }  
+});
