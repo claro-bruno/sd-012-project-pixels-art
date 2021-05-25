@@ -44,5 +44,42 @@ function apagaCor(){
     for(let index = 0; index < fundoBranco.length; index +=1){
     fundoBranco[index].style.backgroundColor ="rgb(255,255,255)"
             }
+}
+// 1- criar um input no html e um botao
+// (2-capturar o botao e adicionar um evento de click nele)
+// 3- dentro da função do click criar uma função que receba um numero e crie sua tabela
+// 3.1- a função tem que primeiro selecionar a tabela antiga e apagar ela (https://developer.mozilla.org/pt-BR/docs/Web/API/Node/removeChild)
+// 3.2-capturar o input
+// 3.3-criar os elementos(dica for dentro de um for-para cada vez q ele percorrer esse for ele cria N(input) elementos)
 
+let botaoBoard = document.getElementById('generate-board');
+console.log(botaoBoard)
+botaoBoard.addEventListener('click', tabela);
+
+
+function tabela() {
+	let qantidadeQuadros = document.getElementById('board-size').value;
+    if(qantidadeQuadros === ""){
+       window.alert("Board inválido!")
+    }
+	let matrix = qantidadeQuadros;
+	document.getElementById('tabela-pixels').innerHTML = ''
+
+	for (let index = 0; index < matrix; index += 1) {
+		novaLinha = document.createElement('TR')
+		document.getElementById('tabela-pixels').appendChild(novaLinha)
+		criaLinhaTabela(matrix)
+	 }
+
+	 function criaLinhaTabela (matrix) {
+		let obtemLinha = document.getElementById('tabela-pixels').lastChild
+		for (let index = 0; index < matrix; index += 1){
+			novaColuna = document.createElement('TD')
+			obtemLinha.appendChild(novaColuna).className = 'pixel'
+             }
+	 }
+     let capturaPixel = document.getElementsByClassName('pixel')
+for(let index = 0; index < capturaPixel.length; index +=1){
+    capturaPixel[index].addEventListener('click', colorPixel);
+}
 }

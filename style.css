@@ -62,3 +62,7 @@ h1{
 	height: 40px;
 	border-width: 1px;
 }
+board-size{
+	width: 10px;
+	height: 10px;	
+}
