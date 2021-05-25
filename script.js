@@ -28,5 +28,21 @@ function colorPixel(event){
     let capturaColorPixel = document.querySelector('.selected')
     let capturaBg = window.getComputedStyle(capturaColorPixel).getPropertyValue("background-color")
     event.target.style.backgroundColor = capturaBg
-    console.log(capturaBg)
 }   
+
+// 1- criar um botao no htm para limpar as cores
+// 2- capturar esse botao no js
+// 3-adicionar um evento de click nesse botao
+// 4-na função do evento
+// 5-selecionar todos os elementos com a classe pixel
+// 6-rodar um laço de repetição e trocar a cor de fundo de cada elemento da lita
+
+let apagaTudo = document.getElementById("clear-board")
+apagaTudo.addEventListener('click', apagaCor);
+function apagaCor(){
+    let fundoBranco = document.querySelectorAll(".pixel")
+    for(let index = 0; index < fundoBranco.length; index +=1){
+    fundoBranco[index].style.backgroundColor ="rgb(255,255,255)"
+            }
+
+}
