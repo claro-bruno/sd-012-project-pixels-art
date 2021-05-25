@@ -12,13 +12,13 @@ let frame = document.getElementById("pixel-board");;
     for ( let index=0 ; index < size; index +=1) {
      let linha = document.createElement("div");
       frame.appendChild(linha);
-    for ( let index=0 ; index < size; index +=1) {
-        let coluna = document.createElement("div");
-      coluna.className = "pixel"   
-      frame.appendChild(coluna);      
+        for ( let index=0 ; index < size; index +=1) {
+        let pixel = document.createElement("div");
+        pixel.className = "pixel"  
+        pixel.style.backgroundColor = "white" 
+        linha.appendChild(pixel);      
       }
     }
-      
     }  
   frameBoard(5); 
 
@@ -42,10 +42,12 @@ let frame = document.getElementById("pixel-board");;
 
 
 // botao limparAll 
+
+
+
+
 const btnLimpar = document.getElementById('clear-board')
 
-
-function limpaTudo () {
 btnLimpar.addEventListener('click', () => {
 let limpaPixels = document.querySelectorAll(".pixel");
 
@@ -53,8 +55,6 @@ let limpaPixels = document.querySelectorAll(".pixel");
       limpaPixels[index].style.backgroundColor = "white";
   }
 });
-}
-limpaTudo();
 
 
 
