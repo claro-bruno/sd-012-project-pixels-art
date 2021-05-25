@@ -57,11 +57,11 @@ function frameBoard (size) {
         newColor += letters[Math.floor(Math.random() * 16)];
       }
       color[index].style.backgroundColor = newColor;
-    }
+      }
     return letters;
   }
   
-  window.onload = createColors();
+  createColors();
      
 
 const btnLimpar = document.getElementById('clear-board')
