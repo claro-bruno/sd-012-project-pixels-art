@@ -7,21 +7,7 @@ let frame = document.getElementById("pixel-board");;
     startcolor.style.backgroundColor = "black";
 };
  
- //função cria 25 frames
-function frameBoard (size) {
-  for ( let index=0 ; index < size; index +=1) {
-     let linha = document.createElement("div");
-      frame.appendChild(linha);
-        for ( let index=0 ; index < size; index +=1) {
-        let pixel = document.createElement("div");
-        pixel.className = "pixel";  
-        
-        linha.appendChild(pixel);      
-    }
-    }
-    }  
-  frameBoard(5); 
-
+ 
   
   document.addEventListener('click', function (event) {
     let selectColor = document.querySelector(".selected");
@@ -41,6 +27,42 @@ function frameBoard (size) {
         selectColor.classList.toggle("selected");
         event.target.classList.toggle("selected");
       };
-  })
+      if (event.target.classList.contains('pixel')) {      
+
+        let selectedCor = document.querySelector('.selected');
+        
+        event.target.style.backgroundColor = window.getComputedStyle(selectedCor).backgroundColor;
+      };
+    })
+
+//função cria 25 frames
+function frameBoard (size) {
+  for ( let index=0 ; index < size; index +=1) {
+     let linha = document.createElement("div");
+      frame.appendChild(linha);
+        for ( let index=0 ; index < size; index +=1) {
+        let pixel = document.createElement("div");
+        pixel.className = "pixel";  
+        
+        linha.appendChild(pixel);      
+    }
+    }
+    }  
+  frameBoard(5); 
+
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
