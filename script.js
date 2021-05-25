@@ -81,11 +81,12 @@ btnCreateBoard.addEventListener('click', () => {
     frame.innerHTML = '';
     frameBoard(size);
   } else if ( size > 50) {
-    sixe = 50;
+    size = 50;
     frame.innerHTML = '';
     frameBoard(size);
   } else {
-    window.alert('Board inválido')
+    size === null;
+    window.alert('Board inválido!')
    }
   });
 
