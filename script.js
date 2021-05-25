@@ -14,8 +14,19 @@ function alteraCor(event){
    event.target.classList.add('selected')
 }
 
-// capturar todos os elementos com a class pixel 
+// // capturar todos os elementos com a class pixel 
 // rodar o for para add undefined, evendo de  click para cada pixel
 // dentro da função --- selecionar o elemento com a class selected
 // pegar a cor de fundo do elemento selecionado 
 // adicionar a cor de fundo ao elemento clicado 
+
+let capturaPixel = document.getElementsByClassName('pixel')
+for(let index = 0; index < capturaPixel.length; index +=1){
+    capturaPixel[index].addEventListener('click', colorPixel);
+}
+function colorPixel(event){
+    let capturaColorPixel = document.querySelector('.selected')
+    let capturaBg = window.getComputedStyle(capturaColorPixel).getPropertyValue("background-color")
+    event.target.style.backgroundColor = capturaBg
+    console.log(capturaBg)
+}   
