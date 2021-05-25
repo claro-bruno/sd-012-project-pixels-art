@@ -71,3 +71,22 @@ let limpaPixels = document.querySelectorAll(".pixel");
       limpaPixels[index].style.backgroundColor = "white";
   }
 })
+
+
+const btnCreateBoard = document.getElementById('generate-board');
+btnCreateBoard.addEventListener('click', () => {
+  let size = document.getElementById('board-size').value;
+  if (size <= 50 && size > 4) {
+    size = size;
+    frame.innerHTML = '';
+    frameBoard(size);
+  } else if ( size > 50) {
+    sixe = 50;
+    frame.innerHTML = '';
+    frameBoard(size);
+  } else {
+    window.alert('Board inválido')
+   }
+  });
+
+
