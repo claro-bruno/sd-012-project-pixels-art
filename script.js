@@ -12,7 +12,7 @@ function clear() {
 }
 
 function paint(event) {
-  const cor = event;
+  const cor = event.target;
   if (event.style.backgroundColor === getColorSelected()) {
     cor.style.backgroundColor = 'white';
   } else {
@@ -29,10 +29,9 @@ function mudaSelecter(bt) {
 
 function pixelzin(div) {
   if (div < 19) {
-    return 200/div;
-  } else {
-    return 11;
+    return 200 / div;
   }
+  return 11;
 }
 
 function colunas(pixelLine, colom) {
@@ -68,25 +67,28 @@ function createColor(square) {
     2: `rgb(${array[4]},${array[5]},${array[6]})`,
     3: `rgb(${array[7]},${array[8]},${array[9]})`,
   };
-  for (const key in cor) {
-    algo[key].style.backgroundColor = cor[key];
+  for (let index = 0; index <= 3; index += 1) {
+    algo[index].style.backgroundColor = cor[index];
   }
-  square[0].className = 'color selected'; 
 }
 
-function changeSize(test) {
+const boardChande = (test) => {
   const father = document.getElementById('pixel-board');
+  while (father.firstChild) {
+    father.removeChild(father.firstChild);
+  }
+  lines(test, father);
+};
+
+function changeSize(test) {
   if (test > 4 && test < 51) {
-    while (father.firstChild) {
-      father.removeChild(father.firstChild);
-    }
-    lines(test, father);
+    boardChande(test);
   } else {
-      if (test > 50) {
-        changeSize(50);
-    } else {
-        changeSize(5);
+    if (test > 50) {
+      changeSize(50);
+      return null;
     }
+    changeSize(5);
   }
 }
 
@@ -111,17 +113,17 @@ window.onload = function main() {
   clean.addEventListener('click', clear);
 
   for (let evento = 0; evento < square.length; evento += 1) {
-    square[evento].addEventListener("click", mudaSelecter);
+    square[evento].addEventListener('click', mudaSelecter);
   }
-  mudaTamanho.addEventListener('click', function (event) {
-    let test = document.getElementById('board-size').value;
+  mudaTamanho.addEventListener('click', () => {
+    const test = document.getElementById('board-size').value;
     testIn(test);
   });
-}
+};
 
-document.addEventListener('click', function (event) {
+document.addEventListener('click', (event) => {
   if (event.target.className === 'pixel') {
-    let eventBgColor = event.target;
+    const eventBgColor = event.target;
     paint(eventBgColor);
-  }  
+  }
 });
