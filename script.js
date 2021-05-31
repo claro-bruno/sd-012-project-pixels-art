@@ -12,7 +12,7 @@ function clear() {
 }
 
 function paint(event) {
-  const cor = event.target;
+  const cor = event;
   if (event.style.backgroundColor === getColorSelected()) {
     cor.style.backgroundColor = 'white';
   } else {
