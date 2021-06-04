@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap') ;
+
 * {
   margin: 0;
   padding: 0;
@@ -28,9 +30,9 @@ header {
 }
 
 #title {
-  font-family: monospace, sans-serif;
+  font-family: Special Elite, cursive , monospace, sans-serif;
   font-size: 60px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
@@ -52,6 +54,7 @@ span {
   height: 50px;
   border: 1px solid black;
   box-shadow: 0 0 5px 2px black;
+  border-radius: 5px;
 }
 
 .color-palette {
@@ -59,9 +62,13 @@ span {
 }
 
 .color:hover {
-  border-radius: 2px;
   box-shadow: none;
   transition: 0.3s;
+  border-radius: 50px;
+}
+
+.selected {
+  border-radius: 50px;
 }
 
 button {
