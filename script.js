@@ -24,9 +24,7 @@ function createPixels(number) {
       pixel.className = 'pixel';
       linhaPixel.appendChild(pixel);
       pixelBoard.appendChild(linhaPixel);
-      if (btnValor.addEventListener('click', boardSize)) {
-        // linhaPixel.innerHTML = '';
-      }
+      btnValor.addEventListener('click', boardSize);
     }
   }
 }
