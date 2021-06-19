@@ -11,15 +11,15 @@
    }
   
    .color:nth-child(2) {
-    background-color: aqua;
+    background-color: rgb(34, 104, 104);
   }
   
   .color:nth-child(3) {
-    background-color: lightcoral;
+    background-color: rgb(189, 5, 5);
   }
   
   .color:nth-child(4) {
-    background-color: lightslategray;
+    background-color: rgb(240, 9, 209);
   }
   
   .pixel {
