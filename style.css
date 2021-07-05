@@ -1,43 +1,42 @@
 #title {
-    text-align: left;
-    font-family: Times, serif;
+  text-align: left;
+  font-family: Times, serif;
 }
 
 #color-palette {
-    top: 75px;
-    height: 85px;
-    width: 344px;
+  top: 75px;
+  height: 85px;
+  width: 344px;
 }
 
 .color {
-    top: 75px;
-    border: 1px solid black;
-    width: 75px;
-    height: 75px;
-    margin: 3px;
-    display: inline-block;
+  top: 75px;
+  border: 1px solid black;
+  width: 75px;
+  height: 75px;
+  margin: 3px;
+  display: inline-block;
 }
 
 #pixel-board {
-    top: 175px;
-    height: 226px;
-    width: 226px;
-    background-color: black;
+  top: 175px;
+  height: 226px;
+  width: 226px;
+  background-color: black;
 }
 
 .pixel {
-    top: 175px;
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    background-color: white;
-    margin: -3px;
+  top: 175px;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: white;
+  margin: -3px;
 }
 
 .selected {
 }
 
 #clear-board {
-    
 }
